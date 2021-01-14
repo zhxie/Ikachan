@@ -9,7 +9,11 @@ import SwiftUI
 import Kingfisher
 
 struct CardView: View {
+    @State private var imageHeight = CGFloat(100)
+    @State private var textHeight = CGFloat(100)
+    
     var image: String
+    var icon: String
     var headline: String
     var title: String
     
@@ -17,13 +21,26 @@ struct CardView: View {
         VStack(spacing: 0) {
             KFImage(URL(string: image)!)
                 .placeholder {
-                    LoadingView()
-                        .frame(width: 1920, height: 1080, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    Rectangle()
+                        .foregroundColor(Color(UIColor.systemGroupedBackground))
+                        .aspectRatio(16 / 9, contentMode: .fit)
+                        .frame(width: imageHeight, height: imageHeight)
                 }
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .background(GeometryReader { g -> Color in
+                    DispatchQueue.main.async {
+                        imageHeight = g.size.height
+                    }
+                    return Color.clear
+                })
             
             HStack {
+                Image(icon)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: textHeight)
+                
                 VStack(alignment: .leading) {
                     Text(headline)
                         .font(.headline)
@@ -32,9 +49,15 @@ struct CardView: View {
                         .font(.title)
                         .fontWeight(.black)
                         .foregroundColor(.primary)
-                        .lineLimit(2)
+                        .lineLimit(1)
                 }
-                .layoutPriority(100)
+                .background(GeometryReader { g -> Color in
+                    DispatchQueue.main.async {
+                        textHeight = g.size.height
+                    }
+                    return Color.clear
+                })
+                .layoutPriority(1)
                 
                 Spacer()
             }
@@ -55,7 +78,7 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CardView(image: "https://app.splatoon2.nintendo.net/images/stage/96fd8c0492331a30e60a217c94fd1d4c73a966cc.png", headline: "Turf War", title: "Moray Towers")
+            CardView(image: "https://app.splatoon2.nintendo.net/images/stage/96fd8c0492331a30e60a217c94fd1d4c73a966cc.png", icon: "turf_war", headline: "Turf War", title: "Moray Towers")
         }
     }
 }

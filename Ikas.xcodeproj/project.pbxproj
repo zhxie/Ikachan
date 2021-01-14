@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E43CCBB325B015A6001A0FF5 /* XCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43CCBB225B015A6001A0FF5 /* XCardView.swift */; };
 		E43CCBB725B0338C001A0FF5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E43CCBB625B0338C001A0FF5 /* Kingfisher */; };
-		E43CCBC225B040C5001A0FF5 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43CCBC125B040C5001A0FF5 /* LoadingView.swift */; };
 		E4405D7B25AF64D2002EF1AB /* IkasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4405D7A25AF64D2002EF1AB /* IkasApp.swift */; };
 		E4405D7D25AF64D2002EF1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4405D7C25AF64D2002EF1AB /* ContentView.swift */; };
 		E4405D7F25AF64D6002EF1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D7E25AF64D6002EF1AB /* Assets.xcassets */; };
@@ -19,7 +18,6 @@
 
 /* Begin PBXFileReference section */
 		E43CCBB225B015A6001A0FF5 /* XCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCardView.swift; sourceTree = "<group>"; };
-		E43CCBC125B040C5001A0FF5 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		E4405D7725AF64D2002EF1AB /* Ikas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ikas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4405D7A25AF64D2002EF1AB /* IkasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkasApp.swift; sourceTree = "<group>"; };
 		E4405D7C25AF64D2002EF1AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 				E4405D8025AF64D6002EF1AB /* Preview Content */,
 				E4405D8A25AF64E3002EF1AB /* CardView.swift */,
 				E43CCBB225B015A6001A0FF5 /* XCardView.swift */,
-				E43CCBC125B040C5001A0FF5 /* LoadingView.swift */,
 			);
 			path = Ikas;
 			sourceTree = "<group>";
@@ -158,7 +155,6 @@
 				E4405D7D25AF64D2002EF1AB /* ContentView.swift in Sources */,
 				E4405D8B25AF64E3002EF1AB /* CardView.swift in Sources */,
 				E4405D7B25AF64D2002EF1AB /* IkasApp.swift in Sources */,
-				E43CCBC225B040C5001A0FF5 /* LoadingView.swift in Sources */,
 				E43CCBB325B015A6001A0FF5 /* XCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
