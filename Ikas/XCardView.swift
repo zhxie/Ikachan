@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct XCardView: View {
     @State private var totalHeight = CGFloat(100)
@@ -17,7 +18,11 @@ struct XCardView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Image(image)
+            KFImage(URL(string: image)!)
+                .placeholder {
+                    LoadingView()
+                        .frame(width: 1920, height: 1080, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
                 .resizable()
                 .aspectRatio(contentMode: .fit)
 
@@ -42,7 +47,11 @@ struct XCardView: View {
                     HStack() {
                         HStack {
                             ForEach(subimages, id: \.self) { subimage in
-                                Image(subimage)
+                                KFImage(URL(string: subimage)!)
+                                    .placeholder {
+                                        LoadingView()
+                                            .frame(width: 256, height: 256, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    }
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                             }
@@ -76,6 +85,6 @@ struct XCardView: View {
 
 struct XCardView_Previews: PreviewProvider {
     static var previews: some View {
-        XCardView(image: "ruins_of_ark_polaris", subimages: ["splattershot_jr", "splattershot_jr", "splattershot_jr", "splattershot_jr"], headline: "Salmon Run", title: "Ruins of Ark Polaris")
+        XCardView(image: "https://app.splatoon2.nintendo.net/images/coop_stage/e07d73b7d9f0c64e552b34a2e6c29b8564c63388.png", subimages: ["https://app.splatoon2.nintendo.net/images/coop_stage/91b6666bcbfccc204d86f21222a8db22a27d08d0.png", "https://app.splatoon2.nintendo.net/images/coop_stage/91b6666bcbfccc204d86f21222a8db22a27d08d0.png", "https://app.splatoon2.nintendo.net/images/coop_stage/91b6666bcbfccc204d86f21222a8db22a27d08d0.png", "https://app.splatoon2.nintendo.net/images/coop_stage/91b6666bcbfccc204d86f21222a8db22a27d08d0.png"], headline: "Salmon Run", title: "Ruins of Ark Polaris")
     }
 }

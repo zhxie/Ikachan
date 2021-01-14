@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CardView: View {
     var image: String
@@ -14,7 +15,11 @@ struct CardView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Image(image)
+            KFImage(URL(string: image)!)
+                .placeholder {
+                    LoadingView()
+                        .frame(width: 1920, height: 1080, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
@@ -50,7 +55,7 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CardView(image: "moray_towers", headline: "Rainmaker", title: "Moray Towers")
+            CardView(image: "https://app.splatoon2.nintendo.net/images/stage/96fd8c0492331a30e60a217c94fd1d4c73a966cc.png", headline: "Turf War", title: "Moray Towers")
         }
     }
 }
