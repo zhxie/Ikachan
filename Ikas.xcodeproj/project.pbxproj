@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E43CCBB325B015A6001A0FF5 /* XCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43CCBB225B015A6001A0FF5 /* XCardView.swift */; };
 		E4405D7B25AF64D2002EF1AB /* IkasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4405D7A25AF64D2002EF1AB /* IkasApp.swift */; };
 		E4405D7D25AF64D2002EF1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4405D7C25AF64D2002EF1AB /* ContentView.swift */; };
 		E4405D7F25AF64D6002EF1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D7E25AF64D6002EF1AB /* Assets.xcassets */; };
 		E4405D8225AF64D6002EF1AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */; };
+		E4405D8B25AF64E3002EF1AB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4405D8A25AF64E3002EF1AB /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E43CCBB225B015A6001A0FF5 /* XCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCardView.swift; sourceTree = "<group>"; };
 		E4405D7725AF64D2002EF1AB /* Ikas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ikas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4405D7A25AF64D2002EF1AB /* IkasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkasApp.swift; sourceTree = "<group>"; };
 		E4405D7C25AF64D2002EF1AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E4405D7E25AF64D6002EF1AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4405D8325AF64D6002EF1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4405D8A25AF64E3002EF1AB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				E4405D7E25AF64D6002EF1AB /* Assets.xcassets */,
 				E4405D8325AF64D6002EF1AB /* Info.plist */,
 				E4405D8025AF64D6002EF1AB /* Preview Content */,
+				E4405D8A25AF64E3002EF1AB /* CardView.swift */,
+				E43CCBB225B015A6001A0FF5 /* XCardView.swift */,
 			);
 			path = Ikas;
 			sourceTree = "<group>";
@@ -139,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4405D7D25AF64D2002EF1AB /* ContentView.swift in Sources */,
+				E4405D8B25AF64E3002EF1AB /* CardView.swift in Sources */,
 				E4405D7B25AF64D2002EF1AB /* IkasApp.swift in Sources */,
+				E43CCBB325B015A6001A0FF5 /* XCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
