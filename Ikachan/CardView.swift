@@ -1,6 +1,6 @@
 //
 //  CardView.swift
-//  Ikas
+//  Ikachan
 //
 //  Created by Sketch on 2021/1/14.
 //

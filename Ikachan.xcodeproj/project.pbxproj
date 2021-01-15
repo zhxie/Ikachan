@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E43CCBB325B015A6001A0FF5 /* XCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43CCBB225B015A6001A0FF5 /* XCardView.swift */; };
 		E43CCBB725B0338C001A0FF5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E43CCBB625B0338C001A0FF5 /* Kingfisher */; };
-		E4405D7B25AF64D2002EF1AB /* IkasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4405D7A25AF64D2002EF1AB /* IkasApp.swift */; };
+		E4405D7B25AF64D2002EF1AB /* IkachanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4405D7A25AF64D2002EF1AB /* IkachanApp.swift */; };
 		E4405D7D25AF64D2002EF1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4405D7C25AF64D2002EF1AB /* ContentView.swift */; };
 		E4405D7F25AF64D6002EF1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D7E25AF64D6002EF1AB /* Assets.xcassets */; };
 		E4405D8225AF64D6002EF1AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */; };
@@ -18,8 +18,8 @@
 
 /* Begin PBXFileReference section */
 		E43CCBB225B015A6001A0FF5 /* XCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCardView.swift; sourceTree = "<group>"; };
-		E4405D7725AF64D2002EF1AB /* Ikas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ikas.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4405D7A25AF64D2002EF1AB /* IkasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkasApp.swift; sourceTree = "<group>"; };
+		E4405D7725AF64D2002EF1AB /* Ikachan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ikachan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4405D7A25AF64D2002EF1AB /* IkachanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkachanApp.swift; sourceTree = "<group>"; };
 		E4405D7C25AF64D2002EF1AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E4405D7E25AF64D6002EF1AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		E4405D6E25AF64D2002EF1AB = {
 			isa = PBXGroup;
 			children = (
-				E4405D7925AF64D2002EF1AB /* Ikas */,
+				E4405D7925AF64D2002EF1AB /* Ikachan */,
 				E4405D7825AF64D2002EF1AB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,15 +50,15 @@
 		E4405D7825AF64D2002EF1AB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4405D7725AF64D2002EF1AB /* Ikas.app */,
+				E4405D7725AF64D2002EF1AB /* Ikachan.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E4405D7925AF64D2002EF1AB /* Ikas */ = {
+		E4405D7925AF64D2002EF1AB /* Ikachan */ = {
 			isa = PBXGroup;
 			children = (
-				E4405D7A25AF64D2002EF1AB /* IkasApp.swift */,
+				E4405D7A25AF64D2002EF1AB /* IkachanApp.swift */,
 				E4405D7C25AF64D2002EF1AB /* ContentView.swift */,
 				E4405D7E25AF64D6002EF1AB /* Assets.xcassets */,
 				E4405D8325AF64D6002EF1AB /* Info.plist */,
@@ -66,7 +66,7 @@
 				E4405D8A25AF64E3002EF1AB /* CardView.swift */,
 				E43CCBB225B015A6001A0FF5 /* XCardView.swift */,
 			);
-			path = Ikas;
+			path = Ikachan;
 			sourceTree = "<group>";
 		};
 		E4405D8025AF64D6002EF1AB /* Preview Content */ = {
@@ -80,9 +80,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4405D7625AF64D2002EF1AB /* Ikas */ = {
+		E4405D7625AF64D2002EF1AB /* Ikachan */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4405D8625AF64D6002EF1AB /* Build configuration list for PBXNativeTarget "Ikas" */;
+			buildConfigurationList = E4405D8625AF64D6002EF1AB /* Build configuration list for PBXNativeTarget "Ikachan" */;
 			buildPhases = (
 				E4405D7325AF64D2002EF1AB /* Sources */,
 				E4405D7425AF64D2002EF1AB /* Frameworks */,
@@ -92,12 +92,12 @@
 			);
 			dependencies = (
 			);
-			name = Ikas;
+			name = Ikachan;
 			packageProductDependencies = (
 				E43CCBB625B0338C001A0FF5 /* Kingfisher */,
 			);
-			productName = Ikas;
-			productReference = E4405D7725AF64D2002EF1AB /* Ikas.app */;
+			productName = Ikachan;
+			productReference = E4405D7725AF64D2002EF1AB /* Ikachan.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -114,7 +114,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E4405D7225AF64D2002EF1AB /* Build configuration list for PBXProject "Ikas" */;
+			buildConfigurationList = E4405D7225AF64D2002EF1AB /* Build configuration list for PBXProject "Ikachan" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -130,7 +130,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E4405D7625AF64D2002EF1AB /* Ikas */,
+				E4405D7625AF64D2002EF1AB /* Ikachan */,
 			);
 		};
 /* End PBXProject section */
@@ -154,7 +154,7 @@
 			files = (
 				E4405D7D25AF64D2002EF1AB /* ContentView.swift in Sources */,
 				E4405D8B25AF64E3002EF1AB /* CardView.swift in Sources */,
-				E4405D7B25AF64D2002EF1AB /* IkasApp.swift in Sources */,
+				E4405D7B25AF64D2002EF1AB /* IkachanApp.swift in Sources */,
 				E43CCBB325B015A6001A0FF5 /* XCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,15 +284,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Ikas/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Ikachan/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Ikas/Info.plist;
+				INFOPLIST_FILE = Ikachan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.Ikas;
+				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.Ikachan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -305,15 +305,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Ikas/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Ikachan/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Ikas/Info.plist;
+				INFOPLIST_FILE = Ikachan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.Ikas;
+				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.Ikachan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -323,7 +323,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4405D7225AF64D2002EF1AB /* Build configuration list for PBXProject "Ikas" */ = {
+		E4405D7225AF64D2002EF1AB /* Build configuration list for PBXProject "Ikachan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4405D8425AF64D6002EF1AB /* Debug */,
@@ -332,7 +332,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4405D8625AF64D6002EF1AB /* Build configuration list for PBXNativeTarget "Ikas" */ = {
+		E4405D8625AF64D6002EF1AB /* Build configuration list for PBXNativeTarget "Ikachan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4405D8725AF64D6002EF1AB /* Debug */,
