@@ -40,6 +40,7 @@ struct CardView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: textHeight)
+                    .layoutPriority(1)
                 
                 VStack(alignment: .leading) {
                     Text(headline)

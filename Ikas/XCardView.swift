@@ -37,72 +37,84 @@ struct XCardView: View {
                     }
                     return Color.clear
                 })
-
+            
             HStack {
-                Image(icon)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: textHeight, height: textHeight)
-                
-                VStack(alignment: .leading) {
-                    Text(headline)
-                        .font(.headline)
-                        .foregroundColor(.secondary)
-                    Text(title)
-                        .font(.title)
-                        .fontWeight(.black)
-                        .foregroundColor(.primary)
-                        .lineLimit(1)
+                VStack {
+                    Image(icon)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: textHeight, height: textHeight)
+                    
+                    Spacer()
+                        .frame(height: subimagesHeight)
                 }
-                .background(GeometryReader { g -> Color in
-                    DispatchQueue.main.async {
-                        textHeight = g.size.height
-                    }
-                    return Color.clear
-                })
                 .layoutPriority(1)
                 
-                Spacer()
-            }
-            .padding([.top, .horizontal])
-            
-            VStack {
-                GeometryReader { g in
-                    HStack() {
-                        HStack {
-                            ForEach(subimages, id: \.self) { subimage in
-                                KFImage(URL(string: subimage)!)
-                                    .placeholder {
-                                        Circle()
-                                            .foregroundColor(Color(UIColor.systemGroupedBackground))
-                                            .aspectRatio(1, contentMode: .fit)
-                                            .frame(height: subimageHeight)
-                                    }
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .background(GeometryReader { g -> Color in
-                                        DispatchQueue.main.async {
-                                            subimageHeight = g.size.height
-                                        }
-                                        return Color.clear
-                                    })
-                            }
+                VStack(spacing: 0) {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(headline)
+                                .font(.headline)
+                                .foregroundColor(.secondary)
+                            Text(title)
+                                .font(.title)
+                                .fontWeight(.black)
+                                .foregroundColor(.primary)
+                                .lineLimit(1)
                         }
-                        .frame(width: g.size.width * 0.618)
                         .layoutPriority(1)
                         
                         Spacer()
                     }
-                    .background(GeometryReader { gp -> Color in
+                    .background(GeometryReader { g -> Color in
                         DispatchQueue.main.async {
-                            subimagesHeight = gp.size.height
+                            textHeight = g.size.height
                         }
                         return Color.clear
                     })
+                    
+                    VStack {
+                        GeometryReader { g in
+                            HStack {
+                                HStack {
+                                    ForEach(subimages, id: \.self) { subimage in
+                                        KFImage(URL(string: subimage)!)
+                                            .placeholder {
+                                                Circle()
+                                                    .foregroundColor(Color(UIColor.systemGroupedBackground))
+                                                    .aspectRatio(1, contentMode: .fit)
+                                                    .frame(height: subimageHeight)
+                                            }
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .background(GeometryReader { g -> Color in
+                                                DispatchQueue.main.async {
+                                                    subimageHeight = g.size.height
+                                                }
+                                                return Color.clear
+                                            })
+                                    }
+                                }
+                                .frame(width: g.size.width, alignment: .leading)
+                                .layoutPriority(1)
+                                
+                                Spacer()
+                            }
+                            .background(GeometryReader { gp -> Color in
+                                DispatchQueue.main.async {
+                                    subimagesHeight = gp.size.height
+                                }
+                                return Color.clear
+                            })
+                        }
+                    }
+                    .frame(height: subimagesHeight)
                 }
+                .layoutPriority(1)
+                
+                Spacer()
             }
-            .frame(height: subimagesHeight)
-            .padding([.bottom, .horizontal])
+            .padding()
         }
         .background(Color(UIColor.systemBackground))
         .cornerRadius(10)
