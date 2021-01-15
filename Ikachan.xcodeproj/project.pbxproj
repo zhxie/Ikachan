@@ -14,6 +14,10 @@
 		E4405D7F25AF64D6002EF1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D7E25AF64D6002EF1AB /* Assets.xcassets */; };
 		E4405D8225AF64D6002EF1AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */; };
 		E4405D8B25AF64E3002EF1AB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4405D8A25AF64E3002EF1AB /* CardView.swift */; };
+		E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
+		E477990725B1F62500F8AE9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E477990625B1F62500F8AE9F /* SwiftyJSON */; };
+		E477990A25B2029C00F8AE9F /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990925B2029C00F8AE9F /* Shift.swift */; };
+		E477990D25B203F900F8AE9F /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990C25B203F900F8AE9F /* Weapon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,9 @@
 		E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4405D8325AF64D6002EF1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4405D8A25AF64E3002EF1AB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E477990125B1F1F600F8AE9F /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		E477990925B2029C00F8AE9F /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
+		E477990C25B203F900F8AE9F /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E477990725B1F62500F8AE9F /* SwiftyJSON in Frameworks */,
 				E43CCBB725B0338C001A0FF5 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,13 +66,12 @@
 		E4405D7925AF64D2002EF1AB /* Ikachan */ = {
 			isa = PBXGroup;
 			children = (
+				E477990025B1F1E600F8AE9F /* Model */,
+				E47798FD25B1EDDA00F8AE9F /* Views */,
 				E4405D7A25AF64D2002EF1AB /* IkachanApp.swift */,
-				E4405D7C25AF64D2002EF1AB /* ContentView.swift */,
 				E4405D7E25AF64D6002EF1AB /* Assets.xcassets */,
 				E4405D8325AF64D6002EF1AB /* Info.plist */,
 				E4405D8025AF64D6002EF1AB /* Preview Content */,
-				E4405D8A25AF64E3002EF1AB /* CardView.swift */,
-				E43CCBB225B015A6001A0FF5 /* XCardView.swift */,
 			);
 			path = Ikachan;
 			sourceTree = "<group>";
@@ -75,6 +82,26 @@
 				E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E47798FD25B1EDDA00F8AE9F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E4405D7C25AF64D2002EF1AB /* ContentView.swift */,
+				E4405D8A25AF64E3002EF1AB /* CardView.swift */,
+				E43CCBB225B015A6001A0FF5 /* XCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E477990025B1F1E600F8AE9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E477990125B1F1F600F8AE9F /* Schedule.swift */,
+				E477990925B2029C00F8AE9F /* Shift.swift */,
+				E477990C25B203F900F8AE9F /* Weapon.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +122,7 @@
 			name = Ikachan;
 			packageProductDependencies = (
 				E43CCBB625B0338C001A0FF5 /* Kingfisher */,
+				E477990625B1F62500F8AE9F /* SwiftyJSON */,
 			);
 			productName = Ikachan;
 			productReference = E4405D7725AF64D2002EF1AB /* Ikachan.app */;
@@ -125,6 +153,7 @@
 			mainGroup = E4405D6E25AF64D2002EF1AB;
 			packageReferences = (
 				E43CCBB525B0338C001A0FF5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				E477990525B1F62500F8AE9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = E4405D7825AF64D2002EF1AB /* Products */;
 			projectDirPath = "";
@@ -155,6 +184,9 @@
 				E4405D7D25AF64D2002EF1AB /* ContentView.swift in Sources */,
 				E4405D8B25AF64E3002EF1AB /* CardView.swift in Sources */,
 				E4405D7B25AF64D2002EF1AB /* IkachanApp.swift in Sources */,
+				E477990D25B203F900F8AE9F /* Weapon.swift in Sources */,
+				E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */,
+				E477990A25B2029C00F8AE9F /* Shift.swift in Sources */,
 				E43CCBB325B015A6001A0FF5 /* XCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +384,14 @@
 				minimumVersion = 6.0.1;
 			};
 		};
+		E477990525B1F62500F8AE9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -359,6 +399,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E43CCBB525B0338C001A0FF5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		E477990625B1F62500F8AE9F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E477990525B1F62500F8AE9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
