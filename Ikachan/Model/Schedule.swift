@@ -12,7 +12,7 @@ struct Schedule: Hashable, Codable {
     var endTime: Date
     
     var gameMode: GameMode
-    enum GameMode: String, Codable {
+    enum GameMode: String, CaseIterable, Codable {
         case regular = "regular"
         case gachi = "gachi"
         case league = "league"
@@ -30,7 +30,7 @@ struct Schedule: Hashable, Codable {
     }
     
     var rule: Rule
-    enum Rule: String, Codable {
+    enum Rule: String, CaseIterable, Codable {
         case turfWar = "turf_war"
         case splatZones = "splat_zones"
         case towerControl = "tower_control"
@@ -126,7 +126,7 @@ struct Schedule: Hashable, Codable {
         }
     }
 
-    enum StageId: Int, Codable {
+    enum StageId: Int, CaseIterable, Codable {
         case theReef = 0
         case musselforgeFitness = 1
         case starfishMainstage = 2
