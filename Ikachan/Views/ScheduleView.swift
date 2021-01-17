@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct ScheduleView: View {
-    @EnvironmentObject var modelData: ScheduleModelData
+    @EnvironmentObject var modelData: ModelData
+    
+    var gameMode: Schedule.GameMode
     
     var body: some View {
         ScrollView {
             VStack(spacing: 40) {
-                ForEach(0..<modelData.schedules.count) {i in
+                ForEach(0..<schedules.count) {i in
                     VStack(spacing: 5) {
                         HStack {
                             VStack(alignment: .leading) {
-                                Text(timeDescription(startTime: modelData.schedules[i].startTime, endTime: modelData.schedules[i].endTime))
+                                Text(timeDescription(startTime: schedules[i].startTime, endTime: schedules[i].endTime))
                                     .font(.caption2)
                                     .foregroundColor(.secondary)
-                                Text(status(i: i, startTime: modelData.schedules[i].startTime, endTime: modelData.schedules[i].endTime))
+                                Text(status(i: i, startTime: schedules[i].startTime, endTime: schedules[i].endTime))
                                     .font(.title)
                                     .fontWeight(.bold)
                                     .foregroundColor(.primary)
@@ -33,12 +35,19 @@ struct ScheduleView: View {
                         .padding(.horizontal)
                         
                         VStack(spacing: 20) {
-                            CardView(image: String(format: "%@%@", Splatnet2URL, modelData.schedules[i].stageA.image), icon: modelData.schedules[i].rule.rawValue, headline: modelData.schedules[i].rule.description, title: modelData.schedules[i].stageA.description)
-                            CardView(image: String(format: "%@%@", Splatnet2URL, modelData.schedules[i].stageB.image), icon: modelData.schedules[i].rule.rawValue, headline: modelData.schedules[i].rule.description, title: modelData.schedules[i].stageB.description)
+                            CardView(image: String(format: "%@%@", Splatnet2URL, schedules[i].stageA.image), icon: schedules[i].rule.rawValue, headline: schedules[i].rule.description, title: schedules[i].stageA.description)
+                            CardView(image: String(format: "%@%@", Splatnet2URL, schedules[i].stageB.image), icon: schedules[i].rule.rawValue, headline: schedules[i].rule.description, title: schedules[i].stageB.description)
                         }
                     }
                 }
             }
+        }
+        .onAppear(perform: update)
+    }
+    
+    var schedules: [Schedule] {
+        modelData.schedules.filter { schedule in
+            schedule.gameMode == gameMode
         }
     }
 
@@ -58,17 +67,21 @@ struct ScheduleView: View {
             return String(format: "%@ - %@", startTime, endTime)
         }
     }
+
+    func update() {
+        modelData.updateSchedules()
+    }
 }
 
 struct ScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        let modelData = ScheduleModelData(gameMode: Schedule.GameMode.gachi)
+        let modelData = ModelData()
         
         let asset = NSDataAsset(name: "schedules", bundle: Bundle.main)!
         
-        _ = modelData.load(data: asset.data)
+        _ = modelData.loadSchedules(data: asset.data)
         
-        return ScheduleView()
+        return ScheduleView(gameMode: Schedule.GameMode.gachi)
             .environmentObject(modelData)
     }
 }

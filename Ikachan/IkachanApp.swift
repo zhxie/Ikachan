@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct IkachanApp: App {
     @StateObject private var modelData = ModelData()
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()

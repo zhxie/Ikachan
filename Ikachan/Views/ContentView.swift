@@ -8,9 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selection: Tab = .regular
+    
+    enum Tab {
+        case regular
+        case ranked
+        case league
+        case salmon_run
+    }
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView(selection: $selection) {
+            ScheduleView(gameMode: Schedule.GameMode.regular)
+                .tabItem {
+                    Label("regular", systemImage: "star")
+                }
+                .tag(Tab.regular)
+            ScheduleView(gameMode: Schedule.GameMode.gachi)
+                .tabItem {
+                    Label("ranked", systemImage: "star")
+                }
+                .tag(Tab.regular)
+            ScheduleView(gameMode: Schedule.GameMode.league)
+                .tabItem {
+                    Label("league", systemImage: "star")
+                }
+                .tag(Tab.regular)
+        }
     }
 }
 
