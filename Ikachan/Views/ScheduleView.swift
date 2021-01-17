@@ -14,12 +14,9 @@ struct ScheduleView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 40) {
+            VStack(spacing: 60) {
                 ForEach(schedules, id: \.self) { schedule in
                     VStack(spacing: 15) {
-                        Spacer()
-                            .frame(height: 5)
-                        
                         HStack {
                             VStack(alignment: .leading, spacing: 0) {
                                 Text(status(startTime: schedule.startTime, endTime: schedule.endTime))
@@ -45,6 +42,7 @@ struct ScheduleView: View {
                     }
                 }
             }
+            .padding(.vertical)
         }
         .onAppear(perform: update)
     }

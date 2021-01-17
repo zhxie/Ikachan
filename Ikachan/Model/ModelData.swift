@@ -170,8 +170,8 @@ final class ModelData: ObservableObject {
         let stage_image = shift["stage"]["image"].string
         
         var weapons: [Weapon] = []
-        if let ws = shift["weapons"].arrayObject {
-            let ws = ws as! [JSON]
+        if stage_image != nil {
+            let ws = shift["weapons"].arrayValue
             for w in ws {
                 weapons.append(parseWeapon(weapon: w))
             }

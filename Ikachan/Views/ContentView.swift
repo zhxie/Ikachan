@@ -28,12 +28,17 @@ struct ContentView: View {
                 .tabItem {
                     Label("ranked", systemImage: "star")
                 }
-                .tag(Tab.regular)
+                .tag(Tab.ranked)
             ScheduleView(gameMode: Schedule.GameMode.league)
                 .tabItem {
                     Label("league", systemImage: "star")
                 }
-                .tag(Tab.regular)
+                .tag(Tab.league)
+            ShiftView()
+                .tabItem {
+                    Label("salmon_run", systemImage: "star")
+                }
+                .tag(Tab.salmon_run)
         }
     }
 }
