@@ -32,6 +32,11 @@ struct ScheduleView: View {
                             .layoutPriority(1)
                             
                             Spacer()
+                            
+                            Image(schedule.rule.rawValue)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50)
                         }
                         .padding(.horizontal)
                         

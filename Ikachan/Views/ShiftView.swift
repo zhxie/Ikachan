@@ -30,6 +30,11 @@ struct ShiftView: View {
                             .layoutPriority(1)
                             
                             Spacer()
+                            
+                            Image("salmon_run")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50)
                         }
                         .padding(.horizontal)
                         
@@ -57,6 +62,11 @@ struct ShiftView: View {
                             .layoutPriority(1)
                             
                             Spacer()
+                            
+                            Image("salmon_run")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50)
                         }
                         .padding(.horizontal)
                         
@@ -80,6 +90,11 @@ struct ShiftView: View {
                             .layoutPriority(1)
                             
                             Spacer()
+                            
+                            Image("salmon_run")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50)
                         }
                         .padding(.horizontal)
                         
@@ -154,9 +169,9 @@ struct ShiftView_Previews: PreviewProvider {
     static var previews: some View {
         let modelData = ModelData()
         
-        let asset = NSDataAsset(name: "schedules", bundle: Bundle.main)!
+        let asset = NSDataAsset(name: "shifts", bundle: Bundle.main)!
         
-        _ = modelData.loadSchedules(data: asset.data)
+        _ = modelData.loadShifts(data: asset.data)
         
         return ShiftView()
             .environmentObject(modelData)
