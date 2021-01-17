@@ -38,7 +38,7 @@ struct CardView: View {
             }
             .padding()
         }
-        .background(Color(UIColor.systemBackground))
+        .background(Color(UIColor.secondarySystemBackground))
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
