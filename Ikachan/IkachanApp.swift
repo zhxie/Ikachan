@@ -14,7 +14,7 @@ struct IkachanApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(ModelData)
+                .environmentObject(modelData)
         }
     }
 }

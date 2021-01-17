@@ -18,7 +18,7 @@ final class ModelData: ObservableObject {
 }
 
 final class ScheduleModelData: ObservableObject {
-    static let RequestURL = "https://splatoon2.ink/data/schedules.json"
+    static let RequestURL = String(format: "%s%s", Splatoon2InkURL, Splatoon2InkScheduleURL)
     
     init(gameMode: Schedule.GameMode) {
         self.gameMode = gameMode
@@ -42,34 +42,44 @@ final class ScheduleModelData: ObservableObject {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if error != nil {
                 self.isUpdating = false
+                
                 return
             }
-            
+        
             let response = response as! HTTPURLResponse
             let status = response.statusCode
             guard (200...299).contains(status) else {
                 self.isUpdating = false
                 return
             }
-            
-            do {
-                let json = try JSON(data: data!)
-                
-                var schedules: [Schedule] = []
-                
-                let ss = json[self.gameMode.rawValue].arrayValue
-                for schedule in ss {
-                    schedules.append(self.parseSchedule(schedule: schedule))
-                }
-                
-                self.schedules = schedules
-                
+        
+            if !self.load(data: data!) {
                 self.isUpdating = false
-            } catch {
-                self.isUpdating = false
+                
                 return
             }
+            
+            self.isUpdating = false
         }.resume()
+    }
+    
+    func load(data: Data) -> Bool {
+        let json = try? JSON(data: data)
+        
+        if let json = json {
+            var schedules: [Schedule] = []
+        
+            let ss = json[gameMode.rawValue].arrayValue
+            for schedule in ss {
+                schedules.append(parseSchedule(schedule: schedule))
+            }
+        
+            self.schedules = schedules
+            
+            return true
+        } else {
+            return false
+        }
     }
     
     func parseSchedule(schedule: JSON) -> Schedule {
@@ -89,7 +99,7 @@ final class ScheduleModelData: ObservableObject {
 }
 
 final class ShiftModelData: ObservableObject {
-    static let RequestURL = "https://splatoon2.ink/data/coop-schedules.json"
+    static let RequestURL = String(format: "%s%s", Splatoon2InkURL, Splatoon2InkShiftURL)
     
     @Published var shifts: [Shift] = []
     
