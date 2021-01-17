@@ -15,14 +15,18 @@ struct ScheduleView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 40) {
-                ForEach(0..<schedules.count) {i in
-                    VStack(spacing: 5) {
+                ForEach(schedules, id: \.self) { schedule in
+                    VStack(spacing: 15) {
+                        Spacer()
+                            .frame(height: 5)
+                        
                         HStack {
-                            VStack(alignment: .leading) {
-                                Text(timeDescription(startTime: schedules[i].startTime, endTime: schedules[i].endTime))
-                                    .font(.caption2)
+                            VStack(alignment: .leading, spacing: 0) {
+                                Text(status(startTime: schedule.startTime, endTime: schedule.endTime))
+                                    .font(.caption)
+                                    .fontWeight(.semibold)
                                     .foregroundColor(.secondary)
-                                Text(status(i: i, startTime: schedules[i].startTime, endTime: schedules[i].endTime))
+                                Text(schedule.rule.description)
                                     .font(.title)
                                     .fontWeight(.bold)
                                     .foregroundColor(.primary)
@@ -35,8 +39,8 @@ struct ScheduleView: View {
                         .padding(.horizontal)
                         
                         VStack(spacing: 20) {
-                            CardView(image: String(format: "%@%@", Splatnet2URL, schedules[i].stageA.image), icon: schedules[i].rule.rawValue, headline: schedules[i].rule.description, title: schedules[i].stageA.description)
-                            CardView(image: String(format: "%@%@", Splatnet2URL, schedules[i].stageB.image), icon: schedules[i].rule.rawValue, headline: schedules[i].rule.description, title: schedules[i].stageB.description)
+                            CardView(image: String(format: "%@%@", Splatnet2URL, schedule.stageA.image), title: schedule.stageA.description)
+                            CardView(image: String(format: "%@%@", Splatnet2URL, schedule.stageB.image), title: schedule.stageB.description)
                         }
                     }
                 }
@@ -51,13 +55,12 @@ struct ScheduleView: View {
         }
     }
 
-    func status(i: Int, startTime: Date, endTime: Date) -> String {
-        switch i {
-        case 0:
-            return "now"
-        case 1:
-            return "next"
-        default:
+    func status(startTime: Date, endTime: Date) -> String {
+        let current = Date()
+        
+        if startTime < current {
+            return timeDescription(startTime: startTime, endTime: endTime)
+        } else {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm"
             
