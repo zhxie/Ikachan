@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E438EF4225B5E22A005AB9D9 /* ShiftImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438EF4125B5E22A005AB9D9 /* ShiftImages.swift */; };
+		E438EF4525B5E3F8005AB9D9 /* ShiftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438EF4425B5E3F7005AB9D9 /* ShiftsView.swift */; };
+		E438EF4825B5E533005AB9D9 /* ShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438EF4725B5E533005AB9D9 /* ShiftView.swift */; };
 		E43CCBB325B015A6001A0FF5 /* XCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43CCBB225B015A6001A0FF5 /* XCardView.swift */; };
 		E43CCBB725B0338C001A0FF5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E43CCBB625B0338C001A0FF5 /* Kingfisher */; };
 		E4405D7B25AF64D2002EF1AB /* IkachanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4405D7A25AF64D2002EF1AB /* IkachanApp.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E438EF4125B5E22A005AB9D9 /* ShiftImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftImages.swift; sourceTree = "<group>"; };
+		E438EF4425B5E3F7005AB9D9 /* ShiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsView.swift; sourceTree = "<group>"; };
+		E438EF4725B5E533005AB9D9 /* ShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftView.swift; sourceTree = "<group>"; };
 		E43CCBB225B015A6001A0FF5 /* XCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCardView.swift; sourceTree = "<group>"; };
 		E4405D7725AF64D2002EF1AB /* Ikachan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ikachan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4405D7A25AF64D2002EF1AB /* IkachanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkachanApp.swift; sourceTree = "<group>"; };
@@ -104,6 +110,8 @@
 				E43CCBB225B015A6001A0FF5 /* XCardView.swift */,
 				E4E60D8225B5C9280039A6E6 /* ScheduleImages.swift */,
 				E4E60D8525B5C9DF0039A6E6 /* ScheduleView.swift */,
+				E438EF4125B5E22A005AB9D9 /* ShiftImages.swift */,
+				E438EF4725B5E533005AB9D9 /* ShiftView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -122,6 +130,7 @@
 				E468B7AF25B34EB3001254FE /* Components */,
 				E4405D7C25AF64D2002EF1AB /* ContentView.swift */,
 				E4E60D8825B5CBC80039A6E6 /* SchedulesView.swift */,
+				E438EF4425B5E3F7005AB9D9 /* ShiftsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,7 +224,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E438EF4225B5E22A005AB9D9 /* ShiftImages.swift in Sources */,
+				E438EF4525B5E3F8005AB9D9 /* ShiftsView.swift in Sources */,
 				E4405D7D25AF64D2002EF1AB /* ContentView.swift in Sources */,
+				E438EF4825B5E533005AB9D9 /* ShiftView.swift in Sources */,
 				E4405D8B25AF64E3002EF1AB /* CardView.swift in Sources */,
 				E4405D7B25AF64D2002EF1AB /* IkachanApp.swift in Sources */,
 				E477990D25B203F900F8AE9F /* Weapon.swift in Sources */,

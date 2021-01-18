@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var selection: Tab = .regular
     
     enum Tab {
+        case current
         case regular
         case ranked
         case league
@@ -34,6 +35,11 @@ struct ContentView: View {
                     Label("league", systemImage: "star")
                 }
                 .tag(Tab.league)
+            ShiftsView()
+                .tabItem {
+                    Label("salmon_run", systemImage: "star")
+                }
+                .tag(Tab.salmon_run)
         }
     }
 }
