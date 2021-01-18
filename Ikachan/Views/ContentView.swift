@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection: Tab = .regular
+    @State private var selection: Tab = .current
     
     enum Tab {
         case current
@@ -20,6 +20,11 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selection) {
+            CurrentView()
+                .tabItem {
+                    Label("current", systemImage: "house")
+                }
+                .tag(Tab.current)
             SchedulesView(gameMode: Schedule.GameMode.regular)
                 .tabItem {
                     Label("regular", systemImage: "star")
