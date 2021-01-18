@@ -150,7 +150,8 @@ final class ModelData: ObservableObject {
             }
             
             // Schedules
-            let schedulesJSON = json["schedules"].arrayValue
+            var schedulesJSON = json["schedules"].arrayValue
+            schedulesJSON = schedulesJSON.suffix(schedulesJSON.count - detailsJSON.count)
             for shift in schedulesJSON {
                 shifts.append(self.parseShift(shift: shift))
             }
