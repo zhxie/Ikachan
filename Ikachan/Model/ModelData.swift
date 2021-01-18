@@ -77,7 +77,7 @@ final class ModelData: ObservableObject {
         }
     }
     
-    func parseSchedule(schedule: JSON) -> Schedule {
+    private func parseSchedule(schedule: JSON) -> Schedule {
         let startTime = schedule["start_time"].doubleValue
         let endTime = schedule["end_time"].doubleValue
         let gameMode = schedule["game_mode"]["key"].stringValue
@@ -164,7 +164,7 @@ final class ModelData: ObservableObject {
         }
     }
     
-    func parseShift(shift: JSON) -> Shift {
+    private func parseShift(shift: JSON) -> Shift {
         let startTime = shift["start_time"].doubleValue
         let endTime = shift["end_time"].doubleValue
         
@@ -181,7 +181,7 @@ final class ModelData: ObservableObject {
         return Shift(startTime: Date(timeIntervalSince1970: startTime), endTime: Date(timeIntervalSince1970: endTime), stage: parseStage(stage_image: stage_image), weapons: weapons)
     }
     
-    func parseStage(stage_image: String?) -> Shift.Stage? {
+    private func parseStage(stage_image: String?) -> Shift.Stage? {
         if stage_image == nil {
             return nil
         }
@@ -191,7 +191,7 @@ final class ModelData: ObservableObject {
         return Shift.Stage(image: Shift.StageImage(rawValue: stage_image)!)
     }
     
-    func parseWeapon(weapon: JSON) -> Weapon {
+    private func parseWeapon(weapon: JSON) -> Weapon {
         let id = Int(weapon["id"].stringValue)!
         var image = weapon["weapon"]["image"].string
         if image == nil {
