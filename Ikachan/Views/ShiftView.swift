@@ -40,8 +40,10 @@ struct ShiftView: View {
                         
                         XCardView(image: String(format: "%@%@", Splatnet2URL, details[0].stage!.image.rawValue), title: details[0].stage!.description, subimages: mapWeaponImage(weapons: details[0].weapons))
                         
-                        Spacer()
-                            .frame(height: 45)
+                        if details.count > 1 || schedules.count > 0 {
+                            Spacer()
+                                .frame(height: 45)
+                        }
                     }
                 }
                 
@@ -72,8 +74,10 @@ struct ShiftView: View {
                         
                         XCardView(image: String(format: "%@%@", Splatnet2URL, details[1].stage!.image.rawValue), title: details[1].stage!.description, subimages: mapWeaponImage(weapons: details[1].weapons))
                         
-                        Spacer()
-                            .frame(height: 45)
+                        if schedules.count > 0 {
+                            Spacer()
+                                .frame(height: 45)
+                        }
                     }
                 }
                 
@@ -101,9 +105,6 @@ struct ShiftView: View {
                         ForEach(schedules, id: \.self) { shift in
                             SCardView(title: status(startTime: shift.startTime, endTime: shift.endTime))
                         }
-                        
-                        Spacer()
-                            .frame(height: 45)
                     }
                 }
             }
