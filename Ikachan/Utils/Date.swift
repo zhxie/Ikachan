@@ -7,35 +7,39 @@
 
 import Foundation
 
+extension Date {
+    static func -(left: Date, right: Date) -> TimeInterval {
+        return left.timeIntervalSinceReferenceDate - right.timeIntervalSinceReferenceDate
+    }
+}
+
 func timeDescription(startTime: Date, endTime: Date) -> String {
     let current = Date()
     
     if current > startTime {
-        let (day, hour, min) = timeSpan(startTime: current, endTime: endTime)
+        var elapsed = endTime - current
+        if elapsed < 0 {
+            elapsed = 0
+        }
         
-        return String(format: "%@_remaining", formatTime(day: day, hour: hour, min: min))
+        return String(format: "%@_remaining", format(interval: elapsed))
     } else {
-        let (day, hour, min) = timeSpan(startTime: current, endTime: startTime)
+        var elapsed = startTime - current
+        if elapsed < 0 {
+            elapsed = 0
+        }
         
-        return String(format: "in_%@", formatTime(day: day, hour: hour, min: min))
+        return String(format: "in_%@", format(interval: startTime - current))
     }
 }
 
-func timeSpan(startTime: Date, endTime: Date) -> (Int, Int, Int) {
-    let delta = Int(endTime.timeIntervalSinceReferenceDate - startTime.timeIntervalSinceReferenceDate)
+private func format(interval: TimeInterval) -> String {
+    let mins = Int((interval / 60).rounded())
     
-    let day = delta / 86400
-    let hour = (delta % 86400) / 3600
-    let min = (delta % 3600) / 60
+    let min = mins % 60
+    let hour = (mins % 1440) / 60
+    let day = mins / 1440
     
-    if day < 0 || hour < 0 || min < 0 {
-        return (0, 0, 0)
-    }
-    
-    return (day, hour, min)
-}
-
-func formatTime(day: Int, hour: Int, min: Int) -> String {
     var result = String(format: "%d_m", min)
     
     if hour > 0 {

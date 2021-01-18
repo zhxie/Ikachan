@@ -19,26 +19,21 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            ScheduleView(gameMode: Schedule.GameMode.regular)
+            SchedulesView(gameMode: Schedule.GameMode.regular)
                 .tabItem {
                     Label("regular", systemImage: "star")
                 }
                 .tag(Tab.regular)
-            ScheduleView(gameMode: Schedule.GameMode.gachi)
+            SchedulesView(gameMode: Schedule.GameMode.gachi)
                 .tabItem {
                     Label("ranked", systemImage: "star")
                 }
                 .tag(Tab.ranked)
-            ScheduleView(gameMode: Schedule.GameMode.league)
+            SchedulesView(gameMode: Schedule.GameMode.league)
                 .tabItem {
                     Label("league", systemImage: "star")
                 }
                 .tag(Tab.league)
-            ShiftView()
-                .tabItem {
-                    Label("salmon_run", systemImage: "star")
-                }
-                .tag(Tab.salmon_run)
         }
     }
 }

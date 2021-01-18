@@ -15,15 +15,15 @@
 		E4405D8225AF64D6002EF1AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */; };
 		E4405D8B25AF64E3002EF1AB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4405D8A25AF64E3002EF1AB /* CardView.swift */; };
 		E468B7A325B282F5001254FE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7A225B282F5001254FE /* ModelData.swift */; };
-		E468B7AA25B34A08001254FE /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7A925B34A08001254FE /* ScheduleView.swift */; };
 		E468B7AD25B34AFC001254FE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7AC25B34AFC001254FE /* Constant.swift */; };
 		E468B7B525B46080001254FE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
-		E468B7BB25B49211001254FE /* ShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7BA25B49211001254FE /* ShiftView.swift */; };
-		E468B7BE25B4A118001254FE /* SCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7BD25B4A118001254FE /* SCardView.swift */; };
 		E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E477990725B1F62500F8AE9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E477990625B1F62500F8AE9F /* SwiftyJSON */; };
 		E477990A25B2029C00F8AE9F /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990925B2029C00F8AE9F /* Shift.swift */; };
 		E477990D25B203F900F8AE9F /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990C25B203F900F8AE9F /* Weapon.swift */; };
+		E4E60D8325B5C9280039A6E6 /* ScheduleImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60D8225B5C9280039A6E6 /* ScheduleImages.swift */; };
+		E4E60D8625B5C9DF0039A6E6 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60D8525B5C9DF0039A6E6 /* ScheduleView.swift */; };
+		E4E60D8925B5CBC80039A6E6 /* SchedulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60D8825B5CBC80039A6E6 /* SchedulesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,14 +36,14 @@
 		E4405D8325AF64D6002EF1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4405D8A25AF64E3002EF1AB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E468B7A225B282F5001254FE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-		E468B7A925B34A08001254FE /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		E468B7AC25B34AFC001254FE /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E468B7B425B46080001254FE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		E468B7BA25B49211001254FE /* ShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftView.swift; sourceTree = "<group>"; };
-		E468B7BD25B4A118001254FE /* SCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCardView.swift; sourceTree = "<group>"; };
 		E477990125B1F1F600F8AE9F /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E477990925B2029C00F8AE9F /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
 		E477990C25B203F900F8AE9F /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		E4E60D8225B5C9280039A6E6 /* ScheduleImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleImages.swift; sourceTree = "<group>"; };
+		E4E60D8525B5C9DF0039A6E6 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		E4E60D8825B5CBC80039A6E6 /* SchedulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,8 @@
 			children = (
 				E4405D8A25AF64E3002EF1AB /* CardView.swift */,
 				E43CCBB225B015A6001A0FF5 /* XCardView.swift */,
-				E468B7BD25B4A118001254FE /* SCardView.swift */,
+				E4E60D8225B5C9280039A6E6 /* ScheduleImages.swift */,
+				E4E60D8525B5C9DF0039A6E6 /* ScheduleView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -120,8 +121,7 @@
 			children = (
 				E468B7AF25B34EB3001254FE /* Components */,
 				E4405D7C25AF64D2002EF1AB /* ContentView.swift */,
-				E468B7A925B34A08001254FE /* ScheduleView.swift */,
-				E468B7BA25B49211001254FE /* ShiftView.swift */,
+				E4E60D8825B5CBC80039A6E6 /* SchedulesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,14 +220,14 @@
 				E4405D7B25AF64D2002EF1AB /* IkachanApp.swift in Sources */,
 				E477990D25B203F900F8AE9F /* Weapon.swift in Sources */,
 				E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */,
-				E468B7AA25B34A08001254FE /* ScheduleView.swift in Sources */,
+				E4E60D8625B5C9DF0039A6E6 /* ScheduleView.swift in Sources */,
 				E468B7A325B282F5001254FE /* ModelData.swift in Sources */,
-				E468B7BE25B4A118001254FE /* SCardView.swift in Sources */,
+				E4E60D8925B5CBC80039A6E6 /* SchedulesView.swift in Sources */,
 				E468B7AD25B34AFC001254FE /* Constant.swift in Sources */,
 				E468B7B525B46080001254FE /* Date.swift in Sources */,
+				E4E60D8325B5C9280039A6E6 /* ScheduleImages.swift in Sources */,
 				E477990A25B2029C00F8AE9F /* Shift.swift in Sources */,
 				E43CCBB325B015A6001A0FF5 /* XCardView.swift in Sources */,
-				E468B7BB25B49211001254FE /* ShiftView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

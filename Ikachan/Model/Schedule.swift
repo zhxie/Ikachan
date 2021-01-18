@@ -27,6 +27,17 @@ struct Schedule: Hashable, Codable {
                 return "league"
             }
         }
+        
+        var longDescription: String {
+            switch self {
+            case .regular:
+                return "regular_battle"
+            case .gachi:
+                return "ranked_battle"
+            case .league:
+                return "league_battle"
+            }
+        }
     }
     
     var rule: Rule
