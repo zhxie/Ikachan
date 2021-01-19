@@ -27,7 +27,7 @@
 "turf" = "Turf";
 "zones" = "Zones";
 "tower" = "Tower";
-"rainmaker" = "Rainmaker";
+"rainmaker_short" = "Rainmaker";
 "clam" = "Clam";
 
 // Stage
@@ -103,7 +103,7 @@
 "heavy_splatling" = "Heavy Splatling";
 "hydra_splatling" = "Hydra Splatling";
 "ballpoint_splatling" = "Ballpoint Splatling";
-"nautilus_47" = "Nautilus 47";
+"nautilus_47" = "Nautilus";
 "dapple_dualies" = "Dapple Dualies";
 "splat_dualies" = "Splat Dualies";
 "glooga_dualies" = "Glooga Dualies";

@@ -1,0 +1,131 @@
+/*
+  Localization.strings
+  Ikachan
+
+  Created by Sketch on 2021/1/19.
+  
+*/
+
+// Game mode
+"regular" = "普通";
+"ranked" = "排名";
+"league" = "组队";
+
+"regular_battle" = "普通对战";
+"ranked_battle" = "排名对战";
+"league_battle" = "组队对战";
+
+"salmon_run" = "Salmon Run";
+
+// Rule
+"turf_war" = "地盘战";
+"splat_zones" = "区域战";
+"tower_control" = "推塔战";
+"rainmaker" = "抢鱼战";
+"clam_blitz" = "蛤蜊战";
+
+"turf" = "涂地";
+"zones" = "区域";
+"tower" = "推塔";
+"rainmaker_short" = "抢鱼";
+"clam" = "蛤蜊";
+
+// Stage
+"the_reef" = "青花鱼寿司街";
+"mussel_forge_fitness" = "贻贝健身房";
+"starfish_mainstage" = "海星音乐堂";
+"sturgeon_shipyard" = "鲟鱼造船厂";
+"inkblot_art_academy" = "海女美术大学";
+"humpback_pump_track" = "座头鲸赛车跑道";
+"manta_maria" = "曼塔玛丽亚号";
+"port_mackerel" = "鲭鱼码头";
+"moray_towers" = "带鱼双塔";
+"snapper_canal" = "红鱼河川";
+"kelp_dome" = "海带温室园";
+"blackbelly_skatepark" = "海鲈滑板公园";
+"sehllendorf_institute" = "海洋博物馆";
+"mako_mart" = "鲭鲨超市";
+"walleye_warehouse" = "箱鲀仓库";
+"arowana_mall" = "骨舌鱼商业街";
+"camp_triggerfish" = "鲀鱼营地";
+"piranha_pit" = "水虎鱼矿山";
+"goby_arena" = "虾虎鱼篮球场";
+"new_albacore_hotel" = "新金枪鱼酒店";
+"wahoo_world" = "刺鲅游乐园";
+"ancho_v_games" = "凤尾鱼游戏公司";
+"skipper_pavilion" = "弹涂鱼楼";
+
+"spawning_grounds" = "鲑鱼大坝";
+"marooners_bay" = "遇难船唐·布拉科";
+"lost_outpost" = "海上聚落鲑鱼屠场";
+"salmonid_smokeyard" = "熏不时鲑工房";
+"ruins_of_ark_polaris" = "腐朽的方舟 北极星";
+
+// Weapon
+"sploosh_o_matic" = "喇叭";
+"splattershot_jr" = "新叶";
+"splash_o_matic" = "针管";
+"aerospray_mg" = "银喷";
+"splattershot" = "小绿";
+"_52_gal" = ".52 加仑";
+"n_zap_85" = "N-ZAP";
+"splattershot_pro" = "精英枪";
+"_96_gal" = ".96 加仑";
+"jet_squelcher" = "篮管";
+"luna_blaster" = "Nova";
+"blaster" = "热泡";
+"range_blaster" = "长热泡";
+"clash_blaster" = "蜡笔泡";
+"rapid_blaster" = "红泡";
+"rapid_blaster_pro" = "长红泡";
+"l_3_nozzlenose" = "L-3";
+"h_3_nozzlenose" = "H-3";
+"squeezer" = "香槟";
+"carbon_roller" = "碳刷";
+"splat_roller" = "中刷";
+"dynamo_roller" = "重刷";
+"flingza_roller" = "钢笔刷";
+"inkbrush" = "笔刷";
+"octobrush" = "毛刷";
+"classic_squiffer" = "短狙";
+"splat_charger" = "中狙";
+"splatterscope" = "镜中狙";
+"e_liter_4k" = "4K";
+"e_liter_4k_scope" = "镜4K";
+"bamboozler_14_mk_i" = "竹子";
+"goo_tuber" = "水管";
+"slosher" = "红桶";
+"tri_slosher" = "绿桶";
+"sloshing_machine" = "洗衣机";
+"bloblobber" = "浴缸";
+"explosher" = "爆炸桶";
+"splatling" = "轻加";
+"heavy_splatling" = "中加";
+"hydra_splatling" = "消防栓";
+"ballpoint_splatling" = "圆珠笔";
+"nautilus_47" = "鹦鹉螺";
+"dapple_dualies" = "牙刷";
+"splat_dualies" = "绿双";
+"glooga_dualies" = "525";
+"dualie_squelchers" = "红双";
+"dark_tetra_dualies" = "四滚";
+"splat_brella" = "伞";
+"tenta_brella" = "露营伞";
+"undercover_brella" = "间谍伞";
+"random" = "随机";
+
+// Util
+"%@_remaining" = "剩余%@";
+"in_%@" = "%@后";
+"%d_m" = "%d分";
+"%d_h_%@" = "%d小时%@";
+"%d_d_%@" = "%d日%@";
+
+// UI
+"schedule" = "日程";
+"shift" = "排班表";
+"current" = "当前";
+"open" = "现正开放!";
+"soon" = "即将开放";
+"next" = "接下来";
+"future" = "之后";

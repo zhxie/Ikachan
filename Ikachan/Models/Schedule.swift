@@ -73,7 +73,7 @@ struct Schedule: Hashable, Codable {
             case .towerControl:
                 return "tower"
             case .rainmaker:
-                return "rainmaker"
+                return "rainmaker_short"
             case .clamBlitz:
                 return "clam"
             }

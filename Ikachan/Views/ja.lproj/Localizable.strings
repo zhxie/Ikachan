@@ -1,0 +1,131 @@
+/*
+  Localization.strings
+  Ikachan
+
+  Created by Sketch on 2021/1/19.
+  
+*/
+
+// Game mode
+"regular" = "レギュラー";
+"ranked" = "ガチ";
+"league" = "リーグ";
+
+"regular_battle" = "レギュラーマッチ";
+"ranked_battle" = "ガチマッチ";
+"league_battle" = "リーグマッチ";
+
+"salmon_run" = "サーモンラン";
+
+// Rule
+"turf_war" = "ナワバリバトル";
+"splat_zones" = "ガチエリア";
+"tower_control" = "ガチヤグラ";
+"rainmaker" = "ガチホコバトル";
+"clam_blitz" = "ガチアサリ";
+
+"turf" = "ナワバリ";
+"zones" = "ガチエリア";
+"tower" = "ガチヤグラ";
+"rainmaker_short" = "ガチホコ";
+"clam" = "ガチアサリ";
+
+// Stage
+"the_reef" = "バッテラストリート";
+"mussel_forge_fitness" = "フジツボスポーツクラブ";
+"starfish_mainstage" = "ガンガゼ野外音楽堂";
+"sturgeon_shipyard" = "チョウザメ造船";
+"inkblot_art_academy" = "海女美術大学";
+"humpback_pump_track" = "コンブトラック";
+"manta_maria" = "マンタマリア号";
+"port_mackerel" = "ホッケふ頭";
+"moray_towers" = "タチウオパーキング";
+"snapper_canal" = "エンガワ河川敷";
+"kelp_dome" = "モズク農園";
+"blackbelly_skatepark" = "Bバスパーク";
+"sehllendorf_institute" = "デボン海洋博物館";
+"mako_mart" = "ザトウマーケット";
+"walleye_warehouse" = "ハコフグ倉庫";
+"arowana_mall" = "アロワナモール";
+"camp_triggerfish" = "モンガラキャンプ場";
+"piranha_pit" = "ショッツル鉱山";
+"goby_arena" = "アジフライスタジアム";
+"new_albacore_hotel" = "ホテルニューオートロ";
+"wahoo_world" = "スメーシーワールド";
+"ancho_v_games" = "アンチョビットゲームズ";
+"skipper_pavilion" = "ムツゴ楼";
+
+"spawning_grounds" = "シェケナダム";
+"marooners_bay" = "難破船ドン・ブラコ";
+"lost_outpost" = "海上集落シャケト場";
+"salmonid_smokeyard" = "トキシラズいぶし工房";
+"ruins_of_ark_polaris" = "朽ちた箱舟 ポラリス";
+
+// Weapon
+"sploosh_o_matic" = "ボールドマーカー";
+"splattershot_jr" = "わかばシューター";
+"splash_o_matic" = "シャープマーカー";
+"aerospray_mg" = "プロモデラー";
+"splattershot" = "スプラシューター";
+"_52_gal" = ".52ガロン";
+"n_zap_85" = "N-ZAP";
+"splattershot_pro" = "プライムシューター";
+"_96_gal" = ".96ガロン";
+"jet_squelcher" = "ジェットスイーパー";
+"luna_blaster" = "ノヴァブラスター";
+"blaster" = "ホットブラスター";
+"range_blaster" = "ロングブラスター";
+"clash_blaster" = "クラッシュブラスター";
+"rapid_blaster" = "ラピッドブラスター";
+"rapid_blaster_pro" = "Rブラスターエリート";
+"l_3_nozzlenose" = "L3リールガン";
+"h_3_nozzlenose" = "H3リールガン";
+"squeezer" = "ボトルガイザー";
+"carbon_roller" = "カーボンローラー";
+"splat_roller" = "スプラローラー";
+"dynamo_roller" = "ダイナモローラー";
+"flingza_roller" = "ヴァリアブルローラー";
+"inkbrush" = "パブロ";
+"octobrush" = "ホクサイ";
+"classic_squiffer" = "スクイックリン";
+"splat_charger" = "スプラチャージャー";
+"splatterscope" = "スプラスコープ";
+"e_liter_4k" = "リッター4K";
+"e_liter_4k_scope" = "4Kスコープ";
+"bamboozler_14_mk_i" = "14式竹筒銃";
+"goo_tuber" = "ソイチューバー";
+"slosher" = "バケットスロッシャー";
+"tri_slosher" = "ヒッセン";
+"sloshing_machine" = "スクリュースロッシャー";
+"bloblobber" = "オーバーフロッシャー";
+"explosher" = "エクスプロッシャー";
+"splatling" = "スプラスピナー";
+"heavy_splatling" = "バレルスピナー";
+"hydra_splatling" = "ハイドラント";
+"ballpoint_splatling" = "クーゲルシュライバー";
+"nautilus_47" = "ノーチラス";
+"dapple_dualies" = "スパッタリー";
+"splat_dualies" = "スプラマニューバー";
+"glooga_dualies" = "ケルビン525";
+"dualie_squelchers" = "デュアルスイーパー";
+"dark_tetra_dualies" = "クアッドホッパー";
+"splat_brella" = "パラシェルター";
+"tenta_brella" = "キャンピングシェルター";
+"undercover_brella" = "スパイガジェット";
+"random" = "ランダム";
+
+// Util
+"%@_remaining" = "残り%@";
+"in_%@" = "%@後";
+"%d_m" = "%d分";
+"%d_h_%@" = "%d時間%@";
+"%d_d_%@" = "%d日%@";
+
+// UI
+"schedule" = "スケジュール";
+"shift" = "シフト表";
+"current" = "いま";
+"open" = "オープン!";
+"soon" = "もうすぐ";
+"next" = "つぎ";
+"future" = "そのつぎ";
