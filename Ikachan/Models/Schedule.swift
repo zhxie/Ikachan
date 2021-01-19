@@ -111,8 +111,8 @@ struct Schedule: Hashable, Codable {
                 return "kelp_dome"
             case .blackbellySkatepark:
                 return "blackbelly_skatepark"
-            case .shellendorfInstitude:
-                return "sehllendorf_institude"
+            case .shellendorfInstitute:
+                return "sehllendorf_institute"
             case .makoMart:
                 return "mako_mart"
             case .walleyeWarehouse:
@@ -150,7 +150,7 @@ struct Schedule: Hashable, Codable {
         case snapperCanal = 9
         case kelpDome = 10
         case blackbellySkatepark = 11
-        case shellendorfInstitude = 12
+        case shellendorfInstitute = 12
         case makoMart = 13
         case walleyeWarehouse = 14
         case arowanaMall = 15

@@ -25,6 +25,7 @@
 		E477990725B1F62500F8AE9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E477990625B1F62500F8AE9F /* SwiftyJSON */; };
 		E477990A25B2029C00F8AE9F /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990925B2029C00F8AE9F /* Shift.swift */; };
 		E477990D25B203F900F8AE9F /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990C25B203F900F8AE9F /* Weapon.swift */; };
+		E4C7A2B525B7336B00E26B20 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7A2B425B7336B00E26B20 /* Localization.strings */; };
 		E4E60D8325B5C9280039A6E6 /* ScheduleImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60D8225B5C9280039A6E6 /* ScheduleImages.swift */; };
 		E4E60D8625B5C9DF0039A6E6 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60D8525B5C9DF0039A6E6 /* ScheduleView.swift */; };
 		E4E60D8925B5CBC80039A6E6 /* SchedulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60D8825B5CBC80039A6E6 /* SchedulesView.swift */; };
@@ -49,6 +50,7 @@
 		E477990125B1F1F600F8AE9F /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E477990925B2029C00F8AE9F /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
 		E477990C25B203F900F8AE9F /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		E4C7A2B425B7336B00E26B20 /* Localization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localization.strings; sourceTree = "<group>"; };
 		E4E60D8225B5C9280039A6E6 /* ScheduleImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleImages.swift; sourceTree = "<group>"; };
 		E4E60D8525B5C9DF0039A6E6 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		E4E60D8825B5CBC80039A6E6 /* SchedulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesView.swift; sourceTree = "<group>"; };
@@ -87,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				E468B7B325B46070001254FE /* Utils */,
-				E477990025B1F1E600F8AE9F /* Model */,
+				E477990025B1F1E600F8AE9F /* Models */,
 				E47798FD25B1EDDA00F8AE9F /* Views */,
 				E4405D7A25AF64D2002EF1AB /* IkachanApp.swift */,
 				E4405D7E25AF64D6002EF1AB /* Assets.xcassets */,
@@ -134,11 +136,12 @@
 				E438EF5B25B5F939005AB9D9 /* CurrentView.swift */,
 				E4E60D8825B5CBC80039A6E6 /* SchedulesView.swift */,
 				E438EF4425B5E3F7005AB9D9 /* ShiftsView.swift */,
+				E4C7A2B425B7336B00E26B20 /* Localization.strings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		E477990025B1F1E600F8AE9F /* Model */ = {
+		E477990025B1F1E600F8AE9F /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				E468B7AC25B34AFC001254FE /* Constant.swift */,
@@ -147,7 +150,7 @@
 				E477990925B2029C00F8AE9F /* Shift.swift */,
 				E477990C25B203F900F8AE9F /* Weapon.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +198,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
+				"zh-Hans",
 			);
 			mainGroup = E4405D6E25AF64D2002EF1AB;
 			packageReferences = (
@@ -216,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4405D8225AF64D6002EF1AB /* Preview Assets.xcassets in Resources */,
+				E4C7A2B525B7336B00E26B20 /* Localization.strings in Resources */,
 				E4405D7F25AF64D6002EF1AB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
