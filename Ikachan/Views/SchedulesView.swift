@@ -36,6 +36,7 @@ struct SchedulesView: View {
                                 .tag(gameMode)
                         }
                     }
+                    .pickerStyle(SegmentedPickerStyle())
                 }
             }
         }

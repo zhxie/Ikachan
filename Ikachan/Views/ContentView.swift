@@ -8,21 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection: Tab = .current
+    @State private var selection: Tab = .schedule
     
     enum Tab {
-        case current
         case schedule
         case shift
     }
     
     var body: some View {
         TabView(selection: $selection) {
-            CurrentView()
-                .tabItem {
-                    Label("current", systemImage: "house")
-                }
-                .tag(Tab.current)
             SchedulesView()
                 .tabItem {
                     Label("schedule", systemImage: "calendar")
