@@ -17,104 +17,94 @@ struct ShiftImages: View {
     var subImage4: String
     
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
-                Spacer()
-                    .frame(width: 15)
-                
-                VStack {
-                    KFImage(URL(string: image)!)
-                        .placeholder {
-                            Rectangle()
-                                .foregroundColor(Color(UIColor.systemGroupedBackground))
-                                .aspectRatio(16 / 9, contentMode: .fit)
-                                .frame(height: 1080)
-                        }
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(15.0)
-                    
-                    Text(title)
-                        .font(.footnote)
-                        .foregroundColor(.primary)
-                }
-                
-                VStack {
-                    VStack(spacing: 0) {
-                        HStack(spacing: 0) {
-                            Rectangle()
-                                .fill(Color(UIColor.systemBackground))
-                                .aspectRatio(16 / 9, contentMode: .fit)
-                                .overlay(
-                                    KFImage(URL(string: subImage1)!)
-                                        .placeholder {
-                                            Circle()
-                                                .foregroundColor(Color(UIColor.systemGroupedBackground))
-                                                .aspectRatio(1.0, contentMode: .fit)
-                                                .frame(height: 1080)
-                                        }
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                )
-                            Rectangle()
-                                .fill(Color(UIColor.systemBackground))
-                                .aspectRatio(16 / 9, contentMode: .fit)
-                                .overlay(
-                                    KFImage(URL(string: subImage2)!)
-                                        .placeholder {
-                                            Circle()
-                                                .foregroundColor(Color(UIColor.systemGroupedBackground))
-                                                .aspectRatio(1.0, contentMode: .fit)
-                                                .frame(height: 1080)
-                                        }
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                )
-                        }
-                        
-                        HStack(spacing: 0) {
-                            Rectangle()
-                                .fill(Color(UIColor.systemBackground))
-                                .aspectRatio(16 / 9, contentMode: .fit)
-                                .overlay(
-                                    KFImage(URL(string: subImage3)!)
-                                        .placeholder {
-                                            Circle()
-                                                .foregroundColor(Color(UIColor.systemGroupedBackground))
-                                                .aspectRatio(1.0, contentMode: .fit)
-                                                .frame(height: 1080)
-                                        }
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                )
-                            Rectangle()
-                                .fill(Color(UIColor.systemBackground))
-                                .aspectRatio(16 / 9, contentMode: .fit)
-                                .overlay(
-                                    KFImage(URL(string: subImage4)!)
-                                        .placeholder {
-                                            Circle()
-                                                .foregroundColor(Color(UIColor.systemGroupedBackground))
-                                                .aspectRatio(1.0, contentMode: .fit)
-                                                .frame(height: 1080)
-                                        }
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                )
-                        }
+        HStack {
+            VStack {
+                KFImage(URL(string: image)!)
+                    .placeholder {
+                        Rectangle()
+                            .foregroundColor(Color(UIColor.systemGroupedBackground))
+                            .aspectRatio(16 / 9, contentMode: .fit)
+                            .frame(height: 1080)
                     }
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(15.0)
                 
-                    Text("weapons")
-                        .font(.footnote)
-                        .foregroundColor(.clear)
-                }
-                
-                Spacer()
-                    .frame(width: 15)
+                Text(title)
+                    .font(.footnote)
+                    .foregroundColor(.primary)
             }
-            .frame(width: UIScreen.main.bounds.size.width)
+            
+            VStack {
+                VStack(spacing: 0) {
+                    HStack(spacing: 0) {
+                        Rectangle()
+                            .fill(Color(UIColor.systemBackground))
+                            .aspectRatio(16 / 9, contentMode: .fit)
+                            .overlay(
+                                KFImage(URL(string: subImage1)!)
+                                    .placeholder {
+                                        Circle()
+                                            .foregroundColor(Color(UIColor.systemGroupedBackground))
+                                            .aspectRatio(1.0, contentMode: .fit)
+                                            .frame(height: 1080)
+                                    }
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            )
+                        Rectangle()
+                            .fill(Color(UIColor.systemBackground))
+                            .aspectRatio(16 / 9, contentMode: .fit)
+                            .overlay(
+                                KFImage(URL(string: subImage2)!)
+                                    .placeholder {
+                                        Circle()
+                                            .foregroundColor(Color(UIColor.systemGroupedBackground))
+                                            .aspectRatio(1.0, contentMode: .fit)
+                                            .frame(height: 1080)
+                                    }
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            )
+                    }
+                    
+                    HStack(spacing: 0) {
+                        Rectangle()
+                            .fill(Color(UIColor.systemBackground))
+                            .aspectRatio(16 / 9, contentMode: .fit)
+                            .overlay(
+                                KFImage(URL(string: subImage3)!)
+                                    .placeholder {
+                                        Circle()
+                                            .foregroundColor(Color(UIColor.systemGroupedBackground))
+                                            .aspectRatio(1.0, contentMode: .fit)
+                                            .frame(height: 1080)
+                                    }
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            )
+                        Rectangle()
+                            .fill(Color(UIColor.systemBackground))
+                            .aspectRatio(16 / 9, contentMode: .fit)
+                            .overlay(
+                                KFImage(URL(string: subImage4)!)
+                                    .placeholder {
+                                        Circle()
+                                            .foregroundColor(Color(UIColor.systemGroupedBackground))
+                                            .aspectRatio(1.0, contentMode: .fit)
+                                            .frame(height: 1080)
+                                    }
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            )
+                    }
+                }
+            
+                Text("weapons")
+                    .font(.footnote)
+                    .foregroundColor(.clear)
+            }
         }
-        .transition(.move(edge: .bottom))
     }
 }
 

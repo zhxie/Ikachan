@@ -15,51 +15,41 @@ struct ScheduleImages: View {
     var titleB: String
     
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
-                Spacer()
-                    .frame(width: 15)
+        HStack {
+            VStack {
+                KFImage(URL(string: imageA)!)
+                    .placeholder {
+                        Rectangle()
+                            .foregroundColor(Color(UIColor.systemGroupedBackground))
+                            .aspectRatio(16 / 9, contentMode: .fit)
+                            .frame(height: 1080)
+                    }
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(15.0)
                 
-                VStack {
-                    KFImage(URL(string: imageA)!)
-                        .placeholder {
-                            Rectangle()
-                                .foregroundColor(Color(UIColor.systemGroupedBackground))
-                                .aspectRatio(16 / 9, contentMode: .fit)
-                                .frame(height: 1080)
-                        }
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(15.0)
-                    
-                    Text(titleA)
-                        .font(.footnote)
-                        .foregroundColor(.primary)
-                }
-                
-                VStack {
-                    KFImage(URL(string: imageB)!)
-                        .placeholder {
-                            Rectangle()
-                                .foregroundColor(Color(UIColor.systemGroupedBackground))
-                                .aspectRatio(16 / 9, contentMode: .fit)
-                                .frame(height: 1080)
-                        }
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(15.0)
-                    
-                    Text(titleB)
-                        .font(.footnote)
-                        .foregroundColor(.primary)
-                }
-                
-                Spacer()
-                    .frame(width: 15)
+                Text(titleA)
+                    .font(.footnote)
+                    .foregroundColor(.primary)
             }
-            .frame(width: UIScreen.main.bounds.size.width)
+            
+            VStack {
+                KFImage(URL(string: imageB)!)
+                    .placeholder {
+                        Rectangle()
+                            .foregroundColor(Color(UIColor.systemGroupedBackground))
+                            .aspectRatio(16 / 9, contentMode: .fit)
+                            .frame(height: 1080)
+                    }
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(15.0)
+                
+                Text(titleB)
+                    .font(.footnote)
+                    .foregroundColor(.primary)
+            }
         }
-        .transition(.move(edge: .bottom))
     }
 }
 

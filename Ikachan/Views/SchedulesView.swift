@@ -18,7 +18,6 @@ struct SchedulesView: View {
                 VStack {
                     ForEach(schedules, id: \.self) { schedule in
                         Divider()
-                            .padding(.horizontal)
                         
                         ScheduleView(schedule: schedule)
                         
@@ -26,7 +25,7 @@ struct SchedulesView: View {
                             .frame(height: 15)
                     }
                 }
-                .padding(.vertical)
+                .padding()
                 .navigationTitle(gameMode.longDescription)
             }
             .toolbar {

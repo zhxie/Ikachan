@@ -32,7 +32,6 @@ struct ScheduleView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 50, height: 50)
             }
-            .padding(.horizontal)
             
             ScheduleImages(imageA: Splatnet2URL + schedule.stageA.image, titleA: schedule.stageA.description, imageB: Splatnet2URL + schedule.stageB.image, titleB: schedule.stageB.description)
         }

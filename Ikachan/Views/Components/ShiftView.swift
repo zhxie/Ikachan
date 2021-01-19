@@ -33,7 +33,6 @@ struct ShiftView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 50, height: 50)
             }
-            .padding(.horizontal)
             
             if let stage = shift.stage {
                 ShiftImages(image: Splatnet2URL + stage.image.rawValue, title: stage.description, subImage1: Splatnet2URL + shift.weapons[0].image, subImage2: Splatnet2URL + shift.weapons[1].image, subImage3: Splatnet2URL + shift.weapons[2].image, subImage4: Splatnet2URL + shift.weapons[3].image)

@@ -25,12 +25,12 @@ struct ContentView: View {
                 .tag(Tab.current)
             SchedulesView()
                 .tabItem {
-                    Label("schedule", systemImage: "star")
+                    Label("schedule", systemImage: "calendar")
                 }
                 .tag(Tab.schedule)
             ShiftsView()
                 .tabItem {
-                    Label("shift", systemImage: "star")
+                    Label("shift", systemImage: "hammer")
                 }
                 .tag(Tab.shift)
         }

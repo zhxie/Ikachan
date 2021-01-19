@@ -16,7 +16,6 @@ struct ShiftsView: View {
                 VStack {
                     if let first = current {
                         Divider()
-                            .padding(.horizontal)
                         
                         ShiftView(shift: first, title: title(startTime: first.startTime))
                         
@@ -26,7 +25,6 @@ struct ShiftsView: View {
                     
                     ForEach(nexts, id: \.self) { shift in
                         Divider()
-                            .padding(.horizontal)
                         
                         ShiftView(shift: shift, title: "next")
                         
@@ -36,7 +34,6 @@ struct ShiftsView: View {
                     
                     ForEach(schedules, id: \.self) { shift in
                         Divider()
-                            .padding(.horizontal)
                         
                         ShiftView(shift: shift, title: "future")
                         
@@ -44,7 +41,7 @@ struct ShiftsView: View {
                             .frame(height: 15)
                     }
                 }
-                .padding(.vertical)
+                .padding()
                 .navigationTitle("salmon_run")
             }
         }
