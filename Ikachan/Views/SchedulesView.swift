@@ -10,7 +10,7 @@ import SwiftUI
 struct SchedulesView: View {
     @EnvironmentObject var modelData: ModelData
     
-    var gameMode: Schedule.GameMode
+    @State var gameMode = Schedule.GameMode.regular
     
     var body: some View {
         NavigationView {
@@ -28,6 +28,16 @@ struct SchedulesView: View {
                 }
                 .padding(.vertical)
                 .navigationTitle(gameMode.longDescription)
+            }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Picker(selection: $gameMode, label: Text("")) {
+                        ForEach(Schedule.GameMode.allCases, id: \.self) { gameMode in
+                            Text(gameMode.rawValue)
+                                .tag(gameMode)
+                        }
+                    }
+                }
             }
         }
         .onAppear(perform: update)
@@ -52,7 +62,7 @@ struct SchedulesView_Previews: PreviewProvider {
         
         _ = modelData.loadSchedules(data: asset.data)
         
-        return SchedulesView(gameMode: Schedule.GameMode.gachi)
+        return SchedulesView()
             .environmentObject(modelData)
     }
 }

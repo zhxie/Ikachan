@@ -16,7 +16,7 @@ struct ScheduleView: View {
                 VStack(alignment: .leading, spacing: 5) {
                     Text(schedule.rule.description)
                         .font(.title2)
-                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .fontWeight(.bold)
                         .foregroundColor(.primary)
                         .lineLimit(1)
                     Text(status(startTime: schedule.startTime, endTime: schedule.endTime))

@@ -12,10 +12,8 @@ struct ContentView: View {
     
     enum Tab {
         case current
-        case regular
-        case ranked
-        case league
-        case salmon_run
+        case schedule
+        case shift
     }
     
     var body: some View {
@@ -25,26 +23,16 @@ struct ContentView: View {
                     Label("current", systemImage: "house")
                 }
                 .tag(Tab.current)
-            SchedulesView(gameMode: Schedule.GameMode.regular)
+            SchedulesView()
                 .tabItem {
-                    Label("regular", systemImage: "star")
+                    Label("schedule", systemImage: "star")
                 }
-                .tag(Tab.regular)
-            SchedulesView(gameMode: Schedule.GameMode.gachi)
-                .tabItem {
-                    Label("ranked", systemImage: "star")
-                }
-                .tag(Tab.ranked)
-            SchedulesView(gameMode: Schedule.GameMode.league)
-                .tabItem {
-                    Label("league", systemImage: "star")
-                }
-                .tag(Tab.league)
+                .tag(Tab.schedule)
             ShiftsView()
                 .tabItem {
-                    Label("salmon_run", systemImage: "star")
+                    Label("shift", systemImage: "star")
                 }
-                .tag(Tab.salmon_run)
+                .tag(Tab.shift)
         }
     }
 }
