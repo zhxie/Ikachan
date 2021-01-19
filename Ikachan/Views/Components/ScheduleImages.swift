@@ -10,9 +10,9 @@ import Kingfisher
 
 struct ScheduleImages: View {
     var imageA: String
-    var titleA: String
+    var titleA: LocalizedStringKey
     var imageB: String
-    var titleB: String
+    var titleB: LocalizedStringKey
     
     var body: some View {
         HStack {

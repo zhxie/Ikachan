@@ -10,7 +10,7 @@ import Kingfisher
 
 struct ShiftImages: View {
     var image: String
-    var title: String
+    var title: LocalizedStringKey
     var subImage1: String
     var subImage2: String
     var subImage3: String

@@ -24,7 +24,7 @@ struct ContentView: View {
                 .tag(Tab.schedule)
             ShiftsView()
                 .tabItem {
-                    Label("shift", systemImage: "hammer")
+                    Label("shift", systemImage: "person.crop.square.fill.and.at.rectangle")
                 }
                 .tag(Tab.shift)
         }

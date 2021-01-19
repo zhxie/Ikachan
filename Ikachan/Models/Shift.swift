@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Shift: Hashable, Codable {
     var startTime: Date
@@ -15,7 +16,7 @@ struct Shift: Hashable, Codable {
     struct Stage: Hashable, Codable {
         var image: StageImage
         
-        var description: String {
+        var description: LocalizedStringKey {
             switch self.image {
             case .spawningGrounds:
                 return "spawning_grounds"

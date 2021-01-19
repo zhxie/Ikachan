@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Weapon: Hashable, Codable {
     var id: WeaponId
@@ -66,7 +67,7 @@ struct Weapon: Hashable, Codable {
     
     var image: String
     
-    var description: String {
+    var description: LocalizedStringKey {
         switch self.id {
         case .bold:
             return "sploosh_o_matic"

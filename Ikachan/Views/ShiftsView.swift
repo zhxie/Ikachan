@@ -72,7 +72,7 @@ struct ShiftsView: View {
         }
     }
     
-    func title(startTime: Date) -> String {
+    func title(startTime: Date) -> LocalizedStringKey {
         let current = Date()
         
         if startTime < current {

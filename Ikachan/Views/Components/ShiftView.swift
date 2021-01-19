@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShiftView: View {
     var shift: Shift
-    var title: String
+    var title: LocalizedStringKey
     
     var body: some View {
         VStack {

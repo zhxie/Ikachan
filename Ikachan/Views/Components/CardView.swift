@@ -10,7 +10,7 @@ import Kingfisher
 
 struct CardView: View {
     var image: String
-    var title: String
+    var title: LocalizedStringKey
     
     var body: some View {
         VStack(spacing: 0) {

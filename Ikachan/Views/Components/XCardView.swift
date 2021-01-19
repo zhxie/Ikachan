@@ -10,7 +10,7 @@ import Kingfisher
 
 struct XCardView: View {
     var image: String
-    var title: String
+    var title: LocalizedStringKey
     var subimages: [String]
     
     var body: some View {

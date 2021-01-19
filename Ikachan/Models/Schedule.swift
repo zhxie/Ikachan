@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Schedule: Hashable, Codable {
     var startTime: Date
@@ -17,7 +18,7 @@ struct Schedule: Hashable, Codable {
         case gachi = "gachi"
         case league = "league"
         
-        var description: String {
+        var description: LocalizedStringKey {
             switch self {
             case .regular:
                 return "regular"
@@ -28,7 +29,7 @@ struct Schedule: Hashable, Codable {
             }
         }
         
-        var longDescription: String {
+        var longDescription: LocalizedStringKey {
             switch self {
             case .regular:
                 return "regular_battle"
@@ -48,7 +49,7 @@ struct Schedule: Hashable, Codable {
         case rainmaker = "rainmaker"
         case clamBlitz = "clam_blitz"
         
-        var description: String {
+        var description: LocalizedStringKey {
             switch self {
             case .turfWar:
                 return "turf_war"
@@ -63,7 +64,7 @@ struct Schedule: Hashable, Codable {
             }
         }
         
-        var shortDescription: String {
+        var shortDescription: LocalizedStringKey {
             switch self {
             case .turfWar:
                 return "turf"
@@ -85,7 +86,7 @@ struct Schedule: Hashable, Codable {
         var id: StageId
         var image: String
         
-        var description: String {
+        var description: LocalizedStringKey {
             switch self.id {
             case .theReef:
                 return "the_reef"

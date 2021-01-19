@@ -22,14 +22,14 @@ func timeDescription(startTime: Date, endTime: Date) -> String {
             elapsed = 0
         }
         
-        return String(format: "%@_remaining", format(interval: elapsed))
+        return String(format: NSLocalizedString("%@_remaining", comment: ""), format(interval: elapsed))
     } else {
         var elapsed = startTime - current
         if elapsed < 0 {
             elapsed = 0
         }
         
-        return String(format: "in_%@", format(interval: startTime - current))
+        return String(format: NSLocalizedString("in_%@", comment: ""), format(interval: startTime - current))
     }
 }
 
@@ -40,14 +40,14 @@ private func format(interval: TimeInterval) -> String {
     let hour = (mins % 1440) / 60
     let day = mins / 1440
     
-    var result = String(format: "%d_m", min)
+    var result = String(format: NSLocalizedString("%d_m", comment: ""), min)
     
     if hour > 0 {
-        result = String(format: "%d_h_%@", hour, result)
+        result = String(format: NSLocalizedString("%d_h_%@", comment: ""), hour, result)
     }
     
     if day > 0 {
-        result = String(format: "%d_d_%@", day, result)
+        result = String(format: NSLocalizedString("%d_d_%@", comment: ""), day, result)
     }
     
     return result

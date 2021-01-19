@@ -32,7 +32,7 @@ struct SchedulesView: View {
                 ToolbarItem(placement: .principal) {
                     Picker(selection: $gameMode, label: Text("")) {
                         ForEach(Schedule.GameMode.allCases, id: \.self) { gameMode in
-                            Text(gameMode.rawValue)
+                            Text(gameMode.description)
                                 .tag(gameMode)
                         }
                     }
