@@ -44,7 +44,7 @@ struct SchedulesView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
                 ToolbarItem(placement: .primaryAction) {
-                    ZStack {
+                    if rule == Schedule.Rule.turfWar {
                         Menu(content: {
                             ForEach(Schedule.Rule.allCases.filter { r in
                                 r != Schedule.Rule.turfWar
@@ -57,21 +57,19 @@ struct SchedulesView: View {
                                     Image(r.rawValue)
                                 }
                             }
-                        }, label: {
+                        }) {
                             Image(systemName: "line.horizontal.3.decrease.circle")
                                 .imageScale(.large)
-                        })
-                        .zIndex(0)
-                        
-                        if rule != Schedule.Rule.turfWar {
-                            Button(action: {
-                                Impact(style: .light)
-                                rule = Schedule.Rule.turfWar
-                            }, label: {
-                                Image(systemName: "line.horizontal.3.decrease.circle.fill")
-                            })
-                            .zIndex(1)
                         }
+                        .animation(.easeInOut(duration: 0.2))
+                    } else {
+                        Button(action: {
+                            Impact(style: .light)
+                            rule = Schedule.Rule.turfWar
+                        }) {
+                            Image(systemName: "line.horizontal.3.decrease.circle.fill")
+                        }
+                        .animation(.easeInOut(duration: 0.2))
                     }
                 }
             }
