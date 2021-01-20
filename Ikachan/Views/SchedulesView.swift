@@ -61,6 +61,7 @@ struct SchedulesView: View {
                             Image(systemName: "line.horizontal.3.decrease.circle")
                                 .imageScale(.large)
                         }
+                        .accessibility(label: Text("filter"))
                         .animation(.easeInOut(duration: 0.2))
                     } else {
                         Button(action: {

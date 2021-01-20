@@ -129,3 +129,6 @@
 "soon" = "もうすぐ";
 "next" = "つぎ";
 "future" = "そのつぎ";
+
+// Accessiblity
+"filter" = "フィルタ";

@@ -129,3 +129,6 @@
 "soon" = "Soon!";
 "next" = "Next";
 "future" = "Future";
+
+// Accessiblity
+"filter" = "Filter";

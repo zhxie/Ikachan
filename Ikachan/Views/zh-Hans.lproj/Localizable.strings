@@ -129,3 +129,6 @@
 "soon" = "即将开放";
 "next" = "接下来";
 "future" = "之后";
+
+// Accessiblity
+"filter" = "过滤";
