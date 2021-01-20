@@ -21,6 +21,7 @@
 		E468B7A325B282F5001254FE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7A225B282F5001254FE /* ModelData.swift */; };
 		E468B7AD25B34AFC001254FE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7AC25B34AFC001254FE /* Constant.swift */; };
 		E468B7B525B46080001254FE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
+		E46B506525B8959A001F88CE /* SmallScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B506425B8959A001F88CE /* SmallScheduleView.swift */; };
 		E4703BC725B8722E0093781B /* Impact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4703BC625B8722E0093781B /* Impact.swift */; };
 		E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E477990725B1F62500F8AE9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E477990625B1F62500F8AE9F /* SwiftyJSON */; };
@@ -48,6 +49,7 @@
 		E468B7A225B282F5001254FE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		E468B7AC25B34AFC001254FE /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E468B7B425B46080001254FE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		E46B506425B8959A001F88CE /* SmallScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallScheduleView.swift; sourceTree = "<group>"; };
 		E4703BBE25B747050093781B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E4703BC025B74B3F0093781B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E4703BC625B8722E0093781B /* Impact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Impact.swift; sourceTree = "<group>"; };
@@ -133,9 +135,18 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		E46B506325B89579001F88CE /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				E46B506425B8959A001F88CE /* SmallScheduleView.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
 		E47798FD25B1EDDA00F8AE9F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E46B506325B89579001F88CE /* Widgets */,
 				E468B7AF25B34EB3001254FE /* Components */,
 				E4405D7C25AF64D2002EF1AB /* ContentView.swift */,
 				E438EF5B25B5F939005AB9D9 /* CurrentView.swift */,
@@ -246,6 +257,7 @@
 				E4405D7B25AF64D2002EF1AB /* IkachanApp.swift in Sources */,
 				E477990D25B203F900F8AE9F /* Weapon.swift in Sources */,
 				E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */,
+				E46B506525B8959A001F88CE /* SmallScheduleView.swift in Sources */,
 				E4E60D8625B5C9DF0039A6E6 /* ScheduleView.swift in Sources */,
 				E4703BC725B8722E0093781B /* Impact.swift in Sources */,
 				E468B7A325B282F5001254FE /* ModelData.swift in Sources */,

@@ -13,7 +13,27 @@ extension Date {
     }
 }
 
-func timeDescription(startTime: Date, endTime: Date) -> String {
+func timeSpan(startTime: Date, endTime: Date) -> String {
+    let current = Date()
+    
+    if current > startTime {
+        var elapsed = endTime - current
+        if elapsed < 0 {
+            elapsed = 0
+        }
+        
+        return format2(interval: elapsed)
+    } else {
+        var elapsed = startTime - current
+        if elapsed < 0 {
+            elapsed = 0
+        }
+        
+        return String(format: "-%@", format2(interval: elapsed))
+    }
+}
+
+func naturalTimeSpan(startTime: Date, endTime: Date) -> String {
     let current = Date()
     
     if current > startTime {
@@ -31,6 +51,26 @@ func timeDescription(startTime: Date, endTime: Date) -> String {
         
         return String(format: NSLocalizedString("in_%@", comment: ""), format(interval: startTime - current))
     }
+}
+
+func scheduleTimePeriod(startTime: Date, endTime: Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm"
+    
+    let startTime = dateFormatter.string(from: startTime)
+    let endTime = dateFormatter.string(from: endTime)
+    
+    return String(format: "%@ - %@", startTime, endTime)
+}
+
+func shiftTimePeriod(startTime: Date, endTime: Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "M/dd HH:mm"
+    
+    let startTime = dateFormatter.string(from: startTime)
+    let endTime = dateFormatter.string(from: endTime)
+    
+    return String(format: "%@ - %@", startTime, endTime)
 }
 
 private func format(interval: TimeInterval) -> String {
@@ -51,4 +91,22 @@ private func format(interval: TimeInterval) -> String {
     }
     
     return result
+}
+
+private func format2(interval: TimeInterval) -> String {
+    let mins = Int((interval / 60).rounded())
+    
+    let min = mins % 60
+    let hour = (mins % 1440) / 60
+    let day = mins / 1440
+    
+    if day > 0 || hour >= 10 {
+        return String(format: "%dd%dh", day, hour)
+    } else {
+        if hour > 0 {
+            return String(format: "%dh%dm", hour, min)
+        } else {
+            return String(format: "%dm", min)
+        }
+    }
 }

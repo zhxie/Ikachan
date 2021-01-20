@@ -39,6 +39,17 @@ struct Schedule: Hashable, Codable {
                 return "league_battle"
             }
         }
+        
+        var accentColor: Color {
+            switch self {
+            case .regular:
+                return Color(red: 70 / 255, green: 170 / 255, blue: 85 / 255)
+            case .gachi:
+                return Color(red: 252 / 255, green: 114 / 255, blue: 56 / 255)
+            case .league:
+                return Color(red: 232 / 255, green: 61 / 255, blue: 136 / 255)
+            }
+        }
     }
     
     var rule: Rule

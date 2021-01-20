@@ -41,15 +41,9 @@ struct ScheduleView: View {
         let current = Date()
         
         if startTime < current {
-            return timeDescription(startTime: startTime, endTime: endTime)
+            return naturalTimeSpan(startTime: startTime, endTime: endTime)
         } else {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "HH:mm"
-            
-            let startTime = dateFormatter.string(from: startTime)
-            let endTime = dateFormatter.string(from: endTime)
-            
-            return String(format: "%@ - %@", startTime, endTime)
+            return scheduleTimePeriod(startTime: startTime, endTime: endTime)
         }
     }
 }
