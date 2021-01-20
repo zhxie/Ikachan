@@ -11,6 +11,8 @@ struct SchedulesView: View {
     @EnvironmentObject var modelData: ModelData
     
     @State var gameMode = Schedule.GameMode.regular
+    // HACK: Consider rule turfWar as no filtering
+    @State var rule = Schedule.Rule.turfWar
     
     var body: some View {
         NavigationView {
@@ -38,6 +40,32 @@ struct SchedulesView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
+                ToolbarItem(placement: .primaryAction) {
+                    switch rule {
+                    case Schedule.Rule.turfWar:
+                        Menu(content: {
+                            ForEach(Schedule.Rule.allCases.filter { r in
+                                r != Schedule.Rule.turfWar
+                            }, id: \.self) { r in
+                                Button(action: {
+                                    rule = r
+                                }) {
+                                    Text(r.description)
+                                    Image(r.rawValue)
+                                }
+                            }
+                        }, label: {
+                            Image(systemName: "line.horizontal.3.decrease.circle")
+                                .imageScale(.large)
+                        })
+                    default:
+                        Button(action: {
+                            rule = Schedule.Rule.turfWar
+                        }) {
+                            Image(systemName: "line.horizontal.3.decrease.circle.fill")
+                        }
+                    }
+                }
             }
         }
         .onAppear(perform: update)
@@ -45,7 +73,7 @@ struct SchedulesView: View {
     
     var schedules: [Schedule] {
         modelData.schedules.filter { schedule in
-            schedule.gameMode == gameMode
+            schedule.gameMode == gameMode && (rule == Schedule.Rule.turfWar || rule == schedule.rule)
         }
     }
     
