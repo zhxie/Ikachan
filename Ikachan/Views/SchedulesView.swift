@@ -19,12 +19,15 @@ struct SchedulesView: View {
             ScrollView {
                 VStack {
                     ForEach(schedules, id: \.self) { schedule in
-                        Divider()
-                        
-                        ScheduleView(schedule: schedule)
-                        
-                        Spacer()
-                            .frame(height: 15)
+                        VStack {
+                            Divider()
+                            
+                            ScheduleView(schedule: schedule)
+                            
+                            Spacer()
+                                .frame(height: 15)
+                        }
+                        .animation(.easeInOut)
                     }
                 }
                 .padding()
@@ -41,13 +44,13 @@ struct SchedulesView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
                 ToolbarItem(placement: .primaryAction) {
-                    switch rule {
-                    case Schedule.Rule.turfWar:
+                    ZStack {
                         Menu(content: {
                             ForEach(Schedule.Rule.allCases.filter { r in
                                 r != Schedule.Rule.turfWar
                             }, id: \.self) { r in
                                 Button(action: {
+                                    Impact(style: .light)
                                     rule = r
                                 }) {
                                     Text(r.description)
@@ -58,11 +61,16 @@ struct SchedulesView: View {
                             Image(systemName: "line.horizontal.3.decrease.circle")
                                 .imageScale(.large)
                         })
-                    default:
-                        Button(action: {
-                            rule = Schedule.Rule.turfWar
-                        }) {
-                            Image(systemName: "line.horizontal.3.decrease.circle.fill")
+                        .zIndex(0)
+                        
+                        if rule != Schedule.Rule.turfWar {
+                            Button(action: {
+                                Impact(style: .light)
+                                rule = Schedule.Rule.turfWar
+                            }, label: {
+                                Image(systemName: "line.horizontal.3.decrease.circle.fill")
+                            })
+                            .zIndex(1)
                         }
                     }
                 }

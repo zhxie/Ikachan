@@ -15,30 +15,39 @@ struct ShiftsView: View {
             ScrollView {
                 VStack {
                     if let first = current {
-                        Divider()
-                        
-                        ShiftView(shift: first, title: title(startTime: first.startTime))
-                        
-                        Spacer()
-                            .frame(height: 15)
+                        VStack {
+                            Divider()
+                            
+                            ShiftView(shift: first, title: title(startTime: first.startTime))
+                            
+                            Spacer()
+                                .frame(height: 15)
+                        }
+                        .animation(.easeInOut)
                     }
                     
                     ForEach(nexts, id: \.self) { shift in
-                        Divider()
-                        
-                        ShiftView(shift: shift, title: "next")
-                        
-                        Spacer()
-                            .frame(height: 15)
+                        VStack {
+                            Divider()
+                            
+                            ShiftView(shift: shift, title: "next")
+                            
+                            Spacer()
+                                .frame(height: 15)
+                        }
+                        .animation(.easeInOut)
                     }
                     
                     ForEach(schedules, id: \.self) { shift in
-                        Divider()
-                        
-                        ShiftView(shift: shift, title: "future")
-                        
-                        Spacer()
-                            .frame(height: 15)
+                        VStack {
+                            Divider()
+                            
+                            ShiftView(shift: shift, title: "future")
+                            
+                            Spacer()
+                                .frame(height: 15)
+                        }
+                        .animation(.easeInOut)
                     }
                 }
                 .padding()

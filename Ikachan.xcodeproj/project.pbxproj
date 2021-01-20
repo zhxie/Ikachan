@@ -21,6 +21,7 @@
 		E468B7A325B282F5001254FE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7A225B282F5001254FE /* ModelData.swift */; };
 		E468B7AD25B34AFC001254FE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7AC25B34AFC001254FE /* Constant.swift */; };
 		E468B7B525B46080001254FE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
+		E4703BC725B8722E0093781B /* Impact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4703BC625B8722E0093781B /* Impact.swift */; };
 		E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E477990725B1F62500F8AE9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E477990625B1F62500F8AE9F /* SwiftyJSON */; };
 		E477990A25B2029C00F8AE9F /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990925B2029C00F8AE9F /* Shift.swift */; };
@@ -49,6 +50,7 @@
 		E468B7B425B46080001254FE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		E4703BBE25B747050093781B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E4703BC025B74B3F0093781B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E4703BC625B8722E0093781B /* Impact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Impact.swift; sourceTree = "<group>"; };
 		E477990125B1F1F600F8AE9F /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E477990925B2029C00F8AE9F /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
 		E477990C25B203F900F8AE9F /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				E468B7B425B46080001254FE /* Date.swift */,
+				E4703BC625B8722E0093781B /* Impact.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				E477990D25B203F900F8AE9F /* Weapon.swift in Sources */,
 				E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */,
 				E4E60D8625B5C9DF0039A6E6 /* ScheduleView.swift in Sources */,
+				E4703BC725B8722E0093781B /* Impact.swift in Sources */,
 				E468B7A325B282F5001254FE /* ModelData.swift in Sources */,
 				E4E60D8925B5CBC80039A6E6 /* SchedulesView.swift in Sources */,
 				E468B7AD25B34AFC001254FE /* Constant.swift in Sources */,
