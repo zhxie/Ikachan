@@ -20,7 +20,7 @@ struct ScheduleImages: View {
                 KFImage(URL(string: imageA)!)
                     .placeholder {
                         Rectangle()
-                            .foregroundColor(Color(UIColor.systemGroupedBackground))
+                            .foregroundColor(Color(UIColor.secondarySystemBackground))
                             .aspectRatio(16 / 9, contentMode: .fit)
                             .frame(height: 1080)
                     }
@@ -39,7 +39,7 @@ struct ScheduleImages: View {
                 KFImage(URL(string: imageB)!)
                     .placeholder {
                         Rectangle()
-                            .foregroundColor(Color(UIColor.systemGroupedBackground))
+                            .foregroundColor(Color(UIColor.secondarySystemBackground))
                             .aspectRatio(16 / 9, contentMode: .fit)
                             .frame(height: 1080)
                     }

@@ -26,7 +26,7 @@ struct ShiftImages: View {
                 KFImage(URL(string: image)!)
                     .placeholder {
                         Rectangle()
-                            .foregroundColor(Color(UIColor.systemGroupedBackground))
+                            .foregroundColor(Color(UIColor.secondarySystemBackground))
                             .aspectRatio(16 / 9, contentMode: .fit)
                             .frame(height: 1080)
                     }
@@ -50,7 +50,7 @@ struct ShiftImages: View {
                                 KFImage(URL(string: subImage1)!)
                                     .placeholder {
                                         Circle()
-                                            .foregroundColor(Color(UIColor.systemGroupedBackground))
+                                            .foregroundColor(Color(UIColor.secondarySystemBackground))
                                             .aspectRatio(1.0, contentMode: .fit)
                                             .frame(height: 1080)
                                     }
@@ -65,7 +65,7 @@ struct ShiftImages: View {
                                 KFImage(URL(string: subImage2)!)
                                     .placeholder {
                                         Circle()
-                                            .foregroundColor(Color(UIColor.systemGroupedBackground))
+                                            .foregroundColor(Color(UIColor.secondarySystemBackground))
                                             .aspectRatio(1.0, contentMode: .fit)
                                             .frame(height: 1080)
                                     }
@@ -83,7 +83,7 @@ struct ShiftImages: View {
                                 KFImage(URL(string: subImage3)!)
                                     .placeholder {
                                         Circle()
-                                            .foregroundColor(Color(UIColor.systemGroupedBackground))
+                                            .foregroundColor(Color(UIColor.secondarySystemBackground))
                                             .aspectRatio(1.0, contentMode: .fit)
                                             .frame(height: 1080)
                                     }
@@ -98,7 +98,7 @@ struct ShiftImages: View {
                                 KFImage(URL(string: subImage4)!)
                                     .placeholder {
                                         Circle()
-                                            .foregroundColor(Color(UIColor.systemGroupedBackground))
+                                            .foregroundColor(Color(UIColor.secondarySystemBackground))
                                             .aspectRatio(1.0, contentMode: .fit)
                                             .frame(height: 1080)
                                     }
