@@ -131,5 +131,8 @@
 "next" = "Next";
 "future" = "Future";
 
+// Widget
+"schedule_widget_description" = "See the current and future schedules for a mode.";
+
 // Accessiblity
 "filter" = "Filter";

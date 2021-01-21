@@ -105,8 +105,8 @@ struct ScheduleWidget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             ScheduleWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Schedule")
-        .description("See the current or future schedules.")
+        .configurationDisplayName("schedule")
+        .description("schedule_widget_description")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

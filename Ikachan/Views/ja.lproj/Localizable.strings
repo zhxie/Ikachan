@@ -131,5 +131,8 @@
 "next" = "つぎ";
 "future" = "そのつぎ";
 
+// Widget
+"schedule_widget_description" = "そのモードの現在と将来のスケジュールを表示できます。";
+
 // Accessiblity
 "filter" = "フィルタ";

@@ -131,5 +131,8 @@
 "next" = "接下来";
 "future" = "之后";
 
+// Widget
+"schedule_widget_description" = "查看某模式当前和未来的日程。";
+
 // Accessiblity
 "filter" = "过滤";
