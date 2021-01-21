@@ -18,6 +18,7 @@ struct MediumScheduleView: View {
                         Text(scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
                             .font(.caption2)
                             .foregroundColor(.secondary)
+                            .lineLimit(1)
                             .layoutPriority(1)
                         
                         Spacer()
@@ -45,13 +46,15 @@ struct MediumScheduleView: View {
                         Text(time.0)
                             .font(.caption2)
                             .foregroundColor(.secondary)
+                            .lineLimit(1)
                             .layoutPriority(1)
                         
                         Spacer()
                         
                         Text(schedule.rule.shortDescription)
-                            .foregroundColor(schedule.gameMode.accentColor)
                             .font(.caption)
+                            .foregroundColor(schedule.gameMode.accentColor)
+                            .lineLimit(1)
                     }
                     .layoutPriority(1)
                     
@@ -62,6 +65,7 @@ struct MediumScheduleView: View {
                         Text(time.1)
                             .fontWeight(.light)
                             .font(.largeTitle)
+                            .lineLimit(1)
                             .layoutPriority(1)
                         
                         Spacer()

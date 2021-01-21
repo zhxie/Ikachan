@@ -22,6 +22,7 @@ struct ScheduleView: View {
                     Text(status(startTime: schedule.startTime, endTime: schedule.endTime))
                         .font(.callout)
                         .foregroundColor(.secondary)
+                        .lineLimit(1)
                 }
                 .layoutPriority(1)
                 

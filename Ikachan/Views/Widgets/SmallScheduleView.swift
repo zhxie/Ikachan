@@ -16,13 +16,15 @@ struct SmallScheduleView: View {
                 Text(scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
                     .font(.caption2)
                     .foregroundColor(.secondary)
+                    .lineLimit(1)
                     .layoutPriority(1)
                 
                 Spacer()
                 
                 Text(schedule.rule.shortDescription)
-                    .foregroundColor(schedule.gameMode.accentColor)
                     .font(.caption)
+                    .foregroundColor(schedule.gameMode.accentColor)
+                    .lineLimit(1)
             }
             
             Spacer()
@@ -40,6 +42,7 @@ struct SmallScheduleView: View {
                 Text(timeSpan(startTime: schedule.startTime, endTime: schedule.endTime))
                     .fontWeight(.light)
                     .font(.largeTitle)
+                    .lineLimit(1)
                     .layoutPriority(1)
                 
                 Spacer()
@@ -54,9 +57,11 @@ struct SmallScheduleView: View {
                     Text(schedule.stageA.description)
                         .font(.caption)
                         .foregroundColor(.secondary)
+                        .lineLimit(1)
                     Text(schedule.stageB.description)
                         .font(.caption)
                         .foregroundColor(.secondary)
+                        .lineLimit(1)
                 }
                 .layoutPriority(1)
                 

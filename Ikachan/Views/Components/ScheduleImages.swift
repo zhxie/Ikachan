@@ -32,6 +32,7 @@ struct ScheduleImages: View {
                 Text(titleA)
                     .font(.footnote)
                     .foregroundColor(.primary)
+                    .lineLimit(1)
             }
             
             VStack {
@@ -50,6 +51,7 @@ struct ScheduleImages: View {
                 Text(titleB)
                     .font(.footnote)
                     .foregroundColor(.primary)
+                    .lineLimit(1)
             }
         }
     }

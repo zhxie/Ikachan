@@ -23,6 +23,7 @@ struct ShiftView: View {
                     Text(status(startTime: shift.startTime, endTime: shift.endTime))
                         .font(.callout)
                         .foregroundColor(.secondary)
+                        .lineLimit(1)
                 }
                 .layoutPriority(1)
                 
