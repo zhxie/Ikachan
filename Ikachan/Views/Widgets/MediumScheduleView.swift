@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MediumScheduleView: View {
-    var schedule: Schedule
+    var schedule: Schedule?
     
     var body: some View {
         ZStack {
@@ -19,7 +19,7 @@ struct MediumScheduleView: View {
                 HStack {
                     VStack(spacing: 0) {
                         HStack {
-                            Text(scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
+                            Text(scheduleTimePeriod(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0)))
                                 .font(.caption2)
                                 .foregroundColor(.secondary)
                                 .lineLimit(1)
@@ -55,10 +55,11 @@ struct MediumScheduleView: View {
                             
                             Spacer()
                             
-                            Text(schedule.rule.shortDescription)
+                            Text(schedule?.rule.shortDescription ?? "")
                                 .font(.caption)
-                                .foregroundColor(schedule.gameMode.accentColor)
+                                .foregroundColor(schedule?.gameMode.accentColor ?? Color.accentColor)
                                 .lineLimit(1)
+                                .layoutPriority(2)
                         }
                         .layoutPriority(1)
                         
@@ -76,7 +77,7 @@ struct MediumScheduleView: View {
                             
                             Image(systemName: "circle.fill")
                                 .font(.footnote)
-                                .foregroundColor(schedule.gameMode.accentColor)
+                                .foregroundColor(schedule?.gameMode.accentColor ?? Color.accentColor)
                         }
                         .layoutPriority(1)
                         
@@ -84,7 +85,7 @@ struct MediumScheduleView: View {
                         
                         HStack {
                             VStack(alignment: .leading, spacing: 0) {
-                                Text(schedule.stageA.description)
+                                Text(schedule?.stageA.description ?? "")
                                     .font(.footnote)
                                     .foregroundColor(.secondary)
                                     .lineLimit(1)
@@ -92,7 +93,7 @@ struct MediumScheduleView: View {
                                 Spacer()
                                     .frame(height: 2)
                                 
-                                Text(schedule.stageB.description)
+                                Text(schedule?.stageB.description ?? "")
                                     .font(.footnote)
                                     .foregroundColor(.secondary)
                                     .lineLimit(1)
@@ -109,7 +110,7 @@ struct MediumScheduleView: View {
     }
     
     var time: (LocalizedStringKey, String) {
-        naturalTimeSpan2(startTime: schedule.startTime, endTime: schedule.endTime)
+        naturalTimeSpan2(startTime: schedule?.startTime ?? Date(), endTime: schedule?.endTime ?? Date())
     }
 }
 
@@ -121,7 +122,11 @@ struct MediumScheduleView_Previews: PreviewProvider {
         
         _ = modelData.loadSchedules(data: asset.data)
         
-        return MediumScheduleView(schedule: modelData.schedules[0])
-            .previewLayout(.fixed(width: 360, height: 169))
+        return Group {
+            MediumScheduleView(schedule: modelData.schedules[0])
+                .previewLayout(.fixed(width: 360, height: 169))
+            MediumScheduleView(schedule: modelData.schedules[0])
+                .previewLayout(.fixed(width: 291, height: 141))
+        }
     }
 }

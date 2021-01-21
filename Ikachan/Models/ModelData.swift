@@ -53,7 +53,8 @@ final class ModelData: ObservableObject {
                 
                 self.isSchedulesUpdating = false
             }
-        }.resume()
+        }
+        .resume()
     }
     
     func loadSchedules(data: Data) -> Bool {
@@ -65,7 +66,7 @@ final class ModelData: ObservableObject {
             for (_, value) in json {
                 let ss = value.arrayValue
                 for schedule in ss {
-                    schedules.append(parseSchedule(schedule: schedule))
+                    schedules.append(ModelData.parseSchedule(schedule: schedule))
                 }
             }
         
@@ -77,7 +78,48 @@ final class ModelData: ObservableObject {
         }
     }
     
-    private func parseSchedule(schedule: JSON) -> Schedule {
+    static func fetchSchedules(completion:@escaping ([Schedule]?, Error?) -> Void) {
+        do {
+            var request = URLRequest(url: URL(string: Splatoon2InkScheduleURL)!)
+            request.timeoutInterval = 5
+            
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if error != nil {
+                    completion(nil, error)
+                    
+                    return
+                }
+                
+                let response = response as! HTTPURLResponse
+                let status = response.statusCode
+                guard (200...299).contains(status) else {
+                    completion(nil, error)
+                    
+                    return
+                }
+                
+                if let json = try? JSON(data: data!) {
+                    var schedules: [Schedule] = []
+                    
+                    for (_, value) in json {
+                        let ss = value.arrayValue
+                        for schedule in ss {
+                            schedules.append(ModelData.parseSchedule(schedule: schedule))
+                        }
+                    }
+                    
+                    completion(schedules, error)
+                } else {
+                    completion(nil, error)
+                    
+                    return
+                }
+            }
+            .resume()
+        }
+    }
+    
+    private static func parseSchedule(schedule: JSON) -> Schedule {
         let startTime = schedule["start_time"].doubleValue
         let endTime = schedule["end_time"].doubleValue
         let gameMode = schedule["game_mode"]["key"].stringValue
@@ -134,7 +176,8 @@ final class ModelData: ObservableObject {
                 
                 self.isShiftsUpdating = false
             }
-        }.resume()
+        }
+        .resume()
     }
     
     func loadShifts(data: Data) -> Bool {
