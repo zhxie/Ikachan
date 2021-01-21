@@ -116,6 +116,7 @@
 
 // Util
 "%@_remaining" = "%@ remaining";
+"remaining" = "Remaining";
 "in_%@" = "in %@";
 "%d_m" = "%d m";
 "%d_h_%@" = "%d h %@";

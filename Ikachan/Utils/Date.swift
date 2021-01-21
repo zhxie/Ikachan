@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension Date {
     static func -(left: Date, right: Date) -> TimeInterval {
@@ -49,7 +50,27 @@ func naturalTimeSpan(startTime: Date, endTime: Date) -> String {
             elapsed = 0
         }
         
-        return String(format: NSLocalizedString("in_%@", comment: ""), format(interval: startTime - current))
+        return String(format: NSLocalizedString("in_%@", comment: ""), format(interval: elapsed))
+    }
+}
+
+func naturalTimeSpan2(startTime: Date, endTime: Date) -> (LocalizedStringKey, String) {
+    let current = Date()
+    
+    if current > startTime {
+        var elapsed = endTime - current
+        if elapsed < 0 {
+            elapsed = 0
+        }
+        
+        return ("remaining", format2(interval: elapsed))
+    } else {
+        var elapsed = startTime - current
+        if elapsed < 0 {
+            elapsed = 0
+        }
+        
+        return ("next", format2(interval: elapsed))
     }
 }
 
