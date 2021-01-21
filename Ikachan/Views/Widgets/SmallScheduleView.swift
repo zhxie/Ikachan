@@ -11,64 +11,69 @@ struct SmallScheduleView: View {
     var schedule: Schedule
     
     var body: some View {
-        VStack(spacing: 0) {
-            HStack {
-                Text(scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
-                    .font(.caption2)
-                    .foregroundColor(.secondary)
-                    .lineLimit(1)
-                    .layoutPriority(1)
-                
-                Spacer()
-                
-                Text(schedule.rule.shortDescription)
-                    .font(.caption)
-                    .foregroundColor(schedule.gameMode.accentColor)
-                    .lineLimit(1)
-            }
+        ZStack {
+            Color(UIColor.systemBackground)
+                .ignoresSafeArea(edges: .all)
             
-            Spacer()
-                .frame(height: 8)
-            
-            Rectangle()
-                .fill(Color(UIColor.systemGroupedBackground))
-                .frame(height: 48)
-                .cornerRadius(7.5)
-            
-            Spacer()
-                .frame(height: 2)
-            
-            HStack {
-                Text(timeSpan(startTime: schedule.startTime, endTime: schedule.endTime))
-                    .fontWeight(.light)
-                    .font(.largeTitle)
-                    .lineLimit(1)
-                    .layoutPriority(1)
-                
-                Spacer()
-                
-                Circle()
-                    .fill(schedule.gameMode.accentColor)
-                    .frame(width: 10, height: 10)
-            }
-            
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(schedule.stageA.description)
-                        .font(.caption)
+            VStack(spacing: 0) {
+                HStack {
+                    Text(scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
+                        .font(.caption2)
                         .foregroundColor(.secondary)
                         .lineLimit(1)
-                    Text(schedule.stageB.description)
+                        .layoutPriority(1)
+                    
+                    Spacer()
+                    
+                    Text(schedule.rule.shortDescription)
                         .font(.caption)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(schedule.gameMode.accentColor)
                         .lineLimit(1)
                 }
-                .layoutPriority(1)
                 
                 Spacer()
+                    .frame(height: 8)
+                
+                Rectangle()
+                    .fill(Color(UIColor.secondarySystemBackground))
+                    .frame(height: 48)
+                    .cornerRadius(7.5)
+                
+                Spacer()
+                    .frame(height: 2)
+                
+                HStack {
+                    Text(timeSpan(startTime: schedule.startTime, endTime: schedule.endTime))
+                        .fontWeight(.light)
+                        .font(.largeTitle)
+                        .lineLimit(1)
+                        .layoutPriority(1)
+                    
+                    Spacer()
+                    
+                    Image(systemName: "circle.fill")
+                        .font(.footnote)
+                        .foregroundColor(schedule.gameMode.accentColor)
+                }
+                
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(schedule.stageA.description)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .lineLimit(1)
+                        Text(schedule.stageB.description)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .lineLimit(1)
+                    }
+                    .layoutPriority(1)
+                    
+                    Spacer()
+                }
             }
+            .padding()
         }
-        .padding()
     }
 }
 
