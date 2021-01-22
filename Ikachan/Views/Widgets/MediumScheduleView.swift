@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MediumScheduleView: View {
+    var current: Date
     var schedule: Schedule?
     
     var body: some View {
@@ -47,7 +48,7 @@ struct MediumScheduleView: View {
                     
                     VStack(spacing: 0) {
                         HStack {
-                            Text(time.0)
+                            Text(timeSpanDescriptor(current: current, startTime: schedule?.startTime ?? current))
                                 .font(.caption2)
                                 .foregroundColor(.secondary)
                                 .lineLimit(1)
@@ -67,7 +68,7 @@ struct MediumScheduleView: View {
                             .frame(height: 4)
                         
                         HStack {
-                            Text(time.1)
+                            Text(absoluteTimeSpan(current: current, startTime: schedule?.startTime ?? current, endTime: schedule?.endTime ?? current))
                                 .fontWeight(.light)
                                 .font(.largeTitle)
                                 .lineLimit(1)
@@ -108,10 +109,6 @@ struct MediumScheduleView: View {
             .padding()
         }
     }
-    
-    var time: (LocalizedStringKey, String) {
-        naturalTimeSpan2(startTime: schedule?.startTime ?? Date(), endTime: schedule?.endTime ?? Date())
-    }
 }
 
 struct MediumScheduleView_Previews: PreviewProvider {
@@ -123,9 +120,9 @@ struct MediumScheduleView_Previews: PreviewProvider {
         _ = modelData.loadSchedules(data: asset.data)
         
         return Group {
-            MediumScheduleView(schedule: modelData.schedules[0])
+            MediumScheduleView(current: Date(), schedule: modelData.schedules[0])
                 .previewLayout(.fixed(width: 360, height: 169))
-            MediumScheduleView(schedule: modelData.schedules[0])
+            MediumScheduleView(current: Date(), schedule: modelData.schedules[0])
                 .previewLayout(.fixed(width: 291, height: 141))
         }
     }
