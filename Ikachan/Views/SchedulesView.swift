@@ -15,6 +15,8 @@ struct SchedulesView: View {
     // HACK: Consider rule turfWar as no filtering
     @State var rule = Schedule.Rule.turfWar
     
+    @State var showModal = false
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -73,6 +75,16 @@ struct SchedulesView: View {
                         }
                         .animation(.easeInOut(duration: 0.2))
                     }
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        showModal.toggle()
+                    }) {
+                        Image(systemName: "info.circle")
+                    }.sheet(isPresented: $showModal) {
+                        AboutModalView()
+                    }
+                    .animation(.easeInOut(duration: 0.2))
                 }
             }
         }

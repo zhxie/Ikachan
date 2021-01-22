@@ -11,6 +11,8 @@ struct ShiftsView: View {
     @EnvironmentObject var modelData: ModelData
     @Environment(\.scenePhase) var scenePhase
     
+    @State var showModal = false
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -53,6 +55,18 @@ struct ShiftsView: View {
                 }
                 .padding()
                 .navigationTitle("salmon_run")
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        showModal.toggle()
+                    }) {
+                        Image(systemName: "info.circle")
+                    }.sheet(isPresented: $showModal) {
+                        AboutModalView()
+                    }
+                    .animation(.easeInOut(duration: 0.2))
+                }
             }
         }
         .onAppear(perform: update)

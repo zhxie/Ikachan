@@ -42,6 +42,9 @@
 		E46B50A025B9C4A6001F88CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */; };
 		E46B50E025B9F5D7001F88CE /* ScheduleWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */; };
 		E46B50E125B9F5D7001F88CE /* ScheduleWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */; };
+		E46B510325BB1E3E001F88CE /* AboutModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B510225BB1E3E001F88CE /* AboutModalView.swift */; };
+		E46B512C25BB30C7001F88CE /* LICENSE.SwiftyJSON.md in Resources */ = {isa = PBXBuildFile; fileRef = E46B512A25BB30C7001F88CE /* LICENSE.SwiftyJSON.md */; };
+		E46B512D25BB30C7001F88CE /* LICENSE.Kingfisher.md in Resources */ = {isa = PBXBuildFile; fileRef = E46B512B25BB30C7001F88CE /* LICENSE.Kingfisher.md */; };
 		E4703BC725B8722E0093781B /* Impact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4703BC625B8722E0093781B /* Impact.swift */; };
 		E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E477990725B1F62500F8AE9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E477990625B1F62500F8AE9F /* SwiftyJSON */; };
@@ -105,6 +108,9 @@
 		E46B50E725B9F5D8001F88CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ScheduleWidget.strings; sourceTree = "<group>"; };
 		E46B50EB25B9F5D9001F88CE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ScheduleWidget.strings"; sourceTree = "<group>"; };
 		E46B50ED25B9F5DA001F88CE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ScheduleWidget.strings; sourceTree = "<group>"; };
+		E46B510225BB1E3E001F88CE /* AboutModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModalView.swift; sourceTree = "<group>"; };
+		E46B512A25BB30C7001F88CE /* LICENSE.SwiftyJSON.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.SwiftyJSON.md; sourceTree = "<group>"; };
+		E46B512B25BB30C7001F88CE /* LICENSE.Kingfisher.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.Kingfisher.md; sourceTree = "<group>"; };
 		E4703BBE25B747050093781B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E4703BC025B74B3F0093781B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E4703BC625B8722E0093781B /* Impact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Impact.swift; sourceTree = "<group>"; };
@@ -148,6 +154,8 @@
 				E46B507425B9C2AC001F88CE /* ScheduleWidget */,
 				E46B506F25B9C2AC001F88CE /* Frameworks */,
 				E4405D7825AF64D2002EF1AB /* Products */,
+				E46B512B25BB30C7001F88CE /* LICENSE.Kingfisher.md */,
+				E46B512A25BB30C7001F88CE /* LICENSE.SwiftyJSON.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +199,7 @@
 				E4E60D8525B5C9DF0039A6E6 /* ScheduleView.swift */,
 				E438EF4125B5E22A005AB9D9 /* ShiftImages.swift */,
 				E438EF4725B5E533005AB9D9 /* ShiftView.swift */,
+				E46B510225BB1E3E001F88CE /* AboutModalView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -354,6 +363,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4405D8225AF64D6002EF1AB /* Preview Assets.xcassets in Resources */,
+				E46B512D25BB30C7001F88CE /* LICENSE.Kingfisher.md in Resources */,
+				E46B512C25BB30C7001F88CE /* LICENSE.SwiftyJSON.md in Resources */,
 				E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */,
 				E4405D7F25AF64D6002EF1AB /* Assets.xcassets in Resources */,
 			);
@@ -380,6 +391,7 @@
 				E438EF4525B5E3F8005AB9D9 /* ShiftsView.swift in Sources */,
 				E4405D7D25AF64D2002EF1AB /* ContentView.swift in Sources */,
 				E438EF4825B5E533005AB9D9 /* ShiftView.swift in Sources */,
+				E46B510325BB1E3E001F88CE /* AboutModalView.swift in Sources */,
 				E4405D8B25AF64E3002EF1AB /* CardView.swift in Sources */,
 				E4405D7B25AF64D2002EF1AB /* IkachanApp.swift in Sources */,
 				E477990D25B203F900F8AE9F /* Weapon.swift in Sources */,
