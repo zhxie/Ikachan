@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SchedulesView: View {
     @EnvironmentObject var modelData: ModelData
+    @Environment(\.scenePhase) var scenePhase
     
     @State var gameMode = Schedule.GameMode.regular
     // HACK: Consider rule turfWar as no filtering
@@ -76,6 +77,11 @@ struct SchedulesView: View {
             }
         }
         .onAppear(perform: update)
+        .onChange(of: scenePhase) { phase in
+            if phase == .active {
+                update()
+            }
+        }
     }
     
     var schedules: [Schedule] {

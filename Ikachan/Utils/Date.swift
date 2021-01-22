@@ -136,7 +136,13 @@ private func format2(interval: TimeInterval) -> String {
     let day = mins / 1440
     
     if day > 0 || hour >= 10 {
-        return String(format: "%dd%dh", day, hour)
+        if day >= 10 {
+            return String(format: "%dd", day)
+        } else if day > 0 {
+            return String(format: "%dd%dh", day, hour)
+        } else {
+            return String(format: "%dh", hour)
+        }
     } else {
         if hour > 0 {
             return String(format: "%dh%dm", hour, min)

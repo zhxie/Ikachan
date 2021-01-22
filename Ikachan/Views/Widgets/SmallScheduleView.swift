@@ -20,14 +20,14 @@ struct SmallScheduleView: View {
             GeometryReader { g in
                 VStack(spacing: 0) {
                     HStack(spacing: 0) {
-                        Text((g.size.height > DownscaledSystemSmallWidgetWithPadding || !shouldTimeShrink) ? scheduleTimePeriod(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0)) : scheduleTimePeriod2(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0)))
+                        Text(g.size.height > DownscaledSystemSmallWidgetWithPadding ? scheduleTimePeriod(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0)) : scheduleTimePeriod2(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0)))
                             .font(.caption2)
                             .foregroundColor(.secondary)
                             .lineLimit(1)
                             .layoutPriority(1)
                         
                         Spacer()
-                            .frame(midWidth: 0)
+                            .frame(minWidth: 0)
                         
                         Text((g.size.width > DownscaledSystemSmallWidgetWithPadding ? schedule?.rule.shortDescription : schedule?.rule.shorterDescription) ?? "")
                             .font(.caption)
@@ -105,14 +105,6 @@ struct SmallScheduleView: View {
             }
             .padding()
         }
-    }
-    
-    var shouldTimeShrink: Bool {
-        guard let languageCode = Locale.current.languageCode else {
-            return true
-        }
-        
-        return !languageCode.contains("zh")
     }
 }
 

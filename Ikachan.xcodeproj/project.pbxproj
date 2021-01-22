@@ -40,7 +40,6 @@
 		E46B509625B9C42D001F88CE /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E46B509525B9C42D001F88CE /* SwiftyJSON */; };
 		E46B509825B9C431001F88CE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E46B509725B9C431001F88CE /* Kingfisher */; };
 		E46B50A025B9C4A6001F88CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */; };
-		E46B50A825B9C61A001F88CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D7E25AF64D6002EF1AB /* Assets.xcassets */; };
 		E46B50E025B9F5D7001F88CE /* ScheduleWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */; };
 		E46B50E125B9F5D7001F88CE /* ScheduleWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */; };
 		E4703BC725B8722E0093781B /* Impact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4703BC625B8722E0093781B /* Impact.swift */; };
@@ -366,7 +365,6 @@
 			files = (
 				E46B507925B9C2B1001F88CE /* Assets.xcassets in Resources */,
 				E46B50A025B9C4A6001F88CE /* Preview Assets.xcassets in Resources */,
-				E46B50A825B9C61A001F88CE /* Assets.xcassets in Resources */,
 				E46B509225B9C387001F88CE /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ShiftsView: View {
     @EnvironmentObject var modelData: ModelData
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some View {
         NavigationView {
@@ -55,6 +56,11 @@ struct ShiftsView: View {
             }
         }
         .onAppear(perform: update)
+        .onChange(of: scenePhase) { phase in
+            if phase == .active {
+                update()
+            }
+        }
     }
     
     var details: [Shift] {
