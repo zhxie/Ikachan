@@ -14,9 +14,7 @@ extension Date {
     }
 }
 
-func timeSpan(startTime: Date, endTime: Date) -> String {
-    let current = Date()
-    
+func timeSpan(current: Date, startTime: Date, endTime: Date) -> String {
     if current > startTime {
         var elapsed = endTime - current
         if elapsed < 0 {
@@ -31,6 +29,32 @@ func timeSpan(startTime: Date, endTime: Date) -> String {
         }
         
         return String(format: "-%@", format2(interval: elapsed))
+    }
+}
+
+func absoluteTimeSpan(current: Date, startTime: Date, endTime: Date) -> String {
+    if current > startTime {
+        var elapsed = endTime - current
+        if elapsed < 0 {
+            elapsed = 0
+        }
+        
+        return format2(interval: elapsed)
+    } else {
+        var elapsed = startTime - current
+        if elapsed < 0 {
+            elapsed = 0
+        }
+        
+        return format2(interval: elapsed)
+    }
+}
+
+func timeSpanDescriptor(current: Date, startTime: Date) -> LocalizedStringKey {
+    if current > startTime {
+        return "remaining"
+    } else {
+        return "next"
     }
 }
 
@@ -51,26 +75,6 @@ func naturalTimeSpan(startTime: Date, endTime: Date) -> String {
         }
         
         return String(format: NSLocalizedString("in_%@", comment: ""), format(interval: elapsed))
-    }
-}
-
-func naturalTimeSpan2(startTime: Date, endTime: Date) -> (LocalizedStringKey, String) {
-    let current = Date()
-    
-    if current > startTime {
-        var elapsed = endTime - current
-        if elapsed < 0 {
-            elapsed = 0
-        }
-        
-        return ("remaining", format2(interval: elapsed))
-    } else {
-        var elapsed = startTime - current
-        if elapsed < 0 {
-            elapsed = 0
-        }
-        
-        return ("next", format2(interval: elapsed))
     }
 }
 
