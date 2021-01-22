@@ -84,9 +84,24 @@ struct Schedule: Hashable, Codable {
             case .towerControl:
                 return "tower"
             case .rainmaker:
-                return "rainmaker_short"
+                return "rainmaker_s"
             case .clamBlitz:
                 return "clam"
+            }
+        }
+        
+        var shorterDescription: LocalizedStringKey {
+            switch self {
+            case .turfWar:
+                return "turf_ss"
+            case .splatZones:
+                return "zones_ss"
+            case .towerControl:
+                return "tower_ss"
+            case .rainmaker:
+                return "rainmaker_ss"
+            case .clamBlitz:
+                return "clam_ss"
             }
         }
     }
