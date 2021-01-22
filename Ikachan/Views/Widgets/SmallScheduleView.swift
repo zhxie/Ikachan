@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct SmallScheduleView: View {
     var current: Date
@@ -42,6 +43,17 @@ struct SmallScheduleView: View {
                         
                         Rectangle()
                             .fill(Color(UIColor.secondarySystemBackground))
+                            .overlay (
+                                KFImage(URL(string: Splatnet2URL + (schedule?.stageA.image ?? ""))!)
+                                    .placeholder {
+                                        Rectangle()
+                                            .foregroundColor(Color(UIColor.secondarySystemBackground))
+                                    }
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .clipped()
+                                    .accessibility(label: Text(schedule?.stageA.description ?? ""))
+                            )
                             .cornerRadius(7.5)
                             .layoutPriority(1)
                         

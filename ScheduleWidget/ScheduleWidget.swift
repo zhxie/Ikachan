@@ -8,6 +8,7 @@
 import WidgetKit
 import SwiftUI
 import Intents
+import Kingfisher
 
 struct Provider: IntentTimelineProvider {
     func gameMode(for configuration: ConfigurationIntent) -> Schedule.GameMode {
@@ -39,13 +40,22 @@ struct Provider: IntentTimelineProvider {
                 schedule.gameMode == gameMode(for: configuration)
             }
             
-            let entry = SimpleEntry(date: current, configuration: configuration, current: current, schedule: filtered[0])
-            completion(entry)
+            if filtered.count > 0 {
+                let entry = SimpleEntry(date: current, configuration: configuration, current: current, schedule: filtered[0])
+                let resources = [ImageResource(downloadURL: URL(string: Splatnet2URL + filtered[0].stageA.image)!), ImageResource(downloadURL: URL(string: Splatnet2URL + filtered[0].stageB.image)!)]
+                
+                ImagePrefetcher(resources: resources) { (_, _, _) in
+                    completion(entry)
+                }
+                .start()
+            }
         }
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
+        var urls: Set<URL> = []
+        var resources: [Resource] = []
         
         ModelData.fetchSchedules { (schedules, error) in
             let current = Date()
@@ -66,6 +76,8 @@ struct Provider: IntentTimelineProvider {
                     if date >= current.addingTimeInterval(-60) {
                         let entry = SimpleEntry(date: date, configuration: configuration, current: date, schedule: schedule)
                         entries.append(entry)
+                        urls.insert(URL(string: Splatnet2URL + schedule.stageA.image)!)
+                        urls.insert(URL(string: Splatnet2URL + schedule.stageB.image)!)
                     }
                     
                     date = date.addingTimeInterval(60)
@@ -77,7 +89,13 @@ struct Provider: IntentTimelineProvider {
             }
             
             let timeline = Timeline(entries: entries, policy: .atEnd)
-            completion(timeline)
+            for url in urls {
+                resources.append(ImageResource(downloadURL: url))
+            }
+            ImagePrefetcher(resources: resources) { (_, _, _) in
+                completion(timeline)
+            }
+            .start()
         }
     }
 }

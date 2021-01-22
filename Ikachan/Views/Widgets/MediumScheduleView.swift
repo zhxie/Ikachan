@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct MediumScheduleView: View {
     var current: Date
@@ -35,9 +36,31 @@ struct MediumScheduleView: View {
                         VStack {
                             Rectangle()
                                 .fill(Color(UIColor.secondarySystemBackground))
+                                .overlay (
+                                    KFImage(URL(string: Splatnet2URL + (schedule?.stageA.image ?? ""))!)
+                                        .placeholder {
+                                            Rectangle()
+                                                .foregroundColor(Color(UIColor.secondarySystemBackground))
+                                        }
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .clipped()
+                                        .accessibility(label: Text(schedule?.stageA.description ?? ""))
+                                )
                                 .cornerRadius(7.5)
                             Rectangle()
                                 .fill(Color(UIColor.secondarySystemBackground))
+                                .overlay (
+                                    KFImage(URL(string: Splatnet2URL + (schedule?.stageB.image ?? ""))!)
+                                        .placeholder {
+                                            Rectangle()
+                                                .foregroundColor(Color(UIColor.secondarySystemBackground))
+                                        }
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .clipped()
+                                        .accessibility(label: Text(schedule?.stageB.description ?? ""))
+                                )
                                 .cornerRadius(7.5)
                         }
                     }
