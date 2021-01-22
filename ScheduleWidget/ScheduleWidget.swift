@@ -24,15 +24,14 @@ struct Provider: IntentTimelineProvider {
     }
     
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent(), schedule: SchedulePlaceholder)
+        SimpleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: SchedulePlaceholder)
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         ModelData.fetchSchedules { (schedules, error) in
+            let current = Date()
+            
             guard let schedules = schedules else {
-                let entry = SimpleEntry(date: Date(), configuration: configuration, schedule: nil)
-                completion(entry)
-                
                 return
             }
             
@@ -40,7 +39,7 @@ struct Provider: IntentTimelineProvider {
                 schedule.gameMode == gameMode(for: configuration)
             }
             
-            let entry = SimpleEntry(date: filtered[0].startTime, configuration: configuration, schedule: filtered[0])
+            let entry = SimpleEntry(date: current, configuration: configuration, current: current, schedule: filtered[0])
             completion(entry)
         }
     }
@@ -49,13 +48,9 @@ struct Provider: IntentTimelineProvider {
         var entries: [SimpleEntry] = []
         
         ModelData.fetchSchedules { (schedules, error) in
+            let current = Date()
+            
             guard let schedules = schedules else {
-                let entry = SimpleEntry(date: Date(), configuration: configuration, schedule: nil)
-                entries.append(entry)
-                
-                let timeline = Timeline(entries: entries, policy: .atEnd)
-                completion(timeline)
-                
                 return
             }
             
@@ -63,9 +58,22 @@ struct Provider: IntentTimelineProvider {
                 schedule.gameMode == gameMode(for: configuration)
             }
             
+            var date = Date()
             for schedule in filtered {
-                let entry = SimpleEntry(date: schedule.startTime, configuration: configuration, schedule: schedule)
-                entries.append(entry)
+                date = schedule.startTime
+                
+                while date < schedule.endTime && entries.count < 60 {
+                    if date >= current.addingTimeInterval(-60) {
+                        let entry = SimpleEntry(date: date, configuration: configuration, current: date, schedule: schedule)
+                        entries.append(entry)
+                    }
+                    
+                    date = date.addingTimeInterval(60)
+                }
+                
+                if entries.count >= 60 {
+                    break
+                }
             }
             
             let timeline = Timeline(entries: entries, policy: .atEnd)
@@ -78,6 +86,7 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
     
+    let current: Date
     let schedule: Schedule?
 }
 
@@ -90,9 +99,9 @@ struct ScheduleWidgetEntryView : View {
     var body: some View {
         switch family {
         case .systemSmall:
-            SmallScheduleView(schedule: entry.schedule)
+            SmallScheduleView(current: entry.current, schedule: entry.schedule)
         default:
-            MediumScheduleView(schedule: entry.schedule)
+            MediumScheduleView(current: entry.current, schedule: entry.schedule)
         }
     }
 }
@@ -120,10 +129,10 @@ struct ScheduleWidget_Previews: PreviewProvider {
         _ = modelData.loadSchedules(data: asset.data)
         
         return Group {
-            ScheduleWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), schedule: modelData.schedules[0]))
+            ScheduleWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: modelData.schedules[0]))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
             
-            ScheduleWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), schedule: modelData.schedules[0]))
+            ScheduleWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: modelData.schedules[0]))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
         }
     }
