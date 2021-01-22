@@ -27,8 +27,14 @@
 "turf" = "ナワバリ";
 "zones" = "ガチエリア";
 "tower" = "ガチヤグラ";
-"rainmaker_short" = "ガチホコ";
+"rainmaker_s" = "ガチホコ";
 "clam" = "ガチアサリ";
+
+"turf_ss" = "ナワバリ";
+"zones_ss" = "エリア";
+"tower_ss" = "ヤグラ";
+"rainmaker_ss" = "ホコ";
+"clam_ss" = "アサリ";
 
 // Stage
 "the_reef" = "バッテラストリート";
