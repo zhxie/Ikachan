@@ -8,12 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection: Tab = .schedule
-    
-    enum Tab {
-        case schedule
-        case shift
-    }
+    @State private var selection: TabIdentifier = .schedule
     
     var body: some View {
         TabView(selection: $selection) {
@@ -21,12 +16,19 @@ struct ContentView: View {
                 .tabItem {
                     Label("schedule", systemImage: "calendar")
                 }
-                .tag(Tab.schedule)
+                .tag(TabIdentifier.schedule)
             ShiftsView()
                 .tabItem {
                     Label("shift", systemImage: "person.crop.square.fill.and.at.rectangle")
                 }
-                .tag(Tab.shift)
+                .tag(TabIdentifier.shift)
+        }
+        .onOpenURL { url in
+            guard let tabIdentifier = url.tabIdentifier else {
+                return
+            }
+            
+            selection = tabIdentifier
         }
     }
 }

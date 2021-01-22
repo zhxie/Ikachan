@@ -118,8 +118,10 @@ struct ScheduleWidgetEntryView : View {
         switch family {
         case .systemSmall:
             SmallScheduleView(current: entry.current, schedule: entry.schedule)
+                .widgetURL(URL(string: IkachanScheduleScheme)!)
         default:
             MediumScheduleView(current: entry.current, schedule: entry.schedule)
+                .widgetURL(URL(string: IkachanScheduleScheme)!)
         }
     }
 }
