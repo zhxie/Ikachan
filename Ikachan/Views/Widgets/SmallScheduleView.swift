@@ -28,7 +28,7 @@ struct SmallScheduleView: View {
                         
                         Spacer()
                         
-                        Text(schedule?.rule.shortDescription ?? "")
+                        Text((g.size.width > 126 ? schedule?.rule.shortDescription : schedule?.rule.shorterDescription) ?? "")
                             .font(.caption)
                             .foregroundColor(schedule?.gameMode.accentColor ?? Color.accentColor)
                             .lineLimit(1)
