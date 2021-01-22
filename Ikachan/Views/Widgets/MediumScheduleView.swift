@@ -78,6 +78,7 @@ struct MediumScheduleView: View {
                                 .layoutPriority(1)
                             
                             Spacer()
+                                .frame(minWidth: 0)
                             
                             Text(schedule?.rule.shortDescription ?? "")
                                 .font(.caption)
