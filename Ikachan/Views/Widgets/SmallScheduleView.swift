@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SmallScheduleView: View {
+    var current: Date
     var schedule: Schedule?
     
     var body: some View {
@@ -54,7 +55,7 @@ struct SmallScheduleView: View {
                     }
                     
                     HStack {
-                        Text(timeSpan(startTime: schedule?.startTime ?? Date(), endTime: schedule?.endTime ?? Date()))
+                        Text(timeSpan(current: current, startTime: schedule?.startTime ?? Date(), endTime: schedule?.endTime ?? Date()))
                             .fontWeight(.light)
                             .font(.largeTitle)
                             .lineLimit(1)
@@ -103,9 +104,9 @@ struct SmallScheduleView_Previews: PreviewProvider {
         _ = modelData.loadSchedules(data: asset.data)
         
         return Group {
-            SmallScheduleView(schedule: modelData.schedules[0])
+            SmallScheduleView(current: Date(), schedule: modelData.schedules[0])
                 .previewLayout(.fixed(width: 169, height: 169))
-            SmallScheduleView(schedule: modelData.schedules[0])
+            SmallScheduleView(current: Date(), schedule: modelData.schedules[0])
                 .previewLayout(.fixed(width: 141, height: 141))
         }
     }
