@@ -47,6 +47,8 @@
 		E46B512D25BB30C7001F88CE /* LICENSE.Kingfisher.md in Resources */ = {isa = PBXBuildFile; fileRef = E46B512B25BB30C7001F88CE /* LICENSE.Kingfisher.md */; };
 		E46B513325BB341D001F88CE /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B513225BB341D001F88CE /* URL.swift */; };
 		E46B513625BB3422001F88CE /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B513225BB341D001F88CE /* URL.swift */; };
+		E46B514925BB46C5001F88CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46B514C25BB46C5001F88CE /* InfoPlist.strings */; };
+		E46B515B25BB4724001F88CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46B514C25BB46C5001F88CE /* InfoPlist.strings */; };
 		E4703BC725B8722E0093781B /* Impact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4703BC625B8722E0093781B /* Impact.swift */; };
 		E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E477990725B1F62500F8AE9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E477990625B1F62500F8AE9F /* SwiftyJSON */; };
@@ -114,6 +116,9 @@
 		E46B512A25BB30C7001F88CE /* LICENSE.SwiftyJSON.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.SwiftyJSON.md; sourceTree = "<group>"; };
 		E46B512B25BB30C7001F88CE /* LICENSE.Kingfisher.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.Kingfisher.md; sourceTree = "<group>"; };
 		E46B513225BB341D001F88CE /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		E46B514B25BB46C5001F88CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E46B514F25BB46C7001F88CE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E46B515225BB46C9001F88CE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4703BBE25B747050093781B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E4703BC025B74B3F0093781B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E4703BC625B8722E0093781B /* Impact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Impact.swift; sourceTree = "<group>"; };
@@ -180,6 +185,7 @@
 				E4405D7A25AF64D2002EF1AB /* IkachanApp.swift */,
 				E4405D7E25AF64D6002EF1AB /* Assets.xcassets */,
 				E4405D8325AF64D6002EF1AB /* Info.plist */,
+				E46B514C25BB46C5001F88CE /* InfoPlist.strings */,
 				E4405D8025AF64D6002EF1AB /* Preview Content */,
 			);
 			path = Ikachan;
@@ -367,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4405D8225AF64D6002EF1AB /* Preview Assets.xcassets in Resources */,
+				E46B514925BB46C5001F88CE /* InfoPlist.strings in Resources */,
 				E46B512D25BB30C7001F88CE /* LICENSE.Kingfisher.md in Resources */,
 				E46B512C25BB30C7001F88CE /* LICENSE.SwiftyJSON.md in Resources */,
 				E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */,
@@ -379,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E46B507925B9C2B1001F88CE /* Assets.xcassets in Resources */,
+				E46B515B25BB4724001F88CE /* InfoPlist.strings in Resources */,
 				E46B50A025B9C4A6001F88CE /* Preview Assets.xcassets in Resources */,
 				E46B509225B9C387001F88CE /* Localizable.strings in Resources */,
 			);
@@ -455,6 +463,16 @@
 				E46B50ED25B9F5DA001F88CE /* ja */,
 			);
 			name = ScheduleWidget.intentdefinition;
+			sourceTree = "<group>";
+		};
+		E46B514C25BB46C5001F88CE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E46B514B25BB46C5001F88CE /* en */,
+				E46B514F25BB46C7001F88CE /* zh-Hans */,
+				E46B515225BB46C9001F88CE /* ja */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		E4C7A2C225B7395500E26B20 /* Localizable.strings */ = {
