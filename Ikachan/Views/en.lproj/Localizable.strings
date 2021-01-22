@@ -27,8 +27,14 @@
 "turf" = "Turf";
 "zones" = "Zones";
 "tower" = "Tower";
-"rainmaker_short" = "Rainmaker";
+"rainmaker_s" = "Rainmaker";
 "clam" = "Clam";
+
+"turf_ss" = "Turf";
+"zones_ss" = "Zones";
+"tower_ss" = "Tower";
+"rainmaker_ss" = "Rainmaker";
+"clam_ss" = "Clam";
 
 // Stage
 "the_reef" = "The Reef";

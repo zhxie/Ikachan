@@ -27,8 +27,14 @@
 "turf" = "涂地";
 "zones" = "区域";
 "tower" = "推塔";
-"rainmaker_short" = "抢鱼";
+"rainmaker_s" = "抢鱼";
 "clam" = "蛤蜊";
+
+"turf_ss" = "涂地";
+"zones_ss" = "区域";
+"tower_ss" = "推塔";
+"rainmaker_ss" = "抢鱼";
+"clam_ss" = "蛤蜊";
 
 // Stage
 "the_reef" = "青花鱼寿司街";
