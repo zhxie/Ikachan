@@ -41,4 +41,7 @@ struct Shift: Hashable, Codable {
     }
     
     var weapons: [Weapon]
+    
+    static let subURL = "shift"
+    static let url = IkachanScheme + "://" + subURL
 }

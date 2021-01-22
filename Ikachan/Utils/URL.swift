@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TabIdentifier {
+enum Tab {
     case schedule
     case shift
 }
@@ -17,18 +17,39 @@ extension URL {
         return scheme == IkachanScheme
     }
     
-    var tabIdentifier: TabIdentifier? {
+    var tab: Tab? {
+        guard isDeeplink else {
+            return nil
+        }
+
+        guard let host = host else {
+            return nil
+        }
+        
+        if Schedule.GameMode(rawValue: host) != nil {
+            return .schedule
+        }
+        
+        if host == Shift.subURL {
+            return .shift
+        }
+        
+        return nil
+    }
+    
+    var gameMode: Schedule.GameMode? {
         guard isDeeplink else {
             return nil
         }
         
-        switch host {
-        case IkachanScheduleSubScheme:
-            return .schedule
-        case IkachanShiftSubScheme:
-            return .shift
-        default:
+        guard let host = host else {
             return nil
         }
+        
+        guard let gameMode = Schedule.GameMode(rawValue: host) else {
+            return nil
+        }
+
+        return gameMode
     }
 }

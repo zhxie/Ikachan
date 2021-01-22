@@ -94,6 +94,13 @@ struct SchedulesView: View {
                 update()
             }
         }
+        .onOpenURL { url in
+            guard let gameMode = url.gameMode else {
+                return
+            }
+            
+            self.gameMode = gameMode
+        }
     }
     
     var schedules: [Schedule] {

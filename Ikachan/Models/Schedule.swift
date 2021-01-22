@@ -50,6 +50,10 @@ struct Schedule: Hashable, Codable {
                 return Color(red: 232 / 255, green: 61 / 255, blue: 136 / 255)
             }
         }
+        
+        var url: String {
+            return IkachanScheme + "://" + rawValue
+        }
     }
     
     var rule: Rule

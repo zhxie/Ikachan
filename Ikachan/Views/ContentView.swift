@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection: TabIdentifier = .schedule
+    @State private var selection: Tab = .schedule
     
     var body: some View {
         TabView(selection: $selection) {
@@ -16,19 +16,19 @@ struct ContentView: View {
                 .tabItem {
                     Label("schedule", systemImage: "calendar")
                 }
-                .tag(TabIdentifier.schedule)
+                .tag(Tab.schedule)
             ShiftsView()
                 .tabItem {
                     Label("shift", systemImage: "person.crop.square.fill.and.at.rectangle")
                 }
-                .tag(TabIdentifier.shift)
+                .tag(Tab.shift)
         }
         .onOpenURL { url in
-            guard let tabIdentifier = url.tabIdentifier else {
+            guard let tab = url.tab else {
                 return
             }
             
-            selection = tabIdentifier
+            selection = tab
         }
     }
 }

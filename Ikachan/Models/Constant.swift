@@ -22,7 +22,3 @@ let Timeout = 5.0
 let DownscaledSystemSmallWidgetWithPadding: CGFloat = 126.0
 
 let IkachanScheme = "ikachan"
-let IkachanScheduleSubScheme = "schedule"
-let IkachanScheduleScheme = IkachanScheme + "://" + IkachanScheduleSubScheme
-let IkachanShiftSubScheme = "shift"
-let IkachanShiftScheme = IkachanScheme + "://" + IkachanShiftSubScheme

@@ -11,7 +11,7 @@ import Intents
 import Kingfisher
 
 struct Provider: IntentTimelineProvider {
-    func gameMode(for configuration: ConfigurationIntent) -> Schedule.GameMode {
+    static func gameMode(for configuration: ConfigurationIntent) -> Schedule.GameMode {
         switch configuration.gameMode {
         case .regular:
             return Schedule.GameMode.regular
@@ -37,7 +37,7 @@ struct Provider: IntentTimelineProvider {
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.gameMode == gameMode(for: configuration)
+                schedule.gameMode == Provider.gameMode(for: configuration)
             }
             
             if filtered.count > 0 {
@@ -65,7 +65,7 @@ struct Provider: IntentTimelineProvider {
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.gameMode == gameMode(for: configuration)
+                schedule.gameMode == Provider.gameMode(for: configuration)
             }
             
             var date = Date()
@@ -118,10 +118,10 @@ struct ScheduleWidgetEntryView : View {
         switch family {
         case .systemSmall:
             SmallScheduleView(current: entry.current, schedule: entry.schedule)
-                .widgetURL(URL(string: IkachanScheduleScheme)!)
+                .widgetURL(URL(string: Provider.gameMode(for: entry.configuration).url)!)
         default:
             MediumScheduleView(current: entry.current, schedule: entry.schedule)
-                .widgetURL(URL(string: IkachanScheduleScheme)!)
+                .widgetURL(URL(string: Provider.gameMode(for: entry.configuration).url)!)
         }
     }
 }
