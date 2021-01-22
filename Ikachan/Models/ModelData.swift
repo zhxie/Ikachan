@@ -23,7 +23,7 @@ final class ModelData: ObservableObject {
         isSchedulesUpdating = true
         
         var request = URLRequest(url: URL(string: Splatoon2InkScheduleURL)!)
-        request.timeoutInterval = 5
+        request.timeoutInterval = Timeout
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if error != nil {
@@ -81,7 +81,7 @@ final class ModelData: ObservableObject {
     static func fetchSchedules(completion:@escaping ([Schedule]?, Error?) -> Void) {
         do {
             var request = URLRequest(url: URL(string: Splatoon2InkScheduleURL)!)
-            request.timeoutInterval = 5
+            request.timeoutInterval = Timeout
             
             URLSession.shared.dataTask(with: request) { data, response, error in
                 if error != nil {
@@ -146,7 +146,7 @@ final class ModelData: ObservableObject {
         isShiftsUpdating = true
         
         var request = URLRequest(url: URL(string: Splatoon2InkShiftURL)!)
-        request.timeoutInterval = 5
+        request.timeoutInterval = Timeout
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if error != nil {
@@ -189,14 +189,14 @@ final class ModelData: ObservableObject {
             // Details
             let detailsJSON = json["details"].arrayValue
             for shift in detailsJSON {
-                shifts.append(self.parseShift(shift: shift))
+                shifts.append(ModelData.parseShift(shift: shift))
             }
             
             // Schedules
             var schedulesJSON = json["schedules"].arrayValue
             schedulesJSON = schedulesJSON.suffix(schedulesJSON.count - detailsJSON.count)
             for shift in schedulesJSON {
-                shifts.append(self.parseShift(shift: shift))
+                shifts.append(ModelData.parseShift(shift: shift))
             }
             
             self.shifts = shifts
@@ -207,7 +207,7 @@ final class ModelData: ObservableObject {
         }
     }
     
-    private func parseShift(shift: JSON) -> Shift {
+    private static func parseShift(shift: JSON) -> Shift {
         let startTime = shift["start_time"].doubleValue
         let endTime = shift["end_time"].doubleValue
         
@@ -224,7 +224,7 @@ final class ModelData: ObservableObject {
         return Shift(startTime: Date(timeIntervalSince1970: startTime), endTime: Date(timeIntervalSince1970: endTime), stage: parseStage(stage_image: stage_image), weapons: weapons)
     }
     
-    private func parseStage(stage_image: String?) -> Shift.Stage? {
+    private static func parseStage(stage_image: String?) -> Shift.Stage? {
         if stage_image == nil {
             return nil
         }
@@ -234,7 +234,7 @@ final class ModelData: ObservableObject {
         return Shift.Stage(image: Shift.StageImage(rawValue: stage_image)!)
     }
     
-    private func parseWeapon(weapon: JSON) -> Weapon {
+    private static func parseWeapon(weapon: JSON) -> Weapon {
         let id = Int(weapon["id"].stringValue)!
         var image = weapon["weapon"]["image"].string
         if image == nil {
