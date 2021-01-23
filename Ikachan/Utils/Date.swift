@@ -28,7 +28,11 @@ func timeSpan(current: Date, startTime: Date, endTime: Date) -> String {
             elapsed = 0
         }
         
-        return String(format: "-%@", format2(interval: elapsed))
+        if elapsed == 0 {
+            return format2(interval: elapsed)
+        } else {
+            return String(format: "-%@", format2(interval: elapsed))
+        }
     }
 }
 

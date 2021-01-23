@@ -58,7 +58,10 @@ struct Provider: IntentTimelineProvider {
         var resources: [Resource] = []
         
         ModelData.fetchSchedules { (schedules, error) in
-            let current = Date()
+            var current = Date()
+            let interval = current - Date(timeIntervalSince1970: 0)
+            let secs = interval - interval.truncatingRemainder(dividingBy: 60)
+            current = Date(timeIntervalSince1970: secs)
             
             guard let schedules = schedules else {
                 return
@@ -73,7 +76,7 @@ struct Provider: IntentTimelineProvider {
                 date = schedule.startTime
                 
                 while date < schedule.endTime && entries.count < 60 {
-                    if date >= current.addingTimeInterval(-60) {
+                    if date >= current {
                         let entry = SimpleEntry(date: date, configuration: configuration, current: date, schedule: schedule)
                         entries.append(entry)
                         urls.insert(URL(string: Splatnet2URL + schedule.stageA.image)!)
