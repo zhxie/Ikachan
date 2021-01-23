@@ -29,6 +29,41 @@
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<true/>
 	</dict>
+    <key>UIApplicationShortcutItems</key>
+    <array>
+        <dict>
+            <key>UIApplicationShortcutItemType</key>
+            <string>regular</string>
+            <key>UIApplicationShortcutItemIconSymbolName</key>
+            <string>calendar</string>
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>regular_battle</string>
+        </dict>
+        <dict>
+            <key>UIApplicationShortcutItemType</key>
+            <string>gachi</string>
+            <key>UIApplicationShortcutItemIconSymbolName</key>
+            <string>calendar</string>
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>ranked_battle</string>
+        </dict>
+        <dict>
+            <key>UIApplicationShortcutItemType</key>
+            <string>league</string>
+            <key>UIApplicationShortcutItemIconSymbolName</key>
+            <string>calendar</string>
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>league_battle</string>
+        </dict>
+        <dict>
+            <key>UIApplicationShortcutItemType</key>
+            <string>salmon_run</string>
+            <key>UIApplicationShortcutItemIconSymbolName</key>
+            <string>person.crop.square.fill.and.at.rectangle</string>
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>salmon_run</string>
+        </dict>
+    </array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchScreen</key>

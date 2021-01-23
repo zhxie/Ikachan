@@ -7,3 +7,7 @@
 */
 
 "CFBundleDisplayName" = "イカチャン";
+"regular_battle" = "レギュラーマッチ";
+"ranked_battle" = "ガチマッチ";
+"league_battle" = "リーグマッチ";
+"salmon_run" = "サーモンラン";

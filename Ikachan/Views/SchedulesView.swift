@@ -11,7 +11,6 @@ struct SchedulesView: View {
     @EnvironmentObject var modelData: ModelData
     @Environment(\.scenePhase) var scenePhase
     
-    @State var gameMode = Schedule.GameMode.regular
     // HACK: Consider rule turfWar as no filtering
     @State var rule = Schedule.Rule.turfWar
     
@@ -34,11 +33,11 @@ struct SchedulesView: View {
                     }
                 }
                 .padding()
-                .navigationTitle(gameMode.longDescription)
+                .navigationTitle(modelData.gameMode.longDescription)
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Picker(selection: $gameMode, label: Text("")) {
+                    Picker(selection: $modelData.gameMode, label: Text("")) {
                         ForEach(Schedule.GameMode.allCases, id: \.self) { gameMode in
                             Text(gameMode.description)
                                 .tag(gameMode)
@@ -99,13 +98,13 @@ struct SchedulesView: View {
                 return
             }
             
-            self.gameMode = gameMode
+            modelData.gameMode = gameMode
         }
     }
     
     var schedules: [Schedule] {
         modelData.schedules.filter { schedule in
-            schedule.gameMode == gameMode && (rule == Schedule.Rule.turfWar || rule == schedule.rule)
+            schedule.gameMode == modelData.gameMode && (rule == Schedule.Rule.turfWar || rule == schedule.rule)
         }
     }
     

@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection: Tab = .schedule
+    @EnvironmentObject var modelData: ModelData
     
     var body: some View {
-        TabView(selection: $selection) {
+        TabView(selection: $modelData.tab) {
             SchedulesView()
                 .tabItem {
                     Label("schedule", systemImage: "calendar")
@@ -28,7 +28,7 @@ struct ContentView: View {
                 return
             }
             
-            selection = tab
+            modelData.tab = tab
         }
     }
 }

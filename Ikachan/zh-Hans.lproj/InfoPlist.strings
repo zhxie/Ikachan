@@ -7,3 +7,7 @@
 */
 
 "CFBundleDisplayName" = "乌贼酱";
+"regular_battle" = "普通对战";
+"ranked_battle" = "真格对战";
+"league_battle" = "组排对战";
+"salmon_run" = "Salmon Run";

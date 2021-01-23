@@ -11,6 +11,9 @@ import SwiftyJSON
 
 
 final class ModelData: ObservableObject {
+    @Published var tab: Tab = Tab.schedule
+    @Published var gameMode: Schedule.GameMode = Schedule.GameMode.regular
+    
     @Published var schedules: [Schedule] = []
     
     @Published var isSchedulesUpdating = false
