@@ -32,6 +32,7 @@ struct SmallScheduleView: View {
                         
                         Text((g.size.width > DownscaledSystemSmallWidgetWithPadding ? schedule?.rule.shortDescription : schedule?.rule.shorterDescription) ?? "")
                             .font(.caption)
+                            .fontWeight(.bold)
                             .foregroundColor(schedule?.gameMode.accentColor ?? Color.accentColor)
                             .lineLimit(1)
                             .layoutPriority(2)

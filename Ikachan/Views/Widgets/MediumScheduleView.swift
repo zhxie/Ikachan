@@ -82,6 +82,7 @@ struct MediumScheduleView: View {
                             
                             Text(schedule?.rule.shortDescription ?? "")
                                 .font(.caption)
+                                .fontWeight(.bold)
                                 .foregroundColor(schedule?.gameMode.accentColor ?? Color.accentColor)
                                 .lineLimit(1)
                                 .layoutPriority(2)

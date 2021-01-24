@@ -130,8 +130,9 @@ struct MediumShiftView: View {
                             Spacer()
                                 .frame(minWidth: 0)
                             
-                            Text("salmon_run")
+                            Text(Shift.rawValue)
                                 .font(.caption)
+                                .fontWeight(.bold)
                                 .foregroundColor(Shift.accentColor)
                                 .lineLimit(1)
                                 .layoutPriority(2)
@@ -153,7 +154,7 @@ struct MediumShiftView: View {
                             Image(systemName: "circle.fill")
                                 .font(.footnote)
                                 .foregroundColor(Shift.accentColor)
-                                .accessibility(label: Text("salmon_run"))
+                                .accessibility(label: Text(Shift.rawValue))
                         }
                         .layoutPriority(1)
                         

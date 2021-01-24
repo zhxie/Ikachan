@@ -48,6 +48,7 @@ struct SmallDayView: View {
                     
                     Text(schedule?.rule.shorterDescription ?? "")
                         .font(.caption)
+                        .fontWeight(.bold)
                         .foregroundColor(.white)
                         .lineLimit(1)
                         .layoutPriority(2)
