@@ -210,6 +210,47 @@ final class ModelData: ObservableObject {
         }
     }
     
+    static func fetchShifts(completion:@escaping ([Shift]?, Error?) -> Void) {
+        do {
+            var request = URLRequest(url: URL(string: Splatoon2InkShiftURL)!)
+            request.timeoutInterval = Timeout
+            
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if error != nil {
+                    completion(nil, error)
+                    
+                    return
+                }
+                
+                let response = response as! HTTPURLResponse
+                let status = response.statusCode
+                guard (200...299).contains(status) else {
+                    completion(nil, error)
+                    
+                    return
+                }
+                
+                if let json = try? JSON(data: data!) {
+                    var shifts: [Shift] = []
+                    
+                    for (_, value) in json {
+                        let ss = value.arrayValue
+                        for shift in ss {
+                            shifts.append(ModelData.parseShift(shift: shift))
+                        }
+                    }
+                    
+                    completion(shifts, error)
+                } else {
+                    completion(nil, error)
+                    
+                    return
+                }
+            }
+            .resume()
+        }
+    }
+    
     private static func parseShift(shift: JSON) -> Shift {
         let startTime = shift["start_time"].doubleValue
         let endTime = shift["end_time"].doubleValue

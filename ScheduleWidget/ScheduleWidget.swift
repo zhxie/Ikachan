@@ -10,7 +10,7 @@ import SwiftUI
 import Intents
 import Kingfisher
 
-struct Provider: IntentTimelineProvider {
+struct ScheduleProvider: IntentTimelineProvider {
     static func gameMode(for configuration: ConfigurationIntent) -> Schedule.GameMode {
         switch configuration.gameMode {
         case .regular:
@@ -24,11 +24,11 @@ struct Provider: IntentTimelineProvider {
         }
     }
     
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: SchedulePlaceholder)
+    func placeholder(in context: Context) -> ScheduleEntry {
+        ScheduleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: SchedulePlaceholder)
     }
 
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
+    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (ScheduleEntry) -> ()) {
         ModelData.fetchSchedules { (schedules, error) in
             let current = Date()
             
@@ -37,11 +37,11 @@ struct Provider: IntentTimelineProvider {
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.gameMode == Provider.gameMode(for: configuration)
+                schedule.gameMode == ScheduleProvider.gameMode(for: configuration)
             }
             
             if filtered.count > 0 {
-                let entry = SimpleEntry(date: current, configuration: configuration, current: current, schedule: filtered[0])
+                let entry = ScheduleEntry(date: current, configuration: configuration, current: current, schedule: filtered[0])
                 let resources = [ImageResource(downloadURL: URL(string: Splatnet2URL + filtered[0].stageA.image)!), ImageResource(downloadURL: URL(string: Splatnet2URL + filtered[0].stageB.image)!)]
                 
                 ImagePrefetcher(resources: resources) { (_, _, _) in
@@ -53,11 +53,11 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-        var urls: Set<URL> = []
-        var resources: [Resource] = []
-        
         ModelData.fetchSchedules { (schedules, error) in
+            var entries: [ScheduleEntry] = []
+            var urls: Set<URL> = []
+            var resources: [Resource] = []
+            
             var current = Date()
             let interval = current - Date(timeIntervalSince1970: 0)
             let secs = interval - interval.truncatingRemainder(dividingBy: 60)
@@ -68,7 +68,7 @@ struct Provider: IntentTimelineProvider {
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.gameMode == Provider.gameMode(for: configuration)
+                schedule.gameMode == ScheduleProvider.gameMode(for: configuration)
             }
             
             var date = Date()
@@ -77,7 +77,7 @@ struct Provider: IntentTimelineProvider {
                 
                 while date < schedule.endTime && entries.count < 30 {
                     if date >= current {
-                        let entry = SimpleEntry(date: date, configuration: configuration, current: date, schedule: schedule)
+                        let entry = ScheduleEntry(date: date, configuration: configuration, current: date, schedule: schedule)
                         entries.append(entry)
                         urls.insert(URL(string: Splatnet2URL + schedule.stageA.image)!)
                         urls.insert(URL(string: Splatnet2URL + schedule.stageB.image)!)
@@ -103,7 +103,7 @@ struct Provider: IntentTimelineProvider {
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct ScheduleEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
     
@@ -112,7 +112,7 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct ScheduleWidgetEntryView : View {
-    var entry: Provider.Entry
+    var entry: ScheduleProvider.Entry
     
     @Environment(\.widgetFamily) var family
 
@@ -121,20 +121,19 @@ struct ScheduleWidgetEntryView : View {
         switch family {
         case .systemSmall:
             SmallScheduleView(current: entry.current, schedule: entry.schedule)
-                .widgetURL(URL(string: Provider.gameMode(for: entry.configuration).url)!)
+                .widgetURL(URL(string: ScheduleProvider.gameMode(for: entry.configuration).url)!)
         default:
             MediumScheduleView(current: entry.current, schedule: entry.schedule)
-                .widgetURL(URL(string: Provider.gameMode(for: entry.configuration).url)!)
+                .widgetURL(URL(string: ScheduleProvider.gameMode(for: entry.configuration).url)!)
         }
     }
 }
 
-@main
 struct ScheduleWidget: Widget {
     let kind: String = "ScheduleWidget"
 
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: ScheduleProvider()) { entry in
             ScheduleWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("schedule")
@@ -152,10 +151,10 @@ struct ScheduleWidget_Previews: PreviewProvider {
         _ = modelData.loadSchedules(data: asset.data)
         
         return Group {
-            ScheduleWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: modelData.schedules[0]))
+            ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: modelData.schedules[0]))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
             
-            ScheduleWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: modelData.schedules[0]))
+            ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: modelData.schedules[0]))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
         }
     }

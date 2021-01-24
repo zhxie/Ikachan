@@ -149,6 +149,7 @@
 
 // Widget
 "schedule_widget_description" = "查看某模式当前和未来的日程。";
+"shift_widget_description" = "查看当前和未来的排班表。";
 
 // Accessiblity
 "filter" = "过滤";

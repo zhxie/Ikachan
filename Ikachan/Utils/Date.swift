@@ -112,6 +112,16 @@ func shiftTimePeriod(startTime: Date, endTime: Date) -> String {
     return String(format: "%@ - %@", startTime, endTime)
 }
 
+func shiftTimePeriod2(startTime: Date, endTime: Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "M/dd HH:mm"
+    
+    let startTime = dateFormatter.string(from: startTime)
+    let endTime = dateFormatter.string(from: endTime)
+    
+    return String(format: "%@-%@", startTime, endTime)
+}
+
 private func format(interval: TimeInterval) -> String {
     let mins = Int((interval / 60).rounded())
     

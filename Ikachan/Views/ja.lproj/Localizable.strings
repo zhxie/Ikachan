@@ -148,6 +148,7 @@
 
 // Widget
 "schedule_widget_description" = "そのモードの現在と将来のスケジュールを表示できます。";
+"shift_widget_description" = "現在と将来のシフト表を表示できます。";
 
 // Accessiblity
 "filter" = "フィルタ";
