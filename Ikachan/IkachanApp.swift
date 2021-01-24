@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 let modelData = ModelData()
 var shortcutItemToProcess: UIApplicationShortcutItem?
@@ -42,6 +43,8 @@ struct IkachanApp: App {
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        KingfisherManager.shared.downloader.downloadTimeout = Timeout
+        
         if let shortcutItem = options.shortcutItem {
             shortcutItemToProcess = shortcutItem
         }

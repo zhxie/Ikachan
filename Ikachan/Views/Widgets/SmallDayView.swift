@@ -15,17 +15,19 @@ struct SmallDayView: View {
         ZStack {
             ZStack {
                 switch hour {
-                case 0..<5, 23..<25:
+                case 0..<5:
                     Midnight()
-                case 5..<8:
+                case 5..<7:
                     Dawn()
-                case 8..<16:
+                case 7..<9:
                     Daylight()
-                case 16..<18:
-                    Sideways()
-                case 18..<20:
-                    Twilight()
-                case 20..<23:
+                case 9..<15:
+                    Daylight()
+                case 15..<17:
+                    SunSet()
+                case 17..<19:
+                    Dusk()
+                case 19..<24, 24:
                     Nightfall()
                 default:
                     Daylight()
@@ -105,7 +107,7 @@ struct SmallDayView: View {
     }
     
     var isDay: Bool {
-        return hour >= 6 && hour <= 18
+        return hour >= 6 && hour < 18
     }
     
     var icon: String {
@@ -139,14 +141,14 @@ struct Daylight: View {
     }
 }
 
-struct Sideways: View {
+struct SunSet: View {
     var body: some View {
         LinearGradient(gradient: Gradient(colors: [Color(red: 46 / 255, green: 129 / 255, blue: 178 / 255), Color(red: 202 / 255, green: 186 / 255, blue: 203 / 255)]), startPoint: .top, endPoint: .bottom)
             .ignoresSafeArea(edges: .all)
     }
 }
 
-struct Twilight: View {
+struct Dusk: View {
     var body: some View {
         LinearGradient(gradient: Gradient(colors: [Color(red: 27 / 255, green: 63 / 255, blue: 137 / 255), Color(red: 164 / 255, green: 158 / 255, blue: 196 / 255)]), startPoint: .top, endPoint: .bottom)
             .ignoresSafeArea(edges: .all)
