@@ -87,6 +87,7 @@ struct SchedulesView: View {
                 }
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: update)
         .onChange(of: scenePhase) { phase in
             if phase == .active {
