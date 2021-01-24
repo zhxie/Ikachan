@@ -199,6 +199,7 @@
 				E477990025B1F1E600F8AE9F /* Models */,
 				E47798FD25B1EDDA00F8AE9F /* Views */,
 				E4405D7A25AF64D2002EF1AB /* IkachanApp.swift */,
+				E4C7A2C225B7395500E26B20 /* Localizable.strings */,
 				E4405D7E25AF64D6002EF1AB /* Assets.xcassets */,
 				E4405D8325AF64D6002EF1AB /* Info.plist */,
 				E46B514C25BB46C5001F88CE /* InfoPlist.strings */,
@@ -265,8 +266,8 @@
 				E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */,
 				E4B1145E25BD5AC600303542 /* DayWidget.swift */,
 				E46B507525B9C2AC001F88CE /* ScheduleWidget.swift */,
-				E4B1144F25BD43B400303542 /* ShiftWidget.swift */,
 				E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */,
+				E4B1144F25BD43B400303542 /* ShiftWidget.swift */,
 				E46B507825B9C2B1001F88CE /* Assets.xcassets */,
 				E46B507A25B9C2B1001F88CE /* Info.plist */,
 			);
@@ -282,7 +283,6 @@
 				E438EF5B25B5F939005AB9D9 /* CurrentView.swift */,
 				E4E60D8825B5CBC80039A6E6 /* SchedulesView.swift */,
 				E438EF4425B5E3F7005AB9D9 /* ShiftsView.swift */,
-				E4C7A2C225B7395500E26B20 /* Localizable.strings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
