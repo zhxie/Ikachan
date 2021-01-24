@@ -24,6 +24,7 @@ struct SmallScheduleView: View {
                             .font(.caption2)
                             .foregroundColor(.secondary)
                             .lineLimit(1)
+                            .accessibility(label: Text(scheduleTimePeriod(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0))))
                             .layoutPriority(1)
                         
                         Spacer()

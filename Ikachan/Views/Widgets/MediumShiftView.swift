@@ -25,6 +25,7 @@ struct MediumShiftView: View {
                                 .font(.caption2)
                                 .foregroundColor(.secondary)
                                 .lineLimit(1)
+                                .accessibility(label: Text(shiftTimePeriod(startTime: shift?.startTime ?? Date(timeIntervalSince1970: 0), endTime: shift?.endTime ?? Date(timeIntervalSince1970: 0))))
                                 .layoutPriority(1)
                             
                             Spacer()
