@@ -136,6 +136,8 @@
 "soon" = "即将开放";
 "next" = "接下来";
 "future" = "之后";
+"in_the_day" = "白天";
+"at_night" = "夜间";
 "about" = "关于";
 "about_us" = "关于我们";
 "repository" = "代码仓库";
@@ -150,6 +152,8 @@
 // Widget
 "schedule_widget_description" = "查看某模式当前和未来的日程。";
 "shift_widget_description" = "查看当前和未来的排班表。";
+"day_widget_name" = "一日Splatoon";
+"day_widget_description" = "在玩Splatoon的同时感受时间的流逝。";
 
 // Accessiblity
 "filter" = "过滤";
