@@ -153,7 +153,7 @@
 "schedule_widget_description" = "查看某模式当前和未来的日程。";
 "shift_widget_description" = "查看当前和未来的排班表。";
 "day_widget_name" = "一日Splatoon";
-"day_widget_description" = "在玩Splatoon的同时感受时间的流逝。";
+"day_widget_description" = "成为乌贼的同时感受时间的流逝。";
 
 // Accessiblity
 "filter" = "过滤";

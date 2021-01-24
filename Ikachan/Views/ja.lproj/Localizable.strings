@@ -152,7 +152,7 @@
 "schedule_widget_description" = "そのモードの現在と将来のスケジュールを表示できます。";
 "shift_widget_description" = "現在と将来のシフト表を表示できます。";
 "day_widget_name" = "一日スプラ";
-"day_widget_description" = "スプラトゥーンをプレイしながら、時間の経過を感じる。";
+"day_widget_description" = "イカしながら一日経ることを感じる。";
 
 // Accessiblity
 "filter" = "フィルタ";
