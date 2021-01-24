@@ -151,11 +151,11 @@ private func format2(interval: TimeInterval) -> String {
     
     if day > 0 || hour >= 10 {
         if day >= 10 {
-            return String(format: "%dd", day)
+            return String(format: "%dd+", day)
         } else if day > 0 {
-            return String(format: "%dd%dh", day, hour)
+            return String(format: "%dd%dh+", day, hour)
         } else {
-            return String(format: "%dh", hour)
+            return String(format: "%dh+", hour)
         }
     } else {
         if hour > 0 {
