@@ -51,7 +51,7 @@ struct MediumShiftView: View {
                             
                             HStack {
                                 Rectangle()
-                                    .fill(Color(UIColor.secondarySystemBackground))
+                                    .fill(Color.clear)
                                     .aspectRatio(1, contentMode: .fit)
                                     .overlay(
                                         KFImage(URL(string: Splatnet2URL + (shift?.weapons[0].image ?? ""))!)
@@ -66,7 +66,7 @@ struct MediumShiftView: View {
                                     )
                                     .cornerRadius(7.5)
                                 Rectangle()
-                                    .fill(Color(UIColor.secondarySystemBackground))
+                                    .fill(Color.clear)
                                     .aspectRatio(1, contentMode: .fit)
                                     .overlay(
                                         KFImage(URL(string: Splatnet2URL + (shift?.weapons[1].image ?? ""))!)
@@ -81,7 +81,7 @@ struct MediumShiftView: View {
                                     )
                                     .cornerRadius(7.5)
                                 Rectangle()
-                                    .fill(Color(UIColor.secondarySystemBackground))
+                                    .fill(Color.clear)
                                     .aspectRatio(1, contentMode: .fit)
                                     .overlay(
                                         KFImage(URL(string: Splatnet2URL + (shift?.weapons[2].image ?? ""))!)
@@ -96,7 +96,7 @@ struct MediumShiftView: View {
                                     )
                                     .cornerRadius(7.5)
                                 Rectangle()
-                                    .fill(Color(UIColor.secondarySystemBackground))
+                                    .fill(Color.clear)
                                     .aspectRatio(1, contentMode: .fit)
                                     .overlay(
                                         KFImage(URL(string: Splatnet2URL + (shift?.weapons[3].image ?? ""))!)
