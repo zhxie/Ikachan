@@ -79,6 +79,7 @@ struct SmallScheduleView: View {
                         Image(systemName: "circle.fill")
                             .font(.footnote)
                             .foregroundColor(schedule?.gameMode.accentColor ?? Color.accentColor)
+                            .accessibility(label: Text(schedule?.gameMode.longDescription ?? ""))
                     }
                     .layoutPriority(1)
                     
