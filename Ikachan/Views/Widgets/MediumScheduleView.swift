@@ -64,10 +64,10 @@ struct MediumScheduleView: View {
                                 .cornerRadius(7.5)
                         }
                     }
-                    .frame(width: g.size.width / 2 - 10)
+                    .frame(width: g.size.width / 2 - 5)
                     
                     Spacer()
-                        .frame(width: 20)
+                        .frame(width: 15)
                     
                     VStack(spacing: 0) {
                         HStack {

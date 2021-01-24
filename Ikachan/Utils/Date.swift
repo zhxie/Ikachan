@@ -15,7 +15,7 @@ extension Date {
 }
 
 func timeSpan(current: Date, startTime: Date, endTime: Date) -> String {
-    if current > startTime {
+    if current >= startTime {
         var elapsed = endTime - current
         if elapsed < 0 {
             elapsed = 0
@@ -37,7 +37,7 @@ func timeSpan(current: Date, startTime: Date, endTime: Date) -> String {
 }
 
 func absoluteTimeSpan(current: Date, startTime: Date, endTime: Date) -> String {
-    if current > startTime {
+    if current >= startTime {
         var elapsed = endTime - current
         if elapsed < 0 {
             elapsed = 0
@@ -55,7 +55,7 @@ func absoluteTimeSpan(current: Date, startTime: Date, endTime: Date) -> String {
 }
 
 func timeSpanDescriptor(current: Date, startTime: Date) -> LocalizedStringKey {
-    if current > startTime {
+    if current >= startTime {
         return "remaining"
     } else {
         return "next"
@@ -65,7 +65,7 @@ func timeSpanDescriptor(current: Date, startTime: Date) -> LocalizedStringKey {
 func naturalTimeSpan(startTime: Date, endTime: Date) -> String {
     let current = Date()
     
-    if current > startTime {
+    if current >= startTime {
         var elapsed = endTime - current
         if elapsed < 0 {
             elapsed = 0

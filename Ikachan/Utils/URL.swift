@@ -30,7 +30,7 @@ extension URL {
             return .schedule
         }
         
-        if host == Shift.subURL {
+        if host == Shift.rawValue {
             return .shift
         }
         

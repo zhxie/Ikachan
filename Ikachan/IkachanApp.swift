@@ -32,7 +32,7 @@ struct IkachanApp: App {
                     modelData.gameMode = gameMode
                 }
                 
-                if type == Shift.subURL {
+                if type == Shift.rawValue {
                     modelData.tab = Tab.shift
                 }
             }
