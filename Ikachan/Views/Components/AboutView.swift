@@ -1,5 +1,5 @@
 //
-//  AboutModalView.swift
+//  AboutView.swift
 //  Ikachan
 //
 //  Created by Sketch on 2021/1/22.
@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct AboutModalView: View {
+struct AboutView: View {
+    @Binding var showModal: Bool
+    
     var body: some View {
         NavigationView {
             Form {
@@ -39,6 +41,9 @@ struct AboutModalView: View {
                             }
                         }
                         .navigationTitle("acknowledgements")
+                        .navigationBarItems(trailing: Button("close") {
+                            showModal.toggle()
+                        })
                         .padding()
                     }) {
                         Text("acknowledgements")
@@ -46,6 +51,9 @@ struct AboutModalView: View {
                 }
             }
             .navigationTitle("about")
+            .navigationBarItems(trailing: Button("close") {
+                showModal.toggle()
+            })
         }
     }
     
@@ -73,11 +81,5 @@ struct AboutModalView: View {
         let content = fm.contents(atPath: path)
         
         return String(data: content!, encoding: .utf8)!
-    }
-}
-
-struct SettingsModalView_Previews: PreviewProvider {
-    static var previews: some View {
-        AboutModalView()
     }
 }

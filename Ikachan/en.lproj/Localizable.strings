@@ -147,6 +147,7 @@
 "splatoon2_ink" = "Splatoon2.ink";
 "acknowledgements" = "Acknowledgements";
 "disclaimer" = "This app is an unofficial app which uses the information of Splatnet 2, and has nothing to do with Nintendo Co., Ltd.";
+"close" = "Close";
 
 // Widget
 "schedule_widget_description" = "See the current and future schedules for a mode.";

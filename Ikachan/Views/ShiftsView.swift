@@ -63,7 +63,7 @@ struct ShiftsView: View {
                     }) {
                         Image(systemName: "info.circle")
                     }.sheet(isPresented: $showModal) {
-                        AboutModalView()
+                        AboutView(showModal: $showModal)
                     }
                     .animation(.easeInOut(duration: 0.2))
                 }
