@@ -75,7 +75,7 @@ struct Provider: IntentTimelineProvider {
             for schedule in filtered {
                 date = schedule.startTime
                 
-                while date < schedule.endTime && entries.count < 60 {
+                while date < schedule.endTime && entries.count < 30 {
                     if date >= current {
                         let entry = SimpleEntry(date: date, configuration: configuration, current: date, schedule: schedule)
                         entries.append(entry)
@@ -86,7 +86,7 @@ struct Provider: IntentTimelineProvider {
                     date = date.addingTimeInterval(60)
                 }
                 
-                if entries.count >= 60 {
+                if entries.count >= 30 {
                     break
                 }
             }
