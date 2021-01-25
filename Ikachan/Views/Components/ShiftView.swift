@@ -54,12 +54,6 @@ struct ShiftView: View {
 
 struct ShiftView_Previews: PreviewProvider {
     static var previews: some View {
-        let modelData = ModelData()
-        
-        let asset = NSDataAsset(name: "shifts", bundle: Bundle.main)!
-        
-        _ = modelData.loadSchedules(data: asset.data)
-        
-        return ShiftView(shift: modelData.shifts[0], title: "open")
+        ShiftView(shift: ShiftPlaceholder, title: "open")
     }
 }

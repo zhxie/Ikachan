@@ -139,16 +139,10 @@ struct MediumScheduleView: View {
 
 struct MediumScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        let modelData = ModelData()
-        
-        let asset = NSDataAsset(name: "schedules", bundle: Bundle.main)!
-        
-        _ = modelData.loadSchedules(data: asset.data)
-        
-        return Group {
-            MediumScheduleView(current: Date(), schedule: modelData.schedules[0])
+        Group {
+            MediumScheduleView(current: Date(), schedule: SchedulePlaceholder)
                 .previewLayout(.fixed(width: 360, height: 169))
-            MediumScheduleView(current: Date(), schedule: modelData.schedules[0])
+            MediumScheduleView(current: Date(), schedule: SchedulePlaceholder)
                 .previewLayout(.fixed(width: 291, height: 141))
         }
     }

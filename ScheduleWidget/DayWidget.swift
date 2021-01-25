@@ -122,13 +122,7 @@ struct DayWidget: Widget {
 
 struct DayWidget_Previews: PreviewProvider {
     static var previews: some View {
-        let modelData = ModelData()
-        
-        let asset = NSDataAsset(name: "schedules", bundle: Bundle.main)!
-        
-        _ = modelData.loadSchedules(data: asset.data)
-        
-        return DayWidgetEntryView(entry: DayEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: modelData.schedules[0]))
+        DayWidgetEntryView(entry: DayEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: SchedulePlaceholder))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

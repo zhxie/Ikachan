@@ -113,16 +113,10 @@ struct SmallScheduleView: View {
 
 struct SmallScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        let modelData = ModelData()
-        
-        let asset = NSDataAsset(name: "schedules", bundle: Bundle.main)!
-        
-        _ = modelData.loadSchedules(data: asset.data)
-        
-        return Group {
-            SmallScheduleView(current: Date(), schedule: modelData.schedules[0])
+        Group {
+            SmallScheduleView(current: Date(timeIntervalSince1970: 60), schedule: SchedulePlaceholder)
                 .previewLayout(.fixed(width: 169, height: 169))
-            SmallScheduleView(current: Date(), schedule: modelData.schedules[0])
+            SmallScheduleView(current: Date(timeIntervalSince1970: 60), schedule: SchedulePlaceholder)
                 .previewLayout(.fixed(width: 141, height: 141))
         }
     }

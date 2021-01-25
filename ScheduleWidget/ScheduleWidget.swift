@@ -144,17 +144,11 @@ struct ScheduleWidget: Widget {
 
 struct ScheduleWidget_Previews: PreviewProvider {
     static var previews: some View {
-        let modelData = ModelData()
-        
-        let asset = NSDataAsset(name: "schedules", bundle: Bundle.main)!
-        
-        _ = modelData.loadSchedules(data: asset.data)
-        
-        return Group {
-            ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: modelData.schedules[0]))
+        Group {
+            ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: SchedulePlaceholder))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
             
-            ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: modelData.schedules[0]))
+            ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: SchedulePlaceholder))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
         }
     }

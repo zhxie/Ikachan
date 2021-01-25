@@ -181,16 +181,10 @@ struct MediumShiftView: View {
 
 struct MediumShiftView_Previews: PreviewProvider {
     static var previews: some View {
-        let modelData = ModelData()
-        
-        let asset = NSDataAsset(name: "shifts", bundle: Bundle.main)!
-        
-        _ = modelData.loadShifts(data: asset.data)
-        
-        return Group {
-            MediumShiftView(current: Date(), shift: modelData.shifts[0])
+        Group {
+            MediumShiftView(current: Date(), shift: ShiftPlaceholder)
                 .previewLayout(.fixed(width: 360, height: 169))
-            MediumShiftView(current: Date(), shift: modelData.shifts[0])
+            MediumShiftView(current: Date(), shift: ShiftPlaceholder)
                 .previewLayout(.fixed(width: 291, height: 141))
         }
     }

@@ -119,13 +119,7 @@ struct ShiftsView: View {
 
 struct ShiftsView_Previews: PreviewProvider {
     static var previews: some View {
-        let modelData = ModelData()
-        
-        let asset = NSDataAsset(name: "shifts", bundle: Bundle.main)!
-        
-        _ = modelData.loadShifts(data: asset.data)
-        
-        return ShiftsView()
-            .environmentObject(modelData)
+        ShiftsView()
+            .environmentObject(ModelData())
     }
 }

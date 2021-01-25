@@ -116,13 +116,7 @@ struct SchedulesView: View {
 
 struct SchedulesView_Previews: PreviewProvider {
     static var previews: some View {
-        let modelData = ModelData()
-        
-        let asset = NSDataAsset(name: "schedules", bundle: Bundle.main)!
-        
-        _ = modelData.loadSchedules(data: asset.data)
-        
-        return SchedulesView()
-            .environmentObject(modelData)
+        SchedulesView()
+            .environmentObject(ModelData())
     }
 }

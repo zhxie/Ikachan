@@ -59,6 +59,6 @@ struct ScheduleImages: View {
 
 struct ScheduleImages_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleImages(imageA: "https://app.splatoon2.nintendo.net/images/stage/96fd8c0492331a30e60a217c94fd1d4c73a966cc.png", titleA: "Moray Towers", imageB: "https://app.splatoon2.nintendo.net/images/stage/96fd8c0492331a30e60a217c94fd1d4c73a966cc.png", titleB: "Moray Towers")
+        ScheduleImages(imageA: "", titleA: "the_reef", imageB: "", titleB: "mussel_forge_fitness")
     }
 }

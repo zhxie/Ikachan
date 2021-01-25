@@ -119,6 +119,6 @@ struct ShiftImages: View {
 
 struct ShiftImages_Previews: PreviewProvider {
     static var previews: some View {
-        ShiftImages(image: "https://app.splatoon2.nintendo.net/images/coop_stage/50064ec6e97aac91e70df5fc2cfecf61ad8615fd.png", title: "Ruins of Ark Polaris", subImage1: "https://app.splatoon2.nintendo.net/images/weapon/91b6666bcbfccc204d86f21222a8db22a27d08d0.png", subTitle1: "Splattershot Jr.", subImage2: "https://app.splatoon2.nintendo.net/images/weapon/91b6666bcbfccc204d86f21222a8db22a27d08d0.png", subTitle2: "Splattershot Jr.", subImage3: "https://app.splatoon2.nintendo.net/images/weapon/91b6666bcbfccc204d86f21222a8db22a27d08d0.png", subTitle3: "Splattershot Jr.", subImage4: "https://app.splatoon2.nintendo.net/images/weapon/91b6666bcbfccc204d86f21222a8db22a27d08d0.png", subTitle4: "Splattershot Jr.")
+        ShiftImages(image: "", title: "spawning_grounds", subImage1: "", subTitle1: "random", subImage2: "", subTitle2: "random", subImage3: "", subTitle3: "random", subImage4: "", subTitle4: "random")
     }
 }

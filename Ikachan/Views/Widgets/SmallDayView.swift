@@ -172,15 +172,11 @@ struct Midnight: View {
 
 struct SmallDayView_Previews: PreviewProvider {
     static var previews: some View {
-        let modelData = ModelData()
-        
-        let asset = NSDataAsset(name: "schedules", bundle: Bundle.main)!
-        
-        _ = modelData.loadSchedules(data: asset.data)
-        
-        return Group {
-            SmallDayView(current: Date(), schedule: modelData.schedules[0]).previewLayout(.fixed(width: 169, height: 169))
-            SmallDayView(current: Date(), schedule: modelData.schedules[0]).previewLayout(.fixed(width: 141, height: 141))
+        Group {
+            SmallDayView(current: Date(), schedule: SchedulePlaceholder)
+                .previewLayout(.fixed(width: 169, height: 169))
+            SmallDayView(current: Date(), schedule: SchedulePlaceholder)
+                .previewLayout(.fixed(width: 141, height: 141))
         }
     }
 }

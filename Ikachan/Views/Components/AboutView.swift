@@ -83,3 +83,9 @@ struct AboutView: View {
         return String(data: content!, encoding: .utf8)!
     }
 }
+
+struct AboutView_Previews: PreviewProvider {
+    static var previews: some View {
+        AboutView(showModal: .constant(true))
+    }
+}

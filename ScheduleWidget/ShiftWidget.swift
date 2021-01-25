@@ -124,13 +124,7 @@ struct ShiftWidget: Widget {
 
 struct ShiftWidget_Previews: PreviewProvider {
     static var previews: some View {
-        let modelData = ModelData()
-        
-        let asset = NSDataAsset(name: "shifts", bundle: Bundle.main)!
-        
-        _ = modelData.loadShifts(data: asset.data)
-        
-        return ShiftWidgetEntryView(entry: ShiftEntry(date: Date(), current: Date(), shift: modelData.shifts[0]))
+        ShiftWidgetEntryView(entry: ShiftEntry(date: Date(), current: Date(), shift: ShiftPlaceholder))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }
