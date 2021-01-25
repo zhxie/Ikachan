@@ -24,7 +24,7 @@
 		E46B507325B9C2AC001F88CE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46B507225B9C2AC001F88CE /* SwiftUI.framework */; };
 		E46B507625B9C2AC001F88CE /* ScheduleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B507525B9C2AC001F88CE /* ScheduleWidget.swift */; };
 		E46B507925B9C2B1001F88CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46B507825B9C2B1001F88CE /* Assets.xcassets */; };
-		E46B507F25B9C2B1001F88CE /* ScheduleWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E46B506E25B9C2AC001F88CE /* ScheduleWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E46B507F25B9C2B1001F88CE /* IkachanWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E46B506E25B9C2AC001F88CE /* IkachanWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E46B508625B9C2E4001F88CE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7AC25B34AFC001254FE /* Constant.swift */; };
 		E46B508725B9C2E4001F88CE /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E46B508825B9C2E4001F88CE /* SmallScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B506425B8959A001F88CE /* SmallScheduleView.swift */; };
@@ -70,7 +70,7 @@
 			containerPortal = E4405D6F25AF64D2002EF1AB /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E46B506D25B9C2AC001F88CE;
-			remoteInfo = ScheduleWidgetExtension;
+			remoteInfo = IkachanWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -81,7 +81,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				E46B507F25B9C2B1001F88CE /* ScheduleWidgetExtension.appex in Embed App Extensions */,
+				E46B507F25B9C2B1001F88CE /* IkachanWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,7 +105,7 @@
 		E468B7B425B46080001254FE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		E46B506425B8959A001F88CE /* SmallScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallScheduleView.swift; sourceTree = "<group>"; };
 		E46B506725B9BBA6001F88CE /* MediumScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumScheduleView.swift; sourceTree = "<group>"; };
-		E46B506E25B9C2AC001F88CE /* ScheduleWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScheduleWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E46B506E25B9C2AC001F88CE /* IkachanWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IkachanWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46B507025B9C2AC001F88CE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		E46B507225B9C2AC001F88CE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		E46B507525B9C2AC001F88CE /* ScheduleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleWidget.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				E4405D7925AF64D2002EF1AB /* Ikachan */,
-				E46B507425B9C2AC001F88CE /* ScheduleWidget */,
+				E46B507425B9C2AC001F88CE /* IkachanWidget */,
 				E46B506F25B9C2AC001F88CE /* Frameworks */,
 				E4405D7825AF64D2002EF1AB /* Products */,
 				E43D3F5725BBC75600D944A1 /* README.md */,
@@ -181,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				E4405D7725AF64D2002EF1AB /* Ikachan.app */,
-				E46B506E25B9C2AC001F88CE /* ScheduleWidgetExtension.appex */,
+				E46B506E25B9C2AC001F88CE /* IkachanWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E46B507425B9C2AC001F88CE /* ScheduleWidget */ = {
+		E46B507425B9C2AC001F88CE /* IkachanWidget */ = {
 			isa = PBXGroup;
 			children = (
 				E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */,
@@ -263,7 +263,7 @@
 				E46B507825B9C2B1001F88CE /* Assets.xcassets */,
 				E46B507A25B9C2B1001F88CE /* Info.plist */,
 			);
-			path = ScheduleWidget;
+			path = IkachanWidget;
 			sourceTree = "<group>";
 		};
 		E47798FD25B1EDDA00F8AE9F /* Views */ = {
@@ -316,9 +316,9 @@
 			productReference = E4405D7725AF64D2002EF1AB /* Ikachan.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E46B506D25B9C2AC001F88CE /* ScheduleWidgetExtension */ = {
+		E46B506D25B9C2AC001F88CE /* IkachanWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E46B508025B9C2B1001F88CE /* Build configuration list for PBXNativeTarget "ScheduleWidgetExtension" */;
+			buildConfigurationList = E46B508025B9C2B1001F88CE /* Build configuration list for PBXNativeTarget "IkachanWidgetExtension" */;
 			buildPhases = (
 				E46B506A25B9C2AC001F88CE /* Sources */,
 				E46B506B25B9C2AC001F88CE /* Frameworks */,
@@ -328,13 +328,13 @@
 			);
 			dependencies = (
 			);
-			name = ScheduleWidgetExtension;
+			name = IkachanWidgetExtension;
 			packageProductDependencies = (
 				E46B509525B9C42D001F88CE /* SwiftyJSON */,
 				E46B509725B9C431001F88CE /* Kingfisher */,
 			);
-			productName = ScheduleWidgetExtension;
-			productReference = E46B506E25B9C2AC001F88CE /* ScheduleWidgetExtension.appex */;
+			productName = IkachanWidgetExtension;
+			productReference = E46B506E25B9C2AC001F88CE /* IkachanWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -374,7 +374,7 @@
 			projectRoot = "";
 			targets = (
 				E4405D7625AF64D2002EF1AB /* Ikachan */,
-				E46B506D25B9C2AC001F88CE /* ScheduleWidgetExtension */,
+				E46B506D25B9C2AC001F88CE /* IkachanWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -464,7 +464,7 @@
 /* Begin PBXTargetDependency section */
 		E46B507E25B9C2B1001F88CE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E46B506D25B9C2AC001F88CE /* ScheduleWidgetExtension */;
+			target = E46B506D25B9C2AC001F88CE /* IkachanWidgetExtension */;
 			targetProxy = E46B507D25B9C2B1001F88CE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -680,7 +680,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
-				INFOPLIST_FILE = ScheduleWidget/Info.plist;
+				INFOPLIST_FILE = IkachanWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -703,7 +703,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
-				INFOPLIST_FILE = ScheduleWidget/Info.plist;
+				INFOPLIST_FILE = IkachanWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -739,7 +739,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E46B508025B9C2B1001F88CE /* Build configuration list for PBXNativeTarget "ScheduleWidgetExtension" */ = {
+		E46B508025B9C2B1001F88CE /* Build configuration list for PBXNativeTarget "IkachanWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E46B508125B9C2B1001F88CE /* Debug */,
