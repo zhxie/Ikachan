@@ -68,6 +68,7 @@ struct SmallDayView: View {
                         .layoutPriority(1)
                     
                     Spacer()
+                        .frame(minWidth: 0)
                     
                     Image(systemName: icon)
                         .font(.footnote)
