@@ -16,7 +16,7 @@ struct ShiftsView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: ComponentMinWidth))]) {
                     if let first = current {
                         VStack {
                             Divider()

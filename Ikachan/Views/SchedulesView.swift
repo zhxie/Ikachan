@@ -19,7 +19,7 @@ struct SchedulesView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: ComponentMinWidth))]) {
                     ForEach(schedules, id: \.self) { schedule in
                         VStack {
                             Divider()

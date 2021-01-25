@@ -25,5 +25,6 @@ let IPhone12ProMaxSmallWidgetSafeWidth: CGFloat = 137.0
 let CompactSmallWidgetSafeWidth: CGFloat = 130.0
 /// Any medium widget with width under `CompactMediumWidgetSafeWidth` will be deplayed as a compact widget.
 let CompactMediumWidgetSafeWidth: CGFloat = 286.0
+let ComponentMinWidth: CGFloat = 364.0
 
 let IkachanScheme = "ikachan"
