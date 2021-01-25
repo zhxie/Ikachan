@@ -73,7 +73,18 @@ struct ShiftProvider: TimelineProvider {
                         urls.insert(URL(string: Splatnet2URL + shift.weapons[3].image)!)
                     }
                     
-                    date = date.addingTimeInterval(60)
+                    let distance = shift.endTime - date
+                    if distance >= 11 * 86400 {
+                        date = date.addingTimeInterval(86400)
+                    } else if distance >= 10 * 86400 {
+                        date = date.addingTimeInterval(distance - 10 * 86400)
+                    } else if distance >= 11 * 3600 {
+                        date = date.addingTimeInterval(3600)
+                    } else if distance >= 10 * 3600 {
+                        date = date.addingTimeInterval(distance - 10 * 3600)
+                    } else {
+                        date = date.addingTimeInterval(60)
+                    }
                 }
                 
                 if entries.count >= 30 {

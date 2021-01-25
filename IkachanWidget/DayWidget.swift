@@ -29,12 +29,8 @@ struct DayProvider: IntentTimelineProvider {
             
             if filtered.count > 0 {
                 let entry = DayEntry(date: current, configuration: configuration, current: current, schedule: filtered[0])
-                let resources = [ImageResource(downloadURL: URL(string: Splatnet2URL + filtered[0].stageA.image)!), ImageResource(downloadURL: URL(string: Splatnet2URL + filtered[0].stageB.image)!)]
                 
-                ImagePrefetcher(resources: resources) { (_, _, _) in
-                    completion(entry)
-                }
-                .start()
+                completion(entry)
             }
         }
     }
@@ -42,8 +38,6 @@ struct DayProvider: IntentTimelineProvider {
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<DayEntry>) -> Void) {
         ModelData.fetchSchedules { (schedules, error) in
             var entries: [DayEntry] = []
-            var urls: Set<URL> = []
-            var resources: [Resource] = []
             
             var current = Date()
             let interval = current - Date(timeIntervalSince1970: 0)
@@ -66,8 +60,6 @@ struct DayProvider: IntentTimelineProvider {
                     if date >= current {
                         let entry = DayEntry(date: date, configuration: configuration, current: date, schedule: schedule)
                         entries.append(entry)
-                        urls.insert(URL(string: Splatnet2URL + schedule.stageA.image)!)
-                        urls.insert(URL(string: Splatnet2URL + schedule.stageB.image)!)
                     }
                     
                     date = date.addingTimeInterval(60)
@@ -79,13 +71,8 @@ struct DayProvider: IntentTimelineProvider {
             }
             
             let timeline = Timeline(entries: entries, policy: .atEnd)
-            for url in urls {
-                resources.append(ImageResource(downloadURL: url))
-            }
-            ImagePrefetcher(resources: resources) { (_, _, _) in
-                completion(timeline)
-            }
-            .start()
+            
+            completion(timeline)
         }
     }
 }
