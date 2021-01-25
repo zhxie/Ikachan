@@ -43,6 +43,7 @@ struct Shift: Hashable, Codable {
     var weapons: [Weapon]
     
     static let rawValue = "salmon_run"
+    static let description = LocalizedStringKey(rawValue)
     static let accentColor = Color(red: 252 / 255, green: 86 / 255, blue: 32 / 255)
     static let url = IkachanScheme + "://" + rawValue
 }
