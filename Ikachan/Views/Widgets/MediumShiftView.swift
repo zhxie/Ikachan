@@ -21,7 +21,7 @@ struct MediumShiftView: View {
                 HStack {
                     VStack(spacing: 0) {
                         HStack {
-                            Text(g.size.height > DownscaledSystemMediumWidgetWithPadding ? shiftTimePeriod(startTime: shift?.startTime ?? Date(timeIntervalSince1970: 0), endTime: shift?.endTime ?? Date(timeIntervalSince1970: 0)) : shiftTimePeriod2(startTime: shift?.startTime ?? Date(timeIntervalSince1970: 0), endTime: shift?.endTime ?? Date(timeIntervalSince1970: 0)))
+                            Text(g.size.width >= CompactMediumWidgetSafeWidth ? shiftTimePeriod(startTime: shift?.startTime ?? Date(timeIntervalSince1970: 0), endTime: shift?.endTime ?? Date(timeIntervalSince1970: 0)) : shiftTimePeriod2(startTime: shift?.startTime ?? Date(timeIntervalSince1970: 0), endTime: shift?.endTime ?? Date(timeIntervalSince1970: 0)))
                                 .font(.caption2)
                                 .foregroundColor(.secondary)
                                 .lineLimit(1)
@@ -29,6 +29,7 @@ struct MediumShiftView: View {
                                 .layoutPriority(1)
                             
                             Spacer()
+                                .frame(minWidth: 0)
                         }
                         
                         Spacer()
@@ -128,7 +129,6 @@ struct MediumShiftView: View {
                                 .layoutPriority(1)
                             
                             Spacer()
-                                .frame(minWidth: 0)
                             
                             Text(Shift.description)
                                 .font(.caption)
@@ -159,7 +159,6 @@ struct MediumShiftView: View {
                         .layoutPriority(1)
                         
                         Spacer()
-                            .frame(minWidth: 0)
                         
                         HStack {
                             VStack(alignment: .leading, spacing: 0) {

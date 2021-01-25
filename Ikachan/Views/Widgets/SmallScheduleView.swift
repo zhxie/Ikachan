@@ -20,7 +20,7 @@ struct SmallScheduleView: View {
             GeometryReader { g in
                 VStack(spacing: 0) {
                     HStack(spacing: 0) {
-                        Text(g.size.height > DownscaledSystemSmallWidgetWithPadding ? scheduleTimePeriod(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0)) : scheduleTimePeriod2(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0)))
+                        Text(g.size.width >= CompactSmallWidgetSafeWidth ? scheduleTimePeriod(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0)) : scheduleTimePeriod2(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0)))
                             .font(.caption2)
                             .foregroundColor(.secondary)
                             .lineLimit(1)
@@ -28,9 +28,8 @@ struct SmallScheduleView: View {
                             .layoutPriority(1)
                         
                         Spacer()
-                            .frame(minWidth: 0)
                         
-                        Text((g.size.width > DownscaledSystemSmallWidgetWithPadding ? schedule?.rule.shortDescription : schedule?.rule.shorterDescription) ?? "")
+                        Text((g.size.width >= CompactSmallWidgetSafeWidth ? schedule?.rule.shortDescription : schedule?.rule.shorterDescription) ?? "")
                             .font(.caption)
                             .fontWeight(.bold)
                             .foregroundColor(schedule?.gameMode.accentColor ?? Color.accentColor)
@@ -39,7 +38,7 @@ struct SmallScheduleView: View {
                     }
                     .layoutPriority(1)
                     
-                    if g.size.height > DownscaledSystemSmallWidgetWithPadding {
+                    if g.size.width >= 137 {
                         Spacer()
                             .frame(height: 8)
                             .layoutPriority(1)
@@ -77,7 +76,6 @@ struct SmallScheduleView: View {
                             .layoutPriority(1)
                         
                         Spacer()
-                            .frame(minWidth: 0)
                         
                         Image(systemName: "circle.fill")
                             .font(.footnote)
@@ -86,7 +84,7 @@ struct SmallScheduleView: View {
                     }
                     .layoutPriority(1)
                     
-                    if g.size.height <= DownscaledSystemSmallWidgetWithPadding {
+                    if g.size.height < IPhone12ProMaxSmallWidgetSafeWidth {
                         Spacer()
                     }
                     

@@ -78,7 +78,6 @@ struct MediumScheduleView: View {
                                 .layoutPriority(1)
                             
                             Spacer()
-                                .frame(minWidth: 0)
                             
                             Text(schedule?.rule.shortDescription ?? "")
                                 .font(.caption)
@@ -100,7 +99,6 @@ struct MediumScheduleView: View {
                                 .layoutPriority(1)
                             
                             Spacer()
-                                .frame(minWidth: 0)
                             
                             Image(systemName: "circle.fill")
                                 .font(.footnote)

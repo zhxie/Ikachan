@@ -15,49 +15,48 @@
 		E4405D7D25AF64D2002EF1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4405D7C25AF64D2002EF1AB /* ContentView.swift */; };
 		E4405D7F25AF64D6002EF1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D7E25AF64D6002EF1AB /* Assets.xcassets */; };
 		E4405D8225AF64D6002EF1AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */; };
+		E4444ECD25BF147F0003A676 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46B507025B9C2AC001F88CE /* WidgetKit.framework */; };
+		E4444ECE25BF147F0003A676 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46B507225B9C2AC001F88CE /* SwiftUI.framework */; };
+		E4444EDA25BF14820003A676 /* IkachanWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E4444ECC25BF147F0003A676 /* IkachanWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4444EE125BF148D0003A676 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
+		E4444EEC25BF14950003A676 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B513225BB341D001F88CE /* URL.swift */; };
+		E4444EED25BF149B0003A676 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7AC25B34AFC001254FE /* Constant.swift */; };
+		E4444EEE25BF149B0003A676 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7A225B282F5001254FE /* ModelData.swift */; };
+		E4444EEF25BF149B0003A676 /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990925B2029C00F8AE9F /* Shift.swift */; };
+		E4444EF025BF149B0003A676 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
+		E4444EF125BF149B0003A676 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990C25B203F900F8AE9F /* Weapon.swift */; };
+		E4444EF525BF14A50003A676 /* MediumScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B506725B9BBA6001F88CE /* MediumScheduleView.swift */; };
+		E4444EF625BF14A50003A676 /* SmallDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1145925BD515F00303542 /* SmallDayView.swift */; };
+		E4444EF725BF14A50003A676 /* SmallScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B506425B8959A001F88CE /* SmallScheduleView.swift */; };
+		E4444EF825BF14A50003A676 /* MediumShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1144A25BD1E7A00303542 /* MediumShiftView.swift */; };
+		E4444EFC25BF14B50003A676 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7A2C225B7395500E26B20 /* Localizable.strings */; };
+		E4444F0025BF14BA0003A676 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46B514C25BB46C5001F88CE /* InfoPlist.strings */; };
+		E4444F0725BF14D10003A676 /* IkachanWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */; };
+		E4444F1125BF14F60003A676 /* DayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1145E25BD5AC600303542 /* DayWidget.swift */; };
+		E4444F1825BF14FB0003A676 /* ScheduleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B507525B9C2AC001F88CE /* ScheduleWidget.swift */; };
+		E4444F1C25BF15010003A676 /* ScheduleWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */; };
+		E4444F2325BF15090003A676 /* ShiftWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1144F25BD43B400303542 /* ShiftWidget.swift */; };
+		E4444F3225BF155B0003A676 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4444F3125BF155B0003A676 /* Kingfisher */; };
+		E4444F3425BF155B0003A676 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4444F3325BF155B0003A676 /* SwiftyJSON */; };
+		E4444F3825BF164C0003A676 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4444F3725BF164C0003A676 /* Assets.xcassets */; };
 		E468B7A325B282F5001254FE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7A225B282F5001254FE /* ModelData.swift */; };
 		E468B7AD25B34AFC001254FE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7AC25B34AFC001254FE /* Constant.swift */; };
 		E468B7B525B46080001254FE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
 		E46B506525B8959A001F88CE /* SmallScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B506425B8959A001F88CE /* SmallScheduleView.swift */; };
 		E46B506825B9BBA6001F88CE /* MediumScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B506725B9BBA6001F88CE /* MediumScheduleView.swift */; };
-		E46B507125B9C2AC001F88CE /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46B507025B9C2AC001F88CE /* WidgetKit.framework */; };
-		E46B507325B9C2AC001F88CE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46B507225B9C2AC001F88CE /* SwiftUI.framework */; };
-		E46B507625B9C2AC001F88CE /* ScheduleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B507525B9C2AC001F88CE /* ScheduleWidget.swift */; };
-		E46B507925B9C2B1001F88CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46B507825B9C2B1001F88CE /* Assets.xcassets */; };
-		E46B507F25B9C2B1001F88CE /* IkachanWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E46B506E25B9C2AC001F88CE /* IkachanWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		E46B508625B9C2E4001F88CE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7AC25B34AFC001254FE /* Constant.swift */; };
-		E46B508725B9C2E4001F88CE /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
-		E46B508825B9C2E4001F88CE /* SmallScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B506425B8959A001F88CE /* SmallScheduleView.swift */; };
-		E46B508925B9C2E4001F88CE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
-		E46B508A25B9C2E4001F88CE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7A225B282F5001254FE /* ModelData.swift */; };
-		E46B508B25B9C2E4001F88CE /* MediumScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B506725B9BBA6001F88CE /* MediumScheduleView.swift */; };
-		E46B508E25B9C37B001F88CE /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990C25B203F900F8AE9F /* Weapon.swift */; };
-		E46B508F25B9C37B001F88CE /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990925B2029C00F8AE9F /* Shift.swift */; };
-		E46B509225B9C387001F88CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7A2C225B7395500E26B20 /* Localizable.strings */; };
-		E46B509625B9C42D001F88CE /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E46B509525B9C42D001F88CE /* SwiftyJSON */; };
-		E46B509825B9C431001F88CE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E46B509725B9C431001F88CE /* Kingfisher */; };
-		E46B50A025B9C4A6001F88CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */; };
 		E46B50E025B9F5D7001F88CE /* ScheduleWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */; };
-		E46B50E125B9F5D7001F88CE /* ScheduleWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */; };
 		E46B510325BB1E3E001F88CE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B510225BB1E3E001F88CE /* AboutView.swift */; };
 		E46B512C25BB30C7001F88CE /* LICENSE.SwiftyJSON.md in Resources */ = {isa = PBXBuildFile; fileRef = E46B512A25BB30C7001F88CE /* LICENSE.SwiftyJSON.md */; };
 		E46B512D25BB30C7001F88CE /* LICENSE.Kingfisher.md in Resources */ = {isa = PBXBuildFile; fileRef = E46B512B25BB30C7001F88CE /* LICENSE.Kingfisher.md */; };
 		E46B513325BB341D001F88CE /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B513225BB341D001F88CE /* URL.swift */; };
-		E46B513625BB3422001F88CE /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B513225BB341D001F88CE /* URL.swift */; };
 		E46B514925BB46C5001F88CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46B514C25BB46C5001F88CE /* InfoPlist.strings */; };
-		E46B515B25BB4724001F88CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46B514C25BB46C5001F88CE /* InfoPlist.strings */; };
 		E4703BC725B8722E0093781B /* Impact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4703BC625B8722E0093781B /* Impact.swift */; };
 		E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E477990725B1F62500F8AE9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E477990625B1F62500F8AE9F /* SwiftyJSON */; };
 		E477990A25B2029C00F8AE9F /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990925B2029C00F8AE9F /* Shift.swift */; };
 		E477990D25B203F900F8AE9F /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990C25B203F900F8AE9F /* Weapon.swift */; };
 		E4B1144B25BD1E7A00303542 /* MediumShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1144A25BD1E7A00303542 /* MediumShiftView.swift */; };
-		E4B1144C25BD1E7A00303542 /* MediumShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1144A25BD1E7A00303542 /* MediumShiftView.swift */; };
-		E4B1145025BD43B400303542 /* ShiftWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1144F25BD43B400303542 /* ShiftWidget.swift */; };
-		E4B1145425BD4CA400303542 /* IkachanWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */; };
 		E4B1145A25BD515F00303542 /* SmallDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1145925BD515F00303542 /* SmallDayView.swift */; };
-		E4B1145B25BD515F00303542 /* SmallDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1145925BD515F00303542 /* SmallDayView.swift */; };
-		E4B1145F25BD5AC600303542 /* DayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1145E25BD5AC600303542 /* DayWidget.swift */; };
 		E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7A2C225B7395500E26B20 /* Localizable.strings */; };
 		E4E60D8325B5C9280039A6E6 /* ScheduleImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60D8225B5C9280039A6E6 /* ScheduleImages.swift */; };
 		E4E60D8625B5C9DF0039A6E6 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60D8525B5C9DF0039A6E6 /* ScheduleView.swift */; };
@@ -65,11 +64,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E46B507D25B9C2B1001F88CE /* PBXContainerItemProxy */ = {
+		E4444ED825BF14820003A676 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E4405D6F25AF64D2002EF1AB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E46B506D25B9C2AC001F88CE;
+			remoteGlobalIDString = E4444ECB25BF147F0003A676;
 			remoteInfo = IkachanWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
@@ -81,7 +80,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				E46B507F25B9C2B1001F88CE /* IkachanWidgetExtension.appex in Embed App Extensions */,
+				E4444EDA25BF14820003A676 /* IkachanWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,17 +99,17 @@
 		E4405D7E25AF64D6002EF1AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4405D8325AF64D6002EF1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4444ECC25BF147F0003A676 /* IkachanWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IkachanWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4444ED525BF14820003A676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4444F3725BF164C0003A676 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E468B7A225B282F5001254FE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		E468B7AC25B34AFC001254FE /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E468B7B425B46080001254FE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		E46B506425B8959A001F88CE /* SmallScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallScheduleView.swift; sourceTree = "<group>"; };
 		E46B506725B9BBA6001F88CE /* MediumScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumScheduleView.swift; sourceTree = "<group>"; };
-		E46B506E25B9C2AC001F88CE /* IkachanWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IkachanWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46B507025B9C2AC001F88CE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		E46B507225B9C2AC001F88CE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		E46B507525B9C2AC001F88CE /* ScheduleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleWidget.swift; sourceTree = "<group>"; };
-		E46B507825B9C2B1001F88CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E46B507A25B9C2B1001F88CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E46B50E225B9F5D7001F88CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/ScheduleWidget.intentdefinition; sourceTree = "<group>"; };
 		E46B50E725B9F5D8001F88CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ScheduleWidget.strings; sourceTree = "<group>"; };
 		E46B50EB25B9F5D9001F88CE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ScheduleWidget.strings"; sourceTree = "<group>"; };
@@ -149,14 +148,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E46B506B25B9C2AC001F88CE /* Frameworks */ = {
+		E4444EC925BF147F0003A676 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E46B509825B9C431001F88CE /* Kingfisher in Frameworks */,
-				E46B509625B9C42D001F88CE /* SwiftyJSON in Frameworks */,
-				E46B507325B9C2AC001F88CE /* SwiftUI.framework in Frameworks */,
-				E46B507125B9C2AC001F88CE /* WidgetKit.framework in Frameworks */,
+				E4444F3225BF155B0003A676 /* Kingfisher in Frameworks */,
+				E4444ECE25BF147F0003A676 /* SwiftUI.framework in Frameworks */,
+				E4444F3425BF155B0003A676 /* SwiftyJSON in Frameworks */,
+				E4444ECD25BF147F0003A676 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				E4405D7925AF64D2002EF1AB /* Ikachan */,
-				E46B507425B9C2AC001F88CE /* IkachanWidget */,
+				E4444ECF25BF147F0003A676 /* IkachanWidget */,
 				E46B506F25B9C2AC001F88CE /* Frameworks */,
 				E4405D7825AF64D2002EF1AB /* Products */,
 				E43D3F5725BBC75600D944A1 /* README.md */,
@@ -181,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				E4405D7725AF64D2002EF1AB /* Ikachan.app */,
-				E46B506E25B9C2AC001F88CE /* IkachanWidgetExtension.appex */,
+				E4444ECC25BF147F0003A676 /* IkachanWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,6 +207,20 @@
 				E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E4444ECF25BF147F0003A676 /* IkachanWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */,
+				E4B1145E25BD5AC600303542 /* DayWidget.swift */,
+				E46B507525B9C2AC001F88CE /* ScheduleWidget.swift */,
+				E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */,
+				E4B1144F25BD43B400303542 /* ShiftWidget.swift */,
+				E4444F3725BF164C0003A676 /* Assets.xcassets */,
+				E4444ED525BF14820003A676 /* Info.plist */,
+			);
+			path = IkachanWidget;
 			sourceTree = "<group>";
 		};
 		E468B7AF25B34EB3001254FE /* Components */ = {
@@ -252,20 +265,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E46B507425B9C2AC001F88CE /* IkachanWidget */ = {
-			isa = PBXGroup;
-			children = (
-				E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */,
-				E4B1145E25BD5AC600303542 /* DayWidget.swift */,
-				E46B507525B9C2AC001F88CE /* ScheduleWidget.swift */,
-				E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */,
-				E4B1144F25BD43B400303542 /* ShiftWidget.swift */,
-				E46B507825B9C2B1001F88CE /* Assets.xcassets */,
-				E46B507A25B9C2B1001F88CE /* Info.plist */,
-			);
-			path = IkachanWidget;
-			sourceTree = "<group>";
-		};
 		E47798FD25B1EDDA00F8AE9F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,7 +304,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				E46B507E25B9C2B1001F88CE /* PBXTargetDependency */,
+				E4444ED925BF14820003A676 /* PBXTargetDependency */,
 			);
 			name = Ikachan;
 			packageProductDependencies = (
@@ -316,13 +315,13 @@
 			productReference = E4405D7725AF64D2002EF1AB /* Ikachan.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E46B506D25B9C2AC001F88CE /* IkachanWidgetExtension */ = {
+		E4444ECB25BF147F0003A676 /* IkachanWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E46B508025B9C2B1001F88CE /* Build configuration list for PBXNativeTarget "IkachanWidgetExtension" */;
+			buildConfigurationList = E4444EDD25BF14820003A676 /* Build configuration list for PBXNativeTarget "IkachanWidgetExtension" */;
 			buildPhases = (
-				E46B506A25B9C2AC001F88CE /* Sources */,
-				E46B506B25B9C2AC001F88CE /* Frameworks */,
-				E46B506C25B9C2AC001F88CE /* Resources */,
+				E4444EC825BF147F0003A676 /* Sources */,
+				E4444EC925BF147F0003A676 /* Frameworks */,
+				E4444ECA25BF147F0003A676 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -330,11 +329,11 @@
 			);
 			name = IkachanWidgetExtension;
 			packageProductDependencies = (
-				E46B509525B9C42D001F88CE /* SwiftyJSON */,
-				E46B509725B9C431001F88CE /* Kingfisher */,
+				E4444F3125BF155B0003A676 /* Kingfisher */,
+				E4444F3325BF155B0003A676 /* SwiftyJSON */,
 			);
 			productName = IkachanWidgetExtension;
-			productReference = E46B506E25B9C2AC001F88CE /* IkachanWidgetExtension.appex */;
+			productReference = E4444ECC25BF147F0003A676 /* IkachanWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -349,7 +348,7 @@
 					E4405D7625AF64D2002EF1AB = {
 						CreatedOnToolsVersion = 12.3;
 					};
-					E46B506D25B9C2AC001F88CE = {
+					E4444ECB25BF147F0003A676 = {
 						CreatedOnToolsVersion = 12.3;
 					};
 				};
@@ -374,7 +373,7 @@
 			projectRoot = "";
 			targets = (
 				E4405D7625AF64D2002EF1AB /* Ikachan */,
-				E46B506D25B9C2AC001F88CE /* IkachanWidgetExtension */,
+				E4444ECB25BF147F0003A676 /* IkachanWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -393,14 +392,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E46B506C25B9C2AC001F88CE /* Resources */ = {
+		E4444ECA25BF147F0003A676 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E46B507925B9C2B1001F88CE /* Assets.xcassets in Resources */,
-				E46B515B25BB4724001F88CE /* InfoPlist.strings in Resources */,
-				E46B50A025B9C4A6001F88CE /* Preview Assets.xcassets in Resources */,
-				E46B509225B9C387001F88CE /* Localizable.strings in Resources */,
+				E4444F0025BF14BA0003A676 /* InfoPlist.strings in Resources */,
+				E4444F3825BF164C0003A676 /* Assets.xcassets in Resources */,
+				E4444EFC25BF14B50003A676 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,36 +434,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E46B506A25B9C2AC001F88CE /* Sources */ = {
+		E4444EC825BF147F0003A676 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E46B507625B9C2AC001F88CE /* ScheduleWidget.swift in Sources */,
-				E46B508925B9C2E4001F88CE /* Date.swift in Sources */,
-				E4B1145B25BD515F00303542 /* SmallDayView.swift in Sources */,
-				E4B1145025BD43B400303542 /* ShiftWidget.swift in Sources */,
-				E46B50E125B9F5D7001F88CE /* ScheduleWidget.intentdefinition in Sources */,
-				E46B513625BB3422001F88CE /* URL.swift in Sources */,
-				E4B1145425BD4CA400303542 /* IkachanWidgetBundle.swift in Sources */,
-				E46B508725B9C2E4001F88CE /* Schedule.swift in Sources */,
-				E46B508F25B9C37B001F88CE /* Shift.swift in Sources */,
-				E4B1144C25BD1E7A00303542 /* MediumShiftView.swift in Sources */,
-				E46B508B25B9C2E4001F88CE /* MediumScheduleView.swift in Sources */,
-				E46B508825B9C2E4001F88CE /* SmallScheduleView.swift in Sources */,
-				E4B1145F25BD5AC600303542 /* DayWidget.swift in Sources */,
-				E46B508625B9C2E4001F88CE /* Constant.swift in Sources */,
-				E46B508A25B9C2E4001F88CE /* ModelData.swift in Sources */,
-				E46B508E25B9C37B001F88CE /* Weapon.swift in Sources */,
+				E4444EE125BF148D0003A676 /* Date.swift in Sources */,
+				E4444EED25BF149B0003A676 /* Constant.swift in Sources */,
+				E4444EF625BF14A50003A676 /* SmallDayView.swift in Sources */,
+				E4444EEF25BF149B0003A676 /* Shift.swift in Sources */,
+				E4444F1825BF14FB0003A676 /* ScheduleWidget.swift in Sources */,
+				E4444F1C25BF15010003A676 /* ScheduleWidget.intentdefinition in Sources */,
+				E4444F0725BF14D10003A676 /* IkachanWidgetBundle.swift in Sources */,
+				E4444EEC25BF14950003A676 /* URL.swift in Sources */,
+				E4444EF825BF14A50003A676 /* MediumShiftView.swift in Sources */,
+				E4444EF725BF14A50003A676 /* SmallScheduleView.swift in Sources */,
+				E4444EF525BF14A50003A676 /* MediumScheduleView.swift in Sources */,
+				E4444EF025BF149B0003A676 /* Schedule.swift in Sources */,
+				E4444EEE25BF149B0003A676 /* ModelData.swift in Sources */,
+				E4444EF125BF149B0003A676 /* Weapon.swift in Sources */,
+				E4444F2325BF15090003A676 /* ShiftWidget.swift in Sources */,
+				E4444F1125BF14F60003A676 /* DayWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E46B507E25B9C2B1001F88CE /* PBXTargetDependency */ = {
+		E4444ED925BF14820003A676 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E46B506D25B9C2AC001F88CE /* IkachanWidgetExtension */;
-			targetProxy = E46B507D25B9C2B1001F88CE /* PBXContainerItemProxy */;
+			target = E4444ECB25BF147F0003A676 /* IkachanWidgetExtension */;
+			targetProxy = E4444ED825BF14820003A676 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -672,7 +670,7 @@
 			};
 			name = Release;
 		};
-		E46B508125B9C2B1001F88CE /* Debug */ = {
+		E4444EDB25BF14820003A676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -681,13 +679,14 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
 				INFOPLIST_FILE = IkachanWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.Ikachan.ScheduleWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.Ikachan.IkachanWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -695,7 +694,7 @@
 			};
 			name = Debug;
 		};
-		E46B508225B9C2B1001F88CE /* Release */ = {
+		E4444EDC25BF14820003A676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -704,13 +703,14 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
 				INFOPLIST_FILE = IkachanWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.Ikachan.ScheduleWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.Ikachan.IkachanWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -739,11 +739,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E46B508025B9C2B1001F88CE /* Build configuration list for PBXNativeTarget "IkachanWidgetExtension" */ = {
+		E4444EDD25BF14820003A676 /* Build configuration list for PBXNativeTarget "IkachanWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E46B508125B9C2B1001F88CE /* Debug */,
-				E46B508225B9C2B1001F88CE /* Release */,
+				E4444EDB25BF14820003A676 /* Debug */,
+				E4444EDC25BF14820003A676 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -775,15 +775,15 @@
 			package = E43CCBB525B0338C001A0FF5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		E46B509525B9C42D001F88CE /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E477990525B1F62500F8AE9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
-		};
-		E46B509725B9C431001F88CE /* Kingfisher */ = {
+		E4444F3125BF155B0003A676 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E43CCBB525B0338C001A0FF5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		E4444F3325BF155B0003A676 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E477990525B1F62500F8AE9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 		E477990625B1F62500F8AE9F /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -104,7 +104,7 @@ func scheduleTimePeriod2(startTime: Date, endTime: Date) -> String {
 
 func shiftTimePeriod(startTime: Date, endTime: Date) -> String {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "M/dd HH:mm"
+    dateFormatter.dateFormat = "M/d HH:mm"
     
     let startTime = dateFormatter.string(from: startTime)
     let endTime = dateFormatter.string(from: endTime)
@@ -114,7 +114,7 @@ func shiftTimePeriod(startTime: Date, endTime: Date) -> String {
 
 func shiftTimePeriod2(startTime: Date, endTime: Date) -> String {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "M/dd HH:mm"
+    dateFormatter.dateFormat = "M/d HH:mm"
     
     let startTime = dateFormatter.string(from: startTime)
     let endTime = dateFormatter.string(from: endTime)
