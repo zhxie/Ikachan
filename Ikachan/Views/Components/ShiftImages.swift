@@ -112,6 +112,7 @@ struct ShiftImages: View {
                 Text("weapons")
                     .font(.footnote)
                     .foregroundColor(.clear)
+                    .accessibility(hidden: true)
             }
         }
     }
