@@ -64,32 +64,30 @@ struct ShiftProvider: TimelineProvider {
                 shift.stage != nil
             }
             
-            var date = Date()
             for shift in details {
-                date = shift.startTime
-                
-                while date < shift.endTime && entries.count < MaxWidgetEntryCount {
-                    if date >= current {
-                        let entry = ShiftEntry(date: date, current: date, shift: shift)
-                        entries.append(entry)
-                        urls.insert(Splatnet2URL + shift.stage!.image.rawValue)
-                        urls.insert(Splatnet2URL + shift.weapons[0].image)
-                        urls.insert(Splatnet2URL + shift.weapons[1].image)
-                        urls.insert(Splatnet2URL + shift.weapons[2].image)
-                        urls.insert(Splatnet2URL + shift.weapons[3].image)
-                    }
+                while current < shift.endTime && entries.count < MaxWidgetEntryCount {
+                    let entry = ShiftEntry(date: current, current: current, shift: shift)
+                    entries.append(entry)
+                    urls.insert(Splatnet2URL + shift.stage!.image.rawValue)
+                    urls.insert(Splatnet2URL + shift.weapons[0].image)
+                    urls.insert(Splatnet2URL + shift.weapons[1].image)
+                    urls.insert(Splatnet2URL + shift.weapons[2].image)
+                    urls.insert(Splatnet2URL + shift.weapons[3].image)
                     
-                    let distance = shift.endTime - date
+                    var distance = shift.endTime - current
+                    if current < shift.startTime {
+                        distance = shift.startTime - current
+                    }
                     if distance >= 11 * 86400 {
-                        date = date.addingTimeInterval(86400)
+                        current = current.addingTimeInterval(86400)
                     } else if distance >= 10 * 86400 {
-                        date = date.addingTimeInterval(distance - 10 * 86400)
+                        current = current.addingTimeInterval(distance - 10 * 86400)
                     } else if distance >= 11 * 3600 {
-                        date = date.addingTimeInterval(3600)
+                        current = current.addingTimeInterval(3600)
                     } else if distance >= 10 * 3600 {
-                        date = date.addingTimeInterval(distance - 10 * 3600)
+                        current = current.addingTimeInterval(distance - 10 * 3600)
                     } else {
-                        date = date.addingTimeInterval(60)
+                        current = current.addingTimeInterval(60)
                     }
                 }
                 

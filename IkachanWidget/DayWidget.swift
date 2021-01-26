@@ -58,17 +58,12 @@ struct DayProvider: IntentTimelineProvider {
                 schedule.gameMode == ScheduleProvider.gameMode(for: configuration)
             }
             
-            var date = Date()
             for schedule in filtered {
-                date = schedule.startTime
-                
-                while date < schedule.endTime && entries.count < MaxWidgetEntryCount {
-                    if date >= current {
-                        let entry = DayEntry(date: date, configuration: configuration, current: date, schedule: schedule)
-                        entries.append(entry)
-                    }
+                while current < schedule.endTime && entries.count < MaxWidgetEntryCount {
+                    let entry = DayEntry(date: current, configuration: configuration, current: current, schedule: schedule)
+                    entries.append(entry)
                     
-                    date = date.addingTimeInterval(60)
+                    current = current.addingTimeInterval(60)
                 }
                 
                 if entries.count >= MaxWidgetEntryCount {

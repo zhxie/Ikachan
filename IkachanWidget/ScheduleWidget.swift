@@ -77,19 +77,14 @@ struct ScheduleProvider: IntentTimelineProvider {
                 schedule.gameMode == ScheduleProvider.gameMode(for: configuration)
             }
             
-            var date = Date()
             for schedule in filtered {
-                date = schedule.startTime
-                
-                while date < schedule.endTime && entries.count < MaxWidgetEntryCount {
-                    if date >= current {
-                        let entry = ScheduleEntry(date: date, configuration: configuration, current: date, schedule: schedule)
-                        entries.append(entry)
-                        urls.insert(Splatnet2URL + schedule.stageA.image)
-                        urls.insert(Splatnet2URL + schedule.stageB.image)
-                    }
+                while current < schedule.endTime && entries.count < MaxWidgetEntryCount {
+                    let entry = ScheduleEntry(date: current, configuration: configuration, current: current, schedule: schedule)
+                    entries.append(entry)
+                    urls.insert(Splatnet2URL + schedule.stageA.image)
+                    urls.insert(Splatnet2URL + schedule.stageB.image)
                     
-                    date = date.addingTimeInterval(60)
+                    current = current.addingTimeInterval(60)
                 }
                 
                 if entries.count >= MaxWidgetEntryCount {
