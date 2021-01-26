@@ -20,6 +20,8 @@ struct ShiftProvider: TimelineProvider {
             let current = Date()
             
             guard let shifts = shifts else {
+                completion(placeholder(in: context))
+                
                 return
             }
             
@@ -35,6 +37,8 @@ struct ShiftProvider: TimelineProvider {
                     completion(entry)
                 }
                 .start()
+            } else {
+                completion(placeholder(in: context))
             }
         }
     }
@@ -51,6 +55,8 @@ struct ShiftProvider: TimelineProvider {
             current = Date(timeIntervalSince1970: secs)
             
             guard let shifts = shifts else {
+                completion(Timeline(entries: [], policy: .atEnd))
+                
                 return
             }
             

@@ -33,6 +33,8 @@ struct ScheduleProvider: IntentTimelineProvider {
             let current = Date()
             
             guard let schedules = schedules else {
+                completion(placeholder(in: context))
+                
                 return
             }
             
@@ -48,6 +50,8 @@ struct ScheduleProvider: IntentTimelineProvider {
                     completion(entry)
                 }
                 .start()
+            } else {
+                completion(placeholder(in: context))
             }
         }
     }
@@ -64,6 +68,8 @@ struct ScheduleProvider: IntentTimelineProvider {
             current = Date(timeIntervalSince1970: secs)
             
             guard let schedules = schedules else {
+                completion(Timeline(entries: [], policy: .atEnd))
+                
                 return
             }
             
