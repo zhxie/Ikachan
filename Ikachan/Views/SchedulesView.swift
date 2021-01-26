@@ -45,7 +45,7 @@ struct SchedulesView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
-                ToolbarItem(placement: .primaryAction) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     if rule == Schedule.Rule.turfWar {
                         Menu(content: {
                             ForEach(Schedule.Rule.allCases.filter { r in
