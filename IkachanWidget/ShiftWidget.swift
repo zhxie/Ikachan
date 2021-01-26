@@ -46,7 +46,7 @@ struct ShiftProvider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<ShiftEntry>) -> ()) {
         ModelData.fetchShifts { (shifts, error) in
             var entries: [ShiftEntry] = []
-            var urls: Set<URL> = []
+            var urls: Set<String> = []
             var resources: [Resource] = []
             
             var current = Date()
@@ -68,15 +68,15 @@ struct ShiftProvider: TimelineProvider {
             for shift in details {
                 date = shift.startTime
                 
-                while date < shift.endTime && entries.count < 30 {
+                while date < shift.endTime && entries.count < MaxWidgetEntryCount {
                     if date >= current {
                         let entry = ShiftEntry(date: date, current: date, shift: shift)
                         entries.append(entry)
-                        urls.insert(URL(string: Splatnet2URL + shift.stage!.image.rawValue)!)
-                        urls.insert(URL(string: Splatnet2URL + shift.weapons[0].image)!)
-                        urls.insert(URL(string: Splatnet2URL + shift.weapons[1].image)!)
-                        urls.insert(URL(string: Splatnet2URL + shift.weapons[2].image)!)
-                        urls.insert(URL(string: Splatnet2URL + shift.weapons[3].image)!)
+                        urls.insert(Splatnet2URL + shift.stage!.image.rawValue)
+                        urls.insert(Splatnet2URL + shift.weapons[0].image)
+                        urls.insert(Splatnet2URL + shift.weapons[1].image)
+                        urls.insert(Splatnet2URL + shift.weapons[2].image)
+                        urls.insert(Splatnet2URL + shift.weapons[3].image)
                     }
                     
                     let distance = shift.endTime - date
@@ -93,14 +93,14 @@ struct ShiftProvider: TimelineProvider {
                     }
                 }
                 
-                if entries.count >= 30 {
+                if entries.count >= MaxWidgetEntryCount {
                     break
                 }
             }
             
             let timeline = Timeline(entries: entries, policy: .atEnd)
             for url in urls {
-                resources.append(ImageResource(downloadURL: url))
+                resources.append(ImageResource(downloadURL: URL(string: url)!))
             }
             ImagePrefetcher(resources: resources) { (_, _, _) in
                 completion(timeline)

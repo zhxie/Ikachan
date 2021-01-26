@@ -62,7 +62,7 @@ struct DayProvider: IntentTimelineProvider {
             for schedule in filtered {
                 date = schedule.startTime
                 
-                while date < schedule.endTime && entries.count < 30 {
+                while date < schedule.endTime && entries.count < MaxWidgetEntryCount {
                     if date >= current {
                         let entry = DayEntry(date: date, configuration: configuration, current: date, schedule: schedule)
                         entries.append(entry)
@@ -71,7 +71,7 @@ struct DayProvider: IntentTimelineProvider {
                     date = date.addingTimeInterval(60)
                 }
                 
-                if entries.count >= 30 {
+                if entries.count >= MaxWidgetEntryCount {
                     break
                 }
             }

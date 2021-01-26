@@ -28,3 +28,5 @@ let CompactMediumWidgetSafeWidth: CGFloat = 286.0
 let ComponentMinWidth: CGFloat = 364.0
 
 let IkachanScheme = "ikachan"
+
+let MaxWidgetEntryCount = 60

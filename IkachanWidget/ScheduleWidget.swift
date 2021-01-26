@@ -59,7 +59,7 @@ struct ScheduleProvider: IntentTimelineProvider {
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         ModelData.fetchSchedules { (schedules, error) in
             var entries: [ScheduleEntry] = []
-            var urls: Set<URL> = []
+            var urls: Set<String> = []
             var resources: [Resource] = []
             
             var current = Date()
@@ -81,25 +81,25 @@ struct ScheduleProvider: IntentTimelineProvider {
             for schedule in filtered {
                 date = schedule.startTime
                 
-                while date < schedule.endTime && entries.count < 30 {
+                while date < schedule.endTime && entries.count < MaxWidgetEntryCount {
                     if date >= current {
                         let entry = ScheduleEntry(date: date, configuration: configuration, current: date, schedule: schedule)
                         entries.append(entry)
-                        urls.insert(URL(string: Splatnet2URL + schedule.stageA.image)!)
-                        urls.insert(URL(string: Splatnet2URL + schedule.stageB.image)!)
+                        urls.insert(Splatnet2URL + schedule.stageA.image)
+                        urls.insert(Splatnet2URL + schedule.stageB.image)
                     }
                     
                     date = date.addingTimeInterval(60)
                 }
                 
-                if entries.count >= 30 {
+                if entries.count >= MaxWidgetEntryCount {
                     break
                 }
             }
             
             let timeline = Timeline(entries: entries, policy: .atEnd)
             for url in urls {
-                resources.append(ImageResource(downloadURL: url))
+                resources.append(ImageResource(downloadURL: URL(string: url)!))
             }
             ImagePrefetcher(resources: resources) { (_, _, _) in
                 completion(timeline)

@@ -42,6 +42,7 @@ struct MediumScheduleView: View {
                                             Rectangle()
                                                 .foregroundColor(Color(UIColor.secondarySystemBackground))
                                         }
+                                        .setProcessor(DownsamplingImageProcessor(size: CGSize(width: 480, height: 270)))
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .clipped()
@@ -56,6 +57,7 @@ struct MediumScheduleView: View {
                                             Rectangle()
                                                 .foregroundColor(Color(UIColor.secondarySystemBackground))
                                         }
+                                        .setProcessor(DownsamplingImageProcessor(size: CGSize(width: 480, height: 270)))
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .clipped()
