@@ -78,6 +78,18 @@ struct ShiftProvider: TimelineProvider {
                     if current < shift.startTime {
                         distance = shift.startTime - current
                     }
+                    
+                    var delta = 60.0
+                    if distance >= 864000 {
+                        delta = distance.truncatingRemainder(dividingBy: 864000)
+                    } else if distance >= 36000 {
+                        delta = distance.truncatingRemainder(dividingBy: 36000)
+                    }
+                    if delta == 0 {
+                        delta = 60.0
+                    }
+                    current = current.addingTimeInterval(delta)
+                    
                     if distance >= 11 * 86400 {
                         current = current.addingTimeInterval(86400)
                     } else if distance >= 10 * 86400 {
