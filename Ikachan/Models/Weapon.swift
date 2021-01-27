@@ -67,6 +67,10 @@ struct Weapon: Hashable, Codable {
     
     var image: String
     
+    var url: String {
+        Splatnet2URL + image
+    }
+    
     var description: LocalizedStringKey {
         switch self.id {
         case .bold:

@@ -36,7 +36,7 @@ struct ShiftView: View {
             }
             
             if let stage = shift.stage {
-                ShiftImages(image: Splatnet2URL + stage.image.rawValue, title: stage.description, subImage1: Splatnet2URL + shift.weapons[0].image, subTitle1: shift.weapons[0].description, subImage2: Splatnet2URL + shift.weapons[1].image, subTitle2: shift.weapons[1].description, subImage3: Splatnet2URL + shift.weapons[2].image, subTitle3: shift.weapons[2].description, subImage4: Splatnet2URL + shift.weapons[3].image, subTitle4: shift.weapons[3].description)
+                ShiftImages(image: stage.url, title: stage.description, subImage1: shift.weapons[0].url, subTitle1: shift.weapons[0].description, subImage2: shift.weapons[1].url, subTitle2: shift.weapons[1].description, subImage3: shift.weapons[2].url, subTitle3: shift.weapons[2].description, subImage4: shift.weapons[3].url, subTitle4: shift.weapons[3].description)
             }
         }
     }

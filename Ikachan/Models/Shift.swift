@@ -16,6 +16,10 @@ struct Shift: Hashable, Codable {
     struct Stage: Hashable, Codable {
         var image: StageImage
         
+        var url: String {
+            Splatnet2URL + image.rawValue
+        }
+        
         var description: LocalizedStringKey {
             switch self.image {
             case .spawningGrounds:

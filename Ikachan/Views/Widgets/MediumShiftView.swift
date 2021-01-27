@@ -39,7 +39,7 @@ struct MediumShiftView: View {
                             Rectangle()
                                 .fill(Color(UIColor.secondarySystemBackground))
                                 .overlay (
-                                    KFImage(URL(string: Splatnet2URL + (shift?.stage?.image.rawValue ?? ""))!)
+                                    KFImage(URL(string: shift?.stage?.url ?? "")!)
                                         .placeholder {
                                             Rectangle()
                                                 .foregroundColor(Color(UIColor.secondarySystemBackground))
@@ -56,7 +56,7 @@ struct MediumShiftView: View {
                                     .fill(Color.clear)
                                     .aspectRatio(1, contentMode: .fit)
                                     .overlay(
-                                        KFImage(URL(string: Splatnet2URL + (shift?.weapons[0].image ?? ""))!)
+                                        KFImage(URL(string: shift?.weapons[0].url ?? "")!)
                                             .placeholder {
                                                 Circle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
@@ -71,7 +71,7 @@ struct MediumShiftView: View {
                                     .fill(Color.clear)
                                     .aspectRatio(1, contentMode: .fit)
                                     .overlay(
-                                        KFImage(URL(string: Splatnet2URL + (shift?.weapons[1].image ?? ""))!)
+                                        KFImage(URL(string: shift?.weapons[1].url ?? "")!)
                                             .placeholder {
                                                 Circle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
@@ -86,7 +86,7 @@ struct MediumShiftView: View {
                                     .fill(Color.clear)
                                     .aspectRatio(1, contentMode: .fit)
                                     .overlay(
-                                        KFImage(URL(string: Splatnet2URL + (shift?.weapons[2].image ?? ""))!)
+                                        KFImage(URL(string: shift?.weapons[2].url ?? "")!)
                                             .placeholder {
                                                 Circle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
@@ -101,7 +101,7 @@ struct MediumShiftView: View {
                                     .fill(Color.clear)
                                     .aspectRatio(1, contentMode: .fit)
                                     .overlay(
-                                        KFImage(URL(string: Splatnet2URL + (shift?.weapons[3].image ?? ""))!)
+                                        KFImage(URL(string: shift?.weapons[3].url ?? "")!)
                                             .placeholder {
                                                 Circle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))

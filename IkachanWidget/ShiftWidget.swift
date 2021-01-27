@@ -31,7 +31,7 @@ struct ShiftProvider: TimelineProvider {
             
             if details.count > 0 {
                 let entry = ShiftEntry(date: current, current: current, shift: details[0])
-                let resources = [ImageResource(downloadURL: URL(string: Splatnet2URL + details[0].stage!.image.rawValue)!), ImageResource(downloadURL: URL(string: Splatnet2URL + details[0].weapons[0].image)!), ImageResource(downloadURL: URL(string: Splatnet2URL + details[0].weapons[1].image)!), ImageResource(downloadURL: URL(string: Splatnet2URL + details[0].weapons[2].image)!), ImageResource(downloadURL: URL(string: Splatnet2URL + details[0].weapons[3].image)!)]
+                let resources = [ImageResource(downloadURL: URL(string: details[0].stage!.url)!), ImageResource(downloadURL: URL(string: details[0].weapons[0].url)!), ImageResource(downloadURL: URL(string: details[0].weapons[1].url)!), ImageResource(downloadURL: URL(string: details[0].weapons[2].url)!), ImageResource(downloadURL: URL(string: details[0].weapons[3].url)!)]
                 
                 ImagePrefetcher(resources: resources) { (_, _, _) in
                     completion(entry)
@@ -68,11 +68,11 @@ struct ShiftProvider: TimelineProvider {
                 while current < shift.endTime && entries.count < MaxWidgetEntryCount {
                     let entry = ShiftEntry(date: current, current: current, shift: shift)
                     entries.append(entry)
-                    urls.insert(Splatnet2URL + shift.stage!.image.rawValue)
-                    urls.insert(Splatnet2URL + shift.weapons[0].image)
-                    urls.insert(Splatnet2URL + shift.weapons[1].image)
-                    urls.insert(Splatnet2URL + shift.weapons[2].image)
-                    urls.insert(Splatnet2URL + shift.weapons[3].image)
+                    urls.insert(shift.stage!.url)
+                    urls.insert(shift.weapons[0].url)
+                    urls.insert(shift.weapons[1].url)
+                    urls.insert(shift.weapons[2].url)
+                    urls.insert(shift.weapons[3].url)
                     
                     var distance = shift.endTime - current
                     if current < shift.startTime {

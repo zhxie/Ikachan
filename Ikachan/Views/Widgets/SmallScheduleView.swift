@@ -46,7 +46,7 @@ struct SmallScheduleView: View {
                         Rectangle()
                             .fill(Color(UIColor.secondarySystemBackground))
                             .overlay (
-                                KFImage(URL(string: Splatnet2URL + (schedule?.stageA.image ?? ""))!)
+                                KFImage(URL(string: schedule?.stageA.url ?? "")!)
                                     .placeholder {
                                         Rectangle()
                                             .foregroundColor(Color(UIColor.secondarySystemBackground))

@@ -37,7 +37,7 @@ struct MediumScheduleView: View {
                             Rectangle()
                                 .fill(Color(UIColor.secondarySystemBackground))
                                 .overlay (
-                                    KFImage(URL(string: Splatnet2URL + (schedule?.stageA.image ?? ""))!)
+                                    KFImage(URL(string: schedule?.stageA.url ?? "")!)
                                         .placeholder {
                                             Rectangle()
                                                 .foregroundColor(Color(UIColor.secondarySystemBackground))
@@ -51,7 +51,7 @@ struct MediumScheduleView: View {
                             Rectangle()
                                 .fill(Color(UIColor.secondarySystemBackground))
                                 .overlay (
-                                    KFImage(URL(string: Splatnet2URL + (schedule?.stageB.image ?? ""))!)
+                                    KFImage(URL(string: schedule?.stageB.url ?? "")!)
                                         .placeholder {
                                             Rectangle()
                                                 .foregroundColor(Color(UIColor.secondarySystemBackground))

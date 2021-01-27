@@ -34,7 +34,7 @@ struct ScheduleView: View {
                     .frame(width: 50, height: 50)
             }
             
-            ScheduleImages(imageA: Splatnet2URL + schedule.stageA.image, titleA: schedule.stageA.description, imageB: Splatnet2URL + schedule.stageB.image, titleB: schedule.stageB.description)
+            ScheduleImages(imageA: schedule.stageA.url, titleA: schedule.stageA.description, imageB: schedule.stageB.url, titleB: schedule.stageB.description)
         }
     }
     

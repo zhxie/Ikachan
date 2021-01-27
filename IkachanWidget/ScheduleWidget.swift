@@ -44,7 +44,7 @@ struct ScheduleProvider: IntentTimelineProvider {
             
             if filtered.count > 0 {
                 let entry = ScheduleEntry(date: current, configuration: configuration, current: current, schedule: filtered[0])
-                let resources = [ImageResource(downloadURL: URL(string: Splatnet2URL + filtered[0].stageA.image)!), ImageResource(downloadURL: URL(string: Splatnet2URL + filtered[0].stageB.image)!)]
+                let resources = [ImageResource(downloadURL: URL(string: filtered[0].stageA.url)!), ImageResource(downloadURL: URL(string: filtered[0].stageB.url)!)]
                 
                 ImagePrefetcher(resources: resources) { (_, _, _) in
                     completion(entry)
@@ -81,8 +81,8 @@ struct ScheduleProvider: IntentTimelineProvider {
                 while current < schedule.endTime && entries.count < MaxWidgetEntryCount {
                     let entry = ScheduleEntry(date: current, configuration: configuration, current: current, schedule: schedule)
                     entries.append(entry)
-                    urls.insert(Splatnet2URL + schedule.stageA.image)
-                    urls.insert(Splatnet2URL + schedule.stageB.image)
+                    urls.insert(schedule.stageA.url)
+                    urls.insert(schedule.stageB.url)
                     
                     current = current.addingTimeInterval(60)
                 }
