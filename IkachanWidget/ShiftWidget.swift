@@ -81,26 +81,14 @@ struct ShiftProvider: TimelineProvider {
                     
                     var delta = 60.0
                     if distance >= 864000 {
-                        delta = distance.truncatingRemainder(dividingBy: 864000)
+                        delta = distance.truncatingRemainder(dividingBy: 86400)
                     } else if distance >= 36000 {
-                        delta = distance.truncatingRemainder(dividingBy: 36000)
+                        delta = distance.truncatingRemainder(dividingBy: 3600)
                     }
                     if delta == 0 {
                         delta = 60.0
                     }
                     current = current.addingTimeInterval(delta)
-                    
-                    if distance >= 11 * 86400 {
-                        current = current.addingTimeInterval(86400)
-                    } else if distance >= 10 * 86400 {
-                        current = current.addingTimeInterval(distance - 10 * 86400)
-                    } else if distance >= 11 * 3600 {
-                        current = current.addingTimeInterval(3600)
-                    } else if distance >= 10 * 3600 {
-                        current = current.addingTimeInterval(distance - 10 * 3600)
-                    } else {
-                        current = current.addingTimeInterval(60)
-                    }
                 }
                 
                 if entries.count >= MaxWidgetEntryCount {
