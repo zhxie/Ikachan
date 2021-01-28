@@ -114,87 +114,91 @@ struct Schedule: Hashable, Codable {
     var stageB: Stage
     struct Stage: Hashable, Codable, Identifiable {
         var id: StageId
+        enum StageId: Int, CaseIterable, Codable {
+            case theReef = 0
+            case musselforgeFitness = 1
+            case starfishMainstage = 2
+            case sturgeonShipyard = 3
+            case inkblotArtAcademy = 4
+            case humpbackPumpTrack = 5
+            case mantaMaria = 6
+            case portMackerel = 7
+            case morayTowers = 8
+            case snapperCanal = 9
+            case kelpDome = 10
+            case blackbellySkatepark = 11
+            case shellendorfInstitute = 12
+            case makoMart = 13
+            case walleyeWarehouse = 14
+            case arowanaMall = 15
+            case campTriggerfish = 16
+            case piranhaPit = 17
+            case gobyArena = 18
+            case newAlbacoreHotel = 19
+            case wahooWorld = 20
+            case anchoVGames = 21
+            case skipperPavilion = 22
+            
+            var description: LocalizedStringKey {
+                switch self {
+                case .theReef:
+                    return "the_reef"
+                case .musselforgeFitness:
+                    return "mussel_forge_fitness"
+                case .starfishMainstage:
+                    return "starfish_mainstage"
+                case .sturgeonShipyard:
+                    return "sturgeon_shipyard"
+                case .inkblotArtAcademy:
+                    return "inkblot_art_academy"
+                case .humpbackPumpTrack:
+                    return "humpback_pump_track"
+                case .mantaMaria:
+                    return "manta_maria"
+                case .portMackerel:
+                    return "port_mackerel"
+                case .morayTowers:
+                    return "moray_towers"
+                case .snapperCanal:
+                    return "snapper_canal"
+                case .kelpDome:
+                    return "kelp_dome"
+                case .blackbellySkatepark:
+                    return "blackbelly_skatepark"
+                case .shellendorfInstitute:
+                    return "sehllendorf_institute"
+                case .makoMart:
+                    return "mako_mart"
+                case .walleyeWarehouse:
+                    return "walleye_warehouse"
+                case .arowanaMall:
+                    return "arowana_mall"
+                case .campTriggerfish:
+                    return "camp_triggerfish"
+                case .piranhaPit:
+                    return "piranha_pit"
+                case .gobyArena:
+                    return "goby_arena"
+                case .newAlbacoreHotel:
+                    return "new_albacore_hotel"
+                case .wahooWorld:
+                    return "wahoo_world"
+                case .anchoVGames:
+                    return "ancho_v_games"
+                case .skipperPavilion:
+                    return "skipper_pavilion"
+                }
+            }
+        }
+        
+        var description: LocalizedStringKey {
+            self.id.description
+        }
+        
         var image: String
         
         var url: String {
             Splatnet2URL + image
         }
-        
-        var description: LocalizedStringKey {
-            switch self.id {
-            case .theReef:
-                return "the_reef"
-            case .musselforgeFitness:
-                return "mussel_forge_fitness"
-            case .starfishMainstage:
-                return "starfish_mainstage"
-            case .sturgeonShipyard:
-                return "sturgeon_shipyard"
-            case .inkblotArtAcademy:
-                return "inkblot_art_academy"
-            case .humpbackPumpTrack:
-                return "humpback_pump_track"
-            case .mantaMaria:
-                return "manta_maria"
-            case .portMackerel:
-                return "port_mackerel"
-            case .morayTowers:
-                return "moray_towers"
-            case .snapperCanal:
-                return "snapper_canal"
-            case .kelpDome:
-                return "kelp_dome"
-            case .blackbellySkatepark:
-                return "blackbelly_skatepark"
-            case .shellendorfInstitute:
-                return "sehllendorf_institute"
-            case .makoMart:
-                return "mako_mart"
-            case .walleyeWarehouse:
-                return "walleye_warehouse"
-            case .arowanaMall:
-                return "arowana_mall"
-            case .campTriggerfish:
-                return "camp_triggerfish"
-            case .piranhaPit:
-                return "piranha_pit"
-            case .gobyArena:
-                return "goby_arena"
-            case .newAlbacoreHotel:
-                return "new_albacore_hotel"
-            case .wahooWorld:
-                return "wahoo_world"
-            case .anchoVGames:
-                return "ancho_v_games"
-            case .skipperPavilion:
-                return "skipper_pavilion"
-            }
-        }
-    }
-
-    enum StageId: Int, CaseIterable, Codable {
-        case theReef = 0
-        case musselforgeFitness = 1
-        case starfishMainstage = 2
-        case sturgeonShipyard = 3
-        case inkblotArtAcademy = 4
-        case humpbackPumpTrack = 5
-        case mantaMaria = 6
-        case portMackerel = 7
-        case morayTowers = 8
-        case snapperCanal = 9
-        case kelpDome = 10
-        case blackbellySkatepark = 11
-        case shellendorfInstitute = 12
-        case makoMart = 13
-        case walleyeWarehouse = 14
-        case arowanaMall = 15
-        case campTriggerfish = 16
-        case piranhaPit = 17
-        case gobyArena = 18
-        case newAlbacoreHotel = 19
-        case wahooWorld = 20
-        case anchoVGames = 21
-        case skipperPavilion = 22
     }
 }

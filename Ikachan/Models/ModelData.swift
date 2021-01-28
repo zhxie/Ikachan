@@ -134,7 +134,7 @@ final class ModelData: ObservableObject {
         let stage_b_id = Int(schedule["stage_b"]["id"].stringValue)!
         let stage_b_image = schedule["stage_b"]["image"].stringValue
         
-        return Schedule(startTime: Date(timeIntervalSince1970: startTime), endTime: Date(timeIntervalSince1970: endTime), gameMode: Schedule.GameMode(rawValue: gameMode)!, rule: Schedule.Rule(rawValue: rule)!, stageA: Schedule.Stage(id: Schedule.StageId(rawValue: stage_a_id)!, image: stage_a_image), stageB: Schedule.Stage(id: Schedule.StageId(rawValue: stage_b_id)!, image: stage_b_image))
+        return Schedule(startTime: Date(timeIntervalSince1970: startTime), endTime: Date(timeIntervalSince1970: endTime), gameMode: Schedule.GameMode(rawValue: gameMode)!, rule: Schedule.Rule(rawValue: rule)!, stageA: Schedule.Stage(id: Schedule.Stage.StageId(rawValue: stage_a_id)!, image: stage_a_image), stageB: Schedule.Stage(id: Schedule.Stage.StageId(rawValue: stage_b_id)!, image: stage_b_image))
     }
 
     @Published var shifts: [Shift] = []
@@ -275,7 +275,7 @@ final class ModelData: ObservableObject {
         
         let stage_image = stage_image!
         
-        return Shift.Stage(image: Shift.StageImage(rawValue: stage_image)!)
+        return Shift.Stage(image: Shift.Stage.StageImage(rawValue: stage_image)!)
     }
     
     private static func parseWeapon(weapon: JSON) -> Weapon {
