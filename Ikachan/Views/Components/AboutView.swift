@@ -6,14 +6,68 @@
 //
 
 import SwiftUI
+import WidgetKit
+import Kingfisher
 
 struct AboutView: View {
     @Binding var showModal: Bool
+    @State var isDownloadingAllResources = false
     
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("about_us")) {
+                Section(header: Text("support")) {
+                    ZStack {
+                        HStack {
+                            Button("download_all_resources") {
+                                isDownloadingAllResources = true
+                                
+                                var urls: Set<String> = []
+                                var resources: [Resource] = []
+                                
+                                for stage in Schedule.Stage.StageId.allCases {
+                                    urls.insert(Splatnet2URL + stage.defaultURL)
+                                }
+                                for stage in Shift.Stage.StageImage.allCases {
+                                    urls.insert(Splatnet2URL + stage.defaultURL)
+                                }
+                                for weapon in Weapon.WeaponId.allCases {
+                                    urls.insert(Splatnet2URL + weapon.defaultURL)
+                                }
+
+                                for url in urls {
+                                    resources.append(ImageResource(downloadURL: URL(string: url)!))
+                                }
+                                ImagePrefetcher(resources: resources) { (_, _, _) in
+                                    self.isDownloadingAllResources = false
+                                }
+                                .start()
+                            }
+                            .disabled(isDownloadingAllResources)
+                            
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            Spacer()
+                            
+                            if isDownloadingAllResources {
+                                ProgressView()
+                            }
+                        }
+                    }
+                    Button("reload_widgets") {
+                        WidgetCenter.shared.reloadAllTimelines()
+                    }
+                    .disabled(isDownloadingAllResources)
+                    Button("clear_cache") {
+                        KingfisherManager.shared.cache.clearMemoryCache()
+                        KingfisherManager.shared.cache.clearDiskCache()
+                    }
+                    .disabled(isDownloadingAllResources)
+                }
+                
+                Section(header: Text("about")) {
                     Link("repository", destination: URL(string: "https://github.com/zhxie/ikachan")!)
                     Link("developer_sketch", destination: URL(string: isChinese ? "https://weibo.com/u/2269567390" : "https://twitter.com/xzh1206")!)
                     Link("designer_shooky", destination: URL(string: isChinese ? "https://weibo.com/u/6622470330" : "https://twitter.com/ShellShooky")!)
@@ -50,7 +104,7 @@ struct AboutView: View {
                     }
                 }
             }
-            .navigationTitle("about")
+            .navigationTitle("ikachan")
             .navigationBarItems(trailing: Button("close") {
                 showModal.toggle()
             })

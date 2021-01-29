@@ -138,8 +138,12 @@
 "future" = "Future";
 "in_the_day" = "In the day";
 "at_night" = "At night";
+"ikachan" = "Squid Ch.";
+"support" = "Support";
+"download_all_resources" = "Download All Resources";
+"reload_widgets" = "Reload Widgets";
+"clear_cache" = "Clear Cache";
 "about" = "About";
-"about_us" = "About Us";
 "repository" = "Repository";
 "developer_sketch" = "Developer @xzh1206";
 "designer_shooky" = "Designer @ShellShooky";

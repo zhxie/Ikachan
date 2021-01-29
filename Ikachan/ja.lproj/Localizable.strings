@@ -138,8 +138,12 @@
 "future" = "そのつぎ";
 "in_the_day" = "日に";
 "at_night" = "夜に";
+"ikachan" = "イカチャン";
+"support" = "サポート";
+"download_all_resources" = "すべてのリソースをダウンロード";
+"reload_widgets" = "ウィジェットをリロード";
+"clear_cache" = "キャッシュを消去する";
 "about" = "イカチャンについて";
-"about_us" = "私たちについて";
 "repository" = "リポジトリ";
 "developer_sketch" = "開発者 @xzh1206";
 "designer_shooky" = "デザイナー @ShellShooky";

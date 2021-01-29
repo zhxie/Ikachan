@@ -138,8 +138,12 @@
 "future" = "之后";
 "in_the_day" = "白天";
 "at_night" = "夜间";
+"ikachan" = "乌贼酱";
+"support" = "支持";
+"download_all_resources" = "下载全部资源";
+"reload_widgets" = "重新载入小组件";
+"clear_cache" = "清除缓存";
 "about" = "关于";
-"about_us" = "关于我们";
 "repository" = "代码仓库";
 "developer_sketch" = "开发者 @xzh_Sketch";
 "designer_shooky" = "设计师 @贝壳牌砂糖";

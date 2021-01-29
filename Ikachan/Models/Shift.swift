@@ -37,7 +37,7 @@ struct Shift: Hashable, Codable {
                 }
             }
             
-            var url: String {
+            var defaultURL: String {
                 return self.rawValue
             }
         }
@@ -47,7 +47,7 @@ struct Shift: Hashable, Codable {
         }
         
         var url: String {
-            Splatnet2URL + self.image.url
+            Splatnet2URL + self.image.rawValue
         }
     }
     

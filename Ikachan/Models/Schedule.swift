@@ -189,6 +189,57 @@ struct Schedule: Hashable, Codable {
                     return "skipper_pavilion"
                 }
             }
+            
+            var defaultURL: String {
+                switch self {
+                case .theReef:
+                    return "/images/stage/98baf21c0366ce6e03299e2326fe6d27a7582dce.png"
+                case .musselforgeFitness:
+                    return "/images/stage/83acec875a5bb19418d7b87d5df4ba1e38ceac66.png"
+                case .starfishMainstage:
+                    return "/images/stage/187987856bf575c4155d021cb511034931d06d24.png"
+                case .sturgeonShipyard:
+                    return "/images/stage/bc794e337900afd763f8a88359f83df5679ddf12.png"
+                case .inkblotArtAcademy:
+                    return "/images/stage/5c030a505ee57c889d3e5268a4b10c1f1f37880a.png"
+                case .humpbackPumpTrack:
+                    return "/images/stage/fc23fedca2dfbbd8707a14606d719a4004403d13.png"
+                case .mantaMaria:
+                    return "/images/stage/070d7ee287fdf3c5df02411950c2a1ce5b238746.png"
+                case .portMackerel:
+                    return "/images/stage/0907fc7dc325836a94d385919fe01dc13848612a.png"
+                case .morayTowers:
+                    return "/images/stage/96fd8c0492331a30e60a217c94fd1d4c73a966cc.png"
+                case .snapperCanal:
+                    return "/images/stage/8c95053b3043e163cbfaaf1ec1e5f3eb770e5e07.png"
+                case .kelpDome:
+                    return "/images/stage/a12e4bf9f871677a5f3735d421317fbbf09e1a78.png"
+                case .blackbellySkatepark:
+                    return "/images/stage/758338859615898a59e93b84f7e1ca670f75e865.png"
+                case .shellendorfInstitute:
+                    return "/images/stage/23259c80272f45cea2d5c9e60bc0cedb6ce29e46.png"
+                case .makoMart:
+                    return "/images/stage/d9f0f6c330aaa3b975e572637b00c4c0b6b89f7d.png"
+                case .walleyeWarehouse:
+                    return "/images/stage/65c99da154295109d6fe067005f194f681762f8c.png"
+                case .arowanaMall:
+                    return "/images/stage/dcf332bdcc80f566f3ae59c1c3a29bc6312d0ba8.png"
+                case .campTriggerfish:
+                    return "/images/stage/e4c4800be9fff23112334b193abb0fdf36e05933.png"
+                case .piranhaPit:
+                    return "/images/stage/828e49a8414a4bbc0a5da3e61454ab148a9f4063.png"
+                case .gobyArena:
+                    return "/images/stage/8cab733d543efc9dd561bfcc9edac52594e62522.png"
+                case .newAlbacoreHotel:
+                    return "/images/stage/98a7d7a4009fae9fb7479554535425a5a604e88e.png"
+                case .wahooWorld:
+                    return "/images/stage/555c356487ac3edb0088c416e8045576c6b37fcc.png"
+                case .anchoVGames:
+                    return "/images/stage/1430e5ac7ae9396a126078eeab824a186b490b5a.png"
+                case .skipperPavilion:
+                    return "/images/stage/132327c819abf2bd44d0adc0f4a21aad9cc84bb2.png"
+                }
+            }
         }
         
         var description: LocalizedStringKey {

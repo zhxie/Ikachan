@@ -44,6 +44,7 @@ struct IkachanApp: App {
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         KingfisherManager.shared.downloader.downloadTimeout = Timeout
+        KingfisherManager.shared.cache.diskStorage.config.expiration = .never
         
         if let shortcutItem = options.shortcutItem {
             shortcutItemToProcess = shortcutItem
