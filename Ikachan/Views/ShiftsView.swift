@@ -62,12 +62,12 @@ struct ShiftsView: View {
                         showModal.toggle()
                     }) {
                         Image(systemName: "info.circle")
-                    }.sheet(isPresented: $showModal) {
-                        AboutView(showModal: $showModal)
                     }
-                    .animation(.easeInOut(duration: 0.2))
                 }
             }
+        }
+        .sheet(isPresented: $showModal) {
+            AboutView(showModal: $showModal)
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: update)
