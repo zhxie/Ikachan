@@ -39,6 +39,7 @@
 		E4444F3225BF155B0003A676 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4444F3125BF155B0003A676 /* Kingfisher */; };
 		E4444F3425BF155B0003A676 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4444F3325BF155B0003A676 /* SwiftyJSON */; };
 		E4444F3825BF164C0003A676 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4444F3725BF164C0003A676 /* Assets.xcassets */; };
+		E44D81B125C84BF400C9270B /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44D81B025C84BF400C9270B /* UIWindow.swift */; };
 		E468B7A325B282F5001254FE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7A225B282F5001254FE /* ModelData.swift */; };
 		E468B7AD25B34AFC001254FE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7AC25B34AFC001254FE /* Constant.swift */; };
 		E468B7B525B46080001254FE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
@@ -104,6 +105,7 @@
 		E4444ECC25BF147F0003A676 /* IkachanWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IkachanWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4444ED525BF14820003A676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4444F3725BF164C0003A676 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E44D81B025C84BF400C9270B /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		E468B7A225B282F5001254FE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		E468B7AC25B34AFC001254FE /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E468B7B425B46080001254FE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				E468B7B425B46080001254FE /* Date.swift */,
 				E4703BC625B8722E0093781B /* Impact.swift */,
 				E46B513225BB341D001F88CE /* URL.swift */,
+				E44D81B025C84BF400C9270B /* UIWindow.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				E4E60D8625B5C9DF0039A6E6 /* ScheduleView.swift in Sources */,
 				E4703BC725B8722E0093781B /* Impact.swift in Sources */,
 				E468B7A325B282F5001254FE /* ModelData.swift in Sources */,
+				E44D81B125C84BF400C9270B /* UIWindow.swift in Sources */,
 				E4E60D8925B5CBC80039A6E6 /* SchedulesView.swift in Sources */,
 				E468B7AD25B34AFC001254FE /* Constant.swift in Sources */,
 				E46B50E025B9F5D7001F88CE /* ScheduleWidget.intentdefinition in Sources */,

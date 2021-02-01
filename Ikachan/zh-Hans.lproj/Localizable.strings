@@ -152,6 +152,7 @@
 "splatoon2_ink" = "Splatoon2.ink";
 "acknowledgements" = "致谢";
 "disclaimer" = "本应用是使用イカリング2的信息的非官方应用，与任天堂有限公司无关。";
+"version" = "版本";
 "close" = "关闭";
 
 // Widget

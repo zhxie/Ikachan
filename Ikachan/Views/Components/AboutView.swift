@@ -110,6 +110,29 @@ struct AboutView: View {
                         Text("acknowledgements")
                     }
                 }
+                
+                Section(footer: HStack {
+                    Spacer()
+                    
+                    VStack {
+                        Image("inkling_splat")
+                            .font(Font.system(size: 96))
+                            .foregroundColor(.secondary)
+                            .onReceive(NotificationCenter.default.publisher(for: .deviceDidShakeNotification)) { _ in
+                                Impact(style: .medium)
+                            }
+                            .onTapGesture {
+                                Impact(style: .light)
+                            }
+                        
+                        Text(String(format: "%@ %@", NSLocalizedString("version", comment: ""), version))
+                            .foregroundColor(.secondary)
+                    }
+                    
+                    Spacer()
+                }) {
+                    EmptyView()
+                }
             }
             .navigationTitle("ikachan")
             .navigationBarItems(trailing: Button("close") {
@@ -142,6 +165,14 @@ struct AboutView: View {
         let content = fm.contents(atPath: path)
         
         return String(data: content!, encoding: .utf8)!
+    }
+    
+    var version: String {
+        let dictionary = Bundle.main.infoDictionary!
+        let version = dictionary["CFBundleShortVersionString"] as! String
+        let build = dictionary["CFBundleVersion"] as! String
+        
+        return String(format: "%@ (%@)", version, build)
     }
 }
 
