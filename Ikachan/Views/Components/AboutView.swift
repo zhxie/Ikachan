@@ -12,6 +12,8 @@ import Kingfisher
 struct AboutView: View {
     @Binding var showModal: Bool
     @State var isDownloadingAllResources = false
+    @State var progressValue = 0.0
+    @State var progressTotal = 0.0
     
     var body: some View {
         NavigationView {
@@ -20,8 +22,6 @@ struct AboutView: View {
                     ZStack {
                         HStack {
                             Button("download_all_resources") {
-                                isDownloadingAllResources = true
-                                
                                 var urls: Set<String> = []
                                 var resources: [Resource] = []
                                 
@@ -34,11 +34,17 @@ struct AboutView: View {
                                 for weapon in Weapon.WeaponId.allCases {
                                     urls.insert(Splatnet2URL + weapon.defaultURL)
                                 }
+                                
+                                progressValue = 0
+                                progressTotal = Double(urls.count)
+                                isDownloadingAllResources = true
 
                                 for url in urls {
                                     resources.append(ImageResource(downloadURL: URL(string: url)!))
                                 }
-                                ImagePrefetcher(resources: resources) { (_, _, _) in
+                                ImagePrefetcher(resources: resources, progressBlock: { (skipped, failed, completed) in
+                                    self.progressValue = Double(skipped.count + failed.count + completed.count)
+                                }) { (_, _, _) in
                                     self.isDownloadingAllResources = false
                                 }
                                 .start()
@@ -52,7 +58,8 @@ struct AboutView: View {
                             Spacer()
                             
                             if isDownloadingAllResources {
-                                ProgressView()
+                                ProgressView(value: progressValue, total: progressTotal)
+                                    .frame(minWidth: 50, maxWidth: 100)
                             }
                         }
                     }
