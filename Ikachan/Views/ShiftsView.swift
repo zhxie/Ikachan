@@ -26,7 +26,6 @@ struct ShiftsView: View {
                             Spacer()
                                 .frame(height: 15)
                         }
-                        .animation(.easeInOut)
                     }
                     
                     ForEach(nexts, id: \.self) { shift in
@@ -38,7 +37,6 @@ struct ShiftsView: View {
                             Spacer()
                                 .frame(height: 15)
                         }
-                        .animation(.easeInOut)
                     }
                     
                     ForEach(schedules, id: \.self) { shift in
@@ -50,9 +48,9 @@ struct ShiftsView: View {
                             Spacer()
                                 .frame(height: 15)
                         }
-                        .animation(.easeInOut)
                     }
                 }
+                .animation(.default)
                 .padding()
                 .navigationTitle("salmon_run")
             }

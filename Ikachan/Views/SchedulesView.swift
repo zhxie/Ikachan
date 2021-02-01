@@ -29,9 +29,9 @@ struct SchedulesView: View {
                             Spacer()
                                 .frame(height: 15)
                         }
-                        .animation(.easeInOut)
                     }
                 }
+                .animation(.default)
                 .padding()
                 .navigationTitle(modelData.gameMode.longDescription)
             }
@@ -64,7 +64,6 @@ struct SchedulesView: View {
                                 .imageScale(.large)
                         }
                         .accessibility(label: Text("filter"))
-                        .animation(.easeInOut(duration: 0.2))
                     } else {
                         Button(action: {
                             Impact(style: .light)
@@ -72,7 +71,6 @@ struct SchedulesView: View {
                         }) {
                             Image(systemName: "line.horizontal.3.decrease.circle.fill")
                         }
-                        .animation(.easeInOut(duration: 0.2))
                     }
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
