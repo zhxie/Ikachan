@@ -58,6 +58,8 @@
 		E4B1144B25BD1E7A00303542 /* MediumShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1144A25BD1E7A00303542 /* MediumShiftView.swift */; };
 		E4B1145A25BD515F00303542 /* SmallDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1145925BD515F00303542 /* SmallDayView.swift */; };
 		E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7A2C225B7395500E26B20 /* Localizable.strings */; };
+		E4E13CE325C7DBB100150544 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E13CE225C7DBB100150544 /* Color.swift */; };
+		E4E13CE425C7DBB100150544 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E13CE225C7DBB100150544 /* Color.swift */; };
 		E4E60D8325B5C9280039A6E6 /* ScheduleImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60D8225B5C9280039A6E6 /* ScheduleImages.swift */; };
 		E4E60D8625B5C9DF0039A6E6 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60D8525B5C9DF0039A6E6 /* ScheduleView.swift */; };
 		E4E60D8925B5CBC80039A6E6 /* SchedulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60D8825B5CBC80039A6E6 /* SchedulesView.swift */; };
@@ -133,6 +135,7 @@
 		E4B1145925BD515F00303542 /* SmallDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDayView.swift; sourceTree = "<group>"; };
 		E4B1145E25BD5AC600303542 /* DayWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWidget.swift; sourceTree = "<group>"; };
 		E4C7A2C125B7395500E26B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E4E13CE225C7DBB100150544 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E4E60D8225B5C9280039A6E6 /* ScheduleImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleImages.swift; sourceTree = "<group>"; };
 		E4E60D8525B5C9DF0039A6E6 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		E4E60D8825B5CBC80039A6E6 /* SchedulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesView.swift; sourceTree = "<group>"; };
@@ -238,6 +241,7 @@
 		E468B7B325B46070001254FE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E4E13CE225C7DBB100150544 /* Color.swift */,
 				E468B7B425B46080001254FE /* Date.swift */,
 				E4703BC625B8722E0093781B /* Impact.swift */,
 				E46B513225BB341D001F88CE /* URL.swift */,
@@ -411,6 +415,7 @@
 			files = (
 				E438EF4225B5E22A005AB9D9 /* ShiftImages.swift in Sources */,
 				E438EF4525B5E3F8005AB9D9 /* ShiftsView.swift in Sources */,
+				E4E13CE325C7DBB100150544 /* Color.swift in Sources */,
 				E4405D7D25AF64D2002EF1AB /* ContentView.swift in Sources */,
 				E438EF4825B5E533005AB9D9 /* ShiftView.swift in Sources */,
 				E46B510325BB1E3E001F88CE /* AboutView.swift in Sources */,
@@ -442,6 +447,7 @@
 				E4444EED25BF149B0003A676 /* Constant.swift in Sources */,
 				E4444EF625BF14A50003A676 /* SmallDayView.swift in Sources */,
 				E4444EEF25BF149B0003A676 /* Shift.swift in Sources */,
+				E4E13CE425C7DBB100150544 /* Color.swift in Sources */,
 				E4444F1825BF14FB0003A676 /* ScheduleWidget.swift in Sources */,
 				E4444F1C25BF15010003A676 /* ScheduleWidget.intentdefinition in Sources */,
 				E4444F0725BF14D10003A676 /* IkachanWidgetBundle.swift in Sources */,

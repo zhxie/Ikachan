@@ -15,22 +15,32 @@ struct SmallDayView: View {
         ZStack {
             ZStack {
                 switch hour {
-                case 0..<5:
-                    Midnight()
                 case 5..<7:
-                    Dawn()
+                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hex: "e8cab4"), location: 0.0), Gradient.Stop(color: Color(hex: "6ea7d8"), location: 0.69)]), startPoint: .bottom, endPoint: .top)
                 case 7..<9:
-                    Daylight()
-                case 9..<15:
-                    Daylight()
+                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hex: "95d5d7"), location: 0.0), Gradient.Stop(color: Color(hex: "53b5ee"), location: 0.86)]), startPoint: .bottom, endPoint: .top)
+                case 9..<11:
+                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hex: "6fcbff"), location: 0.0), Gradient.Stop(color: Color(hex: "53b0ec"), location: 1.0)]), startPoint: .bottom, endPoint: .top)
+                case 11..<13:
+                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hex: "5fbaf4"), location: 0.0), Gradient.Stop(color: Color(hex: "52afee"), location: 0.95)]), startPoint: .bottom, endPoint: .top)
+                case 13..<15:
+                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hex: "5fbaf4"), location: 0.0), Gradient.Stop(color: Color(hex: "3494d5"), location: 0.97)]), startPoint: .bottom, endPoint: .top)
                 case 15..<17:
-                    SunSet()
+                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hex: "b0c8e8"), location: 0.0), Gradient.Stop(color: Color(hex: "5cb8f3"), location: 0.66), Gradient.Stop(color: Color(hex: "339ee7"), location: 0.97)]), startPoint: .bottom, endPoint: .top)
                 case 17..<19:
-                    Dusk()
-                case 19..<24, 24:
-                    Nightfall()
+                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hex: "f5d6bc"), location: 0.0), Gradient.Stop(color: Color(hex: "dbb0be"), location: 0.26), Gradient.Stop(color: Color(hex: "4a94d3"), location: 1.0)]), startPoint: .bottom, endPoint: .top)
+                case 19..<21:
+                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hex: "bea1c4"), location: 0.0), Gradient.Stop(color: Color(hex: "617db6"), location: 0.49), Gradient.Stop(color: Color(hex: "326eb2"), location: 0.99)]), startPoint: .bottom, endPoint: .top)
+                case 21..<23:
+                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hex: "0c2442"), location: 0.0), Gradient.Stop(color: Color(hex: "3f638e"), location: 0.98)]), startPoint: .bottom, endPoint: .top)
+                case 23..<25, -1..<1:
+                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hex: "152437"), location: 0.0), Gradient.Stop(color: Color(hex: "3b506b"), location: 1.0)]), startPoint: .bottom, endPoint: .top)
+                case 1..<3:
+                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hex: "060e19"), location: 0.07), Gradient.Stop(color: Color(hex: "11253c"), location: 0.81)]), startPoint: .bottom, endPoint: .top)
+                case 3..<5:
+                    LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: Color(hex: "5f82c2"), location: 0.0), Gradient.Stop(color: Color(hex: "152437"), location: 0.89)]), startPoint: .bottom, endPoint: .top)
                 default:
-                    Daylight()
+                    Color(.black)
                 }
             }
             .ignoresSafeArea(edges: .all)
@@ -107,7 +117,7 @@ struct SmallDayView: View {
     }
     
     var isDay: Bool {
-        return hour >= 6 && hour < 18
+        return hour >= 5 && hour < 19
     }
     
     var icon: String {
@@ -124,48 +134,6 @@ struct SmallDayView: View {
         } else {
             return "at_night"
         }
-    }
-}
-
-struct Dawn: View {
-    var body: some View {
-        LinearGradient(gradient: Gradient(colors: [Color(red: 138 / 255, green: 172 / 255, blue: 207 / 255), Color(red: 232 / 255, green: 202 / 255, blue: 181 / 255)]), startPoint: .top, endPoint: .bottom)
-            .ignoresSafeArea(edges: .all)
-    }
-}
-
-struct Daylight: View {
-    var body: some View {
-        LinearGradient(gradient: Gradient(colors: [Color(red: 120 / 255, green: 178 / 255, blue: 234 / 255), Color(red: 115 / 255, green: 204 / 255, blue: 253 / 255)]), startPoint: .top, endPoint: .bottom)
-            .ignoresSafeArea(edges: .all)
-    }
-}
-
-struct SunSet: View {
-    var body: some View {
-        LinearGradient(gradient: Gradient(colors: [Color(red: 46 / 255, green: 129 / 255, blue: 178 / 255), Color(red: 202 / 255, green: 186 / 255, blue: 203 / 255)]), startPoint: .top, endPoint: .bottom)
-            .ignoresSafeArea(edges: .all)
-    }
-}
-
-struct Dusk: View {
-    var body: some View {
-        LinearGradient(gradient: Gradient(colors: [Color(red: 27 / 255, green: 63 / 255, blue: 137 / 255), Color(red: 164 / 255, green: 158 / 255, blue: 196 / 255)]), startPoint: .top, endPoint: .bottom)
-            .ignoresSafeArea(edges: .all)
-    }
-}
-
-struct Nightfall: View {
-    var body: some View {
-        LinearGradient(gradient: Gradient(colors: [Color(red: 81 / 255, green: 117 / 255, blue: 144 / 255), Color(red: 13 / 255, green: 36 / 255, blue: 65 / 255)]), startPoint: .top, endPoint: .bottom)
-            .ignoresSafeArea(edges: .all)
-    }
-}
-
-struct Midnight: View {
-    var body: some View {
-        LinearGradient(gradient: Gradient(colors: [Color(red: 13 / 255, green: 36 / 255, blue: 65 / 255), Color(red: 22 / 255, green: 36 / 255, blue: 54 / 255)]), startPoint: .top, endPoint: .bottom)
-            .ignoresSafeArea(edges: .all)
     }
 }
 
