@@ -51,7 +51,7 @@ struct ShiftsView: View {
                     }
                 }
                 .animation(.default)
-                .padding()
+                .padding([.horizontal, .bottom])
                 .navigationTitle("salmon_run")
             }
             .toolbar {

@@ -32,7 +32,7 @@ struct SchedulesView: View {
                     }
                 }
                 .animation(.default)
-                .padding()
+                .padding([.horizontal, .bottom])
                 .navigationTitle(modelData.gameMode.longDescription)
             }
             .toolbar {
