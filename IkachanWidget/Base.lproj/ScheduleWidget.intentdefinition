@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>INEnumDisplayName</key>
-			<string>GameMode</string>
+			<string>Game Mode</string>
 			<key>INEnumDisplayNameID</key>
 			<string>3t1M7s</string>
 			<key>INEnumGeneratesHeader</key>

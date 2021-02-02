@@ -30,7 +30,6 @@
 		E4444EF725BF14A50003A676 /* SmallScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B506425B8959A001F88CE /* SmallScheduleView.swift */; };
 		E4444EF825BF14A50003A676 /* MediumShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1144A25BD1E7A00303542 /* MediumShiftView.swift */; };
 		E4444EFC25BF14B50003A676 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7A2C225B7395500E26B20 /* Localizable.strings */; };
-		E4444F0025BF14BA0003A676 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46B514C25BB46C5001F88CE /* InfoPlist.strings */; };
 		E4444F0725BF14D10003A676 /* IkachanWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */; };
 		E4444F1125BF14F60003A676 /* DayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1145E25BD5AC600303542 /* DayWidget.swift */; };
 		E4444F1825BF14FB0003A676 /* ScheduleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B507525B9C2AC001F88CE /* ScheduleWidget.swift */; };
@@ -38,28 +37,24 @@
 		E4444F2325BF15090003A676 /* ShiftWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1144F25BD43B400303542 /* ShiftWidget.swift */; };
 		E4444F3225BF155B0003A676 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4444F3125BF155B0003A676 /* Kingfisher */; };
 		E4444F3425BF155B0003A676 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4444F3325BF155B0003A676 /* SwiftyJSON */; };
-		E4444F3825BF164C0003A676 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4444F3725BF164C0003A676 /* Assets.xcassets */; };
 		E44D81B125C84BF400C9270B /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44D81B025C84BF400C9270B /* UIWindow.swift */; };
 		E468B7A325B282F5001254FE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7A225B282F5001254FE /* ModelData.swift */; };
 		E468B7AD25B34AFC001254FE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7AC25B34AFC001254FE /* Constant.swift */; };
 		E468B7B525B46080001254FE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
-		E46B506525B8959A001F88CE /* SmallScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B506425B8959A001F88CE /* SmallScheduleView.swift */; };
-		E46B506825B9BBA6001F88CE /* MediumScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B506725B9BBA6001F88CE /* MediumScheduleView.swift */; };
 		E46B50E025B9F5D7001F88CE /* ScheduleWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */; };
 		E46B510325BB1E3E001F88CE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B510225BB1E3E001F88CE /* AboutView.swift */; };
 		E46B512C25BB30C7001F88CE /* LICENSE.SwiftyJSON.md in Resources */ = {isa = PBXBuildFile; fileRef = E46B512A25BB30C7001F88CE /* LICENSE.SwiftyJSON.md */; };
 		E46B512D25BB30C7001F88CE /* LICENSE.Kingfisher.md in Resources */ = {isa = PBXBuildFile; fileRef = E46B512B25BB30C7001F88CE /* LICENSE.Kingfisher.md */; };
 		E46B513325BB341D001F88CE /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B513225BB341D001F88CE /* URL.swift */; };
-		E46B514925BB46C5001F88CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46B514C25BB46C5001F88CE /* InfoPlist.strings */; };
 		E4703BC725B8722E0093781B /* Impact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4703BC625B8722E0093781B /* Impact.swift */; };
 		E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E477990725B1F62500F8AE9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E477990625B1F62500F8AE9F /* SwiftyJSON */; };
 		E477990A25B2029C00F8AE9F /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990925B2029C00F8AE9F /* Shift.swift */; };
 		E477990D25B203F900F8AE9F /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990C25B203F900F8AE9F /* Weapon.swift */; };
+		E484FDC725C94694006E748F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4444F3725BF164C0003A676 /* Assets.xcassets */; };
+		E484FDCE25C946C9006E748F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46B514C25BB46C5001F88CE /* InfoPlist.strings */; };
 		E49727D825C9120900364B2F /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49727D725C9120900364B2F /* Star.swift */; };
 		E49727DB25C914C800364B2F /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49727D725C9120900364B2F /* Star.swift */; };
-		E4B1144B25BD1E7A00303542 /* MediumShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1144A25BD1E7A00303542 /* MediumShiftView.swift */; };
-		E4B1145A25BD515F00303542 /* SmallDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1145925BD515F00303542 /* SmallDayView.swift */; };
 		E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7A2C225B7395500E26B20 /* Localizable.strings */; };
 		E4E13CE325C7DBB100150544 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E13CE225C7DBB100150544 /* Color.swift */; };
 		E4E13CE425C7DBB100150544 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E13CE225C7DBB100150544 /* Color.swift */; };
@@ -173,6 +168,7 @@
 		E4405D6E25AF64D2002EF1AB = {
 			isa = PBXGroup;
 			children = (
+				E484FDB625C9459A006E748F /* Shared */,
 				E4405D7925AF64D2002EF1AB /* Ikachan */,
 				E4444ECF25BF147F0003A676 /* IkachanWidget */,
 				E46B506F25B9C2AC001F88CE /* Frameworks */,
@@ -197,10 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				E468B7B325B46070001254FE /* Utils */,
-				E477990025B1F1E600F8AE9F /* Models */,
 				E47798FD25B1EDDA00F8AE9F /* Views */,
 				E4405D7A25AF64D2002EF1AB /* IkachanApp.swift */,
-				E4C7A2C225B7395500E26B20 /* Localizable.strings */,
 				E4405D7E25AF64D6002EF1AB /* Assets.xcassets */,
 				E4405D8325AF64D6002EF1AB /* Info.plist */,
 				E46B514C25BB46C5001F88CE /* InfoPlist.strings */,
@@ -220,11 +214,12 @@
 		E4444ECF25BF147F0003A676 /* IkachanWidget */ = {
 			isa = PBXGroup;
 			children = (
-				E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */,
+				E484FDBD25C9460C006E748F /* Views */,
 				E4B1145E25BD5AC600303542 /* DayWidget.swift */,
 				E46B507525B9C2AC001F88CE /* ScheduleWidget.swift */,
 				E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */,
 				E4B1144F25BD43B400303542 /* ShiftWidget.swift */,
+				E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */,
 				E4444F3725BF164C0003A676 /* Assets.xcassets */,
 				E4444ED525BF14820003A676 /* Info.plist */,
 			);
@@ -246,24 +241,10 @@
 		E468B7B325B46070001254FE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				E4E13CE225C7DBB100150544 /* Color.swift */,
-				E468B7B425B46080001254FE /* Date.swift */,
 				E4703BC625B8722E0093781B /* Impact.swift */,
-				E46B513225BB341D001F88CE /* URL.swift */,
 				E44D81B025C84BF400C9270B /* UIWindow.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		E46B506325B89579001F88CE /* Widgets */ = {
-			isa = PBXGroup;
-			children = (
-				E4B1145925BD515F00303542 /* SmallDayView.swift */,
-				E46B506425B8959A001F88CE /* SmallScheduleView.swift */,
-				E46B506725B9BBA6001F88CE /* MediumScheduleView.swift */,
-				E4B1144A25BD1E7A00303542 /* MediumShiftView.swift */,
-			);
-			path = Widgets;
 			sourceTree = "<group>";
 		};
 		E46B506F25B9C2AC001F88CE /* Frameworks */ = {
@@ -278,7 +259,6 @@
 		E47798FD25B1EDDA00F8AE9F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E46B506325B89579001F88CE /* Widgets */,
 				E468B7AF25B34EB3001254FE /* Components */,
 				E4405D7C25AF64D2002EF1AB /* ContentView.swift */,
 				E4E60D8825B5CBC80039A6E6 /* SchedulesView.swift */,
@@ -298,6 +278,37 @@
 				E49727D725C9120900364B2F /* Star.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E484FDB625C9459A006E748F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E484FDB725C945B5006E748F /* Utils */,
+				E477990025B1F1E600F8AE9F /* Models */,
+				E4C7A2C225B7395500E26B20 /* Localizable.strings */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		E484FDB725C945B5006E748F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E4E13CE225C7DBB100150544 /* Color.swift */,
+				E468B7B425B46080001254FE /* Date.swift */,
+				E46B513225BB341D001F88CE /* URL.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E484FDBD25C9460C006E748F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E4B1145925BD515F00303542 /* SmallDayView.swift */,
+				E46B506425B8959A001F88CE /* SmallScheduleView.swift */,
+				E46B506725B9BBA6001F88CE /* MediumScheduleView.swift */,
+				E4B1144A25BD1E7A00303542 /* MediumShiftView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,7 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4405D8225AF64D6002EF1AB /* Preview Assets.xcassets in Resources */,
-				E46B514925BB46C5001F88CE /* InfoPlist.strings in Resources */,
+				E484FDCE25C946C9006E748F /* InfoPlist.strings in Resources */,
 				E46B512D25BB30C7001F88CE /* LICENSE.Kingfisher.md in Resources */,
 				E46B512C25BB30C7001F88CE /* LICENSE.SwiftyJSON.md in Resources */,
 				E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */,
@@ -407,8 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4444F0025BF14BA0003A676 /* InfoPlist.strings in Resources */,
-				E4444F3825BF164C0003A676 /* Assets.xcassets in Resources */,
+				E484FDC725C94694006E748F /* Assets.xcassets in Resources */,
 				E4444EFC25BF14B50003A676 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,10 +437,8 @@
 				E438EF4825B5E533005AB9D9 /* ShiftView.swift in Sources */,
 				E46B510325BB1E3E001F88CE /* AboutView.swift in Sources */,
 				E4405D7B25AF64D2002EF1AB /* IkachanApp.swift in Sources */,
-				E4B1145A25BD515F00303542 /* SmallDayView.swift in Sources */,
 				E477990D25B203F900F8AE9F /* Weapon.swift in Sources */,
 				E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */,
-				E46B506525B8959A001F88CE /* SmallScheduleView.swift in Sources */,
 				E46B513325BB341D001F88CE /* URL.swift in Sources */,
 				E4E60D8625B5C9DF0039A6E6 /* ScheduleView.swift in Sources */,
 				E4703BC725B8722E0093781B /* Impact.swift in Sources */,
@@ -440,9 +448,7 @@
 				E468B7AD25B34AFC001254FE /* Constant.swift in Sources */,
 				E46B50E025B9F5D7001F88CE /* ScheduleWidget.intentdefinition in Sources */,
 				E468B7B525B46080001254FE /* Date.swift in Sources */,
-				E4B1144B25BD1E7A00303542 /* MediumShiftView.swift in Sources */,
 				E4E60D8325B5C9280039A6E6 /* ScheduleImages.swift in Sources */,
-				E46B506825B9BBA6001F88CE /* MediumScheduleView.swift in Sources */,
 				E49727D825C9120900364B2F /* Star.swift in Sources */,
 				E477990A25B2029C00F8AE9F /* Shift.swift in Sources */,
 			);
