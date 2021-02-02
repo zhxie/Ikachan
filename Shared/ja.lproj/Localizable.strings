@@ -158,7 +158,7 @@
 // Widget
 "failed_to_load" = "読み込むことができません";
 "schedule_widget_description" = "そのモードの現在と将来のスケジュールを表示できます。";
-"shift_widget_description" = "現在と将来のシフト表を表示できます。";
+"shift_widget_description" = "サーモンランの現在と将来のシフト表を表示できます。";
 "day_widget_name" = "一日スプラ";
 "day_widget_description" = "イカしながら一日経ることを感じる。";
 

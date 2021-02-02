@@ -26,7 +26,7 @@ struct DayProvider: IntentTimelineProvider {
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.gameMode == ScheduleProvider.gameMode(for: configuration)
+                schedule.gameMode == ScheduleIntentHandler.convertTo(gameMode: configuration.gameMode)
             }
             
             if filtered.count > 0 {
@@ -58,7 +58,7 @@ struct DayProvider: IntentTimelineProvider {
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.gameMode == ScheduleProvider.gameMode(for: configuration)
+                schedule.gameMode == ScheduleIntentHandler.convertTo(gameMode: configuration.gameMode)
             }
             
             for schedule in filtered {
@@ -93,7 +93,7 @@ struct DayWidgetEntryView: View {
     
     var body: some View {
         SmallDayView(current: entry.date, schedule: entry.schedule)
-            .widgetURL(URL(string: ScheduleProvider.gameMode(for: entry.configuration).url)!)
+            .widgetURL(URL(string: ScheduleIntentHandler.convertTo(gameMode: entry.configuration.gameMode).url)!)
     }
 }
 

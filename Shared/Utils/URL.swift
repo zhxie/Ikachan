@@ -7,11 +7,6 @@
 
 import Foundation
 
-enum Tab {
-    case schedule
-    case shift
-}
-
 extension URL {
     var isDeeplink: Bool {
         return scheme == IkachanScheme

@@ -25,6 +25,7 @@
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>ScheduleIntent</string>
+		<string>ShiftIntent</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

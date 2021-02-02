@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Intents
 
 struct SchedulesView: View {
     @EnvironmentObject var modelData: ModelData
@@ -44,6 +45,12 @@ struct SchedulesView: View {
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
+                    .onChange(of: modelData.gameMode, perform: { gameMode in
+                        let intent = ScheduleIntent()
+                        intent.gameMode = ScheduleIntentHandler.convertFrom(gameMode: gameMode)
+                        
+                        INInteraction(intent: intent, response: nil).donate(completion: nil)
+                    })
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if rule == Schedule.Rule.turfWar {
@@ -108,6 +115,11 @@ struct SchedulesView: View {
     }
     
     func update() {
+        let intent = ScheduleIntent()
+        intent.gameMode = ScheduleIntentHandler.convertFrom(gameMode: modelData.gameMode)
+        
+        INInteraction(intent: intent, response: nil).donate(completion: nil)
+        
         modelData.updateSchedules()
     }
 }

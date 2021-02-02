@@ -9,6 +9,10 @@ import Foundation
 import Combine
 import SwiftyJSON
 
+enum Tab {
+    case schedule
+    case shift
+}
 
 final class ModelData: ObservableObject {
     @Published var tab: Tab = Tab.schedule

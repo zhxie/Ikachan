@@ -10,12 +10,12 @@ import SwiftUI
 import Intents
 import Kingfisher
 
-struct ShiftProvider: TimelineProvider {
+struct ShiftProvider: IntentTimelineProvider {
     func placeholder(in context: Context) -> ShiftEntry {
         ShiftEntry(date: Date(), shift: ShiftPlaceholder)
     }
     
-    func getSnapshot(in context: Context, completion: @escaping (ShiftEntry) -> ()) {
+    func getSnapshot(for configuration: ShiftIntent, in context: Context, completion: @escaping (ShiftEntry) -> ()) {
         ModelData.fetchShifts { (shifts, error) in
             let current = Date()
             
@@ -43,7 +43,7 @@ struct ShiftProvider: TimelineProvider {
         }
     }
     
-    func getTimeline(in context: Context, completion: @escaping (Timeline<ShiftEntry>) -> ()) {
+    func getTimeline(for configuration: ShiftIntent, in context: Context, completion: @escaping (Timeline<ShiftEntry>) -> ()) {
         ModelData.fetchShifts { (shifts, error) in
             var entries: [ShiftEntry] = []
             var urls: Set<String> = []
@@ -130,7 +130,7 @@ struct ShiftWidget: Widget {
     let kind: String = "ShiftWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: ShiftProvider()) { entry in
+        IntentConfiguration(kind: kind, intent:ShiftIntent.self, provider: ShiftProvider()) { entry in
             ShiftWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("shift")

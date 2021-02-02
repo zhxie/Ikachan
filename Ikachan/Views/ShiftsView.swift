@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Intents
 
 struct ShiftsView: View {
     @EnvironmentObject var modelData: ModelData
@@ -111,6 +112,8 @@ struct ShiftsView: View {
     }
     
     func update() {
+        INInteraction(intent: ShiftIntent(), response: nil).donate(completion: nil)
+        
         modelData.updateShifts()
     }
 }
