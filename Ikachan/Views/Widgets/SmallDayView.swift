@@ -42,6 +42,16 @@ struct SmallDayView: View {
                 default:
                     Color(.black)
                 }
+                
+                if (23..<25).contains(hour) || (-1..<3).contains(hour) {
+                    GeometryReader { g in
+                        VStack {
+                            StarrySkyView(current: current, width: g.size.width, height: g.size.height * 0.55)
+                            
+                            Spacer()
+                        }
+                    }
+                }
             }
             .ignoresSafeArea(edges: .all)
             
@@ -108,12 +118,7 @@ struct SmallDayView: View {
     }
     
     var hour: Int {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH"
-        
-        let hourString = dateFormatter.string(from: current)
-        
-        return Int(hourString)!
+        Calendar.current.component(.hour, from: current)
     }
     
     var isDay: Bool {
@@ -134,6 +139,37 @@ struct SmallDayView: View {
         } else {
             return "at_night"
         }
+    }
+}
+
+struct StarrySkyView: View {
+    var current: Date
+    var width: CGFloat
+    var height: CGFloat
+    
+    var body: some View {
+        ZStack {
+            ForEach(stars, id: \.self) { star in
+                StarView(size: CGFloat(star.size), glow: CGFloat(star.glow))
+                    .position(x: CGFloat(star.width) * width, y: CGFloat(star.height) * height)
+            }
+        }
+    }
+    
+    var stars: [Star] {
+        GenerateStars(current: current, largeCount: 3, smallCount: 10)
+    }
+}
+
+struct StarView: View {
+    var size: CGFloat
+    var glow: CGFloat = 0.0
+    
+    var body: some View {
+        Circle()
+            .foregroundColor(.white)
+            .frame(width: size, height: size)
+            .shadow(color: .white, radius: glow, x: 0.0, y: 0.0)
     }
 }
 
