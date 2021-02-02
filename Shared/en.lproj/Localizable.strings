@@ -151,10 +151,12 @@
 "splatoon2_ink" = "Splatoon2.ink";
 "acknowledgements" = "Acknowledgements";
 "disclaimer" = "This app is an unofficial app which uses the information of Splatnet 2, and has nothing to do with Nintendo Co., Ltd.";
+"ika_shrine" = "Ika Shrine";
 "version" = "Version";
 "close" = "Close";
 
 // Widget
+"failed_to_load" = "Failed to Load";
 "schedule_widget_description" = "See the current and future schedules for a mode.";
 "shift_widget_description" = "See the current and future shifts.";
 "day_widget_name" = "Splatoon the Whole Day";

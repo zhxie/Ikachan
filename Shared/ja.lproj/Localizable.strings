@@ -151,10 +151,12 @@
 "splatoon2_ink" = "Splatoon2.ink";
 "acknowledgements" = "謝辞";
 "disclaimer" = "当アプリは、イカリング2の情報を利用した非公式アプリであり、任天堂株式会社とは一切関係はございません。";
+"ika_shrine" = "イカ神社";
 "version" = "バージョン";
 "close" = "閉じる";
 
 // Widget
+"failed_to_load" = "読み込むことができません";
 "schedule_widget_description" = "そのモードの現在と将来のスケジュールを表示できます。";
 "shift_widget_description" = "現在と将来のシフト表を表示できます。";
 "day_widget_name" = "一日スプラ";

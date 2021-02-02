@@ -25,7 +25,7 @@ struct ScheduleProvider: IntentTimelineProvider {
     }
     
     func placeholder(in context: Context) -> ScheduleEntry {
-        ScheduleEntry(date: Date(), configuration: ScheduleIntent(), current: Date(), schedule: SchedulePlaceholder)
+        ScheduleEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder)
     }
 
     func getSnapshot(for configuration: ScheduleIntent, in context: Context, completion: @escaping (ScheduleEntry) -> ()) {
@@ -33,7 +33,7 @@ struct ScheduleProvider: IntentTimelineProvider {
             let current = Date()
             
             guard let schedules = schedules else {
-                completion(placeholder(in: context))
+                completion(ScheduleEntry(date: current, configuration: configuration, schedule: nil))
                 
                 return
             }
@@ -43,7 +43,7 @@ struct ScheduleProvider: IntentTimelineProvider {
             }
             
             if filtered.count > 0 {
-                let entry = ScheduleEntry(date: current, configuration: configuration, current: current, schedule: filtered[0])
+                let entry = ScheduleEntry(date: current, configuration: configuration, schedule: filtered[0])
                 let resources = [ImageResource(downloadURL: URL(string: filtered[0].stageA.url)!), ImageResource(downloadURL: URL(string: filtered[0].stageB.url)!)]
                 
                 ImagePrefetcher(resources: resources) { (_, _, _) in
@@ -51,7 +51,7 @@ struct ScheduleProvider: IntentTimelineProvider {
                 }
                 .start()
             } else {
-                completion(placeholder(in: context))
+                completion(ScheduleEntry(date: current, configuration: configuration, schedule: nil))
             }
         }
     }
@@ -68,7 +68,10 @@ struct ScheduleProvider: IntentTimelineProvider {
             current = Date(timeIntervalSince1970: secs)
             
             guard let schedules = schedules else {
-                completion(Timeline(entries: [], policy: .atEnd))
+                let entry = ScheduleEntry(date: current, configuration: configuration, schedule: nil)
+                let entry2 = ScheduleEntry(date: current.addingTimeInterval(60), configuration: configuration, schedule: nil)
+                
+                completion(Timeline(entries: [entry, entry2], policy: .atEnd))
                 
                 return
             }
@@ -79,7 +82,7 @@ struct ScheduleProvider: IntentTimelineProvider {
             
             for schedule in filtered {
                 while current < schedule.endTime && entries.count < MaxWidgetEntryCount {
-                    let entry = ScheduleEntry(date: current, configuration: configuration, current: current, schedule: schedule)
+                    let entry = ScheduleEntry(date: current, configuration: configuration, schedule: schedule)
                     entries.append(entry)
                     urls.insert(schedule.stageA.url)
                     urls.insert(schedule.stageB.url)
@@ -108,7 +111,6 @@ struct ScheduleEntry: TimelineEntry {
     let date: Date
     let configuration: ScheduleIntent
     
-    let current: Date
     let schedule: Schedule?
 }
 
@@ -121,12 +123,16 @@ struct ScheduleWidgetEntryView : View {
     var body: some View {
         switch family {
         case .systemSmall:
-            SmallScheduleView(current: entry.current, schedule: entry.schedule)
-                .widgetURL(URL(string: ScheduleProvider.gameMode(for: entry.configuration).url)!)
+            SmallScheduleView(current: entry.date, schedule: entry.schedule, gameMode: gameMode)
+                .widgetURL(URL(string: gameMode.url)!)
         default:
-            MediumScheduleView(current: entry.current, schedule: entry.schedule)
-                .widgetURL(URL(string: ScheduleProvider.gameMode(for: entry.configuration).url)!)
+            MediumScheduleView(current: entry.date, schedule: entry.schedule, gameMode: gameMode)
+                .widgetURL(URL(string: gameMode.url)!)
         }
+    }
+    
+    var gameMode: Schedule.GameMode {
+        ScheduleProvider.gameMode(for: entry.configuration)
     }
 }
 
@@ -146,10 +152,10 @@ struct ScheduleWidget: Widget {
 struct ScheduleWidget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), current: Date(), schedule: SchedulePlaceholder))
+            ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
             
-            ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), current: Date(), schedule: SchedulePlaceholder))
+            ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
         }
     }

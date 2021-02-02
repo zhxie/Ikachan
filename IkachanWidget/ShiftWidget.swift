@@ -12,7 +12,7 @@ import Kingfisher
 
 struct ShiftProvider: TimelineProvider {
     func placeholder(in context: Context) -> ShiftEntry {
-        ShiftEntry(date: Date(), current: Date(), shift: ShiftPlaceholder)
+        ShiftEntry(date: Date(), shift: ShiftPlaceholder)
     }
     
     func getSnapshot(in context: Context, completion: @escaping (ShiftEntry) -> ()) {
@@ -20,7 +20,7 @@ struct ShiftProvider: TimelineProvider {
             let current = Date()
             
             guard let shifts = shifts else {
-                completion(placeholder(in: context))
+                completion(ShiftEntry(date: current, shift: nil))
                 
                 return
             }
@@ -30,7 +30,7 @@ struct ShiftProvider: TimelineProvider {
             }
             
             if details.count > 0 {
-                let entry = ShiftEntry(date: current, current: current, shift: details[0])
+                let entry = ShiftEntry(date: current, shift: details[0])
                 let resources = [ImageResource(downloadURL: URL(string: details[0].stage!.url)!), ImageResource(downloadURL: URL(string: details[0].weapons[0].url)!), ImageResource(downloadURL: URL(string: details[0].weapons[1].url)!), ImageResource(downloadURL: URL(string: details[0].weapons[2].url)!), ImageResource(downloadURL: URL(string: details[0].weapons[3].url)!)]
                 
                 ImagePrefetcher(resources: resources) { (_, _, _) in
@@ -38,7 +38,7 @@ struct ShiftProvider: TimelineProvider {
                 }
                 .start()
             } else {
-                completion(placeholder(in: context))
+                completion(ShiftEntry(date: current, shift: nil))
             }
         }
     }
@@ -55,7 +55,10 @@ struct ShiftProvider: TimelineProvider {
             current = Date(timeIntervalSince1970: secs)
             
             guard let shifts = shifts else {
-                completion(Timeline(entries: [], policy: .atEnd))
+                let entry = ShiftEntry(date: current, shift: nil)
+                let entry2 = ShiftEntry(date: current.addingTimeInterval(60), shift: nil)
+                
+                completion(Timeline(entries: [entry, entry2], policy: .atEnd))
                 
                 return
             }
@@ -66,7 +69,7 @@ struct ShiftProvider: TimelineProvider {
             
             for shift in details {
                 while current < shift.endTime && entries.count < MaxWidgetEntryCount {
-                    let entry = ShiftEntry(date: current, current: current, shift: shift)
+                    let entry = ShiftEntry(date: current, shift: shift)
                     entries.append(entry)
                     urls.insert(shift.stage!.url)
                     urls.insert(shift.weapons[0].url)
@@ -111,7 +114,6 @@ struct ShiftProvider: TimelineProvider {
 struct ShiftEntry: TimelineEntry {
     let date: Date
     
-    let current: Date
     let shift: Shift?
 }
 
@@ -119,7 +121,7 @@ struct ShiftWidgetEntryView: View {
     var entry: ShiftProvider.Entry
     
     var body: some View {
-        MediumShiftView(current: entry.current, shift: entry.shift)
+        MediumShiftView(current: entry.date, shift: entry.shift)
             .widgetURL(URL(string: Shift.url)!)
     }
 }
@@ -139,7 +141,7 @@ struct ShiftWidget: Widget {
 
 struct ShiftWidget_Previews: PreviewProvider {
     static var previews: some View {
-        ShiftWidgetEntryView(entry: ShiftEntry(date: Date(), current: Date(), shift: ShiftPlaceholder))
+        ShiftWidgetEntryView(entry: ShiftEntry(date: Date(), shift: ShiftPlaceholder))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

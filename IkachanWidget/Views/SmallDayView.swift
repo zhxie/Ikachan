@@ -55,65 +55,71 @@ struct SmallDayView: View {
             }
             .ignoresSafeArea(edges: .all)
             
-            VStack(spacing: 0) {
-                HStack(spacing: 0) {
-                    Text(timeSpanDescriptor(current: current, startTime: schedule?.startTime ?? current))
-                        .font(.caption2)
-                        .foregroundColor(.white)
-                        .lineLimit(1)
-                        .layoutPriority(1)
-                    
-                    Spacer()
-                    
-                    Text(schedule?.rule.shorterDescription ?? "")
-                        .font(.caption)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .lineLimit(1)
-                        .layoutPriority(2)
-                }
-                .layoutPriority(1)
-                
-                Spacer()
-                    .frame(height: 4)
-                    .layoutPriority(1)
-                
-                HStack {
-                    Text(timeSpan(current: current, startTime: schedule?.startTime ?? Date(), endTime: schedule?.endTime ?? Date()))
-                        .fontWeight(.light)
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
-                        .lineLimit(1)
-                        .layoutPriority(1)
-                    
-                    Spacer()
-                    
-                    Image(systemName: icon)
-                        .accessibility(label: Text(iconText))
-                        .font(.footnote)
-                        .foregroundColor(Color(red: 247 / 255, green: 209 / 255, blue: 87 / 255))
-                }
-                .layoutPriority(1)
-                
-                Spacer()
-                
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(schedule?.stageA.description ?? "")
-                            .font(.caption)
+            if schedule != nil {
+                VStack(spacing: 0) {
+                    HStack(spacing: 0) {
+                        Text(timeSpanDescriptor(current: current, startTime: schedule?.startTime ?? current))
+                            .font(.caption2)
                             .foregroundColor(.white)
                             .lineLimit(1)
-                        Text(schedule?.stageB.description ?? "")
+                            .layoutPriority(1)
+                        
+                        Spacer()
+                        
+                        Text(schedule?.rule.shorterDescription ?? "")
                             .font(.caption)
+                            .fontWeight(.bold)
                             .foregroundColor(.white)
                             .lineLimit(1)
+                            .layoutPriority(2)
                     }
                     .layoutPriority(1)
                     
                     Spacer()
+                        .frame(height: 4)
+                        .layoutPriority(1)
+                    
+                    HStack {
+                        Text(timeSpan(current: current, startTime: schedule?.startTime ?? Date(), endTime: schedule?.endTime ?? Date()))
+                            .fontWeight(.light)
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+                            .lineLimit(1)
+                            .layoutPriority(1)
+                        
+                        Spacer()
+                        
+                        Image(systemName: icon)
+                            .accessibility(label: Text(iconText))
+                            .font(.footnote)
+                            .foregroundColor(Color(red: 247 / 255, green: 209 / 255, blue: 87 / 255))
+                    }
+                    .layoutPriority(1)
+                    
+                    Spacer()
+                    
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(schedule?.stageA.description ?? "")
+                                .font(.caption)
+                                .foregroundColor(.white)
+                                .lineLimit(1)
+                            Text(schedule?.stageB.description ?? "")
+                                .font(.caption)
+                                .foregroundColor(.white)
+                                .lineLimit(1)
+                        }
+                        .layoutPriority(1)
+                        
+                        Spacer()
+                    }
                 }
+                .padding()
+            } else {
+                FailedToLoadView(accentColor: .white)
+                    .padding()
             }
-            .padding()
+            
         }
     }
     

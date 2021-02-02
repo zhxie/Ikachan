@@ -12,7 +12,7 @@ import Kingfisher
 
 struct DayProvider: IntentTimelineProvider {
     func placeholder(in context: Context) -> DayEntry {
-        DayEntry(date: Date(), configuration: ScheduleIntent(), current: Date(), schedule: SchedulePlaceholder)
+        DayEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder)
     }
     
     func getSnapshot(for configuration: ScheduleIntent, in context: Context, completion: @escaping (DayEntry) -> Void) {
@@ -20,7 +20,7 @@ struct DayProvider: IntentTimelineProvider {
             let current = Date()
             
             guard let schedules = schedules else {
-                completion(placeholder(in: context))
+                completion(DayEntry(date: current, configuration: configuration, schedule: nil))
                 
                 return
             }
@@ -30,11 +30,11 @@ struct DayProvider: IntentTimelineProvider {
             }
             
             if filtered.count > 0 {
-                let entry = DayEntry(date: current, configuration: configuration, current: current, schedule: filtered[0])
+                let entry = DayEntry(date: current, configuration: configuration, schedule: filtered[0])
                 
                 completion(entry)
             } else {
-                completion(placeholder(in: context))
+                completion(DayEntry(date: current, configuration: configuration, schedule: nil))
             }
         }
     }
@@ -49,7 +49,10 @@ struct DayProvider: IntentTimelineProvider {
             current = Date(timeIntervalSince1970: secs)
             
             guard let schedules = schedules else {
-                completion(Timeline(entries: [], policy: .atEnd))
+                let entry = DayEntry(date: current, configuration: configuration, schedule: nil)
+                let entry2 = DayEntry(date: current.addingTimeInterval(60), configuration: configuration, schedule: nil)
+                
+                completion(Timeline(entries: [entry, entry2], policy: .atEnd))
                 
                 return
             }
@@ -60,7 +63,7 @@ struct DayProvider: IntentTimelineProvider {
             
             for schedule in filtered {
                 while current < schedule.endTime && entries.count < MaxWidgetEntryCount {
-                    let entry = DayEntry(date: current, configuration: configuration, current: current, schedule: schedule)
+                    let entry = DayEntry(date: current, configuration: configuration, schedule: schedule)
                     entries.append(entry)
                     
                     current = current.addingTimeInterval(60)
@@ -82,7 +85,6 @@ struct DayEntry: TimelineEntry {
     let date: Date
     let configuration: ScheduleIntent
     
-    let current: Date
     let schedule: Schedule?
 }
 
@@ -90,7 +92,7 @@ struct DayWidgetEntryView: View {
     var entry: DayProvider.Entry
     
     var body: some View {
-        SmallDayView(current: entry.current, schedule: entry.schedule)
+        SmallDayView(current: entry.date, schedule: entry.schedule)
             .widgetURL(URL(string: ScheduleProvider.gameMode(for: entry.configuration).url)!)
     }
 }
@@ -110,7 +112,7 @@ struct DayWidget: Widget {
 
 struct DayWidget_Previews: PreviewProvider {
     static var previews: some View {
-        DayWidgetEntryView(entry: DayEntry(date: Date(), configuration: ScheduleIntent(), current: Date(), schedule: SchedulePlaceholder))
+        DayWidgetEntryView(entry: DayEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

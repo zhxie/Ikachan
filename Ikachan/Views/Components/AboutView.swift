@@ -115,7 +115,8 @@ struct AboutView: View {
                     Spacer()
                     
                     VStack {
-                        Image("inkling_splat")
+                        Image("inkling.splat")
+                            .accessibility(label: Text("ika_shrine"))
                             .font(Font.system(size: 96))
                             .foregroundColor(.secondary)
                             .onReceive(NotificationCenter.default.publisher(for: .deviceDidShakeNotification)) { _ in
