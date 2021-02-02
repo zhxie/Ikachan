@@ -1,5 +1,7 @@
 "0dhvDV" = "シフト表";
 
+"0uAeIi" = "ステージ";
+
 "10v9re-Vmno8H" = "Just to confirm, you wanted ‘ガチマッチ’?";
 
 "10v9re-byIF5m" = "Just to confirm, you wanted ‘リーグマッチ’?";
@@ -30,11 +32,11 @@
 
 "RTR7w4" = "モード";
 
-"SLejbf-Vmno8H" = "こちらはガチマッチ現在のスケジュール。";
+"SLejbf-Vmno8H" = "現在、ガチマッチは${stages}で${rule}を行っています。";
 
-"SLejbf-byIF5m" = "こちらはリーグマッチ現在のスケジュール。";
+"SLejbf-byIF5m" = "現在、リーグマッチは${stages}で${rule}を行っています。";
 
-"SLejbf-vQ9T9L" = "こちらはレギュラーマッチ現在のスケジュール。";
+"SLejbf-vQ9T9L" = "現在、レギュラーマッチは${stages}で${rule}を行っています。";
 
 "U9s5b8-Vmno8H" = "こちらはガチマッチ現在のスケジュール：";
 
@@ -67,6 +69,8 @@
 "ffldub-byIF5m" = "リーグマッチのスケジュール";
 
 "ffldub-vQ9T9L" = "レギュラーマッチのスケジュール";
+
+"gO7LJJ" = "ルール";
 
 "ifyLOV" = "すみません、イカチャンはサーモンラン現在のシフト表を表示できません。";
 

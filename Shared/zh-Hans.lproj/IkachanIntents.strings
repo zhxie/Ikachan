@@ -1,5 +1,7 @@
 "0dhvDV" = "排班表";
 
+"0uAeIi" = "场地";
+
 "10v9re-Vmno8H" = "Just to confirm, you wanted ‘真格对战’?";
 
 "10v9re-byIF5m" = "Just to confirm, you wanted ‘组排对战’?";
@@ -30,11 +32,11 @@
 
 "RTR7w4" = "模式";
 
-"SLejbf-Vmno8H" = "这就是真格对战当前的日程。";
+"SLejbf-Vmno8H" = "当前，真格对战正进行于${stages}的${rule}。";
 
-"SLejbf-byIF5m" = "这就是组排对战当前的日程。";
+"SLejbf-byIF5m" = "当前，组排对战正进行于${stages}的${rule}。";
 
-"SLejbf-vQ9T9L" = "这就是普通对战当前的日程。";
+"SLejbf-vQ9T9L" = "当前，普通对战正进行于${stages}的${rule}。";
 
 "U9s5b8-Vmno8H" = "这就是真格对战当前的日程：";
 
@@ -67,6 +69,8 @@
 "ffldub-byIF5m" = "组排对战的日程";
 
 "ffldub-vQ9T9L" = "普通对战的日程";
+
+"gO7LJJ" = "规则";
 
 "ifyLOV" = "很抱歉，乌贼酱无法显示Salmon Run当前的排班表。";
 

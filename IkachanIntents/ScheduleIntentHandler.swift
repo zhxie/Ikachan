@@ -57,7 +57,7 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
             }
             
             if filtered.count > 0 {
-                completion(ScheduleIntentResponse.success(gameMode: intent.gameMode))
+                completion(ScheduleIntentResponse.success(rule: filtered[0].rule.rawValue, stages: [filtered[0].stageA.description.stringKey, filtered[0].stageB.description.stringKey], gameMode: intent.gameMode))
             } else {
                 completion(ScheduleIntentResponse.failure(gameMode: intent.gameMode))
             }

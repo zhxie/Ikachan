@@ -189,7 +189,7 @@
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>U9s5b8</string>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>Here's the current schedules for ${gameMode}.</string>
+						<string>Currently, the ${rule} in ${stages} is undergoing in ${gameMode}.</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>SLejbf</string>
 						<key>INIntentResponseCodeName</key>
@@ -211,7 +211,7 @@
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
-				<integer>3</integer>
+				<integer>6</integer>
 				<key>INIntentResponseParameters</key>
 				<array>
 					<dict>
@@ -231,6 +231,36 @@
 						<integer>3</integer>
 						<key>INIntentResponseParameterType</key>
 						<string>Integer</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseParameterDisplayName</key>
+						<string>Rule</string>
+						<key>INIntentResponseParameterDisplayNameID</key>
+						<string>gO7LJJ</string>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>2</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>rule</string>
+						<key>INIntentResponseParameterTag</key>
+						<integer>4</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>String</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseParameterDisplayName</key>
+						<string>Stages</string>
+						<key>INIntentResponseParameterDisplayNameID</key>
+						<string>0uAeIi</string>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>3</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>stages</string>
+						<key>INIntentResponseParameterSupportsMultipleValues</key>
+						<true/>
+						<key>INIntentResponseParameterTag</key>
+						<integer>6</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>String</string>
 					</dict>
 				</array>
 			</dict>
@@ -319,6 +349,8 @@
 						<string>failure</string>
 					</dict>
 				</array>
+				<key>INIntentResponseLastParameterTag</key>
+				<integer>7</integer>
 			</dict>
 			<key>INIntentTitle</key>
 			<string>Shifts</string>
