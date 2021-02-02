@@ -33,7 +33,7 @@
 		E4444F0725BF14D10003A676 /* IkachanWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */; };
 		E4444F1125BF14F60003A676 /* DayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1145E25BD5AC600303542 /* DayWidget.swift */; };
 		E4444F1825BF14FB0003A676 /* ScheduleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B507525B9C2AC001F88CE /* ScheduleWidget.swift */; };
-		E4444F1C25BF15010003A676 /* ScheduleWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */; };
+		E4444F1C25BF15010003A676 /* IkachanIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E46B50E325B9F5D7001F88CE /* IkachanIntent.intentdefinition */; };
 		E4444F2325BF15090003A676 /* ShiftWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1144F25BD43B400303542 /* ShiftWidget.swift */; };
 		E4444F3225BF155B0003A676 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4444F3125BF155B0003A676 /* Kingfisher */; };
 		E4444F3425BF155B0003A676 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4444F3325BF155B0003A676 /* SwiftyJSON */; };
@@ -41,7 +41,7 @@
 		E468B7A325B282F5001254FE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7A225B282F5001254FE /* ModelData.swift */; };
 		E468B7AD25B34AFC001254FE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7AC25B34AFC001254FE /* Constant.swift */; };
 		E468B7B525B46080001254FE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
-		E46B50E025B9F5D7001F88CE /* ScheduleWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */; };
+		E46B50E025B9F5D7001F88CE /* IkachanIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E46B50E325B9F5D7001F88CE /* IkachanIntent.intentdefinition */; };
 		E46B510325BB1E3E001F88CE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B510225BB1E3E001F88CE /* AboutView.swift */; };
 		E46B512C25BB30C7001F88CE /* LICENSE.SwiftyJSON.md in Resources */ = {isa = PBXBuildFile; fileRef = E46B512A25BB30C7001F88CE /* LICENSE.SwiftyJSON.md */; };
 		E46B512D25BB30C7001F88CE /* LICENSE.Kingfisher.md in Resources */ = {isa = PBXBuildFile; fileRef = E46B512B25BB30C7001F88CE /* LICENSE.Kingfisher.md */; };
@@ -88,9 +88,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E406EF8225C856A000683DBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ScheduleWidget.strings; sourceTree = "<group>"; };
-		E406EF8625C856C700683DBD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ScheduleWidget.strings; sourceTree = "<group>"; };
-		E406EF8A25C8570E00683DBD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ScheduleWidget.strings"; sourceTree = "<group>"; };
 		E406EF8D25C8576300683DBD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E438EF4125B5E22A005AB9D9 /* ShiftImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftImages.swift; sourceTree = "<group>"; };
 		E438EF4425B5E3F7005AB9D9 /* ShiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsView.swift; sourceTree = "<group>"; };
@@ -115,7 +112,7 @@
 		E46B507025B9C2AC001F88CE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		E46B507225B9C2AC001F88CE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		E46B507525B9C2AC001F88CE /* ScheduleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleWidget.swift; sourceTree = "<group>"; };
-		E46B50E225B9F5D7001F88CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/ScheduleWidget.intentdefinition; sourceTree = "<group>"; };
+		E46B50E225B9F5D7001F88CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/IkachanIntent.intentdefinition; sourceTree = "<group>"; };
 		E46B510225BB1E3E001F88CE /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		E46B512A25BB30C7001F88CE /* LICENSE.SwiftyJSON.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.SwiftyJSON.md; sourceTree = "<group>"; };
 		E46B512B25BB30C7001F88CE /* LICENSE.Kingfisher.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.Kingfisher.md; sourceTree = "<group>"; };
@@ -128,6 +125,9 @@
 		E477990125B1F1F600F8AE9F /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E477990925B2029C00F8AE9F /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
 		E477990C25B203F900F8AE9F /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		E484FE1725C9718A006E748F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IkachanIntent.strings; sourceTree = "<group>"; };
+		E484FE1B25C97190006E748F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/IkachanIntent.strings; sourceTree = "<group>"; };
+		E484FE1F25C97193006E748F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IkachanIntent.strings"; sourceTree = "<group>"; };
 		E49727D725C9120900364B2F /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		E4B1144A25BD1E7A00303542 /* MediumShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumShiftView.swift; sourceTree = "<group>"; };
 		E4B1144F25BD43B400303542 /* ShiftWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftWidget.swift; sourceTree = "<group>"; };
@@ -217,7 +217,6 @@
 				E484FDBD25C9460C006E748F /* Views */,
 				E4B1145E25BD5AC600303542 /* DayWidget.swift */,
 				E46B507525B9C2AC001F88CE /* ScheduleWidget.swift */,
-				E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */,
 				E4B1144F25BD43B400303542 /* ShiftWidget.swift */,
 				E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */,
 				E4444F3725BF164C0003A676 /* Assets.xcassets */,
@@ -285,6 +284,7 @@
 			children = (
 				E484FDB725C945B5006E748F /* Utils */,
 				E477990025B1F1E600F8AE9F /* Models */,
+				E46B50E325B9F5D7001F88CE /* IkachanIntent.intentdefinition */,
 				E4C7A2C225B7395500E26B20 /* Localizable.strings */,
 			);
 			path = Shared;
@@ -446,7 +446,7 @@
 				E44D81B125C84BF400C9270B /* UIWindow.swift in Sources */,
 				E4E60D8925B5CBC80039A6E6 /* SchedulesView.swift in Sources */,
 				E468B7AD25B34AFC001254FE /* Constant.swift in Sources */,
-				E46B50E025B9F5D7001F88CE /* ScheduleWidget.intentdefinition in Sources */,
+				E46B50E025B9F5D7001F88CE /* IkachanIntent.intentdefinition in Sources */,
 				E468B7B525B46080001254FE /* Date.swift in Sources */,
 				E4E60D8325B5C9280039A6E6 /* ScheduleImages.swift in Sources */,
 				E49727D825C9120900364B2F /* Star.swift in Sources */,
@@ -464,7 +464,7 @@
 				E4444EEF25BF149B0003A676 /* Shift.swift in Sources */,
 				E4E13CE425C7DBB100150544 /* Color.swift in Sources */,
 				E4444F1825BF14FB0003A676 /* ScheduleWidget.swift in Sources */,
-				E4444F1C25BF15010003A676 /* ScheduleWidget.intentdefinition in Sources */,
+				E4444F1C25BF15010003A676 /* IkachanIntent.intentdefinition in Sources */,
 				E4444F0725BF14D10003A676 /* IkachanWidgetBundle.swift in Sources */,
 				E4444EEC25BF14950003A676 /* URL.swift in Sources */,
 				E49727DB25C914C800364B2F /* Star.swift in Sources */,
@@ -490,15 +490,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E46B50E325B9F5D7001F88CE /* ScheduleWidget.intentdefinition */ = {
+		E46B50E325B9F5D7001F88CE /* IkachanIntent.intentdefinition */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E46B50E225B9F5D7001F88CE /* Base */,
-				E406EF8225C856A000683DBD /* en */,
-				E406EF8625C856C700683DBD /* ja */,
-				E406EF8A25C8570E00683DBD /* zh-Hans */,
+				E484FE1725C9718A006E748F /* en */,
+				E484FE1B25C97190006E748F /* ja */,
+				E484FE1F25C97193006E748F /* zh-Hans */,
 			);
-			name = ScheduleWidget.intentdefinition;
+			name = IkachanIntent.intentdefinition;
 			sourceTree = "<group>";
 		};
 		E46B514C25BB46C5001F88CE /* InfoPlist.strings */ = {

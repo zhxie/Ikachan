@@ -25,9 +25,9 @@ struct ScheduleImages: View {
                             .frame(height: 1080)
                     }
                     .resizable()
+                    .accessibility(label: Text(titleA))
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(15.0)
-                    .accessibility(label: Text(titleA))
                 
                 Text(titleA)
                     .font(.footnote)
@@ -44,9 +44,9 @@ struct ScheduleImages: View {
                             .frame(height: 1080)
                     }
                     .resizable()
+                    .accessibility(label: Text(titleB))
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(15.0)
-                    .accessibility(label: Text(titleB))
                 
                 Text(titleB)
                     .font(.footnote)

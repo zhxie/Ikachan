@@ -31,9 +31,9 @@ struct ShiftImages: View {
                             .frame(height: 1080)
                     }
                     .resizable()
+                    .accessibility(label: Text(title))
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(15.0)
-                    .accessibility(label: Text(title))
                 
                 Text(title)
                     .font(.footnote)
@@ -55,8 +55,8 @@ struct ShiftImages: View {
                                             .frame(height: 1080)
                                     }
                                     .resizable()
-                                    .aspectRatio(contentMode: .fit)
                                     .accessibility(label: Text(subTitle1))
+                                    .aspectRatio(contentMode: .fit)
                             )
                         Rectangle()
                             .fill(Color(UIColor.systemBackground))
@@ -70,8 +70,8 @@ struct ShiftImages: View {
                                             .frame(height: 1080)
                                     }
                                     .resizable()
-                                    .aspectRatio(contentMode: .fit)
                                     .accessibility(label: Text(subTitle2))
+                                    .aspectRatio(contentMode: .fit)
                             )
                     }
                     
@@ -88,8 +88,8 @@ struct ShiftImages: View {
                                             .frame(height: 1080)
                                     }
                                     .resizable()
-                                    .aspectRatio(contentMode: .fit)
                                     .accessibility(label: Text(subTitle3))
+                                    .aspectRatio(contentMode: .fit)
                             )
                         Rectangle()
                             .fill(Color(UIColor.systemBackground))
@@ -103,8 +103,8 @@ struct ShiftImages: View {
                                             .frame(height: 1080)
                                     }
                                     .resizable()
-                                    .aspectRatio(contentMode: .fit)
                                     .accessibility(label: Text(subTitle4))
+                                    .aspectRatio(contentMode: .fit)
                             )
                     }
                 }

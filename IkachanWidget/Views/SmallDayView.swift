@@ -89,9 +89,9 @@ struct SmallDayView: View {
                     Spacer()
                     
                     Image(systemName: icon)
+                        .accessibility(label: Text(iconText))
                         .font(.footnote)
                         .foregroundColor(Color(red: 247 / 255, green: 209 / 255, blue: 87 / 255))
-                        .accessibility(label: Text(iconText))
                 }
                 .layoutPriority(1)
                 

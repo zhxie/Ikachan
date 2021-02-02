@@ -21,11 +21,11 @@ struct SmallScheduleView: View {
                 VStack(spacing: 0) {
                     HStack(spacing: 0) {
                         Text(g.size.width >= CompactSmallWidgetSafeWidth ? scheduleTimePeriod(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0)) : scheduleTimePeriod2(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0)))
+                            .accessibility(label: Text(scheduleTimePeriod(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0))))
+                            .layoutPriority(1)
                             .font(.caption2)
                             .foregroundColor(.secondary)
                             .lineLimit(1)
-                            .accessibility(label: Text(scheduleTimePeriod(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0))))
-                            .layoutPriority(1)
                         
                         Spacer()
                         
@@ -52,9 +52,9 @@ struct SmallScheduleView: View {
                                             .foregroundColor(Color(UIColor.secondarySystemBackground))
                                     }
                                     .resizable()
+                                    .accessibility(label: Text(schedule?.stageA.description ?? ""))
                                     .aspectRatio(contentMode: .fill)
                                     .clipped()
-                                    .accessibility(label: Text(schedule?.stageA.description ?? ""))
                             )
                             .cornerRadius(7.5)
                             .layoutPriority(1)
@@ -78,9 +78,9 @@ struct SmallScheduleView: View {
                         Spacer()
                         
                         Image(systemName: "circle.fill")
+                            .accessibility(label: Text(schedule?.gameMode.longDescription ?? ""))
                             .font(.footnote)
                             .foregroundColor(schedule?.gameMode.accentColor ?? Color.accentColor)
-                            .accessibility(label: Text(schedule?.gameMode.longDescription ?? ""))
                     }
                     .layoutPriority(1)
                     

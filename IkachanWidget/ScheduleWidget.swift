@@ -11,7 +11,7 @@ import Intents
 import Kingfisher
 
 struct ScheduleProvider: IntentTimelineProvider {
-    static func gameMode(for configuration: ConfigurationIntent) -> Schedule.GameMode {
+    static func gameMode(for configuration: ScheduleIntent) -> Schedule.GameMode {
         switch configuration.gameMode {
         case .regular:
             return Schedule.GameMode.regular
@@ -25,10 +25,10 @@ struct ScheduleProvider: IntentTimelineProvider {
     }
     
     func placeholder(in context: Context) -> ScheduleEntry {
-        ScheduleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: SchedulePlaceholder)
+        ScheduleEntry(date: Date(), configuration: ScheduleIntent(), current: Date(), schedule: SchedulePlaceholder)
     }
 
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (ScheduleEntry) -> ()) {
+    func getSnapshot(for configuration: ScheduleIntent, in context: Context, completion: @escaping (ScheduleEntry) -> ()) {
         ModelData.fetchSchedules { (schedules, error) in
             let current = Date()
             
@@ -56,7 +56,7 @@ struct ScheduleProvider: IntentTimelineProvider {
         }
     }
 
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(for configuration: ScheduleIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         ModelData.fetchSchedules { (schedules, error) in
             var entries: [ScheduleEntry] = []
             var urls: Set<String> = []
@@ -106,7 +106,7 @@ struct ScheduleProvider: IntentTimelineProvider {
 
 struct ScheduleEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationIntent
+    let configuration: ScheduleIntent
     
     let current: Date
     let schedule: Schedule?
@@ -134,7 +134,7 @@ struct ScheduleWidget: Widget {
     let kind: String = "ScheduleWidget"
 
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: ScheduleProvider()) { entry in
+        IntentConfiguration(kind: kind, intent: ScheduleIntent.self, provider: ScheduleProvider()) { entry in
             ScheduleWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("schedule")
@@ -146,10 +146,10 @@ struct ScheduleWidget: Widget {
 struct ScheduleWidget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: SchedulePlaceholder))
+            ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), current: Date(), schedule: SchedulePlaceholder))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
             
-            ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ConfigurationIntent(), current: Date(), schedule: SchedulePlaceholder))
+            ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), current: Date(), schedule: SchedulePlaceholder))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
         }
     }

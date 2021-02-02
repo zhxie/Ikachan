@@ -22,10 +22,10 @@ struct MediumShiftView: View {
                     VStack(spacing: 0) {
                         HStack {
                             Text(g.size.width >= CompactMediumWidgetSafeWidth ? shiftTimePeriod(startTime: shift?.startTime ?? Date(timeIntervalSince1970: 0), endTime: shift?.endTime ?? Date(timeIntervalSince1970: 0)) : shiftTimePeriod2(startTime: shift?.startTime ?? Date(timeIntervalSince1970: 0), endTime: shift?.endTime ?? Date(timeIntervalSince1970: 0)))
+                                .accessibility(label: Text(shiftTimePeriod(startTime: shift?.startTime ?? Date(timeIntervalSince1970: 0), endTime: shift?.endTime ?? Date(timeIntervalSince1970: 0))))
                                 .font(.caption2)
                                 .foregroundColor(.secondary)
                                 .lineLimit(1)
-                                .accessibility(label: Text(shiftTimePeriod(startTime: shift?.startTime ?? Date(timeIntervalSince1970: 0), endTime: shift?.endTime ?? Date(timeIntervalSince1970: 0))))
                                 .layoutPriority(1)
                             
                             Spacer()
@@ -45,9 +45,9 @@ struct MediumShiftView: View {
                                                 .foregroundColor(Color(UIColor.secondarySystemBackground))
                                         }
                                         .resizable()
+                                        .accessibility(label: Text(shift?.stage?.description ?? ""))
                                         .aspectRatio(contentMode: .fill)
                                         .clipped()
-                                        .accessibility(label: Text(shift?.stage?.description ?? ""))
                                 )
                                 .cornerRadius(7.5)
                             
@@ -62,9 +62,9 @@ struct MediumShiftView: View {
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
                                             }
                                             .resizable()
+                                            .accessibility(label: Text(shift?.weapons[0].description ?? ""))
                                             .aspectRatio(contentMode: .fill)
                                             .clipped()
-                                            .accessibility(label: Text(shift?.weapons[0].description ?? ""))
                                     )
                                     .cornerRadius(7.5)
                                 Rectangle()
@@ -77,9 +77,9 @@ struct MediumShiftView: View {
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
                                             }
                                             .resizable()
+                                            .accessibility(label: Text(shift?.weapons[1].description ?? ""))
                                             .aspectRatio(contentMode: .fill)
                                             .clipped()
-                                            .accessibility(label: Text(shift?.weapons[1].description ?? ""))
                                     )
                                     .cornerRadius(7.5)
                                 Rectangle()
@@ -92,9 +92,9 @@ struct MediumShiftView: View {
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
                                             }
                                             .resizable()
+                                            .accessibility(label: Text(shift?.weapons[2].description ?? ""))
                                             .aspectRatio(contentMode: .fill)
                                             .clipped()
-                                            .accessibility(label: Text(shift?.weapons[2].description ?? ""))
                                     )
                                     .cornerRadius(7.5)
                                 Rectangle()
@@ -107,9 +107,9 @@ struct MediumShiftView: View {
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
                                             }
                                             .resizable()
+                                            .accessibility(label: Text(shift?.weapons[3].description ?? ""))
                                             .aspectRatio(contentMode: .fill)
                                             .clipped()
-                                            .accessibility(label: Text(shift?.weapons[3].description ?? ""))
                                     )
                                     .cornerRadius(7.5)
                             }
@@ -152,9 +152,9 @@ struct MediumShiftView: View {
                             Spacer()
                             
                             Image(systemName: "circle.fill")
+                                .accessibility(label: Text(Shift.description))
                                 .font(.footnote)
                                 .foregroundColor(Shift.accentColor)
-                                .accessibility(label: Text(Shift.description))
                         }
                         .layoutPriority(1)
                         

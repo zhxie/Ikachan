@@ -1,12 +1,12 @@
-"3t1M7s" = "Mode";
+"3t1M7s" = "モード";
 
-"IBUZSH" = "Ranked Battle";
+"IBUZSH" = "ガチマッチ";
 
-"MVfNIZ" = "Regular Battle";
+"MVfNIZ" = "レギュラーマッチ";
 
-"NRljpK" = "League Battle";
+"NRljpK" = "リーグマッチ";
 
-"gpCwrM" = "Configuration";
+"gpCwrM" = "スケジュール";
 
 "kmECE4-IBUZSH" = "Just to confirm, you wanted ‘Ranked’?";
 
@@ -14,7 +14,7 @@
 
 "kmECE4-NRljpK" = "Just to confirm, you wanted ‘League’?";
 
-"p76n0K" = "Mode";
+"p76n0K" = "モード";
 
 "wlFW5t-IBUZSH" = "There are ${count} options matching ‘Ranked’.";
 

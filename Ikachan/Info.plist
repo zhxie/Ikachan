@@ -24,7 +24,7 @@
 	<true/>
 	<key>NSUserActivityTypes</key>
 	<array>
-		<string>ConfigurationIntent</string>
+		<string>ScheduleIntent</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

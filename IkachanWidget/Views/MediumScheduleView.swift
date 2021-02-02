@@ -43,9 +43,9 @@ struct MediumScheduleView: View {
                                                 .foregroundColor(Color(UIColor.secondarySystemBackground))
                                         }
                                         .resizable()
+                                        .accessibility(label: Text(schedule?.stageA.description ?? ""))
                                         .aspectRatio(contentMode: .fill)
                                         .clipped()
-                                        .accessibility(label: Text(schedule?.stageA.description ?? ""))
                                 )
                                 .cornerRadius(7.5)
                             Rectangle()
@@ -57,9 +57,9 @@ struct MediumScheduleView: View {
                                                 .foregroundColor(Color(UIColor.secondarySystemBackground))
                                         }
                                         .resizable()
+                                        .accessibility(label: Text(schedule?.stageB.description ?? ""))
                                         .aspectRatio(contentMode: .fill)
                                         .clipped()
-                                        .accessibility(label: Text(schedule?.stageB.description ?? ""))
                                 )
                                 .cornerRadius(7.5)
                         }
@@ -101,9 +101,9 @@ struct MediumScheduleView: View {
                             Spacer()
                             
                             Image(systemName: "circle.fill")
+                                .accessibility(label: Text(schedule?.gameMode.longDescription ?? ""))
                                 .font(.footnote)
                                 .foregroundColor(schedule?.gameMode.accentColor ?? Color.accentColor)
-                                .accessibility(label: Text(schedule?.gameMode.longDescription ?? ""))
                         }
                         .layoutPriority(1)
                         
