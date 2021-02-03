@@ -50,10 +50,10 @@ struct SchedulesView: View {
                     })
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    if rule == Schedule.Rule.turfWar {
+                    if rule == .turfWar {
                         Menu(content: {
                             ForEach(Schedule.Rule.allCases.filter { r in
-                                r != Schedule.Rule.turfWar
+                                r != .turfWar
                             }, id: \.self) { r in
                                 Button(action: {
                                     Impact(style: .light)
@@ -71,7 +71,7 @@ struct SchedulesView: View {
                     } else {
                         Button(action: {
                             Impact(style: .light)
-                            rule = Schedule.Rule.turfWar
+                            rule = .turfWar
                         }) {
                             Image(systemName: "line.horizontal.3.decrease.circle.fill")
                         }
@@ -107,7 +107,7 @@ struct SchedulesView: View {
     
     var schedules: [Schedule] {
         modelData.schedules.filter { schedule in
-            schedule.gameMode == modelData.gameMode && (rule == Schedule.Rule.turfWar || rule == schedule.rule)
+            schedule.gameMode == modelData.gameMode && (rule == .turfWar || rule == schedule.rule)
         }
     }
     

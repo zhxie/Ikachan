@@ -55,10 +55,10 @@ struct SmallDayView: View {
             }
             .ignoresSafeArea(edges: .all)
             
-            if schedule != nil {
+            if let schedule = schedule {
                 VStack(spacing: 0) {
                     HStack(spacing: 0) {
-                        Text(timeSpanDescriptor(current: current, startTime: schedule?.startTime ?? current))
+                        Text(timeSpanDescriptor(current: current, startTime: schedule.startTime))
                             .font(.caption2)
                             .foregroundColor(.white)
                             .lineLimit(1)
@@ -66,7 +66,7 @@ struct SmallDayView: View {
                         
                         Spacer()
                         
-                        Text(schedule?.rule.shorterDescription ?? "")
+                        Text(schedule.rule.shorterDescription)
                             .font(.caption)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -80,7 +80,7 @@ struct SmallDayView: View {
                         .layoutPriority(1)
                     
                     HStack {
-                        Text(timeSpan(current: current, startTime: schedule?.startTime ?? Date(), endTime: schedule?.endTime ?? Date()))
+                        Text(timeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime))
                             .fontWeight(.light)
                             .font(.largeTitle)
                             .foregroundColor(.white)
@@ -100,11 +100,11 @@ struct SmallDayView: View {
                     
                     HStack {
                         VStack(alignment: .leading) {
-                            Text(schedule?.stageA.description ?? "")
+                            Text(schedule.stageA.description)
                                 .font(.caption)
                                 .foregroundColor(.white)
                                 .lineLimit(1)
-                            Text(schedule?.stageB.description ?? "")
+                            Text(schedule.stageB.description)
                                 .font(.caption)
                                 .foregroundColor(.white)
                                 .lineLimit(1)

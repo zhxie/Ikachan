@@ -22,19 +22,19 @@ struct IkachanApp: App {
             ContentView()
                 .environmentObject(modelData)
                 .onContinueUserActivity("name.sketch.Ikachan.schedule.regular") { _ in
-                    modelData.tab = Tab.schedule
+                    modelData.tab = .schedule
                     modelData.gameMode = .regular
                 }
                 .onContinueUserActivity("name.sketch.Ikachan.schedule.gachi") { _ in
-                    modelData.tab = Tab.schedule
+                    modelData.tab = .schedule
                     modelData.gameMode = .gachi
                 }
                 .onContinueUserActivity("name.sketch.Ikachan.schedule.league") { _ in
-                    modelData.tab = Tab.schedule
+                    modelData.tab = .schedule
                     modelData.gameMode = .league
                 }
                 .onContinueUserActivity("name.sketch.Ikachan.shift") { _ in
-                    modelData.tab = Tab.shift
+                    modelData.tab = .shift
                 }
         }
         .onChange(of: scenePhase) { (phase) in
@@ -45,12 +45,12 @@ struct IkachanApp: App {
                 shortcutItemToProcess = nil
                 
                 if let gameMode = Schedule.GameMode(rawValue: type) {
-                    modelData.tab = Tab.schedule
+                    modelData.tab = .schedule
                     modelData.gameMode = gameMode
                 }
                 
                 if type == Shift.rawValue {
-                    modelData.tab = Tab.shift
+                    modelData.tab = .shift
                 }
             }
         }

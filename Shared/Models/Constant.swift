@@ -15,8 +15,8 @@ let Splatoon2InkShiftURL = Splatoon2InkURL + "/data/coop-schedules.json"
 
 let Splatnet2URL = "https://app.splatoon2.nintendo.net"
 
-let SchedulePlaceholder = Schedule(startTime: Date(timeIntervalSince1970: 0), endTime: Date(timeIntervalSince1970: 7200), gameMode: Schedule.GameMode.regular, rule: Schedule.Rule.turfWar, stageA: Schedule.Stage(id: Schedule.Stage.StageId.theReef, image: ""), stageB: Schedule.Stage(id: Schedule.Stage.StageId.musselforgeFitness, image: ""))
-let ShiftPlaceholder = Shift(startTime: Date(timeIntervalSince1970: 30672000), endTime: Date(timeIntervalSince1970: 30736800), stage: Shift.Stage(image: Shift.Stage.StageImage.spawningGrounds), weapons: [Weapon(id: Weapon.WeaponId.random, image: ""), Weapon(id: Weapon.WeaponId.random, image: ""), Weapon(id: Weapon.WeaponId.random, image: ""), Weapon(id: Weapon.WeaponId.random, image: "")])
+let SchedulePlaceholder = Schedule(startTime: Date(timeIntervalSince1970: 0), endTime: Date(timeIntervalSince1970: 7200), gameMode: .regular, rule: .turfWar, stageA: Schedule.Stage(id: .theReef, image: ""), stageB: Schedule.Stage(id: .musselforgeFitness, image: ""))
+let ShiftPlaceholder = Shift(startTime: Date(timeIntervalSince1970: 30672000), endTime: Date(timeIntervalSince1970: 30736800), stage: Shift.Stage(image: .spawningGrounds), weapons: [Weapon(id: .random, image: ""), Weapon(id: .random, image: ""), Weapon(id: .random, image: ""), Weapon(id: .random, image: "")])
 
 let Timeout = 60.0
 

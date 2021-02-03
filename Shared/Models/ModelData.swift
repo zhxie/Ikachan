@@ -15,8 +15,8 @@ enum Tab {
 }
 
 final class ModelData: ObservableObject {
-    @Published var tab: Tab = Tab.schedule
-    @Published var gameMode: Schedule.GameMode = Schedule.GameMode.regular
+    @Published var tab: Tab = .schedule
+    @Published var gameMode: Schedule.GameMode = .regular
     
     @Published var schedules: [Schedule] = []
     

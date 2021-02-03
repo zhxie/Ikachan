@@ -10,7 +10,7 @@ import Intents
 class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
     func resolveGameMode(for intent: ScheduleIntent, with completion: @escaping (GameModeResolutionResult) -> Void) {
         if intent.gameMode == .unknown {
-            completion(GameModeResolutionResult.confirmationRequired(with: GameMode.regular))
+            completion(GameModeResolutionResult.confirmationRequired(with: .regular))
         } else {
             completion(GameModeResolutionResult.success(with: intent.gameMode))
         }

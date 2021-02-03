@@ -17,13 +17,13 @@ struct MediumShiftView: View {
             Color(UIColor.systemBackground)
                 .ignoresSafeArea(edges: .all)
             
-            if shift != nil {
+            if let shift = shift {
                 GeometryReader { g in
                     HStack {
                         VStack(spacing: 0) {
                             HStack {
-                                Text(g.size.width >= CompactMediumWidgetSafeWidth ? shiftTimePeriod(startTime: shift?.startTime ?? Date(timeIntervalSince1970: 0), endTime: shift?.endTime ?? Date(timeIntervalSince1970: 0)) : shiftTimePeriod2(startTime: shift?.startTime ?? Date(timeIntervalSince1970: 0), endTime: shift?.endTime ?? Date(timeIntervalSince1970: 0)))
-                                    .accessibility(label: Text(shiftTimePeriod(startTime: shift?.startTime ?? Date(timeIntervalSince1970: 0), endTime: shift?.endTime ?? Date(timeIntervalSince1970: 0))))
+                                Text(g.size.width >= CompactMediumWidgetSafeWidth ? shiftTimePeriod(startTime: shift.startTime, endTime: shift.endTime) : shiftTimePeriod2(startTime: shift.startTime, endTime: shift.endTime))
+                                    .accessibility(label: Text(shiftTimePeriod(startTime: shift.startTime, endTime: shift.endTime)))
                                     .font(.caption2)
                                     .foregroundColor(.secondary)
                                     .lineLimit(1)
@@ -40,13 +40,13 @@ struct MediumShiftView: View {
                                 Rectangle()
                                     .fill(Color(UIColor.secondarySystemBackground))
                                     .overlay (
-                                        KFImage(URL(string: shift?.stage?.url ?? "")!)
+                                        KFImage(URL(string: shift.stage?.url ?? "")!)
                                             .placeholder {
                                                 Rectangle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
                                             }
                                             .resizable()
-                                            .accessibility(label: Text(shift?.stage?.description ?? ""))
+                                            .accessibility(label: Text(shift.stage?.description ?? ""))
                                             .aspectRatio(contentMode: .fill)
                                             .clipped()
                                     )
@@ -57,13 +57,13 @@ struct MediumShiftView: View {
                                         .fill(Color.clear)
                                         .aspectRatio(1, contentMode: .fit)
                                         .overlay(
-                                            KFImage(URL(string: shift?.weapons[0].url ?? "")!)
+                                            KFImage(URL(string: shift.weapons[0].url)!)
                                                 .placeholder {
                                                     Circle()
                                                         .foregroundColor(Color(UIColor.secondarySystemBackground))
                                                 }
                                                 .resizable()
-                                                .accessibility(label: Text(shift?.weapons[0].description ?? ""))
+                                                .accessibility(label: Text(shift.weapons[0].description))
                                                 .aspectRatio(contentMode: .fill)
                                                 .clipped()
                                         )
@@ -72,13 +72,13 @@ struct MediumShiftView: View {
                                         .fill(Color.clear)
                                         .aspectRatio(1, contentMode: .fit)
                                         .overlay(
-                                            KFImage(URL(string: shift?.weapons[1].url ?? "")!)
+                                            KFImage(URL(string: shift.weapons[1].url)!)
                                                 .placeholder {
                                                     Circle()
                                                         .foregroundColor(Color(UIColor.secondarySystemBackground))
                                                 }
                                                 .resizable()
-                                                .accessibility(label: Text(shift?.weapons[1].description ?? ""))
+                                                .accessibility(label: Text(shift.weapons[1].description))
                                                 .aspectRatio(contentMode: .fill)
                                                 .clipped()
                                         )
@@ -87,13 +87,13 @@ struct MediumShiftView: View {
                                         .fill(Color.clear)
                                         .aspectRatio(1, contentMode: .fit)
                                         .overlay(
-                                            KFImage(URL(string: shift?.weapons[2].url ?? "")!)
+                                            KFImage(URL(string: shift.weapons[2].url)!)
                                                 .placeholder {
                                                     Circle()
                                                         .foregroundColor(Color(UIColor.secondarySystemBackground))
                                                 }
                                                 .resizable()
-                                                .accessibility(label: Text(shift?.weapons[2].description ?? ""))
+                                                .accessibility(label: Text(shift.weapons[2].description))
                                                 .aspectRatio(contentMode: .fill)
                                                 .clipped()
                                         )
@@ -102,13 +102,13 @@ struct MediumShiftView: View {
                                         .fill(Color.clear)
                                         .aspectRatio(1, contentMode: .fit)
                                         .overlay(
-                                            KFImage(URL(string: shift?.weapons[3].url ?? "")!)
+                                            KFImage(URL(string: shift.weapons[3].url)!)
                                                 .placeholder {
                                                     Circle()
                                                         .foregroundColor(Color(UIColor.secondarySystemBackground))
                                                 }
                                                 .resizable()
-                                                .accessibility(label: Text(shift?.weapons[3].description ?? ""))
+                                                .accessibility(label: Text(shift.weapons[3].description))
                                                 .aspectRatio(contentMode: .fill)
                                                 .clipped()
                                         )
@@ -123,7 +123,7 @@ struct MediumShiftView: View {
                         
                         VStack(spacing: 0) {
                             HStack {
-                                Text(timeSpanDescriptor(current: current, startTime: shift?.startTime ?? current))
+                                Text(timeSpanDescriptor(current: current, startTime: shift.startTime))
                                     .font(.caption2)
                                     .foregroundColor(.secondary)
                                     .lineLimit(1)
@@ -144,7 +144,7 @@ struct MediumShiftView: View {
                                 .frame(height: 4)
                             
                             HStack {
-                                Text(absoluteTimeSpan(current: current, startTime: shift?.startTime ?? current, endTime: shift?.endTime ?? current))
+                                Text(absoluteTimeSpan(current: current, startTime: shift.startTime, endTime: shift.endTime))
                                     .fontWeight(.light)
                                     .font(.largeTitle)
                                     .lineLimit(1)
@@ -163,7 +163,7 @@ struct MediumShiftView: View {
                             
                             HStack {
                                 VStack(alignment: .leading, spacing: 0) {
-                                    Text(shift?.stage?.description ?? "")
+                                    Text(shift.stage?.description ?? "")
                                         .font(.footnote)
                                         .foregroundColor(.secondary)
                                         .lineLimit(1)

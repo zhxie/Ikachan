@@ -18,12 +18,12 @@ struct SmallScheduleView: View {
             Color(UIColor.systemBackground)
                 .ignoresSafeArea(edges: .all)
             
-            if schedule != nil {
+            if let schedule = schedule {
                 GeometryReader { g in
                     VStack(spacing: 0) {
                         HStack(spacing: 0) {
-                            Text(g.size.width >= CompactSmallWidgetSafeWidth ? scheduleTimePeriod(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0)) : scheduleTimePeriod2(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0)))
-                                .accessibility(label: Text(scheduleTimePeriod(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0))))
+                            Text(g.size.width >= CompactSmallWidgetSafeWidth ? scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime) : scheduleTimePeriod2(startTime: schedule.startTime, endTime: schedule.endTime))
+                                .accessibility(label: Text(scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime)))
                                 .layoutPriority(1)
                                 .font(.caption2)
                                 .foregroundColor(.secondary)
@@ -31,10 +31,10 @@ struct SmallScheduleView: View {
                             
                             Spacer()
                             
-                            Text((g.size.width >= CompactSmallWidgetSafeWidth ? schedule?.rule.shortDescription : schedule?.rule.shorterDescription) ?? "")
+                            Text(g.size.width >= CompactSmallWidgetSafeWidth ? schedule.rule.shortDescription : schedule.rule.shorterDescription)
                                 .font(.caption)
                                 .fontWeight(.bold)
-                                .foregroundColor(schedule?.gameMode.accentColor ?? Color.accentColor)
+                                .foregroundColor(schedule.gameMode.accentColor)
                                 .lineLimit(1)
                                 .layoutPriority(2)
                         }
@@ -48,13 +48,13 @@ struct SmallScheduleView: View {
                             Rectangle()
                                 .fill(Color(UIColor.secondarySystemBackground))
                                 .overlay (
-                                    KFImage(URL(string: schedule?.stageA.url ?? "")!)
+                                    KFImage(URL(string: schedule.stageA.url)!)
                                         .placeholder {
                                             Rectangle()
                                                 .foregroundColor(Color(UIColor.secondarySystemBackground))
                                         }
                                         .resizable()
-                                        .accessibility(label: Text(schedule?.stageA.description ?? ""))
+                                        .accessibility(label: Text(schedule.stageA.description))
                                         .aspectRatio(contentMode: .fill)
                                         .clipped()
                                 )
@@ -71,7 +71,7 @@ struct SmallScheduleView: View {
                         }
                         
                         HStack {
-                            Text(timeSpan(current: current, startTime: schedule?.startTime ?? Date(), endTime: schedule?.endTime ?? Date()))
+                            Text(timeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime))
                                 .fontWeight(.light)
                                 .font(.largeTitle)
                                 .lineLimit(1)
@@ -80,9 +80,9 @@ struct SmallScheduleView: View {
                             Spacer()
                             
                             Image(systemName: "circle.fill")
-                                .accessibility(label: Text(schedule?.gameMode.longDescription ?? ""))
+                                .accessibility(label: Text(schedule.gameMode.longDescription))
                                 .font(.footnote)
-                                .foregroundColor(schedule?.gameMode.accentColor ?? Color.accentColor)
+                                .foregroundColor(schedule.gameMode.accentColor)
                         }
                         .layoutPriority(1)
                         
@@ -92,11 +92,11 @@ struct SmallScheduleView: View {
                         
                         HStack {
                             VStack(alignment: .leading) {
-                                Text(schedule?.stageA.description ?? "")
+                                Text(schedule.stageA.description)
                                     .font(.caption)
                                     .foregroundColor(.secondary)
                                     .lineLimit(1)
-                                Text(schedule?.stageB.description ?? "")
+                                Text(schedule.stageB.description)
                                     .font(.caption)
                                     .foregroundColor(.secondary)
                                     .lineLimit(1)

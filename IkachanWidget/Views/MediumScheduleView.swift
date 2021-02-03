@@ -18,12 +18,12 @@ struct MediumScheduleView: View {
             Color(UIColor.systemBackground)
                 .ignoresSafeArea(edges: .all)
             
-            if schedule != nil {
+            if let schedule = schedule {
                 GeometryReader { g in
                     HStack {
                         VStack(spacing: 0) {
                             HStack {
-                                Text(scheduleTimePeriod(startTime: schedule?.startTime ?? Date(timeIntervalSince1970: 0), endTime: schedule?.endTime ?? Date(timeIntervalSince1970: 0)))
+                                Text(scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
                                     .font(.caption2)
                                     .foregroundColor(.secondary)
                                     .lineLimit(1)
@@ -39,13 +39,13 @@ struct MediumScheduleView: View {
                                 Rectangle()
                                     .fill(Color(UIColor.secondarySystemBackground))
                                     .overlay (
-                                        KFImage(URL(string: schedule?.stageA.url ?? "")!)
+                                        KFImage(URL(string: schedule.stageA.url)!)
                                             .placeholder {
                                                 Rectangle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
                                             }
                                             .resizable()
-                                            .accessibility(label: Text(schedule?.stageA.description ?? ""))
+                                            .accessibility(label: Text(schedule.stageA.description))
                                             .aspectRatio(contentMode: .fill)
                                             .clipped()
                                     )
@@ -53,13 +53,13 @@ struct MediumScheduleView: View {
                                 Rectangle()
                                     .fill(Color(UIColor.secondarySystemBackground))
                                     .overlay (
-                                        KFImage(URL(string: schedule?.stageB.url ?? "")!)
+                                        KFImage(URL(string: schedule.stageB.url)!)
                                             .placeholder {
                                                 Rectangle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
                                             }
                                             .resizable()
-                                            .accessibility(label: Text(schedule?.stageB.description ?? ""))
+                                            .accessibility(label: Text(schedule.stageB.description))
                                             .aspectRatio(contentMode: .fill)
                                             .clipped()
                                     )
@@ -73,7 +73,7 @@ struct MediumScheduleView: View {
                         
                         VStack(spacing: 0) {
                             HStack {
-                                Text(timeSpanDescriptor(current: current, startTime: schedule?.startTime ?? current))
+                                Text(timeSpanDescriptor(current: current, startTime: schedule.startTime))
                                     .font(.caption2)
                                     .foregroundColor(.secondary)
                                     .lineLimit(1)
@@ -81,10 +81,10 @@ struct MediumScheduleView: View {
                                 
                                 Spacer()
                                 
-                                Text(schedule?.rule.shortDescription ?? "")
+                                Text(schedule.rule.shortDescription)
                                     .font(.caption)
                                     .fontWeight(.bold)
-                                    .foregroundColor(schedule?.gameMode.accentColor ?? Color.accentColor)
+                                    .foregroundColor(schedule.gameMode.accentColor)
                                     .lineLimit(1)
                                     .layoutPriority(2)
                             }
@@ -94,7 +94,7 @@ struct MediumScheduleView: View {
                                 .frame(height: 4)
                             
                             HStack {
-                                Text(absoluteTimeSpan(current: current, startTime: schedule?.startTime ?? current, endTime: schedule?.endTime ?? current))
+                                Text(absoluteTimeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime))
                                     .fontWeight(.light)
                                     .font(.largeTitle)
                                     .lineLimit(1)
@@ -103,9 +103,9 @@ struct MediumScheduleView: View {
                                 Spacer()
                                 
                                 Image(systemName: "circle.fill")
-                                    .accessibility(label: Text(schedule?.gameMode.longDescription ?? ""))
+                                    .accessibility(label: Text(schedule.gameMode.longDescription))
                                     .font(.footnote)
-                                    .foregroundColor(schedule?.gameMode.accentColor ?? Color.accentColor)
+                                    .foregroundColor(schedule.gameMode.accentColor)
                             }
                             .layoutPriority(1)
                             
@@ -113,7 +113,7 @@ struct MediumScheduleView: View {
                             
                             HStack {
                                 VStack(alignment: .leading, spacing: 0) {
-                                    Text(schedule?.stageA.description ?? "")
+                                    Text(schedule.stageA.description)
                                         .font(.footnote)
                                         .foregroundColor(.secondary)
                                         .lineLimit(1)
@@ -121,7 +121,7 @@ struct MediumScheduleView: View {
                                     Spacer()
                                         .frame(height: 2)
                                     
-                                    Text(schedule?.stageB.description ?? "")
+                                    Text(schedule.stageB.description)
                                         .font(.footnote)
                                         .foregroundColor(.secondary)
                                         .lineLimit(1)
