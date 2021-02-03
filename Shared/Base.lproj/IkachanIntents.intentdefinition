@@ -81,6 +81,8 @@
 			<string>XALQ6Y</string>
 			<key>INIntentEligibleForWidgets</key>
 			<true/>
+			<key>INIntentKeyParameter</key>
+			<string>gameMode</string>
 			<key>INIntentLastParameterTag</key>
 			<integer>2</integer>
 			<key>INIntentManagedParameterCombinations</key>

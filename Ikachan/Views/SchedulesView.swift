@@ -46,10 +46,7 @@ struct SchedulesView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .onChange(of: modelData.gameMode, perform: { gameMode in
-                        let intent = ScheduleIntent()
-                        intent.gameMode = ScheduleIntentHandler.convertFrom(gameMode: gameMode)
-                        
-                        INInteraction(intent: intent, response: nil).donate(completion: nil)
+                        interact(gameMode: gameMode)
                     })
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -115,12 +112,17 @@ struct SchedulesView: View {
     }
     
     func update() {
-        let intent = ScheduleIntent()
-        intent.gameMode = ScheduleIntentHandler.convertFrom(gameMode: modelData.gameMode)
-        
-        INInteraction(intent: intent, response: nil).donate(completion: nil)
+        interact(gameMode: modelData.gameMode)
         
         modelData.updateSchedules()
+    }
+    
+    func interact(gameMode: Schedule.GameMode) {
+        let intent = ScheduleIntent()
+        intent.gameMode = ScheduleIntentHandler.convertFrom(gameMode: gameMode)
+        // intent.setImage(INImage(named: gameMode.rawValue), forParameterNamed: \ScheduleIntent.gameMode)
+        
+        INInteraction(intent: intent, response: nil).donate(completion: nil)
     }
 }
 
