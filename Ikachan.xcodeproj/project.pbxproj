@@ -94,6 +94,10 @@
 		E461414125CA880500561D53 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461413F25CA880500561D53 /* String.swift */; };
 		E461414225CA880500561D53 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461413F25CA880500561D53 /* String.swift */; };
 		E461414325CA880500561D53 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461413F25CA880500561D53 /* String.swift */; };
+		E46141A225CADF5600561D53 /* ShiftImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438EF4125B5E22A005AB9D9 /* ShiftImages.swift */; };
+		E46141A325CADF5600561D53 /* ScheduleImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60D8225B5C9280039A6E6 /* ScheduleImages.swift */; };
+		E46141A425CADF5600561D53 /* ShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438EF4725B5E533005AB9D9 /* ShiftView.swift */; };
+		E46141A525CADF5600561D53 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60D8525B5C9DF0039A6E6 /* ScheduleView.swift */; };
 		E468B7A325B282F5001254FE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7A225B282F5001254FE /* ModelData.swift */; };
 		E468B7AD25B34AFC001254FE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7AC25B34AFC001254FE /* Constant.swift */; };
 		E468B7B525B46080001254FE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
@@ -197,6 +201,7 @@
 		E461415925CA9B4E00561D53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
 		E461415F25CA9BE600561D53 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
 		E461416525CA9E4A00561D53 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IkachanIntents.strings"; sourceTree = "<group>"; };
+		E46141AA25CAE9A800561D53 /* IkachanIntentsUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IkachanIntentsUI.entitlements; sourceTree = "<group>"; };
 		E468B7A225B282F5001254FE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		E468B7AC25B34AFC001254FE /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E468B7B425B46080001254FE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -290,6 +295,7 @@
 		E43E137625C9A3BA008A0FE6 /* IkachanIntentsUI */ = {
 			isa = PBXGroup;
 			children = (
+				E46141AA25CAE9A800561D53 /* IkachanIntentsUI.entitlements */,
 				E43E137725C9A3BA008A0FE6 /* IntentViewController.swift */,
 				E43E137925C9A3BA008A0FE6 /* MainInterface.storyboard */,
 				E43E137C25C9A3BA008A0FE6 /* Info.plist */,
@@ -673,12 +679,16 @@
 				E4613F5C25C9ACAE00561D53 /* Star.swift in Sources */,
 				E4613FA025C9AFF700561D53 /* ShiftIntentHandler.swift in Sources */,
 				E4613F0925C9A70D00561D53 /* Schedule.swift in Sources */,
+				E46141A325CADF5600561D53 /* ScheduleImages.swift in Sources */,
 				E4613F5525C9ACA900561D53 /* URL.swift in Sources */,
 				E4613F3725C9AAAC00561D53 /* ModelData.swift in Sources */,
 				E461405C25C9C93B00561D53 /* LocalizedStringKey.swift in Sources */,
 				E4613F9325C9AFD100561D53 /* ScheduleIntentHandler.swift in Sources */,
 				E43E137825C9A3BA008A0FE6 /* IntentViewController.swift in Sources */,
 				E4613F5625C9ACA900561D53 /* Date.swift in Sources */,
+				E46141A425CADF5600561D53 /* ShiftView.swift in Sources */,
+				E46141A225CADF5600561D53 /* ShiftImages.swift in Sources */,
+				E46141A525CADF5600561D53 /* ScheduleView.swift in Sources */,
 				E461414325CA880500561D53 /* String.swift in Sources */,
 				E4613F1B25C9A96600561D53 /* Weapon.swift in Sources */,
 				E4613F5425C9ACA900561D53 /* Color.swift in Sources */,
@@ -817,6 +827,7 @@
 		E43E138425C9A3BA008A0FE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = IkachanIntentsUI/IkachanIntentsUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
@@ -839,6 +850,7 @@
 		E43E138525C9A3BA008A0FE6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = IkachanIntentsUI/IkachanIntentsUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = PSXQUH2HR6;

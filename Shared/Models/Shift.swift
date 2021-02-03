@@ -11,6 +11,15 @@ import SwiftUI
 struct Shift: Hashable, Codable {
     var startTime: Date
     var endTime: Date
+    var status: LocalizedStringKey {
+        let current = Date()
+        
+        if startTime < current {
+            return "open"
+        } else {
+            return "soon"
+        }
+    }
     
     var stage: Stage?
     struct Stage: Hashable, Codable {

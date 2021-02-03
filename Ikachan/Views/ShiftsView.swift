@@ -22,7 +22,7 @@ struct ShiftsView: View {
                         VStack {
                             Divider()
                             
-                            ShiftView(shift: first, title: title(startTime: first.startTime))
+                            ShiftView(shift: first, title: first.status)
                             
                             Spacer()
                                 .frame(height: 15)
@@ -98,16 +98,6 @@ struct ShiftsView: View {
     var schedules: [Shift] {
         modelData.shifts.filter { shift in
             shift.stage == nil
-        }
-    }
-    
-    func title(startTime: Date) -> LocalizedStringKey {
-        let current = Date()
-        
-        if startTime < current {
-            return "open"
-        } else {
-            return "soon"
         }
     }
     
