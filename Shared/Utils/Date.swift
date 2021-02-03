@@ -54,6 +54,24 @@ func absoluteTimeSpan(current: Date, startTime: Date, endTime: Date) -> String {
     }
 }
 
+func absoluteLongSiriTimeSpan(current: Date, startTime: Date, endTime: Date) -> String {
+    if current >= startTime {
+        var elapsed = endTime - current
+        if elapsed < 0 {
+            elapsed = 0
+        }
+        
+        return format3(interval: elapsed)
+    } else {
+        var elapsed = startTime - current
+        if elapsed < 0 {
+            elapsed = 0
+        }
+        
+        return format3(interval: elapsed)
+    }
+}
+
 func timeSpanDescriptor(current: Date, startTime: Date) -> LocalizedStringKey {
     if current >= startTime {
         return "remaining"
@@ -164,4 +182,24 @@ private func format2(interval: TimeInterval) -> String {
             return String(format: "%dm", min)
         }
     }
+}
+
+private func format3(interval: TimeInterval) -> String {
+    let mins = Int((interval / 60).rounded())
+    
+    let min = mins % 60
+    let hour = (mins % 1440) / 60
+    let day = mins / 1440
+    
+    var result = String(format: "%d_min".localizedStringForSiri, min)
+    
+    if hour > 0 {
+        result = String(format: "%d_hour_%@".localizedStringForSiri, hour, result)
+    }
+    
+    if day > 0 {
+        result = String(format: "%d_day_%@".localizedStringForSiri, day, result)
+    }
+    
+    return result
 }

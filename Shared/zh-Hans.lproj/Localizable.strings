@@ -165,7 +165,7 @@
 "day_widget_description" = "成为乌贼的同时感受时间的流逝。";
 
 // Intent
-"current_schedule" = "当前，%1$@正进行于%3$@和%4$@的%2$@。";
+"current_schedule" = "当前，%1$@正进行于%3$@和%4$@的%2$@，剩余%5$@。";
 "current_shift" = "当前，%2$@、%3$@、%4$@和%5$@于%1$@的Salmon Run正在开放，剩余%6$@。";
 "soon_shift" = "%6$@后，%2$@、%3$@、%4$@和%5$@于%1$@的Salmon Run即将开放。";
 "%d_min" = "%d分";

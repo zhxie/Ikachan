@@ -58,7 +58,7 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
             }
             
             if filtered.count > 0 {
-                let result = String(format: "current_schedule".localizedStringForSiri, gameMode.longDescription.rawValue.localizedStringForSiri, filtered[0].rule.description.rawValue.localizedStringForSiri, filtered[0].stageA.description.rawValue.localizedStringForSiri, filtered[0].stageB.description.rawValue.localizedStringForSiri)
+                let result = String(format: "current_schedule".localizedStringForSiri, gameMode.longDescription.rawValue.localizedStringForSiri, filtered[0].rule.description.rawValue.localizedStringForSiri, filtered[0].stageA.description.rawValue.localizedStringForSiri, filtered[0].stageB.description.rawValue.localizedStringForSiri, absoluteLongSiriTimeSpan(current: Date(), startTime: filtered[0].startTime, endTime: filtered[0].endTime))
                 
                 let response = ScheduleIntentResponse.success(result: result, gameMode: intent.gameMode)
                 response.userActivity = NSUserActivity(activityType: String(format: "name.sketch.Ikachan.schedule.%@", gameMode.rawValue))

@@ -164,7 +164,7 @@
 "day_widget_description" = "イカしながら一日経ることを感じる。";
 
 // Intent
-"current_schedule" = "いま、%1$@は%3$@と%4$@の%2$@があります。";
+"current_schedule" = "いま、%1$@は%3$@と%4$@の%2$@があります、残り%5$@。";
 "current_shift" = "いま、%1$@に%2$@、%3$@、%4$@と%5$@のSalmon Runがあります、残り%6$@。";
 "soon_shift" = "%6$@後，%1$@に%2$@、%3$@、%4$@と%5$@のSalmon Runが始まります。";
 "%d_min" = "%d分";
