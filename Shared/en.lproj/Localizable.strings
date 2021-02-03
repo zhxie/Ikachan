@@ -131,6 +131,7 @@
 // UI
 "schedule" = "Schedule";
 "shift" = "Shift";
+"filter" = "Filter";
 "current" = "Current";
 "open" = "Open!";
 "soon" = "Soon!";
@@ -162,5 +163,10 @@
 "day_widget_name" = "Splatoon the Whole Day";
 "day_widget_description" = "Feel the passing of time while becoming an inkling.";
 
-// Accessiblity
-"filter" = "Filter";
+// Intent
+"current_schedule" = "Now, %2$@ in %3$@ and %4$@ of %1$@ is undergoing.";
+"current_shift" = "Now, Salmon Run with %2$@, %3$@, %4$@ and %5$@ in %1$@ is open, remaining %6$@.";
+"soon_shift" = "Salmon Run with %2$@, %3$@, %4$@ and %5$@ in %1$@ will be open in %6$@.";
+"%d_min" = "%d minute";
+"%d_hour_%@" = "%d hour %@";
+"%d_day_%@" = "%d day %@";

@@ -17,8 +17,4 @@ extension LocalizedStringKey {
 
         return components[1][0]
     }
-    
-    var localizedString: String {
-        self.rawValue.localizedString
-    }
 }

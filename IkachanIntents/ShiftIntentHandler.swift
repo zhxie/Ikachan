@@ -25,10 +25,45 @@ class ShiftIntentHandler: IntentHandler, ShiftIntentHandling {
             }
             
             if details.count > 0 {
-                completion(ShiftIntentResponse.success(weapons: [details[0].weapons[0].description.localizedString, details[0].weapons[1].description.localizedString, details[0].weapons[2].description.localizedString, details[0].weapons[3].description.localizedString], stage: details[0].stage!.description.localizedString))
+                var formatter = "current_shift"
+                if details[0].startTime > Date() {
+                    formatter = "soon_shift"
+                }
+                
+                let result = String(format: formatter.localizedStringForSiri, details[0].stage!.description.rawValue.localizedStringForSiri, details[0].weapons[0].description.rawValue.localizedStringForSiri, details[0].weapons[1].description.rawValue.localizedStringForSiri, details[0].weapons[2].description.rawValue.localizedStringForSiri, details[0].weapons[3].description.rawValue.localizedStringForSiri, ShiftIntentHandler.timeSpan(current: Date(), startTime: details[0].startTime, endTime: details[0].endTime))
+                
+                completion(ShiftIntentResponse.success(result: result))
             } else {
                 completion(ShiftIntentResponse(code: .failure, userActivity: nil))
             }
         }
+    }
+    
+    private static func timeSpan(current: Date, startTime: Date, endTime: Date) -> String {
+        if current >= startTime {
+            return format(interval: endTime - current)
+        } else {
+            return format(interval: current - startTime)
+        }
+    }
+    
+    private static func format(interval: TimeInterval) -> String {
+        let mins = Int((interval / 60).rounded())
+        
+        let min = mins % 60
+        let hour = (mins % 1440) / 60
+        let day = mins / 1440
+        
+        var result = String(format: "%d_min".localizedStringForSiri, min)
+        
+        if hour > 0 {
+            result = String(format: "%d_hour_%@".localizedStringForSiri, hour, result)
+        }
+        
+        if day > 0 {
+            result = String(format: "%d_day_%@".localizedStringForSiri, day, result)
+        }
+        
+        return result
     }
 }

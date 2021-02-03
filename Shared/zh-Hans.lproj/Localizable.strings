@@ -131,6 +131,7 @@
 // UI
 "schedule" = "日程";
 "shift" = "排班表";
+"filter" = "过滤";
 "current" = "当前";
 "open" = "现正开放!";
 "soon" = "即将开放";
@@ -163,5 +164,10 @@
 "day_widget_name" = "一日Splatoon";
 "day_widget_description" = "成为乌贼的同时感受时间的流逝。";
 
-// Accessiblity
-"filter" = "过滤";
+// Intent
+"current_schedule" = "当前，%1$@正进行于%3$@和%4$@的%2$@。";
+"current_shift" = "当前，%2$@、%3$@、%4$@和%5$@于%1$@的Salmon Run正在开放，剩余%6$@。";
+"soon_shift" = "%6$@后，%2$@、%3$@、%4$@和%5$@于%1$@的Salmon Run即将开放。";
+"%d_min" = "%d分";
+"%d_hour_%@" = "%d小时%@";
+"%d_day_%@" = "%d日%@";

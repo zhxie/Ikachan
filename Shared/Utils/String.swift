@@ -7,12 +7,13 @@
 
 import Foundation
 import SwiftUI
+import Intents
 
 extension String {
-    var localizedString: String {
-        let languageCode = Locale.current.languageCode ?? "en"
+    var localizedStringForSiri: String {
+        let languageCode = INPreferences.siriLanguageCode()
         
-        guard let path = Bundle.main.path(forResource: convertLanguageCode(languageCode: languageCode), ofType: "lproj") else {
+        guard let path = Bundle.main.path(forResource: escapeLanguageCode(languageCode: languageCode), ofType: "lproj") else {
             return self
         }
         let bundle = Bundle(path: path)
@@ -21,12 +22,15 @@ extension String {
     }
 }
 
-/// HACK: Converts language code to localized strings file.
-private func convertLanguageCode(languageCode: String) -> String {
-    switch languageCode {
-    case "zh":
+/// HACK: Escapes language code to supported language.
+private func escapeLanguageCode(languageCode: String) -> String {
+    if languageCode.starts(with: "en") {
+        return "en"
+    } else if languageCode.starts(with: "ja") {
+        return "ja"
+    } else if languageCode.starts(with: "zh-Hans") {
         return "zh-Hans"
-    default:
-        return languageCode
+    } else {
+        return "en"
     }
 }
