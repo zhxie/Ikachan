@@ -16,45 +16,31 @@
 
 "3WLqS8-vQ9T9L" = "显示普通对战当前的日程";
 
+"JXqjRp" = "武器";
+
 "KM8zVO" = "排班表";
 
-"LTajCZ" = "显示Salmon Run当前的排班表。";
+"LTajCZ" = "显示Salmon Run当前的排班表";
 
-"Pj9O6l" = "这就是Salmon Run当前的排班表：";
+"Pj9O6l" = "这就是Salmon Run的排班表：";
 
 "QjGFWc" = "排班表";
 
-"R0bFHL-Vmno8H" = "很抱歉，乌贼酱无法显示真格对战当前的日程。";
-
-"R0bFHL-byIF5m" = "很抱歉，乌贼酱无法显示组排对战当前的日程。";
-
-"R0bFHL-vQ9T9L" = "很抱歉，乌贼酱无法显示普通对战当前的日程。";
+"R0bFHL" = "很抱歉，乌贼酱无法显示${gameMode}的日程。";
 
 "RTR7w4" = "模式";
 
-"SLejbf-Vmno8H" = "当前，真格对战正进行于${stages}的${rule}。";
+"SLejbf" = "${gameMode}的日程上有于${stages}的${rule}。";
 
-"SLejbf-byIF5m" = "当前，组排对战正进行于${stages}的${rule}。";
-
-"SLejbf-vQ9T9L" = "当前，普通对战正进行于${stages}的${rule}。";
-
-"U9s5b8-Vmno8H" = "这就是真格对战当前的日程：";
-
-"U9s5b8-byIF5m" = "这就是组排对战当前的日程：";
-
-"U9s5b8-vQ9T9L" = "这就是普通对战当前的日程：";
+"U9s5b8" = "这就是${gameMode}的日程：";
 
 "Vmno8H" = "真格对战";
 
-"WxZASv-Vmno8H" = "很抱歉，乌贼酱无法显示真格对战当前的日程。";
-
-"WxZASv-byIF5m" = "很抱歉，乌贼酱无法显示组排对战当前的日程。";
-
-"WxZASv-vQ9T9L" = "很抱歉，乌贼酱无法显示普通对战当前的日程。";
+"WxZASv" = "很抱歉，乌贼酱无法显示${gameMode}的日程。";
 
 "XALQ6Y" = "显示某模式当前的日程。";
 
-"bXSdro" = "这就是Salmon Run当前的排班表。";
+"bXSdro" = "排班表上有于${stage}，提供${weapons}的Salmon Run。";
 
 "byIF5m" = "组排对战";
 
@@ -72,7 +58,7 @@
 
 "gO7LJJ" = "规则";
 
-"ifyLOV" = "很抱歉，乌贼酱无法显示Salmon Run当前的排班表。";
+"ifyLOV" = "很抱歉，乌贼酱无法显示Salmon Run的排班表。";
 
 "oMMIWT-Vmno8H" = "There are ${count} options matching ‘真格对战’.";
 
@@ -82,7 +68,9 @@
 
 "pYS45i" = "${gameMode}的日程";
 
+"r7EfMr" = "场地";
+
 "vQ9T9L" = "普通对战";
 
-"yLTCFR" = "很抱歉，乌贼酱无法显示Salmon Run当前的排班表。";
+"yLTCFR" = "很抱歉，乌贼酱无法显示Salmon Run的排班表。";
 

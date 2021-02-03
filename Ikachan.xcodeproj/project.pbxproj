@@ -90,6 +90,10 @@
 		E461405A25C9C93B00561D53 /* LocalizedStringKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461405825C9C93B00561D53 /* LocalizedStringKey.swift */; };
 		E461405B25C9C93B00561D53 /* LocalizedStringKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461405825C9C93B00561D53 /* LocalizedStringKey.swift */; };
 		E461405C25C9C93B00561D53 /* LocalizedStringKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461405825C9C93B00561D53 /* LocalizedStringKey.swift */; };
+		E461414025CA880500561D53 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461413F25CA880500561D53 /* String.swift */; };
+		E461414125CA880500561D53 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461413F25CA880500561D53 /* String.swift */; };
+		E461414225CA880500561D53 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461413F25CA880500561D53 /* String.swift */; };
+		E461414325CA880500561D53 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461413F25CA880500561D53 /* String.swift */; };
 		E468B7A325B282F5001254FE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7A225B282F5001254FE /* ModelData.swift */; };
 		E468B7AD25B34AFC001254FE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7AC25B34AFC001254FE /* Constant.swift */; };
 		E468B7B525B46080001254FE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
@@ -189,9 +193,10 @@
 		E4613F9C25C9AFF700561D53 /* ShiftIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftIntentHandler.swift; sourceTree = "<group>"; };
 		E4613FB925C9B62000561D53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/IkachanIntents.intentdefinition; sourceTree = "<group>"; };
 		E461405825C9C93B00561D53 /* LocalizedStringKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringKey.swift; sourceTree = "<group>"; };
-		E461406A25C9CA1200561D53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
-		E461407025C9CA6600561D53 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
-		E461409A25C9CCC800561D53 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IkachanIntents.strings"; sourceTree = "<group>"; };
+		E461411025CA76C000561D53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
+		E461411625CA76FA00561D53 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
+		E461413A25CA80DD00561D53 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IkachanIntents.strings"; sourceTree = "<group>"; };
+		E461413F25CA880500561D53 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		E468B7A225B282F5001254FE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		E468B7AC25B34AFC001254FE /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E468B7B425B46080001254FE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -431,6 +436,7 @@
 				E468B7B425B46080001254FE /* Date.swift */,
 				E4C98CFA25C98099006940E9 /* Image.swift */,
 				E461405825C9C93B00561D53 /* LocalizedStringKey.swift */,
+				E461413F25CA880500561D53 /* String.swift */,
 				E46B513225BB341D001F88CE /* URL.swift */,
 			);
 			path = Utils;
@@ -650,6 +656,7 @@
 				E4613F4C25C9ACA900561D53 /* Color.swift in Sources */,
 				E4613F2025C9A97A00561D53 /* Constant.swift in Sources */,
 				E4613F4F25C9ACA900561D53 /* Image.swift in Sources */,
+				E461414225CA880500561D53 /* String.swift in Sources */,
 				E4613F3225C9AAAC00561D53 /* ModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -672,6 +679,7 @@
 				E4613F9325C9AFD100561D53 /* ScheduleIntentHandler.swift in Sources */,
 				E43E137825C9A3BA008A0FE6 /* IntentViewController.swift in Sources */,
 				E4613F5625C9ACA900561D53 /* Date.swift in Sources */,
+				E461414325CA880500561D53 /* String.swift in Sources */,
 				E4613F1B25C9A96600561D53 /* Weapon.swift in Sources */,
 				E4613F5425C9ACA900561D53 /* Color.swift in Sources */,
 			);
@@ -684,6 +692,7 @@
 				E438EF4225B5E22A005AB9D9 /* ShiftImages.swift in Sources */,
 				E438EF4525B5E3F8005AB9D9 /* ShiftsView.swift in Sources */,
 				E4E13CE325C7DBB100150544 /* Color.swift in Sources */,
+				E461414025CA880500561D53 /* String.swift in Sources */,
 				E4613F9025C9AFD100561D53 /* ScheduleIntentHandler.swift in Sources */,
 				E4405D7D25AF64D2002EF1AB /* ContentView.swift in Sources */,
 				E4613EF725C9A64F00561D53 /* IntentHandler.swift in Sources */,
@@ -731,6 +740,7 @@
 				E4444EF825BF14A50003A676 /* MediumShiftView.swift in Sources */,
 				E4444EF725BF14A50003A676 /* SmallScheduleView.swift in Sources */,
 				E4444EF525BF14A50003A676 /* MediumScheduleView.swift in Sources */,
+				E461414125CA880500561D53 /* String.swift in Sources */,
 				E4613F9E25C9AFF700561D53 /* ShiftIntentHandler.swift in Sources */,
 				E4C98CFC25C98099006940E9 /* Image.swift in Sources */,
 				E4444EF025BF149B0003A676 /* Schedule.swift in Sources */,
@@ -774,9 +784,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				E4613FB925C9B62000561D53 /* Base */,
-				E461406A25C9CA1200561D53 /* en */,
-				E461407025C9CA6600561D53 /* ja */,
-				E461409A25C9CCC800561D53 /* zh-Hans */,
+				E461411025CA76C000561D53 /* en */,
+				E461411625CA76FA00561D53 /* ja */,
+				E461413A25CA80DD00561D53 /* zh-Hans */,
 			);
 			name = IkachanIntents.intentdefinition;
 			sourceTree = "<group>";

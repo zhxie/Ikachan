@@ -25,7 +25,7 @@ class ShiftIntentHandler: IntentHandler, ShiftIntentHandling {
             }
             
             if details.count > 0 {
-                completion(ShiftIntentResponse(code: .success, userActivity: nil))
+                completion(ShiftIntentResponse.success(weapons: [details[0].weapons[0].description.localizedString, details[0].weapons[1].description.localizedString, details[0].weapons[2].description.localizedString, details[0].weapons[3].description.localizedString], stage: details[0].stage!.description.localizedString))
             } else {
                 completion(ShiftIntentResponse(code: .failure, userActivity: nil))
             }

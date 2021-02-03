@@ -45,21 +45,23 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
     }
     
     func handle(intent: ScheduleIntent, completion: @escaping (ScheduleIntentResponse) -> Void) {
+        let gameMode = ScheduleIntentHandler.convertTo(gameMode: intent.gameMode)
+        
         ModelData.fetchSchedules { (schedules, error) in
             guard let schedules = schedules else {
-                completion(ScheduleIntentResponse.failure(gameMode: intent.gameMode))
+                completion(ScheduleIntentResponse.failure(gameMode: gameMode.longDescription.localizedString))
                 
                 return
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.gameMode == ScheduleIntentHandler.convertTo(gameMode: intent.gameMode)
+                schedule.gameMode == gameMode
             }
             
             if filtered.count > 0 {
-                completion(ScheduleIntentResponse.success(rule: filtered[0].rule.rawValue, stages: [filtered[0].stageA.description.stringKey, filtered[0].stageB.description.stringKey], gameMode: intent.gameMode))
+                completion(ScheduleIntentResponse.success(rule: filtered[0].rule.description.localizedString, stages: [filtered[0].stageA.description.localizedString, filtered[0].stageB.description.localizedString], gameMode: gameMode.longDescription.localizedString))
             } else {
-                completion(ScheduleIntentResponse.failure(gameMode: intent.gameMode))
+                completion(ScheduleIntentResponse.failure(gameMode: gameMode.longDescription.localizedString))
             }
         }
     }

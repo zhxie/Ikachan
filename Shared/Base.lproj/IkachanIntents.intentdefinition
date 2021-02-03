@@ -185,11 +185,11 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Here's the current schedules for ${gameMode}:</string>
+						<string>Here's the schedules for ${gameMode}:</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>U9s5b8</string>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>Currently, the ${rule} in ${stages} is undergoing in ${gameMode}.</string>
+						<string>The ${rule} in ${stages} is on ${gameMode}'s schedules.</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>SLejbf</string>
 						<key>INIntentResponseCodeName</key>
@@ -199,11 +199,11 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Sorry, Ikachan cannot shows the current schedules for ${gameMode}.</string>
+						<string>Sorry, Ikachan cannot shows the schedules for ${gameMode}.</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>R0bFHL</string>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>Sorry, Ikachan cannot shows the current schedules for ${gameMode}.</string>
+						<string>Sorry, Ikachan cannot shows the schedules for ${gameMode}.</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>WxZASv</string>
 						<key>INIntentResponseCodeName</key>
@@ -211,7 +211,7 @@
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
-				<integer>6</integer>
+				<integer>7</integer>
 				<key>INIntentResponseParameters</key>
 				<array>
 					<dict>
@@ -221,16 +221,12 @@
 						<string>dy1ch1</string>
 						<key>INIntentResponseParameterDisplayPriority</key>
 						<integer>1</integer>
-						<key>INIntentResponseParameterEnumType</key>
-						<string>GameMode</string>
-						<key>INIntentResponseParameterEnumTypeNamespace</key>
-						<string>AL54Nd</string>
 						<key>INIntentResponseParameterName</key>
 						<string>gameMode</string>
 						<key>INIntentResponseParameterTag</key>
-						<integer>3</integer>
+						<integer>7</integer>
 						<key>INIntentResponseParameterType</key>
-						<string>Integer</string>
+						<string>String</string>
 					</dict>
 					<dict>
 						<key>INIntentResponseParameterDisplayName</key>
@@ -324,11 +320,11 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Here's the current shifts for Salmon Run:</string>
+						<string>Here's the shifts for Salmon Run:</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>Pj9O6l</string>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>Here's the current shifts for Salmon Run.</string>
+						<string>The Salmon Run with ${weapons} in ${stage} is on shifts.</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>bXSdro</string>
 						<key>INIntentResponseCodeName</key>
@@ -338,11 +334,11 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Sorry, Ikachan cannot shows the current shifts for Salmon Run.</string>
+						<string>Sorry, Ikachan cannot shows the shifts for Salmon Run.</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>ifyLOV</string>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>Sorry, Ikachan cannot shows the current shifts for Salmon Run.</string>
+						<string>Sorry, Ikachan cannot shows the shifts for Salmon Run.</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>yLTCFR</string>
 						<key>INIntentResponseCodeName</key>
@@ -350,7 +346,40 @@
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
-				<integer>7</integer>
+				<integer>10</integer>
+				<key>INIntentResponseParameters</key>
+				<array>
+					<dict>
+						<key>INIntentResponseParameterDisplayName</key>
+						<string>Stage</string>
+						<key>INIntentResponseParameterDisplayNameID</key>
+						<string>r7EfMr</string>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>1</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>stage</string>
+						<key>INIntentResponseParameterTag</key>
+						<integer>8</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>String</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseParameterDisplayName</key>
+						<string>Weapons</string>
+						<key>INIntentResponseParameterDisplayNameID</key>
+						<string>JXqjRp</string>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>2</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>weapons</string>
+						<key>INIntentResponseParameterSupportsMultipleValues</key>
+						<true/>
+						<key>INIntentResponseParameterTag</key>
+						<integer>10</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>String</string>
+					</dict>
+				</array>
 			</dict>
 			<key>INIntentTitle</key>
 			<string>Shifts</string>

@@ -9,12 +9,16 @@ import Foundation
 import SwiftUI
 
 extension LocalizedStringKey {
-    var stringKey: String {
+    var rawValue: String {
         let description = "\(self)"
 
         let components = description.components(separatedBy: "key: \"")
             .map { $0.components(separatedBy: "\",") }
 
         return components[1][0]
+    }
+    
+    var localizedString: String {
+        self.rawValue.localizedString
     }
 }

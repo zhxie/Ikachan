@@ -16,45 +16,31 @@
 
 "3WLqS8-vQ9T9L" = "Shows the current schedules for Regular Battle";
 
+"JXqjRp" = "Weapons";
+
 "KM8zVO" = "Shifts";
 
 "LTajCZ" = "Shows the current shifts for Salmon Run.";
 
-"Pj9O6l" = "Here's the current shifts for Salmon Run:";
+"Pj9O6l" = "Here's the shifts for Salmon Run:";
 
 "QjGFWc" = "Shifts";
 
-"R0bFHL-Vmno8H" = "Sorry, Ikachan cannot shows the current schedules for Ranked Battle.";
-
-"R0bFHL-byIF5m" = "Sorry, Ikachan cannot shows the current schedules for League Battle.";
-
-"R0bFHL-vQ9T9L" = "Sorry, Ikachan cannot shows the current schedules for Regular Battle.";
+"R0bFHL" = "Sorry, Ikachan cannot shows the schedules for ${gameMode}.";
 
 "RTR7w4" = "Mode";
 
-"SLejbf-Vmno8H" = "Currently, the ${rule} in ${stages} is undergoing in Ranked Battle.";
+"SLejbf" = "The ${rule} in ${stages} is on ${gameMode}'s schedules.";
 
-"SLejbf-byIF5m" = "Currently, the ${rule} in ${stages} is undergoing in League Battle.";
-
-"SLejbf-vQ9T9L" = "Currently, the ${rule} in ${stages} is undergoing in Regular Battle.";
-
-"U9s5b8-Vmno8H" = "Here's the current schedules for Ranked Battle:";
-
-"U9s5b8-byIF5m" = "Here's the current schedules for League Battle:";
-
-"U9s5b8-vQ9T9L" = "Here's the current schedules for Regular Battle:";
+"U9s5b8" = "Here's the schedules for ${gameMode}:";
 
 "Vmno8H" = "Ranked Battle";
 
-"WxZASv-Vmno8H" = "Sorry, Ikachan cannot shows the current schedules for Ranked Battle.";
-
-"WxZASv-byIF5m" = "Sorry, Ikachan cannot shows the current schedules for League Battle.";
-
-"WxZASv-vQ9T9L" = "Sorry, Ikachan cannot shows the current schedules for Regular Battle.";
+"WxZASv" = "Sorry, Ikachan cannot shows the schedules for ${gameMode}.";
 
 "XALQ6Y" = "Shows the current schedules for a mode.";
 
-"bXSdro" = "Here's the current shifts for Salmon Run.";
+"bXSdro" = "The Salmon Run with ${weapons} in ${stage} is on shifts.";
 
 "byIF5m" = "League Battle";
 
@@ -72,7 +58,7 @@
 
 "gO7LJJ" = "Mode";
 
-"ifyLOV" = "Sorry, Ikachan cannot shows the current shifts for Salmon Run.";
+"ifyLOV" = "Sorry, Ikachan cannot shows the shifts for Salmon Run.";
 
 "oMMIWT-Vmno8H" = "There are ${count} options matching ‘Ranked Battle’.";
 
@@ -82,7 +68,9 @@
 
 "pYS45i" = "Schedules for ${gameMode}";
 
+"r7EfMr" = "Stage";
+
 "vQ9T9L" = "Regular Battle";
 
-"yLTCFR" = "Sorry, Ikachan cannot shows the current shifts for Salmon Run.";
+"yLTCFR" = "Sorry, Ikachan cannot shows the shifts for Salmon Run.";
 

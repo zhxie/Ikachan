@@ -65,18 +65,7 @@ struct Schedule: Hashable, Codable {
         case clamBlitz = "clam_blitz"
         
         var description: LocalizedStringKey {
-            switch self {
-            case .turfWar:
-                return "turf_war"
-            case .splatZones:
-                return "splat_zones"
-            case .towerControl:
-                return "tower_control"
-            case .rainmaker:
-                return "rainmaker"
-            case .clamBlitz:
-                return "clam_blitz"
-            }
+            return LocalizedStringKey(stringLiteral: self.rawValue)
         }
         
         var shortDescription: LocalizedStringKey {
