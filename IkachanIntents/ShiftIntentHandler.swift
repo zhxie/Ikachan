@@ -32,7 +32,9 @@ class ShiftIntentHandler: IntentHandler, ShiftIntentHandling {
                 
                 let result = String(format: formatter.localizedStringForSiri, details[0].stage!.description.rawValue.localizedStringForSiri, details[0].weapons[0].description.rawValue.localizedStringForSiri, details[0].weapons[1].description.rawValue.localizedStringForSiri, details[0].weapons[2].description.rawValue.localizedStringForSiri, details[0].weapons[3].description.rawValue.localizedStringForSiri, ShiftIntentHandler.timeSpan(current: Date(), startTime: details[0].startTime, endTime: details[0].endTime))
                 
-                completion(ShiftIntentResponse.success(result: result))
+                let response = ShiftIntentResponse.success(result: result)
+                response.userActivity = NSUserActivity(activityType: "name.sketch.Ikachan.shift")
+                completion(response)
             } else {
                 completion(ShiftIntentResponse(code: .failure, userActivity: nil))
             }

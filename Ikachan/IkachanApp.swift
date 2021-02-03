@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Intents
 import Kingfisher
 
 let modelData = ModelData()
@@ -20,6 +21,21 @@ struct IkachanApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(modelData)
+                .onContinueUserActivity("name.sketch.Ikachan.schedule.regular") { _ in
+                    modelData.tab = Tab.schedule
+                    modelData.gameMode = .regular
+                }
+                .onContinueUserActivity("name.sketch.Ikachan.schedule.gachi") { _ in
+                    modelData.tab = Tab.schedule
+                    modelData.gameMode = .gachi
+                }
+                .onContinueUserActivity("name.sketch.Ikachan.schedule.league") { _ in
+                    modelData.tab = Tab.schedule
+                    modelData.gameMode = .league
+                }
+                .onContinueUserActivity("name.sketch.Ikachan.shift") { _ in
+                    modelData.tab = Tab.shift
+                }
         }
         .onChange(of: scenePhase) { (phase) in
             if phase == .active {
