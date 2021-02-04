@@ -44,6 +44,7 @@
 		E4444F2325BF15090003A676 /* ShiftWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1144F25BD43B400303542 /* ShiftWidget.swift */; };
 		E4444F3225BF155B0003A676 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4444F3125BF155B0003A676 /* Kingfisher */; };
 		E4444F3425BF155B0003A676 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4444F3325BF155B0003A676 /* SwiftyJSON */; };
+		E44ABD6525CBAFA300DE61D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D7E25AF64D6002EF1AB /* Assets.xcassets */; };
 		E44D81B125C84BF400C9270B /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44D81B025C84BF400C9270B /* UIWindow.swift */; };
 		E4613EF725C9A64F00561D53 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E136C25C9A3BA008A0FE6 /* IntentHandler.swift */; };
 		E4613EFC25C9A65000561D53 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E136C25C9A3BA008A0FE6 /* IntentHandler.swift */; };
@@ -615,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E43E137B25C9A3BA008A0FE6 /* MainInterface.storyboard in Resources */,
+				E44ABD6525CBAFA300DE61D3 /* Assets.xcassets in Resources */,
 				E4613F6725C9ACB100561D53 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
