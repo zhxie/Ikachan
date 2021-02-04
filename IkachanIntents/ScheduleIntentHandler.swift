@@ -58,7 +58,7 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
             }
             
             if filtered.count > 0 {
-                let result = String(format: "current_schedule".localizedStringForSiri, gameMode.longDescription.rawValue.localizedStringForSiri, filtered[0].rule.description.rawValue.localizedStringForSiri, filtered[0].stageA.description.rawValue.localizedStringForSiri, filtered[0].stageB.description.rawValue.localizedStringForSiri, absoluteLongSiriTimeSpan(current: Date(), startTime: filtered[0].startTime, endTime: filtered[0].endTime))
+                let result = String(format: "current_schedule".localizedIntentsString, gameMode.longDescription.rawValue.localizedIntentsString, filtered[0].rule.description.rawValue.localizedIntentsString, filtered[0].stageA.description.rawValue.localizedIntentsString, filtered[0].stageB.description.rawValue.localizedIntentsString, absoluteLongIntentsTimeSpan(current: Date(), startTime: filtered[0].startTime, endTime: filtered[0].endTime))
                 
                 let encoder = JSONEncoder()
                 let data = try! encoder.encode(filtered[0])

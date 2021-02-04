@@ -54,7 +54,7 @@ func absoluteTimeSpan(current: Date, startTime: Date, endTime: Date) -> String {
     }
 }
 
-func absoluteLongSiriTimeSpan(current: Date, startTime: Date, endTime: Date) -> String {
+func absoluteLongIntentsTimeSpan(current: Date, startTime: Date, endTime: Date) -> String {
     if current >= startTime {
         var elapsed = endTime - current
         if elapsed < 0 {
@@ -191,14 +191,14 @@ private func format3(interval: TimeInterval) -> String {
     let hour = (mins % 1440) / 60
     let day = mins / 1440
     
-    var result = String(format: "%d_min".localizedStringForSiri, min)
+    var result = String(format: "%d_min".localizedIntentsString, min)
     
     if hour > 0 {
-        result = String(format: "%d_hour_%@".localizedStringForSiri, hour, result)
+        result = String(format: "%d_hour_%@".localizedIntentsString, hour, result)
     }
     
     if day > 0 {
-        result = String(format: "%d_day_%@".localizedStringForSiri, day, result)
+        result = String(format: "%d_day_%@".localizedIntentsString, day, result)
     }
     
     return result

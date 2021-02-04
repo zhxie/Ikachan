@@ -10,7 +10,7 @@ import SwiftUI
 import Intents
 
 extension String {
-    var localizedStringForSiri: String {
+    var localizedIntentsString: String {
         let languageCode = INPreferences.siriLanguageCode()
         
         guard let path = Bundle.main.path(forResource: escapeLanguageCode(languageCode: languageCode), ofType: "lproj") else {
@@ -28,7 +28,7 @@ private func escapeLanguageCode(languageCode: String) -> String {
         return "en"
     } else if languageCode.starts(with: "ja") {
         return "ja"
-    } else if languageCode.starts(with: "zh-Hans") {
+    } else if languageCode.starts(with: "zh") {
         return "zh-Hans"
     } else {
         return "en"
