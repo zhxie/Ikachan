@@ -161,7 +161,7 @@
 "schedule_widget_description" = "See the current and future schedules for a mode.";
 "shift_widget_description" = "See the current and future shifts for Salmon Run.";
 "day_widget_name" = "Splatoon the Whole Day";
-"day_widget_description" = "Feel the passing of time while becoming an inkling.";
+"day_widget_description" = "Feel the passing of time while becoming a squid.";
 
 // Intent
 "current_schedule" = "Now, %2$@ in %3$@ and %4$@ of %1$@ is undergoing, remaining %5$@.";
