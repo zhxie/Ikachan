@@ -12,10 +12,10 @@ import Kingfisher
 
 struct DayProvider: IntentTimelineProvider {
     func placeholder(in context: Context) -> DayEntry {
-        DayEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder)
+        DayEntry(date: Date(), configuration: DayIntent(), schedule: SchedulePlaceholder)
     }
     
-    func getSnapshot(for configuration: ScheduleIntent, in context: Context, completion: @escaping (DayEntry) -> Void) {
+    func getSnapshot(for configuration: DayIntent, in context: Context, completion: @escaping (DayEntry) -> Void) {
         fetchSchedules { (schedules, error) in
             let current = Date()
             
@@ -39,7 +39,7 @@ struct DayProvider: IntentTimelineProvider {
         }
     }
     
-    func getTimeline(for configuration: ScheduleIntent, in context: Context, completion: @escaping (Timeline<DayEntry>) -> Void) {
+    func getTimeline(for configuration: DayIntent, in context: Context, completion: @escaping (Timeline<DayEntry>) -> Void) {
         fetchSchedules { (schedules, error) in
             var entries: [DayEntry] = []
             
@@ -83,7 +83,7 @@ struct DayProvider: IntentTimelineProvider {
 
 struct DayEntry: TimelineEntry {
     let date: Date
-    let configuration: ScheduleIntent
+    let configuration: DayIntent
     
     let schedule: Schedule?
 }
@@ -101,7 +101,7 @@ struct DayWidget: Widget {
     let kind: String = "DayWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ScheduleIntent.self, provider: DayProvider()) { entry in
+        IntentConfiguration(kind: kind, intent: DayIntent.self, provider: DayProvider()) { entry in
             DayWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("day_widget_name")
@@ -112,7 +112,7 @@ struct DayWidget: Widget {
 
 struct DayWidget_Previews: PreviewProvider {
     static var previews: some View {
-        DayWidgetEntryView(entry: DayEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder))
+        DayWidgetEntryView(entry: DayEntry(date: Date(), configuration: DayIntent(), schedule: SchedulePlaceholder))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

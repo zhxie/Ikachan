@@ -38,6 +38,14 @@
 
 "LTajCZ" = "サーモンランのシフト表を表示します。";
 
+"LwDtQE" = "モード";
+
+"M7gD7t-Vmno8H" = "There are ${count} options matching ‘ガチマッチ’.";
+
+"M7gD7t-byIF5m" = "There are ${count} options matching ‘リーグマッチ’.";
+
+"M7gD7t-vQ9T9L" = "There are ${count} options matching ‘レギュラーマッチ’.";
+
 "Msndu0-9n3fyF" = "There are ${count} options matching ‘いま’.";
 
 "Msndu0-YTWkY1" = "There are ${count} options matching ‘つぎ’.";
@@ -80,11 +88,19 @@
 
 "YTWkY1" = "つぎ";
 
+"ajvTis" = "一日";
+
 "bXSdro" = "${result}";
 
 "byIF5m" = "リーグマッチ";
 
 "dCtLWO" = "スケジュール";
+
+"doN3a4-Vmno8H" = "Just to confirm, you wanted ‘ガチマッチ’?";
+
+"doN3a4-byIF5m" = "Just to confirm, you wanted ‘リーグマッチ’?";
+
+"doN3a4-vQ9T9L" = "Just to confirm, you wanted ‘レギュラーマッチ’?";
 
 "ffldub-Vmno8H" = "ガチマッチのスケジュール";
 

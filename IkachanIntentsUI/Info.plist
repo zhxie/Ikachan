@@ -26,6 +26,7 @@
 		<dict>
 			<key>IntentsSupported</key>
 			<array>
+				<string>DayIntent</string>
 				<string>INSendMessageIntent</string>
 				<string>ScheduleIntent</string>
 				<string>ShiftIntent</string>

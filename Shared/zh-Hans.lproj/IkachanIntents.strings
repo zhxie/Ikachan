@@ -38,6 +38,14 @@
 
 "LTajCZ" = "显示Salmon Run的排班表。";
 
+"LwDtQE" = "模式";
+
+"M7gD7t-Vmno8H" = "There are ${count} options matching ‘真格对战’.";
+
+"M7gD7t-byIF5m" = "There are ${count} options matching ‘组排对战’.";
+
+"M7gD7t-vQ9T9L" = "There are ${count} options matching ‘普通对战’.";
+
 "Msndu0-9n3fyF" = "There are ${count} options matching ‘当前’.";
 
 "Msndu0-YTWkY1" = "There are ${count} options matching ‘接下来’.";
@@ -80,11 +88,19 @@
 
 "YTWkY1" = "接下来";
 
+"ajvTis" = "一日";
+
 "bXSdro" = "${result}";
 
 "byIF5m" = "组排对战";
 
 "dCtLWO" = "日程";
+
+"doN3a4-Vmno8H" = "Just to confirm, you wanted ‘真格对战’?";
+
+"doN3a4-byIF5m" = "Just to confirm, you wanted ‘组排对战’?";
+
+"doN3a4-vQ9T9L" = "Just to confirm, you wanted ‘普通对战’?";
 
 "ffldub-Vmno8H" = "真格对战的日程";
 

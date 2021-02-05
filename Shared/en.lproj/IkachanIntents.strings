@@ -38,6 +38,14 @@
 
 "LTajCZ" = "Shows shifts for Salmon Run.";
 
+"LwDtQE" = "Mode";
+
+"M7gD7t-Vmno8H" = "There are ${count} options matching ‘Ranked Battle’.";
+
+"M7gD7t-byIF5m" = "There are ${count} options matching ‘League Battle’.";
+
+"M7gD7t-vQ9T9L" = "There are ${count} options matching ‘Regular Battle’.";
+
 "Msndu0-9n3fyF" = "There are ${count} options matching ‘Current’.";
 
 "Msndu0-YTWkY1" = "There are ${count} options matching ‘Next’.";
@@ -80,11 +88,19 @@
 
 "YTWkY1" = "Next";
 
+"ajvTis" = "Day";
+
 "bXSdro" = "${result}";
 
 "byIF5m" = "League Battle";
 
 "dCtLWO" = "Schedules";
+
+"doN3a4-Vmno8H" = "Just to confirm, you wanted ‘Ranked Battle’?";
+
+"doN3a4-byIF5m" = "Just to confirm, you wanted ‘League Battle’?";
+
+"doN3a4-vQ9T9L" = "Just to confirm, you wanted ‘Regular Battle’?";
 
 "ffldub-Vmno8H" = "Schedules for Ranked Battle";
 

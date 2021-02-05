@@ -30,6 +30,7 @@
 			<array/>
 			<key>IntentsSupported</key>
 			<array>
+				<string>DayIntent</string>
 				<string>ScheduleIntent</string>
 				<string>ShiftIntent</string>
 			</array>
