@@ -16,7 +16,7 @@ struct ShiftProvider: IntentTimelineProvider {
     }
     
     func getSnapshot(for configuration: ShiftIntent, in context: Context, completion: @escaping (ShiftEntry) -> ()) {
-        ModelData.fetchShifts { (shifts, error) in
+        fetchShifts { (shifts, error) in
             let current = Date()
             
             guard let shifts = shifts else {
@@ -44,7 +44,7 @@ struct ShiftProvider: IntentTimelineProvider {
     }
     
     func getTimeline(for configuration: ShiftIntent, in context: Context, completion: @escaping (Timeline<ShiftEntry>) -> ()) {
-        ModelData.fetchShifts { (shifts, error) in
+        fetchShifts { (shifts, error) in
             var entries: [ShiftEntry] = []
             var urls: Set<String> = []
             var resources: [Resource] = []

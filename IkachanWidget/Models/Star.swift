@@ -14,18 +14,10 @@ struct Star: Hashable {
     var deltaWidth: Double = 0
     var deltaHeight: Double = 0
     var width: Double {
-        if baseWidth - deltaWidth < 0 {
-            return (baseWidth - deltaWidth).truncatingRemainder(dividingBy: 1) + 1
-        } else {
-            return (baseWidth - deltaWidth).truncatingRemainder(dividingBy: 1)
-        }
+        ((baseWidth - deltaWidth).truncatingRemainder(dividingBy: 1) + 1).truncatingRemainder(dividingBy: 1)
     }
     var height: Double {
-        if baseHeight - deltaHeight < 0 {
-            return (baseHeight - deltaHeight).truncatingRemainder(dividingBy: 1) + 1
-        } else {
-            return (baseHeight - deltaHeight).truncatingRemainder(dividingBy: 1)
-        }
+        ((baseHeight - deltaHeight).truncatingRemainder(dividingBy: 1) + 1).truncatingRemainder(dividingBy: 1)
     }
     
     var size: Double = 1
@@ -47,10 +39,10 @@ func GenerateStars(current: Date, largeCount: Int, smallCount: Int) -> [Star] {
     let refDate = formatter.date(from: String(format: "%d/%d/%d 18:00", year, month, day))!
     let delta = (current - refDate).truncatingRemainder(dividingBy: 43200)
     
-    for _ in 0..<smallCount {
-        stars.append(Star(baseWidth: drand48(), baseHeight: drand48(), deltaWidth: drand48() * delta / 43200, deltaHeight: drand48() * delta / 43200, size: 1, glow: Double(arc4random()) / Double(UINT32_MAX)))
-    }
     for _ in 0..<largeCount {
+        stars.append(Star(baseWidth: drand48(), baseHeight: drand48(), deltaWidth: drand48() * delta / 43200, deltaHeight: drand48() * delta / 43200, size: 2, glow: Double(arc4random()) / Double(UINT32_MAX)))
+    }
+    for _ in 0..<smallCount {
         stars.append(Star(baseWidth: drand48(), baseHeight: drand48(), deltaWidth: drand48() * delta / 43200, deltaHeight: drand48() * delta / 43200, size: 1, glow: Double(arc4random()) / Double(UINT32_MAX)))
     }
     

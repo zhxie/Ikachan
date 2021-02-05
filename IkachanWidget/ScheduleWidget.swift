@@ -16,7 +16,7 @@ struct ScheduleProvider: IntentTimelineProvider {
     }
 
     func getSnapshot(for configuration: ScheduleIntent, in context: Context, completion: @escaping (ScheduleEntry) -> ()) {
-        ModelData.fetchSchedules { (schedules, error) in
+        fetchSchedules { (schedules, error) in
             let current = Date()
             
             guard let schedules = schedules else {
@@ -44,7 +44,7 @@ struct ScheduleProvider: IntentTimelineProvider {
     }
 
     func getTimeline(for configuration: ScheduleIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        ModelData.fetchSchedules { (schedules, error) in
+        fetchSchedules { (schedules, error) in
             var entries: [ScheduleEntry] = []
             var urls: Set<String> = []
             var resources: [Resource] = []

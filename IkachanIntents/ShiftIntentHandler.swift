@@ -13,7 +13,7 @@ class ShiftIntentHandler: IntentHandler, ShiftIntentHandling {
     }
     
     func handle(intent: ShiftIntent, completion: @escaping (ShiftIntentResponse) -> Void) {
-        ModelData.fetchShifts { (shifts, error) in
+        fetchShifts { (shifts, error) in
             guard let shifts = shifts else {
                 completion(ShiftIntentResponse(code: .failure, userActivity: nil))
                 

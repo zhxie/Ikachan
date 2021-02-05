@@ -46,7 +46,7 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
     
     func handle(intent: ScheduleIntent, completion: @escaping (ScheduleIntentResponse) -> Void) {
         let gameMode = ScheduleIntentHandler.convertTo(gameMode: intent.gameMode)
-        ModelData.fetchSchedules { (schedules, error) in
+        fetchSchedules { (schedules, error) in
             guard let schedules = schedules else {
                 completion(ScheduleIntentResponse.failure(gameMode: intent.gameMode))
                 
