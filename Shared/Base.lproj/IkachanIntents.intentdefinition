@@ -80,7 +80,7 @@
 				</dict>
 				<dict>
 					<key>INEnumValueDisplayName</key>
-					<string>Current</string>
+					<string>current</string>
 					<key>INEnumValueDisplayNameID</key>
 					<string>9n3fyF</string>
 					<key>INEnumValueIndex</key>
@@ -90,7 +90,7 @@
 				</dict>
 				<dict>
 					<key>INEnumValueDisplayName</key>
-					<string>Next</string>
+					<string>next</string>
 					<key>INEnumValueDisplayNameID</key>
 					<string>YTWkY1</string>
 					<key>INEnumValueIndex</key>
@@ -131,8 +131,6 @@
 				<dict>
 					<key>INIntentParameterConfigurable</key>
 					<true/>
-					<key>INIntentParameterCustomDisambiguation</key>
-					<true/>
 					<key>INIntentParameterDisplayName</key>
 					<string>Game Mode</string>
 					<key>INIntentParameterDisplayNameID</key>
@@ -143,6 +141,11 @@
 					<string>GameMode</string>
 					<key>INIntentParameterEnumTypeNamespace</key>
 					<string>AL54Nd</string>
+					<key>INIntentParameterMetadata</key>
+					<dict>
+						<key>INIntentParameterMetadataDefaultValue</key>
+						<string>unknown</string>
+					</dict>
 					<key>INIntentParameterName</key>
 					<string>gameMode</string>
 					<key>INIntentParameterPromptDialogs</key>
@@ -180,8 +183,6 @@
 							<string>Confirmation</string>
 						</dict>
 					</array>
-					<key>INIntentParameterSupportsResolution</key>
-					<true/>
 					<key>INIntentParameterTag</key>
 					<integer>2</integer>
 					<key>INIntentParameterType</key>
@@ -282,6 +283,11 @@
 					<string>GameMode</string>
 					<key>INIntentParameterEnumTypeNamespace</key>
 					<string>AL54Nd</string>
+					<key>INIntentParameterMetadata</key>
+					<dict>
+						<key>INIntentParameterMetadataDefaultValue</key>
+						<string>unknown</string>
+					</dict>
 					<key>INIntentParameterName</key>
 					<string>gameMode</string>
 					<key>INIntentParameterPromptDialogs</key>
@@ -341,6 +347,11 @@
 					<string>Rotation</string>
 					<key>INIntentParameterEnumTypeNamespace</key>
 					<string>AL54Nd</string>
+					<key>INIntentParameterMetadata</key>
+					<dict>
+						<key>INIntentParameterMetadataDefaultValue</key>
+						<string>unknown</string>
+					</dict>
 					<key>INIntentParameterName</key>
 					<string>rotation</string>
 					<key>INIntentParameterPromptDialogs</key>
@@ -543,6 +554,11 @@
 					<string>Rotation</string>
 					<key>INIntentParameterEnumTypeNamespace</key>
 					<string>AL54Nd</string>
+					<key>INIntentParameterMetadata</key>
+					<dict>
+						<key>INIntentParameterMetadataDefaultValue</key>
+						<string>unknown</string>
+					</dict>
 					<key>INIntentParameterName</key>
 					<string>rotation</string>
 					<key>INIntentParameterPromptDialogs</key>

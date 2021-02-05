@@ -10,7 +10,7 @@ import Intents
 class ShiftIntentHandler: IntentHandler, ShiftIntentHandling {
     func resolveRotation(for intent: ShiftIntent, with completion: @escaping (RotationResolutionResult) -> Void) {
         if intent.rotation == .unknown {
-            completion(RotationResolutionResult.confirmationRequired(with: .current))
+            completion(RotationResolutionResult.needsValue())
         } else {
             completion(RotationResolutionResult.success(with: intent.rotation))
         }

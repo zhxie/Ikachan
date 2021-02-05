@@ -20,14 +20,12 @@ class IntentHandler: INExtension {
     
     static func gameModeConvertTo(gameMode: GameMode) -> Schedule.GameMode {
         switch gameMode {
-        case .regular:
+        case .regular, .unknown:
             return .regular
         case .gachi:
             return .gachi
         case .league:
             return .league
-        default:
-            return .regular
         }
     }
     
@@ -44,12 +42,10 @@ class IntentHandler: INExtension {
     
     static func rotationConvertTo(rotation: Rotation) -> Int {
         switch rotation {
-        case .current:
+        case .current, .unknown:
             return 0
         case .next:
             return 1
-        case .unknown:
-            return 0
         }
     }
 }

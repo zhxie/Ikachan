@@ -10,7 +10,7 @@ import Intents
 class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
     func resolveGameMode(for intent: ScheduleIntent, with completion: @escaping (GameModeResolutionResult) -> Void) {
         if intent.gameMode == .unknown {
-            completion(GameModeResolutionResult.confirmationRequired(with: .regular))
+            completion(GameModeResolutionResult.needsValue())
         } else {
             completion(GameModeResolutionResult.success(with: intent.gameMode))
         }
@@ -18,7 +18,7 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
     
     func resolveRotation(for intent: ScheduleIntent, with completion: @escaping (RotationResolutionResult) -> Void) {
         if intent.rotation == .unknown {
-            completion(RotationResolutionResult.confirmationRequired(with: .current))
+            completion(RotationResolutionResult.needsValue())
         } else {
             completion(RotationResolutionResult.success(with: intent.rotation))
         }
