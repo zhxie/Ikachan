@@ -8,6 +8,14 @@
 import Intents
 
 class ShiftIntentHandler: IntentHandler, ShiftIntentHandling {
+    func resolveRotation(for intent: ShiftIntent, with completion: @escaping (RotationResolutionResult) -> Void) {
+        if intent.rotation == .unknown {
+            completion(RotationResolutionResult.confirmationRequired(with: .current))
+        } else {
+            completion(RotationResolutionResult.success(with: intent.rotation))
+        }
+    }
+    
     override func handler(for intent: INIntent) -> Any {
         return self
     }
@@ -24,24 +32,37 @@ class ShiftIntentHandler: IntentHandler, ShiftIntentHandling {
                 shift.stage != nil
             }
             
-            if details.count > 0 {
-                var formatter = "current_shift"
-                if details[0].startTime > Date() {
-                    formatter = "soon_shift"
-                }
-                
-                let result = String(format: formatter.localizedIntentsString, details[0].stage!.description.rawValue.localizedIntentsString, details[0].weapons[0].description.rawValue.localizedIntentsString, details[0].weapons[1].description.rawValue.localizedIntentsString, details[0].weapons[2].description.rawValue.localizedIntentsString, details[0].weapons[3].description.rawValue.localizedIntentsString, absoluteLongIntentsTimeSpan(current: Date(), startTime: details[0].startTime, endTime: details[0].endTime))
-                
-                let encoder = JSONEncoder()
-                let data = try! encoder.encode(details[0])
-                let activity = NSUserActivity(activityType: "name.sketch.Ikachan.shift")
-                activity.userInfo?["shift"] = data.base64EncodedString()
-                let response = ShiftIntentResponse.success(result: result)
-                response.userActivity = activity
-                completion(response)
-            } else {
-                completion(ShiftIntentResponse(code: .failure, userActivity: nil))
+            var formatter = ""
+            var shift: Shift? = nil
+            
+            switch intent.rotation {
+            case .unknown, .current:
+                formatter = "open_shift"
+                shift = details.at(index: 0)
+            case .next:
+                formatter = "next_shift"
+                shift = details.at(index: 1)
             }
+            
+            guard let s = shift else {
+                completion(ShiftIntentResponse(code: .failure, userActivity: nil))
+                
+                return
+            }
+            
+            if formatter == "open_shift" && s.startTime > Date() {
+                formatter = "soon_shift"
+            }
+            
+            let result = String(format: formatter.localizedIntentsString, s.stage!.description.rawValue.localizedIntentsString, s.weapons[0].description.rawValue.localizedIntentsString, s.weapons[1].description.rawValue.localizedIntentsString, s.weapons[2].description.rawValue.localizedIntentsString, s.weapons[3].description.rawValue.localizedIntentsString, absoluteLongIntentsTimeSpan(current: Date(), startTime: s.startTime, endTime: s.endTime))
+            
+            let encoder = JSONEncoder()
+            let data = try! encoder.encode(s)
+            let activity = NSUserActivity(activityType: "name.sketch.Ikachan.shift")
+            activity.userInfo?["shift"] = data.base64EncodedString()
+            let response = ShiftIntentResponse.success(result: result, rotation: intent.rotation)
+            response.userActivity = activity
+            completion(response)
         }
     }
 }

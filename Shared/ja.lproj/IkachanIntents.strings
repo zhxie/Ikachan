@@ -1,4 +1,4 @@
-"0dhvDV" = "シフト表";
+"0dhvDV" = "サーモンランのシフト表";
 
 "10v9re-Vmno8H" = "Just to confirm, you wanted ‘ガチマッチ’?";
 
@@ -6,57 +6,83 @@
 
 "10v9re-vQ9T9L" = "Just to confirm, you wanted ‘レギュラーマッチ’?";
 
+"1rsv8F-9n3fyF-Vmno8H" = "ガチマッチのいまのスケジュール";
+
+"1rsv8F-9n3fyF-byIF5m" = "リーグマッチのいまのスケジュール";
+
+"1rsv8F-9n3fyF-vQ9T9L" = "レギュラーマッチのいまのスケジュール";
+
+"1rsv8F-YTWkY1-Vmno8H" = "ガチマッチのつぎのスケジュール";
+
+"1rsv8F-YTWkY1-byIF5m" = "リーグマッチのつぎのスケジュール";
+
+"1rsv8F-YTWkY1-vQ9T9L" = "レギュラーマッチのつぎのスケジュール";
+
 "2z9Dkd" = "モード";
 
-"3WLqS8-Vmno8H" = "ガチマッチのスケジュールを表示します";
-
-"3WLqS8-byIF5m" = "リーグマッチのスケジュールを表示します";
-
-"3WLqS8-vQ9T9L" = "レギュラーマッチのスケジュールを表示します";
+"3ADlh5" = "ローテーション";
 
 "6RxUlZ" = "結果";
 
-"KM8zVO" = "シフト表";
+"9n3fyF" = "いま";
+
+"BmtGiG-9n3fyF" = "Just to confirm, you wanted ‘いま’?";
+
+"BmtGiG-YTWkY1" = "Just to confirm, you wanted ‘つぎ’?";
+
+"BvudQ0-9n3fyF" = "サーモンランのいまのシフト";
+
+"BvudQ0-YTWkY1" = "サーモンランのつぎのシフト";
+
+"KM8zVO" = "サーモンランの${rotation}のシフト";
 
 "LTajCZ" = "サーモンランのシフト表を表示します。";
 
-"Pj9O6l" = "こちらはサーモンランのシフト表：";
+"Msndu0-9n3fyF" = "There are ${count} options matching ‘いま’.";
+
+"Msndu0-YTWkY1" = "There are ${count} options matching ‘つぎ’.";
+
+"OhYFhR-9n3fyF" = "Just to confirm, you wanted ‘いま’?";
+
+"OhYFhR-YTWkY1" = "Just to confirm, you wanted ‘つぎ’?";
+
+"P0sKEJ" = "ローテーション";
+
+"Pj9O6l-9n3fyF" = "こちらはサーモンランのいまのシフト。";
+
+"Pj9O6l-YTWkY1" = "こちらはサーモンランのつぎのシフト。";
 
 "QjGFWc" = "シフト表";
-
-"R0bFHL-Vmno8H" = "すみません、イカチャンはガチマッチのスケジュールを表示できません。";
-
-"R0bFHL-byIF5m" = "すみません、イカチャンはリーグマッチのスケジュールを表示できません。";
-
-"R0bFHL-vQ9T9L" = "すみません、イカチャンはレギュラーマッチのスケジュールを表示できません。";
 
 "RTR7w4" = "モード";
 
 "SLejbf" = "${result}";
 
-"U9s5b8-Vmno8H" = "こちらはガチマッチのスケジュール：";
+"U9s5b8-9n3fyF-Vmno8H" = "こちらはガチマッチのいまのスケジュール。";
 
-"U9s5b8-byIF5m" = "こちらはリーグマッチのスケジュール：";
+"U9s5b8-9n3fyF-byIF5m" = "こちらはリーグマッチのいまのスケジュール。";
 
-"U9s5b8-vQ9T9L" = "こちらはレギュラーマッチのスケジュール：";
+"U9s5b8-9n3fyF-vQ9T9L" = "こちらはレギュラーマッチのいまのスケジュール。";
+
+"U9s5b8-YTWkY1-Vmno8H" = "こちらはガチマッチのつぎのスケジュール。";
+
+"U9s5b8-YTWkY1-byIF5m" = "こちらはリーグマッチのつぎのスケジュール。";
+
+"U9s5b8-YTWkY1-vQ9T9L" = "こちらはレギュラーマッチのつぎのスケジュール。";
 
 "Vmno8H" = "ガチマッチ";
-
-"WxZASv-Vmno8H" = "すみません、イカチャンはガチマッチのスケジュールを表示できません。";
-
-"WxZASv-byIF5m" = "すみません、イカチャンはリーグマッチのスケジュールを表示できません。";
-
-"WxZASv-vQ9T9L" = "すみません、イカチャンはレギュラーマッチのスケジュールを表示できません。";
 
 "XALQ6Y" = "そのモードのスケジュールを表示します。";
 
 "XGNvY7" = "結果";
 
+"YG3GWe" = "ローテーション";
+
+"YTWkY1" = "つぎ";
+
 "bXSdro" = "${result}";
 
 "byIF5m" = "リーグマッチ";
-
-"cSE88n" = "サーモンランのシフト表を表示します";
 
 "dCtLWO" = "スケジュール";
 
@@ -66,7 +92,7 @@
 
 "ffldub-vQ9T9L" = "レギュラーマッチのスケジュール";
 
-"ifyLOV" = "すみません、イカチャンはサーモンランのシフト表を表示できません。";
+"n2daln" = "ローテーション";
 
 "oMMIWT-Vmno8H" = "There are ${count} options matching ‘ガチマッチ’.";
 
@@ -74,11 +100,15 @@
 
 "oMMIWT-vQ9T9L" = "There are ${count} options matching ‘レギュラーマッチ’.";
 
-"pYS45i" = "${gameMode}のスケジュール";
+"od31Z2" = "ローテーション";
+
+"pYS45i" = "${gameMode}の${rotation}のスケジュール";
+
+"v8ZVx6-9n3fyF" = "There are ${count} options matching ‘いま’.";
+
+"v8ZVx6-YTWkY1" = "There are ${count} options matching ‘つぎ’.";
 
 "vQ9T9L" = "レギュラーマッチ";
 
 "vtf9zV" = "モード";
-
-"yLTCFR" = "すみません、イカチャンはサーモンランのシフト表を表示できません。";
 

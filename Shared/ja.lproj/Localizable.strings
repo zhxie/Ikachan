@@ -158,15 +158,20 @@
 
 // Widget
 "failed_to_load" = "読み込むことができません";
-"schedule_widget_description" = "そのモードの現在と将来のスケジュールを表示できます。";
-"shift_widget_description" = "サーモンランの現在と将来のシフト表を表示できます。";
+"schedule_widget_description" = "そのモードのいまとつぎのスケジュールを表示できます。";
+"shift_widget_description" = "サーモンランのいまとつぎのシフト表を表示できます。";
 "day_widget_name" = "一日スプラ";
 "day_widget_description" = "イカしながら一日経ることを感じる。";
 
 // Intent
 "current_schedule" = "いま、%1$@は%3$@と%4$@の%2$@があります、残り%5$@。";
-"current_shift" = "いま、%1$@に%2$@、%3$@、%4$@と%5$@のSalmon Runがあります、残り%6$@。";
-"soon_shift" = "%6$@後，%1$@に%2$@、%3$@、%4$@と%5$@のSalmon Runが始まります。";
+"next_schedule" = "つぎ、%1$@は%3$@と%4$@の%2$@が%5$@後始まります。";
+"open_shift" = "いま、Salmon Runは%1$@に、%2$@、%3$@、%4$@と%5$@のバイトがオープンします、残り%6$@。";
+"soon_shift" = "もうすぐ、Salmon Runは%6$@後%1$@に、%2$@、%3$@、%4$@と%5$@のバイトがオープンします。";
+"next_shift" = "つぎ、Salmon Runは%6$@後%1$@に、%2$@、%3$@、%4$@と%5$@のバイトがオープンします。";
 "%d_min" = "%d分";
+"%d_mins" = "%d分";
 "%d_hour_%@" = "%d時間%@";
+"%d_hours_%@" = "%d時間%@";
 "%d_day_%@" = "%d日%@";
+"%d_days_%@" = "%d日%@";

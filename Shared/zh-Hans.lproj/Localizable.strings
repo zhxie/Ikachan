@@ -159,15 +159,20 @@
 
 // Widget
 "failed_to_load" = "无法载入";
-"schedule_widget_description" = "查看某模式当前和未来的日程。";
-"shift_widget_description" = "查看Salmon Run当前和未来的排班表。";
+"schedule_widget_description" = "查看某模式当前和接下来的日程。";
+"shift_widget_description" = "查看Salmon Run当前和接下来的排班表。";
 "day_widget_name" = "一日Splatoon";
 "day_widget_description" = "成为乌贼的同时感受时间的流逝。";
 
 // Intent
 "current_schedule" = "当前，%1$@正进行于%3$@和%4$@的%2$@，剩余%5$@。";
-"current_shift" = "当前，%2$@、%3$@、%4$@和%5$@于%1$@的Salmon Run正在开放，剩余%6$@。";
-"soon_shift" = "%2$@、%3$@、%4$@和%5$@于%1$@的Salmon Run即将于%6$@后开放。";
+"next_schedule" = "接下来，%1$@将于%5$@后进行于%3$@和%4$@的%2$@。";
+"open_shift" = "当前，Salmon Run正开放于%1$@，%2$@、%3$@、%4$@和%5$@的打工，剩余%6$@。";
+"soon_shift" = "Salmon Run即将于%6$@后开放于%1$@，%2$@、%3$@、%4$@和%5$@的打工。";
+"next_shift" = "接下来，Salmon Run将于%6$@后开放于%1$@，%2$@、%3$@、%4$@和%5$@的打工。";
 "%d_min" = "%d分";
+"%d_mins" = "%d分";
 "%d_hour_%@" = "%d小时%@";
+"%d_hours_%@" = "%d小时%@";
 "%d_day_%@" = "%d日%@";
+"%d_days_%@" = "%d日%@";

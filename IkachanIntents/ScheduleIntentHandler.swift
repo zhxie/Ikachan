@@ -16,6 +16,14 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
         }
     }
     
+    func resolveRotation(for intent: ScheduleIntent, with completion: @escaping (RotationResolutionResult) -> Void) {
+        if intent.rotation == .unknown {
+            completion(RotationResolutionResult.confirmationRequired(with: .current))
+        } else {
+            completion(RotationResolutionResult.success(with: intent.rotation))
+        }
+    }
+    
     override func handler(for intent: INIntent) -> Any {
         return self
     }
@@ -48,8 +56,8 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
         let gameMode = ScheduleIntentHandler.convertTo(gameMode: intent.gameMode)
         fetchSchedules { (schedules, error) in
             guard let schedules = schedules else {
-                completion(ScheduleIntentResponse.failure(gameMode: intent.gameMode))
-                
+                completion(ScheduleIntentResponse.init(code: .failure, userActivity: nil))
+
                 return
             }
             
@@ -57,19 +65,33 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
                 schedule.gameMode == ScheduleIntentHandler.convertTo(gameMode: intent.gameMode)
             }
             
-            if filtered.count > 0 {
-                let result = String(format: "current_schedule".localizedIntentsString, gameMode.longDescription.rawValue.localizedIntentsString, filtered[0].rule.description.rawValue.localizedIntentsString, filtered[0].stageA.description.rawValue.localizedIntentsString, filtered[0].stageB.description.rawValue.localizedIntentsString, absoluteLongIntentsTimeSpan(current: Date(), startTime: filtered[0].startTime, endTime: filtered[0].endTime))
-                
-                let encoder = JSONEncoder()
-                let data = try! encoder.encode(filtered[0])
-                let activity = NSUserActivity(activityType: String(format: "name.sketch.Ikachan.schedule.%@", gameMode.rawValue))
-                activity.userInfo?["schedule"] = data.base64EncodedString()
-                let response = ScheduleIntentResponse.success(result: result, gameMode: intent.gameMode)
-                response.userActivity = activity
-                completion(response)
-            } else {
-                completion(ScheduleIntentResponse.failure(gameMode: intent.gameMode))
+            var formatter = ""
+            var schedule: Schedule? = nil
+            
+            switch intent.rotation {
+            case .unknown, .current:
+                formatter = "current_schedule"
+                schedule = filtered.at(index: 0)
+            case .next:
+                formatter = "next_schedule"
+                schedule = filtered.at(index: 1)
             }
+            
+            guard let s = schedule else {
+                completion(ScheduleIntentResponse.init(code: .failure, userActivity: nil))
+                
+                return
+            }
+            
+            let result = String(format: formatter.localizedIntentsString, gameMode.longDescription.rawValue.localizedIntentsString, s.rule.description.rawValue.localizedIntentsString, s.stageA.description.rawValue.localizedIntentsString, s.stageB.description.rawValue.localizedIntentsString, absoluteLongIntentsTimeSpan(current: Date(), startTime: s.startTime, endTime: s.endTime))
+            
+            let encoder = JSONEncoder()
+            let data = try! encoder.encode(s)
+            let activity = NSUserActivity(activityType: String(format: "name.sketch.Ikachan.schedule.%@", gameMode.rawValue))
+            activity.userInfo?["schedule"] = data.base64EncodedString()
+            let response = ScheduleIntentResponse.success(result: result, rotation: intent.rotation, gameMode: intent.gameMode)
+            response.userActivity = activity
+            completion(response)
         }
     }
 }

@@ -164,9 +164,14 @@
 "day_widget_description" = "Feel the passing of time while becoming a squid.";
 
 // Intent
-"current_schedule" = "Now, %2$@ in %3$@ and %4$@ of %1$@ is undergoing, remaining %5$@.";
-"current_shift" = "Now, Salmon Run with %2$@, %3$@, %4$@ and %5$@ in %1$@ is open, remaining %6$@.";
-"soon_shift" = "Salmon Run with %2$@, %3$@, %4$@ and %5$@ in %1$@ will be open in %6$@.";
+"current_schedule" = "Currently, %2$@ in %3$@ and %4$@ of %1$@ is undergoing, remaining %5$@.";
+"next_schedule" = "Next, %2$@ in %3$@ and %4$@ of %1$@ will be started in %5$@.";
+"open_shift" = "Currently, Salmon Run in %1$@ with %2$@, %3$@, %4$@ and %5$@ is open, remaining %6$@.";
+"soon_shift" = "Soon, Salmon Run in %1$@ with %2$@, %3$@, %4$@ and %5$@ will be open in %6$@.";
+"next_shift" = "Next, Salmon Run in %1$@ with %2$@, %3$@, %4$@ and %5$@ will be open in %6$@.";
 "%d_min" = "%d minute";
+"%d_mins" = "%d minutes";
 "%d_hour_%@" = "%d hour %@";
+"%d_hours_%@" = "%d hours %@";
 "%d_day_%@" = "%d day %@";
+"%d_days_%@" = "%d days %@";

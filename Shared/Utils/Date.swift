@@ -191,13 +191,23 @@ private func format3(interval: TimeInterval) -> String {
     let hour = (mins % 1440) / 60
     let day = mins / 1440
     
-    var result = String(format: "%d_min".localizedIntentsString, min)
+    var result = ""
     
-    if hour > 0 {
+    if min > 1 {
+        result = String(format: "%d_mins".localizedIntentsString, min)
+    } else {
+        result = String(format: "%d_min".localizedIntentsString, min)
+    }
+    
+    if hour > 1 {
+        result = String(format: "%d_hours_%@".localizedIntentsString, hour, result)
+    } else if hour > 0 {
         result = String(format: "%d_hour_%@".localizedIntentsString, hour, result)
     }
     
-    if day > 0 {
+    if day > 1 {
+        result = String(format: "%d_days_%@".localizedIntentsString, day, result)
+    } else if day > 0 {
         result = String(format: "%d_day_%@".localizedIntentsString, day, result)
     }
     

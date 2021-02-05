@@ -57,6 +57,49 @@
 				</dict>
 			</array>
 		</dict>
+		<dict>
+			<key>INEnumDisplayName</key>
+			<string>Rotation</string>
+			<key>INEnumDisplayNameID</key>
+			<string>YG3GWe</string>
+			<key>INEnumGeneratesHeader</key>
+			<true/>
+			<key>INEnumName</key>
+			<string>Rotation</string>
+			<key>INEnumType</key>
+			<string>Regular</string>
+			<key>INEnumValues</key>
+			<array>
+				<dict>
+					<key>INEnumValueDisplayName</key>
+					<string>unknown</string>
+					<key>INEnumValueDisplayNameID</key>
+					<string>wM1ygJ</string>
+					<key>INEnumValueName</key>
+					<string>unknown</string>
+				</dict>
+				<dict>
+					<key>INEnumValueDisplayName</key>
+					<string>Current</string>
+					<key>INEnumValueDisplayNameID</key>
+					<string>9n3fyF</string>
+					<key>INEnumValueIndex</key>
+					<integer>1</integer>
+					<key>INEnumValueName</key>
+					<string>current</string>
+				</dict>
+				<dict>
+					<key>INEnumValueDisplayName</key>
+					<string>Next</string>
+					<key>INEnumValueDisplayNameID</key>
+					<string>YTWkY1</string>
+					<key>INEnumValueIndex</key>
+					<integer>2</integer>
+					<key>INEnumValueName</key>
+					<string>next</string>
+				</dict>
+			</array>
+		</dict>
 	</array>
 	<key>INIntentDefinitionModelVersion</key>
 	<string>1.2</string>
@@ -84,19 +127,17 @@
 			<key>INIntentKeyParameter</key>
 			<string>gameMode</string>
 			<key>INIntentLastParameterTag</key>
-			<integer>2</integer>
+			<integer>8</integer>
 			<key>INIntentManagedParameterCombinations</key>
 			<dict>
-				<key>gameMode</key>
+				<key>gameMode,rotation</key>
 				<dict>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Schedules for ${gameMode}</string>
+					<string>${rotation} schedule for ${gameMode}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>pYS45i</string>
-					<key>INIntentParameterCombinationUpdatesLinked</key>
-					<true/>
 				</dict>
 			</dict>
 			<key>INIntentName</key>
@@ -107,16 +148,21 @@
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
-					<key>INIntentParameterCombinationSubtitle</key>
-					<string>Shows schedules for ${gameMode}</string>
-					<key>INIntentParameterCombinationSubtitleID</key>
-					<string>3WLqS8</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<true/>
+					<false/>
 					<key>INIntentParameterCombinationTitle</key>
 					<string>Schedules for ${gameMode}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>ffldub</string>
+				</dict>
+				<key>gameMode,rotation</key>
+				<dict>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>${rotation} schedule for ${gameMode}</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>1rsv8F</string>
 				</dict>
 			</dict>
 			<key>INIntentParameters</key>
@@ -180,6 +226,65 @@
 					<key>INIntentParameterType</key>
 					<string>Integer</string>
 				</dict>
+				<dict>
+					<key>INIntentParameterConfigurable</key>
+					<true/>
+					<key>INIntentParameterCustomDisambiguation</key>
+					<true/>
+					<key>INIntentParameterDisplayName</key>
+					<string>Rotation</string>
+					<key>INIntentParameterDisplayNameID</key>
+					<string>3ADlh5</string>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>2</integer>
+					<key>INIntentParameterEnumType</key>
+					<string>Rotation</string>
+					<key>INIntentParameterEnumTypeNamespace</key>
+					<string>AL54Nd</string>
+					<key>INIntentParameterName</key>
+					<string>rotation</string>
+					<key>INIntentParameterPromptDialogs</key>
+					<array>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Configuration</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Primary</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>There are ${count} options matching ‘${rotation}’.</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>Msndu0</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>DisambiguationIntroduction</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>Just to confirm, you wanted ‘${rotation}’?</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>BmtGiG</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Confirmation</string>
+						</dict>
+					</array>
+					<key>INIntentParameterSupportsResolution</key>
+					<true/>
+					<key>INIntentParameterTag</key>
+					<integer>4</integer>
+					<key>INIntentParameterType</key>
+					<string>Integer</string>
+				</dict>
 			</array>
 			<key>INIntentResponse</key>
 			<dict>
@@ -187,7 +292,7 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Here's the schedules for ${gameMode}:</string>
+						<string>Here's the ${rotation} schedule for ${gameMode}.</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>U9s5b8</string>
 						<key>INIntentResponseCodeFormatString</key>
@@ -200,20 +305,12 @@
 						<true/>
 					</dict>
 					<dict>
-						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Sorry, Ikachan cannot shows the schedules for ${gameMode}.</string>
-						<key>INIntentResponseCodeConciseFormatStringID</key>
-						<string>R0bFHL</string>
-						<key>INIntentResponseCodeFormatString</key>
-						<string>Sorry, Ikachan cannot shows the schedules for ${gameMode}.</string>
-						<key>INIntentResponseCodeFormatStringID</key>
-						<string>WxZASv</string>
 						<key>INIntentResponseCodeName</key>
 						<string>failure</string>
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
-				<integer>10</integer>
+				<integer>12</integer>
 				<key>INIntentResponseParameters</key>
 				<array>
 					<dict>
@@ -236,11 +333,29 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseParameterDisplayName</key>
+						<string>Rotation</string>
+						<key>INIntentResponseParameterDisplayNameID</key>
+						<string>n2daln</string>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>2</integer>
+						<key>INIntentResponseParameterEnumType</key>
+						<string>Rotation</string>
+						<key>INIntentResponseParameterEnumTypeNamespace</key>
+						<string>AL54Nd</string>
+						<key>INIntentResponseParameterName</key>
+						<string>rotation</string>
+						<key>INIntentResponseParameterTag</key>
+						<integer>12</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>Integer</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseParameterDisplayName</key>
 						<string>Result</string>
 						<key>INIntentResponseParameterDisplayNameID</key>
 						<string>XGNvY7</string>
 						<key>INIntentResponseParameterDisplayPriority</key>
-						<integer>2</integer>
+						<integer>3</integer>
 						<key>INIntentResponseParameterName</key>
 						<string>result</string>
 						<key>INIntentResponseParameterTag</key>
@@ -270,14 +385,16 @@
 			<string>LTajCZ</string>
 			<key>INIntentEligibleForWidgets</key>
 			<true/>
+			<key>INIntentLastParameterTag</key>
+			<integer>2</integer>
 			<key>INIntentManagedParameterCombinations</key>
 			<dict>
-				<key></key>
+				<key>rotation</key>
 				<dict>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Shifts</string>
+					<string>${rotation} shift for Salmon Run</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>KM8zVO</string>
 					<key>INIntentParameterCombinationUpdatesLinked</key>
@@ -292,25 +409,92 @@
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
-					<key>INIntentParameterCombinationSubtitle</key>
-					<string>Shows shifts for Salmon Run</string>
-					<key>INIntentParameterCombinationSubtitleID</key>
-					<string>cSE88n</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<true/>
+					<false/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Shifts</string>
+					<string>Shifts for Salmon Run</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>0dhvDV</string>
 				</dict>
+				<key>rotation</key>
+				<dict>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>${rotation} shift for Salmon Run</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>BvudQ0</string>
+				</dict>
 			</dict>
+			<key>INIntentParameters</key>
+			<array>
+				<dict>
+					<key>INIntentParameterConfigurable</key>
+					<true/>
+					<key>INIntentParameterCustomDisambiguation</key>
+					<true/>
+					<key>INIntentParameterDisplayName</key>
+					<string>Rotation</string>
+					<key>INIntentParameterDisplayNameID</key>
+					<string>P0sKEJ</string>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>1</integer>
+					<key>INIntentParameterEnumType</key>
+					<string>Rotation</string>
+					<key>INIntentParameterEnumTypeNamespace</key>
+					<string>AL54Nd</string>
+					<key>INIntentParameterName</key>
+					<string>rotation</string>
+					<key>INIntentParameterPromptDialogs</key>
+					<array>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Configuration</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Primary</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>There are ${count} options matching ‘${rotation}’.</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>v8ZVx6</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>DisambiguationIntroduction</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>Just to confirm, you wanted ‘${rotation}’?</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>OhYFhR</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Confirmation</string>
+						</dict>
+					</array>
+					<key>INIntentParameterSupportsResolution</key>
+					<true/>
+					<key>INIntentParameterTag</key>
+					<integer>2</integer>
+					<key>INIntentParameterType</key>
+					<string>Integer</string>
+				</dict>
+			</array>
 			<key>INIntentResponse</key>
 			<dict>
 				<key>INIntentResponseCodes</key>
 				<array>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Here's the shifts for Salmon Run:</string>
+						<string>Here's the ${rotation} shift for Salmon Run.</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>Pj9O6l</string>
 						<key>INIntentResponseCodeFormatString</key>
@@ -323,29 +507,39 @@
 						<true/>
 					</dict>
 					<dict>
-						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Sorry, Ikachan cannot shows the shifts for Salmon Run.</string>
-						<key>INIntentResponseCodeConciseFormatStringID</key>
-						<string>ifyLOV</string>
-						<key>INIntentResponseCodeFormatString</key>
-						<string>Sorry, Ikachan cannot shows the shifts for Salmon Run.</string>
-						<key>INIntentResponseCodeFormatStringID</key>
-						<string>yLTCFR</string>
 						<key>INIntentResponseCodeName</key>
 						<string>failure</string>
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
-				<integer>11</integer>
+				<integer>13</integer>
 				<key>INIntentResponseParameters</key>
 				<array>
+					<dict>
+						<key>INIntentResponseParameterDisplayName</key>
+						<string>Rotation</string>
+						<key>INIntentResponseParameterDisplayNameID</key>
+						<string>od31Z2</string>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>1</integer>
+						<key>INIntentResponseParameterEnumType</key>
+						<string>Rotation</string>
+						<key>INIntentResponseParameterEnumTypeNamespace</key>
+						<string>AL54Nd</string>
+						<key>INIntentResponseParameterName</key>
+						<string>rotation</string>
+						<key>INIntentResponseParameterTag</key>
+						<integer>13</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>Integer</string>
+					</dict>
 					<dict>
 						<key>INIntentResponseParameterDisplayName</key>
 						<string>Result</string>
 						<key>INIntentResponseParameterDisplayNameID</key>
 						<string>6RxUlZ</string>
 						<key>INIntentResponseParameterDisplayPriority</key>
-						<integer>1</integer>
+						<integer>2</integer>
 						<key>INIntentResponseParameterName</key>
 						<string>result</string>
 						<key>INIntentResponseParameterTag</key>

@@ -101,6 +101,10 @@
 		E477990D25B203F900F8AE9F /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990C25B203F900F8AE9F /* Weapon.swift */; };
 		E484FDC725C94694006E748F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4444F3725BF164C0003A676 /* Assets.xcassets */; };
 		E484FDCE25C946C9006E748F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46B514C25BB46C5001F88CE /* InfoPlist.strings */; };
+		E48BECC025CD31F100B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
+		E48BECC125CD31F100B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
+		E48BECC225CD31F200B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
+		E48BECC325CD31F200B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
 		E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7A2C225B7395500E26B20 /* Localizable.strings */; };
 		E4C98CFC25C98099006940E9 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C98CFA25C98099006940E9 /* Image.swift */; };
 		E4E13CE325C7DBB100150544 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E13CE225C7DBB100150544 /* Color.swift */; };
@@ -186,9 +190,6 @@
 		E4613FB925C9B62000561D53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/IkachanIntents.intentdefinition; sourceTree = "<group>"; };
 		E461405825C9C93B00561D53 /* LocalizedStringKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringKey.swift; sourceTree = "<group>"; };
 		E461413F25CA880500561D53 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		E461415925CA9B4E00561D53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
-		E461415F25CA9BE600561D53 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
-		E461416525CA9E4A00561D53 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IkachanIntents.strings"; sourceTree = "<group>"; };
 		E46141AA25CAE9A800561D53 /* IkachanIntentsUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IkachanIntentsUI.entitlements; sourceTree = "<group>"; };
 		E468B7A225B282F5001254FE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		E468B7AC25B34AFC001254FE /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -210,6 +211,10 @@
 		E477990125B1F1F600F8AE9F /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E477990925B2029C00F8AE9F /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
 		E477990C25B203F900F8AE9F /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		E48BECA625CD252800B301D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
+		E48BECB025CD25E400B301D1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
+		E48BECB625CD291100B301D1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IkachanIntents.strings"; sourceTree = "<group>"; };
+		E48BECBF25CD31F100B301D1 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		E4B1144A25BD1E7A00303542 /* MediumShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumShiftView.swift; sourceTree = "<group>"; };
 		E4B1144F25BD43B400303542 /* ShiftWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftWidget.swift; sourceTree = "<group>"; };
 		E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkachanWidgetBundle.swift; sourceTree = "<group>"; };
@@ -441,6 +446,7 @@
 		E484FDB725C945B5006E748F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E48BECBF25CD31F100B301D1 /* Collection.swift */,
 				E4E13CE225C7DBB100150544 /* Color.swift */,
 				E468B7B425B46080001254FE /* Date.swift */,
 				E461405825C9C93B00561D53 /* LocalizedStringKey.swift */,
@@ -654,6 +660,7 @@
 				E4613FB725C9B62000561D53 /* IkachanIntents.intentdefinition in Sources */,
 				E4400F4E25CD069B00BF94C6 /* Splatoon2Ink.swift in Sources */,
 				E461405B25C9C93B00561D53 /* LocalizedStringKey.swift in Sources */,
+				E48BECC225CD31F200B301D1 /* Collection.swift in Sources */,
 				E4613F0225C9A70C00561D53 /* Shift.swift in Sources */,
 				E4613F0325C9A70C00561D53 /* Schedule.swift in Sources */,
 				E43E136D25C9A3BA008A0FE6 /* IntentHandler.swift in Sources */,
@@ -675,6 +682,7 @@
 				E4613F0925C9A70D00561D53 /* Schedule.swift in Sources */,
 				E46141A325CADF5600561D53 /* ScheduleImages.swift in Sources */,
 				E461405C25C9C93B00561D53 /* LocalizedStringKey.swift in Sources */,
+				E48BECC325CD31F200B301D1 /* Collection.swift in Sources */,
 				E43E137825C9A3BA008A0FE6 /* IntentViewController.swift in Sources */,
 				E4613F5625C9ACA900561D53 /* Date.swift in Sources */,
 				E46141A425CADF5600561D53 /* ShiftView.swift in Sources */,
@@ -708,6 +716,7 @@
 				E46B513325BB341D001F88CE /* URL.swift in Sources */,
 				E4E60D8625B5C9DF0039A6E6 /* ScheduleView.swift in Sources */,
 				E461405925C9C93B00561D53 /* LocalizedStringKey.swift in Sources */,
+				E48BECC025CD31F100B301D1 /* Collection.swift in Sources */,
 				E4703BC725B8722E0093781B /* Impact.swift in Sources */,
 				E468B7A325B282F5001254FE /* ModelData.swift in Sources */,
 				E44D81B125C84BF400C9270B /* UIWindow.swift in Sources */,
@@ -738,6 +747,7 @@
 				E4444EF725BF14A50003A676 /* SmallScheduleView.swift in Sources */,
 				E4444EF525BF14A50003A676 /* MediumScheduleView.swift in Sources */,
 				E461414125CA880500561D53 /* String.swift in Sources */,
+				E48BECC125CD31F100B301D1 /* Collection.swift in Sources */,
 				E4400F2925CD010A00BF94C6 /* ShiftIntentHandler.swift in Sources */,
 				E4400F4925CD069A00BF94C6 /* Splatoon2Ink.swift in Sources */,
 				E4C98CFC25C98099006940E9 /* Image.swift in Sources */,
@@ -782,9 +792,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				E4613FB925C9B62000561D53 /* Base */,
-				E461415925CA9B4E00561D53 /* en */,
-				E461415F25CA9BE600561D53 /* ja */,
-				E461416525CA9E4A00561D53 /* zh-Hans */,
+				E48BECA625CD252800B301D1 /* en */,
+				E48BECB025CD25E400B301D1 /* ja */,
+				E48BECB625CD291100B301D1 /* zh-Hans */,
 			);
 			name = IkachanIntents.intentdefinition;
 			sourceTree = "<group>";

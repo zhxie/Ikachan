@@ -1,4 +1,4 @@
-"0dhvDV" = "Shifts";
+"0dhvDV" = "Shifts for Salmon Run";
 
 "10v9re-Vmno8H" = "Just to confirm, you wanted ‘Ranked Battle’?";
 
@@ -6,57 +6,83 @@
 
 "10v9re-vQ9T9L" = "Just to confirm, you wanted ‘Regular Battle’?";
 
+"1rsv8F-9n3fyF-Vmno8H" = "Current schedule for Ranked Battle";
+
+"1rsv8F-9n3fyF-byIF5m" = "Current schedule for League Battle";
+
+"1rsv8F-9n3fyF-vQ9T9L" = "Current schedule for Regular Battle";
+
+"1rsv8F-YTWkY1-Vmno8H" = "Next schedule for Ranked Battle";
+
+"1rsv8F-YTWkY1-byIF5m" = "Next schedule for League Battle";
+
+"1rsv8F-YTWkY1-vQ9T9L" = "Next schedule for Regular Battle";
+
 "2z9Dkd" = "Mode";
 
-"3WLqS8-Vmno8H" = "Shows schedules for Ranked Battle";
-
-"3WLqS8-byIF5m" = "Shows schedules for League Battle";
-
-"3WLqS8-vQ9T9L" = "Shows schedules for Regular Battle";
+"3ADlh5" = "Rotation";
 
 "6RxUlZ" = "Result";
 
-"KM8zVO" = "Shifts";
+"9n3fyF" = "Current";
+
+"BmtGiG-9n3fyF" = "Just to confirm, you wanted ‘Current’?";
+
+"BmtGiG-YTWkY1" = "Just to confirm, you wanted ‘Next’?";
+
+"BvudQ0-9n3fyF" = "Current shift for Salmon Run";
+
+"BvudQ0-YTWkY1" = "Next shift for Salmon Run";
+
+"KM8zVO" = "${rotation} shift for Salmon Run";
 
 "LTajCZ" = "Shows shifts for Salmon Run.";
 
-"Pj9O6l" = "Here's the shifts for Salmon Run:";
+"Msndu0-9n3fyF" = "There are ${count} options matching ‘Current’.";
+
+"Msndu0-YTWkY1" = "There are ${count} options matching ‘Next’.";
+
+"OhYFhR-9n3fyF" = "Just to confirm, you wanted ‘Current’?";
+
+"OhYFhR-YTWkY1" = "Just to confirm, you wanted ‘Next’?";
+
+"P0sKEJ" = "Rotation";
+
+"Pj9O6l-9n3fyF" = "Here's the current shift for Salmon Run.";
+
+"Pj9O6l-YTWkY1" = "Here's the next shift for Salmon Run.";
 
 "QjGFWc" = "Shifts";
-
-"R0bFHL-Vmno8H" = "Sorry, Ikachan cannot shows the schedules for Ranked Battle.";
-
-"R0bFHL-byIF5m" = "Sorry, Ikachan cannot shows the schedules for League Battle.";
-
-"R0bFHL-vQ9T9L" = "Sorry, Ikachan cannot shows the schedules for Regular Battle.";
 
 "RTR7w4" = "Mode";
 
 "SLejbf" = "${result}";
 
-"U9s5b8-Vmno8H" = "Here's the schedules for Ranked Battle:";
+"U9s5b8-9n3fyF-Vmno8H" = "Here's the current schedule for Ranked Battle.";
 
-"U9s5b8-byIF5m" = "Here's the schedules for League Battle:";
+"U9s5b8-9n3fyF-byIF5m" = "Here's the current schedule for League Battle.";
 
-"U9s5b8-vQ9T9L" = "Here's the schedules for Regular Battle:";
+"U9s5b8-9n3fyF-vQ9T9L" = "Here's the current schedule for Regular Battle.";
+
+"U9s5b8-YTWkY1-Vmno8H" = "Here's the next schedule for Ranked Battle.";
+
+"U9s5b8-YTWkY1-byIF5m" = "Here's the next schedule for League Battle.";
+
+"U9s5b8-YTWkY1-vQ9T9L" = "Here's the next schedule for Regular Battle.";
 
 "Vmno8H" = "Ranked Battle";
-
-"WxZASv-Vmno8H" = "Sorry, Ikachan cannot shows the schedules for Ranked Battle.";
-
-"WxZASv-byIF5m" = "Sorry, Ikachan cannot shows the schedules for League Battle.";
-
-"WxZASv-vQ9T9L" = "Sorry, Ikachan cannot shows the schedules for Regular Battle.";
 
 "XALQ6Y" = "Shows schedules for a mode.";
 
 "XGNvY7" = "Result";
 
+"YG3GWe" = "Rotation";
+
+"YTWkY1" = "Next";
+
 "bXSdro" = "${result}";
 
 "byIF5m" = "League Battle";
-
-"cSE88n" = "Shows shifts for Salmon Run";
 
 "dCtLWO" = "Schedules";
 
@@ -66,7 +92,7 @@
 
 "ffldub-vQ9T9L" = "Schedules for Regular Battle";
 
-"ifyLOV" = "Sorry, Ikachan cannot shows the shifts for Salmon Run.";
+"n2daln" = "Rotation";
 
 "oMMIWT-Vmno8H" = "There are ${count} options matching ‘Ranked Battle’.";
 
@@ -74,11 +100,15 @@
 
 "oMMIWT-vQ9T9L" = "There are ${count} options matching ‘Regular Battle’.";
 
-"pYS45i" = "Schedules for ${gameMode}";
+"od31Z2" = "Rotation";
+
+"pYS45i" = "${rotation} schedule for ${gameMode}";
+
+"v8ZVx6-9n3fyF" = "There are ${count} options matching ‘Current’.";
+
+"v8ZVx6-YTWkY1" = "There are ${count} options matching ‘Next’.";
 
 "vQ9T9L" = "Regular Battle";
 
 "vtf9zV" = "Mode";
-
-"yLTCFR" = "Sorry, Ikachan cannot shows the shifts for Salmon Run.";
 
