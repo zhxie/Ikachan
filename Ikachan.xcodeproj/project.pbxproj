@@ -101,7 +101,6 @@
 		E477990D25B203F900F8AE9F /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990C25B203F900F8AE9F /* Weapon.swift */; };
 		E484FDC725C94694006E748F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4444F3725BF164C0003A676 /* Assets.xcassets */; };
 		E484FDCE25C946C9006E748F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46B514C25BB46C5001F88CE /* InfoPlist.strings */; };
-		E49727DB25C914C800364B2F /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49727D725C9120900364B2F /* Star.swift */; };
 		E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7A2C225B7395500E26B20 /* Localizable.strings */; };
 		E4C98CFC25C98099006940E9 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C98CFA25C98099006940E9 /* Image.swift */; };
 		E4E13CE325C7DBB100150544 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E13CE225C7DBB100150544 /* Color.swift */; };
@@ -211,7 +210,6 @@
 		E477990125B1F1F600F8AE9F /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E477990925B2029C00F8AE9F /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
 		E477990C25B203F900F8AE9F /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
-		E49727D725C9120900364B2F /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		E4B1144A25BD1E7A00303542 /* MediumShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumShiftView.swift; sourceTree = "<group>"; };
 		E4B1144F25BD43B400303542 /* ShiftWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftWidget.swift; sourceTree = "<group>"; };
 		E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkachanWidgetBundle.swift; sourceTree = "<group>"; };
@@ -291,14 +289,6 @@
 			path = IkachanIntentsUI;
 			sourceTree = "<group>";
 		};
-		E4400EF425CC6BD900BF94C6 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E49727D725C9120900364B2F /* Star.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		E4400EFD25CC6C5F00BF94C6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,7 +361,6 @@
 			isa = PBXGroup;
 			children = (
 				E4400EFD25CC6C5F00BF94C6 /* Utils */,
-				E4400EF425CC6BD900BF94C6 /* Models */,
 				E484FDBD25C9460C006E748F /* Views */,
 				E4B1145E25BD5AC600303542 /* DayWidget.swift */,
 				E46B507525B9C2AC001F88CE /* ScheduleWidget.swift */,
@@ -744,7 +733,6 @@
 				E4444F1825BF14FB0003A676 /* ScheduleWidget.swift in Sources */,
 				E4444F0725BF14D10003A676 /* IkachanWidgetBundle.swift in Sources */,
 				E461405A25C9C93B00561D53 /* LocalizedStringKey.swift in Sources */,
-				E49727DB25C914C800364B2F /* Star.swift in Sources */,
 				E4400F2825CD010A00BF94C6 /* ScheduleIntentHandler.swift in Sources */,
 				E4444EF825BF14A50003A676 /* MediumShiftView.swift in Sources */,
 				E4444EF725BF14A50003A676 /* SmallScheduleView.swift in Sources */,
