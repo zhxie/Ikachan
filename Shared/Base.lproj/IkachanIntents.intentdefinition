@@ -422,6 +422,8 @@
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
 				<integer>12</integer>
+				<key>INIntentResponseOutput</key>
+				<string>result</string>
 				<key>INIntentResponseParameters</key>
 				<array>
 					<dict>
@@ -629,6 +631,8 @@
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
 				<integer>13</integer>
+				<key>INIntentResponseOutput</key>
+				<string>result</string>
 				<key>INIntentResponseParameters</key>
 				<array>
 					<dict>

@@ -169,7 +169,7 @@ struct Weapon: Hashable, Codable {
             case .random:
                 return "random"
             case .randomGold:
-                return "random"
+                return "random2"
             }
         }
         
