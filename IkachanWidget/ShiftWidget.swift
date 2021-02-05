@@ -63,9 +63,10 @@ struct ShiftProvider: IntentTimelineProvider {
                 return
             }
             
-            let details = shifts.filter { shift in
+            var details = shifts.filter { shift in
                 shift.stage != nil
             }
+            details = details.suffix(details.count - IntentHandler.rotationConvertTo(rotation: configuration.rotation))
             
             for shift in details {
                 while current < shift.endTime && entries.count < MaxWidgetEntryCount {

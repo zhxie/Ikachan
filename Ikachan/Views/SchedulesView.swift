@@ -119,7 +119,7 @@ struct SchedulesView: View {
     
     func interact(gameMode: Schedule.GameMode) {
         let intent = ScheduleIntent()
-        intent.gameMode = ScheduleIntentHandler.convertFrom(gameMode: gameMode)
+        intent.gameMode = ScheduleIntentHandler.gameModeConvertFrom(gameMode: gameMode)
         // intent.setImage(INImage(named: gameMode.rawValue), forParameterNamed: \ScheduleIntent.gameMode)
         
         INInteraction(intent: intent, response: nil).donate(completion: nil)

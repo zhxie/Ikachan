@@ -26,7 +26,7 @@ struct ScheduleProvider: IntentTimelineProvider {
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.gameMode == ScheduleIntentHandler.convertTo(gameMode: configuration.gameMode)
+                schedule.gameMode == IntentHandler.gameModeConvertTo(gameMode: configuration.gameMode)
             }
             
             if filtered.count > 0 {
@@ -63,9 +63,10 @@ struct ScheduleProvider: IntentTimelineProvider {
                 return
             }
             
-            let filtered = schedules.filter { schedule in
-                schedule.gameMode == ScheduleIntentHandler.convertTo(gameMode: configuration.gameMode)
+            var filtered = schedules.filter { schedule in
+                schedule.gameMode == IntentHandler.gameModeConvertTo(gameMode: configuration.gameMode)
             }
+            filtered = filtered.suffix(filtered.count - IntentHandler.rotationConvertTo(rotation: configuration.rotation))
             
             for schedule in filtered {
                 while current < schedule.endTime && entries.count < MaxWidgetEntryCount {
@@ -119,7 +120,7 @@ struct ScheduleWidgetEntryView : View {
     }
     
     var gameMode: Schedule.GameMode {
-        ScheduleIntentHandler.convertTo(gameMode: entry.configuration.gameMode)
+        IntentHandler.gameModeConvertTo(gameMode: entry.configuration.gameMode)
     }
 }
 

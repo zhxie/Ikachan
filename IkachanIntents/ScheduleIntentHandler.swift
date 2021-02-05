@@ -28,32 +28,8 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
         return self
     }
     
-    static func convertTo(gameMode: GameMode) -> Schedule.GameMode {
-        switch gameMode {
-        case .regular:
-            return .regular
-        case .gachi:
-            return .gachi
-        case .league:
-            return .league
-        default:
-            return .regular
-        }
-    }
-    
-    static func convertFrom(gameMode: Schedule.GameMode) -> GameMode {
-        switch gameMode {
-        case .regular:
-            return .regular
-        case .gachi:
-            return .gachi
-        case .league:
-            return .league
-        }
-    }
-    
     func handle(intent: ScheduleIntent, completion: @escaping (ScheduleIntentResponse) -> Void) {
-        let gameMode = ScheduleIntentHandler.convertTo(gameMode: intent.gameMode)
+        let gameMode = IntentHandler.gameModeConvertTo(gameMode: intent.gameMode)
         fetchSchedules { (schedules, error) in
             guard let schedules = schedules else {
                 completion(ScheduleIntentResponse.init(code: .failure, userActivity: nil))
@@ -62,31 +38,27 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.gameMode == ScheduleIntentHandler.convertTo(gameMode: intent.gameMode)
+                schedule.gameMode == IntentHandler.gameModeConvertTo(gameMode: intent.gameMode)
             }
             
-            var formatter = ""
-            var schedule: Schedule? = nil
-            
-            switch intent.rotation {
-            case .unknown, .current:
-                formatter = "current_schedule"
-                schedule = filtered.at(index: 0)
-            case .next:
-                formatter = "next_schedule"
-                schedule = filtered.at(index: 1)
-            }
-            
-            guard let s = schedule else {
+            guard let schedule = filtered.at(index: IntentHandler.rotationConvertTo(rotation: intent.rotation)) else {
                 completion(ScheduleIntentResponse.init(code: .failure, userActivity: nil))
                 
                 return
             }
             
-            let result = String(format: formatter.localizedIntentsString, gameMode.longDescription.rawValue.localizedIntentsString, s.rule.description.rawValue.localizedIntentsString, s.stageA.description.rawValue.localizedIntentsString, s.stageB.description.rawValue.localizedIntentsString, absoluteLongIntentsTimeSpan(current: Date(), startTime: s.startTime, endTime: s.endTime))
+            var formatter = ""
+            switch intent.rotation {
+            case .unknown, .current:
+                formatter = "current_schedule"
+            case .next:
+                formatter = "next_schedule"
+            }
+            
+            let result = String(format: formatter.localizedIntentsString, gameMode.longDescription.rawValue.localizedIntentsString, schedule.rule.description.rawValue.localizedIntentsString, schedule.stageA.description.rawValue.localizedIntentsString, schedule.stageB.description.rawValue.localizedIntentsString, absoluteLongIntentsTimeSpan(current: Date(), startTime: schedule.startTime, endTime: schedule.endTime))
             
             let encoder = JSONEncoder()
-            let data = try! encoder.encode(s)
+            let data = try! encoder.encode(schedule)
             let activity = NSUserActivity(activityType: String(format: "name.sketch.Ikachan.schedule.%@", gameMode.rawValue))
             activity.userInfo?["schedule"] = data.base64EncodedString()
             let response = ScheduleIntentResponse.success(result: result, rotation: intent.rotation, gameMode: intent.gameMode)

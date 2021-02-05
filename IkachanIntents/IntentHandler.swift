@@ -17,4 +17,39 @@ class IntentHandler: INExtension {
         
         return self
     }
+    
+    static func gameModeConvertTo(gameMode: GameMode) -> Schedule.GameMode {
+        switch gameMode {
+        case .regular:
+            return .regular
+        case .gachi:
+            return .gachi
+        case .league:
+            return .league
+        default:
+            return .regular
+        }
+    }
+    
+    static func gameModeConvertFrom(gameMode: Schedule.GameMode) -> GameMode {
+        switch gameMode {
+        case .regular:
+            return .regular
+        case .gachi:
+            return .gachi
+        case .league:
+            return .league
+        }
+    }
+    
+    static func rotationConvertTo(rotation: Rotation) -> Int {
+        switch rotation {
+        case .current:
+            return 0
+        case .next:
+            return 1
+        case .unknown:
+            return 0
+        }
+    }
 }
