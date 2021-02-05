@@ -66,6 +66,7 @@ struct ShiftProvider: IntentTimelineProvider {
             var details = shifts.filter { shift in
                 shift.stage != nil
             }
+            // HACK: Since there're only 2 detailed shifts at once, it's ok to pop the former one.
             details = details.suffix(details.count - IntentHandler.rotationConvertTo(rotation: configuration.rotation))
             
             for shift in details {

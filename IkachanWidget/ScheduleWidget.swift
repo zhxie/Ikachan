@@ -63,13 +63,14 @@ struct ScheduleProvider: IntentTimelineProvider {
                 return
             }
             
-            var filtered = schedules.filter { schedule in
+            let filtered = schedules.filter { schedule in
                 schedule.gameMode == IntentHandler.gameModeConvertTo(gameMode: configuration.gameMode)
             }
-            filtered = filtered.suffix(filtered.count - IntentHandler.rotationConvertTo(rotation: configuration.rotation))
+            // HACK: Since each schedule lasts for 2 hours, it's ok to add a fixed time shift.
+            let timeShift = 7200 * IntentHandler.rotationConvertTo(rotation: configuration.rotation)
             
             for schedule in filtered {
-                while current < schedule.endTime && entries.count < MaxWidgetEntryCount {
+                while current.addingTimeInterval(TimeInterval(timeShift)) < schedule.endTime && entries.count < MaxWidgetEntryCount {
                     let entry = ScheduleEntry(date: current, configuration: configuration, schedule: schedule)
                     entries.append(entry)
                     urls.insert(schedule.stageA.url)
