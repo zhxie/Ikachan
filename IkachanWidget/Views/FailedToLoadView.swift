@@ -36,9 +36,11 @@ struct FailedToLoadView: View {
 
 struct FailedToLoadView_Previews: PreviewProvider {
     static var previews: some View {
-        FailedToLoadView(accentColor: .black)
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
-        FailedToLoadView(accentColor: .black)
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        Group {
+            FailedToLoadView(accentColor: .black)
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            FailedToLoadView(accentColor: .black)
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+        }
     }
 }

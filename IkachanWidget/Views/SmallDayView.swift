@@ -103,6 +103,7 @@ struct SmallDayView: View {
                         .layoutPriority(1)
                         
                         Spacer()
+                            .frame(minWidth: 0)
                     }
                 }
                 .padding()
@@ -141,9 +142,7 @@ struct SmallDayView: View {
 
 struct SmallDayView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            SmallDayView(current: Date(), schedule: SchedulePlaceholder)
-                .previewContext(WidgetPreviewContext(family: .systemSmall))
-        }
+        SmallDayView(current: Date(), schedule: SchedulePlaceholder)
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

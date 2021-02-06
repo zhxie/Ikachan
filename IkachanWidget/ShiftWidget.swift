@@ -122,9 +122,18 @@ struct ShiftEntry: TimelineEntry {
 struct ShiftWidgetEntryView: View {
     var entry: ShiftProvider.Entry
     
+    @Environment(\.widgetFamily) var family
+    
+    @ViewBuilder
     var body: some View {
-        MediumShiftView(current: entry.date, shift: entry.shift)
-            .widgetURL(URL(string: Shift.url)!)
+        switch family {
+        case .systemSmall:
+            SmallShiftView(current: entry.date, shift: entry.shift)
+                .widgetURL(URL(string: Shift.url)!)
+        default:
+            MediumShiftView(current: entry.date, shift: entry.shift)
+                .widgetURL(URL(string: Shift.url)!)
+        }
     }
 }
 
@@ -137,13 +146,17 @@ struct ShiftWidget: Widget {
         }
         .configurationDisplayName("shift")
         .description("shift_widget_description")
-        .supportedFamilies([.systemMedium])
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
 struct ShiftWidget_Previews: PreviewProvider {
     static var previews: some View {
-        ShiftWidgetEntryView(entry: ShiftEntry(date: Date(), shift: ShiftPlaceholder))
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        Group {
+            ShiftWidgetEntryView(entry: ShiftEntry(date: Date(), shift: ShiftPlaceholder))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            ShiftWidgetEntryView(entry: ShiftEntry(date: Date(), shift: ShiftPlaceholder))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+        }
     }
 }

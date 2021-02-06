@@ -172,6 +172,7 @@ struct MediumShiftView: View {
                                 .layoutPriority(1)
                                 
                                 Spacer()
+                                    .frame(minWidth: 0)
                             }
                         }
                     }

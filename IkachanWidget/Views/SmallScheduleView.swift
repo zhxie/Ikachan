@@ -41,7 +41,7 @@ struct SmallScheduleView: View {
                         }
                         .layoutPriority(1)
                         
-                        if g.size.width >= 137 {
+                        if g.size.width >= IPhone12ProMaxSmallWidgetSafeWidth {
                             Spacer()
                                 .frame(height: 8)
                                 .layoutPriority(1)
@@ -105,6 +105,7 @@ struct SmallScheduleView: View {
                             .layoutPriority(1)
                             
                             Spacer()
+                                .frame(minWidth: 0)
                         }
                     }
                 }
@@ -113,16 +114,13 @@ struct SmallScheduleView: View {
                 FailedToLoadView(accentColor: gameMode.accentColor)
                     .padding()
             }
-            
         }
     }
 }
 
 struct SmallScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            SmallScheduleView(current: Date(), schedule: SchedulePlaceholder, gameMode: SchedulePlaceholder.gameMode)
-                .previewContext(WidgetPreviewContext(family: .systemSmall))
-        }
+        SmallScheduleView(current: Date(), schedule: SchedulePlaceholder, gameMode: SchedulePlaceholder.gameMode)
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

@@ -143,7 +143,6 @@ struct ScheduleWidget_Previews: PreviewProvider {
         Group {
             ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-            
             ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
         }

@@ -31,6 +31,7 @@ struct MediumScheduleView: View {
                                     .layoutPriority(1)
                                 
                                 Spacer()
+                                    .frame(minWidth: 0)
                             }
                             
                             Spacer()
@@ -130,6 +131,7 @@ struct MediumScheduleView: View {
                                 .layoutPriority(1)
                                 
                                 Spacer()
+                                    .frame(minWidth: 0)
                             }
                         }
                     }
@@ -145,9 +147,7 @@ struct MediumScheduleView: View {
 
 struct MediumScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            MediumScheduleView(current: Date(), schedule: SchedulePlaceholder, gameMode: SchedulePlaceholder.gameMode)
-                .previewContext(WidgetPreviewContext(family: .systemMedium))
-        }
+        MediumScheduleView(current: Date(), schedule: SchedulePlaceholder, gameMode: SchedulePlaceholder.gameMode)
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }
