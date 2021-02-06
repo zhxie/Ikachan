@@ -157,6 +157,28 @@
 "version" = "Version";
 "close" = "Close";
 
+// Fortune
+"great_blessing" = "Great\nBlessing";
+"middle_blessing" = "Middle\nBlessing";
+"small_blessing" = "Small\nBlessing";
+"curse" = "Curse";
+"reach_the_top" = "Hooray! We are the first";
+"find_the_goldie_in_the_first_try" = "Wow! We find the Goldie\nat the first attempt";
+"make_friends" = "Let's go to Ranked Battle\nwith friends";
+"keep_the_peace" = "For the peace of the city";
+"love_forecast" = "This is...the feeling of love";
+"jellyfishes_go_to_school" = "Let's go to school!\nSo happy";
+"clear_with_4_lifesavers" = "Did the best until the end,\ngood job";
+"splatfest_100x" = "100x Splatfest!?\nLet's do our best";
+"telephone_is_ringing" = "Oh? The TELEPHONE is\nringing";
+"dj_octavio_escaped" = "DJ Octavio escaped again";
+"mothership_is_sucking_eggs_up" = "Ah! Don't steal them";
+"danger_with_chance" = "So danger...\nbut we still have chance";
+"splatted_by_maws" = "Watch out for Maws";
+"live_sold_out" = "Unfortunately,\nthe live tickets are sold out";
+"unstable_connection" = "Do you want a amulet for\nconnection stability";
+"be_careful_of_the_hydra_splatling" = "Get out of the way!\nMy lord Hydra Splatling\nis here";
+
 // Widget
 "failed_to_load" = "Failed to Load";
 "schedule_widget_description" = "See the current and future schedules for a mode.";

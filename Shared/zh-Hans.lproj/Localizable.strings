@@ -158,6 +158,28 @@
 "version" = "版本";
 "close" = "关闭";
 
+// Fortune
+"great_blessing" = "大 吉";
+"middle_blessing" = "中 吉";
+"small_blessing" = "小 吉";
+"curse" = "凶";
+"reach_the_top" = "太好了！夺得第1位了";
+"find_the_goldie_in_the_first_try" = "好厉害！\n一下就找到金鲑鱼了";
+"make_friends" = "和朋友一起组排吧";
+"keep_the_peace" = "为了世界的和平";
+"love_forecast" = "这就是…恋爱的感觉吧";
+"jellyfishes_go_to_school" = "去学校了！好开心啊";
+"clear_with_4_lifesavers" = "努力到最后了呢，\n好棒好棒";
+"splatfest_100x" = "100倍的祭典！？加油呀";
+"telephone_is_ringing" = "嗯～呣？电话响了";
+"dj_octavio_escaped" = "DJ章鱼将军又逃走啦";
+"mothership_is_sucking_eggs_up" = "啊！\n不要对这些家伙出手啊";
+"danger_with_chance" = "真是好危险啊…\n但是还有机会";
+"splatted_by_maws" = "小心鼹鼠哦";
+"live_sold_out" = "很遗憾，\n演唱会的门票已经卖完了";
+"unstable_connection" = "通信安定的御守，\n要来一个吗";
+"be_careful_of_the_hydra_splatling" = "让开让开！\n我消防栓大人来啦";
+
 // Widget
 "failed_to_load" = "无法载入";
 "schedule_widget_description" = "查看某模式当前和接下来的日程。";

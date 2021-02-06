@@ -157,6 +157,28 @@
 "version" = "バージョン";
 "close" = "閉じる";
 
+// Fortune
+"great_blessing" = "大 吉";
+"middle_blessing" = "中 吉";
+"small_blessing" = "小 吉";
+"curse" = "凶";
+"reach_the_top" = "やった！トップを取った";
+"find_the_goldie_in_the_first_try" = "すごい！金魚一発";
+"make_friends" = "仲間を連れで\nガチにいっこう";
+"keep_the_peace" = "街の平和を守るために";
+"love_forecast" = "これは…恋の予感です";
+"jellyfishes_go_to_school" = "学校に行きます！\nうれしい";
+"clear_with_4_lifesavers" = "最後まで頑張った、\nえらいえらい";
+"splatfest_100x" = "フェスで１００倍！？\n頑張ろう";
+"telephone_is_ringing" = "お～や？\nデンワは来る";
+"dj_octavio_escaped" = "DJタコワサ将軍は\nまだ逃げた";
+"mothership_is_sucking_eggs_up" = "ああ！それらを\n盗まないでください";
+"danger_with_chance" = "危なかった…\nチャンスもうある";
+"splatted_by_maws" = "モグラを気を付けて";
+"live_sold_out" = "残念ながら、\nハイカライブの\nチケットは完売しました";
+"unstable_connection" = "通信安定のお守り、\n要らないか";
+"be_careful_of_the_hydra_splatling" = "どけどけ！\n俺ハイカス様が来るぞ";
+
 // Widget
 "failed_to_load" = "読み込むことができません";
 "schedule_widget_description" = "そのモードのいまとつぎのスケジュールを表示できます。";

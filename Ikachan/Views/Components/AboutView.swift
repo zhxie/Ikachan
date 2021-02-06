@@ -11,9 +11,12 @@ import Kingfisher
 
 struct AboutView: View {
     @Binding var showModal: Bool
+    
     @State var isDownloadingAllResources = false
     @State var progressValue = 0.0
     @State var progressTotal = 0.0
+    
+    @State var showShrine: Bool = false
     
     var body: some View {
         NavigationView {
@@ -120,10 +123,16 @@ struct AboutView: View {
                             .font(Font.system(size: 96))
                             .foregroundColor(.secondary)
                             .onReceive(NotificationCenter.default.publisher(for: .deviceDidShakeNotification)) { _ in
-                                Impact(style: .medium)
+                                if !showShrine {
+                                    Impact(style: .medium)
+                                    
+                                    showShrine.toggle()
+                                }
                             }
                             .onTapGesture {
                                 Impact(style: .light)
+                                
+                                showShrine.toggle()
                             }
                         
                         Text(String(format: "%@ %@", NSLocalizedString("version", comment: ""), version))
@@ -139,6 +148,9 @@ struct AboutView: View {
             .navigationBarItems(trailing: Button("close") {
                 showModal.toggle()
             })
+        }
+        .sheet(isPresented: $showShrine) {
+            ShrineView(showModal: $showShrine)
         }
     }
     
