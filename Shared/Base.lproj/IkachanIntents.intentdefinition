@@ -144,7 +144,7 @@
 					<key>INIntentParameterMetadata</key>
 					<dict>
 						<key>INIntentParameterMetadataDefaultValue</key>
-						<string>unknown</string>
+						<string>regular</string>
 					</dict>
 					<key>INIntentParameterName</key>
 					<string>gameMode</string>
@@ -286,7 +286,7 @@
 					<key>INIntentParameterMetadata</key>
 					<dict>
 						<key>INIntentParameterMetadataDefaultValue</key>
-						<string>unknown</string>
+						<string>regular</string>
 					</dict>
 					<key>INIntentParameterName</key>
 					<string>gameMode</string>
@@ -350,7 +350,7 @@
 					<key>INIntentParameterMetadata</key>
 					<dict>
 						<key>INIntentParameterMetadataDefaultValue</key>
-						<string>unknown</string>
+						<string>current</string>
 					</dict>
 					<key>INIntentParameterName</key>
 					<string>rotation</string>
@@ -559,7 +559,7 @@
 					<key>INIntentParameterMetadata</key>
 					<dict>
 						<key>INIntentParameterMetadataDefaultValue</key>
-						<string>unknown</string>
+						<string>current</string>
 					</dict>
 					<key>INIntentParameterName</key>
 					<string>rotation</string>
