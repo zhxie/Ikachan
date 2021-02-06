@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 import Kingfisher
 
 struct MediumScheduleView: View {
@@ -146,9 +147,7 @@ struct MediumScheduleView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             MediumScheduleView(current: Date(), schedule: SchedulePlaceholder, gameMode: SchedulePlaceholder.gameMode)
-                .previewLayout(.fixed(width: 360, height: 169))
-            MediumScheduleView(current: Date(), schedule: SchedulePlaceholder, gameMode: SchedulePlaceholder.gameMode)
-                .previewLayout(.fixed(width: 291, height: 141))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
         }
     }
 }

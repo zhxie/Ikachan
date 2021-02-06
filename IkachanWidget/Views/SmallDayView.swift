@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct SmallDayView: View {
     var current: Date
@@ -142,9 +143,7 @@ struct SmallDayView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             SmallDayView(current: Date(), schedule: SchedulePlaceholder)
-                .previewLayout(.fixed(width: 169, height: 169))
-            SmallDayView(current: Date(), schedule: SchedulePlaceholder)
-                .previewLayout(.fixed(width: 141, height: 141))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
         }
     }
 }

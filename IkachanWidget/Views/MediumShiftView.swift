@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 import Kingfisher
 
 struct MediumShiftView: View {
@@ -188,9 +189,7 @@ struct MediumShiftView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             MediumShiftView(current: Date(), shift: ShiftPlaceholder)
-                .previewLayout(.fixed(width: 360, height: 169))
-            MediumShiftView(current: Date(), shift: ShiftPlaceholder)
-                .previewLayout(.fixed(width: 291, height: 141))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
         }
     }
 }

@@ -76,7 +76,6 @@ func fortune() -> Omikuji {
     formatter.dateFormat = "yyyyMMdd"
     let date = Int(formatter.string(from: Date()))!
     
-    print(id + date)
     srand48(id + date)
     
     let index = Int(drand48() * Double(kujidutsu.count))

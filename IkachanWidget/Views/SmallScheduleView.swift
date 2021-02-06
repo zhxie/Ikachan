@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 import Kingfisher
 
 struct SmallScheduleView: View {
@@ -121,9 +122,7 @@ struct SmallScheduleView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             SmallScheduleView(current: Date(), schedule: SchedulePlaceholder, gameMode: SchedulePlaceholder.gameMode)
-                .previewLayout(.fixed(width: 169, height: 169))
-            SmallScheduleView(current: Date(), schedule: SchedulePlaceholder, gameMode: SchedulePlaceholder.gameMode)
-                .previewLayout(.fixed(width: 141, height: 141))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
         }
     }
 }

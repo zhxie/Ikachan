@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct FailedToLoadView: View {
     var accentColor: Color
@@ -35,6 +36,9 @@ struct FailedToLoadView: View {
 
 struct FailedToLoadView_Previews: PreviewProvider {
     static var previews: some View {
-        FailedToLoadView(accentColor: .white)
+        FailedToLoadView(accentColor: .black)
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        FailedToLoadView(accentColor: .black)
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }
