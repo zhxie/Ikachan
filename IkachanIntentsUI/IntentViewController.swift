@@ -23,6 +23,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
             let schedule = try! decoder.decode(Schedule.self, from: Data(base64Encoded: scheduleData)!)
             
             let controller = UIHostingController(rootView: ScheduleView(schedule: schedule)
+                                                    .animation(.default)
                                                     .padding())
             addChild(controller)
             controller.view.translatesAutoresizingMaskIntoConstraints = false
@@ -42,6 +43,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
             let shift = try! decoder.decode(Shift.self, from: Data(base64Encoded: shiftData)!)
             
             let controller = UIHostingController(rootView: ShiftView(shift: shift, title: shift.status)
+                                                    .animation(.default)
                                                     .padding())
             addChild(controller)
             controller.view.translatesAutoresizingMaskIntoConstraints = false
