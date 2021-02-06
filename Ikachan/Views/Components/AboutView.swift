@@ -119,9 +119,11 @@ struct AboutView: View {
                     
                     VStack {
                         Image("inkling.splat")
+                            .resizable()
                             .accessibility(label: Text("ika_shrine"))
-                            .font(Font.system(size: 96))
+                            .aspectRatio(contentMode: .fit)
                             .foregroundColor(.secondary)
+                            .frame(width: 96)
                             .onReceive(NotificationCenter.default.publisher(for: .deviceDidShakeNotification)) { _ in
                                 if !showShrine {
                                     Impact(style: .medium)

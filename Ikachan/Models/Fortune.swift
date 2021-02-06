@@ -53,9 +53,9 @@ struct Omikuji: Identifiable {
         var defaultImage: String {
             switch self {
             case .greatBlessing, .middleBlessing, .smallBlessing:
-                return "inkling_splat"
+                return "inkling.splat"
             case .curse:
-                return "inkling_splatted"
+                return "inkling.splatted"
             }
         }
     }
