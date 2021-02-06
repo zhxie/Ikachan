@@ -41,74 +41,78 @@ struct ShiftImages: View {
             }
             
             VStack {
-                VStack(spacing: 0) {
-                    HStack(spacing: 0) {
-                        Rectangle()
-                            .fill(Color(UIColor.systemBackground))
-                            .aspectRatio(16 / 9, contentMode: .fit)
-                            .overlay(
-                                KFImage(URL(string: subImage1)!)
-                                    .placeholder {
-                                        Circle()
-                                            .foregroundColor(Color(UIColor.secondarySystemBackground))
-                                            .aspectRatio(1.0, contentMode: .fit)
-                                            .frame(height: 1080)
-                                    }
-                                    .resizable()
-                                    .accessibility(label: Text(subTitle1))
-                                    .aspectRatio(contentMode: .fit)
-                            )
-                        Rectangle()
-                            .fill(Color(UIColor.systemBackground))
-                            .aspectRatio(16 / 9, contentMode: .fit)
-                            .overlay(
-                                KFImage(URL(string: subImage2)!)
-                                    .placeholder {
-                                        Circle()
-                                            .foregroundColor(Color(UIColor.secondarySystemBackground))
-                                            .aspectRatio(1.0, contentMode: .fit)
-                                            .frame(height: 1080)
-                                    }
-                                    .resizable()
-                                    .accessibility(label: Text(subTitle2))
-                                    .aspectRatio(contentMode: .fit)
-                            )
-                    }
-                    
-                    HStack(spacing: 0) {
-                        Rectangle()
-                            .fill(Color(UIColor.systemBackground))
-                            .aspectRatio(16 / 9, contentMode: .fit)
-                            .overlay(
-                                KFImage(URL(string: subImage3)!)
-                                    .placeholder {
-                                        Circle()
-                                            .foregroundColor(Color(UIColor.secondarySystemBackground))
-                                            .aspectRatio(1.0, contentMode: .fit)
-                                            .frame(height: 1080)
-                                    }
-                                    .resizable()
-                                    .accessibility(label: Text(subTitle3))
-                                    .aspectRatio(contentMode: .fit)
-                            )
-                        Rectangle()
-                            .fill(Color(UIColor.systemBackground))
-                            .aspectRatio(16 / 9, contentMode: .fit)
-                            .overlay(
-                                KFImage(URL(string: subImage4)!)
-                                    .placeholder {
-                                        Circle()
-                                            .foregroundColor(Color(UIColor.secondarySystemBackground))
-                                            .aspectRatio(1.0, contentMode: .fit)
-                                            .frame(height: 1080)
-                                    }
-                                    .resizable()
-                                    .accessibility(label: Text(subTitle4))
-                                    .aspectRatio(contentMode: .fit)
-                            )
-                    }
-                }
-            
+                Rectangle()
+                    .fill(Color.clear)
+                    .aspectRatio(16 / 9, contentMode: .fit)
+                    .overlay(
+                        VStack {
+                            HStack {
+                                Rectangle()
+                                    .fill(Color.clear)
+                                    .aspectRatio(16 / 9, contentMode: .fit)
+                                    .overlay(
+                                        KFImage(URL(string: subImage1)!)
+                                            .placeholder {
+                                                Circle()
+                                                    .foregroundColor(Color(UIColor.secondarySystemBackground))
+                                                    .aspectRatio(1.0, contentMode: .fit)
+                                                    .frame(height: 1080)
+                                            }
+                                            .resizable()
+                                            .accessibility(label: Text(subTitle1))
+                                            .aspectRatio(contentMode: .fit)
+                                    )
+                                Rectangle()
+                                    .fill(Color.clear)
+                                    .aspectRatio(16 / 9, contentMode: .fit)
+                                    .overlay(
+                                        KFImage(URL(string: subImage2)!)
+                                            .placeholder {
+                                                Circle()
+                                                    .foregroundColor(Color(UIColor.secondarySystemBackground))
+                                                    .aspectRatio(1.0, contentMode: .fit)
+                                                    .frame(height: 1080)
+                                            }
+                                            .resizable()
+                                            .accessibility(label: Text(subTitle2))
+                                            .aspectRatio(contentMode: .fit)
+                                )
+                            }
+                            HStack {
+                                Rectangle()
+                                    .fill(Color.clear)
+                                    .aspectRatio(16 / 9, contentMode: .fit)
+                                    .overlay(
+                                        KFImage(URL(string: subImage3)!)
+                                            .placeholder {
+                                                Circle()
+                                                    .foregroundColor(Color(UIColor.secondarySystemBackground))
+                                                    .aspectRatio(1.0, contentMode: .fit)
+                                                    .frame(height: 1080)
+                                            }
+                                            .resizable()
+                                            .accessibility(label: Text(subTitle3))
+                                            .aspectRatio(contentMode: .fit)
+                                )
+                                Rectangle()
+                                    .fill(Color.clear)
+                                    .aspectRatio(16 / 9, contentMode: .fit)
+                                    .overlay(
+                                        KFImage(URL(string: subImage4)!)
+                                            .placeholder {
+                                                Circle()
+                                                    .foregroundColor(Color(UIColor.secondarySystemBackground))
+                                                    .aspectRatio(1.0, contentMode: .fit)
+                                                    .frame(height: 1080)
+                                            }
+                                            .resizable()
+                                            .accessibility(label: Text(subTitle4))
+                                            .aspectRatio(contentMode: .fit)
+                                )
+                            }
+                        }
+                    )
+
                 Text("weapons")
                     .font(.footnote)
                     .foregroundColor(.clear)
