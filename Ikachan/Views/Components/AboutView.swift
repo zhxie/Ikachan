@@ -22,6 +22,53 @@ struct AboutView: View {
     var body: some View {
         NavigationView {
             Form {
+                Section(header: Text("settings")) {
+                    NavigationLink(destination: ZStack {
+                        Color(UIColor.secondarySystemBackground)
+                            .ignoresSafeArea(edges: .all)
+                        
+                        Form {
+                            Section {
+                                HStack {
+                                    Image("kuro")
+                                        .resizable()
+                                        .accessibility(label: Text("kuro"))
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 60)
+                                        .cornerRadius(13.2)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 13.2)
+                                                .stroke(Color(UIColor.secondarySystemBackground), lineWidth: 2)
+                                        )
+                                    Button("kuro") {
+                                        UIApplication.shared.setAlternateIconName(nil)
+                                    }
+                                }
+                                HStack {
+                                    Image("ichi")
+                                        .resizable()
+                                        .accessibility(label: Text("ichi"))
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 60)
+                                        .cornerRadius(13.2)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 13.2)
+                                                .stroke(Color(UIColor.secondarySystemBackground), lineWidth: 2)
+                                        )
+                                    Button("ichi") {
+                                        UIApplication.shared.setAlternateIconName("ichi")
+                                    }
+                                }
+                            }
+                        }
+                        .navigationTitle("app_icon")
+                        .navigationBarItems(trailing: Button("close") {
+                            showModal.toggle()
+                        })
+                    }) {
+                        Text("app_icon")
+                    }
+                }
                 Section(header: Text("support")) {
                     ZStack {
                         HStack {

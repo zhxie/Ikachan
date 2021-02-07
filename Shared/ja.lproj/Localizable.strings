@@ -142,6 +142,10 @@
 "in_the_day" = "日に";
 "at_night" = "夜に";
 "ikachan" = "イカチャン";
+"settings" = "設定";
+"app_icon" = "アプリアイコン";
+"kuro" = "クロ";
+"ichi" = "いち";
 "support" = "サポート";
 "download_all_resources" = "すべてのリソースをダウンロード";
 "reload_widgets" = "ウィジェットをリロード";

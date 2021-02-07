@@ -110,6 +110,9 @@
 		E48BECC325CD31F200B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
 		E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7A2C225B7395500E26B20 /* Localizable.strings */; };
 		E4C98CFC25C98099006940E9 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C98CFA25C98099006940E9 /* Image.swift */; };
+		E4D8F02B25D02A460064B40A /* ichi.png in Resources */ = {isa = PBXBuildFile; fileRef = E4D8F02525D02A450064B40A /* ichi.png */; };
+		E4D8F02C25D02A460064B40A /* ichi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4D8F02625D02A450064B40A /* ichi@2x.png */; };
+		E4D8F02E25D02A460064B40A /* ichi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4D8F02825D02A450064B40A /* ichi@3x.png */; };
 		E4E13CE325C7DBB100150544 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E13CE225C7DBB100150544 /* Color.swift */; };
 		E4E13CE425C7DBB100150544 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E13CE225C7DBB100150544 /* Color.swift */; };
 		E4E60D8325B5C9280039A6E6 /* ScheduleImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60D8225B5C9280039A6E6 /* ScheduleImages.swift */; };
@@ -228,6 +231,9 @@
 		E4B1145E25BD5AC600303542 /* DayWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWidget.swift; sourceTree = "<group>"; };
 		E4C7A2C125B7395500E26B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E4C98CFA25C98099006940E9 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		E4D8F02525D02A450064B40A /* ichi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ichi.png; sourceTree = "<group>"; };
+		E4D8F02625D02A450064B40A /* ichi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ichi@2x.png"; sourceTree = "<group>"; };
+		E4D8F02825D02A450064B40A /* ichi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ichi@3x.png"; sourceTree = "<group>"; };
 		E4E13CE225C7DBB100150544 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E4E60D8225B5C9280039A6E6 /* ScheduleImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleImages.swift; sourceTree = "<group>"; };
 		E4E60D8525B5C9DF0039A6E6 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -349,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				E43E136325C9A398008A0FE6 /* Ikachan.entitlements */,
+				E4D8F01025D01F5B0064B40A /* Icons */,
 				E468B7B325B46070001254FE /* Utils */,
 				E4400F4825CD068D00BF94C6 /* Models */,
 				E47798FD25B1EDDA00F8AE9F /* Views */,
@@ -475,6 +482,16 @@
 				E43E12C425C995C7008A0FE6 /* FailedToLoadView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E4D8F01025D01F5B0064B40A /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				E4D8F02525D02A450064B40A /* ichi.png */,
+				E4D8F02625D02A450064B40A /* ichi@2x.png */,
+				E4D8F02825D02A450064B40A /* ichi@3x.png */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -641,8 +658,11 @@
 			files = (
 				E4405D8225AF64D6002EF1AB /* Preview Assets.xcassets in Resources */,
 				E484FDCE25C946C9006E748F /* InfoPlist.strings in Resources */,
+				E4D8F02B25D02A460064B40A /* ichi.png in Resources */,
 				E46B512D25BB30C7001F88CE /* LICENSE.Kingfisher.md in Resources */,
 				E46B512C25BB30C7001F88CE /* LICENSE.SwiftyJSON.md in Resources */,
+				E4D8F02E25D02A460064B40A /* ichi@3x.png in Resources */,
+				E4D8F02C25D02A460064B40A /* ichi@2x.png in Resources */,
 				E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */,
 				E4405D7F25AF64D6002EF1AB /* Assets.xcassets in Resources */,
 			);

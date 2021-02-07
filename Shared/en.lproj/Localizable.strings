@@ -142,6 +142,10 @@
 "in_the_day" = "In the day";
 "at_night" = "At night";
 "ikachan" = "Ikachan";
+"settings" = "Settings";
+"app_icon" = "App Icon";
+"kuro" = "Kuro";
+"ichi" = "Ichi";
 "support" = "Support";
 "download_all_resources" = "Download All Resources";
 "reload_widgets" = "Reload Widgets";
