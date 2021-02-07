@@ -159,6 +159,7 @@
 
 /* Begin PBXFileReference section */
 		E406EF8D25C8576300683DBD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E413A38C25CF8A72005744AB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IkachanIntents.strings"; sourceTree = "<group>"; };
 		E438EF4125B5E22A005AB9D9 /* ShiftImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftImages.swift; sourceTree = "<group>"; };
 		E438EF4425B5E3F7005AB9D9 /* ShiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsView.swift; sourceTree = "<group>"; };
 		E438EF4725B5E533005AB9D9 /* ShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftView.swift; sourceTree = "<group>"; };
@@ -220,7 +221,6 @@
 		E48BECBF25CD31F100B301D1 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		E48BED3725CD822600B301D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
 		E48BED4125CD855800B301D1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
-		E48BED4725CD855A00B301D1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IkachanIntents.strings"; sourceTree = "<group>"; };
 		E4B1144A25BD1E7A00303542 /* MediumShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumShiftView.swift; sourceTree = "<group>"; };
 		E4B1144F25BD43B400303542 /* ShiftWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftWidget.swift; sourceTree = "<group>"; };
 		E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkachanWidgetBundle.swift; sourceTree = "<group>"; };
@@ -806,7 +806,7 @@
 				E4613FB925C9B62000561D53 /* Base */,
 				E48BED3725CD822600B301D1 /* en */,
 				E48BED4125CD855800B301D1 /* ja */,
-				E48BED4725CD855A00B301D1 /* zh-Hans */,
+				E413A38C25CF8A72005744AB /* zh-Hans */,
 			);
 			name = IkachanIntents.intentdefinition;
 			sourceTree = "<group>";

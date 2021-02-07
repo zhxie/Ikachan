@@ -69,7 +69,11 @@ struct ShiftsView: View {
             AboutView(showModal: $showModal)
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .onAppear(perform: update)
+        .onAppear(perform: {
+            interact()
+            
+            update()
+        })
         .onChange(of: scenePhase) { phase in
             if phase == .active {
                 update()
@@ -102,9 +106,11 @@ struct ShiftsView: View {
     }
     
     func update() {
-        INInteraction(intent: ShiftIntent(), response: nil).donate(completion: nil)
-        
         modelData.updateShifts()
+    }
+    
+    func interact() {
+        INInteraction(intent: ShiftIntent(), response: nil).donate(completion: nil)
     }
 }
 

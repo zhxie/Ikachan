@@ -21,6 +21,9 @@ struct IkachanApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(modelData)
+                .onContinueUserActivity("name.sketch.Ikachan.schedule") { _ in
+                    modelData.tab = .schedule
+                }
                 .onContinueUserActivity("name.sketch.Ikachan.schedule.regular") { _ in
                     modelData.tab = .schedule
                     modelData.gameMode = .regular

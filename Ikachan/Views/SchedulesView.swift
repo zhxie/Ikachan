@@ -90,7 +90,11 @@ struct SchedulesView: View {
             AboutView(showModal: $showModal)
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .onAppear(perform: update)
+        .onAppear(perform: {
+            interact(gameMode: nil)
+            
+            update()
+        })
         .onChange(of: scenePhase) { phase in
             if phase == .active {
                 update()
@@ -112,15 +116,14 @@ struct SchedulesView: View {
     }
     
     func update() {
-        interact(gameMode: modelData.gameMode)
-        
         modelData.updateSchedules()
     }
     
-    func interact(gameMode: Schedule.GameMode) {
+    func interact(gameMode: Schedule.GameMode?) {
         let intent = ScheduleIntent()
-        intent.gameMode = ScheduleIntentHandler.gameModeConvertFrom(gameMode: gameMode)
-        // intent.setImage(INImage(named: gameMode.rawValue), forParameterNamed: \ScheduleIntent.gameMode)
+        if let gameMode = gameMode {
+            intent.gameMode = ScheduleIntentHandler.gameModeConvertFrom(gameMode: gameMode)
+        }
         
         INInteraction(intent: intent, response: nil).donate(completion: nil)
     }
