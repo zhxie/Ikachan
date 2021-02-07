@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreMotion
 import WidgetKit
 import Intents
 import Kingfisher
@@ -18,6 +19,12 @@ struct AboutView: View {
     @State var progressTotal = 0.0
     
     @State var showShrine: Bool = false
+    
+    let motion = CMMotionManager()
+    @State var prevX = 0.0
+    @State var prevY = 0.0
+    @State var prevZ = 0.0
+    @State var timer: Timer? = nil
     
     var body: some View {
         NavigationView {
@@ -177,7 +184,7 @@ struct AboutView: View {
                             .frame(width: 96)
                             .onReceive(NotificationCenter.default.publisher(for: .deviceDidShakeNotification)) { _ in
                                 if !showShrine {
-                                    Impact(style: .medium)
+                                    Impact(style: .heavy)
                                     
                                     showShrine.toggle()
                                 }
@@ -204,6 +211,47 @@ struct AboutView: View {
         }
         .sheet(isPresented: $showShrine) {
             ShrineView(showModal: $showShrine)
+        }
+        .onAppear {
+            if motion.isAccelerometerAvailable {
+                motion.accelerometerUpdateInterval = 2.0 / 60.0
+                motion.startAccelerometerUpdates()
+                
+                timer = Timer(timeInterval: 2.0 / 60.0, repeats: true) { _ in
+                    if let data = motion.accelerometerData {
+                        let x = data.acceleration.x
+                        let y = data.acceleration.y
+                        let z = data.acceleration.z
+                        
+                        let delta = pow((x - prevX), 2) + pow((y - prevY), 2) + pow((z - prevZ), 2)
+                        if delta >= 2 && !showShrine {
+                            switch Int.random(in: 0...3) {
+                            case 0:
+                                Impact(style: .soft)
+                            case 1:
+                                Impact(style: .light)
+                            case 2:
+                                Impact(style: .medium)
+                            case 3:
+                                Impact(style: .rigid)
+                            default:
+                                Impact(style: .heavy)
+                            }
+                        }
+                        
+                        prevX = x
+                        prevY = y
+                        prevZ = z
+                    }
+                }
+                RunLoop.current.add(timer!, forMode: .default)
+            }
+        }
+        .onDisappear {
+            timer?.invalidate()
+            timer = nil
+            
+            motion.stopAccelerometerUpdates()
         }
     }
     
