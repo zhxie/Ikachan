@@ -72,7 +72,7 @@ struct SmallScheduleView: View {
                         }
                         
                         HStack {
-                            Text(timeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime))
+                            Text(absoluteTimeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime))
                                 .fontWeight(.light)
                                 .font(.largeTitle)
                                 .lineLimit(1)
