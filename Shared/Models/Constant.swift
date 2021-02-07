@@ -20,6 +20,9 @@ let SchedulePlaceholder = Schedule(startTime: Date(timeIntervalSince1970: 0), en
 let ShiftPlaceholder = Shift(startTime: Date(timeIntervalSince1970: 30672000), endTime: Date(timeIntervalSince1970: 30736800), stage: Shift.Stage(image: .spawningGrounds), weapons: [Weapon(id: .random, image: ""), Weapon(id: .random, image: ""), Weapon(id: .random, image: ""), Weapon(id: .random, image: "")])
 
 let IkachanScheme = "ikachan"
+let IkachanActivity = "name.sketch.Ikachan"
+let IkachanSchedulesActivity = IkachanActivity + ".schedules"
+let IkachanShiftsActivity = IkachanActivity + ".shifts"
 
 // View
 let IPhone12ProMaxSmallWidgetSafeWidth: CGFloat = 137.0

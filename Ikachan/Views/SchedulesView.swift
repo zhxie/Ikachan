@@ -121,11 +121,15 @@ struct SchedulesView: View {
     
     func interact(gameMode: Schedule.GameMode?) {
         let intent = ScheduleIntent()
+        let response = ScheduleIntentResponse(code: .continueInApp, userActivity: nil)
         if let gameMode = gameMode {
             intent.gameMode = ScheduleIntentHandler.gameModeConvertFrom(gameMode: gameMode)
+            response.userActivity = NSUserActivity(activityType: IkachanSchedulesActivity + "." + gameMode.rawValue)
+        } else {
+            response.userActivity = NSUserActivity(activityType: IkachanSchedulesActivity)
         }
         
-        INInteraction(intent: intent, response: nil).donate(completion: nil)
+        INInteraction(intent: intent, response: response).donate(completion: nil)
     }
 }
 

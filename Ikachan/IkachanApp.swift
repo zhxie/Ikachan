@@ -21,22 +21,22 @@ struct IkachanApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(modelData)
-                .onContinueUserActivity("name.sketch.Ikachan.schedule") { _ in
+                .onContinueUserActivity(IkachanSchedulesActivity) { _ in
                     modelData.tab = .schedule
                 }
-                .onContinueUserActivity("name.sketch.Ikachan.schedule.regular") { _ in
+                .onContinueUserActivity(IkachanSchedulesActivity + "." + Schedule.GameMode.regular.rawValue) { _ in
                     modelData.tab = .schedule
                     modelData.gameMode = .regular
                 }
-                .onContinueUserActivity("name.sketch.Ikachan.schedule.gachi") { _ in
+                .onContinueUserActivity(IkachanSchedulesActivity + "." + Schedule.GameMode.gachi.rawValue) { _ in
                     modelData.tab = .schedule
                     modelData.gameMode = .gachi
                 }
-                .onContinueUserActivity("name.sketch.Ikachan.schedule.league") { _ in
+                .onContinueUserActivity(IkachanSchedulesActivity + "." + Schedule.GameMode.league.rawValue) { _ in
                     modelData.tab = .schedule
                     modelData.gameMode = .league
                 }
-                .onContinueUserActivity("name.sketch.Ikachan.shift") { _ in
+                .onContinueUserActivity(IkachanShiftsActivity) { _ in
                     modelData.tab = .shift
                 }
         }
