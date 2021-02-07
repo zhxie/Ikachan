@@ -147,14 +147,22 @@ private func format(interval: TimeInterval) -> String {
     let hour = (mins % 1440) / 60
     let day = mins / 1440
     
-    var result = String(format: NSLocalizedString("%d_m", comment: ""), min)
-    
-    if hour > 0 {
-        result = String(format: NSLocalizedString("%d_h_%@", comment: ""), hour, result)
-    }
+    var result = ""
     
     if day > 0 {
-        result = String(format: NSLocalizedString("%d_d_%@", comment: ""), day, result)
+        result = String(format: NSLocalizedString("%d_d", comment: ""), day)
+    }
+    
+    if hour > 0 {
+        result = String(format: NSLocalizedString("%@_%d_h", comment: ""), result, hour)
+    }
+    
+    if min > 0 {
+        result = String(format: NSLocalizedString("%@_%d_m", comment: ""), result, min)
+    }
+    
+    if result.isEmpty {
+        result = NSLocalizedString("0_m", comment: "")
     }
     
     return result
@@ -171,13 +179,21 @@ private func format2(interval: TimeInterval) -> String {
         if day >= 10 {
             return String(format: "%dd+", day)
         } else if day > 0 {
-            return String(format: "%dd%dh+", day, hour)
+            if hour > 0 {
+                return String(format: "%dd%dh+", day, hour)
+            } else {
+                return String(format: "%dd+", day)
+            }
         } else {
             return String(format: "%dh+", hour)
         }
     } else {
         if hour > 0 {
-            return String(format: "%dh%dm", hour, min)
+            if min > 0 {
+                return String(format: "%dh%dm", hour, min)
+            } else {
+                return String(format: "%dh", hour)
+            }
         } else {
             return String(format: "%dm", min)
         }
@@ -193,22 +209,26 @@ private func format3(interval: TimeInterval) -> String {
     
     var result = ""
     
-    if min > 1 {
-        result = String(format: "%d_mins".localizedIntentsString, min)
-    } else {
-        result = String(format: "%d_min".localizedIntentsString, min)
+    if day > 1 {
+        result = String(format: "%d_days".localizedIntentsString, day)
+    } else if day > 0 {
+        result = String(format: "%d_day".localizedIntentsString, day)
     }
     
     if hour > 1 {
-        result = String(format: "%d_hours_%@".localizedIntentsString, hour, result)
+        result = String(format: "%@_%d_hours".localizedIntentsString, result, hour)
     } else if hour > 0 {
-        result = String(format: "%d_hour_%@".localizedIntentsString, hour, result)
+        result = String(format: "%@_%d_hour".localizedIntentsString, result, hour)
     }
     
-    if day > 1 {
-        result = String(format: "%d_days_%@".localizedIntentsString, day, result)
-    } else if day > 0 {
-        result = String(format: "%d_day_%@".localizedIntentsString, day, result)
+    if min > 1 {
+        result = String(format: "@s_%d_mins".localizedIntentsString, result, min)
+    } else if min > 0 {
+        result = String(format: "%@_%d_min".localizedIntentsString, result, min)
+    }
+    
+    if result.isEmpty {
+        result = "0_min".localizedIntentsString
     }
     
     return result

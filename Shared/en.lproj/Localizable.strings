@@ -125,9 +125,10 @@
 "%@_remaining" = "%@ remaining";
 "remaining" = "Remaining";
 "in_%@" = "in %@";
-"%d_m" = "%d m";
-"%d_h_%@" = "%d h %@";
-"%d_d_%@" = "%d d %@";
+"%d_d" = "%d d";
+"%@_%d_h" = "%@ %d h";
+"%@_%d_m" = "%@ %d m";
+"0_m" = "0 m";
 
 // UI
 "schedule" = "Schedule";
@@ -193,9 +194,10 @@
 "open_shift" = "Currently, Salmon Run in %1$@ with %2$@, %3$@, %4$@ for loan and %5$@ is open, remaining %6$@.";
 "soon_shift" = "Soon, Salmon Run in %1$@ with %2$@, %3$@, %4$@ and %5$@ for loan will be open in %6$@.";
 "next_shift" = "Next, Salmon Run in %1$@ with %2$@, %3$@, %4$@ and %5$@ for loan will be open in %6$@.";
-"%d_min" = "%d minute";
-"%d_mins" = "%d minutes";
-"%d_hour_%@" = "%d hour %@";
-"%d_hours_%@" = "%d hours %@";
-"%d_day_%@" = "%d day %@";
-"%d_days_%@" = "%d days %@";
+"%d_days" = "%d days";
+"%d_day" = "%d day";
+"%@_%d_hours" = "%@ %d hours";
+"%@_%d_hour" = "%@ %d hour";
+"@s_%d_mins" = "%@ %d minutes";
+"%@_%d_min" = "%@ %d minute";
+"0_min" = "0 minute";
