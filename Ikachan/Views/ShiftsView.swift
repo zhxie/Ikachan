@@ -110,7 +110,7 @@ struct ShiftsView: View {
     }
     
     func interact() {
-        INInteraction(intent: ShiftIntent(), response: ShiftIntentResponse(code: .continueInApp, userActivity: NSUserActivity(activityType: IkachanShiftsActivity))).donate(completion: nil)
+        INInteraction(intent: ShiftIntent(), response: nil).donate(completion: nil)
     }
 }
 

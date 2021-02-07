@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WidgetKit
+import Intents
 import Kingfisher
 
 struct AboutView: View {
@@ -70,6 +71,9 @@ struct AboutView: View {
                         WidgetCenter.shared.reloadAllTimelines()
                     }
                     .disabled(isDownloadingAllResources)
+                    Button("clear_siri_suggestions") {
+                        INInteraction.deleteAll()
+                    }
                     Button("clear_cache") {
                         KingfisherManager.shared.cache.clearMemoryCache()
                         KingfisherManager.shared.cache.clearDiskCache()

@@ -144,6 +144,7 @@
 "support" = "Support";
 "download_all_resources" = "Download All Resources";
 "reload_widgets" = "Reload Widgets";
+"clear_siri_suggestions" = "Clear Siri Suggestions";
 "clear_cache" = "Clear Cache";
 "about" = "About";
 "repository" = "Repository";

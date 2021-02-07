@@ -32,7 +32,7 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
         let gameMode = IntentHandler.gameModeConvertTo(gameMode: intent.gameMode)
         fetchSchedules { (schedules, error) in
             guard let schedules = schedules else {
-                completion(ScheduleIntentResponse.init(code: .failure, userActivity: nil))
+                completion(ScheduleIntentResponse(code: .failure, userActivity: nil))
 
                 return
             }
@@ -42,7 +42,7 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
             }
             
             guard let schedule = filtered.at(index: IntentHandler.rotationConvertTo(rotation: intent.rotation)) else {
-                completion(ScheduleIntentResponse.init(code: .failure, userActivity: nil))
+                completion(ScheduleIntentResponse(code: .failure, userActivity: nil))
                 
                 return
             }

@@ -144,6 +144,7 @@
 "support" = "サポート";
 "download_all_resources" = "すべてのリソースをダウンロード";
 "reload_widgets" = "ウィジェットをリロード";
+"clear_siri_suggestions" = "Siriからの提案を消去する";
 "clear_cache" = "キャッシュを消去する";
 "about" = "イカチャンについて";
 "repository" = "リポジトリ";

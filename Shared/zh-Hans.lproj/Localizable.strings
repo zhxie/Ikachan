@@ -144,6 +144,7 @@
 "support" = "支持";
 "download_all_resources" = "下载全部资源";
 "reload_widgets" = "重新载入小组件";
+"clear_siri_suggestions" = "清除Siri建议";
 "clear_cache" = "清除缓存";
 "about" = "关于";
 "repository" = "代码仓库";

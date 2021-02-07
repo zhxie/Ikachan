@@ -245,21 +245,12 @@
 			<string>Schedule</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
-				<key></key>
-				<dict>
-					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<false/>
-					<key>INIntentParameterCombinationTitle</key>
-					<string>Schedules</string>
-					<key>INIntentParameterCombinationTitleID</key>
-					<string>FG6skP</string>
-				</dict>
 				<key>gameMode</key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<false/>
+					<true/>
 					<key>INIntentParameterCombinationTitle</key>
 					<string>Schedules for ${gameMode}</string>
 					<key>INIntentParameterCombinationTitleID</key>
@@ -532,7 +523,7 @@
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<false/>
+					<true/>
 					<key>INIntentParameterCombinationTitle</key>
 					<string>Shifts for Salmon Run</string>
 					<key>INIntentParameterCombinationTitleID</key>

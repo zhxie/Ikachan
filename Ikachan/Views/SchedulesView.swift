@@ -91,7 +91,7 @@ struct SchedulesView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: {
-            interact(gameMode: nil)
+            interact(gameMode: modelData.gameMode)
             
             update()
         })
@@ -119,17 +119,11 @@ struct SchedulesView: View {
         modelData.updateSchedules()
     }
     
-    func interact(gameMode: Schedule.GameMode?) {
+    func interact(gameMode: Schedule.GameMode) {
         let intent = ScheduleIntent()
-        let response = ScheduleIntentResponse(code: .continueInApp, userActivity: nil)
-        if let gameMode = gameMode {
-            intent.gameMode = ScheduleIntentHandler.gameModeConvertFrom(gameMode: gameMode)
-            response.userActivity = NSUserActivity(activityType: IkachanSchedulesActivity + "." + gameMode.rawValue)
-        } else {
-            response.userActivity = NSUserActivity(activityType: IkachanSchedulesActivity)
-        }
+        intent.gameMode = ScheduleIntentHandler.gameModeConvertFrom(gameMode: gameMode)
         
-        INInteraction(intent: intent, response: response).donate(completion: nil)
+        INInteraction(intent: intent, response: nil).donate(completion: nil)
     }
 }
 
