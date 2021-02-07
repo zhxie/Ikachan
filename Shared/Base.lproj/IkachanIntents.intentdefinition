@@ -116,6 +116,8 @@
 		<dict>
 			<key>INIntentCategory</key>
 			<string>information</string>
+			<key>INIntentDescription</key>
+			<string>Another day becoming a squid.</string>
 			<key>INIntentDescriptionID</key>
 			<string>UJkkfa</string>
 			<key>INIntentEligibleForWidgets</key>
