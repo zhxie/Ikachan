@@ -30,6 +30,16 @@ struct AboutView: View {
         NavigationView {
             Form {
                 Section(header: Text("settings")) {
+                    Link("language", destination: URL(string: UIApplication.openSettingsURLString)!)
+                    Button("siri_and_shortcuts") {
+                        let url = URL(string: "shortcuts://")!
+                        
+                        if UIApplication.shared.canOpenURL(url) {
+                            UIApplication.shared.open(url)
+                        } else {
+                            UIApplication.shared.open(URL(string: "itms-apps://apple.com/app/id915249334")!)
+                        }
+                    }
                     NavigationLink(destination: ZStack {
                         Color(UIColor.secondarySystemBackground)
                             .ignoresSafeArea(edges: .all)
@@ -271,7 +281,6 @@ struct AboutView: View {
                 let z = data.acceleration.z
                 
                 let delta = pow((x - prevX), 2) + pow((y - prevY), 2) + pow((z - prevZ), 2)
-                print(delta)
                 let rand = Int.random(in: 0...Int(delta))
                 switch rand {
                 case 0:
