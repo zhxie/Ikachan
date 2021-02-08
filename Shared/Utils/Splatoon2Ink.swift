@@ -87,11 +87,17 @@ func fetchShifts(completion:@escaping ([Shift]?, Error?) -> Void) {
             if let json = try? JSON(data: data!) {
                 var shifts: [Shift] = []
                 
-                for (_, value) in json {
-                    let ss = value.arrayValue
-                    for shift in ss {
-                        shifts.append(parseShift(shift: shift))
-                    }
+                // Details
+                let detailsJSON = json["details"].arrayValue
+                for shift in detailsJSON {
+                    shifts.append(parseShift(shift: shift))
+                }
+                
+                // Schedules
+                var schedulesJSON = json["schedules"].arrayValue
+                schedulesJSON = schedulesJSON.suffix(schedulesJSON.count - detailsJSON.count)
+                for shift in schedulesJSON {
+                    shifts.append(parseShift(shift: shift))
                 }
                 
                 completion(shifts, error)
