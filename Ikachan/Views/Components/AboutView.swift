@@ -87,48 +87,43 @@ struct AboutView: View {
                     }
                 }
                 Section(header: Text("support")) {
-                    ZStack {
-                        HStack {
-                            Button("download_all_resources") {
-                                var urls: Set<String> = []
-                                var resources: [Resource] = []
-                                
-                                for stage in Schedule.Stage.StageId.allCases {
-                                    urls.insert(Splatnet2URL + stage.defaultURL)
-                                }
-                                for stage in Shift.Stage.StageImage.allCases {
-                                    urls.insert(Splatnet2URL + stage.defaultURL)
-                                }
-                                for weapon in Weapon.WeaponId.allCases {
-                                    urls.insert(Splatnet2URL + weapon.defaultURL)
-                                }
-                                
-                                progressValue = 0
-                                progressTotal = Double(urls.count)
-                                isDownloadingAllResources = true
+                    HStack {
+                        Button("download_all_resources") {
+                            var urls: Set<String> = []
+                            var resources: [Resource] = []
+                            
+                            for stage in Schedule.Stage.StageId.allCases {
+                                urls.insert(Splatnet2URL + stage.defaultURL)
+                            }
+                            for stage in Shift.Stage.StageImage.allCases {
+                                urls.insert(Splatnet2URL + stage.defaultURL)
+                            }
+                            for weapon in Weapon.WeaponId.allCases {
+                                urls.insert(Splatnet2URL + weapon.defaultURL)
+                            }
+                            
+                            progressValue = 0
+                            progressTotal = Double(urls.count)
+                            isDownloadingAllResources = true
 
-                                for url in urls {
-                                    resources.append(ImageResource(downloadURL: URL(string: url)!))
-                                }
-                                ImagePrefetcher(resources: resources, progressBlock: { (skipped, failed, completed) in
-                                    self.progressValue = Double(skipped.count + failed.count + completed.count)
-                                }) { (_, _, _) in
-                                    self.isDownloadingAllResources = false
-                                }
-                                .start()
+                            for url in urls {
+                                resources.append(ImageResource(downloadURL: URL(string: url)!))
                             }
-                            .disabled(isDownloadingAllResources)
-                            
-                            Spacer()
+                            ImagePrefetcher(resources: resources, progressBlock: { (skipped, failed, completed) in
+                                self.progressValue = Double(skipped.count + failed.count + completed.count)
+                            }) { (_, _, _) in
+                                self.isDownloadingAllResources = false
+                            }
+                            .start()
                         }
+                        .disabled(isDownloadingAllResources)
+                        .layoutPriority(1)
                         
-                        HStack {
-                            Spacer()
-                            
-                            if isDownloadingAllResources {
-                                ProgressView(value: progressValue, total: progressTotal)
-                                    .frame(minWidth: 50, maxWidth: 100)
-                            }
+                        Spacer()
+                        
+                        if isDownloadingAllResources {
+                            ProgressView(value: progressValue, total: progressTotal)
+                                .frame(maxWidth: 100)
                         }
                     }
                     Button("reload_widgets") {
