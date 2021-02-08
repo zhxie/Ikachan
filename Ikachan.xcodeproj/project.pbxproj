@@ -55,7 +55,6 @@
 		E445761E25CE99AE004AA74D /* ShrineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E445761D25CE99AE004AA74D /* ShrineView.swift */; };
 		E445762425CE9B70004AA74D /* Fortune.swift in Sources */ = {isa = PBXBuildFile; fileRef = E445762325CE9B70004AA74D /* Fortune.swift */; };
 		E445762A25CEF5A9004AA74D /* SmallShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E445762925CEF5A9004AA74D /* SmallShiftView.swift */; };
-		E44D81B125C84BF400C9270B /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44D81B025C84BF400C9270B /* UIWindow.swift */; };
 		E4613F0225C9A70C00561D53 /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990925B2029C00F8AE9F /* Shift.swift */; };
 		E4613F0325C9A70C00561D53 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E4613F0825C9A70C00561D53 /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990925B2029C00F8AE9F /* Shift.swift */; };
@@ -193,7 +192,6 @@
 		E445761D25CE99AE004AA74D /* ShrineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrineView.swift; sourceTree = "<group>"; };
 		E445762325CE9B70004AA74D /* Fortune.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fortune.swift; sourceTree = "<group>"; };
 		E445762925CEF5A9004AA74D /* SmallShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallShiftView.swift; sourceTree = "<group>"; };
-		E44D81B025C84BF400C9270B /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		E4613F8F25C9AFD100561D53 /* ScheduleIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleIntentHandler.swift; sourceTree = "<group>"; };
 		E4613F9C25C9AFF700561D53 /* ShiftIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftIntentHandler.swift; sourceTree = "<group>"; };
 		E4613FB925C9B62000561D53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/IkachanIntents.intentdefinition; sourceTree = "<group>"; };
@@ -408,7 +406,6 @@
 			isa = PBXGroup;
 			children = (
 				E4703BC625B8722E0093781B /* Impact.swift */,
-				E44D81B025C84BF400C9270B /* UIWindow.swift */,
 				E46B513225BB341D001F88CE /* URL.swift */,
 			);
 			path = Utils;
@@ -748,7 +745,6 @@
 				E48BECC025CD31F100B301D1 /* Collection.swift in Sources */,
 				E4703BC725B8722E0093781B /* Impact.swift in Sources */,
 				E468B7A325B282F5001254FE /* ModelData.swift in Sources */,
-				E44D81B125C84BF400C9270B /* UIWindow.swift in Sources */,
 				E445762425CE9B70004AA74D /* Fortune.swift in Sources */,
 				E4E60D8925B5CBC80039A6E6 /* SchedulesView.swift in Sources */,
 				E468B7AD25B34AFC001254FE /* Constant.swift in Sources */,

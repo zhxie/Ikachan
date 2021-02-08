@@ -21,9 +21,11 @@ struct AboutView: View {
     @State var showShrine: Bool = false
     
     let motion = CMMotionManager()
-    @State var prevX = 0.0
-    @State var prevY = 0.0
-    @State var prevZ = 0.0
+    @State var prevX = Double.nan
+    @State var prevY = Double.nan
+    @State var prevZ = Double.nan
+    @State var impactCount = 0
+    @State var stableFrameCount = 0
     @State var timer: Timer? = nil
     
     var body: some View {
@@ -197,13 +199,6 @@ struct AboutView: View {
                             .aspectRatio(contentMode: .fit)
                             .foregroundColor(.secondary)
                             .frame(width: 96)
-                            .onReceive(NotificationCenter.default.publisher(for: .deviceDidShakeNotification)) { _ in
-                                if !showShrine {
-                                    Impact(style: .heavy)
-                                    
-                                    showShrine.toggle()
-                                }
-                            }
                             .onTapGesture {
                                 Impact(style: .light)
                                 
@@ -285,21 +280,39 @@ struct AboutView: View {
                 let y = data.acceleration.y
                 let z = data.acceleration.z
                 
-                let delta = pow((x - prevX), 2) + pow((y - prevY), 2) + pow((z - prevZ), 2)
-                let rand = Int.random(in: 0...Int(delta))
-                switch rand {
-                case 0:
-                    break
-                case 1..<3:
-                    Impact(style: .soft)
-                case 3..<5:
-                    Impact(style: .light)
-                case 5..<9:
-                    Impact(style: .medium)
-                case 9..<13:
-                    Impact(style: .rigid)
-                default:
-                    Impact(style: .heavy)
+                if !prevX.isNaN && !prevY.isNaN && !prevZ.isNaN {
+                    let delta = pow((x - prevX), 2) + pow((y - prevY), 2) + pow((z - prevZ), 2)
+                    if delta >= 1 {
+                        let rand = Int.random(in: 0...Int(delta))
+                        switch rand {
+                        case 0..<2:
+                            Impact(style: .soft)
+                        case 2..<4:
+                            Impact(style: .light)
+                        case 4..<8:
+                            Impact(style: .medium)
+                        case 8..<12:
+                            Impact(style: .rigid)
+                        default:
+                            Impact(style: .heavy)
+                        }
+                        
+                        impactCount += 1
+                        stableFrameCount = 0
+                    } else {
+                        if stableFrameCount >= 10 {
+                            if impactCount >= 10 {
+                                Impact(style: .heavy)
+                                
+                                showShrine.toggle()
+                            } else {
+                                impactCount = 0
+                                stableFrameCount = 0
+                            }
+                        }
+                        
+                        stableFrameCount += 1
+                    }
                 }
                 
                 prevX = x
@@ -307,9 +320,11 @@ struct AboutView: View {
                 prevZ = z
             }
         } else {
-            prevX = 0
-            prevY = 0
-            prevZ = 0
+            prevX = Double.nan
+            prevY = Double.nan
+            prevZ = Double.nan
+            impactCount = 0
+            stableFrameCount = 0
         }
     }
 }
