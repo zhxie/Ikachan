@@ -151,13 +151,23 @@ struct AboutView: View {
                     Link("designer_shooky", destination: URL(string: isChinese ? "https://weibo.com/u/6622470330" : "https://twitter.com/ShellShooky")!)
                 }
                 
-                Section(header: Text("data_source")) {
-                    Link("splatoon2_ink", destination: URL(string: "https://splatoon2.ink/")!)
-                }
-                
                 Section(footer: Text("disclaimer")) {
                     NavigationLink(destination: ScrollView {
                         VStack(alignment: .leading) {
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Text("data_source")
+                                        .bold()
+
+                                    Link(destination: URL(string: "https://splatoon2.ink/")!) {
+                                        Text("Splatoon2.ink")
+                                            .bold()
+                                    }
+                                }
+                                
+                                Text("")
+                            }
+                            
                             VStack(alignment: .leading) {
                                 Text("Kingfisher")
                                     .bold()
