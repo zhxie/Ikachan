@@ -217,33 +217,7 @@ struct AboutView: View {
                 motion.accelerometerUpdateInterval = 2.0 / 60.0
                 motion.startAccelerometerUpdates()
                 
-                timer = Timer(timeInterval: 2.0 / 60.0, repeats: true) { _ in
-                    if let data = motion.accelerometerData {
-                        let x = data.acceleration.x
-                        let y = data.acceleration.y
-                        let z = data.acceleration.z
-                        
-                        let delta = pow((x - prevX), 2) + pow((y - prevY), 2) + pow((z - prevZ), 2)
-                        if delta >= 2 && !showShrine {
-                            switch Int.random(in: 0...3) {
-                            case 0:
-                                Impact(style: .soft)
-                            case 1:
-                                Impact(style: .light)
-                            case 2:
-                                Impact(style: .medium)
-                            case 3:
-                                Impact(style: .rigid)
-                            default:
-                                Impact(style: .heavy)
-                            }
-                        }
-                        
-                        prevX = x
-                        prevY = y
-                        prevZ = z
-                    }
-                }
+                timer = Timer(timeInterval: 2.0 / 60.0, repeats: true, block: timeout)
                 RunLoop.current.add(timer!, forMode: .default)
             }
         }
@@ -287,6 +261,42 @@ struct AboutView: View {
         let build = dictionary["CFBundleVersion"] as! String
         
         return String(format: "%@ (%@)", version, build)
+    }
+    
+    func timeout(_: Timer) {
+        if !showShrine {
+            if let data = motion.accelerometerData {
+                let x = data.acceleration.x
+                let y = data.acceleration.y
+                let z = data.acceleration.z
+                
+                let delta = pow((x - prevX), 2) + pow((y - prevY), 2) + pow((z - prevZ), 2)
+                print(delta)
+                let rand = Int.random(in: 0...Int(delta))
+                switch rand {
+                case 0:
+                    break
+                case 1..<3:
+                    Impact(style: .soft)
+                case 3..<5:
+                    Impact(style: .light)
+                case 5..<9:
+                    Impact(style: .medium)
+                case 9..<13:
+                    Impact(style: .rigid)
+                default:
+                    Impact(style: .heavy)
+                }
+                
+                prevX = x
+                prevY = y
+                prevZ = z
+            }
+        } else {
+            prevX = 0
+            prevY = 0
+            prevZ = 0
+        }
     }
 }
 
