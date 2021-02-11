@@ -19,6 +19,7 @@ struct ShrineView: View {
                 VStack(spacing: 0) {
                     Spacer()
                         .frame(height: 20)
+                        .layoutPriority(1)
 
                     VStack(spacing: 2) {
                         Rectangle()
@@ -27,6 +28,7 @@ struct ShrineView: View {
                         Rectangle()
                             .frame(height: 1)
                     }
+                    .layoutPriority(1)
                     
                     VStack {
                         Text(omikuji.fortune.description)
@@ -35,6 +37,7 @@ struct ShrineView: View {
                             .multilineTextAlignment(.center)
                     }
                     .padding(.vertical)
+                    .layoutPriority(1)
                     
                     VStack(spacing: 2) {
                         Rectangle()
@@ -43,9 +46,11 @@ struct ShrineView: View {
                         Rectangle()
                             .frame(height: 4)
                     }
+                    .layoutPriority(1)
                     
                     Spacer()
                         .frame(height: 20)
+                        .layoutPriority(1)
                     
                     if omikuji.image.isEmpty {
                         Rectangle()
@@ -59,11 +64,13 @@ struct ShrineView: View {
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 150)
                             )
+                            .layoutPriority(1)
                     } else {
                         Image(omikuji.image)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .cornerRadius(15.0)
+                            .layoutPriority(1)
                     }
                     
                     

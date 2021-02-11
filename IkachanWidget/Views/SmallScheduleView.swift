@@ -25,10 +25,10 @@ struct SmallScheduleView: View {
                         HStack(spacing: 0) {
                             Text(g.size.width >= CompactSmallWidgetSafeWidth ? scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime) : scheduleTimePeriod2(startTime: schedule.startTime, endTime: schedule.endTime))
                                 .accessibility(label: Text(scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime)))
-                                .layoutPriority(1)
                                 .font(.caption2)
                                 .foregroundColor(.secondary)
                                 .lineLimit(1)
+                                .layoutPriority(1)
                             
                             Spacer()
                             
