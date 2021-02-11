@@ -13,9 +13,9 @@ class IntentHandler: INExtension {
             return ScheduleIntentHandler()
         } else if intent is ShiftIntent {
             return ShiftIntentHandler()
+        } else {
+            return self
         }
-        
-        return self
     }
     
     static func gameModeConvertTo(gameMode: GameMode) -> Schedule.GameMode {

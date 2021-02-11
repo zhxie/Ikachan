@@ -19,8 +19,8 @@ struct FailedToLoadView: View {
                 ZStack {
                     Image("inkling_splatted")
                         .resizable()
-                        .scaledToFit()
                         .accessibility(label: Text("failed_to_load"))
+                        .aspectRatio(contentMode: .fit)
                         .blending(color: accentColor)
                 }
                 .frame(height: g.size.height / 3)

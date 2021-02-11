@@ -31,7 +31,6 @@ struct ScheduleImages: View {
                 
                 Text(titleA)
                     .font(.footnote)
-                    .foregroundColor(.primary)
                     .lineLimit(1)
             }
             
@@ -50,7 +49,6 @@ struct ScheduleImages: View {
                 
                 Text(titleB)
                     .font(.footnote)
-                    .foregroundColor(.primary)
                     .lineLimit(1)
             }
         }

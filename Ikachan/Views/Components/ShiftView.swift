@@ -18,7 +18,6 @@ struct ShiftView: View {
                     Text(title)
                         .font(.title2)
                         .fontWeight(.bold)
-                        .foregroundColor(.primary)
                         .lineLimit(1)
                     Text(status(startTime: shift.startTime, endTime: shift.endTime))
                         .font(.callout)

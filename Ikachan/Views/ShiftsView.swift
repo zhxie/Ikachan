@@ -65,10 +65,10 @@ struct ShiftsView: View {
                 }
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .sheet(isPresented: $showModal) {
             AboutView(showModal: $showModal)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: {
             interact()
             

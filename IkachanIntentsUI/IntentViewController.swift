@@ -22,9 +22,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
             let decoder = JSONDecoder()
             let schedule = try! decoder.decode(Schedule.self, from: Data(base64Encoded: scheduleData)!)
             
-            let controller = UIHostingController(rootView: ScheduleView(schedule: schedule)
-                                                    .animation(.default)
-                                                    .padding())
+            let controller = UIHostingController(rootView: ScheduleView(schedule: schedule).animation(.default).padding())
             addChild(controller)
             controller.view.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(controller.view)
@@ -42,9 +40,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
             let decoder = JSONDecoder()
             let shift = try! decoder.decode(Shift.self, from: Data(base64Encoded: shiftData)!)
             
-            let controller = UIHostingController(rootView: ShiftView(shift: shift, title: shift.status)
-                                                    .animation(.default)
-                                                    .padding())
+            let controller = UIHostingController(rootView: ShiftView(shift: shift, title: shift.status).animation(.default).padding())
             addChild(controller)
             controller.view.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(controller.view)
@@ -64,7 +60,6 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
     }
 
     var desiredSize: CGSize {
-        let width = self.extensionContext!.hostedViewMaximumAllowedSize.width
-        return CGSize(width: width, height: 210)
+        CGSize(width: self.extensionContext!.hostedViewMaximumAllowedSize.width, height: 210)
     }
 }

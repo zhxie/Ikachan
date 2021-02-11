@@ -70,7 +70,9 @@ func fortune() -> Omikuji {
     
     let array: [UInt8] = [uuid?.8 ?? 0, uuid?.9 ?? 0, uuid?.10 ?? 0, uuid?.11 ?? 0, uuid?.12 ?? 0, uuid?.13 ?? 0, uuid?.14 ?? 0, uuid?.15 ?? 0]
     let data = Data(array)
-    let id = data.withUnsafeBytes { $0.load(as: Int.self) }
+    let id = data.withUnsafeBytes {
+        $0.load(as: Int.self)
+    }
     
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyyMMdd"

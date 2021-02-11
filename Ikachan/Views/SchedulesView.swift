@@ -86,10 +86,10 @@ struct SchedulesView: View {
                 }
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .sheet(isPresented: $showModal) {
             AboutView(showModal: $showModal)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: {
             interact(gameMode: modelData.gameMode)
             

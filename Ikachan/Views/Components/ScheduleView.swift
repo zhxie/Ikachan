@@ -17,7 +17,6 @@ struct ScheduleView: View {
                     Text(schedule.rule.description)
                         .font(.title2)
                         .fontWeight(.bold)
-                        .foregroundColor(.primary)
                         .lineLimit(1)
                     Text(status(startTime: schedule.startTime, endTime: schedule.endTime))
                         .font(.callout)

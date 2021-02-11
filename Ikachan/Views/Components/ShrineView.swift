@@ -22,11 +22,9 @@ struct ShrineView: View {
 
                     VStack(spacing: 2) {
                         Rectangle()
-                            .foregroundColor(.primary)
                             .frame(height: 4)
                         
                         Rectangle()
-                            .foregroundColor(.primary)
                             .frame(height: 1)
                     }
                     
@@ -34,18 +32,15 @@ struct ShrineView: View {
                         Text(omikuji.fortune.description)
                             .font(Font.custom(fortuneFontFamily, size: fortuneFontSize))
                             .fontWeight(.black)
-                            .foregroundColor(.primary)
                             .multilineTextAlignment(.center)
                     }
                     .padding(.vertical)
                     
                     VStack(spacing: 2) {
                         Rectangle()
-                            .foregroundColor(.primary)
                             .frame(height: 1)
                         
                         Rectangle()
-                            .foregroundColor(.primary)
                             .frame(height: 4)
                     }
                     
@@ -76,7 +71,6 @@ struct ShrineView: View {
                     
                     Text(omikuji.description)
                         .font(Font.custom(descriptionFontFamily, size: 24.0))
-                        .foregroundColor(.primary)
                         .multilineTextAlignment(.center)
                     
                     Spacer()

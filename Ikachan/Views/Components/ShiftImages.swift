@@ -37,7 +37,6 @@ struct ShiftImages: View {
                 
                 Text(title)
                     .font(.footnote)
-                    .foregroundColor(.primary)
             }
             
             VStack {

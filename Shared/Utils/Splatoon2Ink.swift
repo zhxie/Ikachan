@@ -16,33 +16,29 @@ func fetchSchedules(completion:@escaping ([Schedule]?, Error?) -> Void) {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if error != nil {
                 completion(nil, error)
-                
-                return
-            }
-            
-            let response = response as! HTTPURLResponse
-            let status = response.statusCode
-            guard (200...299).contains(status) else {
-                completion(nil, error)
-                
-                return
-            }
-            
-            if let json = try? JSON(data: data!) {
-                var schedules: [Schedule] = []
-                
-                for (_, value) in json {
-                    let ss = value.arrayValue
-                    for schedule in ss {
-                        schedules.append(parseSchedule(schedule: schedule))
-                    }
+            } else {
+                let response = response as! HTTPURLResponse
+                let status = response.statusCode
+                guard (200...299).contains(status) else {
+                    completion(nil, error)
+                    
+                    return
                 }
                 
-                completion(schedules, error)
-            } else {
-                completion(nil, error)
-                
-                return
+                if let json = try? JSON(data: data!) {
+                    var schedules: [Schedule] = []
+                    
+                    for (_, value) in json {
+                        let ss = value.arrayValue
+                        for schedule in ss {
+                            schedules.append(parseSchedule(schedule: schedule))
+                        }
+                    }
+                    
+                    completion(schedules, error)
+                } else {
+                    completion(nil, error)
+                }
             }
         }
         .resume()
@@ -72,39 +68,35 @@ func fetchShifts(completion:@escaping ([Shift]?, Error?) -> Void) {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if error != nil {
                 completion(nil, error)
-                
-                return
-            }
-            
-            let response = response as! HTTPURLResponse
-            let status = response.statusCode
-            guard (200...299).contains(status) else {
-                completion(nil, error)
-                
-                return
-            }
-            
-            if let json = try? JSON(data: data!) {
-                var shifts: [Shift] = []
-                
-                // Details
-                let detailsJSON = json["details"].arrayValue
-                for shift in detailsJSON {
-                    shifts.append(parseShift(shift: shift))
-                }
-                
-                // Schedules
-                var schedulesJSON = json["schedules"].arrayValue
-                schedulesJSON = schedulesJSON.suffix(schedulesJSON.count - detailsJSON.count)
-                for shift in schedulesJSON {
-                    shifts.append(parseShift(shift: shift))
-                }
-                
-                completion(shifts, error)
             } else {
-                completion(nil, error)
+                let response = response as! HTTPURLResponse
+                let status = response.statusCode
+                guard (200...299).contains(status) else {
+                    completion(nil, error)
+                    
+                    return
+                }
                 
-                return
+                if let json = try? JSON(data: data!) {
+                    var shifts: [Shift] = []
+                    
+                    // Details
+                    let detailsJSON = json["details"].arrayValue
+                    for shift in detailsJSON {
+                        shifts.append(parseShift(shift: shift))
+                    }
+                    
+                    // Schedules
+                    var schedulesJSON = json["schedules"].arrayValue
+                    schedulesJSON = schedulesJSON.suffix(schedulesJSON.count - detailsJSON.count)
+                    for shift in schedulesJSON {
+                        shifts.append(parseShift(shift: shift))
+                    }
+                    
+                    completion(shifts, error)
+                } else {
+                    completion(nil, error)
+                }
             }
         }
         .resume()

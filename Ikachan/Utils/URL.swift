@@ -13,38 +13,36 @@ extension URL {
     }
     
     var tab: Tab? {
-        guard isDeeplink else {
+        if !isDeeplink {
             return nil
+        } else {
+            guard let host = host else {
+                return nil
+            }
+            
+            if Schedule.GameMode(rawValue: host) != nil {
+                return .schedule
+            } else if host == Shift.rawValue {
+                return .shift
+            } else {
+                return nil
+            }
         }
-
-        guard let host = host else {
-            return nil
-        }
-        
-        if Schedule.GameMode(rawValue: host) != nil {
-            return .schedule
-        }
-        
-        if host == Shift.rawValue {
-            return .shift
-        }
-        
-        return nil
     }
     
     var gameMode: Schedule.GameMode? {
-        guard isDeeplink else {
+        if !isDeeplink {
             return nil
-        }
-        
-        guard let host = host else {
-            return nil
-        }
-        
-        guard let gameMode = Schedule.GameMode(rawValue: host) else {
-            return nil
-        }
+        } else {
+            guard let host = host else {
+                return nil
+            }
+            
+            guard let gameMode = Schedule.GameMode(rawValue: host) else {
+                return nil
+            }
 
-        return gameMode
+            return gameMode
+        }
     }
 }
