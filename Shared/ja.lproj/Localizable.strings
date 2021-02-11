@@ -187,7 +187,7 @@
 "be_careful_of_the_hydra_splatling" = "どけどけ！\n俺ハイカス様が来るぞ";
 
 // Widget
-"failed_to_load" = "読み込むことができません";
+"failed_to_load" = "読み込むことが\nできません";
 "schedule_widget_description" = "そのモードのいまとつぎのスケジュールを表示できます。";
 "shift_widget_description" = "サーモンランのいまとつぎのシフト表を表示できます。";
 "day_widget_name" = "一日スプラ";

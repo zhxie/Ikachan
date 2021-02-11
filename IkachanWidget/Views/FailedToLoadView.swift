@@ -27,6 +27,7 @@ struct FailedToLoadView: View {
                 Text("failed_to_load")
                     .font(.footnote)
                     .foregroundColor(accentColor)
+                    .multilineTextAlignment(.center)
                 
                 Spacer()
             }
