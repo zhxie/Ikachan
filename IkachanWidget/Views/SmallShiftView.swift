@@ -63,6 +63,9 @@ struct SmallShiftView: View {
                                     .foregroundColor(.secondary)
                                     .lineLimit(1)
                             }
+                            
+                            Spacer()
+                                .frame(minWidth: 0)
                         }
                         
                         Spacer()
