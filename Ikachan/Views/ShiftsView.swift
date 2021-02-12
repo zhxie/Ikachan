@@ -12,7 +12,7 @@ struct ShiftsView: View {
     @EnvironmentObject var modelData: ModelData
     @Environment(\.scenePhase) var scenePhase
     
-    @State var showModal = false
+    @Binding var showModal: Bool
     
     var body: some View {
         NavigationView {
@@ -66,9 +66,6 @@ struct ShiftsView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .sheet(isPresented: $showModal) {
-            AboutView(showModal: $showModal)
-        }
         .onAppear(perform: {
             interact()
             
@@ -116,7 +113,7 @@ struct ShiftsView: View {
 
 struct ShiftsView_Previews: PreviewProvider {
     static var previews: some View {
-        ShiftsView()
+        ShiftsView(showModal: .constant(false))
             .environmentObject(ModelData())
     }
 }

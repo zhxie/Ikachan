@@ -15,7 +15,7 @@ struct SchedulesView: View {
     // HACK: Consider rule turfWar as no filtering
     @State var rule = Schedule.Rule.turfWar
     
-    @State var showModal = false
+    @Binding var showModal: Bool
     
     var body: some View {
         NavigationView {
@@ -87,9 +87,6 @@ struct SchedulesView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .sheet(isPresented: $showModal) {
-            AboutView(showModal: $showModal)
-        }
         .onAppear(perform: {
             interact(gameMode: modelData.gameMode)
             
@@ -129,7 +126,7 @@ struct SchedulesView: View {
 
 struct SchedulesView_Previews: PreviewProvider {
     static var previews: some View {
-        SchedulesView()
+        SchedulesView(showModal: .constant(false))
             .environmentObject(ModelData())
     }
 }
