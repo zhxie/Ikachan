@@ -11,61 +11,68 @@ import Intents
 struct ShiftsView: View {
     @EnvironmentObject var modelData: ModelData
     @Environment(\.scenePhase) var scenePhase
+
+    @Binding var showModal: Bool?
     
-    @Binding var showModal: Bool
+    init() {
+        _showModal = .constant(nil)
+    }
+    
+    init(showModal: Binding<Bool>) {
+        _showModal = Binding(showModal)
+    }
     
     var body: some View {
-        NavigationView {
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: ComponentMinWidth))]) {
-                    if let first = current {
-                        VStack {
-                            Divider()
-                            
-                            ShiftView(shift: first, title: first.status)
-                            
-                            Spacer()
-                                .frame(height: 15)
-                        }
-                    }
-                    
-                    ForEach(nexts, id: \.self) { shift in
-                        VStack {
-                            Divider()
-                            
-                            ShiftView(shift: shift, title: "next")
-                            
-                            Spacer()
-                                .frame(height: 15)
-                        }
-                    }
-                    
-                    ForEach(schedules, id: \.self) { shift in
-                        VStack {
-                            Divider()
-                            
-                            ShiftView(shift: shift, title: "future")
-                            
-                            Spacer()
-                                .frame(height: 15)
-                        }
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: ComponentMinWidth), alignment: .top)]) {
+                if let first = current {
+                    VStack {
+                        Divider()
+                        
+                        ShiftView(shift: first, title: first.status)
+                        
+                        Spacer()
+                            .frame(height: 15)
                     }
                 }
-                .animation(.default)
-                .padding([.horizontal, .bottom])
-                .navigationTitle("salmon_run")
+                
+                ForEach(nexts, id: \.self) { shift in
+                    VStack {
+                        Divider()
+                        
+                        ShiftView(shift: shift, title: "next")
+                        
+                        Spacer()
+                            .frame(height: 15)
+                    }
+                }
+                
+                ForEach(schedules, id: \.self) { shift in
+                    VStack {
+                        Divider()
+                        
+                        ShiftView(shift: shift, title: "future")
+                        
+                        Spacer()
+                            .frame(height: 15)
+                    }
+                }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+            .animation(.default)
+            .padding([.horizontal, .bottom])
+            .navigationTitle("salmon_run")
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                if showModal != nil {
                     Button(action: {
-                        showModal.toggle()
+                        showModal!.toggle()
                     }) {
                         Image(systemName: "info.circle")
                     }
                 }
             }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: {
             interact()
             

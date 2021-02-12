@@ -11,82 +11,89 @@ import Intents
 struct SchedulesView: View {
     @EnvironmentObject var modelData: ModelData
     @Environment(\.scenePhase) var scenePhase
+
+    @Binding var showModal: Bool?
     
     // HACK: Consider rule turfWar as no filtering
     @State var rule = Schedule.Rule.turfWar
     
-    @Binding var showModal: Bool
+    init() {
+        _showModal = .constant(nil)
+    }
+    
+    init(showModal: Binding<Bool>) {
+        _showModal = Binding(showModal)
+    }
     
     var body: some View {
-        NavigationView {
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: ComponentMinWidth))]) {
-                    ForEach(schedules, id: \.self) { schedule in
-                        VStack {
-                            Divider()
-                            
-                            ScheduleView(schedule: schedule)
-                            
-                            Spacer()
-                                .frame(height: 15)
-                        }
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: ComponentMinWidth), alignment: .top)]) {
+                ForEach(schedules, id: \.self) { schedule in
+                    VStack {
+                        Divider()
+                        
+                        ScheduleView(schedule: schedule)
+                        
+                        Spacer()
+                            .frame(height: 15)
                     }
                 }
-                .animation(.default)
-                .padding([.horizontal, .bottom])
-                .navigationTitle(modelData.gameMode.longDescription)
             }
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Picker(selection: $modelData.gameMode, label: Text("")) {
-                        ForEach(Schedule.GameMode.allCases, id: \.self) { gameMode in
-                            Text(gameMode.description)
-                                .tag(gameMode)
-                        }
+            .animation(.default)
+            .padding([.horizontal, .bottom])
+            .navigationTitle(modelData.gameMode.longDescription)
+        }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Picker(selection: $modelData.gameMode, label: Text("")) {
+                    ForEach(Schedule.GameMode.allCases, id: \.self) { gameMode in
+                        Text(gameMode.description)
+                            .tag(gameMode)
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .onChange(of: modelData.gameMode, perform: { gameMode in
-                        interact(gameMode: gameMode)
-                    })
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    if rule == .turfWar {
-                        Menu(content: {
-                            ForEach(Schedule.Rule.allCases.filter { r in
-                                r != .turfWar
-                            }, id: \.self) { r in
-                                Button(action: {
-                                    Impact(style: .light)
-                                    rule = r
-                                }) {
-                                    Text(r.description)
-                                    Image(r.rawValue)
-                                }
+                .pickerStyle(SegmentedPickerStyle())
+                .onChange(of: modelData.gameMode, perform: { gameMode in
+                    interact(gameMode: gameMode)
+                })
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                if rule == .turfWar {
+                    Menu(content: {
+                        ForEach(Schedule.Rule.allCases.filter { r in
+                            r != .turfWar
+                        }, id: \.self) { r in
+                            Button(action: {
+                                Impact(style: .light)
+                                rule = r
+                            }) {
+                                Text(r.description)
+                                Image(r.rawValue)
                             }
-                        }) {
-                            Image(systemName: "line.horizontal.3.decrease.circle")
-                                .imageScale(.large)
                         }
-                        .accessibility(label: Text("filter"))
-                    } else {
-                        Button(action: {
-                            Impact(style: .light)
-                            rule = .turfWar
-                        }) {
-                            Image(systemName: "line.horizontal.3.decrease.circle.fill")
-                        }
+                    }) {
+                        Image(systemName: "line.horizontal.3.decrease.circle")
+                            .imageScale(.large)
+                    }
+                    .accessibility(label: Text("filter"))
+                } else {
+                    Button(action: {
+                        Impact(style: .light)
+                        rule = .turfWar
+                    }) {
+                        Image(systemName: "line.horizontal.3.decrease.circle.fill")
                     }
                 }
-                ToolbarItem(placement: .navigationBarLeading) {
+            }
+            ToolbarItem(placement: .navigationBarLeading) {
+                if showModal != nil {
                     Button(action: {
-                        showModal.toggle()
+                        showModal!.toggle()
                     }) {
                         Image(systemName: "info.circle")
                     }
                 }
             }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: {
             interact(gameMode: modelData.gameMode)
             

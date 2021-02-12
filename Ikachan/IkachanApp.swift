@@ -21,6 +21,30 @@ struct IkachanApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(modelData)
+                .onChange(of: scenePhase) { (phase) in
+                    if phase == .active {
+                        guard let type = shortcutItemToProcess?.type else {
+                            return
+                        }
+                        shortcutItemToProcess = nil
+                        
+                        if let gameMode = Schedule.GameMode(rawValue: type) {
+                            modelData.tab = .schedule
+                            modelData.gameMode = gameMode
+                        }
+                        
+                        if type == Shift.rawValue {
+                            modelData.tab = .shift
+                        }
+                    }
+                }
+                .onOpenURL { url in
+                    guard let tab = url.tab else {
+                        return
+                    }
+                    
+                    modelData.tab = tab
+                }
                 .onContinueUserActivity(IkachanSchedulesActivity + "." + Schedule.GameMode.regular.rawValue) { _ in
                     modelData.tab = .schedule
                     modelData.gameMode = .regular
@@ -36,23 +60,6 @@ struct IkachanApp: App {
                 .onContinueUserActivity(IkachanShiftsActivity) { _ in
                     modelData.tab = .shift
                 }
-        }
-        .onChange(of: scenePhase) { (phase) in
-            if phase == .active {
-                guard let type = shortcutItemToProcess?.type else {
-                    return
-                }
-                shortcutItemToProcess = nil
-                
-                if let gameMode = Schedule.GameMode(rawValue: type) {
-                    modelData.tab = .schedule
-                    modelData.gameMode = gameMode
-                }
-                
-                if type == Shift.rawValue {
-                    modelData.tab = .shift
-                }
-            }
         }
     }
 }

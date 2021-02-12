@@ -8,32 +8,65 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @EnvironmentObject var modelData: ModelData
     
     @State var showAbout = false
     
     var body: some View {
-        TabView(selection: $modelData.tab) {
-            SchedulesView(showModal: $showAbout)
-                .tabItem {
-                    Label("schedule", systemImage: "calendar")
+        ZStack {
+            if horizontalSizeClass == .compact {
+                TabView(selection: $modelData.tab) {
+                    NavigationView {
+                        SchedulesView(showModal: $showAbout)
+                    }
+                    .tabItem {
+                        Label("schedule", systemImage: "calendar")
+                    }
+                    .tag(Tab.schedule)
+                    NavigationView {
+                        ShiftsView(showModal: $showAbout)
+                    }
+                    .tabItem {
+                        Label("shift", systemImage: "lifepreserver")
+                    }
+                    .tag(Tab.shift)
                 }
-                .tag(Tab.schedule)
-            ShiftsView(showModal: $showAbout)
-                .tabItem {
-                    Label("shift", systemImage: "lifepreserver")
+            } else {
+                NavigationView {
+                    List {
+                        NavigationLink(
+                            destination: SchedulesView(),
+                            tag: Tab.schedule,
+                            selection: $modelData.nullableTab,
+                            label: {
+                                Label("schedule", systemImage: "calendar")
+                            })
+                        NavigationLink(
+                            destination: ShiftsView(),
+                            tag: Tab.shift,
+                            selection: $modelData.nullableTab,
+                            label: {
+                                Label("shift", systemImage: "lifepreserver")
+                            })
+                    }
+                    .listStyle(SidebarListStyle())
+                    .navigationTitle("ikachan")
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button(action: {
+                                showAbout.toggle()
+                            }) {
+                                Image(systemName: "info.circle")
+                            }
+                        }
+                    }
+                    EmptyView()
                 }
-                .tag(Tab.shift)
+            }
         }
         .sheet(isPresented: $showAbout) {
             AboutView(showModal: $showAbout)
-        }
-        .onOpenURL { url in
-            guard let tab = url.tab else {
-                return
-            }
-            
-            modelData.tab = tab
         }
     }
 }
