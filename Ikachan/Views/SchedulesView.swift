@@ -41,8 +41,8 @@ struct SchedulesView: View {
             }
             .animation(.default)
             .padding([.horizontal, .bottom])
-            .navigationTitle(modelData.gameMode.longDescription)
         }
+        .navigationTitle(modelData.gameMode.longDescription)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Picker(selection: $modelData.gameMode, label: Text("")) {

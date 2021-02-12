@@ -20,6 +20,7 @@ struct ContentView: View {
                     NavigationView {
                         SchedulesView(showModal: $showAbout)
                     }
+                    .navigationViewStyle(StackNavigationViewStyle())
                     .tabItem {
                         Label("schedule", systemImage: "calendar")
                     }
@@ -27,6 +28,7 @@ struct ContentView: View {
                     NavigationView {
                         ShiftsView(showModal: $showAbout)
                     }
+                    .navigationViewStyle(StackNavigationViewStyle())
                     .tabItem {
                         Label("shift", systemImage: "lifepreserver")
                     }

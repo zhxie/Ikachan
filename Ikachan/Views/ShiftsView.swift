@@ -60,8 +60,8 @@ struct ShiftsView: View {
             }
             .animation(.default)
             .padding([.horizontal, .bottom])
-            .navigationTitle("salmon_run")
         }
+        .navigationTitle("salmon_run")
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 if showModal != nil {
