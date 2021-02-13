@@ -50,9 +50,8 @@ struct DayProvider: IntentTimelineProvider {
             
             guard let schedules = schedules else {
                 let entry = DayEntry(date: current, configuration: configuration, schedule: nil)
-                let entry2 = DayEntry(date: current.addingTimeInterval(60), configuration: configuration, schedule: nil)
-                
-                completion(Timeline(entries: [entry, entry2], policy: .atEnd))
+
+                completion(Timeline(entries: [entry], policy: .after(current.addingTimeInterval(300))))
                 
                 return
             }
@@ -74,9 +73,19 @@ struct DayProvider: IntentTimelineProvider {
                 }
             }
             
-            let timeline = Timeline(entries: entries, policy: .atEnd)
-            
-            completion(timeline)
+            if entries.count > 0 {
+                if entries.last!.date < Date() {
+                    let entry = DayEntry(date: current, configuration: configuration, schedule: nil)
+
+                    completion(Timeline(entries: [entry], policy: .after(current.addingTimeInterval(60))))
+                } else {
+                    completion(Timeline(entries: entries, policy: .atEnd))
+                }
+            } else {
+                let entry = DayEntry(date: current, configuration: configuration, schedule: nil)
+
+                completion(Timeline(entries: [entry], policy: .after(current.addingTimeInterval(300))))
+            }
         }
     }
 }

@@ -73,7 +73,6 @@ struct ShrineView: View {
                             .layoutPriority(1)
                     }
                     
-                    
                     Spacer()
                     
                     Text(omikuji.description)

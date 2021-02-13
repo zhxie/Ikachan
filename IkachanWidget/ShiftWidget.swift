@@ -56,9 +56,8 @@ struct ShiftProvider: IntentTimelineProvider {
             
             guard let shifts = shifts else {
                 let entry = ShiftEntry(date: current, shift: nil)
-                let entry2 = ShiftEntry(date: current.addingTimeInterval(60), shift: nil)
-                
-                completion(Timeline(entries: [entry, entry2], policy: .atEnd))
+
+                completion(Timeline(entries: [entry], policy: .after(current.addingTimeInterval(300))))
                 
                 return
             }
@@ -101,12 +100,23 @@ struct ShiftProvider: IntentTimelineProvider {
                 }
             }
             
-            let timeline = Timeline(entries: entries, policy: .atEnd)
             for url in urls {
                 resources.append(ImageResource(downloadURL: URL(string: url)!))
             }
             ImagePrefetcher(resources: resources) { (_, _, _) in
-                completion(timeline)
+                if entries.count > 0 {
+                    if entries.last!.date < Date() {
+                        let entry = ShiftEntry(date: current, shift: nil)
+
+                        completion(Timeline(entries: [entry], policy: .after(current.addingTimeInterval(60))))
+                    } else {
+                        completion(Timeline(entries: entries, policy: .atEnd))
+                    }
+                } else {
+                    let entry = ShiftEntry(date: current, shift: nil)
+
+                    completion(Timeline(entries: [entry], policy: .after(current.addingTimeInterval(300))))
+                }
             }
             .start()
         }

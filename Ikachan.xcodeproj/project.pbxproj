@@ -426,9 +426,9 @@
 				E468B7AF25B34EB3001254FE /* Components */,
 				E4405D7C25AF64D2002EF1AB /* ContentView.swift */,
 				E4E60D8825B5CBC80039A6E6 /* SchedulesView.swift */,
+				E438EF4425B5E3F7005AB9D9 /* ShiftsView.swift */,
 				E46B510225BB1E3E001F88CE /* AboutView.swift */,
 				E445761D25CE99AE004AA74D /* ShrineView.swift */,
-				E438EF4425B5E3F7005AB9D9 /* ShiftsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
