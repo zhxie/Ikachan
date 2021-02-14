@@ -24,41 +24,20 @@ struct ShiftsView: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: ComponentMinWidth), alignment: .top)]) {
-                if let first = current {
+            VStack {
+                ForEach(shifts, id: \.self) { shift in
                     VStack {
                         Divider()
                         
-                        ShiftView(shift: first, title: first.status)
+                        ShiftView(shift: shift.shift, title: shift.status)
                         
                         Spacer()
                             .frame(height: 15)
                     }
-                }
-                
-                ForEach(nexts, id: \.self) { shift in
-                    VStack {
-                        Divider()
-                        
-                        ShiftView(shift: shift, title: "next")
-                        
-                        Spacer()
-                            .frame(height: 15)
-                    }
-                }
-                
-                ForEach(schedules, id: \.self) { shift in
-                    VStack {
-                        Divider()
-                        
-                        ShiftView(shift: shift, title: "future")
-                        
-                        Spacer()
-                            .frame(height: 15)
-                    }
+                    .transition(.opacity)
+                    .animation(.default)
                 }
             }
-            .animation(.default)
             .padding([.horizontal, .bottom])
         }
         .navigationTitle("salmon_run")
@@ -85,28 +64,15 @@ struct ShiftsView: View {
         }
     }
     
-    var details: [Shift] {
-        modelData.shifts.filter { shift in
-            shift.stage != nil
+    var shifts: [FilteredShift] {
+        var shifts: [FilteredShift] = []
+        
+        // First
+        for (i, shift) in modelData.shifts.enumerated() {
+            shifts.append(FilteredShift(isFirst: i == 0, shift: shift))
         }
-    }
-    
-    var current: Shift? {
-        details.first
-    }
-    
-    var nexts: [Shift] {
-        if current != nil {
-            return details.suffix(details.count - 1)
-        } else {
-            return []
-        }
-    }
-    
-    var schedules: [Shift] {
-        modelData.shifts.filter { shift in
-            shift.stage == nil
-        }
+        
+        return shifts
     }
     
     func update() {

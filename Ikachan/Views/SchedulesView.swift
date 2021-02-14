@@ -27,7 +27,7 @@ struct SchedulesView: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: ComponentMinWidth), alignment: .top)]) {
+            VStack {
                 ForEach(schedules, id: \.self) { schedule in
                     VStack {
                         Divider()
@@ -37,9 +37,10 @@ struct SchedulesView: View {
                         Spacer()
                             .frame(height: 15)
                     }
+                    .transition(.opacity)
+                    .animation(.default)
                 }
             }
-            .animation(.default)
             .padding([.horizontal, .bottom])
         }
         .navigationTitle(modelData.gameMode.longDescription)
