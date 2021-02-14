@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 struct Weapon: Hashable, Codable {
-    var id: WeaponId
-    enum WeaponId: Int, CaseIterable, Codable {
+    var id: Id
+    enum Id: Int, CaseIterable, Codable {
         case bold = 0
         case wakaba = 10
         case sharp = 20

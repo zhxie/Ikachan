@@ -94,13 +94,13 @@ struct AboutView: View {
                             var urls: Set<String> = []
                             var resources: [Resource] = []
                             
-                            for stage in Schedule.Stage.StageId.allCases {
+                            for stage in Schedule.Stage.Id.allCases {
                                 urls.insert(Splatnet2URL + stage.defaultURL)
                             }
-                            for stage in Shift.Stage.StageImage.allCases {
+                            for stage in Shift.Stage.Image.allCases {
                                 urls.insert(Splatnet2URL + stage.defaultURL)
                             }
-                            for weapon in Weapon.WeaponId.allCases {
+                            for weapon in Weapon.Id.allCases {
                                 urls.insert(Splatnet2URL + weapon.defaultURL)
                             }
                             

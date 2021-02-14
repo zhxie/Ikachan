@@ -57,7 +57,7 @@ func parseSchedule(schedule: JSON) -> Schedule {
     let stage_b_id = Int(schedule["stage_b"]["id"].stringValue)!
     let stage_b_image = schedule["stage_b"]["image"].stringValue
     
-    return Schedule(startTime: Date(timeIntervalSince1970: startTime), endTime: Date(timeIntervalSince1970: endTime), gameMode: Schedule.GameMode(rawValue: gameMode)!, rule: Schedule.Rule(rawValue: rule)!, stageA: Schedule.Stage(id: Schedule.Stage.StageId(rawValue: stage_a_id)!, image: stage_a_image), stageB: Schedule.Stage(id: Schedule.Stage.StageId(rawValue: stage_b_id)!, image: stage_b_image))
+    return Schedule(startTime: Date(timeIntervalSince1970: startTime), endTime: Date(timeIntervalSince1970: endTime), gameMode: Schedule.GameMode(rawValue: gameMode)!, rule: Schedule.Rule(rawValue: rule)!, stageA: Schedule.Stage(id: Schedule.Stage.Id(rawValue: stage_a_id)!, image: stage_a_image), stageB: Schedule.Stage(id: Schedule.Stage.Id(rawValue: stage_b_id)!, image: stage_b_image))
 }
 
 func fetchShifts(completion:@escaping ([Shift]?, Error?) -> Void) {
@@ -125,7 +125,7 @@ func parseShiftStage(stageImage: String?) -> Shift.Stage? {
         return nil
     }
     
-    return Shift.Stage(image: Shift.Stage.StageImage(rawValue: stageImage)!)
+    return Shift.Stage(image: Shift.Stage.Image(rawValue: stageImage)!)
 }
 
 func parseWeapon(weapon: JSON) -> Weapon {
@@ -135,5 +135,5 @@ func parseWeapon(weapon: JSON) -> Weapon {
         image = weapon["coop_special_weapon"]["image"].string
     }
     
-    return Weapon(id: Weapon.WeaponId(rawValue: id)!, image: image!)
+    return Weapon(id: Weapon.Id(rawValue: id)!, image: image!)
 }

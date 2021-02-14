@@ -28,7 +28,7 @@ final class ModelData: ObservableObject {
     
     @Published var schedules: [Schedule] = []
     
-    @Published var isSchedulesUpdating = false
+    var isSchedulesUpdating = false
     
     func updateSchedules() {
         if isSchedulesUpdating {
@@ -77,7 +77,7 @@ final class ModelData: ObservableObject {
     
     @Published var shifts: [Shift] = []
     
-    @Published var isShiftsUpdating = false
+    var isShiftsUpdating = false
     
     func updateShifts() {
         if isShiftsUpdating {

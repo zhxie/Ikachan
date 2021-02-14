@@ -102,8 +102,8 @@ struct Schedule: Hashable, Codable {
     var stageA: Stage
     var stageB: Stage
     struct Stage: Hashable, Codable, Identifiable {
-        var id: StageId
-        enum StageId: Int, CaseIterable, Codable {
+        var id: Id
+        enum Id: Int, CaseIterable, Codable {
             case theReef = 0
             case musselforgeFitness = 1
             case starfishMainstage = 2

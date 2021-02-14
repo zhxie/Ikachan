@@ -9,11 +9,12 @@ import SwiftUI
 import Intents
 import Kingfisher
 
-let modelData = ModelData()
 var shortcutItemToProcess: UIApplicationShortcutItem?
 
 @main
 struct IkachanApp: App {
+    @StateObject var modelData = ModelData()
+    
     @Environment(\.scenePhase) var scenePhase
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
