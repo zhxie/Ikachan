@@ -92,6 +92,9 @@
 		E468B7A325B282F5001254FE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7A225B282F5001254FE /* ModelData.swift */; };
 		E468B7AD25B34AFC001254FE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7AC25B34AFC001254FE /* Constant.swift */; };
 		E468B7B525B46080001254FE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
+		E46B37E525D8E5340044232F /* ichi-ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E46B37E225D8E5340044232F /* ichi-ipad@2x.png */; };
+		E46B37E625D8E5340044232F /* ichi-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E46B37E325D8E5340044232F /* ichi-ipad.png */; };
+		E46B37E725D8E5340044232F /* ichi-ipad-pro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E46B37E425D8E5340044232F /* ichi-ipad-pro@2x.png */; };
 		E46B510325BB1E3E001F88CE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B510225BB1E3E001F88CE /* AboutView.swift */; };
 		E46B512C25BB30C7001F88CE /* LICENSE.SwiftyJSON.md in Resources */ = {isa = PBXBuildFile; fileRef = E46B512A25BB30C7001F88CE /* LICENSE.SwiftyJSON.md */; };
 		E46B512D25BB30C7001F88CE /* LICENSE.Kingfisher.md in Resources */ = {isa = PBXBuildFile; fileRef = E46B512B25BB30C7001F88CE /* LICENSE.Kingfisher.md */; };
@@ -109,7 +112,6 @@
 		E48BECC325CD31F200B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
 		E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7A2C225B7395500E26B20 /* Localizable.strings */; };
 		E4C98CFC25C98099006940E9 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C98CFA25C98099006940E9 /* Image.swift */; };
-		E4D8F02B25D02A460064B40A /* ichi.png in Resources */ = {isa = PBXBuildFile; fileRef = E4D8F02525D02A450064B40A /* ichi.png */; };
 		E4D8F02C25D02A460064B40A /* ichi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4D8F02625D02A450064B40A /* ichi@2x.png */; };
 		E4D8F02E25D02A460064B40A /* ichi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4D8F02825D02A450064B40A /* ichi@3x.png */; };
 		E4E13CE325C7DBB100150544 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E13CE225C7DBB100150544 /* Color.swift */; };
@@ -201,6 +203,9 @@
 		E468B7A225B282F5001254FE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		E468B7AC25B34AFC001254FE /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E468B7B425B46080001254FE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		E46B37E225D8E5340044232F /* ichi-ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ichi-ipad@2x.png"; sourceTree = "<group>"; };
+		E46B37E325D8E5340044232F /* ichi-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ichi-ipad.png"; sourceTree = "<group>"; };
+		E46B37E425D8E5340044232F /* ichi-ipad-pro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ichi-ipad-pro@2x.png"; sourceTree = "<group>"; };
 		E46B506425B8959A001F88CE /* SmallScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallScheduleView.swift; sourceTree = "<group>"; };
 		E46B506725B9BBA6001F88CE /* MediumScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumScheduleView.swift; sourceTree = "<group>"; };
 		E46B507025B9C2AC001F88CE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -228,7 +233,6 @@
 		E4B1145E25BD5AC600303542 /* DayWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWidget.swift; sourceTree = "<group>"; };
 		E4C7A2C125B7395500E26B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E4C98CFA25C98099006940E9 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		E4D8F02525D02A450064B40A /* ichi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ichi.png; sourceTree = "<group>"; };
 		E4D8F02625D02A450064B40A /* ichi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ichi@2x.png"; sourceTree = "<group>"; };
 		E4D8F02825D02A450064B40A /* ichi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ichi@3x.png"; sourceTree = "<group>"; };
 		E4D8F04A25D03C310064B40A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IkachanIntents.strings"; sourceTree = "<group>"; };
@@ -484,9 +488,11 @@
 		E4D8F01025D01F5B0064B40A /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				E4D8F02525D02A450064B40A /* ichi.png */,
 				E4D8F02625D02A450064B40A /* ichi@2x.png */,
 				E4D8F02825D02A450064B40A /* ichi@3x.png */,
+				E46B37E325D8E5340044232F /* ichi-ipad.png */,
+				E46B37E225D8E5340044232F /* ichi-ipad@2x.png */,
+				E46B37E425D8E5340044232F /* ichi-ipad-pro@2x.png */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -653,15 +659,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46B37E625D8E5340044232F /* ichi-ipad.png in Resources */,
 				E4405D8225AF64D6002EF1AB /* Preview Assets.xcassets in Resources */,
 				E484FDCE25C946C9006E748F /* InfoPlist.strings in Resources */,
-				E4D8F02B25D02A460064B40A /* ichi.png in Resources */,
 				E46B512D25BB30C7001F88CE /* LICENSE.Kingfisher.md in Resources */,
 				E46B512C25BB30C7001F88CE /* LICENSE.SwiftyJSON.md in Resources */,
 				E4D8F02E25D02A460064B40A /* ichi@3x.png in Resources */,
 				E4D8F02C25D02A460064B40A /* ichi@2x.png in Resources */,
+				E46B37E525D8E5340044232F /* ichi-ipad@2x.png in Resources */,
 				E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */,
 				E4405D7F25AF64D6002EF1AB /* Assets.xcassets in Resources */,
+				E46B37E725D8E5340044232F /* ichi-ipad-pro@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
