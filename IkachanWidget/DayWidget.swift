@@ -17,7 +17,7 @@ struct DayProvider: IntentTimelineProvider {
     
     func getSnapshot(for configuration: DayIntent, in context: Context, completion: @escaping (DayEntry) -> Void) {
         fetchSchedules { (schedules, error) in
-            let current = Date()
+            let current = Date().floorToMin()
             
             guard let schedules = schedules else {
                 completion(DayEntry(date: current, configuration: configuration, schedule: nil))
@@ -43,10 +43,7 @@ struct DayProvider: IntentTimelineProvider {
         fetchSchedules { (schedules, error) in
             var entries: [DayEntry] = []
             
-            var current = Date()
-            let interval = current - Date(timeIntervalSince1970: 0)
-            let secs = interval - interval.truncatingRemainder(dividingBy: 60)
-            current = Date(timeIntervalSince1970: secs)
+            var current = Date().floorToMin()
             
             guard let schedules = schedules else {
                 let entry = DayEntry(date: current, configuration: configuration, schedule: nil)

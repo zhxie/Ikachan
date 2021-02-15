@@ -17,7 +17,7 @@ struct ScheduleProvider: IntentTimelineProvider {
 
     func getSnapshot(for configuration: ScheduleIntent, in context: Context, completion: @escaping (ScheduleEntry) -> ()) {
         fetchSchedules { (schedules, error) in
-            let current = Date()
+            let current = Date().floorToMin()
             
             guard let schedules = schedules else {
                 completion(ScheduleEntry(date: current, configuration: configuration, schedule: nil))
@@ -49,10 +49,7 @@ struct ScheduleProvider: IntentTimelineProvider {
             var urls: Set<String> = []
             var resources: [Resource] = []
             
-            var current = Date()
-            let interval = current - Date(timeIntervalSince1970: 0)
-            let secs = interval - interval.truncatingRemainder(dividingBy: 60)
-            current = Date(timeIntervalSince1970: secs)
+            var current = Date().floorToMin()
             
             guard let schedules = schedules else {
                 let entry = ScheduleEntry(date: current, configuration: configuration, schedule: nil)

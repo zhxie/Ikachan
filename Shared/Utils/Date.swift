@@ -12,6 +12,13 @@ extension Date {
     static func -(left: Date, right: Date) -> TimeInterval {
         return left.timeIntervalSinceReferenceDate - right.timeIntervalSinceReferenceDate
     }
+    
+    func floorToMin() -> Date {
+        let interval = self - Date(timeIntervalSince1970: 0)
+        let secs = interval - interval.truncatingRemainder(dividingBy: 60)
+        
+        return Date(timeIntervalSince1970: secs)
+    }
 }
 
 func timeSpan(current: Date, startTime: Date, endTime: Date) -> String {

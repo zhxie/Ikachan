@@ -17,7 +17,7 @@ struct ShiftProvider: IntentTimelineProvider {
     
     func getSnapshot(for configuration: ShiftIntent, in context: Context, completion: @escaping (ShiftEntry) -> ()) {
         fetchShifts { (shifts, error) in
-            let current = Date()
+            let current = Date().floorToMin()
             
             guard let shifts = shifts else {
                 completion(ShiftEntry(date: current, shift: nil))
@@ -49,10 +49,7 @@ struct ShiftProvider: IntentTimelineProvider {
             var urls: Set<String> = []
             var resources: [Resource] = []
             
-            var current = Date()
-            let interval = current - Date(timeIntervalSince1970: 0)
-            let secs = interval - interval.truncatingRemainder(dividingBy: 60)
-            current = Date(timeIntervalSince1970: secs)
+            var current = Date().floorToMin()
             
             guard let shifts = shifts else {
                 let entry = ShiftEntry(date: current, shift: nil)
