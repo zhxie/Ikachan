@@ -12,24 +12,29 @@ struct FailedToLoadView: View {
     var accentColor: Color
     
     var body: some View {
-        GeometryReader { g in
-            VStack {
-                Spacer()
-                
-                ZStack {
-                    Image("inkling_splatted")
-                        .resizable()
-                        .accessibility(label: Text("failed_to_load"))
-                        .aspectRatio(contentMode: .fit)
-                        .blending(color: accentColor)
+        ZStack {
+            Color(UIColor.systemBackground)
+                .ignoresSafeArea(edges: .all)
+            
+            GeometryReader { g in
+                VStack {
+                    Spacer()
+                    
+                    ZStack {
+                        Image("inkling_splatted")
+                            .resizable()
+                            .accessibility(label: Text("failed_to_load"))
+                            .aspectRatio(contentMode: .fit)
+                            .blending(color: accentColor)
+                    }
+                    .frame(height: g.size.height / 3)
+                    Text("failed_to_load")
+                        .font(.footnote)
+                        .foregroundColor(accentColor)
+                        .multilineTextAlignment(.center)
+                    
+                    Spacer()
                 }
-                .frame(height: g.size.height / 3)
-                Text("failed_to_load")
-                    .font(.footnote)
-                    .foregroundColor(accentColor)
-                    .multilineTextAlignment(.center)
-                
-                Spacer()
             }
         }
     }
@@ -38,9 +43,9 @@ struct FailedToLoadView: View {
 struct FailedToLoadView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            FailedToLoadView(accentColor: .black)
+            FailedToLoadView(accentColor: Schedule.GameMode.regular.accentColor)
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-            FailedToLoadView(accentColor: .black)
+            FailedToLoadView(accentColor: Schedule.GameMode.regular.accentColor)
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
         }
     }
