@@ -31,6 +31,7 @@ struct SchedulesView: View {
                 ForEach(schedules, id: \.self) { schedule in
                     VStack {
                         Divider()
+                            .frame(height: 1)
                         
                         ScheduleView(schedule: schedule)
                         

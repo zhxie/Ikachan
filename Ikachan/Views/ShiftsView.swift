@@ -28,6 +28,7 @@ struct ShiftsView: View {
                 ForEach(shifts, id: \.self) { shift in
                     VStack {
                         Divider()
+                            .frame(height: 1)
                         
                         ShiftView(shift: shift.shift, title: shift.status)
                         
