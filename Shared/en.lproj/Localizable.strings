@@ -15,6 +15,10 @@
 "ranked_battle" = "Ranked Battle";
 "league_battle" = "League Battle";
 
+"regular_ss" = "R.";
+"ranked_ss" = "R.";
+"league_ss" = "L.";
+
 "salmon_run" = "Salmon Run";
 
 // Rule
@@ -123,12 +127,19 @@
 
 // Util
 "%@_remaining" = "%@ remaining";
-"remaining" = "Remaining";
 "in_%@" = "in %@";
+"remaining" = "Remaining";
 "%d_d" = "%d d";
 "%@_%d_h" = "%@ %d h";
 "%@_%d_m" = "%@ %d m";
 "0_m" = "0 m";
+"%d_days" = "%d days";
+"%d_day" = "%d day";
+"%@_%d_hours" = "%@ %d hours";
+"%@_%d_hour" = "%@ %d hour";
+"@s_%d_mins" = "%@ %d minutes";
+"%@_%d_min" = "%@ %d minute";
+"0_min" = "0 minute";
 
 // UI
 "schedule" = "Schedule";
@@ -139,8 +150,6 @@
 "soon" = "Soon!";
 "next" = "Next";
 "future" = "Future";
-"in_the_day" = "In the day";
-"at_night" = "At night";
 "ikachan" = "Ikachan";
 "settings" = "Settings";
 "language" = "Language";
@@ -187,6 +196,9 @@
 "be_careful_of_the_hydra_splatling" = "Get out of the way!\nMy lord Hydra Splatling\nis here";
 
 // Widget
+"in_the_day" = "In the day";
+"at_night" = "At night";
+"%@_%@" = "%@ %@";
 "failed_to_load" = "Failed to Load";
 "schedule_widget_description" = "See the current and future schedules for a mode.";
 "shift_widget_description" = "See the current and future shifts for Salmon Run.";
@@ -199,10 +211,3 @@
 "open_shift" = "Currently, Salmon Run in %1$@ with %2$@, %3$@, %4$@ for loan and %5$@ is open, remaining %6$@.";
 "soon_shift" = "Soon, Salmon Run in %1$@ with %2$@, %3$@, %4$@ and %5$@ for loan will be open in %6$@.";
 "next_shift" = "Next, Salmon Run in %1$@ with %2$@, %3$@, %4$@ and %5$@ for loan will be open in %6$@.";
-"%d_days" = "%d days";
-"%d_day" = "%d day";
-"%@_%d_hours" = "%@ %d hours";
-"%@_%d_hour" = "%@ %d hour";
-"@s_%d_mins" = "%@ %d minutes";
-"%@_%d_min" = "%@ %d minute";
-"0_min" = "0 minute";

@@ -21,6 +21,17 @@ struct Schedule: Hashable, Codable {
         var description: LocalizedStringKey {
             switch self {
             case .regular:
+                return "regular_battle"
+            case .gachi:
+                return "ranked_battle"
+            case .league:
+                return "league_battle"
+            }
+        }
+        
+        var shortDescription: LocalizedStringKey {
+            switch self {
+            case .regular:
                 return "regular"
             case .gachi:
                 return "ranked"
@@ -29,14 +40,14 @@ struct Schedule: Hashable, Codable {
             }
         }
         
-        var longDescription: LocalizedStringKey {
+        var shorterDescription: LocalizedStringKey {
             switch self {
             case .regular:
-                return "regular_battle"
+                return "regular_ss"
             case .gachi:
-                return "ranked_battle"
+                return "ranked_ss"
             case .league:
-                return "league_battle"
+                return "league_ss"
             }
         }
         
@@ -96,6 +107,15 @@ struct Schedule: Hashable, Codable {
             case .clamBlitz:
                 return "clam_ss"
             }
+        }
+    }
+    
+    var shortDescription: String {
+        switch gameMode {
+        case .regular:
+            return rule.shortDescription.rawValue.localizedString
+        case .gachi, .league:
+            return String(format: "%@_%@".localizedString, gameMode.shorterDescription.rawValue.localizedString, rule.shorterDescription.rawValue.localizedString)
         }
     }
 

@@ -10,6 +10,10 @@ import SwiftUI
 import Intents
 
 extension String {
+    var localizedString: String {
+        NSLocalizedString(self, comment: "")
+    }
+    
     var localizedIntentsString: String {
         let languageCode = INPreferences.siriLanguageCode()
         

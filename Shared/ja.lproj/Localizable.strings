@@ -15,6 +15,10 @@
 "ranked_battle" = "ガチマッチ";
 "league_battle" = "リーグマッチ";
 
+"regular_ss" = "レギュラー";
+"ranked_ss" = "ガチ";
+"league_ss" = "リーグ";
+
 "salmon_run" = "サーモンラン";
 
 // Rule
@@ -123,12 +127,19 @@
 
 // Util
 "%@_remaining" = "残り%@";
-"remaining" = "残り";
 "in_%@" = "%@後";
+"remaining" = "残り";
 "%d_d" = "%d日";
 "%@_%d_h" = "%@%d時間";
 "%@_%d_m" = "%@%d分";
 "0_m" = "0分";
+"%d_days" = "%d日";
+"%d_day" = "%d日";
+"%@_%d_hours" = "%@%d時間";
+"%@_%d_hour" = "%@%d時間";
+"@s_%d_mins" = "%@%d分";
+"%@_%d_min" = "%@%d分";
+"0_min" = "0分";
 
 // UI
 "schedule" = "スケジュール";
@@ -139,8 +150,6 @@
 "soon" = "もうすぐ";
 "next" = "つぎ";
 "future" = "そのつぎ";
-"in_the_day" = "日に";
-"at_night" = "夜に";
 "ikachan" = "イカチャン";
 "settings" = "設定";
 "language" = "言語";
@@ -187,6 +196,9 @@
 "be_careful_of_the_hydra_splatling" = "どけどけ！\n俺ハイカス様が来るぞ";
 
 // Widget
+"in_the_day" = "日に";
+"at_night" = "夜に";
+"%@_%@" = "%@%@";
 "failed_to_load" = "読み込むことが\nできません";
 "schedule_widget_description" = "そのモードのいまとつぎのスケジュールを表示できます。";
 "shift_widget_description" = "サーモンランのいまとつぎのシフト表を表示できます。";
@@ -199,10 +211,3 @@
 "open_shift" = "いま、Salmon Runは%1$@に、%2$@、%3$@、%4$@と%5$@を支給のバイトがオープンします、残り%6$@。";
 "soon_shift" = "もうすぐ、Salmon Runは%6$@後%1$@に、%2$@、%3$@、%4$@と%5$@を支給のバイトがオープンします。";
 "next_shift" = "つぎ、Salmon Runは%6$@後%1$@に、%2$@、%3$@、%4$@と%5$@を支給のバイトがオープンします。";
-"%d_days" = "%d日";
-"%d_day" = "%d日";
-"%@_%d_hours" = "%@%d時間";
-"%@_%d_hour" = "%@%d時間";
-"@s_%d_mins" = "%@%d分";
-"%@_%d_min" = "%@%d分";
-"0_min" = "0分";

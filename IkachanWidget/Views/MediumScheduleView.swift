@@ -83,7 +83,7 @@ struct MediumScheduleView: View {
                                 
                                 Spacer()
                                 
-                                Text(schedule.rule.shortDescription)
+                                Text(schedule.shortDescription)
                                     .font(.caption)
                                     .fontWeight(.bold)
                                     .foregroundColor(schedule.gameMode.accentColor)
@@ -105,7 +105,7 @@ struct MediumScheduleView: View {
                                 Spacer()
                                 
                                 Image(systemName: "circle.fill")
-                                    .accessibility(label: Text(schedule.gameMode.longDescription))
+                                    .accessibility(label: Text(schedule.gameMode.description))
                                     .font(.footnote)
                                     .foregroundColor(schedule.gameMode.accentColor)
                             }

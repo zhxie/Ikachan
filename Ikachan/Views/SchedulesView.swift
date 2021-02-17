@@ -44,12 +44,12 @@ struct SchedulesView: View {
             }
             .padding([.horizontal, .bottom])
         }
-        .navigationTitle(modelData.gameMode.longDescription)
+        .navigationTitle(modelData.gameMode.description)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Picker(selection: $modelData.gameMode, label: Text("")) {
                     ForEach(Schedule.GameMode.allCases, id: \.self) { gameMode in
-                        Text(gameMode.description)
+                        Text(gameMode.shortDescription)
                             .tag(gameMode)
                     }
                 }

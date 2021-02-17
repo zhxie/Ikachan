@@ -57,7 +57,7 @@ struct SmallDayView: View {
                         
                         Spacer()
                         
-                        Text(schedule.rule.shorterDescription)
+                        Text(schedule.shortDescription)
                             .font(.caption)
                             .fontWeight(.bold)
                             .foregroundColor(.white)

@@ -205,7 +205,7 @@ struct AboutView: View {
                                 showShrine.toggle()
                             }
                         
-                        Text(String(format: "%@ %@", NSLocalizedString("version", comment: ""), version))
+                        Text(String(format: "%@ %@", "version".localizedString, version))
                             .foregroundColor(.secondary)
                     }
                     

@@ -96,14 +96,14 @@ func naturalTimeSpan(startTime: Date, endTime: Date) -> String {
             elapsed = 0
         }
         
-        return String(format: NSLocalizedString("%@_remaining", comment: ""), format(interval: elapsed))
+        return String(format: "%@_remaining".localizedString, format(interval: elapsed))
     } else {
         var elapsed = startTime - current
         if elapsed < 0 {
             elapsed = 0
         }
         
-        return String(format: NSLocalizedString("in_%@", comment: ""), format(interval: elapsed))
+        return String(format: "in_%@".localizedString, format(interval: elapsed))
     }
 }
 
@@ -157,19 +157,19 @@ private func format(interval: TimeInterval) -> String {
     var result = ""
     
     if day > 0 {
-        result = String(format: NSLocalizedString("%d_d", comment: ""), day)
+        result = String(format: "%d_d".localizedString, day)
     }
     
     if hour > 0 {
-        result = String(format: NSLocalizedString("%@_%d_h", comment: ""), result, hour)
+        result = String(format: "%@_%d_h".localizedString, result, hour)
     }
     
     if min > 0 {
-        result = String(format: NSLocalizedString("%@_%d_m", comment: ""), result, min)
+        result = String(format: "%@_%d_m".localizedString, result, min)
     }
     
     if result.isEmpty {
-        result = NSLocalizedString("0_m", comment: "")
+        result = "0_m".localizedString
     }
     
     return result
