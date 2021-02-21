@@ -129,16 +129,17 @@
 "%@_remaining" = "%@ remaining";
 "in_%@" = "in %@";
 "remaining" = "Remaining";
-"%d_d" = "%d d";
-"%@_%d_h" = "%@ %d h";
-"%@_%d_m" = "%@ %d m";
-"0_m" = "0 m";
+"%dd" = "%dd";
+"%dh" = "%dh";
+"%dm" = "%dm";
+"0m" = "0m";
+"_" = " ";
 "%d_days" = "%d days";
 "%d_day" = "%d day";
-"%@_%d_hours" = "%@ %d hours";
-"%@_%d_hour" = "%@ %d hour";
-"@s_%d_mins" = "%@ %d minutes";
-"%@_%d_min" = "%@ %d minute";
+"%d_hours" = "%d hours";
+"%d_hour" = "%d hour";
+"%d_mins" = "%d minutes";
+"%d_min" = "%d minute";
 "0_min" = "0 minute";
 
 // UI

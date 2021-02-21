@@ -26,6 +26,22 @@ extension String {
     }
 }
 
+extension Array where Element == String {
+    func concate(delimiter: String) -> String {
+        var result = ""
+        
+        for s in self {
+            if !result.isEmpty {
+                result = result + delimiter
+            }
+            
+            result = result + s
+        }
+        
+        return result
+    }
+}
+
 /// HACK: Escapes language code to supported language.
 private func escapeLanguageCode(languageCode: String) -> String {
     if languageCode.starts(with: "en") {

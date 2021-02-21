@@ -154,25 +154,22 @@ private func format(interval: TimeInterval) -> String {
     let hour = (mins % 1440) / 60
     let day = mins / 1440
     
-    var result = ""
+    var results: [String] = []
     
     if day > 0 {
-        result = String(format: "%d_d".localizedString, day)
+        results.append(String(format: "%dd".localizedString, day))
     }
-    
     if hour > 0 {
-        result = String(format: "%@_%d_h".localizedString, result, hour)
+        results.append(String(format: "%dh".localizedString, hour))
     }
-    
     if min > 0 {
-        result = String(format: "%@_%d_m".localizedString, result, min)
+        results.append(String(format: "%dm".localizedString, min))
+    }
+    if results.isEmpty {
+        results.append("0m".localizedString)
     }
     
-    if result.isEmpty {
-        result = "0_m".localizedString
-    }
-    
-    return result
+    return results.concate(delimiter: "_".localizedString)
 }
 
 private func format2(interval: TimeInterval) -> String {
@@ -214,29 +211,26 @@ private func format3(interval: TimeInterval) -> String {
     let hour = (mins % 1440) / 60
     let day = mins / 1440
     
-    var result = ""
+    var results: [String] = []
     
     if day > 1 {
-        result = String(format: "%d_days".localizedIntentsString, day)
+        results.append(String(format: "%d_days".localizedIntentsString, day))
     } else if day > 0 {
-        result = String(format: "%d_day".localizedIntentsString, day)
+        results.append(String(format: "%d_day".localizedIntentsString, day))
     }
-    
     if hour > 1 {
-        result = String(format: "%@_%d_hours".localizedIntentsString, result, hour)
+        results.append(String(format: "%d_hours".localizedIntentsString, hour))
     } else if hour > 0 {
-        result = String(format: "%@_%d_hour".localizedIntentsString, result, hour)
+        results.append(String(format: "%d_hour".localizedIntentsString, hour))
     }
-    
     if min > 1 {
-        result = String(format: "@s_%d_mins".localizedIntentsString, result, min)
+        results.append(String(format: "%d_mins".localizedIntentsString, min))
     } else if min > 0 {
-        result = String(format: "%@_%d_min".localizedIntentsString, result, min)
+        results.append(String(format: "%d_min".localizedIntentsString, min))
+    }
+    if results.isEmpty {
+        results.append("0_min".localizedIntentsString)
     }
     
-    if result.isEmpty {
-        result = "0_min".localizedIntentsString
-    }
-    
-    return result
+    return results.concate(delimiter: "_".localizedString)
 }
