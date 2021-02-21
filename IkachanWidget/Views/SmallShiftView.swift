@@ -57,12 +57,11 @@ struct SmallShiftView: View {
                         Spacer()
                         
                         HStack {
-                            VStack(alignment: .leading, spacing: 0) {
-                                Text(shift.stage?.description ?? "")
-                                    .font(.footnote)
-                                    .foregroundColor(.secondary)
-                                    .lineLimit(1)
-                            }
+                            Text(shift.stage?.description ?? "")
+                                .font(.footnote)
+                                .foregroundColor(.secondary)
+                                .lineLimit(1)
+                                .layoutPriority(1)
                             
                             Spacer()
                                 .frame(minWidth: 0)
