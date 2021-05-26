@@ -97,7 +97,7 @@ struct AboutView: View {
                             for stage in Schedule.Stage.Id.allCases {
                                 urls.insert(Splatnet2URL + stage.defaultURL)
                             }
-                            for stage in Shift.Stage.Image.allCases {
+                            for stage in Shift.Stage.Id.allCases {
                                 urls.insert(Splatnet2URL + stage.defaultURL)
                             }
                             for weapon in Weapon.Id.allCases {

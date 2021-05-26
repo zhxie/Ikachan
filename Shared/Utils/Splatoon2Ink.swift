@@ -124,8 +124,12 @@ func parseShiftStage(stageImage: String?) -> Shift.Stage? {
     guard let stageImage = stageImage else {
         return nil
     }
+
+    let id = Shift.Stage.Id.allCases.first { i in
+        i.defaultURL == stageImage
+    }!
     
-    return Shift.Stage(image: Shift.Stage.Image(rawValue: stageImage)!)
+    return Shift.Stage(id: id)
 }
 
 func parseWeapon(weapon: JSON) -> Weapon {

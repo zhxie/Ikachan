@@ -17,7 +17,7 @@ let Splatoon2InkShiftURL = Splatoon2InkURL + "/data/coop-schedules.json"
 let Timeout = 60.0
 
 let SchedulePlaceholder = Schedule(startTime: Date(timeIntervalSince1970: 0), endTime: Date(timeIntervalSince1970: 7200), gameMode: .regular, rule: .turfWar, stageA: Schedule.Stage(id: .theReef, image: ""), stageB: Schedule.Stage(id: .musselforgeFitness, image: ""))
-let ShiftPlaceholder = Shift(startTime: Date(timeIntervalSince1970: 30672000), endTime: Date(timeIntervalSince1970: 30736800), stage: Shift.Stage(image: .spawningGrounds), weapons: [Weapon(id: .random, image: ""), Weapon(id: .random, image: ""), Weapon(id: .random, image: ""), Weapon(id: .random, image: "")])
+let ShiftPlaceholder = Shift(startTime: Date(timeIntervalSince1970: 30672000), endTime: Date(timeIntervalSince1970: 30736800), stage: Shift.Stage(id: .spawningGrounds), weapons: [Weapon(id: .random, image: ""), Weapon(id: .random, image: ""), Weapon(id: .random, image: ""), Weapon(id: .random, image: "")])
 
 let IkachanScheme = "ikachan"
 let IkachanActivity = "name.sketch.Ikachan"
