@@ -63,11 +63,11 @@ struct Shift: Hashable, Codable {
         }
 
         var description: LocalizedStringKey {
-            self.id.description
+            id.description
         }
         
         var url: String {
-            Splatnet2URL + self.id.defaultURL
+            Splatnet2URL + id.defaultURL
         }
     }
     

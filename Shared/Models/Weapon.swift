@@ -61,6 +61,10 @@ struct Weapon: Hashable, Codable {
         case parashelter = 6000
         case campingshelter = 6010
         case spygadget = 6020
+        case grizzcoBlaster = 20000
+        case grizzcoBrella = 20010
+        case grizzcoCharger = 20020
+        case grizzcoSlosher = 20030
         case random = -1
         case randomGold = -2
         
@@ -166,6 +170,14 @@ struct Weapon: Hashable, Codable {
                 return "tenta_brella"
             case .spygadget:
                 return "undercover_brella"
+            case .grizzcoBlaster:
+                return "kuma_blaster"
+            case .grizzcoBrella:
+                return "kuma_brella"
+            case .grizzcoCharger:
+                return "kuma_charger"
+            case .grizzcoSlosher:
+                return "kuma_slosher"
             case .random:
                 return "random"
             case .randomGold:
@@ -275,6 +287,14 @@ struct Weapon: Hashable, Codable {
                 return "/images/weapon/cdb032aa993f4836580ce4edac06de0138833299.png"
             case .spygadget:
                 return "/images/weapon/15fe3fe6bbec24ddb5fdc3ffd06585bc82440531.png"
+            case .grizzcoBlaster:
+                return "/images/weapon/db39203d81d60a7370d3ae966bc02ed14398366f.png"
+            case .grizzcoBrella:
+                return "/images/weapon/7d5ff3a57c3c3aaf28217bc3a79e02d665f13ba7.png"
+            case .grizzcoCharger:
+                return "/images/weapon/95077fe72924bcd64f37cd43aa49a12cd6329a7e.png"
+            case .grizzcoSlosher:
+                return "/images/weapon/c2c0653d3246ea6df2b595c68e907f68eda49b08.png"
             case .random:
                 return "/images/coop_weapons/746f7e90bc151334f0bf0d2a1f0987e311b03736.png"
             case .randomGold:
@@ -284,12 +304,16 @@ struct Weapon: Hashable, Codable {
     }
     
     var description: LocalizedStringKey {
-        self.id.description
+        id.description
     }
     
     var image: String
     
     var url: String {
-        Splatnet2URL + image
+        if image.isEmpty {
+            return Splatnet2URL + id.defaultURL
+        } else {
+            return Splatnet2URL + image
+        }
     }
 }

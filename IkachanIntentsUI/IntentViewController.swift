@@ -35,7 +35,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
                 controller.view.centerYAnchor.constraint(equalTo: view.centerYAnchor)
             ])
             
-            completion(true, parameters, self.desiredSize)
+            completion(true, parameters, desiredSize)
         } else if let shiftData = shiftData {
             let decoder = JSONDecoder()
             let shift = try! decoder.decode(Shift.self, from: Data(base64Encoded: shiftData)!)
@@ -53,13 +53,13 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
                 controller.view.centerYAnchor.constraint(equalTo: view.centerYAnchor)
             ])
             
-            completion(true, parameters, self.desiredSize)
+            completion(true, parameters, desiredSize)
         } else {
-            completion(false, parameters, self.desiredSize)
+            completion(false, parameters, desiredSize)
         }
     }
 
     var desiredSize: CGSize {
-        CGSize(width: self.extensionContext!.hostedViewMaximumAllowedSize.width, height: 210)
+        CGSize(width: extensionContext!.hostedViewMaximumAllowedSize.width, height: 210)
     }
 }

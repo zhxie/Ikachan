@@ -122,6 +122,10 @@
 "splat_brella" = "伞";
 "tenta_brella" = "露营伞";
 "undercover_brella" = "间谍伞";
+"kuma_blaster" = "打工专用 熊泡";
+"kuma_brella" = "打工专用 熊伞";
+"kuma_charger" = "打工专用 熊狙";
+"kuma_slosher" = "打工专用 熊桶";
 "random" = "随机武器";
 "random2" = "打工专用 熊老板的随机武器";
 

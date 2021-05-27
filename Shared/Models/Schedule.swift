@@ -76,7 +76,7 @@ struct Schedule: Hashable, Codable {
         case clamBlitz = "clam_blitz"
         
         var description: LocalizedStringKey {
-            return LocalizedStringKey(stringLiteral: self.rawValue)
+            return LocalizedStringKey(stringLiteral: rawValue)
         }
         
         var shortDescription: LocalizedStringKey {
@@ -252,13 +252,17 @@ struct Schedule: Hashable, Codable {
         }
         
         var description: LocalizedStringKey {
-            self.id.description
+            id.description
         }
         
         var image: String
         
         var url: String {
-            Splatnet2URL + image
+            if image.isEmpty {
+                return Splatnet2URL + id.defaultURL
+            } else {
+                return Splatnet2URL + image
+            }
         }
     }
 }

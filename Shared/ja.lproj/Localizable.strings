@@ -122,6 +122,10 @@
 "splat_brella" = "パラシェルター";
 "tenta_brella" = "キャンピングシェルター";
 "undercover_brella" = "スパイガジェット";
+"kuma_blaster" = "バイト専用 クマサン印のブラスター";
+"kuma_brella" = "バイト専用 クマサン印のシェルター";
+"kuma_charger" = "バイト専用 クマサン印のチャージャー";
+"kuma_slosher" = "バイト専用 クマサン印のスロッシャー";
 "random" = "ランダムブキ";
 "random2" = "バイト専用 クマサン印のランダムブキ";
 

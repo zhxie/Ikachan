@@ -112,9 +112,9 @@ struct AboutView: View {
                                 resources.append(ImageResource(downloadURL: URL(string: url)!))
                             }
                             ImagePrefetcher(resources: resources, progressBlock: { (skipped, failed, completed) in
-                                self.progressValue = Double(skipped.count + failed.count + completed.count)
+                                progressValue = Double(skipped.count + failed.count + completed.count)
                             }) { (_, _, _) in
-                                self.isDownloadingAllResources = false
+                                isDownloadingAllResources = false
                             }
                             .start()
                         }
