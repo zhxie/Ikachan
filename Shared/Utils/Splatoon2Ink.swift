@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 import SwiftyJSON
 
 func fetchSchedules(completion:@escaping ([Schedule]?, Error?) -> Void) {
@@ -61,6 +62,33 @@ func parseSchedule(schedule: JSON) -> Schedule {
 }
 
 func fetchShifts(completion:@escaping ([Shift]?, Error?) -> Void) {
+    var shifts: [Double: Shift] = [:]
+
+    if let asset = NSDataAsset(name: ShiftJSONFile, bundle: Bundle.main) {
+        if let json = try? JSON(data: asset.data) {
+            let current = Date()
+            
+            let detailsJSON = json["details"].arrayValue
+            for shift in detailsJSON.filter({ shift in
+                let endTime = shift["end_time"].doubleValue
+                
+                return Date(timeIntervalSince1970: endTime) >= current
+            }) {
+                let (endTime, shift) = parseShift(shift: shift)
+                
+                shifts[endTime] = shift
+            }
+        }
+    }
+    
+    guard shifts.count < 5 else {
+        completion(shifts.values.sorted {
+            $0.endTime < $1.endTime
+        }, nil)
+        
+        return
+    }
+    
     do {
         var request = URLRequest(url: URL(string: Splatoon2InkShiftURL)!)
         request.timeoutInterval = Timeout
@@ -78,22 +106,27 @@ func fetchShifts(completion:@escaping ([Shift]?, Error?) -> Void) {
                 }
                 
                 if let json = try? JSON(data: data!) {
-                    var shifts: [Shift] = []
-                    
                     // Details
                     let detailsJSON = json["details"].arrayValue
                     for shift in detailsJSON {
-                        shifts.append(parseShift(shift: shift))
+                        let (endTime, shift) = parseShift(shift: shift)
+                        
+                        shifts[endTime] = shift
                     }
                     
                     // Schedules
-                    var schedulesJSON = json["schedules"].arrayValue
-                    schedulesJSON = schedulesJSON.suffix(schedulesJSON.count - detailsJSON.count)
+                    let schedulesJSON = json["schedules"].arrayValue
                     for shift in schedulesJSON {
-                        shifts.append(parseShift(shift: shift))
+                        let (endTime, shift) = parseShift(shift: shift)
+                        
+                        if shifts[endTime] == nil {
+                            shifts[endTime] = shift
+                        }
                     }
                     
-                    completion(shifts, error)
+                    completion(shifts.values.sorted {
+                        $0.endTime < $1.endTime
+                    }, error)
                 } else {
                     completion(nil, error)
                 }
@@ -103,7 +136,7 @@ func fetchShifts(completion:@escaping ([Shift]?, Error?) -> Void) {
     }
 }
 
-func parseShift(shift: JSON) -> Shift {
+func parseShift(shift: JSON) -> (Double, Shift) {
     let startTime = shift["start_time"].doubleValue
     let endTime = shift["end_time"].doubleValue
     
@@ -117,7 +150,7 @@ func parseShift(shift: JSON) -> Shift {
         }
     }
     
-    return Shift(startTime: Date(timeIntervalSince1970: startTime), endTime: Date(timeIntervalSince1970: endTime), stage: parseShiftStage(stageImage: stage_image), weapons: weapons)
+    return (endTime, Shift(startTime: Date(timeIntervalSince1970: startTime), endTime: Date(timeIntervalSince1970: endTime), stage: parseShiftStage(stageImage: stage_image), weapons: weapons))
 }
 
 func parseShiftStage(stageImage: String?) -> Shift.Stage? {

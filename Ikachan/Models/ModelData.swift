@@ -102,22 +102,29 @@ final class ModelData: ObservableObject {
             return false
         }
         
-        var shifts: [Shift] = []
+        var shifts: [Double:Shift] = [:]
         
         // Details
         let detailsJSON = j["details"].arrayValue
         for shift in detailsJSON {
-            shifts.append(parseShift(shift: shift))
+            let (endTime, shift) = parseShift(shift: shift)
+            
+            shifts[endTime] = shift
         }
         
         // Schedules
-        var schedulesJSON = j["schedules"].arrayValue
-        schedulesJSON = schedulesJSON.suffix(schedulesJSON.count - detailsJSON.count)
+        let schedulesJSON = j["schedules"].arrayValue
         for shift in schedulesJSON {
-            shifts.append(parseShift(shift: shift))
+            let (endTime, shift) = parseShift(shift: shift)
+            
+            if shifts[endTime] == nil {
+                shifts[endTime] = shift
+            }
         }
         
-        self.shifts = shifts
+        self.shifts = shifts.values.sorted {
+            $0.endTime < $1.endTime
+        }
         
         return true
     }

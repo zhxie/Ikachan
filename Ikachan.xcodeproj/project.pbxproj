@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E434673D265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
+		E434673E265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
+		E434673F265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
+		E4346740265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
 		E438EF4225B5E22A005AB9D9 /* ShiftImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438EF4125B5E22A005AB9D9 /* ShiftImages.swift */; };
 		E438EF4525B5E3F8005AB9D9 /* ShiftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438EF4425B5E3F7005AB9D9 /* ShiftsView.swift */; };
 		E438EF4825B5E533005AB9D9 /* ShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438EF4725B5E533005AB9D9 /* ShiftView.swift */; };
@@ -19,7 +23,6 @@
 		E43E137B25C9A3BA008A0FE6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E43E137925C9A3BA008A0FE6 /* MainInterface.storyboard */; };
 		E43E137F25C9A3BA008A0FE6 /* IkachanIntentsUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E43E137325C9A3BA008A0FE6 /* IkachanIntentsUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E43E138225C9A3BA008A0FE6 /* IkachanIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E43E136825C9A3BA008A0FE6 /* IkachanIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		E4400F0B25CC6D9500BF94C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4400F0A25CC6D9500BF94C6 /* Assets.xcassets */; };
 		E4400F2825CD010A00BF94C6 /* ScheduleIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4613F8F25C9AFD100561D53 /* ScheduleIntentHandler.swift */; };
 		E4400F2925CD010A00BF94C6 /* ShiftIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4613F9C25C9AFF700561D53 /* ShiftIntentHandler.swift */; };
 		E4400F2E25CD011500BF94C6 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E136C25C9A3BA008A0FE6 /* IntentHandler.swift */; };
@@ -164,6 +167,7 @@
 
 /* Begin PBXFileReference section */
 		E406EF8D25C8576300683DBD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E434673C265FC51E0018F130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E438EF4125B5E22A005AB9D9 /* ShiftImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftImages.swift; sourceTree = "<group>"; };
 		E438EF4425B5E3F7005AB9D9 /* ShiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsView.swift; sourceTree = "<group>"; };
 		E438EF4725B5E533005AB9D9 /* ShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftView.swift; sourceTree = "<group>"; };
@@ -181,7 +185,6 @@
 		E43E137A25C9A3BA008A0FE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E43E137C25C9A3BA008A0FE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E43E139A25C9A3E6008A0FE6 /* IkachanIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IkachanIntents.entitlements; sourceTree = "<group>"; };
-		E4400F0A25CC6D9500BF94C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4400F3A25CD03F900BF94C6 /* Splatoon2Ink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2Ink.swift; sourceTree = "<group>"; };
 		E4405D7725AF64D2002EF1AB /* Ikachan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ikachan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4405D7A25AF64D2002EF1AB /* IkachanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkachanApp.swift; sourceTree = "<group>"; };
@@ -304,7 +307,6 @@
 				E46141AA25CAE9A800561D53 /* IkachanIntentsUI.entitlements */,
 				E43E137725C9A3BA008A0FE6 /* IntentViewController.swift */,
 				E43E137925C9A3BA008A0FE6 /* MainInterface.storyboard */,
-				E4400F0A25CC6D9500BF94C6 /* Assets.xcassets */,
 				E43E137C25C9A3BA008A0FE6 /* Info.plist */,
 			);
 			path = IkachanIntentsUI;
@@ -458,6 +460,7 @@
 				E477990025B1F1E600F8AE9F /* Models */,
 				E4613FBA25C9B62000561D53 /* IkachanIntents.intentdefinition */,
 				E4C7A2C225B7395500E26B20 /* Localizable.strings */,
+				E434673C265FC51E0018F130 /* Assets.xcassets */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E434673F265FC51E0018F130 /* Assets.xcassets in Resources */,
 				E4613F6225C9ACB100561D53 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,7 +657,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E43E137B25C9A3BA008A0FE6 /* MainInterface.storyboard in Resources */,
-				E4400F0B25CC6D9500BF94C6 /* Assets.xcassets in Resources */,
+				E4346740265FC51E0018F130 /* Assets.xcassets in Resources */,
 				E4613F6725C9ACB100561D53 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -672,6 +676,7 @@
 				E46B37E525D8E5340044232F /* ichi-ipad@2x.png in Resources */,
 				E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */,
 				E4405D7F25AF64D6002EF1AB /* Assets.xcassets in Resources */,
+				E434673D265FC51E0018F130 /* Assets.xcassets in Resources */,
 				E46B37E725D8E5340044232F /* ichi-ipad-pro@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -681,6 +686,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E484FDC725C94694006E748F /* Assets.xcassets in Resources */,
+				E434673E265FC51E0018F130 /* Assets.xcassets in Resources */,
 				E4444EFC25BF14B50003A676 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
