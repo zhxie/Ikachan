@@ -28,11 +28,10 @@ struct ShiftImages: View {
                         Rectangle()
                             .foregroundColor(Color(UIColor.secondarySystemBackground))
                             .aspectRatio(16 / 9, contentMode: .fit)
-                            .frame(height: 1080)
                     }
                     .resizable()
                     .accessibility(label: Text(title))
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(16 / 9, contentMode: .fit)
                     .cornerRadius(15.0)
                 
                 Text(title)
@@ -55,11 +54,10 @@ struct ShiftImages: View {
                                                 Circle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
                                                     .aspectRatio(1.0, contentMode: .fit)
-                                                    .frame(height: 1080)
                                             }
                                             .resizable()
                                             .accessibility(label: Text(subTitle1))
-                                            .aspectRatio(contentMode: .fit)
+                                            .aspectRatio(1.0, contentMode: .fit)
                                     )
                                 Rectangle()
                                     .fill(Color.clear)
@@ -70,11 +68,10 @@ struct ShiftImages: View {
                                                 Circle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
                                                     .aspectRatio(1.0, contentMode: .fit)
-                                                    .frame(height: 1080)
                                             }
                                             .resizable()
                                             .accessibility(label: Text(subTitle2))
-                                            .aspectRatio(contentMode: .fit)
+                                            .aspectRatio(1.0, contentMode: .fit)
                                 )
                             }
                             HStack {
@@ -87,11 +84,10 @@ struct ShiftImages: View {
                                                 Circle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
                                                     .aspectRatio(1.0, contentMode: .fit)
-                                                    .frame(height: 1080)
                                             }
                                             .resizable()
                                             .accessibility(label: Text(subTitle3))
-                                            .aspectRatio(contentMode: .fit)
+                                            .aspectRatio(1.0, contentMode: .fit)
                                 )
                                 Rectangle()
                                     .fill(Color.clear)
@@ -102,11 +98,10 @@ struct ShiftImages: View {
                                                 Circle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
                                                     .aspectRatio(1.0, contentMode: .fit)
-                                                    .frame(height: 1080)
                                             }
                                             .resizable()
                                             .accessibility(label: Text(subTitle4))
-                                            .aspectRatio(contentMode: .fit)
+                                            .aspectRatio(1.0, contentMode: .fit)
                                 )
                             }
                         }
@@ -123,6 +118,6 @@ struct ShiftImages: View {
 
 struct ShiftImages_Previews: PreviewProvider {
     static var previews: some View {
-        ShiftImages(image: "", title: "spawning_grounds", subImage1: "", subTitle1: "random", subImage2: "", subTitle2: "random", subImage3: "", subTitle3: "random", subImage4: "", subTitle4: "random")
+        ShiftImages(image: "http://www.apple.com", title: "spawning_grounds", subImage1: "http://www.apple.com", subTitle1: "random", subImage2: "http://www.apple.com", subTitle2: "random", subImage3: "http://www.apple.com", subTitle3: "random", subImage4: "http://www.apple.com", subTitle4: "random")
     }
 }

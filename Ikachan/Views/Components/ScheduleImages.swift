@@ -22,11 +22,10 @@ struct ScheduleImages: View {
                         Rectangle()
                             .foregroundColor(Color(UIColor.secondarySystemBackground))
                             .aspectRatio(16 / 9, contentMode: .fit)
-                            .frame(height: 1080)
                     }
                     .resizable()
                     .accessibility(label: Text(titleA))
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(16 / 9, contentMode: .fit)
                     .cornerRadius(15.0)
                 
                 Text(titleA)
@@ -40,11 +39,10 @@ struct ScheduleImages: View {
                         Rectangle()
                             .foregroundColor(Color(UIColor.secondarySystemBackground))
                             .aspectRatio(16 / 9, contentMode: .fit)
-                            .frame(height: 1080)
                     }
                     .resizable()
                     .accessibility(label: Text(titleB))
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(16 / 9, contentMode: .fit)
                     .cornerRadius(15.0)
                 
                 Text(titleB)
@@ -57,6 +55,6 @@ struct ScheduleImages: View {
 
 struct ScheduleImages_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleImages(imageA: "", titleA: "the_reef", imageB: "", titleB: "mussel_forge_fitness")
+        ScheduleImages(imageA: "http://www.apple.com", titleA: "the_reef", imageB: "http://www.apple.com", titleB: "mussel_forge_fitness")
     }
 }
