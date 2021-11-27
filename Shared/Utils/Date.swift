@@ -204,6 +204,7 @@ private func format2(interval: TimeInterval) -> String {
     }
 }
 
+// TODO: more precies "1 hour17 minutes"
 private func format3(interval: TimeInterval) -> String {
     let mins = Int((interval / 60).rounded())
     
@@ -232,5 +233,10 @@ private func format3(interval: TimeInterval) -> String {
         results.append("0_min".localizedIntentsString)
     }
     
-    return results.concate(delimiter: "_".localizedString)
+    assert(results.count <= 3)
+    if results.count >= 3 {
+        results.insert("and".localizedIntentsString, at: 2)
+    }
+    
+    return results.concate(delimiter: "_".localizedIntentsString)
 }
