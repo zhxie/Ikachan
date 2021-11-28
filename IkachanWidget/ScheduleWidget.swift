@@ -1,6 +1,6 @@
 //
 //  ScheduleWidget.swift
-//  ScheduleWidget
+//  IkachanWidget
 //
 //  Created by Sketch on 2021/1/21.
 //

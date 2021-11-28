@@ -1,6 +1,6 @@
 //
 //  SmallScheduleView.swift
-//  Ikachan
+//  IkachanWidget
 //
 //  Created by Sketch on 2021/1/21.
 //

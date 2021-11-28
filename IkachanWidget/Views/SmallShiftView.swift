@@ -1,6 +1,6 @@
 //
 //  SmallShiftView.swift
-//  IkachanWidgetExtension
+//  IkachanWidget
 //
 //  Created by Sketch on 2021/2/7.
 //

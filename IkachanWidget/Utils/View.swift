@@ -1,6 +1,6 @@
 //
 //  View.swift
-//  Ikachan
+//  IkachanWidget
 //
 //  Created by Sketch on 2021/2/2.
 //

@@ -1,6 +1,6 @@
 //
 //  ScheduleIntentHandler.swift
-//  Ikachan
+//  IkachanIntents
 //
 //  Created by Sketch on 2021/2/3.
 //
