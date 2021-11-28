@@ -5,7 +5,6 @@
 //  Created by Sketch on 2021/2/6.
 //
 
-import Foundation
 import SwiftUI
 
 let kujidutsu: [Omikuji] = [

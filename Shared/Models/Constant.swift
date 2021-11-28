@@ -5,7 +5,6 @@
 //  Created by Sketch on 2021/1/17.
 //
 
-import Foundation
 import SwiftUI
 
 let Splatnet2URL = "https://app.splatoon2.nintendo.net"

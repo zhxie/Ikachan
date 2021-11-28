@@ -5,7 +5,6 @@
 //  Created by Sketch on 2021/2/5.
 //
 
-import Foundation
 import UIKit
 import SwiftyJSON
 

@@ -5,7 +5,6 @@
 //  Created by Sketch on 2021/2/2.
 //
 
-import Foundation
 import SwiftUI
 
 struct ColorBlended: ViewModifier {

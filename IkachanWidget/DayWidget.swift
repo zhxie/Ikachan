@@ -8,7 +8,6 @@
 import WidgetKit
 import SwiftUI
 import Intents
-import Kingfisher
 
 struct DayProvider: IntentTimelineProvider {
     func placeholder(in context: Context) -> DayEntry {

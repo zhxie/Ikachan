@@ -5,8 +5,6 @@
 //  Created by Sketch on 2021/2/3.
 //
 
-import Foundation
-import SwiftUI
 import Intents
 
 extension String {

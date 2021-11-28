@@ -5,7 +5,6 @@
 //  Created by Sketch on 2021/1/16.
 //
 
-import Foundation
 import SwiftUI
 
 struct Shift: Hashable, Codable {

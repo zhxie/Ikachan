@@ -5,7 +5,6 @@
 //  Created by Sketch on 2021/1/15.
 //
 
-import Foundation
 import SwiftUI
 
 struct Schedule: Hashable, Codable {

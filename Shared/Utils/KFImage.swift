@@ -5,7 +5,6 @@
 //  Created by Sketch on 2021/11/28.
 //
 
-import Foundation
 import SwiftUI
 import Kingfisher
 
