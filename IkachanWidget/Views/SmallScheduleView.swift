@@ -24,10 +24,10 @@ struct SmallScheduleView: View {
                     VStack(spacing: 0) {
                         HStack(spacing: 0) {
                             Text(g.size.width >= CompactSmallWidgetSafeWidth ? scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime) : scheduleTimePeriod2(startTime: schedule.startTime, endTime: schedule.endTime))
-                                .accessibility(label: Text(scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime)))
                                 .font(.caption2)
                                 .foregroundColor(.secondary)
                                 .lineLimit(1)
+                                .accessibility(label: Text(scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime)))
                                 .layoutPriority(1)
                             
                             Spacer()
@@ -54,10 +54,9 @@ struct SmallScheduleView: View {
                                             Rectangle()
                                                 .foregroundColor(Color(UIColor.secondarySystemBackground))
                                         }
-                                        .resizable()
-                                        .accessibility(label: Text(schedule.stageA.description))
-                                        .aspectRatio(contentMode: .fill)
+                                        .resizedToFill()
                                         .clipped()
+                                        .accessibility(label: Text(schedule.stageA.description))
                                 )
                                 .cornerRadius(7.5)
                                 .layoutPriority(1)
@@ -81,9 +80,9 @@ struct SmallScheduleView: View {
                             Spacer()
                             
                             Image(systemName: "circle.fill")
-                                .accessibility(label: Text(schedule.gameMode.description))
                                 .font(.footnote)
                                 .foregroundColor(schedule.gameMode.accentColor)
+                                .accessibility(label: Text(schedule.gameMode.description))
                         }
                         .layoutPriority(1)
                         

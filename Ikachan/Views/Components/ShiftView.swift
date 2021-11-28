@@ -29,8 +29,7 @@ struct ShiftView: View {
                 Spacer()
                 
                 Image("salmon_run")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .resizedToFit()
                     .frame(width: 50, height: 50)
             }
             

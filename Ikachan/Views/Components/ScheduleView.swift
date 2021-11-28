@@ -28,8 +28,7 @@ struct ScheduleView: View {
                 Spacer()
                 
                 Image(schedule.rule.rawValue)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .resizedToFit()
                     .frame(width: 50, height: 50)
             }
             

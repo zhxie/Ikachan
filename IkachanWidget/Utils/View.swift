@@ -1,5 +1,5 @@
 //
-//  Image.swift
+//  View.swift
 //  Ikachan
 //
 //  Created by Sketch on 2021/2/2.

@@ -50,30 +50,28 @@ struct AboutView: View {
                             Section {
                                 HStack {
                                     Image("kuro")
-                                        .resizable()
-                                        .accessibility(label: Text("kuro"))
-                                        .aspectRatio(contentMode: .fit)
+                                        .resizedToFit()
                                         .frame(width: 60)
                                         .cornerRadius(13.2)
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 13.2)
                                                 .stroke(Color(UIColor.secondarySystemBackground), lineWidth: 2)
                                         )
+                                        .accessibility(label: Text("kuro"))
                                     Button("kuro") {
                                         UIApplication.shared.setAlternateIconName(nil)
                                     }
                                 }
                                 HStack {
                                     Image("ichi")
-                                        .resizable()
-                                        .accessibility(label: Text("ichi"))
-                                        .aspectRatio(contentMode: .fit)
+                                        .resizedToFit()
                                         .frame(width: 60)
                                         .cornerRadius(13.2)
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 13.2)
                                                 .stroke(Color(UIColor.secondarySystemBackground), lineWidth: 2)
                                         )
+                                        .accessibility(label: Text("ichi"))
                                     Button("ichi") {
                                         UIApplication.shared.setAlternateIconName("ichi")
                                     }
@@ -194,11 +192,10 @@ struct AboutView: View {
                     
                     VStack {
                         Image("inkling.splat")
-                            .resizable()
-                            .accessibility(label: Text("ika_shrine"))
-                            .aspectRatio(contentMode: .fit)
+                            .resizedToFit()
                             .foregroundColor(.secondary)
                             .frame(width: 96)
+                            .accessibility(label: Text("ika_shrine"))
                             .onTapGesture {
                                 Impact(style: .light)
                                 

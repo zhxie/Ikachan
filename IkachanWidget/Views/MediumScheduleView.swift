@@ -46,10 +46,9 @@ struct MediumScheduleView: View {
                                                 Rectangle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
                                             }
-                                            .resizable()
-                                            .accessibility(label: Text(schedule.stageA.description))
-                                            .aspectRatio(contentMode: .fill)
+                                            .resizedToFill()
                                             .clipped()
+                                            .accessibility(label: Text(schedule.stageA.description))
                                     )
                                     .cornerRadius(7.5)
                                 Rectangle()
@@ -60,10 +59,9 @@ struct MediumScheduleView: View {
                                                 Rectangle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
                                             }
-                                            .resizable()
-                                            .accessibility(label: Text(schedule.stageB.description))
-                                            .aspectRatio(contentMode: .fill)
+                                            .resizedToFill()
                                             .clipped()
+                                            .accessibility(label: Text(schedule.stageB.description))
                                     )
                                     .cornerRadius(7.5)
                             }
@@ -105,9 +103,9 @@ struct MediumScheduleView: View {
                                 Spacer()
                                 
                                 Image(systemName: "circle.fill")
-                                    .accessibility(label: Text(schedule.gameMode.description))
                                     .font(.footnote)
                                     .foregroundColor(schedule.gameMode.accentColor)
+                                    .accessibility(label: Text(schedule.gameMode.description))
                             }
                             .layoutPriority(1)
                             

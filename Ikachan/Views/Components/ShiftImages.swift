@@ -29,13 +29,13 @@ struct ShiftImages: View {
                             .foregroundColor(Color(UIColor.secondarySystemBackground))
                             .aspectRatio(16 / 9, contentMode: .fit)
                     }
-                    .resizable()
+                    .resizedToFit(16 / 9)
+                    .cornerRadius(15)
                     .accessibility(label: Text(title))
-                    .aspectRatio(16 / 9, contentMode: .fit)
-                    .cornerRadius(15.0)
                 
                 Text(title)
                     .font(.footnote)
+                    .lineLimit(1)
             }
             
             VStack {
@@ -53,11 +53,10 @@ struct ShiftImages: View {
                                             .placeholder {
                                                 Circle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
-                                                    .aspectRatio(1.0, contentMode: .fit)
+                                                    .aspectRatio(1, contentMode: .fit)
                                             }
-                                            .resizable()
+                                            .resizedToFit(1)
                                             .accessibility(label: Text(subTitle1))
-                                            .aspectRatio(1.0, contentMode: .fit)
                                     )
                                 Rectangle()
                                     .fill(Color.clear)
@@ -67,11 +66,10 @@ struct ShiftImages: View {
                                             .placeholder {
                                                 Circle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
-                                                    .aspectRatio(1.0, contentMode: .fit)
+                                                    .aspectRatio(1, contentMode: .fit)
                                             }
-                                            .resizable()
+                                            .resizedToFit(1)
                                             .accessibility(label: Text(subTitle2))
-                                            .aspectRatio(1.0, contentMode: .fit)
                                 )
                             }
                             HStack {
@@ -83,11 +81,10 @@ struct ShiftImages: View {
                                             .placeholder {
                                                 Circle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
-                                                    .aspectRatio(1.0, contentMode: .fit)
+                                                    .aspectRatio(1, contentMode: .fit)
                                             }
-                                            .resizable()
+                                            .resizedToFit(1)
                                             .accessibility(label: Text(subTitle3))
-                                            .aspectRatio(1.0, contentMode: .fit)
                                 )
                                 Rectangle()
                                     .fill(Color.clear)
@@ -97,11 +94,10 @@ struct ShiftImages: View {
                                             .placeholder {
                                                 Circle()
                                                     .foregroundColor(Color(UIColor.secondarySystemBackground))
-                                                    .aspectRatio(1.0, contentMode: .fit)
+                                                    .aspectRatio(1, contentMode: .fit)
                                             }
-                                            .resizable()
+                                            .resizedToFit(1)
                                             .accessibility(label: Text(subTitle4))
-                                            .aspectRatio(1.0, contentMode: .fit)
                                 )
                             }
                         }
@@ -109,6 +105,7 @@ struct ShiftImages: View {
 
                 Text("weapons")
                     .font(.footnote)
+                    .lineLimit(1)
                     .foregroundColor(.clear)
                     .accessibility(hidden: true)
             }

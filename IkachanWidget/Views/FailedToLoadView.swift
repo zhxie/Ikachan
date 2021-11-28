@@ -22,10 +22,9 @@ struct FailedToLoadView: View {
                     
                     ZStack {
                         Image("inkling_splatted")
-                            .resizable()
-                            .accessibility(label: Text("failed_to_load"))
-                            .aspectRatio(contentMode: .fit)
+                            .resizedToFit()
                             .blending(color: accentColor)
+                            .accessibility(label: Text("failed_to_load"))
                     }
                     .frame(height: g.size.height / 3)
                     Text("failed_to_load")

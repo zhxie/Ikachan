@@ -110,12 +110,18 @@
 		E477990D25B203F900F8AE9F /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990C25B203F900F8AE9F /* Weapon.swift */; };
 		E484FDC725C94694006E748F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4444F3725BF164C0003A676 /* Assets.xcassets */; };
 		E484FDCE25C946C9006E748F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46B514C25BB46C5001F88CE /* InfoPlist.strings */; };
+		E485D9FC275342A300B82AE0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E485D9FB275342A300B82AE0 /* Image.swift */; };
+		E485DA0D2753444600B82AE0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E485D9FB275342A300B82AE0 /* Image.swift */; };
+		E485DA1127534A3700B82AE0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E485D9FB275342A300B82AE0 /* Image.swift */; };
+		E485DA1327534D0100B82AE0 /* KFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E485DA1227534D0100B82AE0 /* KFImage.swift */; };
+		E485DA1427534D0100B82AE0 /* KFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E485DA1227534D0100B82AE0 /* KFImage.swift */; };
+		E485DA1527534D0100B82AE0 /* KFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E485DA1227534D0100B82AE0 /* KFImage.swift */; };
 		E48BECC025CD31F100B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
 		E48BECC125CD31F100B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
 		E48BECC225CD31F200B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
 		E48BECC325CD31F200B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
 		E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7A2C225B7395500E26B20 /* Localizable.strings */; };
-		E4C98CFC25C98099006940E9 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C98CFA25C98099006940E9 /* Image.swift */; };
+		E4C98CFC25C98099006940E9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C98CFA25C98099006940E9 /* View.swift */; };
 		E4D8F02C25D02A460064B40A /* ichi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4D8F02625D02A450064B40A /* ichi@2x.png */; };
 		E4D8F02E25D02A460064B40A /* ichi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4D8F02825D02A450064B40A /* ichi@3x.png */; };
 		E4E13CE325C7DBB100150544 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E13CE225C7DBB100150544 /* Color.swift */; };
@@ -228,6 +234,8 @@
 		E477990125B1F1F600F8AE9F /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E477990925B2029C00F8AE9F /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
 		E477990C25B203F900F8AE9F /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		E485D9FB275342A300B82AE0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		E485DA1227534D0100B82AE0 /* KFImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFImage.swift; sourceTree = "<group>"; };
 		E48BECBF25CD31F100B301D1 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		E48BED3725CD822600B301D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
 		E48BED4125CD855800B301D1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
@@ -237,7 +245,7 @@
 		E4B1145925BD515F00303542 /* SmallDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDayView.swift; sourceTree = "<group>"; };
 		E4B1145E25BD5AC600303542 /* DayWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWidget.swift; sourceTree = "<group>"; };
 		E4C7A2C125B7395500E26B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E4C98CFA25C98099006940E9 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		E4C98CFA25C98099006940E9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		E4D8F02625D02A450064B40A /* ichi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ichi@2x.png"; sourceTree = "<group>"; };
 		E4D8F02825D02A450064B40A /* ichi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ichi@3x.png"; sourceTree = "<group>"; };
 		E4D8F04A25D03C310064B40A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IkachanIntents.strings"; sourceTree = "<group>"; };
@@ -315,7 +323,7 @@
 		E4400EFD25CC6C5F00BF94C6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				E4C98CFA25C98099006940E9 /* Image.swift */,
+				E4C98CFA25C98099006940E9 /* View.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -471,6 +479,8 @@
 				E48BECBF25CD31F100B301D1 /* Collection.swift */,
 				E4E13CE225C7DBB100150544 /* Color.swift */,
 				E468B7B425B46080001254FE /* Date.swift */,
+				E485D9FB275342A300B82AE0 /* Image.swift */,
+				E485DA1227534D0100B82AE0 /* KFImage.swift */,
 				E461405825C9C93B00561D53 /* LocalizedStringKey.swift */,
 				E461413F25CA880500561D53 /* String.swift */,
 				E4400F3A25CD03F900BF94C6 /* Splatoon2Ink.swift */,
@@ -720,6 +730,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4613F2525C9A97A00561D53 /* Constant.swift in Sources */,
+				E485DA0D2753444600B82AE0 /* Image.swift in Sources */,
 				E4613F0825C9A70C00561D53 /* Shift.swift in Sources */,
 				E4613FB825C9B62000561D53 /* IkachanIntents.intentdefinition in Sources */,
 				E4613F0925C9A70D00561D53 /* Schedule.swift in Sources */,
@@ -727,6 +738,7 @@
 				E461405C25C9C93B00561D53 /* LocalizedStringKey.swift in Sources */,
 				E48BECC325CD31F200B301D1 /* Collection.swift in Sources */,
 				E43E137825C9A3BA008A0FE6 /* IntentViewController.swift in Sources */,
+				E485DA1527534D0100B82AE0 /* KFImage.swift in Sources */,
 				E4613F5625C9ACA900561D53 /* Date.swift in Sources */,
 				E46141A425CADF5600561D53 /* ShiftView.swift in Sources */,
 				E46141A225CADF5600561D53 /* ShiftImages.swift in Sources */,
@@ -747,8 +759,10 @@
 				E4E13CE325C7DBB100150544 /* Color.swift in Sources */,
 				E4400F3B25CD03F900BF94C6 /* Splatoon2Ink.swift in Sources */,
 				E4400F3425CD012C00BF94C6 /* ScheduleIntentHandler.swift in Sources */,
+				E485DA1327534D0100B82AE0 /* KFImage.swift in Sources */,
 				E461414025CA880500561D53 /* String.swift in Sources */,
 				E4400F3325CD012C00BF94C6 /* IntentHandler.swift in Sources */,
+				E485D9FC275342A300B82AE0 /* Image.swift in Sources */,
 				E4400F3525CD012C00BF94C6 /* ShiftIntentHandler.swift in Sources */,
 				E4405D7D25AF64D2002EF1AB /* ContentView.swift in Sources */,
 				E438EF4825B5E533005AB9D9 /* ShiftView.swift in Sources */,
@@ -786,6 +800,7 @@
 				E4E13CE425C7DBB100150544 /* Color.swift in Sources */,
 				E4444F1825BF14FB0003A676 /* ScheduleWidget.swift in Sources */,
 				E4444F0725BF14D10003A676 /* IkachanWidgetBundle.swift in Sources */,
+				E485DA1427534D0100B82AE0 /* KFImage.swift in Sources */,
 				E461405A25C9C93B00561D53 /* LocalizedStringKey.swift in Sources */,
 				E4400F2825CD010A00BF94C6 /* ScheduleIntentHandler.swift in Sources */,
 				E4444EF825BF14A50003A676 /* MediumShiftView.swift in Sources */,
@@ -796,7 +811,8 @@
 				E48BECC125CD31F100B301D1 /* Collection.swift in Sources */,
 				E4400F2925CD010A00BF94C6 /* ShiftIntentHandler.swift in Sources */,
 				E4400F4925CD069A00BF94C6 /* Splatoon2Ink.swift in Sources */,
-				E4C98CFC25C98099006940E9 /* Image.swift in Sources */,
+				E485DA1127534A3700B82AE0 /* Image.swift in Sources */,
+				E4C98CFC25C98099006940E9 /* View.swift in Sources */,
 				E4444EF025BF149B0003A676 /* Schedule.swift in Sources */,
 				E4444EF125BF149B0003A676 /* Weapon.swift in Sources */,
 				E4444F2325BF15090003A676 /* ShiftWidget.swift in Sources */,

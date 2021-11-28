@@ -23,10 +23,9 @@ struct ScheduleImages: View {
                             .foregroundColor(Color(UIColor.secondarySystemBackground))
                             .aspectRatio(16 / 9, contentMode: .fit)
                     }
-                    .resizable()
+                    .resizedToFit(16 / 9)
+                    .cornerRadius(15)
                     .accessibility(label: Text(titleA))
-                    .aspectRatio(16 / 9, contentMode: .fit)
-                    .cornerRadius(15.0)
                 
                 Text(titleA)
                     .font(.footnote)
@@ -40,10 +39,9 @@ struct ScheduleImages: View {
                             .foregroundColor(Color(UIColor.secondarySystemBackground))
                             .aspectRatio(16 / 9, contentMode: .fit)
                     }
-                    .resizable()
+                    .resizedToFit(16 / 9)
+                    .cornerRadius(15)
                     .accessibility(label: Text(titleB))
-                    .aspectRatio(16 / 9, contentMode: .fit)
-                    .cornerRadius(15.0)
                 
                 Text(titleB)
                     .font(.footnote)

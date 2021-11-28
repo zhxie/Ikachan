@@ -23,6 +23,7 @@ struct ContentView: View {
                     Label("schedule", systemImage: "calendar")
                 }
                 .tag(Tab.schedule)
+                
                 NavigationView {
                     ShiftsView(showModal: $showAbout)
                 }

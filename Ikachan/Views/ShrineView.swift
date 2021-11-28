@@ -99,16 +99,14 @@ struct ShrineView: View {
                     .cornerRadius(15.0)
                     .overlay(
                         Image(omikuji.fortune.defaultImage)
-                            .resizable()
-                            .accessibility(label: Text(omikuji.fortune.description))
-                            .aspectRatio(contentMode: .fit)
+                            .resizedToFit()
                             .frame(width: 150)
+                            .accessibility(label: Text(omikuji.fortune.description))
                     )
                     .layoutPriority(1)
             } else {
                 Image(omikuji.image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .resizedToFit()
                     .cornerRadius(15.0)
                     .layoutPriority(1)
             }
