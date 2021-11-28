@@ -80,14 +80,14 @@ struct ShiftProvider: IntentTimelineProvider {
                         distance = shift.startTime - current
                     }
                     
-                    var delta = 60.0
+                    var delta: Double = 60
                     if distance >= 864000 {
                         delta = distance.truncatingRemainder(dividingBy: 86400)
                     } else if distance >= 36000 {
                         delta = distance.truncatingRemainder(dividingBy: 3600)
                     }
                     if delta == 0 {
-                        delta = 60.0
+                        delta = 60
                     }
                     current = current.addingTimeInterval(delta)
                 }

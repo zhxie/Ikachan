@@ -15,8 +15,8 @@ struct AboutView: View {
     @Binding var showModal: Bool
     
     @State var isDownloadingAllResources = false
-    @State var progressValue = 0.0
-    @State var progressTotal = 0.0
+    @State var progressValue: Double = 0
+    @State var progressTotal: Double = 0
     
     @State var showShrine: Bool = false
     
@@ -221,10 +221,10 @@ struct AboutView: View {
         }
         .onAppear {
             if motion.isAccelerometerAvailable {
-                motion.accelerometerUpdateInterval = 2.0 / 60.0
+                motion.accelerometerUpdateInterval = 2 / 60
                 motion.startAccelerometerUpdates()
                 
-                timer = Timer(timeInterval: 2.0 / 60.0, repeats: true, block: timeout)
+                timer = Timer(timeInterval: 2 / 60, repeats: true, block: timeout)
                 RunLoop.current.add(timer!, forMode: .default)
             }
         }

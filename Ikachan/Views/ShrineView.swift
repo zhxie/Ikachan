@@ -96,7 +96,7 @@ struct ShrineView: View {
                 Rectangle()
                     .aspectRatio(1, contentMode: .fit)
                     .foregroundColor(Color(UIColor.secondarySystemBackground))
-                    .cornerRadius(15.0)
+                    .cornerRadius(15)
                     .overlay(
                         Image(omikuji.fortune.defaultImage)
                             .resizedToFit()
@@ -107,14 +107,14 @@ struct ShrineView: View {
             } else {
                 Image(omikuji.image)
                     .resizedToFit()
-                    .cornerRadius(15.0)
+                    .cornerRadius(15)
                     .layoutPriority(1)
             }
             
             Spacer()
             
             Text(omikuji.description)
-                .font(Font.custom(descriptionFontFamily, size: 24.0))
+                .font(Font.custom(descriptionFontFamily, size: 24))
                 .multilineTextAlignment(.center)
             
             Spacer()
@@ -122,7 +122,7 @@ struct ShrineView: View {
         .padding(.horizontal)
         .frame(idealWidth: 300, maxWidth: 300, idealHeight: 600, maxHeight: 600)
         .background(Color(UIColor.systemBackground))
-        .cornerRadius(15.0)
+        .cornerRadius(15)
         .padding()
     }
     
@@ -144,11 +144,11 @@ struct ShrineView: View {
     var fortuneFontSize: CGFloat {
         switch locale {
         case "ja", "zh-Hans":
-            return 84.0
+            return 84
         case "en":
-            return 48.0
+            return 48
         default:
-            return 48.0
+            return 48
         }
     }
     
