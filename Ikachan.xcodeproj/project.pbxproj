@@ -68,8 +68,6 @@
 		E4613F2525C9A97A00561D53 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7AC25B34AFC001254FE /* Constant.swift */; };
 		E4613F3F25C9AC5500561D53 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4613F3E25C9AC5500561D53 /* SwiftyJSON */; };
 		E4613F4525C9AC5E00561D53 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4613F4425C9AC5E00561D53 /* Kingfisher */; };
-		E4613F4C25C9ACA900561D53 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E13CE225C7DBB100150544 /* Color.swift */; };
-		E4613F4E25C9ACA900561D53 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
 		E4613F5425C9ACA900561D53 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E13CE225C7DBB100150544 /* Color.swift */; };
 		E4613F5625C9ACA900561D53 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
 		E4613F6225C9ACB100561D53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7A2C225B7395500E26B20 /* Localizable.strings */; };
@@ -82,7 +80,6 @@
 		E4613FB825C9B62000561D53 /* IkachanIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E4613FBA25C9B62000561D53 /* IkachanIntents.intentdefinition */; };
 		E461405925C9C93B00561D53 /* LocalizedStringKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461405825C9C93B00561D53 /* LocalizedStringKey.swift */; };
 		E461405A25C9C93B00561D53 /* LocalizedStringKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461405825C9C93B00561D53 /* LocalizedStringKey.swift */; };
-		E461405B25C9C93B00561D53 /* LocalizedStringKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461405825C9C93B00561D53 /* LocalizedStringKey.swift */; };
 		E461405C25C9C93B00561D53 /* LocalizedStringKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461405825C9C93B00561D53 /* LocalizedStringKey.swift */; };
 		E461414025CA880500561D53 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461413F25CA880500561D53 /* String.swift */; };
 		E461414125CA880500561D53 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461413F25CA880500561D53 /* String.swift */; };
@@ -116,6 +113,8 @@
 		E485DA1327534D0100B82AE0 /* KFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E485DA1227534D0100B82AE0 /* KFImage.swift */; };
 		E485DA1427534D0100B82AE0 /* KFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E485DA1227534D0100B82AE0 /* KFImage.swift */; };
 		E485DA1527534D0100B82AE0 /* KFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E485DA1227534D0100B82AE0 /* KFImage.swift */; };
+		E485DA192753509400B82AE0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
+		E485DA1A275350A000B82AE0 /* LocalizedStringKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461405825C9C93B00561D53 /* LocalizedStringKey.swift */; };
 		E48BECC025CD31F100B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
 		E48BECC125CD31F100B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
 		E48BECC225CD31F200B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
@@ -476,11 +475,9 @@
 		E484FDB725C945B5006E748F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E485DA182753504100B82AE0 /* UI */,
 				E48BECBF25CD31F100B301D1 /* Collection.swift */,
-				E4E13CE225C7DBB100150544 /* Color.swift */,
 				E468B7B425B46080001254FE /* Date.swift */,
-				E485D9FB275342A300B82AE0 /* Image.swift */,
-				E485DA1227534D0100B82AE0 /* KFImage.swift */,
 				E461405825C9C93B00561D53 /* LocalizedStringKey.swift */,
 				E461413F25CA880500561D53 /* String.swift */,
 				E4400F3A25CD03F900BF94C6 /* Splatoon2Ink.swift */,
@@ -499,6 +496,16 @@
 				E43E12C425C995C7008A0FE6 /* FailedToLoadView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E485DA182753504100B82AE0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E4E13CE225C7DBB100150544 /* Color.swift */,
+				E485D9FB275342A300B82AE0 /* Image.swift */,
+				E485DA1227534D0100B82AE0 /* KFImage.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		E4D8F01025D01F5B0064B40A /* Icons */ = {
@@ -709,18 +716,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4613F1625C9A96500561D53 /* Weapon.swift in Sources */,
-				E4613F4E25C9ACA900561D53 /* Date.swift in Sources */,
 				E4613FB725C9B62000561D53 /* IkachanIntents.intentdefinition in Sources */,
 				E4400F4E25CD069B00BF94C6 /* Splatoon2Ink.swift in Sources */,
-				E461405B25C9C93B00561D53 /* LocalizedStringKey.swift in Sources */,
+				E485DA1A275350A000B82AE0 /* LocalizedStringKey.swift in Sources */,
 				E48BECC225CD31F200B301D1 /* Collection.swift in Sources */,
 				E4613F0225C9A70C00561D53 /* Shift.swift in Sources */,
 				E4613F0325C9A70C00561D53 /* Schedule.swift in Sources */,
 				E43E136D25C9A3BA008A0FE6 /* IntentHandler.swift in Sources */,
 				E4613F9225C9AFD100561D53 /* ScheduleIntentHandler.swift in Sources */,
 				E4613F9F25C9AFF700561D53 /* ShiftIntentHandler.swift in Sources */,
-				E4613F4C25C9ACA900561D53 /* Color.swift in Sources */,
 				E4613F2025C9A97A00561D53 /* Constant.swift in Sources */,
+				E485DA192753509400B82AE0 /* Date.swift in Sources */,
 				E461414225CA880500561D53 /* String.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
