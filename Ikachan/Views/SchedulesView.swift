@@ -33,7 +33,7 @@ struct SchedulesView: View {
             ToolbarItem(placement: .principal) {
                 Picker(selection: $modelData.gameMode, label: Text("")) {
                     ForEach(Schedule.GameMode.allCases, id: \.self) { gameMode in
-                        Text(gameMode.shortDescription)
+                        Text(LocalizedStringKey(gameMode.shortDescription))
                             .tag(gameMode)
                     }
                 }
@@ -52,7 +52,7 @@ struct SchedulesView: View {
                                 Impact(style: .light)
                                 rule = r
                             }) {
-                                Text(r.description)
+                                Text(LocalizedStringKey(r.description))
                                 Image(r.rawValue)
                             }
                         }

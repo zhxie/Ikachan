@@ -10,7 +10,7 @@ import SwiftUI
 struct IconView: View {
     let name: String
     let iconName: String?
-    let text: LocalizedStringKey
+    let text: String
     
     var body: some View {
         HStack {
@@ -23,7 +23,7 @@ struct IconView: View {
                         .stroke(Color(UIColor.secondarySystemBackground), lineWidth: 2)
                 )
                 .accessibility(label: Text(name))
-            Button(text) {
+            Button(LocalizedStringKey(text)) {
                 UIApplication.shared.setAlternateIconName(iconName)
             }
         }

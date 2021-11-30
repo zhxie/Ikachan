@@ -10,7 +10,7 @@ import Kingfisher
 
 struct StageView: View {
     let image: String
-    let title: LocalizedStringKey
+    let title: String
     
     var body: some View {
         VStack {
@@ -22,9 +22,9 @@ struct StageView: View {
                 }
                 .resizedToFit(16 / 9)
                 .cornerRadius(15)
-                .accessibility(label: Text(title))
+                .accessibility(label: Text(LocalizedStringKey(title)))
             
-            Text(title)
+            Text(LocalizedStringKey(title))
                 .font(.footnote)
                 .lineLimit(1)
         }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SmallBaseView<C1: View, C2: View, C3: View>: View {
     let text: String
-    let indicatorText: LocalizedStringKey
+    let indicatorText: String
     let color: Color?
     @ViewBuilder let trailing: () -> C1
     @ViewBuilder let leadingLeft: () -> C2
@@ -43,7 +43,7 @@ struct SmallBaseView<C1: View, C2: View, C3: View>: View {
                 Image(systemName: "circle.fill")
                     .font(.footnote)
                     .foregroundColor(color)
-                    .accessibility(label: Text(indicatorText))
+                    .accessibility(label: Text(LocalizedStringKey(indicatorText)))
             }
             .layoutPriority(1)
             

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShiftView: View {
     let shift: Shift
-    let title: LocalizedStringKey
+    let title: String
     
     var body: some View {
         ScheduleBaseView(title: title, subtitle: status(startTime: shift.startTime, endTime: shift.endTime), image: "salmon_run") {

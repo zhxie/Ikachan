@@ -33,13 +33,13 @@ struct MediumShiftView: View {
                                 .frame(height: 8)
                             
                             VStack {
-                                StageView(image: shift.stage?.url ?? "", accessibility: shift.stage?.description ?? "")
+                                StageView(image: shift.stage?.url ?? "", title: shift.stage?.description ?? "")
                                 
                                 HStack {
-                                    WeaponView(image: shift.weapons[0].url, accessibility: shift.weapons[0].description)
-                                    WeaponView(image: shift.weapons[1].url, accessibility: shift.weapons[1].description)
-                                    WeaponView(image: shift.weapons[2].url, accessibility: shift.weapons[2].description)
-                                    WeaponView(image: shift.weapons[3].url, accessibility: shift.weapons[3].description)
+                                    WeaponView(image: shift.weapons[0].url, title: shift.weapons[0].description)
+                                    WeaponView(image: shift.weapons[1].url, title: shift.weapons[1].description)
+                                    WeaponView(image: shift.weapons[2].url, title: shift.weapons[2].description)
+                                    WeaponView(image: shift.weapons[3].url, title: shift.weapons[3].description)
                                 }
                             }
                         }

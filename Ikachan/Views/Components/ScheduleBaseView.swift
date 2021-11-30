@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ScheduleBaseView<Content: View>: View {
-    let title: LocalizedStringKey
+    let title: String
     let subtitle: String
     let image: String
     @ViewBuilder let content: () -> Content
@@ -17,7 +17,7 @@ struct ScheduleBaseView<Content: View>: View {
         VStack {
             HStack {
                 VStack(alignment: .leading, spacing: 5) {
-                    Text(title)
+                    Text(LocalizedStringKey(title))
                         .font(.title2)
                         .fontWeight(.bold)
                         .lineLimit(1)

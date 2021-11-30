@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SchedulesScrollView<Data: Hashable, Content: View>: View {
     var data: [Data]
-    let title: LocalizedStringKey
+    let title: String
     @ViewBuilder let content: (Data) -> Content
     
     var body: some View {
@@ -31,6 +31,6 @@ struct SchedulesScrollView<Data: Hashable, Content: View>: View {
             }
             .padding([.horizontal, .bottom])
         }
-        .navigationTitle(title)
+        .navigationTitle(LocalizedStringKey(title))
     }
 }

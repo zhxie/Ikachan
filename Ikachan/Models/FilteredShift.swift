@@ -5,18 +5,18 @@
 //  Created by Sketch on 2021/2/15.
 //
 
-import SwiftUI
+import Foundation
 
 struct FilteredShift: Hashable, Codable {
     var isFirst: Bool
-    var status: LocalizedStringKey {
+    var status: String {
         if shift.stage == nil {
-            return LocalizedStringKey("future")
+            return "future"
         } else {
             if isFirst {
                 return shift.status
             } else {
-                return LocalizedStringKey("next")
+                return "next"
             }
         }
     }

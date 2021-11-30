@@ -71,7 +71,7 @@ struct ShrineView: View {
             .layoutPriority(1)
             
             VStack {
-                Text(omikuji.fortune.description)
+                Text(LocalizedStringKey(omikuji.fortune.description))
                     .font(Font.custom(fortuneFontFamily, size: fortuneFontSize))
                     .fontWeight(.black)
                     .multilineTextAlignment(.center)
@@ -101,7 +101,7 @@ struct ShrineView: View {
                         Image(omikuji.fortune.defaultImage)
                             .resizedToFit()
                             .frame(width: 150)
-                            .accessibility(label: Text(omikuji.fortune.description))
+                            .accessibility(label: Text(LocalizedStringKey(omikuji.fortune.description)))
                     )
                     .layoutPriority(1)
             } else {
@@ -113,7 +113,7 @@ struct ShrineView: View {
             
             Spacer()
             
-            Text(omikuji.description)
+            Text(LocalizedStringKey(omikuji.description))
                 .font(Font.custom(descriptionFontFamily, size: 24))
                 .multilineTextAlignment(.center)
             

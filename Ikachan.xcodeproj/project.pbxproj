@@ -20,6 +20,7 @@
 		E42AE8722755E331006F7CBD /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE8712755E331006F7CBD /* StageView.swift */; };
 		E42AE8762755F9F8006F7CBD /* WeaponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE8752755F9F8006F7CBD /* WeaponView.swift */; };
 		E42AE8782755FF4C006F7CBD /* SmallBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE8772755FF4C006F7CBD /* SmallBaseView.swift */; };
+		E42AE87A27564389006F7CBD /* TrailingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE87927564389006F7CBD /* TrailingView.swift */; };
 		E434673D265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
 		E434673E265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
 		E434673F265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
@@ -191,6 +192,7 @@
 		E42AE8712755E331006F7CBD /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
 		E42AE8752755F9F8006F7CBD /* WeaponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponView.swift; sourceTree = "<group>"; };
 		E42AE8772755FF4C006F7CBD /* SmallBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallBaseView.swift; sourceTree = "<group>"; };
+		E42AE87927564389006F7CBD /* TrailingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingView.swift; sourceTree = "<group>"; };
 		E434673C265FC51E0018F130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E438EF4425B5E3F7005AB9D9 /* ShiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsView.swift; sourceTree = "<group>"; };
 		E438EF4725B5E533005AB9D9 /* ShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftView.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				E42AE8772755FF4C006F7CBD /* SmallBaseView.swift */,
 				E42AE86D2755CF06006F7CBD /* LeadingLeftView.swift */,
 				E42AE86F2755E13F006F7CBD /* LeadingRightView.swift */,
+				E42AE87927564389006F7CBD /* TrailingView.swift */,
 				E42AE8712755E331006F7CBD /* StageView.swift */,
 				E42AE8752755F9F8006F7CBD /* WeaponView.swift */,
 			);
@@ -837,6 +840,7 @@
 				E42AE8782755FF4C006F7CBD /* SmallBaseView.swift in Sources */,
 				E4613FB625C9B62000561D53 /* IkachanIntents.intentdefinition in Sources */,
 				E4444EE125BF148D0003A676 /* Date.swift in Sources */,
+				E42AE87A27564389006F7CBD /* TrailingView.swift in Sources */,
 				E4444EED25BF149B0003A676 /* Constant.swift in Sources */,
 				E4444EF625BF14A50003A676 /* SmallDayView.swift in Sources */,
 				E4444EEF25BF149B0003A676 /* Shift.swift in Sources */,

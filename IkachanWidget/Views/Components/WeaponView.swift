@@ -10,7 +10,7 @@ import Kingfisher
 
 struct WeaponView: View {
     let image: String
-    let accessibility: LocalizedStringKey
+    let title: String
     
     var body: some View {
         Rectangle()
@@ -24,7 +24,7 @@ struct WeaponView: View {
                     }
                     .resizedToFill()
                     .clipped()
-                    .accessibility(label: Text(accessibility))
+                    .accessibility(label: Text(LocalizedStringKey(title)))
             )
             .cornerRadius(7.5)
     }
@@ -32,6 +32,6 @@ struct WeaponView: View {
 
 struct WeaponView_Previews: PreviewProvider {
     static var previews: some View {
-        WeaponView(image: "http://www.apple.com", accessibility: "")
+        WeaponView(image: "http://www.apple.com", title: "")
     }
 }

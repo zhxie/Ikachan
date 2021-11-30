@@ -17,7 +17,7 @@ struct Schedule: Hashable, Codable {
         case gachi = "gachi"
         case league = "league"
         
-        var description: LocalizedStringKey {
+        var description: String {
             switch self {
             case .regular:
                 return "regular_battle"
@@ -28,7 +28,7 @@ struct Schedule: Hashable, Codable {
             }
         }
         
-        var shortDescription: LocalizedStringKey {
+        var shortDescription: String {
             switch self {
             case .regular:
                 return "regular"
@@ -39,7 +39,7 @@ struct Schedule: Hashable, Codable {
             }
         }
         
-        var shorterDescription: LocalizedStringKey {
+        var shorterDescription: String {
             switch self {
             case .regular:
                 return "regular_ss"
@@ -74,11 +74,11 @@ struct Schedule: Hashable, Codable {
         case rainmaker = "rainmaker"
         case clamBlitz = "clam_blitz"
         
-        var description: LocalizedStringKey {
-            return LocalizedStringKey(stringLiteral: rawValue)
+        var description: String {
+            return rawValue
         }
         
-        var shortDescription: LocalizedStringKey {
+        var shortDescription: String {
             switch self {
             case .turfWar:
                 return "turf"
@@ -93,7 +93,7 @@ struct Schedule: Hashable, Codable {
             }
         }
         
-        var shorterDescription: LocalizedStringKey {
+        var shorterDescription: String {
             switch self {
             case .turfWar:
                 return "turf_ss"
@@ -112,9 +112,9 @@ struct Schedule: Hashable, Codable {
     var shortDescription: String {
         switch gameMode {
         case .regular:
-            return rule.shortDescription.rawValue.localizedString
+            return rule.shortDescription.localizedString
         case .gachi, .league:
-            return String(format: "%@_%@".localizedString, gameMode.shorterDescription.rawValue.localizedString, rule.shorterDescription.rawValue.localizedString)
+            return String(format: "%@_%@".localizedString, gameMode.shorterDescription.localizedString, rule.shorterDescription.localizedString)
         }
     }
 
@@ -147,7 +147,7 @@ struct Schedule: Hashable, Codable {
             case anchoVGames = 21
             case skipperPavilion = 22
             
-            var description: LocalizedStringKey {
+            var description: String {
                 switch self {
                 case .theReef:
                     return "the_reef"
@@ -250,7 +250,7 @@ struct Schedule: Hashable, Codable {
             }
         }
         
-        var description: LocalizedStringKey {
+        var description: String {
             id.description
         }
         

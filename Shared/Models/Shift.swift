@@ -10,7 +10,7 @@ import SwiftUI
 struct Shift: Hashable, Codable {
     var startTime: Date
     var endTime: Date
-    var status: LocalizedStringKey {
+    var status: String {
         let current = Date()
         
         if startTime < current {
@@ -30,7 +30,7 @@ struct Shift: Hashable, Codable {
             case salmonidSmokeyard = 5003
             case ruinsOfArkPolaris = 5004
             
-            var description: LocalizedStringKey {
+            var description: String {
                 switch self {
                 case .spawningGrounds:
                     return "spawning_grounds"
@@ -61,7 +61,7 @@ struct Shift: Hashable, Codable {
             }
         }
 
-        var description: LocalizedStringKey {
+        var description: String {
             id.description
         }
         
@@ -73,8 +73,8 @@ struct Shift: Hashable, Codable {
     var weapons: [Weapon]
     
     static let rawValue = "salmon_run"
-    static let description = LocalizedStringKey(rawValue)
-    static let shortDescription = LocalizedStringKey("job")
+    static let description = rawValue
+    static let shortDescription = "job"
     static let accentColor = Color(red: 252 / 255, green: 86 / 255, blue: 32 / 255)
     static let url = IkachanScheme + "://" + rawValue
 }

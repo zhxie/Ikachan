@@ -34,8 +34,8 @@ struct MediumScheduleView: View {
                                 .frame(height: 8)
                             
                             VStack {
-                                StageView(image: schedule.stageA.url, accessibility: schedule.stageA.description)
-                                StageView(image: schedule.stageB.url, accessibility: schedule.stageB.description)
+                                StageView(image: schedule.stageA.url, title: schedule.stageA.description)
+                                StageView(image: schedule.stageB.url, title: schedule.stageB.description)
                             }
                         }
                         .frame(width: g.size.width / 2 - 5)

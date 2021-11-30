@@ -5,7 +5,7 @@
 //  Created by Sketch on 2021/1/16.
 //
 
-import SwiftUI
+import Foundation
 
 struct Weapon: Hashable, Codable {
     var id: Id
@@ -67,7 +67,7 @@ struct Weapon: Hashable, Codable {
         case random = -1
         case randomGold = -2
         
-        var description: LocalizedStringKey {
+        var description: String {
             switch self {
             case .bold:
                 return "sploosh_o_matic"
@@ -302,7 +302,7 @@ struct Weapon: Hashable, Codable {
         }
     }
     
-    var description: LocalizedStringKey {
+    var description: String {
         id.description
     }
     

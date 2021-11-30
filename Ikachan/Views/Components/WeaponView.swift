@@ -10,7 +10,7 @@ import Kingfisher
 
 struct WeaponView: View {
     let image: String
-    let title: LocalizedStringKey
+    let title: String
     
     var body: some View {
         Rectangle()
@@ -24,7 +24,7 @@ struct WeaponView: View {
                             .aspectRatio(1, contentMode: .fit)
                     }
                     .resizedToFit(1)
-                    .accessibility(label: Text(title))
+                    .accessibility(label: Text(LocalizedStringKey(title)))
         )
     }
 }

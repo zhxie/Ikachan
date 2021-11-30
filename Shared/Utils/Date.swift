@@ -5,7 +5,7 @@
 //  Created by Sketch on 2021/1/17.
 //
 
-import SwiftUI
+import Foundation
 
 extension Date {
     static func -(left: Date, right: Date) -> TimeInterval {
@@ -78,7 +78,7 @@ func absoluteLongIntentsTimeSpan(current: Date, startTime: Date, endTime: Date) 
     }
 }
 
-func timeSpanDescriptor(current: Date, startTime: Date) -> LocalizedStringKey {
+func timeSpanDescriptor(current: Date, startTime: Date) -> String {
     if current >= startTime {
         return "remaining"
     } else {

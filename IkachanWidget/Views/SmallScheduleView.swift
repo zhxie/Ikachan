@@ -23,14 +23,8 @@ struct SmallScheduleView: View {
                 SmallBaseView(text: absoluteTimeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime), indicatorText: schedule.gameMode.description, color: schedule.gameMode.accentColor) {
                     HStack {
                         VStack(alignment: .leading) {
-                            Text(schedule.stageA.description)
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                                .lineLimit(1)
-                            Text(schedule.stageB.description)
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                                .lineLimit(1)
+                            TrailingView(text: schedule.stageA.description)
+                            TrailingView(text: schedule.stageB.description)
                         }
                         .layoutPriority(1)
                         
@@ -39,7 +33,7 @@ struct SmallScheduleView: View {
                     }
                 } leadingLeft: {
                     if subview {
-                        LeadingLeftView(text: timeSpanDescriptor(current: current, startTime: schedule.startTime))
+                        LeadingLeftView(text: LocalizedStringKey(timeSpanDescriptor(current: current, startTime: schedule.startTime)))
                     } else {
                         LeadingLeftView(text: scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
                     }

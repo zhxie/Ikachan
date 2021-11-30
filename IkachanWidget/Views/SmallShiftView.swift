@@ -22,10 +22,7 @@ struct SmallShiftView: View {
                 SmallBaseView(text: absoluteTimeSpan(current: current, startTime: shift.startTime, endTime: shift.endTime), indicatorText: Shift.description, color: Shift.accentColor) {
                     VStack(spacing: 0) {
                         HStack {
-                            Text(shift.stage?.description ?? "")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                                .lineLimit(1)
+                            TrailingView(text: shift.stage?.description ?? "")
                                 .layoutPriority(1)
                             
                             Spacer()
@@ -37,16 +34,16 @@ struct SmallShiftView: View {
                                 .frame(height: 4)
                             
                             HStack {
-                                WeaponView(image: shift.weapons[0].url, accessibility: shift.weapons[0].description)
-                                WeaponView(image: shift.weapons[1].url, accessibility: shift.weapons[1].description)
-                                WeaponView(image: shift.weapons[2].url, accessibility: shift.weapons[2].description)
-                                WeaponView(image: shift.weapons[3].url, accessibility: shift.weapons[3].description)
+                                WeaponView(image: shift.weapons[0].url, title: shift.weapons[0].description)
+                                WeaponView(image: shift.weapons[1].url, title: shift.weapons[1].description)
+                                WeaponView(image: shift.weapons[2].url, title: shift.weapons[2].description)
+                                WeaponView(image: shift.weapons[3].url, title: shift.weapons[3].description)
                             }
                         }
                     }
                 } leadingLeft: {
                     if subview {
-                        LeadingLeftView(text: timeSpanDescriptor(current: current, startTime: shift.startTime))
+                        LeadingLeftView(text: LocalizedStringKey(timeSpanDescriptor(current: current, startTime: shift.startTime)))
                     } else {
                         LeadingLeftView(text: shiftTimePeriod2(startTime: shift.startTime, endTime: shift.endTime))
                     }

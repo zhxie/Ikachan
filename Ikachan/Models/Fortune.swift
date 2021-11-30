@@ -36,7 +36,7 @@ struct Omikuji: Identifiable {
         case smallBlessing = 2
         case curse = 3
         
-        var description: LocalizedStringKey {
+        var description: String {
             switch self {
             case .greatBlessing:
                 return "great_blessing"
@@ -61,7 +61,7 @@ struct Omikuji: Identifiable {
     
     var image: String
     
-    var description: LocalizedStringKey
+    var description: String
 }
 
 func fortune() -> Omikuji {

@@ -1,6 +1,6 @@
 //
 //  StageView.swift
-//  IkachanWidgetExtension
+//  IkachanWidget
 //
 //  Created by Sketch on 2021/11/30.
 //
@@ -10,7 +10,7 @@ import Kingfisher
 
 struct StageView: View {
     let image: String
-    let accessibility: LocalizedStringKey
+    let title: String
     
     var body: some View {
         Rectangle()
@@ -23,7 +23,7 @@ struct StageView: View {
                     }
                     .resizedToFill()
                     .clipped()
-                    .accessibility(label: Text(accessibility))
+                    .accessibility(label: Text(LocalizedStringKey(title)))
             )
             .cornerRadius(7.5)
     }
@@ -31,6 +31,6 @@ struct StageView: View {
 
 struct StageView_Previews: PreviewProvider {
     static var previews: some View {
-        StageView(image: "http://www.apple.com", accessibility: "")
+        StageView(image: "http://www.apple.com", title: "")
     }
 }
