@@ -26,25 +26,9 @@ struct SchedulesView: View {
     }
     
     var body: some View {
-        ScrollView {
-            VStack {
-                ForEach(schedules, id: \.self) { schedule in
-                    VStack {
-                        Divider()
-                            .frame(height: 1)
-                        
-                        ScheduleView(schedule: schedule)
-                        
-                        Spacer()
-                            .frame(height: 15)
-                    }
-                    .transition(.opacity)
-                    .animation(.default)
-                }
-            }
-            .padding([.horizontal, .bottom])
+        SchedulesScrollView(data: schedules, title: modelData.gameMode.description) { schedule in
+            ScheduleView(schedule: schedule)
         }
-        .navigationTitle(modelData.gameMode.description)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Picker(selection: $modelData.gameMode, label: Text("")) {

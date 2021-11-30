@@ -48,34 +48,8 @@ struct AboutView: View {
                         
                         Form {
                             Section {
-                                HStack {
-                                    Image("kuro")
-                                        .resizedToFit()
-                                        .frame(width: 60)
-                                        .cornerRadius(13.2)
-                                        .overlay(
-                                            RoundedRectangle(cornerRadius: 13.2)
-                                                .stroke(Color(UIColor.secondarySystemBackground), lineWidth: 2)
-                                        )
-                                        .accessibility(label: Text("kuro"))
-                                    Button("kuro") {
-                                        UIApplication.shared.setAlternateIconName(nil)
-                                    }
-                                }
-                                HStack {
-                                    Image("ichi")
-                                        .resizedToFit()
-                                        .frame(width: 60)
-                                        .cornerRadius(13.2)
-                                        .overlay(
-                                            RoundedRectangle(cornerRadius: 13.2)
-                                                .stroke(Color(UIColor.secondarySystemBackground), lineWidth: 2)
-                                        )
-                                        .accessibility(label: Text("ichi"))
-                                    Button("ichi") {
-                                        UIApplication.shared.setAlternateIconName("ichi")
-                                    }
-                                }
+                                IconView(name: "kuro", iconName: nil, text: "kuro")
+                                IconView(name: "ichi", iconName: "ichi", text: "ichi")
                             }
                         }
                         .navigationTitle("app_icon")

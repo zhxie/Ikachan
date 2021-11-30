@@ -23,25 +23,9 @@ struct ShiftsView: View {
     }
     
     var body: some View {
-        ScrollView {
-            VStack {
-                ForEach(shifts, id: \.self) { shift in
-                    VStack {
-                        Divider()
-                            .frame(height: 1)
-                        
-                        ShiftView(shift: shift.shift, title: shift.status)
-                        
-                        Spacer()
-                            .frame(height: 15)
-                    }
-                    .transition(.opacity)
-                    .animation(.default)
-                }
-            }
-            .padding([.horizontal, .bottom])
+        SchedulesScrollView(data: shifts, title: "salmon_run") { shift in
+            ShiftView(shift: shift.shift, title: shift.status)
         }
-        .navigationTitle("salmon_run")
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 if showModal != nil {

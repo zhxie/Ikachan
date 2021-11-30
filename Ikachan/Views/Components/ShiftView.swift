@@ -8,33 +8,39 @@
 import SwiftUI
 
 struct ShiftView: View {
-    var shift: Shift
-    var title: LocalizedStringKey
+    let shift: Shift
+    let title: LocalizedStringKey
     
     var body: some View {
-        VStack {
-            HStack {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text(title)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .lineLimit(1)
-                    Text(status(startTime: shift.startTime, endTime: shift.endTime))
-                        .font(.callout)
-                        .foregroundColor(.secondary)
-                        .lineLimit(1)
-                }
-                .layoutPriority(1)
-                
-                Spacer()
-                
-                Image("salmon_run")
-                    .resizedToFit()
-                    .frame(width: 50, height: 50)
-            }
-            
+        ScheduleBaseView(title: title, subtitle: status(startTime: shift.startTime, endTime: shift.endTime), image: "salmon_run") {
             if let stage = shift.stage {
-                ShiftImages(image: stage.url, title: stage.description, subImage1: shift.weapons[0].url, subTitle1: shift.weapons[0].description, subImage2: shift.weapons[1].url, subTitle2: shift.weapons[1].description, subImage3: shift.weapons[2].url, subTitle3: shift.weapons[2].description, subImage4: shift.weapons[3].url, subTitle4: shift.weapons[3].description)
+                HStack {
+                    StageView(image: stage.url, title: stage.description)
+                    
+                    VStack {
+                        Rectangle()
+                            .fill(Color.clear)
+                            .aspectRatio(16 / 9, contentMode: .fit)
+                            .overlay(
+                                VStack {
+                                    HStack {
+                                        WeaponView(image: shift.weapons[0].url, title: shift.weapons[0].description)
+                                        WeaponView(image: shift.weapons[1].url, title: shift.weapons[1].description)
+                                    }
+                                    HStack {
+                                        WeaponView(image: shift.weapons[2].url, title: shift.weapons[2].description)
+                                        WeaponView(image: shift.weapons[3].url, title: shift.weapons[3].description)
+                                    }
+                                }
+                            )
+                        
+                        Text("weapons")
+                            .font(.footnote)
+                            .lineLimit(1)
+                            .foregroundColor(.clear)
+                            .accessibility(hidden: true)
+                    }
+                }
             }
         }
     }

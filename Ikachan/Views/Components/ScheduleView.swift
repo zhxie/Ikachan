@@ -8,31 +8,14 @@
 import SwiftUI
 
 struct ScheduleView: View {
-    var schedule: Schedule
+    let schedule: Schedule
     
     var body: some View {
-        VStack {
+        ScheduleBaseView(title: schedule.rule.description, subtitle: status(startTime: schedule.startTime, endTime: schedule.endTime), image: schedule.rule.rawValue) {
             HStack {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text(schedule.rule.description)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .lineLimit(1)
-                    Text(status(startTime: schedule.startTime, endTime: schedule.endTime))
-                        .font(.callout)
-                        .foregroundColor(.secondary)
-                        .lineLimit(1)
-                }
-                .layoutPriority(1)
-                
-                Spacer()
-                
-                Image(schedule.rule.rawValue)
-                    .resizedToFit()
-                    .frame(width: 50, height: 50)
+                StageView(image: schedule.stageA.url, title: schedule.stageA.description)
+                StageView(image: schedule.stageB.url, title: schedule.stageB.description)
             }
-            
-            ScheduleImages(imageA: schedule.stageA.url, titleA: schedule.stageA.description, imageB: schedule.stageB.url, titleB: schedule.stageB.description)
         }
     }
     
