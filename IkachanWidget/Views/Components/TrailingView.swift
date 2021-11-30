@@ -9,11 +9,12 @@ import SwiftUI
 
 struct TrailingView: View {
     let text: String
+    var color: Color? = .secondary
     
     var body: some View {
         Text(LocalizedStringKey(text))
             .font(.caption)
-            .foregroundColor(.secondary)
+            .foregroundColor(color)
             .lineLimit(1)
     }
 }

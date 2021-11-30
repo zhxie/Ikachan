@@ -9,19 +9,22 @@ import SwiftUI
 
 struct LeadingLeftView: View {
     let text: Text
+    let color: Color?
     
-    init(text: String) {
+    init(text: String, color: Color? = .secondary) {
         self.text = Text(text)
+        self.color = color
     }
     
-    init(text: LocalizedStringKey) {
+    init(text: LocalizedStringKey, color: Color? = .secondary) {
         self.text = Text(text)
+        self.color = color
     }
     
     var body: some View {
         text
             .font(.caption2)
-            .foregroundColor(.secondary)
+            .foregroundColor(color)
             .lineLimit(1)
     }
 }

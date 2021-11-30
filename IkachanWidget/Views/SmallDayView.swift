@@ -49,19 +49,12 @@ struct SmallDayView: View {
             if let schedule = schedule {
                 VStack(spacing: 0) {
                     HStack(spacing: 0) {
-                        Text(timeSpanDescriptor(current: current, startTime: schedule.startTime))
-                            .font(.caption2)
-                            .foregroundColor(.white)
-                            .lineLimit(1)
+                        LeadingLeftView(text: LocalizedStringKey(timeSpanDescriptor(current: current, startTime: schedule.startTime)), color: .white)
                             .layoutPriority(1)
                         
                         Spacer()
                         
-                        Text(schedule.shortDescription)
-                            .font(.caption)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .lineLimit(1)
+                        LeadingRightView(text: schedule.shortDescription, color: .white)
                             .layoutPriority(2)
                     }
                     .layoutPriority(1)
@@ -83,7 +76,7 @@ struct SmallDayView: View {
                         Image(systemName: icon)
                             .font(.footnote)
                             .foregroundColor(Color(red: 247 / 255, green: 209 / 255, blue: 87 / 255))
-                            .accessibility(label: Text(iconText))
+                            .accessibility(label: Text(LocalizedStringKey(iconText)))
                     }
                     .layoutPriority(1)
                     
@@ -91,14 +84,8 @@ struct SmallDayView: View {
                     
                     HStack {
                         VStack(alignment: .leading) {
-                            Text(schedule.stageA.description)
-                                .font(.caption)
-                                .foregroundColor(.white)
-                                .lineLimit(1)
-                            Text(schedule.stageB.description)
-                                .font(.caption)
-                                .foregroundColor(.white)
-                                .lineLimit(1)
+                            TrailingView(text: schedule.stageA.description, color: .white)
+                            TrailingView(text: schedule.stageB.description, color: .white)
                         }
                         .layoutPriority(1)
                         
@@ -131,7 +118,7 @@ struct SmallDayView: View {
         }
     }
     
-    var iconText: LocalizedStringKey {
+    var iconText: String {
         if isDay {
             return "in_the_day"
         } else {
