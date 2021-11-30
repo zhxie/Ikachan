@@ -154,6 +154,13 @@ struct AboutView: View {
                             }
                             
                             VStack(alignment: .leading) {
+                                Text("SPAlert")
+                                    .bold()
+                                
+                                Text(license_s_p_alert)
+                            }
+                            
+                            VStack(alignment: .leading) {
                                 Text("SwiftyJSON")
                                     .bold()
                                 
@@ -229,6 +236,15 @@ struct AboutView: View {
     
     var license_kingfisher: String {
         let path = Bundle.main.path(forResource: "LICENSE.Kingfisher", ofType: "md")!
+        
+        let fm = FileManager()
+        let content = fm.contents(atPath: path)
+        
+        return String(data: content!, encoding: .utf8)!
+    }
+    
+    var license_s_p_alert: String {
+        let path = Bundle.main.path(forResource: "LICENSE.SPAlert", ofType: "md")!
         
         let fm = FileManager()
         let content = fm.contents(atPath: path)

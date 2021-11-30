@@ -22,6 +22,7 @@
 		E42AE8782755FF4C006F7CBD /* SmallBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE8772755FF4C006F7CBD /* SmallBaseView.swift */; };
 		E42AE87A27564389006F7CBD /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE87927564389006F7CBD /* BottomView.swift */; };
 		E42AE87D27564739006F7CBD /* SPAlert in Frameworks */ = {isa = PBXBuildFile; productRef = E42AE87C27564739006F7CBD /* SPAlert */; };
+		E42AE87F27566001006F7CBD /* LICENSE.SPAlert.md in Resources */ = {isa = PBXBuildFile; fileRef = E42AE87E27566001006F7CBD /* LICENSE.SPAlert.md */; };
 		E434673D265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
 		E434673E265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
 		E434673F265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
@@ -190,6 +191,7 @@
 		E42AE8752755F9F8006F7CBD /* WeaponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponView.swift; sourceTree = "<group>"; };
 		E42AE8772755FF4C006F7CBD /* SmallBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallBaseView.swift; sourceTree = "<group>"; };
 		E42AE87927564389006F7CBD /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		E42AE87E27566001006F7CBD /* LICENSE.SPAlert.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.SPAlert.md; sourceTree = "<group>"; };
 		E434673C265FC51E0018F130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E438EF4425B5E3F7005AB9D9 /* ShiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsView.swift; sourceTree = "<group>"; };
 		E438EF4725B5E533005AB9D9 /* ShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftView.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				E43D3F5725BBC75600D944A1 /* README.md */,
 				E43D3F5825BBC7E700D944A1 /* LICENSE */,
 				E46B512B25BB30C7001F88CE /* LICENSE.Kingfisher.md */,
+				E42AE87E27566001006F7CBD /* LICENSE.SPAlert.md */,
 				E46B512A25BB30C7001F88CE /* LICENSE.SwiftyJSON.md */,
 			);
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 			files = (
 				E46B37E625D8E5340044232F /* ichi-ipad.png in Resources */,
 				E4405D8225AF64D6002EF1AB /* Preview Assets.xcassets in Resources */,
+				E42AE87F27566001006F7CBD /* LICENSE.SPAlert.md in Resources */,
 				E484FDCE25C946C9006E748F /* InfoPlist.strings in Resources */,
 				E46B512D25BB30C7001F88CE /* LICENSE.Kingfisher.md in Resources */,
 				E46B512C25BB30C7001F88CE /* LICENSE.SwiftyJSON.md in Resources */,
