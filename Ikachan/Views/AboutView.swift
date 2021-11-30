@@ -10,6 +10,7 @@ import CoreMotion
 import WidgetKit
 import Intents
 import Kingfisher
+import SPAlert
 
 struct AboutView: View {
     @Binding var showModal: Bool
@@ -87,6 +88,8 @@ struct AboutView: View {
                                 progressValue = Double(skipped.count + failed.count + completed.count)
                             }) { (_, _, _) in
                                 isDownloadingAllResources = false
+                                
+                                SPAlert.present(title: "resources_downloaded".localizedString, preset: .done)
                             }
                             .start()
                         }
@@ -102,14 +105,20 @@ struct AboutView: View {
                     }
                     Button("reload_widgets") {
                         WidgetCenter.shared.reloadAllTimelines()
+                        
+                        SPAlert.present(title: "widgets_reloaded".localizedString, preset: .done)
                     }
                     .disabled(isDownloadingAllResources)
-                    Button("clear_siri_suggestions") {
+                    Button("reset_siri_suggestions") {
                         INInteraction.deleteAll()
+                        
+                        SPAlert.present(title: "siri_suggestions_reset".localizedString, preset: .done)
                     }
                     Button("clear_cache") {
                         KingfisherManager.shared.cache.clearMemoryCache()
                         KingfisherManager.shared.cache.clearDiskCache()
+                        
+                        SPAlert.present(title: "cache_cleared".localizedString, preset: .done)
                     }
                     .disabled(isDownloadingAllResources)
                 }

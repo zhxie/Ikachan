@@ -166,9 +166,13 @@
 "ichi" = "阿一";
 "support" = "支持";
 "download_all_resources" = "下载全部资源";
+"resources_downloaded" = "已下载资源";
 "reload_widgets" = "重新载入小组件";
-"clear_siri_suggestions" = "清除Siri建议";
+"widgets_reloaded" = "已重新载入小组件";
+"reset_siri_suggestions" = "重置Siri建议";
+"siri_suggestions_reset" = "已重置Siri建议";
 "clear_cache" = "清除缓存";
+"cache_cleared" = "已清除缓存";
 "about" = "关于";
 "repository" = "代码仓库";
 "developer_sketch" = "开发者 @xzh_Sketch";

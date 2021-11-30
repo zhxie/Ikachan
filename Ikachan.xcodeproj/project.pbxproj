@@ -21,6 +21,7 @@
 		E42AE8762755F9F8006F7CBD /* WeaponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE8752755F9F8006F7CBD /* WeaponView.swift */; };
 		E42AE8782755FF4C006F7CBD /* SmallBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE8772755FF4C006F7CBD /* SmallBaseView.swift */; };
 		E42AE87A27564389006F7CBD /* TrailingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE87927564389006F7CBD /* TrailingView.swift */; };
+		E42AE87D27564739006F7CBD /* SPAlert in Frameworks */ = {isa = PBXBuildFile; productRef = E42AE87C27564739006F7CBD /* SPAlert */; };
 		E434673D265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
 		E434673E265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
 		E434673F265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
@@ -291,6 +292,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42AE87D27564739006F7CBD /* SPAlert in Frameworks */,
 				E477990725B1F62500F8AE9F /* SwiftyJSON in Frameworks */,
 				E43CCBB725B0338C001A0FF5 /* Kingfisher in Frameworks */,
 			);
@@ -613,6 +615,7 @@
 			packageProductDependencies = (
 				E43CCBB625B0338C001A0FF5 /* Kingfisher */,
 				E477990625B1F62500F8AE9F /* SwiftyJSON */,
+				E42AE87C27564739006F7CBD /* SPAlert */,
 			);
 			productName = Ikachan;
 			productReference = E4405D7725AF64D2002EF1AB /* Ikachan.app */;
@@ -676,6 +679,7 @@
 			packageReferences = (
 				E43CCBB525B0338C001A0FF5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				E477990525B1F62500F8AE9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				E42AE87B27564739006F7CBD /* XCRemoteSwiftPackageReference "SPAlert" */,
 			);
 			productRefGroup = E4405D7825AF64D2002EF1AB /* Products */;
 			projectDirPath = "";
@@ -1287,6 +1291,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E42AE87B27564739006F7CBD /* XCRemoteSwiftPackageReference "SPAlert" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPAlert";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		E43CCBB525B0338C001A0FF5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1306,6 +1318,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E42AE87C27564739006F7CBD /* SPAlert */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E42AE87B27564739006F7CBD /* XCRemoteSwiftPackageReference "SPAlert" */;
+			productName = SPAlert;
+		};
 		E43CCBB625B0338C001A0FF5 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E43CCBB525B0338C001A0FF5 /* XCRemoteSwiftPackageReference "Kingfisher" */;

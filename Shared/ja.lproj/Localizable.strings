@@ -165,10 +165,14 @@
 "kuro" = "クロ";
 "ichi" = "いち";
 "support" = "サポート";
-"download_all_resources" = "すべてのリソースをダウンロード";
-"reload_widgets" = "ウィジェットをリロード";
-"clear_siri_suggestions" = "Siriからの提案を消去する";
+"download_all_resources" = "すべてのリソースをダウンロードする";
+"resources_downloaded" = "リソースをダウンロードされました";
+"reload_widgets" = "ウィジェットがリロードする";
+"widgets_reloaded" = "ウィジェットがリロードされました";
+"reset_siri_suggestions" = "Siriからの提案をリセットする";
+"siri_suggestions_reset" = "Siriからの提案がリセットされました";
 "clear_cache" = "キャッシュを消去する";
+"cache_cleared" = "キャッシュが消去されました";
 "about" = "イカチャンについて";
 "repository" = "リポジトリ";
 "developer_sketch" = "開発者 @xzh1206";

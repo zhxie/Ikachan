@@ -166,9 +166,13 @@
 "ichi" = "Ichi";
 "support" = "Support";
 "download_all_resources" = "Download All Resources";
+"resources_downloaded" = "Resources Downloaded";
 "reload_widgets" = "Reload Widgets";
-"clear_siri_suggestions" = "Clear Siri Suggestions";
+"widgets_reloaded" = "Widgets Reloaded";
+"reset_siri_suggestions" = "Reset Siri Suggestions";
+"siri_suggestions_reset" = "Siri Suggestions Reset";
 "clear_cache" = "Clear Cache";
+"cache_cleared" = "Cache Cleared";
 "about" = "About";
 "repository" = "Repository";
 "developer_sketch" = "Developer @xzh1206";
