@@ -52,7 +52,7 @@
 		E4405D8225AF64D6002EF1AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */; };
 		E4444ECD25BF147F0003A676 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46B507025B9C2AC001F88CE /* WidgetKit.framework */; };
 		E4444ECE25BF147F0003A676 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46B507225B9C2AC001F88CE /* SwiftUI.framework */; };
-		E4444EDA25BF14820003A676 /* IkachanWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E4444ECC25BF147F0003A676 /* IkachanWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4444EDA25BF14820003A676 /* IkachanWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E4444ECC25BF147F0003A676 /* IkachanWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E4444EE125BF148D0003A676 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
 		E4444EED25BF149B0003A676 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7AC25B34AFC001254FE /* Constant.swift */; };
 		E4444EEF25BF149B0003A676 /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990925B2029C00F8AE9F /* Shift.swift */; };
@@ -170,7 +170,7 @@
 			files = (
 				E43E137F25C9A3BA008A0FE6 /* IkachanIntentsUI.appex in Embed App Extensions */,
 				E43E138225C9A3BA008A0FE6 /* IkachanIntents.appex in Embed App Extensions */,
-				E4444EDA25BF14820003A676 /* IkachanWidgetExtension.appex in Embed App Extensions */,
+				E4444EDA25BF14820003A676 /* IkachanWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,7 +214,7 @@
 		E4405D7E25AF64D6002EF1AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4405D8125AF64D6002EF1AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4405D8325AF64D6002EF1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4444ECC25BF147F0003A676 /* IkachanWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IkachanWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4444ECC25BF147F0003A676 /* IkachanWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IkachanWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4444ED525BF14820003A676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4444F3725BF164C0003A676 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E445761D25CE99AE004AA74D /* ShrineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrineView.swift; sourceTree = "<group>"; };
@@ -387,7 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				E4405D7725AF64D2002EF1AB /* Ikachan.app */,
-				E4444ECC25BF147F0003A676 /* IkachanWidgetExtension.appex */,
+				E4444ECC25BF147F0003A676 /* IkachanWidget.appex */,
 				E43E136825C9A3BA008A0FE6 /* IkachanIntents.appex */,
 				E43E137325C9A3BA008A0FE6 /* IkachanIntentsUI.appex */,
 			);
@@ -621,9 +621,9 @@
 			productReference = E4405D7725AF64D2002EF1AB /* Ikachan.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E4444ECB25BF147F0003A676 /* IkachanWidgetExtension */ = {
+		E4444ECB25BF147F0003A676 /* IkachanWidget */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4444EDD25BF14820003A676 /* Build configuration list for PBXNativeTarget "IkachanWidgetExtension" */;
+			buildConfigurationList = E4444EDD25BF14820003A676 /* Build configuration list for PBXNativeTarget "IkachanWidget" */;
 			buildPhases = (
 				E4444EC825BF147F0003A676 /* Sources */,
 				E4444EC925BF147F0003A676 /* Frameworks */,
@@ -633,13 +633,13 @@
 			);
 			dependencies = (
 			);
-			name = IkachanWidgetExtension;
+			name = IkachanWidget;
 			packageProductDependencies = (
 				E4444F3125BF155B0003A676 /* Kingfisher */,
 				E4444F3325BF155B0003A676 /* SwiftyJSON */,
 			);
 			productName = IkachanWidgetExtension;
-			productReference = E4444ECC25BF147F0003A676 /* IkachanWidgetExtension.appex */;
+			productReference = E4444ECC25BF147F0003A676 /* IkachanWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -686,7 +686,7 @@
 			projectRoot = "";
 			targets = (
 				E4405D7625AF64D2002EF1AB /* Ikachan */,
-				E4444ECB25BF147F0003A676 /* IkachanWidgetExtension */,
+				E4444ECB25BF147F0003A676 /* IkachanWidget */,
 				E43E136725C9A3BA008A0FE6 /* IkachanIntents */,
 				E43E137225C9A3BA008A0FE6 /* IkachanIntentsUI */,
 			);
@@ -882,7 +882,7 @@
 		};
 		E4444ED925BF14820003A676 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E4444ECB25BF147F0003A676 /* IkachanWidgetExtension */;
+			target = E4444ECB25BF147F0003A676 /* IkachanWidget */;
 			targetProxy = E4444ED825BF14820003A676 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1279,7 +1279,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4444EDD25BF14820003A676 /* Build configuration list for PBXNativeTarget "IkachanWidgetExtension" */ = {
+		E4444EDD25BF14820003A676 /* Build configuration list for PBXNativeTarget "IkachanWidget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4444EDB25BF14820003A676 /* Debug */,
