@@ -22,7 +22,7 @@ struct SmallShiftView: View {
                 SmallBaseView(text: absoluteTimeSpan(current: current, startTime: shift.startTime, endTime: shift.endTime), indicatorText: Shift.description, color: Shift.accentColor) {
                     VStack(spacing: 0) {
                         HStack {
-                            TrailingView(text: shift.stage?.description ?? "")
+                            BottomView(text: shift.stage?.description ?? "")
                                 .layoutPriority(1)
                             
                             Spacer()
@@ -43,12 +43,12 @@ struct SmallShiftView: View {
                     }
                 } leadingLeft: {
                     if subview {
-                        LeadingLeftView(text: LocalizedStringKey(timeSpanDescriptor(current: current, startTime: shift.startTime)))
+                        TopLeadingView(text: LocalizedStringKey(timeSpanDescriptor(current: current, startTime: shift.startTime)))
                     } else {
-                        LeadingLeftView(text: shiftTimePeriod2(startTime: shift.startTime, endTime: shift.endTime))
+                        TopLeadingView(text: shiftTimePeriod2(startTime: shift.startTime, endTime: shift.endTime))
                     }
                 } leadingRight: {
-                    LeadingRightView(text: subview ? Shift.description : Shift.shortDescription, color: Shift.accentColor)
+                    TopTrailingView(text: subview ? Shift.description : Shift.shortDescription, color: Shift.accentColor)
                 }
                 .padding(subview ? [] : [.all])
             } else {

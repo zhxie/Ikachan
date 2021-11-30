@@ -23,7 +23,7 @@ struct MediumScheduleView: View {
                     HStack {
                         VStack(spacing: 0) {
                             HStack {
-                                LeadingLeftView(text: scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
+                                TopLeadingView(text: scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
                                     .layoutPriority(1)
                                 
                                 Spacer()

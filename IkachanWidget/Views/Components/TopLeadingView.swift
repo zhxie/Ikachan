@@ -1,5 +1,5 @@
 //
-//  LeadingLeftView.swift
+//  TopLeadingView.swift
 //  IkachanWidget
 //
 //  Created by Sketch on 2021/11/30.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LeadingLeftView: View {
+struct TopLeadingView: View {
     let text: Text
     let color: Color?
     
@@ -29,8 +29,8 @@ struct LeadingLeftView: View {
     }
 }
 
-struct LeadingLeftView_Previews: PreviewProvider {
+struct TopLeadingView_Previews: PreviewProvider {
     static var previews: some View {
-        LeadingLeftView(text: "")
+        TopLeadingView(text: "")
     }
 }

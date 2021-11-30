@@ -49,12 +49,12 @@ struct SmallDayView: View {
             if let schedule = schedule {
                 VStack(spacing: 0) {
                     HStack(spacing: 0) {
-                        LeadingLeftView(text: LocalizedStringKey(timeSpanDescriptor(current: current, startTime: schedule.startTime)), color: .white)
+                        TopLeadingView(text: LocalizedStringKey(timeSpanDescriptor(current: current, startTime: schedule.startTime)), color: .white)
                             .layoutPriority(1)
                         
                         Spacer()
                         
-                        LeadingRightView(text: schedule.shortDescription, color: .white)
+                        TopTrailingView(text: schedule.shortDescription, color: .white)
                             .layoutPriority(2)
                     }
                     .layoutPriority(1)
@@ -84,8 +84,8 @@ struct SmallDayView: View {
                     
                     HStack {
                         VStack(alignment: .leading) {
-                            TrailingView(text: schedule.stageA.description, color: .white)
-                            TrailingView(text: schedule.stageB.description, color: .white)
+                            BottomView(text: schedule.stageA.description, color: .white)
+                            BottomView(text: schedule.stageB.description, color: .white)
                         }
                         .layoutPriority(1)
                         

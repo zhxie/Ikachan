@@ -22,7 +22,7 @@ struct MediumShiftView: View {
                     HStack {
                         VStack(spacing: 0) {
                             HStack {
-                                LeadingLeftView(text: shiftTimePeriod(startTime: shift.startTime, endTime: shift.endTime))
+                                TopLeadingView(text: shiftTimePeriod(startTime: shift.startTime, endTime: shift.endTime))
                                     .layoutPriority(1)
                                 
                                 Spacer()

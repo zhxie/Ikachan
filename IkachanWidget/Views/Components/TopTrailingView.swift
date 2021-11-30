@@ -1,5 +1,5 @@
 //
-//  TrailingView.swift
+//  TopTrailingView.swift
 //  IkachanWidget
 //
 //  Created by Sketch on 2021/11/30.
@@ -7,20 +7,21 @@
 
 import SwiftUI
 
-struct TrailingView: View {
+struct TopTrailingView: View {
     let text: String
-    var color: Color? = .secondary
+    let color: Color?
     
     var body: some View {
         Text(LocalizedStringKey(text))
             .font(.caption)
+            .fontWeight(.bold)
             .foregroundColor(color)
             .lineLimit(1)
     }
 }
 
-struct TrailingView_Previews: PreviewProvider {
+struct TopTrailingView_Previews: PreviewProvider {
     static var previews: some View {
-        TrailingView(text: "")
+        TopTrailingView(text: "", color: nil)
     }
 }
