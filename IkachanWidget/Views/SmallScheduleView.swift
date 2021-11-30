@@ -7,7 +7,6 @@
 
 import SwiftUI
 import WidgetKit
-import Kingfisher
 
 struct SmallScheduleView: View {
     let current: Date
