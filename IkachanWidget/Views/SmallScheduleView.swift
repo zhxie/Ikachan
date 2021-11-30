@@ -10,9 +10,10 @@ import WidgetKit
 import Kingfisher
 
 struct SmallScheduleView: View {
-    var current: Date
-    var schedule: Schedule?
-    var gameMode: Schedule.GameMode
+    let current: Date
+    let schedule: Schedule?
+    let gameMode: Schedule.GameMode
+    var subview: Bool = false
     
     var body: some View {
         ZStack {
@@ -20,95 +21,33 @@ struct SmallScheduleView: View {
                 .ignoresSafeArea(edges: .all)
             
             if let schedule = schedule {
-                GeometryReader { g in
-                    VStack(spacing: 0) {
-                        HStack(spacing: 0) {
-                            Text(g.size.width >= CompactSmallWidgetSafeWidth ? scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime) : scheduleTimePeriod2(startTime: schedule.startTime, endTime: schedule.endTime))
-                                .font(.caption2)
+                SmallBaseView(text: absoluteTimeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime), indicatorText: schedule.gameMode.description, color: schedule.gameMode.accentColor) {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(schedule.stageA.description)
+                                .font(.caption)
                                 .foregroundColor(.secondary)
                                 .lineLimit(1)
-                                .accessibility(label: Text(scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime)))
-                                .layoutPriority(1)
-                            
-                            Spacer()
-                            
-                            Text(g.size.width >= CompactSmallWidgetSafeWidth ? schedule.rule.shortDescription : schedule.rule.shorterDescription)
+                            Text(schedule.stageB.description)
                                 .font(.caption)
-                                .fontWeight(.bold)
-                                .foregroundColor(schedule.gameMode.accentColor)
+                                .foregroundColor(.secondary)
                                 .lineLimit(1)
-                                .layoutPriority(2)
                         }
                         .layoutPriority(1)
                         
-                        if g.size.width >= IPhone12ProMaxSmallWidgetSafeWidth {
-                            Spacer()
-                                .frame(height: 8)
-                                .layoutPriority(1)
-                            
-                            Rectangle()
-                                .fill(Color(UIColor.secondarySystemBackground))
-                                .overlay (
-                                    KFImage(URL(string: schedule.stageA.url)!)
-                                        .placeholder {
-                                            Rectangle()
-                                                .foregroundColor(Color(UIColor.secondarySystemBackground))
-                                        }
-                                        .resizedToFill()
-                                        .clipped()
-                                        .accessibility(label: Text(schedule.stageA.description))
-                                )
-                                .cornerRadius(7.5)
-                                .layoutPriority(1)
-                            
-                            Spacer()
-                                .frame(height: 2)
-                                .layoutPriority(1)
-                        } else {
-                            Spacer()
-                                .frame(height: 4)
-                                .layoutPriority(1)
-                        }
-                        
-                        HStack {
-                            Text(absoluteTimeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime))
-                                .fontWeight(.light)
-                                .font(.largeTitle)
-                                .lineLimit(1)
-                                .layoutPriority(1)
-                            
-                            Spacer()
-                            
-                            Image(systemName: "circle.fill")
-                                .font(.footnote)
-                                .foregroundColor(schedule.gameMode.accentColor)
-                                .accessibility(label: Text(schedule.gameMode.description))
-                        }
-                        .layoutPriority(1)
-                        
-                        if g.size.height < IPhone12ProMaxSmallWidgetSafeWidth {
-                            Spacer()
-                        }
-                        
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(schedule.stageA.description)
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                                    .lineLimit(1)
-                                Text(schedule.stageB.description)
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                                    .lineLimit(1)
-                            }
-                            .layoutPriority(1)
-                            
-                            Spacer()
-                                .frame(minWidth: 0)
-                        }
+                        Spacer()
+                            .frame(minWidth: 0)
                     }
+                } leadingLeft: {
+                    if subview {
+                        LeadingLeftView(text: timeSpanDescriptor(current: current, startTime: schedule.startTime))
+                    } else {
+                        LeadingLeftView(text: scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
+                    }
+                } leadingRight: {
+                    LeadingRightView(text: subview ? schedule.rule.shortDescription : schedule.rule.shorterDescription, color: schedule.gameMode.accentColor)
                 }
-                .padding()
+                .padding(subview ? [] : [.all])
             } else {
                 FailedToLoadView(accentColor: gameMode.accentColor)
                     .padding()

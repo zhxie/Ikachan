@@ -20,6 +20,7 @@
 "league_ss" = "L.";
 
 "salmon_run" = "Salmon Run";
+"job" = "Job";
 
 // Rule
 "turf_war" = "Turf War";
@@ -37,7 +38,7 @@
 "turf_ss" = "Turf";
 "zones_ss" = "Zones";
 "tower_ss" = "Tower";
-"rainmaker_ss" = "Rainmaker";
+"rainmaker_ss" = "Rain";
 "clam_ss" = "Clam";
 
 // Stage

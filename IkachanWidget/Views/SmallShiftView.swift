@@ -12,6 +12,7 @@ import Kingfisher
 struct SmallShiftView: View {
     var current: Date
     var shift: Shift?
+    var subview: Bool = false
     
     var body: some View {
         ZStack {
@@ -19,46 +20,11 @@ struct SmallShiftView: View {
                 .ignoresSafeArea(edges: .all)
             
             if let shift = shift {
-                GeometryReader { g in
+                SmallBaseView(text: absoluteTimeSpan(current: current, startTime: shift.startTime, endTime: shift.endTime), indicatorText: Shift.description, color: Shift.accentColor) {
                     VStack(spacing: 0) {
                         HStack {
-                            Text(g.size.width >= CompactSmallWidgetSafeWidth ? shiftTimePeriod(startTime: shift.startTime, endTime: shift.endTime) : shiftTimePeriod2(startTime: shift.startTime, endTime: shift.endTime))
-                                .font(.caption2)
-                                .foregroundColor(.secondary)
-                                .lineLimit(1)
-                                .accessibility(label: Text(shiftTimePeriod(startTime: shift.startTime, endTime: shift.endTime)))
-                                .layoutPriority(1)
-                            
-                            Spacer()
-                                .frame(minWidth: 0)
-                        }
-                        .layoutPriority(1)
-                        
-                        Spacer()
-                            .frame(height: 4)
-                            .layoutPriority(1)
-                        
-                        HStack {
-                            Text(absoluteTimeSpan(current: current, startTime: shift.startTime, endTime: shift.endTime))
-                                .fontWeight(.light)
-                                .font(.largeTitle)
-                                .lineLimit(1)
-                                .layoutPriority(1)
-                            
-                            Spacer()
-                            
-                            Image(systemName: "circle.fill")
-                                .font(.footnote)
-                                .foregroundColor(Shift.accentColor)
-                                .accessibility(label: Text(Shift.description))
-                        }
-                        .layoutPriority(1)
-                        
-                        Spacer()
-                        
-                        HStack {
                             Text(shift.stage?.description ?? "")
-                                .font(.footnote)
+                                .font(.caption)
                                 .foregroundColor(.secondary)
                                 .lineLimit(1)
                                 .layoutPriority(1)
@@ -67,70 +33,28 @@ struct SmallShiftView: View {
                                 .frame(minWidth: 0)
                         }
                         
-                        Spacer()
-                            .frame(height: 4)
-                        
-                        HStack {
-                            Rectangle()
-                                .fill(Color.clear)
-                                .aspectRatio(1, contentMode: .fit)
-                                .overlay(
-                                    KFImage(URL(string: shift.weapons[0].url)!)
-                                        .placeholder {
-                                            Circle()
-                                                .foregroundColor(Color(UIColor.secondarySystemBackground))
-                                        }
-                                        .resizedToFill()
-                                        .clipped()
-                                        .accessibility(label: Text(shift.weapons[0].description))
-                                )
-                                .cornerRadius(7.5)
-                            Rectangle()
-                                .fill(Color.clear)
-                                .aspectRatio(1, contentMode: .fit)
-                                .overlay(
-                                    KFImage(URL(string: shift.weapons[1].url)!)
-                                        .placeholder {
-                                            Circle()
-                                                .foregroundColor(Color(UIColor.secondarySystemBackground))
-                                        }
-                                        .resizedToFill()
-                                        .clipped()
-                                        .accessibility(label: Text(shift.weapons[1].description))
-                                )
-                                .cornerRadius(7.5)
-                            Rectangle()
-                                .fill(Color.clear)
-                                .aspectRatio(1, contentMode: .fit)
-                                .overlay(
-                                    KFImage(URL(string: shift.weapons[2].url)!)
-                                        .placeholder {
-                                            Circle()
-                                                .foregroundColor(Color(UIColor.secondarySystemBackground))
-                                        }
-                                        .resizedToFill()
-                                        .clipped()
-                                        .accessibility(label: Text(shift.weapons[2].description))
-                                )
-                                .cornerRadius(7.5)
-                            Rectangle()
-                                .fill(Color.clear)
-                                .aspectRatio(1, contentMode: .fit)
-                                .overlay(
-                                    KFImage(URL(string: shift.weapons[3].url)!)
-                                        .placeholder {
-                                            Circle()
-                                                .foregroundColor(Color(UIColor.secondarySystemBackground))
-                                        }
-                                        .resizedToFill()
-                                        .clipped()
-                                        .accessibility(label: Text(shift.weapons[3].description))
-                                )
-                                .cornerRadius(7.5)
+                        if !subview {
+                            Spacer()
+                                .frame(height: 4)
+                            
+                            HStack {
+                                WeaponView(image: shift.weapons[0].url, accessibility: shift.weapons[0].description)
+                                WeaponView(image: shift.weapons[1].url, accessibility: shift.weapons[1].description)
+                                WeaponView(image: shift.weapons[2].url, accessibility: shift.weapons[2].description)
+                                WeaponView(image: shift.weapons[3].url, accessibility: shift.weapons[3].description)
+                            }
                         }
                     }
+                } leadingLeft: {
+                    if subview {
+                        LeadingLeftView(text: timeSpanDescriptor(current: current, startTime: shift.startTime))
+                    } else {
+                        LeadingLeftView(text: shiftTimePeriod2(startTime: shift.startTime, endTime: shift.endTime))
+                    }
+                } leadingRight: {
+                    LeadingRightView(text: subview ? Shift.description : Shift.shortDescription, color: Shift.accentColor)
                 }
-                .padding()
+                .padding(subview ? [] : [.all])
             } else {
                 FailedToLoadView(accentColor: Shift.accentColor)
                     .padding()

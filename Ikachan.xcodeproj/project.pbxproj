@@ -15,6 +15,11 @@
 		E42AE865275509DB006F7CBD /* WeaponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponView.swift */; };
 		E42AE86727551ADF006F7CBD /* SchedulesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE86627551ADF006F7CBD /* SchedulesScrollView.swift */; };
 		E42AE86A2755C895006F7CBD /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE8692755C895006F7CBD /* IconView.swift */; };
+		E42AE86E2755CF06006F7CBD /* LeadingLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE86D2755CF06006F7CBD /* LeadingLeftView.swift */; };
+		E42AE8702755E13F006F7CBD /* LeadingRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE86F2755E13F006F7CBD /* LeadingRightView.swift */; };
+		E42AE8722755E331006F7CBD /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE8712755E331006F7CBD /* StageView.swift */; };
+		E42AE8762755F9F8006F7CBD /* WeaponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE8752755F9F8006F7CBD /* WeaponView.swift */; };
+		E42AE8782755FF4C006F7CBD /* SmallBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE8772755FF4C006F7CBD /* SmallBaseView.swift */; };
 		E434673D265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
 		E434673E265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
 		E434673F265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
@@ -181,6 +186,11 @@
 		E42AE863275509DB006F7CBD /* WeaponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponView.swift; sourceTree = "<group>"; };
 		E42AE86627551ADF006F7CBD /* SchedulesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesScrollView.swift; sourceTree = "<group>"; };
 		E42AE8692755C895006F7CBD /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		E42AE86D2755CF06006F7CBD /* LeadingLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingLeftView.swift; sourceTree = "<group>"; };
+		E42AE86F2755E13F006F7CBD /* LeadingRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingRightView.swift; sourceTree = "<group>"; };
+		E42AE8712755E331006F7CBD /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
+		E42AE8752755F9F8006F7CBD /* WeaponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponView.swift; sourceTree = "<group>"; };
+		E42AE8772755FF4C006F7CBD /* SmallBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallBaseView.swift; sourceTree = "<group>"; };
 		E434673C265FC51E0018F130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E438EF4425B5E3F7005AB9D9 /* ShiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsView.swift; sourceTree = "<group>"; };
 		E438EF4725B5E533005AB9D9 /* ShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftView.swift; sourceTree = "<group>"; };
@@ -303,6 +313,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E42AE86C2755CEC0006F7CBD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E42AE8772755FF4C006F7CBD /* SmallBaseView.swift */,
+				E42AE86D2755CF06006F7CBD /* LeadingLeftView.swift */,
+				E42AE86F2755E13F006F7CBD /* LeadingRightView.swift */,
+				E42AE8712755E331006F7CBD /* StageView.swift */,
+				E42AE8752755F9F8006F7CBD /* WeaponView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		E43E136B25C9A3BA008A0FE6 /* IkachanIntents */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +520,7 @@
 		E484FDBD25C9460C006E748F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E42AE86C2755CEC0006F7CBD /* Components */,
 				E4B1145925BD515F00303542 /* SmallDayView.swift */,
 				E46B506425B8959A001F88CE /* SmallScheduleView.swift */,
 				E46B506725B9BBA6001F88CE /* MediumScheduleView.swift */,
@@ -811,6 +834,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42AE8782755FF4C006F7CBD /* SmallBaseView.swift in Sources */,
 				E4613FB625C9B62000561D53 /* IkachanIntents.intentdefinition in Sources */,
 				E4444EE125BF148D0003A676 /* Date.swift in Sources */,
 				E4444EED25BF149B0003A676 /* Constant.swift in Sources */,
@@ -826,6 +850,7 @@
 				E4444EF825BF14A50003A676 /* MediumShiftView.swift in Sources */,
 				E4444EF725BF14A50003A676 /* SmallScheduleView.swift in Sources */,
 				E4444EF525BF14A50003A676 /* MediumScheduleView.swift in Sources */,
+				E42AE8762755F9F8006F7CBD /* WeaponView.swift in Sources */,
 				E445762A25CEF5A9004AA74D /* SmallShiftView.swift in Sources */,
 				E461414125CA880500561D53 /* String.swift in Sources */,
 				E48BECC125CD31F100B301D1 /* Collection.swift in Sources */,
@@ -834,6 +859,9 @@
 				E485DA1127534A3700B82AE0 /* Image.swift in Sources */,
 				E4C98CFC25C98099006940E9 /* View.swift in Sources */,
 				E4444EF025BF149B0003A676 /* Schedule.swift in Sources */,
+				E42AE8702755E13F006F7CBD /* LeadingRightView.swift in Sources */,
+				E42AE86E2755CF06006F7CBD /* LeadingLeftView.swift in Sources */,
+				E42AE8722755E331006F7CBD /* StageView.swift in Sources */,
 				E4444EF125BF149B0003A676 /* Weapon.swift in Sources */,
 				E4444F2325BF15090003A676 /* ShiftWidget.swift in Sources */,
 				E4400F2E25CD011500BF94C6 /* IntentHandler.swift in Sources */,

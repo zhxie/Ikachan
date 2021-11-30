@@ -24,10 +24,7 @@ struct MediumScheduleView: View {
                     HStack {
                         VStack(spacing: 0) {
                             HStack {
-                                Text(scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
-                                    .font(.caption2)
-                                    .foregroundColor(.secondary)
-                                    .lineLimit(1)
+                                LeadingLeftView(text: scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
                                     .layoutPriority(1)
                                 
                                 Spacer()
@@ -38,32 +35,8 @@ struct MediumScheduleView: View {
                                 .frame(height: 8)
                             
                             VStack {
-                                Rectangle()
-                                    .fill(Color(UIColor.secondarySystemBackground))
-                                    .overlay (
-                                        KFImage(URL(string: schedule.stageA.url)!)
-                                            .placeholder {
-                                                Rectangle()
-                                                    .foregroundColor(Color(UIColor.secondarySystemBackground))
-                                            }
-                                            .resizedToFill()
-                                            .clipped()
-                                            .accessibility(label: Text(schedule.stageA.description))
-                                    )
-                                    .cornerRadius(7.5)
-                                Rectangle()
-                                    .fill(Color(UIColor.secondarySystemBackground))
-                                    .overlay (
-                                        KFImage(URL(string: schedule.stageB.url)!)
-                                            .placeholder {
-                                                Rectangle()
-                                                    .foregroundColor(Color(UIColor.secondarySystemBackground))
-                                            }
-                                            .resizedToFill()
-                                            .clipped()
-                                            .accessibility(label: Text(schedule.stageB.description))
-                                    )
-                                    .cornerRadius(7.5)
+                                StageView(image: schedule.stageA.url, accessibility: schedule.stageA.description)
+                                StageView(image: schedule.stageB.url, accessibility: schedule.stageB.description)
                             }
                         }
                         .frame(width: g.size.width / 2 - 5)
@@ -71,67 +44,7 @@ struct MediumScheduleView: View {
                         Spacer()
                             .frame(width: 15)
                         
-                        VStack(spacing: 0) {
-                            HStack {
-                                Text(timeSpanDescriptor(current: current, startTime: schedule.startTime))
-                                    .font(.caption2)
-                                    .foregroundColor(.secondary)
-                                    .lineLimit(1)
-                                    .layoutPriority(1)
-                                
-                                Spacer()
-                                
-                                Text(schedule.shortDescription)
-                                    .font(.caption)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(schedule.gameMode.accentColor)
-                                    .lineLimit(1)
-                                    .layoutPriority(2)
-                            }
-                            .layoutPriority(1)
-                            
-                            Spacer()
-                                .frame(height: 4)
-                            
-                            HStack {
-                                Text(absoluteTimeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime))
-                                    .fontWeight(.light)
-                                    .font(.largeTitle)
-                                    .lineLimit(1)
-                                    .layoutPriority(1)
-                                
-                                Spacer()
-                                
-                                Image(systemName: "circle.fill")
-                                    .font(.footnote)
-                                    .foregroundColor(schedule.gameMode.accentColor)
-                                    .accessibility(label: Text(schedule.gameMode.description))
-                            }
-                            .layoutPriority(1)
-                            
-                            Spacer()
-                            
-                            HStack {
-                                VStack(alignment: .leading, spacing: 0) {
-                                    Text(schedule.stageA.description)
-                                        .font(.footnote)
-                                        .foregroundColor(.secondary)
-                                        .lineLimit(1)
-                                    
-                                    Spacer()
-                                        .frame(height: 2)
-                                    
-                                    Text(schedule.stageB.description)
-                                        .font(.footnote)
-                                        .foregroundColor(.secondary)
-                                        .lineLimit(1)
-                                }
-                                .layoutPriority(1)
-                                
-                                Spacer()
-                                    .frame(minWidth: 0)
-                            }
-                        }
+                        SmallScheduleView(current: current, schedule: schedule, gameMode: gameMode, subview: true)
                     }
                 }
                 .padding()

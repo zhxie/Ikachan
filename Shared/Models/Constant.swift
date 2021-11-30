@@ -25,14 +25,6 @@ let IkachanActivity = "name.sketch.Ikachan"
 let IkachanSchedulesActivity = IkachanActivity + ".schedules"
 let IkachanShiftsActivity = IkachanActivity + ".shifts"
 
-// View
-let IPhone12ProMaxSmallWidgetSafeWidth: CGFloat = 137
-/// Any small widget with width under `CompactSmallWidgetSafeWidth` will be displayed as a compact widget.
-let CompactSmallWidgetSafeWidth: CGFloat = 130
-/// Any medium widget with width under `CompactMediumWidgetSafeWidth` will be deplayed as a compact widget.
-let CompactMediumWidgetSafeWidth: CGFloat = 286
-let ComponentMinWidth: CGFloat = 364
-
 // Widget
 let MaxWidgetEntryCount = 60
 
