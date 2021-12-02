@@ -124,7 +124,8 @@ struct AboutView: View {
                 }
                 
                 Section(header: Text("about")) {
-                    Link("repository", destination: URL(string: "https://github.com/zhxie/ikachan")!)
+                    Link("repository", destination: URL(string: "https://github.com/zhxie/Ikachan")!)
+                    Link("privacy_policy", destination: URL(string: "https://github.com/zhxie/Ikachan/wiki/Privacy-Policy")!)
                     Link("developer_sketch", destination: URL(string: isChinese ? "https://weibo.com/u/2269567390" : "https://twitter.com/xzh1206")!)
                     Link("designer_shooky", destination: URL(string: isChinese ? "https://weibo.com/u/6622470330" : "https://twitter.com/ShellShooky")!)
                 }
