@@ -65,7 +65,10 @@ struct ShiftsView: View {
     }
     
     func interact() {
-        INInteraction(intent: ShiftIntent(), response: nil).donate(completion: nil)
+        let intent = ShiftIntent()
+        intent.rotation = .current
+        
+        INInteraction(intent: intent, response: nil).donate(completion: nil)
     }
 }
 

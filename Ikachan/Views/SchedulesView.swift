@@ -112,6 +112,7 @@ struct SchedulesView: View {
     func interact(gameMode: Schedule.GameMode) {
         let intent = ScheduleIntent()
         intent.gameMode = ScheduleIntentHandler.gameModeConvertFrom(gameMode: gameMode)
+        intent.rotation = .current
         
         INInteraction(intent: intent, response: nil).donate(completion: nil)
     }
