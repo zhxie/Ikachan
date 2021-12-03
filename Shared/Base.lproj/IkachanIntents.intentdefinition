@@ -106,11 +106,11 @@
 	<key>INIntentDefinitionNamespace</key>
 	<string>AL54Nd</string>
 	<key>INIntentDefinitionSystemVersion</key>
-	<string>19H15</string>
+	<string>20G224</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
-	<string>12C33</string>
+	<string>13A1030d</string>
 	<key>INIntentDefinitionToolsVersion</key>
-	<string>12.3</string>
+	<string>13.1</string>
 	<key>INIntents</key>
 	<array>
 		<dict>
@@ -222,7 +222,7 @@
 			<key>INIntentConfigurable</key>
 			<true/>
 			<key>INIntentDescription</key>
-			<string>Shows schedules for a mode.</string>
+			<string>Shows schedules of a mode.</string>
 			<key>INIntentDescriptionID</key>
 			<string>XALQ6Y</string>
 			<key>INIntentEligibleForWidgets</key>
@@ -238,7 +238,7 @@
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>${rotation} schedule for ${gameMode}</string>
+					<string>${rotation} schedule of ${gameMode}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>pYS45i</string>
 				</dict>
@@ -247,6 +247,15 @@
 			<string>Schedule</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
+				<key></key>
+				<dict>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>View schedules</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>6cLrqJ</string>
+				</dict>
 				<key>gameMode</key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
@@ -254,7 +263,7 @@
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Schedules for ${gameMode}</string>
+					<string>View schedules of ${gameMode}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>ffldub</string>
 				</dict>
@@ -263,9 +272,18 @@
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>${rotation} schedule for ${gameMode}</string>
+					<string>View schedules of ${gameMode}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>1rsv8F</string>
+				</dict>
+				<key>rotation</key>
+				<dict>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>View schedules</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>WaDZel</string>
 				</dict>
 			</dict>
 			<key>INIntentParameters</key>
@@ -405,7 +423,7 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Here's the ${rotation} schedule for ${gameMode}.</string>
+						<string>Here's the ${rotation} schedule of ${gameMode}.</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>U9s5b8</string>
 						<key>INIntentResponseCodeFormatString</key>
@@ -495,7 +513,7 @@
 			<key>INIntentConfigurable</key>
 			<true/>
 			<key>INIntentDescription</key>
-			<string>Shows shifts for Salmon Run.</string>
+			<string>Shows shifts of Salmon Run.</string>
 			<key>INIntentDescriptionID</key>
 			<string>LTajCZ</string>
 			<key>INIntentEligibleForWidgets</key>
@@ -509,7 +527,7 @@
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>${rotation} shift for Salmon Run</string>
+					<string>${rotation} shift of Salmon Run</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>KM8zVO</string>
 					<key>INIntentParameterCombinationUpdatesLinked</key>
@@ -527,7 +545,7 @@
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Shifts for Salmon Run</string>
+					<string>View shifts of Salmon Run</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>0dhvDV</string>
 				</dict>
@@ -536,7 +554,7 @@
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>${rotation} shift for Salmon Run</string>
+					<string>View shifts of Salmon Run</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>BvudQ0</string>
 				</dict>
@@ -614,7 +632,7 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Here's the ${rotation} shift for Salmon Run.</string>
+						<string>Here's the ${rotation} shift of Salmon Run.</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>Pj9O6l</string>
 						<key>INIntentResponseCodeFormatString</key>

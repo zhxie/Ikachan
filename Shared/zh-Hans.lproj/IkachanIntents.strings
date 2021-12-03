@@ -1,132 +1,53 @@
-"0dhvDV" = "Salmon Run的排班表";
-
-"10v9re-Vmno8H" = "Just to confirm, you wanted ‘真格对战’?";
-
-"10v9re-byIF5m" = "Just to confirm, you wanted ‘组排对战’?";
-
-"10v9re-vQ9T9L" = "Just to confirm, you wanted ‘普通对战’?";
-
-"1rsv8F-9n3fyF-Vmno8H" = "真格对战当前的日程";
-
-"1rsv8F-9n3fyF-byIF5m" = "组排对战当前的日程";
-
-"1rsv8F-9n3fyF-vQ9T9L" = "普通对战当前的日程";
-
-"1rsv8F-YTWkY1-Vmno8H" = "真格对战接下来的日程";
-
-"1rsv8F-YTWkY1-byIF5m" = "组排对战接下来的日程";
-
-"1rsv8F-YTWkY1-vQ9T9L" = "普通对战接下来的日程";
-
-"2z9Dkd" = "模式";
-
-"3ADlh5" = "轮次";
-
-"6RxUlZ" = "结果";
-
-"9n3fyF" = "当前";
-
-"BmtGiG-9n3fyF" = "Just to confirm, you wanted ‘当前’?";
-
-"BmtGiG-YTWkY1" = "Just to confirm, you wanted ‘接下来’?";
-
-"BvudQ0-9n3fyF" = "Salmon Run当前的排班";
-
-"BvudQ0-YTWkY1" = "Salmon Run接下来的排班";
-
-"KM8zVO" = "Salmon Run${rotation}的排班";
-
-"LTajCZ" = "显示Salmon Run的排班表。";
-
-"LwDtQE" = "模式";
-
-"M7gD7t-Vmno8H" = "There are ${count} options matching ‘真格对战’.";
-
-"M7gD7t-byIF5m" = "There are ${count} options matching ‘组排对战’.";
-
-"M7gD7t-vQ9T9L" = "There are ${count} options matching ‘普通对战’.";
-
-"Msndu0-9n3fyF" = "There are ${count} options matching ‘当前’.";
-
-"Msndu0-YTWkY1" = "There are ${count} options matching ‘接下来’.";
-
-"OhYFhR-9n3fyF" = "Just to confirm, you wanted ‘当前’?";
-
-"OhYFhR-YTWkY1" = "Just to confirm, you wanted ‘接下来’?";
-
-"P0sKEJ" = "轮次";
-
-"Pj9O6l-9n3fyF" = "这就是Salmon Run当前的排班。";
-
-"Pj9O6l-YTWkY1" = "这就是Salmon Run接下来的排班。";
-
-"QjGFWc" = "排班表";
-
+// Mode
 "RTR7w4" = "模式";
-
-"SLejbf" = "${result}";
-
-"U9s5b8-9n3fyF-Vmno8H" = "这就是真格对战当前的日程。";
-
-"U9s5b8-9n3fyF-byIF5m" = "这就是组排对战当前的日程。";
-
-"U9s5b8-9n3fyF-vQ9T9L" = "这就是普通对战当前的日程。";
-
-"U9s5b8-YTWkY1-Vmno8H" = "这就是真格对战接下来的日程。";
-
-"U9s5b8-YTWkY1-byIF5m" = "这就是组排对战接下来的日程。";
-
-"U9s5b8-YTWkY1-vQ9T9L" = "这就是普通对战接下来的日程。";
-
-"UJkkfa" = "成为乌贼的又一日。";
-
+"vQ9T9L" = "普通对战";
 "Vmno8H" = "真格对战";
-
-"XALQ6Y" = "显示某模式的日程。";
-
-"XGNvY7" = "结果";
-
-"YG3GWe" = "轮次";
-
-"YTWkY1" = "接下来";
-
-"ajvTis" = "一日";
-
-"bXSdro" = "${result}";
-
 "byIF5m" = "组排对战";
 
+// Rotation
+"YG3GWe" = "轮次";
+"9n3fyF" = "当前";
+"YTWkY1" = "接下来";
+
+// Day
+"ajvTis" = "一日";
+"UJkkfa" = "成为乌贼的又一日。";
+"LwDtQE" = "模式";
+
+// Schedule
 "dCtLWO" = "日程";
-
-"doN3a4-Vmno8H" = "Just to confirm, you wanted ‘真格对战’?";
-
-"doN3a4-byIF5m" = "Just to confirm, you wanted ‘组排对战’?";
-
-"doN3a4-vQ9T9L" = "Just to confirm, you wanted ‘普通对战’?";
-
-"ffldub-Vmno8H" = "真格对战的日程";
-
-"ffldub-byIF5m" = "组排对战的日程";
-
-"ffldub-vQ9T9L" = "普通对战的日程";
-
-"n2daln" = "轮次";
-
-"oMMIWT-Vmno8H" = "There are ${count} options matching ‘真格对战’.";
-
-"oMMIWT-byIF5m" = "There are ${count} options matching ‘组排对战’.";
-
-"oMMIWT-vQ9T9L" = "There are ${count} options matching ‘普通对战’.";
-
-"od31Z2" = "轮次";
-
+"XALQ6Y" = "显示某模式的日程。";
+"2z9Dkd" = "模式";
+"3ADlh5" = "轮次";
 "pYS45i" = "${gameMode}${rotation}的日程";
-
-"v8ZVx6-9n3fyF" = "There are ${count} options matching ‘当前’.";
-
-"v8ZVx6-YTWkY1" = "There are ${count} options matching ‘接下来’.";
-
-"vQ9T9L" = "普通对战";
-
+"6cLrqJ" = "查看日程";
+"WaDZel" = "查看日程";
+"ffldub-vQ9T9L" = "查看普通对战的日程";
+"ffldub-Vmno8H" = "查看真格对战的日程";
+"ffldub-byIF5m" = "查看组排对战的日程";
+"1rsv8F-vQ9T9L" = "查看普通对战的日程";
+"1rsv8F-Vmno8H" = "查看真格对战的日程";
+"1rsv8F-byIF5m" = "查看组排对战的日程";
 "vtf9zV" = "模式";
+"n2daln" = "轮次";
+"XGNvY7" = "结果";
+"SLejbf" = "${result}";
+"U9s5b8-9n3fyF-vQ9T9L" = "这就是普通对战当前的日程。";
+"U9s5b8-9n3fyF-Vmno8H" = "这就是真格对战当前的日程。";
+"U9s5b8-9n3fyF-byIF5m" = "这就是组排对战当前的日程。";
+"U9s5b8-YTWkY1-vQ9T9L" = "这就是普通对战接下来的日程。";
+"U9s5b8-YTWkY1-Vmno8H" = "这就是真格对战接下来的日程。";
+"U9s5b8-YTWkY1-byIF5m" = "这就是组排对战接下来的日程。";
 
+// Shift
+"QjGFWc" = "排班表";
+"LTajCZ" = "显示Salmon Run的排班表。";
+"P0sKEJ" = "轮次";
+"KM8zVO" = "Salmon Run${rotation}的排班表";
+"0dhvDV" = "查看Salmon Run的排班表";
+"BvudQ0" = "查看Salmon Run的排班表";
+"od31Z2" = "轮次";
+"6RxUlZ" = "结果";
+"bXSdro" = "${result}";
+"Pj9O6l-9n3fyF" = "这就是Salmon Run当前的排班。";
+"Pj9O6l-YTWkY1" = "这就是Salmon Run接下来的排班。";

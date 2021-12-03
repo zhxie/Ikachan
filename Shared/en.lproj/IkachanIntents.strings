@@ -1,132 +1,53 @@
-"0dhvDV" = "Shifts for Salmon Run";
-
-"10v9re-Vmno8H" = "Just to confirm, you wanted ‘Ranked Battle’?";
-
-"10v9re-byIF5m" = "Just to confirm, you wanted ‘League Battle’?";
-
-"10v9re-vQ9T9L" = "Just to confirm, you wanted ‘Regular Battle’?";
-
-"1rsv8F-9n3fyF-Vmno8H" = "Current schedule for Ranked Battle";
-
-"1rsv8F-9n3fyF-byIF5m" = "Current schedule for League Battle";
-
-"1rsv8F-9n3fyF-vQ9T9L" = "Current schedule for Regular Battle";
-
-"1rsv8F-YTWkY1-Vmno8H" = "Next schedule for Ranked Battle";
-
-"1rsv8F-YTWkY1-byIF5m" = "Next schedule for League Battle";
-
-"1rsv8F-YTWkY1-vQ9T9L" = "Next schedule for Regular Battle";
-
-"2z9Dkd" = "Mode";
-
-"3ADlh5" = "Rotation";
-
-"6RxUlZ" = "Result";
-
-"9n3fyF" = "Current";
-
-"BmtGiG-9n3fyF" = "Just to confirm, you wanted ‘Current’?";
-
-"BmtGiG-YTWkY1" = "Just to confirm, you wanted ‘Next’?";
-
-"BvudQ0-9n3fyF" = "Current shift for Salmon Run";
-
-"BvudQ0-YTWkY1" = "Next shift for Salmon Run";
-
-"KM8zVO" = "${rotation} shift for Salmon Run";
-
-"LTajCZ" = "Shows shifts for Salmon Run.";
-
-"LwDtQE" = "Mode";
-
-"M7gD7t-Vmno8H" = "There are ${count} options matching ‘Ranked Battle’.";
-
-"M7gD7t-byIF5m" = "There are ${count} options matching ‘League Battle’.";
-
-"M7gD7t-vQ9T9L" = "There are ${count} options matching ‘Regular Battle’.";
-
-"Msndu0-9n3fyF" = "There are ${count} options matching ‘Current’.";
-
-"Msndu0-YTWkY1" = "There are ${count} options matching ‘Next’.";
-
-"OhYFhR-9n3fyF" = "Just to confirm, you wanted ‘Current’?";
-
-"OhYFhR-YTWkY1" = "Just to confirm, you wanted ‘Next’?";
-
-"P0sKEJ" = "Rotation";
-
-"Pj9O6l-9n3fyF" = "Here's the current shift for Salmon Run.";
-
-"Pj9O6l-YTWkY1" = "Here's the next shift for Salmon Run.";
-
-"QjGFWc" = "Shifts";
-
+// Mode
 "RTR7w4" = "Mode";
-
-"SLejbf" = "${result}";
-
-"U9s5b8-9n3fyF-Vmno8H" = "Here's the current schedule for Ranked Battle.";
-
-"U9s5b8-9n3fyF-byIF5m" = "Here's the current schedule for League Battle.";
-
-"U9s5b8-9n3fyF-vQ9T9L" = "Here's the current schedule for Regular Battle.";
-
-"U9s5b8-YTWkY1-Vmno8H" = "Here's the next schedule for Ranked Battle.";
-
-"U9s5b8-YTWkY1-byIF5m" = "Here's the next schedule for League Battle.";
-
-"U9s5b8-YTWkY1-vQ9T9L" = "Here's the next schedule for Regular Battle.";
-
-"UJkkfa" = "Another day becoming a squid.";
-
+"vQ9T9L" = "Regular Battle";
 "Vmno8H" = "Ranked Battle";
-
-"XALQ6Y" = "Shows schedules for a mode.";
-
-"XGNvY7" = "Result";
-
-"YG3GWe" = "Rotation";
-
-"YTWkY1" = "Next";
-
-"ajvTis" = "Day";
-
-"bXSdro" = "${result}";
-
 "byIF5m" = "League Battle";
 
+// Rotation
+"YG3GWe" = "Rotation";
+"9n3fyF" = "Current";
+"YTWkY1" = "Next";
+
+// Day
+"ajvTis" = "Day";
+"UJkkfa" = "Another day becoming a squid.";
+"LwDtQE" = "Mode";
+
+// Schedule
 "dCtLWO" = "Schedules";
-
-"doN3a4-Vmno8H" = "Just to confirm, you wanted ‘Ranked Battle’?";
-
-"doN3a4-byIF5m" = "Just to confirm, you wanted ‘League Battle’?";
-
-"doN3a4-vQ9T9L" = "Just to confirm, you wanted ‘Regular Battle’?";
-
-"ffldub-Vmno8H" = "Schedules for Ranked Battle";
-
-"ffldub-byIF5m" = "Schedules for League Battle";
-
-"ffldub-vQ9T9L" = "Schedules for Regular Battle";
-
-"n2daln" = "Rotation";
-
-"oMMIWT-Vmno8H" = "There are ${count} options matching ‘Ranked Battle’.";
-
-"oMMIWT-byIF5m" = "There are ${count} options matching ‘League Battle’.";
-
-"oMMIWT-vQ9T9L" = "There are ${count} options matching ‘Regular Battle’.";
-
-"od31Z2" = "Rotation";
-
-"pYS45i" = "${rotation} schedule for ${gameMode}";
-
-"v8ZVx6-9n3fyF" = "There are ${count} options matching ‘Current’.";
-
-"v8ZVx6-YTWkY1" = "There are ${count} options matching ‘Next’.";
-
-"vQ9T9L" = "Regular Battle";
-
+"XALQ6Y" = "Shows schedules of a mode.";
+"2z9Dkd" = "Mode";
+"3ADlh5" = "Rotation";
+"pYS45i" = "${rotation} schedule of ${gameMode}";
+"6cLrqJ" = "View schedules";
+"WaDZel" = "View schedules";
+"ffldub-vQ9T9L" = "View schedules of Regular Battle";
+"ffldub-Vmno8H" = "View schedules of Ranked Battle";
+"ffldub-byIF5m" = "View schedules of League Battle";
+"1rsv8F-vQ9T9L" = "View schedules of Regular Battle";
+"1rsv8F-Vmno8H" = "View schedules of Ranked Battle";
+"1rsv8F-byIF5m" = "View schedules of League Battle";
 "vtf9zV" = "Mode";
+"n2daln" = "Rotation";
+"XGNvY7" = "Result";
+"SLejbf" = "${result}";
+"U9s5b8-9n3fyF-vQ9T9L" = "Here's the current schedule of Regular Battle.";
+"U9s5b8-9n3fyF-Vmno8H" = "Here's the current schedule of Ranked Battle.";
+"U9s5b8-9n3fyF-byIF5m" = "Here's the current schedule of League Battle.";
+"U9s5b8-YTWkY1-vQ9T9L" = "Here's the next schedule of Regular Battle.";
+"U9s5b8-YTWkY1-Vmno8H" = "Here's the next schedule of Ranked Battle.";
+"U9s5b8-YTWkY1-byIF5m" = "Here's the next schedule of League Battle.";
 
+// Shift
+"QjGFWc" = "Shifts";
+"LTajCZ" = "Shows shifts of Salmon Run.";
+"P0sKEJ" = "Rotation";
+"KM8zVO" = "${rotation} shift of Salmon Run";
+"0dhvDV" = "View shifts of Salmon Run";
+"BvudQ0" = "View shifts of Salmon Run";
+"od31Z2" = "Rotation";
+"6RxUlZ" = "Result";
+"bXSdro" = "${result}";
+"Pj9O6l-9n3fyF" = "Here's the current shift of Salmon Run.";
+"Pj9O6l-YTWkY1" = "Here's the next shift of Salmon Run.";

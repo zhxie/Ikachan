@@ -1,132 +1,53 @@
-"0dhvDV" = "サーモンランのシフト表";
-
-"10v9re-Vmno8H" = "Just to confirm, you wanted ‘ガチマッチ’?";
-
-"10v9re-byIF5m" = "Just to confirm, you wanted ‘リーグマッチ’?";
-
-"10v9re-vQ9T9L" = "Just to confirm, you wanted ‘レギュラーマッチ’?";
-
-"1rsv8F-9n3fyF-Vmno8H" = "ガチマッチのいまのスケジュール";
-
-"1rsv8F-9n3fyF-byIF5m" = "リーグマッチのいまのスケジュール";
-
-"1rsv8F-9n3fyF-vQ9T9L" = "レギュラーマッチのいまのスケジュール";
-
-"1rsv8F-YTWkY1-Vmno8H" = "ガチマッチのつぎのスケジュール";
-
-"1rsv8F-YTWkY1-byIF5m" = "リーグマッチのつぎのスケジュール";
-
-"1rsv8F-YTWkY1-vQ9T9L" = "レギュラーマッチのつぎのスケジュール";
-
-"2z9Dkd" = "モード";
-
-"3ADlh5" = "ローテーション";
-
-"6RxUlZ" = "結果";
-
-"9n3fyF" = "いま";
-
-"BmtGiG-9n3fyF" = "Just to confirm, you wanted ‘いま’?";
-
-"BmtGiG-YTWkY1" = "Just to confirm, you wanted ‘つぎ’?";
-
-"BvudQ0-9n3fyF" = "サーモンランのいまのシフト";
-
-"BvudQ0-YTWkY1" = "サーモンランのつぎのシフト";
-
-"KM8zVO" = "サーモンランの${rotation}のシフト";
-
-"LTajCZ" = "サーモンランのシフト表を表示します。";
-
-"LwDtQE" = "モード";
-
-"M7gD7t-Vmno8H" = "There are ${count} options matching ‘ガチマッチ’.";
-
-"M7gD7t-byIF5m" = "There are ${count} options matching ‘リーグマッチ’.";
-
-"M7gD7t-vQ9T9L" = "There are ${count} options matching ‘レギュラーマッチ’.";
-
-"Msndu0-9n3fyF" = "There are ${count} options matching ‘いま’.";
-
-"Msndu0-YTWkY1" = "There are ${count} options matching ‘つぎ’.";
-
-"OhYFhR-9n3fyF" = "Just to confirm, you wanted ‘いま’?";
-
-"OhYFhR-YTWkY1" = "Just to confirm, you wanted ‘つぎ’?";
-
-"P0sKEJ" = "ローテーション";
-
-"Pj9O6l-9n3fyF" = "こちらはサーモンランのいまのシフト。";
-
-"Pj9O6l-YTWkY1" = "こちらはサーモンランのつぎのシフト。";
-
-"QjGFWc" = "シフト表";
-
+// Mode
 "RTR7w4" = "モード";
-
-"SLejbf" = "${result}";
-
-"U9s5b8-9n3fyF-Vmno8H" = "こちらはガチマッチのいまのスケジュール。";
-
-"U9s5b8-9n3fyF-byIF5m" = "こちらはリーグマッチのいまのスケジュール。";
-
-"U9s5b8-9n3fyF-vQ9T9L" = "こちらはレギュラーマッチのいまのスケジュール。";
-
-"U9s5b8-YTWkY1-Vmno8H" = "こちらはガチマッチのつぎのスケジュール。";
-
-"U9s5b8-YTWkY1-byIF5m" = "こちらはリーグマッチのつぎのスケジュール。";
-
-"U9s5b8-YTWkY1-vQ9T9L" = "こちらはレギュラーマッチのつぎのスケジュール。";
-
-"UJkkfa" = "もうイカになる一日。";
-
+"vQ9T9L" = "レギュラーマッチ";
 "Vmno8H" = "ガチマッチ";
-
-"XALQ6Y" = "そのモードのスケジュールを表示します。";
-
-"XGNvY7" = "結果";
-
-"YG3GWe" = "ローテーション";
-
-"YTWkY1" = "つぎ";
-
-"ajvTis" = "一日";
-
-"bXSdro" = "${result}";
-
 "byIF5m" = "リーグマッチ";
 
+// Rotation
+"YG3GWe" = "ローテーション";
+"9n3fyF" = "いま";
+"YTWkY1" = "つぎ";
+
+// Day
+"ajvTis" = "一日";
+"UJkkfa" = "もうイカになる一日。";
+"LwDtQE" = "モード";
+
+// Schedule
 "dCtLWO" = "スケジュール";
-
-"doN3a4-Vmno8H" = "Just to confirm, you wanted ‘ガチマッチ’?";
-
-"doN3a4-byIF5m" = "Just to confirm, you wanted ‘リーグマッチ’?";
-
-"doN3a4-vQ9T9L" = "Just to confirm, you wanted ‘レギュラーマッチ’?";
-
-"ffldub-Vmno8H" = "ガチマッチのスケジュール";
-
-"ffldub-byIF5m" = "リーグマッチのスケジュール";
-
-"ffldub-vQ9T9L" = "レギュラーマッチのスケジュール";
-
-"n2daln" = "ローテーション";
-
-"oMMIWT-Vmno8H" = "There are ${count} options matching ‘ガチマッチ’.";
-
-"oMMIWT-byIF5m" = "There are ${count} options matching ‘リーグマッチ’.";
-
-"oMMIWT-vQ9T9L" = "There are ${count} options matching ‘レギュラーマッチ’.";
-
-"od31Z2" = "ローテーション";
-
+"XALQ6Y" = "そのモードのスケジュールを表示します。";
+"2z9Dkd" = "モード";
+"3ADlh5" = "ローテーション";
 "pYS45i" = "${gameMode}の${rotation}のスケジュール";
-
-"v8ZVx6-9n3fyF" = "There are ${count} options matching ‘いま’.";
-
-"v8ZVx6-YTWkY1" = "There are ${count} options matching ‘つぎ’.";
-
-"vQ9T9L" = "レギュラーマッチ";
-
+"6cLrqJ" = "スケジュールを見る";
+"WaDZel" = "スケジュールを見る";
+"ffldub-vQ9T9L" = "レギュラーマッチのスケジュールを見る";
+"ffldub-Vmno8H" = "ガチマッチのスケジュールを見る";
+"ffldub-byIF5m" = "リーグマッチのスケジュールを見る";
+"1rsv8F-vQ9T9L" = "レギュラーマッチのスケジュールを見る";
+"1rsv8F-Vmno8H" = "ガチマッチのスケジュールを見る";
+"1rsv8F-byIF5m" = "リーグマッチのスケジュールを見る";
 "vtf9zV" = "モード";
+"n2daln" = "ローテーション";
+"XGNvY7" = "結果";
+"SLejbf" = "${result}";
+"U9s5b8-9n3fyF-vQ9T9L" = "こちらはレギュラーマッチのいまのスケジュール。";
+"U9s5b8-9n3fyF-Vmno8H" = "こちらはガチマッチのいまのスケジュール。";
+"U9s5b8-9n3fyF-byIF5m" = "こちらはリーグマッチのいまのスケジュール。";
+"U9s5b8-YTWkY1-vQ9T9L" = "こちらはレギュラーマッチのつぎのスケジュール。";
+"U9s5b8-YTWkY1-Vmno8H" = "こちらはガチマッチのつぎのスケジュール。";
+"U9s5b8-YTWkY1-byIF5m" = "こちらはリーグマッチのつぎのスケジュール。";
 
+// Shift
+"QjGFWc" = "シフト表";
+"LTajCZ" = "サーモンランのシフト表を表示します。";
+"P0sKEJ" = "ローテーション";
+"KM8zVO" = "サーモンランの${rotation}のシフト";
+"0dhvDV" = "サーモンランのシフト表を見る";
+"BvudQ0" = "サーモンランのシフト表を見る";
+"od31Z2" = "ローテーション";
+"6RxUlZ" = "結果";
+"bXSdro" = "${result}";
+"Pj9O6l-9n3fyF" = "こちらはサーモンランのいまのシフト。";
+"Pj9O6l-YTWkY1" = "こちらはサーモンランのつぎのシフト。";

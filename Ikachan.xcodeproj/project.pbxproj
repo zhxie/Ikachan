@@ -222,6 +222,7 @@
 		E445761D25CE99AE004AA74D /* ShrineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrineView.swift; sourceTree = "<group>"; };
 		E445762325CE9B70004AA74D /* Fortune.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fortune.swift; sourceTree = "<group>"; };
 		E445762925CEF5A9004AA74D /* SmallShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallShiftView.swift; sourceTree = "<group>"; };
+		E448CCDC275A328A00BAB15B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
 		E4613F8F25C9AFD100561D53 /* ScheduleIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleIntentHandler.swift; sourceTree = "<group>"; };
 		E4613F9C25C9AFF700561D53 /* ShiftIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftIntentHandler.swift; sourceTree = "<group>"; };
 		E4613FB925C9B62000561D53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/IkachanIntents.intentdefinition; sourceTree = "<group>"; };
@@ -254,7 +255,6 @@
 		E485D9FB275342A300B82AE0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E485DA1227534D0100B82AE0 /* KFImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFImage.swift; sourceTree = "<group>"; };
 		E48BECBF25CD31F100B301D1 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
-		E48BED3725CD822600B301D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
 		E48BED4125CD855800B301D1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
 		E4B1144A25BD1E7A00303542 /* MediumShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumShiftView.swift; sourceTree = "<group>"; };
 		E4B1144F25BD43B400303542 /* ShiftWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftWidget.swift; sourceTree = "<group>"; };
@@ -904,9 +904,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				E4613FB925C9B62000561D53 /* Base */,
-				E48BED3725CD822600B301D1 /* en */,
 				E48BED4125CD855800B301D1 /* ja */,
 				E4D8F04A25D03C310064B40A /* zh-Hans */,
+				E448CCDC275A328A00BAB15B /* en */,
 			);
 			name = IkachanIntents.intentdefinition;
 			sourceTree = "<group>";
