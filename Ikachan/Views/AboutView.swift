@@ -54,9 +54,13 @@ struct AboutView: View {
                             }
                         }
                         .navigationTitle("app_icon")
-                        .navigationBarItems(trailing: Button("close") {
-                            showModal.toggle()
-                        })
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                Button("close") {
+                                    showModal.toggle()
+                                }
+                            }
+                        }
                     }) {
                         Text("app_icon")
                     }
@@ -169,9 +173,13 @@ struct AboutView: View {
                             }
                         }
                         .navigationTitle("acknowledgements")
-                        .navigationBarItems(trailing: Button("close") {
-                            showModal.toggle()
-                        })
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                Button("close") {
+                                    showModal.toggle()
+                                }
+                            }
+                        }
                         .padding()
                     }) {
                         Text("acknowledgements")
@@ -186,7 +194,7 @@ struct AboutView: View {
                             .resizedToFit()
                             .foregroundColor(.secondary)
                             .frame(width: 96)
-                            .accessibility(label: Text("ika_shrine"))
+                            .accessibilityLabel("ika_shrine")
                             .onTapGesture {
                                 Impact(style: .light)
                                 
@@ -203,9 +211,13 @@ struct AboutView: View {
                 }
             }
             .navigationTitle("ikachan")
-            .navigationBarItems(trailing: Button("close") {
-                showModal.toggle()
-            })
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("close") {
+                        showModal.toggle()
+                    }
+                }
+            }
         }
         .sheet(isPresented: $showShrine) {
             ShrineView(showModal: $showShrine)

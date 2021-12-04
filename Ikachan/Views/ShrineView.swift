@@ -44,9 +44,13 @@ struct ShrineView: View {
                     }
                 }
                 .navigationTitle("ika_shrine")
-                .navigationBarItems(trailing: Button("close") {
-                    showModal.toggle()
-                })
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("close") {
+                            showModal.toggle()
+                        }
+                    }
+                }
             }
         }
     }
@@ -101,7 +105,7 @@ struct ShrineView: View {
                         Image(omikuji.fortune.defaultImage)
                             .resizedToFit()
                             .frame(width: 150)
-                            .accessibility(label: Text(LocalizedStringKey(omikuji.fortune.description)))
+                            .accessibilityLabel(LocalizedStringKey(omikuji.fortune.description))
                     )
                     .layoutPriority(1)
             } else {

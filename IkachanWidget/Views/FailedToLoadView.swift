@@ -24,7 +24,7 @@ struct FailedToLoadView: View {
                         Image("inkling_splatted")
                             .resizedToFit()
                             .blending(color: accentColor)
-                            .accessibility(label: Text("failed_to_load"))
+                            .accessibilityLabel("failed_to_load")
                     }
                     .frame(height: g.size.height / 3)
                     Text("failed_to_load")

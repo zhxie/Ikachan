@@ -76,7 +76,7 @@ struct SmallDayView: View {
                         Image(systemName: icon)
                             .font(.footnote)
                             .foregroundColor(Color(red: 247 / 255, green: 209 / 255, blue: 87 / 255))
-                            .accessibility(label: Text(LocalizedStringKey(iconText)))
+                            .accessibilityLabel(LocalizedStringKey(iconText))
                     }
                     .layoutPriority(1)
                     

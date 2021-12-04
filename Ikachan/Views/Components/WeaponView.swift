@@ -24,7 +24,7 @@ struct WeaponView: View {
                             .aspectRatio(1, contentMode: .fit)
                     }
                     .resizedToFit(1)
-                    .accessibility(label: Text(LocalizedStringKey(title)))
+                    .accessibilityLabel(LocalizedStringKey(title))
         )
     }
 }

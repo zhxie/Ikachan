@@ -22,7 +22,7 @@ struct IconView: View {
                     RoundedRectangle(cornerRadius: 13.2)
                         .stroke(Color(UIColor.secondarySystemBackground), lineWidth: 2)
                 )
-                .accessibility(label: Text(name))
+                .accessibilityLabel(name)
             Button(LocalizedStringKey(text)) {
                 UIApplication.shared.setAlternateIconName(iconName)
             }

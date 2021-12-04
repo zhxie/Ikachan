@@ -23,7 +23,7 @@ struct StageView: View {
                     }
                     .resizedToFill()
                     .clipped()
-                    .accessibility(label: Text(LocalizedStringKey(title)))
+                    .accessibilityLabel(LocalizedStringKey(title))
             )
             .cornerRadius(7.5)
     }

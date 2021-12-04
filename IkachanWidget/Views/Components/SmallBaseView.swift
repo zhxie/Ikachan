@@ -43,7 +43,7 @@ struct SmallBaseView<C1: View, C2: View, C3: View>: View {
                 Image(systemName: "circle.fill")
                     .font(.footnote)
                     .foregroundColor(color)
-                    .accessibility(label: Text(LocalizedStringKey(indicatorText)))
+                    .accessibilityLabel(LocalizedStringKey(indicatorText))
             }
             .layoutPriority(1)
             

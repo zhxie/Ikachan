@@ -38,7 +38,7 @@ struct ShiftView: View {
                             .font(.footnote)
                             .lineLimit(1)
                             .foregroundColor(.clear)
-                            .accessibility(hidden: true)
+                            .accessibilityHidden(true)
                     }
                 }
             }

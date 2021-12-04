@@ -22,7 +22,7 @@ struct StageView: View {
                 }
                 .resizedToFit(16 / 9)
                 .cornerRadius(15)
-                .accessibility(label: Text(LocalizedStringKey(title)))
+                .accessibilityLabel(LocalizedStringKey(title))
             
             Text(LocalizedStringKey(title))
                 .font(.footnote)
