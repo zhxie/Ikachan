@@ -17,6 +17,8 @@ final class ModelData: ObservableObject {
     @Published var tab: Tab = .schedule
     @Published var gameMode: Schedule.GameMode = .regular
     
+    var isDefaultIntentDonated = false
+    
     @Published var schedules: [Schedule] = []
     
     var isSchedulesUpdating = false

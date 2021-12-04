@@ -37,6 +37,14 @@ struct IkachanApp: App {
                         if type == Shift.rawValue {
                             modelData.tab = .shift
                         }
+                    } else {
+                        if !modelData.isDefaultIntentDonated {
+                            modelData.isDefaultIntentDonated = true
+                            
+                            if modelData.tab == .schedule && modelData.gameMode == .regular {
+                                donateSchedule(gameMode: .regular)
+                            }
+                        }
                     }
                 }
                 .onOpenURL { url in

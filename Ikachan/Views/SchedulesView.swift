@@ -39,7 +39,7 @@ struct SchedulesView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .onChange(of: modelData.gameMode, perform: { gameMode in
-                    interact(gameMode: gameMode)
+                    donateSchedule(gameMode: gameMode)
                 })
             }
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -81,8 +81,6 @@ struct SchedulesView: View {
             }
         }
         .onAppear(perform: {
-            interact(gameMode: modelData.gameMode)
-            
             update()
         })
         .onChange(of: scenePhase) { phase in
@@ -107,14 +105,6 @@ struct SchedulesView: View {
     
     func update() {
         modelData.updateSchedules()
-    }
-    
-    func interact(gameMode: Schedule.GameMode) {
-        let intent = ScheduleIntent()
-        intent.gameMode = ScheduleIntentHandler.gameModeConvertFrom(gameMode: gameMode)
-        intent.rotation = .current
-        
-        INInteraction(intent: intent, response: nil).donate(completion: nil)
     }
 }
 

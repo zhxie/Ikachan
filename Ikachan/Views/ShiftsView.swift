@@ -38,8 +38,6 @@ struct ShiftsView: View {
             }
         }
         .onAppear(perform: {
-            interact()
-            
             update()
         })
         .onChange(of: scenePhase) { phase in
@@ -62,13 +60,6 @@ struct ShiftsView: View {
     
     func update() {
         modelData.updateShifts()
-    }
-    
-    func interact() {
-        let intent = ShiftIntent()
-        intent.rotation = .current
-        
-        INInteraction(intent: intent, response: nil).donate(completion: nil)
     }
 }
 
