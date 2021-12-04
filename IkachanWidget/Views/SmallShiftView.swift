@@ -11,7 +11,7 @@ import WidgetKit
 struct SmallShiftView: View {
     var current: Date
     var shift: Shift?
-    var subview: Bool = false
+    var subview = false
     
     var body: some View {
         ZStack {

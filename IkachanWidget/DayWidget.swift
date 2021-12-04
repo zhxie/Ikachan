@@ -103,7 +103,7 @@ struct DayWidgetEntryView: View {
 }
 
 struct DayWidget: Widget {
-    let kind: String = "DayWidget"
+    let kind = "DayWidget"
     
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: DayIntent.self, provider: DayProvider()) { entry in

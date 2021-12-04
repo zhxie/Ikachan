@@ -145,7 +145,7 @@ struct ShiftWidgetEntryView: View {
 }
 
 struct ShiftWidget: Widget {
-    let kind: String = "ShiftWidget"
+    let kind = "ShiftWidget"
     
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent:ShiftIntent.self, provider: ShiftProvider()) { entry in

@@ -12,7 +12,7 @@ struct SmallScheduleView: View {
     let current: Date
     let schedule: Schedule?
     let gameMode: Schedule.GameMode
-    var subview: Bool = false
+    var subview = false
     
     var body: some View {
         ZStack {

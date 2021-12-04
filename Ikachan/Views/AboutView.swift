@@ -19,7 +19,7 @@ struct AboutView: View {
     @State var progressValue: Double = 0
     @State var progressTotal: Double = 0
     
-    @State var showShrine: Bool = false
+    @State var showShrine = false
     
     let motion = CMMotionManager()
     @State var prevX = Double.nan

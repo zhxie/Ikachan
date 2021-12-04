@@ -133,7 +133,7 @@ struct ScheduleWidgetEntryView : View {
 }
 
 struct ScheduleWidget: Widget {
-    let kind: String = "ScheduleWidget"
+    let kind = "ScheduleWidget"
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ScheduleIntent.self, provider: ScheduleProvider()) { entry in
