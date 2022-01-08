@@ -32,12 +32,9 @@
 "n2daln" = "轮次";
 "XGNvY7" = "结果";
 "SLejbf" = "${result}";
-"U9s5b8-9n3fyF-vQ9T9L" = "这就是普通对战当前的日程。";
-"U9s5b8-9n3fyF-Vmno8H" = "这就是真格对战当前的日程。";
-"U9s5b8-9n3fyF-byIF5m" = "这就是组排对战当前的日程。";
-"U9s5b8-YTWkY1-vQ9T9L" = "这就是普通对战接下来的日程。";
-"U9s5b8-YTWkY1-Vmno8H" = "这就是真格对战接下来的日程。";
-"U9s5b8-YTWkY1-byIF5m" = "这就是组排对战接下来的日程。";
+"U9s5b8-vQ9T9L" = "这就是普通对战的日程。";
+"U9s5b8-Vmno8H" = "这就是真格对战的日程。";
+"U9s5b8-byIF5m" = "这就是组排对战的日程。";
 
 // Shift
 "QjGFWc" = "排班表";
@@ -49,5 +46,4 @@
 "od31Z2" = "轮次";
 "6RxUlZ" = "结果";
 "bXSdro" = "${result}";
-"Pj9O6l-9n3fyF" = "这就是Salmon Run当前的排班。";
-"Pj9O6l-YTWkY1" = "这就是Salmon Run接下来的排班。";
+"Pj9O6l" = "这就是Salmon Run的排班。";

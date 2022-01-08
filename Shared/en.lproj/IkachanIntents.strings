@@ -32,12 +32,9 @@
 "n2daln" = "Rotation";
 "XGNvY7" = "Result";
 "SLejbf" = "${result}";
-"U9s5b8-9n3fyF-vQ9T9L" = "Here's the current schedule of Regular Battle.";
-"U9s5b8-9n3fyF-Vmno8H" = "Here's the current schedule of Ranked Battle.";
-"U9s5b8-9n3fyF-byIF5m" = "Here's the current schedule of League Battle.";
-"U9s5b8-YTWkY1-vQ9T9L" = "Here's the next schedule of Regular Battle.";
-"U9s5b8-YTWkY1-Vmno8H" = "Here's the next schedule of Ranked Battle.";
-"U9s5b8-YTWkY1-byIF5m" = "Here's the next schedule of League Battle.";
+"U9s5b8-vQ9T9L" = "Here's the schedule of Regular Battle.";
+"U9s5b8-Vmno8H" = "Here's the schedule of Ranked Battle.";
+"U9s5b8-byIF5m" = "Here's the schedule of League Battle.";
 
 // Shift
 "QjGFWc" = "Shifts";
@@ -49,5 +46,4 @@
 "od31Z2" = "Rotation";
 "6RxUlZ" = "Result";
 "bXSdro" = "${result}";
-"Pj9O6l-9n3fyF" = "Here's the current shift of Salmon Run.";
-"Pj9O6l-YTWkY1" = "Here's the next shift of Salmon Run.";
+"Pj9O6l" = "Here's the shift of Salmon Run.";

@@ -61,7 +61,8 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
             let data = try! encoder.encode(schedule)
             let activity = NSUserActivity(activityType: IkachanSchedulesActivity + "." + gameMode.rawValue)
             activity.userInfo?["schedule"] = data.base64EncodedString()
-            let response = ScheduleIntentResponse.success(result: result, rotation: intent.rotation, gameMode: intent.gameMode)
+            let response = ScheduleIntentResponse.success(result: result, gameMode: intent.gameMode)
+            response.rotation = intent.rotation
             response.userActivity = activity
             completion(response)
         }

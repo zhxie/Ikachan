@@ -106,11 +106,11 @@
 	<key>INIntentDefinitionNamespace</key>
 	<string>AL54Nd</string>
 	<key>INIntentDefinitionSystemVersion</key>
-	<string>20G224</string>
+	<string>21C52</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
-	<string>13A1030d</string>
+	<string>13C100</string>
 	<key>INIntentDefinitionToolsVersion</key>
-	<string>13.1</string>
+	<string>13.2.1</string>
 	<key>INIntents</key>
 	<array>
 		<dict>
@@ -423,7 +423,7 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Here's the ${rotation} schedule of ${gameMode}.</string>
+						<string>Here's the schedule of ${gameMode}.</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>U9s5b8</string>
 						<key>INIntentResponseCodeFormatString</key>
@@ -632,7 +632,7 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Here's the ${rotation} shift of Salmon Run.</string>
+						<string>Here's the shift of Salmon Run.</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>Pj9O6l</string>
 						<key>INIntentResponseCodeFormatString</key>

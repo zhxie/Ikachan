@@ -56,7 +56,8 @@ class ShiftIntentHandler: IntentHandler, ShiftIntentHandling {
             let data = try! encoder.encode(shift)
             let activity = NSUserActivity(activityType: IkachanShiftsActivity)
             activity.userInfo?["shift"] = data.base64EncodedString()
-            let response = ShiftIntentResponse.success(result: result, rotation: intent.rotation)
+            let response = ShiftIntentResponse.success(result: result)
+            response.rotation = intent.rotation
             response.userActivity = activity
             completion(response)
         }
