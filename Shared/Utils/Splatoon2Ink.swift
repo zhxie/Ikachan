@@ -28,12 +28,19 @@ func fetchSchedules(completion:@escaping ([Schedule]?, Error?) -> Void) {
                 if let json = try? JSON(data: data!) {
                     var schedules: [Schedule] = []
                     
+#if PREVIEW
+                    schedules.append(Schedule(startTime: Date(timeIntervalSince1970: 1630468800), endTime: Date(timeIntervalSince1970: 1630476000), gameMode: .regular, rule: .turfWar, stageA: Schedule.Stage(id: .piranhaPit, image: ""), stageB: Schedule.Stage(id: .portMackerel, image: "")))
+                    schedules.append(Schedule(startTime: Date(timeIntervalSince1970: 1630476000), endTime: Date(timeIntervalSince1970: 1630483200), gameMode: .regular, rule: .turfWar, stageA: Schedule.Stage(id: .starfishMainstage, image: ""), stageB: Schedule.Stage(id: .skipperPavilion, image: "")))
+                    schedules.append(Schedule(startTime: Date(timeIntervalSince1970: 1630483200), endTime: Date(timeIntervalSince1970: 1630490400), gameMode: .regular, rule: .turfWar, stageA: Schedule.Stage(id: .mantaMaria, image: ""), stageB: Schedule.Stage(id: .arowanaMall, image: "")))
+                    schedules.append(Schedule(startTime: Date(timeIntervalSince1970: 1630490400), endTime: Date(timeIntervalSince1970: 1630497600), gameMode: .regular, rule: .turfWar, stageA: Schedule.Stage(id: .anchoVGames, image: ""), stageB: Schedule.Stage(id: .humpbackPumpTrack, image: "")))
+#else
                     for (_, value) in json {
                         let ss = value.arrayValue
                         for schedule in ss {
                             schedules.append(parseSchedule(schedule: schedule))
                         }
                     }
+#endif
                     
                     completion(schedules, error)
                 } else {
