@@ -76,5 +76,4 @@ struct Shift: Hashable, Codable {
     static let description = rawValue
     static let shortDescription = "job"
     static let accentColor = Color(red: 252 / 255, green: 86 / 255, blue: 32 / 255)
-    static let url = IkachanScheme + "://" + rawValue
 }

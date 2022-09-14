@@ -98,7 +98,6 @@ struct DayWidgetEntryView: View {
     
     var body: some View {
         SmallDayView(current: entry.date, schedule: entry.schedule)
-            .widgetURL(URL(string: IntentHandler.gameModeConvertTo(gameMode: entry.configuration.gameMode).url)!)
     }
 }
 

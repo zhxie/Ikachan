@@ -85,13 +85,6 @@ struct SchedulesView: View {
                 update()
             }
         }
-        .onOpenURL { url in
-            guard let gameMode = url.gameMode else {
-                return
-            }
-            
-            modelData.gameMode = gameMode
-        }
     }
     
     var schedules: [Schedule] {

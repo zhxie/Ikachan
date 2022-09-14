@@ -136,10 +136,8 @@ struct ShiftWidgetEntryView: View {
         switch family {
         case .systemSmall:
             SmallShiftView(current: entry.date, shift: entry.shift)
-                .widgetURL(URL(string: Shift.url)!)
         default:
             MediumShiftView(current: entry.date, shift: entry.shift)
-                .widgetURL(URL(string: Shift.url)!)
         }
     }
 }

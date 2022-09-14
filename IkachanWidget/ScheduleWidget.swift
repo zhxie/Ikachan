@@ -120,10 +120,8 @@ struct ScheduleWidgetEntryView : View {
         switch family {
         case .systemSmall:
             SmallScheduleView(current: entry.date, schedule: entry.schedule, gameMode: gameMode)
-                .widgetURL(URL(string: gameMode.url)!)
         default:
             MediumScheduleView(current: entry.date, schedule: entry.schedule, gameMode: gameMode)
-                .widgetURL(URL(string: gameMode.url)!)
         }
     }
     
