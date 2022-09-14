@@ -45,7 +45,7 @@ struct SmallShiftView: View {
                     if subview {
                         TopLeadingView(text: LocalizedStringKey(timeSpanDescriptor(current: current, startTime: shift.startTime)))
                     } else {
-                        TopLeadingView(text: shiftTimePeriod2(startTime: shift.startTime, endTime: shift.endTime))
+                        TopLeadingView(text: shiftShortTimePeriod(startTime: shift.startTime, endTime: shift.endTime))
                     }
                 } leadingRight: {
                     TopTrailingView(text: subview ? Shift.description : Shift.shortDescription, color: Shift.accentColor)

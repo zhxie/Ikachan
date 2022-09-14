@@ -50,7 +50,7 @@ class ShiftIntentHandler: IntentHandler, ShiftIntentHandling {
                 formatter = "next_shift"
             }
             
-            let result = String(format: formatter.localizedIntentsString, shift.stage!.description.localizedIntentsString, shift.weapons[0].description.localizedIntentsString, shift.weapons[1].description.localizedIntentsString, shift.weapons[2].description.localizedIntentsString, shift.weapons[3].description.localizedIntentsString, absoluteLongIntentsTimeSpan(current: Date(), startTime: shift.startTime, endTime: shift.endTime))
+            let result = String(format: formatter.localizedIntentsString, shift.stage!.description.localizedIntentsString, shift.weapons[0].description.localizedIntentsString, shift.weapons[1].description.localizedIntentsString, shift.weapons[2].description.localizedIntentsString, shift.weapons[3].description.localizedIntentsString, intentsLongTimeSpan(current: Date(), startTime: shift.startTime, endTime: shift.endTime))
             
             let encoder = JSONEncoder()
             let data = try! encoder.encode(shift)

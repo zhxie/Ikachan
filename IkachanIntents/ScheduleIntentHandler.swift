@@ -55,7 +55,7 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
                 formatter = "next_schedule"
             }
             
-            let result = String(format: formatter.localizedIntentsString, gameMode.description.localizedIntentsString, schedule.rule.description.localizedIntentsString, schedule.stageA.description.localizedIntentsString, schedule.stageB.description.localizedIntentsString, absoluteLongIntentsTimeSpan(current: Date(), startTime: schedule.startTime, endTime: schedule.endTime))
+            let result = String(format: formatter.localizedIntentsString, gameMode.description.localizedIntentsString, schedule.rule.description.localizedIntentsString, schedule.stageA.description.localizedIntentsString, schedule.stageB.description.localizedIntentsString, intentsLongTimeSpan(current: Date(), startTime: schedule.startTime, endTime: schedule.endTime))
             
             let encoder = JSONEncoder()
             let data = try! encoder.encode(schedule)

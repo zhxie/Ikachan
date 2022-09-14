@@ -60,7 +60,7 @@ func absoluteTimeSpan(current: Date, startTime: Date, endTime: Date) -> String {
     }
 }
 
-func absoluteLongIntentsTimeSpan(current: Date, startTime: Date, endTime: Date) -> String {
+func intentsLongTimeSpan(current: Date, startTime: Date, endTime: Date) -> String {
     if current >= startTime {
         var elapsed = endTime - current
         if elapsed < 0 {
@@ -126,7 +126,7 @@ func shiftTimePeriod(startTime: Date, endTime: Date) -> String {
     return String(format: "%@ - %@", startTime, endTime)
 }
 
-func shiftTimePeriod2(startTime: Date, endTime: Date) -> String {
+func shiftShortTimePeriod(startTime: Date, endTime: Date) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "M/d"
     
