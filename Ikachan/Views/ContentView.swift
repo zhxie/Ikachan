@@ -33,9 +33,6 @@ struct ContentView: View {
                 }
                 .tag(Tab.shift)
             }
-            .onChange(of: modelData.tab) { tab in
-                donate(tab: tab, gameMode: modelData.gameMode)
-            }
         }
         .sheet(isPresented: $showAbout) {
             AboutView(showModal: $showAbout)

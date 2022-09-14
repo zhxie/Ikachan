@@ -38,9 +38,6 @@ struct SchedulesView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                .onChange(of: modelData.gameMode, perform: { gameMode in
-                    donateSchedule(gameMode: gameMode)
-                })
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 if rule == .turfWar {
