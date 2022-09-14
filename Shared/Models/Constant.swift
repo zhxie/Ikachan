@@ -13,8 +13,6 @@ let Splatoon2InkURL = "https://splatoon2.ink"
 let Splatoon2InkScheduleURL = Splatoon2InkURL + "/data/schedules.json"
 let Splatoon2InkShiftURL = Splatoon2InkURL + "/data/coop-schedules.json"
 
-let ShiftJSONFile = "coop-schedules"
-
 let Timeout: Double = 60
 
 let SchedulePlaceholder = Schedule(startTime: Date(timeIntervalSince1970: 0), endTime: Date(timeIntervalSince1970: 7200), gameMode: .regular, rule: .turfWar, stageA: Schedule.Stage(id: .theReef, image: ""), stageB: Schedule.Stage(id: .musselforgeFitness, image: ""))
