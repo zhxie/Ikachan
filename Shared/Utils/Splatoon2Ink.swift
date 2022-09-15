@@ -8,7 +8,7 @@
 import UIKit
 import SwiftyJSON
 
-func fetchSchedules(completion:@escaping ([Schedule]?, Error?) -> Void) {
+func fetchSplatoon2Schedules(completion:@escaping ([Splatoon2Schedule]?, Error?) -> Void) {
     do {
         var request = URLRequest(url: URL(string: Splatoon2InkScheduleURL)!)
         request.timeoutInterval = Timeout
@@ -26,16 +26,22 @@ func fetchSchedules(completion:@escaping ([Schedule]?, Error?) -> Void) {
                 }
                 
                 if let json = try? JSON(data: data!) {
-                    var schedules: [Schedule] = []
+                    var result: [Splatoon2Schedule] = []
                     
                     for (_, value) in json {
-                        let ss = value.arrayValue
-                        for schedule in ss {
-                            schedules.append(parseSchedule(schedule: schedule))
+                        let schedules = value.arrayValue
+                        for schedule in schedules {
+                            let startTime = Date(timeIntervalSince1970: schedule["start_time"].doubleValue)
+                            let endTime = Date(timeIntervalSince1970: schedule["end_time"].doubleValue)
+                            let mode = Splatoon2ScheduleMode(rawValue: schedule["game_mode"]["key"].stringValue)!
+                            let rule = Splatoon2Rule(rawValue: schedule["rule"]["key"].stringValue)!
+                            let stages = [Splatoon2ScheduleStage(rawValue: Int(schedule["stage_a"]["id"].stringValue)!)!, Splatoon2ScheduleStage(rawValue: Int(schedule["stage_b"]["id"].stringValue)!)!]
+                            
+                            result.append(Splatoon2Schedule(startTime: startTime, endTime: endTime, mode: mode, rule: rule, stages: stages))
                         }
                     }
                     
-                    completion(schedules, error)
+                    completion(result, error)
                 } else {
                     completion(nil, error)
                 }
@@ -45,22 +51,7 @@ func fetchSchedules(completion:@escaping ([Schedule]?, Error?) -> Void) {
     }
 }
 
-func parseSchedule(schedule: JSON) -> Schedule {
-    let startTime = schedule["start_time"].doubleValue
-    let endTime = schedule["end_time"].doubleValue
-    let gameMode = schedule["game_mode"]["key"].stringValue
-    let rule = schedule["rule"]["key"].stringValue
-    
-    let stage_a_id = Int(schedule["stage_a"]["id"].stringValue)!
-    let stage_a_image = schedule["stage_a"]["image"].stringValue
-    
-    let stage_b_id = Int(schedule["stage_b"]["id"].stringValue)!
-    let stage_b_image = schedule["stage_b"]["image"].stringValue
-    
-    return Schedule(startTime: Date(timeIntervalSince1970: startTime), endTime: Date(timeIntervalSince1970: endTime), gameMode: Schedule.GameMode(rawValue: gameMode)!, rule: Schedule.Rule(rawValue: rule)!, stageA: Schedule.Stage(id: Schedule.Stage.Id(rawValue: stage_a_id)!, image: stage_a_image), stageB: Schedule.Stage(id: Schedule.Stage.Id(rawValue: stage_b_id)!, image: stage_b_image))
-}
-
-func fetchShifts(completion:@escaping ([Shift]?, Error?) -> Void) {
+func fetchSplatoon2Shifts(completion:@escaping ([Splatoon2Shift]?, Error?) -> Void) {
     do {
         var request = URLRequest(url: URL(string: Splatoon2InkShiftURL)!)
         request.timeoutInterval = Timeout
@@ -78,29 +69,36 @@ func fetchShifts(completion:@escaping ([Shift]?, Error?) -> Void) {
                 }
                 
                 if let json = try? JSON(data: data!) {
-                    var shifts: [Double: Shift] = [:]
+                    var previousTime = Date(timeIntervalSince1970: 0)
+                    var shifts: [Splatoon2Shift] = []
                     
-                    // Details
-                    let detailsJSON = json["details"].arrayValue
-                    for shift in detailsJSON {
-                        let (endTime, shift) = parseShift(shift: shift)
-                        
-                        shifts[endTime] = shift
-                    }
-                    
-                    // Schedules
-                    let schedulesJSON = json["schedules"].arrayValue
-                    for shift in schedulesJSON {
-                        let (endTime, shift) = parseShift(shift: shift)
-                        
-                        if shifts[endTime] == nil {
-                            shifts[endTime] = shift
+                    let details = json["details"].arrayValue
+                    let schedules = json["schedules"].arrayValue
+                    for shift in (details + schedules) {
+                        let startTime = Date(timeIntervalSince1970: shift["start_time"].doubleValue)
+                        if startTime <= previousTime {
+                            continue
                         }
+                        let endTime = Date(timeIntervalSince1970: shift["end_time"].doubleValue)
+                        var stage: Splatoon2ShiftStage?
+                        let stageImage = shift["stage"]["image"].string
+                        if stageImage != nil {
+                            stage = Splatoon2ShiftStage.allCases.first { i in
+                                i.image == stageImage
+                            }!
+                        }
+                        var weapons: [Splatoon2Weapon] = []
+                        let ws = shift["weapons"].arrayValue
+                        for weapon in ws {
+                            weapons.append(Splatoon2Weapon(rawValue: Int(weapon["id"].stringValue)!)!)
+                        }
+                        
+                        shifts.append(Splatoon2Shift(startTime: startTime, endTime: endTime, stage: stage, weapons: weapons))
+                        
+                        previousTime = startTime
                     }
                     
-                    completion(shifts.values.sorted {
-                        $0.endTime < $1.endTime
-                    }, error)
+                    completion(shifts, error)
                 } else {
                     completion(nil, error)
                 }
@@ -108,43 +106,4 @@ func fetchShifts(completion:@escaping ([Shift]?, Error?) -> Void) {
         }
         .resume()
     }
-}
-
-func parseShift(shift: JSON) -> (Double, Shift) {
-    let startTime = shift["start_time"].doubleValue
-    let endTime = shift["end_time"].doubleValue
-    
-    let stage_image = shift["stage"]["image"].string
-    
-    var weapons: [Weapon] = []
-    if stage_image != nil {
-        let ws = shift["weapons"].arrayValue
-        for w in ws {
-            weapons.append(parseWeapon(weapon: w))
-        }
-    }
-    
-    return (endTime, Shift(startTime: Date(timeIntervalSince1970: startTime), endTime: Date(timeIntervalSince1970: endTime), stage: parseShiftStage(stageImage: stage_image), weapons: weapons))
-}
-
-func parseShiftStage(stageImage: String?) -> Shift.Stage? {
-    guard let stageImage = stageImage else {
-        return nil
-    }
-
-    let id = Shift.Stage.Id.allCases.first { i in
-        i.defaultURL == stageImage
-    }!
-    
-    return Shift.Stage(id: id)
-}
-
-func parseWeapon(weapon: JSON) -> Weapon {
-    let id = Int(weapon["id"].stringValue)!
-    var image = weapon["weapon"]["image"].string
-    if image == nil {
-        image = weapon["coop_special_weapon"]["image"].string
-    }
-    
-    return Weapon(id: Weapon.Id(rawValue: id)!, image: image!)
 }
