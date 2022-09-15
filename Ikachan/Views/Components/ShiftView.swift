@@ -15,7 +15,7 @@ struct ShiftView: View {
         ScheduleBaseView(title: title, subtitle: status(startTime: shift.startTime, endTime: shift.endTime), image: "salmon_run") {
             if let stage = shift.stage {
                 HStack {
-                    StageView(image: stage.url, title: stage.description)
+                    StageView(stage: stage)
                     
                     VStack {
                         Rectangle()
@@ -24,12 +24,12 @@ struct ShiftView: View {
                             .overlay(
                                 VStack {
                                     HStack {
-                                        WeaponView(image: shift.weapons[0].url, title: shift.weapons[0].description)
-                                        WeaponView(image: shift.weapons[1].url, title: shift.weapons[1].description)
+                                        WeaponView(weapon: shift.weapons[0])
+                                        WeaponView(weapon: shift.weapons[1])
                                     }
                                     HStack {
-                                        WeaponView(image: shift.weapons[2].url, title: shift.weapons[2].description)
-                                        WeaponView(image: shift.weapons[3].url, title: shift.weapons[3].description)
+                                        WeaponView(weapon: shift.weapons[2])
+                                        WeaponView(weapon: shift.weapons[3])
                                     }
                                 }
                             )

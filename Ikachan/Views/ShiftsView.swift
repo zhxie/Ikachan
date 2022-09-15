@@ -17,7 +17,6 @@ struct ShiftsView: View {
     init() {
         _showModal = .constant(nil)
     }
-    
     init(showModal: Binding<Bool>) {
         _showModal = Binding(showModal)
     }
@@ -50,7 +49,7 @@ struct ShiftsView: View {
     var shifts: [FilteredShift] {
         var shifts: [FilteredShift] = []
         
-        // First
+        // First.
         for (i, shift) in modelData.shifts.enumerated() {
             shifts.append(FilteredShift(isFirst: i == 0, shift: shift))
         }
@@ -59,7 +58,7 @@ struct ShiftsView: View {
     }
     
     func update() {
-        modelData.updateShifts()
+        modelData.updateSplatoon2Shifts()
     }
 }
 

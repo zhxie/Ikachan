@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct SchedulesScrollView<Data: Hashable, Content: View>: View {
-    var data: [Data]
+struct SchedulesScrollView<Datum, Content: View>: View {
+    var data: [Datum]
     let title: String
-    @ViewBuilder let content: (Data) -> Content
+    @ViewBuilder let content: (Datum) -> Content
     
     var body: some View {
         ScrollView {
             VStack {
-                ForEach(data, id: \.self) { datum in
+                ForEach(0..<data.count, id: \.self) { i in
                     VStack {
                         Divider()
                             .frame(height: 1)
                         
-                        content(datum)
+                        content(data[i])
                         
                         Spacer()
                             .frame(height: 15)

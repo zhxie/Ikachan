@@ -9,12 +9,11 @@ import SwiftUI
 import Kingfisher
 
 struct StageView: View {
-    let image: String
-    let title: String
+    let stage: Stage
     
     var body: some View {
         VStack {
-            KFImage(URL(string: image)!)
+            KFImage(URL(string: stage.imageUrl)!)
                 .placeholder {
                     Rectangle()
                         .foregroundColor(Color(UIColor.secondarySystemBackground))
@@ -22,9 +21,9 @@ struct StageView: View {
                 }
                 .resizedToFit(16 / 9)
                 .cornerRadius(15)
-                .accessibilityLabel(LocalizedStringKey(title))
+                .accessibilityLabel(LocalizedStringKey(stage.name))
             
-            Text(LocalizedStringKey(title))
+            Text(LocalizedStringKey(stage.name))
                 .font(.footnote)
                 .lineLimit(1)
         }
@@ -33,6 +32,6 @@ struct StageView: View {
 
 struct StageView_Previews: PreviewProvider {
     static var previews: some View {
-        StageView(image: "http://www.apple.com", title: "")
+        StageView(stage: Splatoon2ScheduleStage.theReef)
     }
 }

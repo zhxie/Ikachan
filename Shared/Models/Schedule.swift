@@ -28,6 +28,9 @@ struct Splatoon2Schedule: Schedule {
         _stages = stages
     }
     
+    var id: Date {
+        return startTime
+    }
     var startTime: Date
     var endTime: Date
     var mode: Mode {

@@ -11,9 +11,10 @@ protocol Rule: Codable {
     var name: String { get }
     var shortName: String { get }
     var shorterName: String { get }
+    var image: String { get }
 }
 
-enum Splatoon2Rule: String, Rule, Codable {
+enum Splatoon2Rule: String, Rule, CaseIterable {
     case turfWar = "turf_war"
     case splatZones = "splat_zones"
     case towerControl = "tower_control"
@@ -50,5 +51,8 @@ enum Splatoon2Rule: String, Rule, Codable {
         case .clamBlitz:
             return "clam_ss"
         }
+    }
+    var image: String {
+        return rawValue
     }
 }

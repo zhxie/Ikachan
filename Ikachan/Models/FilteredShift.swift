@@ -7,14 +7,18 @@
 
 import Foundation
 
-struct FilteredShift: Hashable, Codable {
+struct FilteredShift {
     var isFirst: Bool
     var status: String {
         if shift.stage == nil {
             return "future"
         } else {
             if isFirst {
-                return shift.status
+                if shift.startTime < Date() {
+                    return "open"
+                } else {
+                    return "soon"
+                }
             } else {
                 return "next"
             }

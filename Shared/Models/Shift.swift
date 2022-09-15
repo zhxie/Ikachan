@@ -26,6 +26,9 @@ struct Splatoon2Shift: Shift {
         _weapons = weapons
     }
     
+    var id: Date {
+        return startTime
+    }
     var startTime: Date
     var endTime: Date
     var mode: Mode {

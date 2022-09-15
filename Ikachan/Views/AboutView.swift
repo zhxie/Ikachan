@@ -71,14 +71,14 @@ struct AboutView: View {
                             var urls: Set<String> = []
                             var resources: [Resource] = []
                             
-                            for stage in Schedule.Stage.Id.allCases {
-                                urls.insert(Splatnet2URL + stage.defaultURL)
+                            for stage in Splatoon2ScheduleStage.allCases {
+                                urls.insert(stage.imageUrl)
                             }
-                            for stage in Shift.Stage.Id.allCases {
-                                urls.insert(Splatnet2URL + stage.defaultURL)
+                            for stage in Splatoon2ShiftStage.allCases {
+                                urls.insert(stage.imageUrl)
                             }
-                            for weapon in Weapon.Id.allCases {
-                                urls.insert(Splatnet2URL + weapon.defaultURL)
+                            for weapon in Splatoon2Weapon.allCases {
+                                urls.insert(weapon.imageUrl)
                             }
                             
                             progressValue = 0

@@ -11,10 +11,10 @@ struct ScheduleView: View {
     let schedule: Schedule
     
     var body: some View {
-        ScheduleBaseView(title: schedule.rule.description, subtitle: status(startTime: schedule.startTime, endTime: schedule.endTime), image: schedule.rule.rawValue) {
+        ScheduleBaseView(title: schedule.rule.name, subtitle: status(startTime: schedule.startTime, endTime: schedule.endTime), image: schedule.rule.image) {
             HStack {
-                StageView(image: schedule.stageA.url, title: schedule.stageA.description)
-                StageView(image: schedule.stageB.url, title: schedule.stageB.description)
+                StageView(stage: schedule.stages[0])
+                StageView(stage: schedule.stages[1])
             }
         }
     }
