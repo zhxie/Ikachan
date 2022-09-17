@@ -107,7 +107,7 @@ enum Splatoon2ShiftMode: String, Mode, CaseIterable {
 
 enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
     case regular = "regular"
-    case bankaraChallenge = "series"
+    case bankaraChallenge = "challenge"
     case bankaraOpen = "open"
     
     init?(intent: INMode) {
