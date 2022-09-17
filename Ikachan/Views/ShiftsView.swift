@@ -23,7 +23,7 @@ struct ShiftsView: View {
     
     var body: some View {
         SchedulesScrollView(data: shifts, title: "salmon_run") { shift in
-            ShiftView(shift: shift.shift, title: shift.status)
+            ShiftView(shift: shift.0, isFirst: shift.1)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -46,16 +46,27 @@ struct ShiftsView: View {
         }
     }
     
-    var shifts: [FilteredShift] {
-        var shifts: [FilteredShift] = []
+    var shifts: [(Shift, Bool)] {
+        var shifts: [(Shift, Bool)] = []
         
-        // First.
         for (i, shift) in modelData.shifts.enumerated() {
-            shifts.append(FilteredShift(isFirst: i == 0, shift: shift))
+            shifts.append((shift, i == 0))
         }
         
         return shifts
     }
+    
+//
+//    var shifts: [FilteredShift] {
+//        var shifts: [FilteredShift] = []
+//
+//        // First.
+//        for (i, shift) in modelData.shifts.enumerated() {
+//            shifts.append(FilteredShift(isFirst: i == 0, shift: shift))
+//        }
+//
+//        return shifts
+//    }
     
     func update() {
         modelData.updateSplatoon2Shifts()

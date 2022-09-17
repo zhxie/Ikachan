@@ -113,7 +113,6 @@
 		E46B37E525D8E5340044232F /* ichi-ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E46B37E225D8E5340044232F /* ichi-ipad@2x.png */; };
 		E46B37E625D8E5340044232F /* ichi-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E46B37E325D8E5340044232F /* ichi-ipad.png */; };
 		E46B37E725D8E5340044232F /* ichi-ipad-pro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E46B37E425D8E5340044232F /* ichi-ipad-pro@2x.png */; };
-		E46B382525D985E80044232F /* FilteredShift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B382425D985E80044232F /* FilteredShift.swift */; };
 		E46B510325BB1E3E001F88CE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B510225BB1E3E001F88CE /* AboutView.swift */; };
 		E46B512C25BB30C7001F88CE /* LICENSE.SwiftyJSON.md in Resources */ = {isa = PBXBuildFile; fileRef = E46B512A25BB30C7001F88CE /* LICENSE.SwiftyJSON.md */; };
 		E46B512D25BB30C7001F88CE /* LICENSE.Kingfisher.md in Resources */ = {isa = PBXBuildFile; fileRef = E46B512B25BB30C7001F88CE /* LICENSE.Kingfisher.md */; };
@@ -247,7 +246,6 @@
 		E46B37E225D8E5340044232F /* ichi-ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ichi-ipad@2x.png"; sourceTree = "<group>"; };
 		E46B37E325D8E5340044232F /* ichi-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ichi-ipad.png"; sourceTree = "<group>"; };
 		E46B37E425D8E5340044232F /* ichi-ipad-pro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ichi-ipad-pro@2x.png"; sourceTree = "<group>"; };
-		E46B382425D985E80044232F /* FilteredShift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredShift.swift; sourceTree = "<group>"; };
 		E46B506425B8959A001F88CE /* SmallScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallScheduleView.swift; sourceTree = "<group>"; };
 		E46B506725B9BBA6001F88CE /* MediumScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumScheduleView.swift; sourceTree = "<group>"; };
 		E46B507025B9C2AC001F88CE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -376,7 +374,6 @@
 			children = (
 				E468B7A225B282F5001254FE /* ModelData.swift */,
 				E445762325CE9B70004AA74D /* Fortune.swift */,
-				E46B382425D985E80044232F /* FilteredShift.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -817,7 +814,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E46B382525D985E80044232F /* FilteredShift.swift in Sources */,
 				E438EF4525B5E3F8005AB9D9 /* ShiftsView.swift in Sources */,
 				E4E13CE325C7DBB100150544 /* Color.swift in Sources */,
 				E4400F3B25CD03F900BF94C6 /* Splatoon2Ink.swift in Sources */,

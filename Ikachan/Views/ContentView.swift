@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            TabView(selection: $modelData.tab) {
+            TabView {
                 NavigationView {
                     SchedulesView(showModal: $showAbout)
                 }
@@ -22,7 +22,6 @@ struct ContentView: View {
                 .tabItem {
                     Label("schedule", systemImage: "calendar")
                 }
-                .tag(Tab.schedule)
                 
                 NavigationView {
                     ShiftsView(showModal: $showAbout)
@@ -31,7 +30,6 @@ struct ContentView: View {
                 .tabItem {
                     Label("shift", systemImage: "lifepreserver")
                 }
-                .tag(Tab.shift)
             }
         }
         .sheet(isPresented: $showAbout) {
