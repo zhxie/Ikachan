@@ -32,8 +32,8 @@
 "anarchy_battle_challenge" = "バンカラマッチ (チャレンジ)";
 "anarchy_battle_open" = "バンカラマッチ (オープン)";
 
-"challenge_ss" = "チ ";
-"open_ss" = "オ ";
+"challenge_ss" = " チ ";
+"open_ss" = " オ ";
 
 // Rule.
 "turf_war" = "ナワバリバトル";
@@ -234,6 +234,7 @@
 "in_the_day" = "日に";
 "at_night" = "夜に";
 "%@_%@" = "%@%@";
+"error" = "エラー";
 "failed_to_load" = "読み込むことが\nできません";
 "schedule_widget_description" = "そのモードのいまとつぎのスケジュールを表示できます。";
 "shift_widget_description" = "サーモンランのいまとつぎのシフト表を表示できます。";

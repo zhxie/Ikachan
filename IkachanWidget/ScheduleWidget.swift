@@ -112,11 +112,54 @@ struct ScheduleWidgetEntryView : View {
 
     @ViewBuilder
     var body: some View {
-        switch family {
-        case .systemSmall:
-            SmallScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
-        default:
-            MediumScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
+        if #available(iOSApplicationExtension 16.0, *) {
+            switch family {
+            case .accessoryCircular:
+                Gauge(value: percent) {
+                    Text(LocalizedStringKey(mode?.shorterName ?? "error"))
+                } currentValueLabel: {
+                    // TODO: Image should be replaced to SVG text.
+                    // TODO: Lacking accesibility.
+                    Image(entry.schedule?.rule.image ?? "inkling_splatted")
+                        .resizedToFit()
+                        .frame(width: 28, height: 28)
+                }
+                .gaugeStyle(.accessoryCircular)
+            case .accessoryRectangular:
+                if let schedule = entry.schedule {
+                    VStack (alignment: .leading, spacing: 0) {
+                        HStack (spacing: 4) {
+                            // TODO: Image should be replaced to SVG text.
+                            Image(schedule.rule.image)
+                                .resizedToFit()
+                                .frame(width: 16, height: 16)
+                            
+                            Text(LocalizedStringKey(schedule.localizedDescription))
+                                .font(.headline)
+                                .widgetAccentable()
+                        }
+                        
+                        Text(LocalizedStringKey(schedule.stages[0].name))
+                        Text(LocalizedStringKey(schedule.stages[1].name))
+                    }
+                    .frame(alignment: .leading)
+                } else {
+                    FailedToLoadView(accentColor: .white, transparent: true)
+                }
+            case .accessoryInline:
+                Text(LocalizedStringKey(entry.schedule?.localizedDescription ?? "error"))
+            case .systemSmall:
+                SmallScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
+            default:
+                MediumScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
+            }
+        } else {
+            switch family {
+            case .systemSmall:
+                SmallScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
+            default:
+                MediumScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
+            }
         }
     }
     
@@ -131,24 +174,54 @@ struct ScheduleWidgetEntryView : View {
             return Splatoon3ScheduleMode(intent: entry.configuration.mode)
         }
     }
+    var percent: Double {
+        guard let schedule = entry.schedule else {
+            return 0
+        }
+        
+        let current = Date() - schedule.startTime
+        let total = schedule.endTime - schedule.startTime
+        
+        return min(max(current / total, 0), 1)
+    }
 }
 
 struct ScheduleWidget: Widget {
     let kind = "ScheduleWidget"
 
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ScheduleIntent.self, provider: ScheduleProvider()) { entry in
-            ScheduleWidgetEntryView(entry: entry)
+        if #available(iOSApplicationExtension 16.0, *) {
+            return IntentConfiguration(kind: kind, intent: ScheduleIntent.self, provider: ScheduleProvider()) { entry in
+                ScheduleWidgetEntryView(entry: entry)
+            }
+            .configurationDisplayName("schedule")
+            .description("schedule_widget_description")
+            .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline, .systemSmall, .systemMedium])
+        } else {
+            return IntentConfiguration(kind: kind, intent: ScheduleIntent.self, provider: ScheduleProvider()) { entry in
+                ScheduleWidgetEntryView(entry: entry)
+            }
+            .configurationDisplayName("schedule")
+            .description("schedule_widget_description")
+            .supportedFamilies([.systemSmall, .systemMedium])
         }
-        .configurationDisplayName("schedule")
-        .description("schedule_widget_description")
-        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
 struct ScheduleWidget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
+            if #available(iOSApplicationExtension 16.0, *) {
+                ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder))
+                    .previewContext(WidgetPreviewContext(family: .accessoryCircular))
+                    .previewDisplayName("Circular")
+                ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder))
+                    .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+                    .previewDisplayName("Rectangular")
+                ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder))
+                    .previewContext(WidgetPreviewContext(family: .accessoryInline))
+                    .previewDisplayName("Inline")
+            }
             ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
             ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder))

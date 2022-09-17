@@ -10,11 +10,14 @@ import WidgetKit
 
 struct FailedToLoadView: View {
     var accentColor: Color
+    var transparent: Bool = false
     
     var body: some View {
         ZStack {
-            Color(UIColor.systemBackground)
-                .ignoresSafeArea(edges: .all)
+            if !transparent {
+                Color(UIColor.systemBackground)
+                    .ignoresSafeArea(edges: .all)
+            }
             
             GeometryReader { g in
                 VStack {
