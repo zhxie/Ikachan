@@ -6,6 +6,10 @@
   
 */
 
+// Game.
+"splatoon_2" = "Splatoon 2";
+"splatoon_3" = "Splatoon 3";
+
 // Mode.
 "regular" = "Regular";
 "ranked" = "Ranked";
@@ -21,6 +25,15 @@
 
 "salmon_run" = "Salmon Run";
 "job" = "Job";
+
+"challenge" = "Challenge";
+"open" = "Open";
+
+"anarchy_battle_challenge" = "Anarchy Battle (Challenge)";
+"anarchy_battle_open" = "Anarchy Battle (Open)";
+
+"challenge_ss" = "C.";
+"open_ss" = "O.";
 
 // Rule.
 "turf_war" = "Turf War";
@@ -71,6 +84,15 @@
 "lost_outpost" = "Lost Outpost";
 "salmonid_smokeyard" = "Salmonid Smokeyard";
 "ruins_of_ark_polaris" = "Ruins of Ark Polaris";
+
+"scorch_gorge" = "Scorch Gorge";
+"eeltail_alley" = "Eeltail Alley";
+"hagglefish_market" = "Hagglefish Market";
+"undertow_spillway" = "Undertow Spillway";
+"mincemeat_metalworks" = "Mincemeat Metalworks";
+"hammerhead_bridge" = "Hammerhead Bridge";
+"museum_d_alfonsino" = "Museum d'Alfonsino";
+"mahi_mahi_resort" = "Mahi-Mahi Resort";
 
 // Weapon.
 "sploosh_o_matic" = "Sploosh-o-matic";
@@ -153,10 +175,10 @@
 "shift" = "Shift";
 "filter" = "Filter";
 "current" = "Current";
-"open" = "Open!";
-"soon" = "Soon!";
-"next" = "Next";
-"future" = "Future";
+"job_open" = "Open!";
+"job_soon" = "Soon!";
+"job_next" = "Next";
+"job_future" = "Future";
 "ikachan" = "Ikachan";
 "settings" = "Settings";
 "language" = "Language";
@@ -180,7 +202,7 @@
 "designer_shooky" = "Designer @ShellShooky";
 "data_source" = "Data Source";
 "acknowledgements" = "Acknowledgements";
-"disclaimer" = "This app is an unofficial app which uses the information of Splatnet 2, and is not related to Nintendo Co., Ltd.";
+"disclaimer" = "This app is an unofficial app which uses the information of Splatnet 2 and Splatnet 3, and is not related to Nintendo Co., Ltd.";
 "ika_shrine" = "Ika Shrine";
 "version" = "Version";
 "close" = "Close";

@@ -146,7 +146,7 @@ enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
     var shorterName: String {
         switch self {
         case .regular:
-            return "regular"
+            return "regular_ss"
         case .bankaraChallenge:
             return "challenge_ss"
         case .bankaraOpen:

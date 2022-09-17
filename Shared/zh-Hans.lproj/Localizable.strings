@@ -6,6 +6,10 @@
   
 */
 
+// Game.
+"splatoon_2" = "斯普拉遁2";
+"splatoon_3" = "斯普拉遁3";
+
 // Mode.
 "regular" = "普通";
 "ranked" = "真格";
@@ -22,23 +26,32 @@
 "salmon_run" = "Salmon Run";
 "job" = "打工";
 
-// Rule.
-"turf_war" = "地盘战";
-"splat_zones" = "区域战";
-"tower_control" = "推塔战";
-"rainmaker" = "抢鱼战";
-"clam_blitz" = "蛤蜊战";
+"challenge" = "挑战";
+"open" = "开放";
 
-"turf" = "涂地";
+"anarchy_battle_challenge" = "蛮颓比赛 (挑战)";
+"anarchy_battle_open" = "蛮颓比赛 (开放)";
+
+"challenge_ss" = "挑战";
+"open_ss" = "开放";
+
+// Rule.
+"turf_war" = "占地对战";
+"splat_zones" = "真格区域";
+"tower_control" = "真格塔楼";
+"rainmaker" = "真格鱼虎对战";
+"clam_blitz" = "真格蛤蜊";
+
+"turf" = "占地";
 "zones" = "区域";
-"tower" = "推塔";
-"rainmaker_s" = "抢鱼";
+"tower" = "塔楼";
+"rainmaker_s" = "鱼虎";
 "clam" = "蛤蜊";
 
-"turf_ss" = "涂地";
+"turf_ss" = "占地";
 "zones_ss" = "区域";
-"tower_ss" = "推塔";
-"rainmaker_ss" = "抢鱼";
+"tower_ss" = "塔楼";
+"rainmaker_ss" = "鱼虎";
 "clam_ss" = "蛤蜊";
 
 // Stage.
@@ -55,14 +68,14 @@
 "kelp_dome" = "海带温室园";
 "blackbelly_skatepark" = "黑鲈鱼滑板公园";
 "sehllendorf_institute" = "泥盆纪海洋博物馆";
-"mako_mart" = "座头鲸超市";
+"mako_mart" = "座头购物中心";
 "walleye_warehouse" = "箱鲀仓库";
 "arowana_mall" = "龙鱼商业街";
 "camp_triggerfish" = "鳞鳟营地";
 "piranha_pit" = "鱼露矿山";
 "goby_arena" = "炸竹荚鱼体育馆";
 "new_albacore_hotel" = "新金枪鱼腹酒店";
-"wahoo_world" = "醋饭游乐园";
+"wahoo_world" = "醋饭海洋世界";
 "ancho_v_games" = "凤尾鱼游戏公司";
 "skipper_pavilion" = "大弹涂鱼楼";
 
@@ -71,6 +84,15 @@
 "lost_outpost" = "海上聚落鲑鱼屠宰场";
 "salmonid_smokeyard" = "不时鲑烟熏工房";
 "ruins_of_ark_polaris" = "腐朽的方舟 北极星";
+
+"scorch_gorge" = "温泉花大峡谷";
+"eeltail_alley" = "鳗鲶区";
+"hagglefish_market" = "烟管鱼市场";
+"undertow_spillway" = "竹蛏疏洪道";
+"mincemeat_metalworks" = "鱼肉碎金属";
+"hammerhead_bridge" = "真鲭跨海大桥";
+"museum_d_alfonsino" = "金眼鲷美术馆";
+"mahi_mahi_resort" = "鬼头刀SPA度假区";
 
 // Weapon.
 "sploosh_o_matic" = "喇叭";
@@ -153,10 +175,10 @@
 "shift" = "排班表";
 "filter" = "过滤";
 "current" = "当前";
-"open" = "现正开放!";
-"soon" = "即将开放";
-"next" = "接下来";
-"future" = "之后";
+"job_open" = "现正开放!";
+"job_soon" = "即将开放";
+"job_next" = "接下来";
+"job_future" = "之后";
 "ikachan" = "乌贼酱";
 "settings" = "设置";
 "language" = "语言";
@@ -180,7 +202,7 @@
 "designer_shooky" = "设计师 @贝壳牌砂糖";
 "data_source" = "数据源";
 "acknowledgements" = "致谢";
-"disclaimer" = "本应用是使用イカリング2的信息的非官方应用，与任天堂有限公司无关。";
+"disclaimer" = "本应用是使用鱿鱼圈2和鱿鱼圈3的信息的非官方应用，与任天堂有限公司无关。";
 "ika_shrine" = "乌贼神社";
 "version" = "版本";
 "close" = "关闭";

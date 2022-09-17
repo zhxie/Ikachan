@@ -6,6 +6,10 @@
   
 */
 
+// Game.
+"splatoon_2" = "スプラトゥーン 2";
+"splatoon_3" = "スプラトゥーン 3";
+
 // Mode.
 "regular" = "レギュラー";
 "ranked" = "ガチ";
@@ -21,6 +25,15 @@
 
 "salmon_run" = "サーモンラン";
 "job" = "バイト";
+
+"challenge" = "チャレンジ";
+"open" = "オープン";
+
+"anarchy_battle_challenge" = "バンカラマッチ (チャレンジ)";
+"anarchy_battle_open" = "バンカラマッチ (オープン)";
+
+"challenge_ss" = "チ ";
+"open_ss" = "オ ";
 
 // Rule.
 "turf_war" = "ナワバリバトル";
@@ -71,6 +84,15 @@
 "lost_outpost" = "海上集落シャケト場";
 "salmonid_smokeyard" = "トキシラズいぶし工房";
 "ruins_of_ark_polaris" = "朽ちた箱舟 ポラリス";
+
+"scorch_gorge" = "ユノハナ大渓谷";
+"eeltail_alley" = "ゴンズイ地区";
+"hagglefish_market" = "ヤガラ市場";
+"undertow_spillway" = "マテガイ放水路";
+"mincemeat_metalworks" = "ナメロウ金属";
+"hammerhead_bridge" = "マサバ海峡大橋";
+"museum_d_alfonsino" = "キンメダイ美術館";
+"mahi_mahi_resort" = "マヒマヒリゾート＆スパ";
 
 // Weapon.
 "sploosh_o_matic" = "ボールドマーカー";
@@ -153,10 +175,10 @@
 "shift" = "シフト表";
 "filter" = "フィルタ";
 "current" = "いま";
-"open" = "オープン!";
-"soon" = "もうすぐ";
-"next" = "つぎ";
-"future" = "そのつぎ";
+"job_open" = "オープン!";
+"job_soon" = "もうすぐ";
+"job_next" = "つぎ";
+"job_future" = "そのつぎ";
 "ikachan" = "イカチャン";
 "settings" = "設定";
 "language" = "言語";
@@ -180,7 +202,7 @@
 "designer_shooky" = "デザイナー @ShellShooky";
 "data_source" = "データソース";
 "acknowledgements" = "謝辞";
-"disclaimer" = "当アプリは、イカリング2の情報を利用した非公式アプリであり、任天堂株式会社とは一切関係はございません。";
+"disclaimer" = "当アプリは、イカリング2とイカリング3の情報を利用した非公式アプリであり、任天堂株式会社とは一切関係はございません。";
 "ika_shrine" = "イカ神社";
 "version" = "バージョン";
 "close" = "閉じる";

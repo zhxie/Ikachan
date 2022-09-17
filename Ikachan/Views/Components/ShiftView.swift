@@ -47,16 +47,16 @@ struct ShiftView: View {
     
     var title: String {
         if shift.stage == nil {
-            return "future"
+            return "job_future"
         } else {
             if isFirst {
                 if shift.startTime < Date() {
-                    return "open"
+                    return "job_open"
                 } else {
-                    return "soon"
+                    return "job_soon"
                 }
             } else {
-                return "next"
+                return "job_next"
             }
         }
     }

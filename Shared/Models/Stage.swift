@@ -230,7 +230,7 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
     var name: String {
         switch self {
         case .scorchGorge:
-            return "schorch_gorge"
+            return "scorch_gorge"
         case .eeltailAlley:
             return "eeltail_alley"
         case .hagglefishMarket:
