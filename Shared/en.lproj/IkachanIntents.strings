@@ -1,20 +1,20 @@
-// Mode
+// Mode.
 "RTR7w4" = "Mode";
 "vQ9T9L" = "Regular Battle";
 "Vmno8H" = "Ranked Battle";
 "byIF5m" = "League Battle";
 
-// Rotation
+// Rotation.
 "YG3GWe" = "Rotation";
 "9n3fyF" = "Current";
 "YTWkY1" = "Next";
 
-// Day
+// Day.
 "ajvTis" = "Day";
 "UJkkfa" = "Another day becoming a squid.";
 "LwDtQE" = "Mode";
 
-// Schedule
+// Schedule.
 "dCtLWO" = "Schedules";
 "XALQ6Y" = "Shows schedules of a mode.";
 "2z9Dkd" = "Mode";
@@ -36,7 +36,7 @@
 "U9s5b8-Vmno8H" = "Here's the schedule of Ranked Battle.";
 "U9s5b8-byIF5m" = "Here's the schedule of League Battle.";
 
-// Shift
+// Shift.
 "QjGFWc" = "Shifts";
 "LTajCZ" = "Shows shifts of Salmon Run.";
 "P0sKEJ" = "Rotation";

@@ -6,7 +6,7 @@
   
 */
 
-// Game mode
+// Mode.
 "regular" = "普通";
 "ranked" = "真格";
 "league" = "组排";
@@ -22,7 +22,7 @@
 "salmon_run" = "Salmon Run";
 "job" = "打工";
 
-// Rule
+// Rule.
 "turf_war" = "地盘战";
 "splat_zones" = "区域战";
 "tower_control" = "推塔战";
@@ -41,7 +41,7 @@
 "rainmaker_ss" = "抢鱼";
 "clam_ss" = "蛤蜊";
 
-// Stage
+// Stage.
 "the_reef" = "青花鱼寿司街";
 "mussel_forge_fitness" = "藤壶健身房";
 "starfish_mainstage" = "海胆露天音乐堂";
@@ -72,7 +72,7 @@
 "salmonid_smokeyard" = "不时鲑烟熏工房";
 "ruins_of_ark_polaris" = "腐朽的方舟 北极星";
 
-// Weapon
+// Weapon.
 "sploosh_o_matic" = "喇叭";
 "splattershot_jr" = "新叶";
 "splash_o_matic" = "针管";
@@ -130,7 +130,7 @@
 "random" = "随机武器";
 "random2" = "打工专用 熊老板的随机武器";
 
-// Util
+// Util.
 "%@_remaining" = "剩余%@";
 "in_%@" = "%@后";
 "remaining" = "剩余";
@@ -148,7 +148,7 @@
 "%d_min" = "%d分";
 "0_min" = "0分";
 
-// UI
+// UI.
 "schedule" = "日程";
 "shift" = "排班表";
 "filter" = "过滤";
@@ -185,7 +185,7 @@
 "version" = "版本";
 "close" = "关闭";
 
-// Fortune
+// Fortune.
 "great_blessing" = "大 吉";
 "middle_blessing" = "中 吉";
 "small_blessing" = "小 吉";
@@ -207,7 +207,7 @@
 "unstable_connection" = "通信安定的御守，\n要来一个吗";
 "be_careful_of_the_hydra_splatling" = "让开让开！\n我消防栓大人来啦";
 
-// Widget
+// Widget.
 "in_the_day" = "白天";
 "at_night" = "夜间";
 "%@_%@" = "%@%@";
@@ -217,7 +217,7 @@
 "day_widget_name" = "一日Splatoon";
 "day_widget_description" = "成为乌贼的同时感受时间的流逝。";
 
-// Intent
+// Intent.
 "current_schedule" = "当前，%1$@正进行于%3$@和%4$@的%2$@，剩余%5$@。";
 "next_schedule" = "接下来，%1$@将于%5$@后进行于%3$@和%4$@的%2$@。";
 "open_shift" = "当前，Salmon Run正开放于%1$@，配给%2$@、%3$@、%4$@和%5$@的打工，剩余%6$@。";

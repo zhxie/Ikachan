@@ -56,18 +56,6 @@ struct ShiftsView: View {
         return shifts
     }
     
-//
-//    var shifts: [FilteredShift] {
-//        var shifts: [FilteredShift] = []
-//
-//        // First.
-//        for (i, shift) in modelData.shifts.enumerated() {
-//            shifts.append(FilteredShift(isFirst: i == 0, shift: shift))
-//        }
-//
-//        return shifts
-//    }
-    
     func update() {
         modelData.updateSplatoon2Shifts()
     }

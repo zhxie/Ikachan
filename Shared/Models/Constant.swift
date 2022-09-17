@@ -22,6 +22,6 @@ let IkachanActivity = "name.sketch.Ikachan"
 let IkachanSchedulesActivity = IkachanActivity + ".schedules"
 let IkachanShiftsActivity = IkachanActivity + ".shifts"
 
-// Widget
+// Widget.
 let MaxWidgetEntryCount = 60
 

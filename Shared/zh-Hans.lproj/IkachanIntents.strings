@@ -1,20 +1,20 @@
-// Mode
+// Mode.
 "RTR7w4" = "模式";
 "vQ9T9L" = "普通对战";
 "Vmno8H" = "真格对战";
 "byIF5m" = "组排对战";
 
-// Rotation
+// Rotation.
 "YG3GWe" = "轮次";
 "9n3fyF" = "当前";
 "YTWkY1" = "接下来";
 
-// Day
+// Day.
 "ajvTis" = "一日";
 "UJkkfa" = "成为乌贼的又一日。";
 "LwDtQE" = "模式";
 
-// Schedule
+// Schedule.
 "dCtLWO" = "日程";
 "XALQ6Y" = "显示某模式的日程。";
 "2z9Dkd" = "模式";
@@ -36,7 +36,7 @@
 "U9s5b8-Vmno8H" = "这就是真格对战的日程。";
 "U9s5b8-byIF5m" = "这就是组排对战的日程。";
 
-// Shift
+// Shift.
 "QjGFWc" = "排班表";
 "LTajCZ" = "显示Salmon Run的排班表。";
 "P0sKEJ" = "轮次";

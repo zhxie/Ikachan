@@ -14,8 +14,8 @@ struct SchedulesView: View {
 
     @Binding var showModal: Bool?
     
-    @State var mode = "regular"
-    // HACK: Consider rule turfWar as no filtering
+    @State var mode = "regular_battle"
+    // HACK: Consider rule turfWar as no filtering.
     @State var rule = "turfWar"
     
     init() {
@@ -30,6 +30,15 @@ struct SchedulesView: View {
             ScheduleView(schedule: schedule)
         }
         .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                if showModal != nil {
+                    Button(action: {
+                        showModal!.toggle()
+                    }) {
+                        Image(systemName: "info.circle")
+                    }
+                }
+            }
             ToolbarItem(placement: .principal) {
                 Picker(selection: $mode, label: Text("")) {
                     ForEach(Splatoon2ScheduleMode.allCases, id: \.self) { mode in
@@ -40,7 +49,7 @@ struct SchedulesView: View {
                 .pickerStyle(SegmentedPickerStyle())
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                if rule == "" {
+                if rule == "turfWar" {
                     Menu(content: {
                         ForEach(Splatoon2Rule.allCases.filter { rule in
                             rule.name != "turfWar"
@@ -64,15 +73,6 @@ struct SchedulesView: View {
                         rule = "turfWar"
                     }) {
                         Image(systemName: "line.horizontal.3.decrease.circle.fill")
-                    }
-                }
-            }
-            ToolbarItem(placement: .navigationBarLeading) {
-                if showModal != nil {
-                    Button(action: {
-                        showModal!.toggle()
-                    }) {
-                        Image(systemName: "info.circle")
                     }
                 }
             }

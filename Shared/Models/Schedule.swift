@@ -48,7 +48,7 @@ struct Splatoon2Schedule: Schedule {
         case .regular:
             return _rule.shortName.localizedString
         case .gachi, .league:
-            return String(format: "%@_%@".localizedString, mode.shorterName, rule.shorterName)
+            return String(format: "%@_%@".localizedString, mode.shorterName.localizedString, rule.shorterName.localizedString)
         }
     }
 }

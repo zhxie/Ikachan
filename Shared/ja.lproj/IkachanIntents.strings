@@ -1,20 +1,20 @@
-// Mode
+// Mode.
 "RTR7w4" = "モード";
 "vQ9T9L" = "レギュラーマッチ";
 "Vmno8H" = "ガチマッチ";
 "byIF5m" = "リーグマッチ";
 
-// Rotation
+// Rotation.
 "YG3GWe" = "ローテーション";
 "9n3fyF" = "いま";
 "YTWkY1" = "つぎ";
 
-// Day
+// Day.
 "ajvTis" = "一日";
 "UJkkfa" = "もうイカになる一日。";
 "LwDtQE" = "モード";
 
-// Schedule
+// Schedule.
 "dCtLWO" = "スケジュール";
 "XALQ6Y" = "そのモードのスケジュールを表示します。";
 "2z9Dkd" = "モード";
@@ -36,7 +36,7 @@
 "U9s5b8-Vmno8H" = "こちらはガチマッチのスケジュール。";
 "U9s5b8-byIF5m" = "こちらはリーグマッチのスケジュール。";
 
-// Shift
+// Shift.
 "QjGFWc" = "シフト表";
 "LTajCZ" = "サーモンランのシフト表を表示します。";
 "P0sKEJ" = "ローテーション";

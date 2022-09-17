@@ -6,7 +6,7 @@
   
 */
 
-// Game mode
+// Mode.
 "regular" = "レギュラー";
 "ranked" = "ガチ";
 "league" = "リーグ";
@@ -22,7 +22,7 @@
 "salmon_run" = "サーモンラン";
 "job" = "バイト";
 
-// Rule
+// Rule.
 "turf_war" = "ナワバリバトル";
 "splat_zones" = "ガチエリア";
 "tower_control" = "ガチヤグラ";
@@ -41,7 +41,7 @@
 "rainmaker_ss" = "ホコ";
 "clam_ss" = "アサリ";
 
-// Stage
+// Stage.
 "the_reef" = "バッテラストリート";
 "mussel_forge_fitness" = "フジツボスポーツクラブ";
 "starfish_mainstage" = "ガンガゼ野外音楽堂";
@@ -72,7 +72,7 @@
 "salmonid_smokeyard" = "トキシラズいぶし工房";
 "ruins_of_ark_polaris" = "朽ちた箱舟 ポラリス";
 
-// Weapon
+// Weapon.
 "sploosh_o_matic" = "ボールドマーカー";
 "splattershot_jr" = "わかばシューター";
 "splash_o_matic" = "シャープマーカー";
@@ -130,7 +130,7 @@
 "random" = "ランダムブキ";
 "random2" = "バイト専用 クマサン印のランダムブキ";
 
-// Util
+// Utils.
 "%@_remaining" = "残り%@";
 "in_%@" = "%@後";
 "remaining" = "残り";
@@ -148,7 +148,7 @@
 "%d_min" = "%d分";
 "0_min" = "0分";
 
-// UI
+// UI.
 "schedule" = "スケジュール";
 "shift" = "シフト表";
 "filter" = "フィルタ";
@@ -185,7 +185,7 @@
 "version" = "バージョン";
 "close" = "閉じる";
 
-// Fortune
+// Fortune.
 "great_blessing" = "大 吉";
 "middle_blessing" = "中 吉";
 "small_blessing" = "小 吉";
@@ -207,7 +207,7 @@
 "unstable_connection" = "通信安定のお守り、\n要らないか";
 "be_careful_of_the_hydra_splatling" = "どけどけ！\n俺ハイカス様が来るぞ";
 
-// Widget
+// Widget.
 "in_the_day" = "日に";
 "at_night" = "夜に";
 "%@_%@" = "%@%@";
@@ -217,7 +217,7 @@
 "day_widget_name" = "一日スプラ";
 "day_widget_description" = "イカしながら一日経ることを感じる。";
 
-// Intent
+// Intent.
 "current_schedule" = "いま、%1$@は%3$@と%4$@の%2$@があります、残り%5$@。";
 "next_schedule" = "つぎ、%1$@は%3$@と%4$@の%2$@が%5$@後始まります。";
 "open_shift" = "いま、Salmon Runは%1$@に、%2$@、%3$@、%4$@と%5$@を支給のバイトがオープンします、残り%6$@。";

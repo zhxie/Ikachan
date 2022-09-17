@@ -6,7 +6,7 @@
   
 */
 
-// Game mode
+// Mode.
 "regular" = "Regular";
 "ranked" = "Ranked";
 "league" = "League";
@@ -22,7 +22,7 @@
 "salmon_run" = "Salmon Run";
 "job" = "Job";
 
-// Rule
+// Rule.
 "turf_war" = "Turf War";
 "splat_zones" = "Splat Zones";
 "tower_control" = "Tower Control";
@@ -41,7 +41,7 @@
 "rainmaker_ss" = "Rain";
 "clam_ss" = "Clam";
 
-// Stage
+// Stage.
 "the_reef" = "The Reef";
 "mussel_forge_fitness" = "Mussel Forge Fitness";
 "starfish_mainstage" = "Starfish Mainstage";
@@ -72,7 +72,7 @@
 "salmonid_smokeyard" = "Salmonid Smokeyard";
 "ruins_of_ark_polaris" = "Ruins of Ark Polaris";
 
-// Weapon
+// Weapon.
 "sploosh_o_matic" = "Sploosh-o-matic";
 "splattershot_jr" = "Splattershot Jr.";
 "splash_o_matic" = "Splash-o-matic";
@@ -130,7 +130,7 @@
 "random" = "Random Weapon";
 "random2" = "Grizzco's Random Weapon";
 
-// Util
+// Utils.
 "%@_remaining" = "%@ remaining";
 "in_%@" = "in %@";
 "remaining" = "Remaining";
@@ -148,7 +148,7 @@
 "%d_min" = "%d minute";
 "0_min" = "0 minute";
 
-// UI
+// UI.
 "schedule" = "Schedule";
 "shift" = "Shift";
 "filter" = "Filter";
@@ -185,7 +185,7 @@
 "version" = "Version";
 "close" = "Close";
 
-// Fortune
+// Fortune.
 "great_blessing" = "Great\nBlessing";
 "middle_blessing" = "Middle\nBlessing";
 "small_blessing" = "Small\nBlessing";
@@ -207,7 +207,7 @@
 "unstable_connection" = "Do you want a amulet for\nconnection stability";
 "be_careful_of_the_hydra_splatling" = "Get out of the way!\nMy lord Hydra Splatling\nis here";
 
-// Widget
+// Widget.
 "in_the_day" = "In the day";
 "at_night" = "At night";
 "%@_%@" = "%@ %@";
@@ -217,7 +217,7 @@
 "day_widget_name" = "Splatoon the Whole Day";
 "day_widget_description" = "Feel the passing of time while becoming a squid.";
 
-// Intent
+// Intent.
 "current_schedule" = "Currently, %2$@ in %3$@ and %4$@ of %1$@ is undergoing, remaining %5$@.";
 "next_schedule" = "Next, %2$@ in %3$@ and %4$@ of %1$@ will be started in %5$@.";
 "open_shift" = "Currently, Salmon Run in %1$@ with %2$@, %3$@, %4$@ and %5$@ for loan is open, remaining %6$@.";
