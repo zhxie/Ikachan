@@ -80,6 +80,12 @@ struct AboutView: View {
                             for weapon in Splatoon2Weapon.allCases {
                                 urls.insert(weapon.imageUrl)
                             }
+                            for stage in Splatoon3ScheduleStage.allCases {
+                                urls.insert(stage.imageUrl)
+                            }
+                            for stage in Splatoon3ShiftStage.allCases {
+                                urls.insert(stage.imageUrl)
+                            }
                             
                             progressValue = 0
                             progressTotal = Double(urls.count)
