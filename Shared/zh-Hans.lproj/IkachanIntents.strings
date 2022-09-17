@@ -1,8 +1,16 @@
+// Game.
+"ToHVj4" = "游戏";
+"pwAAGk" = "斯普拉遁2";
+"Q5vXYy" = "斯普拉遁3";
+
 // Mode.
 "RTR7w4" = "模式";
-"vQ9T9L" = "普通对战";
-"Vmno8H" = "真格对战";
-"byIF5m" = "组排对战";
+"vQ9T9L" = "一般比赛";
+"Vmno8H" = "真格比赛";
+"byIF5m" = "组排比赛";
+
+"fabMnB" = "蛮颓比赛 (挑战)";
+"5utC7w" = "蛮颓比赛 (开放)";
 
 // Rotation.
 "YG3GWe" = "轮次";
@@ -12,38 +20,33 @@
 // Day.
 "ajvTis" = "一日";
 "UJkkfa" = "成为乌贼的又一日。";
+"Lez4pk" = "游戏";
 "LwDtQE" = "模式";
 
 // Schedule.
 "dCtLWO" = "日程";
 "XALQ6Y" = "显示某模式的日程。";
+"rpKaAQ" = "游戏";
 "2z9Dkd" = "模式";
 "3ADlh5" = "轮次";
 "pYS45i" = "${gameMode}${rotation}的日程";
-"6cLrqJ" = "查看日程";
-"WaDZel" = "查看日程";
-"ffldub-vQ9T9L" = "查看普通对战的日程";
-"ffldub-Vmno8H" = "查看真格对战的日程";
-"ffldub-byIF5m" = "查看组排对战的日程";
-"1rsv8F-vQ9T9L" = "查看普通对战的日程";
-"1rsv8F-Vmno8H" = "查看真格对战的日程";
-"1rsv8F-byIF5m" = "查看组排对战的日程";
+"sZ3qh2" = "游戏";
 "vtf9zV" = "模式";
 "n2daln" = "轮次";
 "XGNvY7" = "结果";
 "SLejbf" = "${result}";
-"U9s5b8-vQ9T9L" = "这就是普通对战的日程。";
-"U9s5b8-Vmno8H" = "这就是真格对战的日程。";
-"U9s5b8-byIF5m" = "这就是组排对战的日程。";
+"U9s5b8-vQ9T9L" = "这就是一般比赛的日程。";
+"U9s5b8-Vmno8H" = "这就是真格比赛的日程。";
+"U9s5b8-byIF5m" = "这就是组排比赛的日程。";
+"U9s5b8-fabMnB" = "这就是蛮颓比赛 (挑战) 的日程。";
+"U9s5b8-vQ9T9L" = "这就是蛮颓比赛 (开放) 的日程。";
 
 // Shift.
 "QjGFWc" = "排班表";
-"LTajCZ" = "显示Salmon Run的排班表。";
+"LTajCZ" = "显示鲑鱼跑的排班表。";
 "P0sKEJ" = "轮次";
-"KM8zVO" = "Salmon Run${rotation}的排班表";
-"0dhvDV" = "查看Salmon Run的排班表";
-"BvudQ0" = "查看Salmon Run的排班表";
+"KM8zVO" = "鲑鱼跑${rotation}的排班表";
 "od31Z2" = "轮次";
 "6RxUlZ" = "结果";
 "bXSdro" = "${result}";
-"Pj9O6l" = "这就是Salmon Run的排班。";
+"Pj9O6l" = "这就是鲑鱼跑的排班表。";

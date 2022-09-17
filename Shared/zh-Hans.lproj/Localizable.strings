@@ -11,19 +11,19 @@
 "splatoon_3" = "斯普拉遁3";
 
 // Mode.
-"regular" = "普通";
+"regular" = "一般";
 "ranked" = "真格";
 "league" = "组排";
 
-"regular_battle" = "普通对战";
-"ranked_battle" = "真格对战";
-"league_battle" = "组排对战";
+"regular_battle" = "一般比赛";
+"ranked_battle" = "真格比赛";
+"league_battle" = "组排比赛";
 
-"regular_ss" = "普通";
+"regular_ss" = "一般";
 "ranked_ss" = "真格";
 "league_ss" = "组排";
 
-"salmon_run" = "Salmon Run";
+"salmon_run" = "鲑鱼跑";
 "job" = "打工";
 
 "challenge" = "挑战";
@@ -235,13 +235,13 @@
 "%@_%@" = "%@%@";
 "failed_to_load" = "无法载入";
 "schedule_widget_description" = "查看某模式当前和接下来的日程。";
-"shift_widget_description" = "查看Salmon Run当前和接下来的排班表。";
+"shift_widget_description" = "查看鲑鱼跑当前和接下来的排班表。";
 "day_widget_name" = "一日Splatoon";
 "day_widget_description" = "成为乌贼的同时感受时间的流逝。";
 
 // Intent.
-"current_schedule" = "当前，%1$@正进行于%3$@和%4$@的%2$@，剩余%5$@。";
-"next_schedule" = "接下来，%1$@将于%5$@后进行于%3$@和%4$@的%2$@。";
-"open_shift" = "当前，Salmon Run正开放于%1$@，配给%2$@、%3$@、%4$@和%5$@的打工，剩余%6$@。";
-"soon_shift" = "Salmon Run即将于%6$@后开放于%1$@，配给%2$@、%3$@、%4$@和%5$@的打工。";
-"next_shift" = "接下来，Salmon Run将于%6$@后开放于%1$@，配给%2$@、%3$@、%4$@和%5$@的打工。";
+"current_schedule" = "当前，%1$@%2$@正进行于%4$@和%5$@的%3$@，剩余%6$@。";
+"next_schedule" = "接下来，%1$@%2$@将于%6$@后进行于%4$@和%5$@的%3$@。";
+"open_shift" = "当前，鲑鱼跑正开放于%1$@，配给%2$@、%3$@、%4$@和%5$@的打工，剩余%6$@。";
+"soon_shift" = "鲑鱼跑即将于%6$@后开放于%1$@，配给%2$@、%3$@、%4$@和%5$@的打工。";
+"next_shift" = "接下来，鲑鱼跑将于%6$@后开放于%1$@，配给%2$@、%3$@、%4$@和%5$@的打工。";

@@ -72,13 +72,14 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
             case .next:
                 formatter = "next_schedule"
             }
-            let result = String(format: formatter.localizedIntentsString, mode.name.localizedIntentsString, schedule.rule.name.localizedIntentsString, schedule.stages[0].name.localizedIntentsString, schedule.stages[1].name.localizedIntentsString, intentsLongTimeSpan(current: Date(), startTime: schedule.startTime, endTime: schedule.endTime))
+            let result = String(format: formatter.localizedIntentsString, game.name.localizedString, mode.name.localizedIntentsString, schedule.rule.name.localizedIntentsString, schedule.stages[0].name.localizedIntentsString, schedule.stages[1].name.localizedIntentsString, intentsLongTimeSpan(current: Date(), startTime: schedule.startTime, endTime: schedule.endTime))
             
             let encoder = JSONEncoder()
             let data = try! encoder.encode(schedule)
             let activity = NSUserActivity(activityType: IkachanSchedulesActivity + "." + mode.name)
             activity.userInfo?["schedule"] = data.base64EncodedString()
             let response = ScheduleIntentResponse.success(result: result, mode: intent.mode)
+            response.game = intent.game
             response.rotation = intent.rotation
             response.userActivity = activity
             completion(response)

@@ -240,8 +240,8 @@
 "day_widget_description" = "Feel the passing of time while becoming a squid.";
 
 // Intent.
-"current_schedule" = "Currently, %2$@ in %3$@ and %4$@ of %1$@ is undergoing, remaining %5$@.";
-"next_schedule" = "Next, %2$@ in %3$@ and %4$@ of %1$@ will be started in %5$@.";
+"current_schedule" = "Currently, %3$@ in %4$@ and %5$@ of %2$@ in %1$@ is undergoing, remaining %6$@.";
+"next_schedule" = "Next, %3$@ in %4$@ and %5$@ of %2$@ in %1$@ will be started in %6$@.";
 "open_shift" = "Currently, Salmon Run in %1$@ with %2$@, %3$@, %4$@ and %5$@ for loan is open, remaining %6$@.";
 "soon_shift" = "Soon, Salmon Run in %1$@ with %2$@, %3$@, %4$@ and %5$@ for loan will be open in %6$@.";
 "next_shift" = "Next, Salmon Run in %1$@ with %2$@, %3$@, %4$@ and %5$@ for loan will be open in %6$@.";
