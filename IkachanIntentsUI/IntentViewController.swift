@@ -19,8 +19,15 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
         let shiftData = data?["shift"] as? String ?? nil
         
         if let scheduleData = scheduleData {
+            let game = Game(intent: (interaction.intentResponse! as! ScheduleIntentResponse).game)
             let decoder = JSONDecoder()
-            let schedule = try! decoder.decode(Splatoon2Schedule.self, from: Data(base64Encoded: scheduleData)!)
+            var schedule: Schedule
+            switch game {
+            case .splatoon2:
+                schedule = try! decoder.decode(Splatoon2Schedule.self, from: Data(base64Encoded: scheduleData)!)
+            case .splatoon3:
+                schedule = try! decoder.decode(Splatoon3Schedule.self, from: Data(base64Encoded: scheduleData)!)
+            }
             
             let controller = UIHostingController(rootView: ScheduleView(schedule: schedule).animation(.default).padding())
             addChild(controller)

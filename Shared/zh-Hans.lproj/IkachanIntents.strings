@@ -29,7 +29,7 @@
 "rpKaAQ" = "游戏";
 "2z9Dkd" = "模式";
 "3ADlh5" = "轮次";
-"pYS45i" = "${gameMode}${rotation}的日程";
+"pYS45i" = "${game}${mode}${rotation}的日程";
 "sZ3qh2" = "游戏";
 "vtf9zV" = "模式";
 "n2daln" = "轮次";
@@ -39,7 +39,7 @@
 "U9s5b8-Vmno8H" = "这就是真格比赛的日程。";
 "U9s5b8-byIF5m" = "这就是组排比赛的日程。";
 "U9s5b8-fabMnB" = "这就是蛮颓比赛 (挑战) 的日程。";
-"U9s5b8-vQ9T9L" = "这就是蛮颓比赛 (开放) 的日程。";
+"U9s5b8-5utC7w" = "这就是蛮颓比赛 (开放) 的日程。";
 
 // Shift.
 "QjGFWc" = "排班表";

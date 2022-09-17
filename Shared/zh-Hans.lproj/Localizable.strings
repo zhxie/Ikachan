@@ -7,8 +7,8 @@
 */
 
 // Game.
-"splatoon_2" = "斯普拉遁2";
-"splatoon_3" = "斯普拉遁3";
+"splatoon2" = "斯普拉遁2";
+"splatoon3" = "斯普拉遁3";
 
 // Mode.
 "regular" = "一般";

@@ -433,8 +433,6 @@
 				<dict>
 					<key>INIntentParameterConfigurable</key>
 					<true/>
-					<key>INIntentParameterCustomDisambiguation</key>
-					<true/>
 					<key>INIntentParameterDisplayName</key>
 					<string>Mode</string>
 					<key>INIntentParameterDisplayNameID</key>
@@ -487,8 +485,6 @@
 							<string>Confirmation</string>
 						</dict>
 					</array>
-					<key>INIntentParameterSupportsResolution</key>
-					<true/>
 					<key>INIntentParameterTag</key>
 					<integer>2</integer>
 					<key>INIntentParameterType</key>
@@ -496,8 +492,6 @@
 				</dict>
 				<dict>
 					<key>INIntentParameterConfigurable</key>
-					<true/>
-					<key>INIntentParameterCustomDisambiguation</key>
 					<true/>
 					<key>INIntentParameterDisplayName</key>
 					<string>Rotation</string>
@@ -551,8 +545,6 @@
 							<string>Confirmation</string>
 						</dict>
 					</array>
-					<key>INIntentParameterSupportsResolution</key>
-					<true/>
 					<key>INIntentParameterTag</key>
 					<integer>4</integer>
 					<key>INIntentParameterType</key>

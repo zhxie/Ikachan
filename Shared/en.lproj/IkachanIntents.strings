@@ -29,7 +29,7 @@
 "rpKaAQ" = "Game";
 "2z9Dkd" = "Mode";
 "3ADlh5" = "Rotation";
-"pYS45i" = "${rotation} schedule of ${gameMode}";
+"pYS45i" = "${rotation} schedule of ${mode} in ${game}";
 "sZ3qh2" = "Game";
 "vtf9zV" = "Mode";
 "n2daln" = "Rotation";
@@ -39,7 +39,7 @@
 "U9s5b8-Vmno8H" = "Here's the schedule of Ranked Battle.";
 "U9s5b8-byIF5m" = "Here's the schedule of League Battle.";
 "U9s5b8-fabMnB" = "Here's the schedule of Anarchy Battle (Challenge).";
-"U9s5b8-vQ9T9L" = "Here's the schedule of Anarchy Battle (Open).";
+"U9s5b8-5utC7w" = "Here's the schedule of Anarchy Battle (Open).";
 
 // Shift.
 "QjGFWc" = "Shifts";
