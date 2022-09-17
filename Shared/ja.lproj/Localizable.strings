@@ -26,13 +26,13 @@
 "salmon_run" = "サーモンラン";
 "job" = "バイト";
 
-"challenge" = "チャレンジ";
+"series" = "チャレンジ";
 "open" = "オープン";
 
-"anarchy_battle_challenge" = "バンカラマッチ (チャレンジ)";
+"anarchy_battle_series" = "バンカラマッチ (チャレンジ)";
 "anarchy_battle_open" = "バンカラマッチ (オープン)";
 
-"challenge_ss" = " チ ";
+"series_ss" = " チ ";
 "open_ss" = " オ ";
 
 // Rule.

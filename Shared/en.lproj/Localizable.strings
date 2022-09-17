@@ -26,13 +26,13 @@
 "salmon_run" = "Salmon Run";
 "job" = "Job";
 
-"challenge" = "Challenge";
+"challenge" = "Series";
 "open" = "Open";
 
-"anarchy_battle_challenge" = "Anarchy Battle (Challenge)";
+"anarchy_battle_series" = "Anarchy Battle (Series)";
 "anarchy_battle_open" = "Anarchy Battle (Open)";
 
-"challenge_ss" = "C.";
+"series_ss" = "S.";
 "open_ss" = "O.";
 
 // Rule.

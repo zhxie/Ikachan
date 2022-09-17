@@ -107,7 +107,7 @@ enum Splatoon2ShiftMode: String, Mode, CaseIterable {
 
 enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
     case regular = "regular"
-    case bankaraChallenge = "challenge"
+    case bankaraChallenge = "series"
     case bankaraOpen = "open"
     
     init?(intent: INMode) {
@@ -128,7 +128,7 @@ enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
         case .regular:
             return "regular_battle"
         case .bankaraChallenge:
-            return "anarchy_battle_challenge"
+            return "anarchy_battle_series"
         case .bankaraOpen:
             return "anarchy_battle_open"
         }
@@ -138,7 +138,7 @@ enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
         case .regular:
             return "regular"
         case .bankaraChallenge:
-            return "challenge"
+            return "series"
         case .bankaraOpen:
             return "open"
         }
@@ -148,7 +148,7 @@ enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
         case .regular:
             return "regular_ss"
         case .bankaraChallenge:
-            return "challenge_ss"
+            return "series_ss"
         case .bankaraOpen:
             return "open_ss"
         }
