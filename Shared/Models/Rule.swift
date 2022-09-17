@@ -107,6 +107,7 @@ enum Splatoon3Rule: String, Rule, CaseIterable {
         }
     }
     var image: String {
-        return name + "_3"
+        // TODO: Splatoon 3 SVG rule icons render incorrectly.
+        return name + "_2"
     }
 }

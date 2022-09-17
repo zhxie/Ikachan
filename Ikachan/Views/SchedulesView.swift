@@ -74,6 +74,8 @@ struct SchedulesView: View {
                         self.rule = ""
                     }) {
                         Text(LocalizedStringKey("all"))
+                        Image(systemName: "line.3.horizontal.decrease.circle")
+                            .imageScale(.large)
                     }
                     ForEach(0..<modelData.game.rules.count, id: \.self) { i in
                         Button(action: {
