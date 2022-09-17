@@ -173,7 +173,8 @@
 // UI.
 "schedule" = "スケジュール";
 "shift" = "シフト表";
-"filter" = "フィルタ";
+"more" = "もっと";
+"all" = "全て";
 "current" = "いま";
 "job_open" = "オープン!";
 "job_soon" = "もうすぐ";

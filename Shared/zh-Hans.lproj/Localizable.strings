@@ -173,7 +173,8 @@
 // UI.
 "schedule" = "日程";
 "shift" = "排班表";
-"filter" = "过滤";
+"more" = "更多";
+"all" = "全部";
 "current" = "当前";
 "job_open" = "现正开放!";
 "job_soon" = "即将开放";

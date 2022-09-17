@@ -56,29 +56,37 @@ struct SchedulesView: View {
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                if rule == "" {
-                    Menu(content: {
-                        ForEach(0..<modelData.game.rules.count, id: \.self) { i in
-                            Button(action: {
-                                Impact(style: .light)
-                                self.rule = modelData.game.rules[i].name
-                            }) {
-                                Text(LocalizedStringKey(modelData.game.rules[i].name))
-                                Image(modelData.game.rules[i].image)
-                            }
+                Menu {
+                    ForEach(Game.allCases, id: \.self) { game in
+                        Button(action: {
+                            Impact(style: .light)
+                            modelData.game = game
+                            update()
+                        }) {
+                            Text(LocalizedStringKey(game.name))
+                            Image(systemName: String(format: "%d.circle", game.rawValue))
+                                .imageScale(.large)
                         }
-                    }) {
-                        Image(systemName: "line.horizontal.3.decrease.circle")
-                            .imageScale(.large)
                     }
-                    .accessibilityLabel("filter")
-                } else {
+                    Divider()
                     Button(action: {
                         Impact(style: .light)
-                        rule = ""
+                        self.rule = ""
                     }) {
-                        Image(systemName: "line.horizontal.3.decrease.circle.fill")
+                        Text(LocalizedStringKey("all"))
                     }
+                    ForEach(0..<modelData.game.rules.count, id: \.self) { i in
+                        Button(action: {
+                            Impact(style: .light)
+                            self.rule = modelData.game.rules[i].name
+                        }) {
+                            Text(LocalizedStringKey(modelData.game.rules[i].name))
+                            Image(modelData.game.rules[i].image)
+                        }
+                    }
+                } label: {
+                    Image(systemName: "ellipsis.circle")
+                        .imageScale(.large)
                 }
             }
         }

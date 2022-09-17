@@ -173,7 +173,8 @@
 // UI.
 "schedule" = "Schedule";
 "shift" = "Shift";
-"filter" = "Filter";
+"more" = "More";
+"all" = "All";
 "current" = "Current";
 "job_open" = "Open!";
 "job_soon" = "Soon!";
