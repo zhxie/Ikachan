@@ -77,3 +77,48 @@ enum Splatoon2ShiftMode: String, Mode, CaseIterable {
         return Color(red: 252 / 255, green: 86 / 255, blue: 32 / 255)
     }
 }
+
+enum Splatoon3ScheduleMode: String, Mode, CaseIterable {
+    case regular = "regular"
+    case anarchyChallenge = "challenge"
+    case anarchyOpen = "open"
+    
+    var name: String {
+        switch self {
+        case .regular:
+            return "regular_battle"
+        case .anarchyChallenge:
+            return "anarchy_battle_challenge"
+        case .anarchyOpen:
+            return "anarchy_battle_open"
+        }
+    }
+    var shortName: String {
+        switch self {
+        case .regular:
+            return "regular"
+        case .anarchyChallenge:
+            return "challenge"
+        case .anarchyOpen:
+            return "open"
+        }
+    }
+    var shorterName: String {
+        switch self {
+        case .regular:
+            return "regular"
+        case .anarchyChallenge:
+            return "challenge_ss"
+        case .anarchyOpen:
+            return "open_ss"
+        }
+    }
+    var accentColor: Color {
+        switch self {
+        case .regular:
+            return Color(red: 25 / 255, green: 215 / 255, blue: 25 / 255)
+        case .anarchyChallenge, .anarchyOpen:
+            return Color(red: 245 / 255, green: 73 / 255, blue: 16 / 255)
+        }
+    }
+}

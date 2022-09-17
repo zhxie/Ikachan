@@ -183,3 +183,110 @@ enum Splatoon2ShiftStage: Int, Stage, CaseIterable {
         return Splatnet2URL + image
     }
 }
+
+enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
+    case scorchGorge = 1
+    case eeltailAlley = 2
+    case hagglefishMarket = 3
+    case undertowSpillway = 4
+    case mincemeatMetalworks = 6
+    case hammerheadBridge = 10
+    case museumDAlfonsino = 11
+    case mahiMahiResort = 12
+    case inkblotArtAcademy = 13
+    case sturgeonShipyard = 14
+    case makoMart = 15
+    case wahooWorld = 16
+    
+    private var image: String {
+        switch self {
+        case .scorchGorge:
+            return "/assets/splatnet/stage_img/icon/high_resolution/35f9ca08ccc2bf759774ab2cb886567c117b9287875ca92fb590c1294ddcdc1e_0.png"
+        case .eeltailAlley:
+            return "/assets/splatnet/stage_img/icon/high_resolution/898e1ae6c737a9d44552c7c81f9b710676492681525c514eadc68a6780aa52af_0.png"
+        case .hagglefishMarket:
+            return "/assets/splatnet/stage_img/icon/high_resolution/8dc2f16d39c630bab40cead5b2485ca3559e829d0d3de0c2232c7a62fefb5fa9_0.png"
+        case .undertowSpillway:
+            return "/assets/splatnet/stage_img/icon/high_resolution/9b1c17b2075479d0397d2fb96efbc6fa3a28900712920e5fe1e9dfc59c6abc5c_0.png"
+        case .mincemeatMetalworks:
+            return "/assets/splatnet/stage_img/icon/high_resolution/de1f212e9ff0648f36cd3b8e0917ef36b3bd51445159297dcb948f34a09f2f05_0.png"
+        case .hammerheadBridge:
+            return "/assets/splatnet/stage_img/icon/high_resolution/1db8ab338b64b464df50e7f9e270e59423ff8caac6f09679a24f1b7acf3a82f3_0.png"
+        case .museumDAlfonsino:
+            return "/assets/splatnet/stage_img/icon/high_resolution/b9d8cfa186d197a27e075600a107c99d9e21646d116730f0843e0fff0aaba7dd_0.png"
+        case .mahiMahiResort:
+            return "/assets/splatnet/stage_img/icon/high_resolution/8273118c1ffe1bf6fe031c7d8c9795dab52632c9b76e8e9f01f644ac5ae0ccc0_0.png"
+        case .inkblotArtAcademy:
+            return "/assets/splatnet/stage_img/icon/high_resolution/40aba8b36a9439e2d670fde5b3478819ea8a94f9e503b9d783248a5716786f35_0.png"
+        case .sturgeonShipyard:
+            return "/assets/splatnet/stage_img/icon/high_resolution/48684c69d5c5a4ffaf16b712a4895545a8d01196115d514fc878ce99863bb3e9_0.png"
+        case .makoMart:
+            return "/assets/splatnet/stage_img/icon/high_resolution/a8ba96c3dbd015b7bc6ea4fa067245c4e9aee62b6696cb41e02d35139dd21fe7_0.png"
+        case .wahooWorld:
+            return "/assets/splatnet/stage_img/icon/high_resolution/61ea801fa4ed32360dcaf83986222ded46a72dbf56194acc6d0cf4659a92ba85_0.png"
+        }
+    }
+    
+    var name: String {
+        switch self {
+        case .scorchGorge:
+            return "schorch_gorge"
+        case .eeltailAlley:
+            return "eeltail_alley"
+        case .hagglefishMarket:
+            return "hagglefish_market"
+        case .undertowSpillway:
+            return "undertow_spillway"
+        case .mincemeatMetalworks:
+            return "mincemeat_metalworks"
+        case .hammerheadBridge:
+            return "hammerhead_bridge"
+        case .museumDAlfonsino:
+            return "museum_d_alfonsino"
+        case .mahiMahiResort:
+            return "mahi_mahi_resort"
+        case .inkblotArtAcademy:
+            return "inkblot_art_academy"
+        case .sturgeonShipyard:
+            return "sturgeon_shipyard"
+        case .makoMart:
+            return "mako_mart"
+        case .wahooWorld:
+            return "wahoo_world"
+        }
+    }
+    var imageUrl: String {
+        return Splatoon3InkURL + image
+    }
+}
+
+enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
+    case spawningGrounds = 1
+    case sockeyeStation = 2
+    case goneFissionHydroplant = 7
+    
+    private var image: String {
+        switch self {
+        case .spawningGrounds:
+            return "/assets/splatnet/stage_img/icon/high_resolution/be584c7c7f547b8cbac318617f646680541f88071bc71db73cd461eb3ea6326e_0.png"
+        case .sockeyeStation:
+            return "/assets/splatnet/stage_img/icon/high_resolution/3418d2d89ef84288c78915b9acb63b4ad48df7bfcb48c27d6597920787e147ec_0.png"
+        case .goneFissionHydroplant:
+            return "/assets/splatnet/stage_img/icon/high_resolution/f1e4df4cff1dc5e0acc66a9654fecf949224f7e4f6bd36305d4600ac3fa3db7b_0.png"
+        }
+    }
+    
+    var name: String {
+        switch self {
+        case .spawningGrounds:
+            return "spawning_grounds"
+        case .sockeyeStation:
+            return "sockeye_station"
+        case .goneFissionHydroplant:
+            return "gone_fission_hydroplant"
+        }
+    }
+    var imageUrl: String {
+        return Splatoon3InkURL + image
+    }
+}

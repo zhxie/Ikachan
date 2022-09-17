@@ -57,7 +57,7 @@ struct ShiftsView: View {
     }
     
     func update() {
-        modelData.updateSplatoon2Shifts()
+        modelData.updateShifts()
     }
 }
 

@@ -26,22 +26,21 @@ func fetchSplatoon2Schedules(completion:@escaping ([Splatoon2Schedule]?, Error?)
                 }
                 
                 if let json = try? JSON(data: data!) {
-                    var result: [Splatoon2Schedule] = []
+                    var schedules: [Splatoon2Schedule] = []
                     
                     for (_, value) in json {
-                        let schedules = value.arrayValue
-                        for schedule in schedules {
+                        for schedule in value.arrayValue {
                             let startTime = Date(timeIntervalSince1970: schedule["start_time"].doubleValue)
                             let endTime = Date(timeIntervalSince1970: schedule["end_time"].doubleValue)
                             let mode = Splatoon2ScheduleMode(rawValue: schedule["game_mode"]["key"].stringValue)!
                             let rule = Splatoon2Rule(rawValue: schedule["rule"]["key"].stringValue)!
                             let stages = [Splatoon2ScheduleStage(rawValue: Int(schedule["stage_a"]["id"].stringValue)!)!, Splatoon2ScheduleStage(rawValue: Int(schedule["stage_b"]["id"].stringValue)!)!]
                             
-                            result.append(Splatoon2Schedule(startTime: startTime, endTime: endTime, mode: mode, rule: rule, stages: stages))
+                            schedules.append(Splatoon2Schedule(startTime: startTime, endTime: endTime, mode: mode, rule: rule, stages: stages))
                         }
                     }
                     
-                    completion(result, error)
+                    completion(schedules, error)
                 } else {
                     completion(nil, error)
                 }
@@ -72,9 +71,7 @@ func fetchSplatoon2Shifts(completion:@escaping ([Splatoon2Shift]?, Error?) -> Vo
                     var previousTime = Date(timeIntervalSince1970: 0)
                     var shifts: [Splatoon2Shift] = []
                     
-                    let details = json["details"].arrayValue
-                    let schedules = json["schedules"].arrayValue
-                    for shift in (details + schedules) {
+                    for shift in (json["details"].arrayValue + json["schedules"].arrayValue) {
                         let startTime = Date(timeIntervalSince1970: shift["start_time"].doubleValue)
                         if startTime <= previousTime {
                             continue
@@ -88,8 +85,7 @@ func fetchSplatoon2Shifts(completion:@escaping ([Splatoon2Shift]?, Error?) -> Vo
                             }!
                         }
                         var weapons: [Splatoon2Weapon] = []
-                        let ws = shift["weapons"].arrayValue
-                        for weapon in ws {
+                        for weapon in shift["weapons"].arrayValue {
                             weapons.append(Splatoon2Weapon(rawValue: Int(weapon["id"].stringValue)!)!)
                         }
                         
@@ -99,6 +95,64 @@ func fetchSplatoon2Shifts(completion:@escaping ([Splatoon2Shift]?, Error?) -> Vo
                     }
                     
                     completion(shifts, error)
+                } else {
+                    completion(nil, error)
+                }
+            }
+        }
+        .resume()
+    }
+}
+
+func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?, Error?) -> Void) {
+    do {
+        var request = URLRequest(url: URL(string: Splatoon3InkScheduleURL)!)
+        request.timeoutInterval = Timeout
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if error != nil {
+                completion(nil, error)
+            } else {
+                let response = response as! HTTPURLResponse
+                let status = response.statusCode
+                guard (200...299).contains(status) else {
+                    completion(nil, error)
+                    
+                    return
+                }
+                
+                if let json = try? JSON(data: data!) {
+                    var schedules: [Splatoon3Schedule] = []
+                    
+                    let innerData = json["data"]
+                    for schedule in innerData["regularSchedules"]["nodes"].arrayValue {
+                        let startTime = utcToDate(date: schedule["startTime"].stringValue)
+                        let endTime = utcToDate(date: schedule["endTime"].stringValue)
+                        let matchSetting = schedule["regularMatchSetting"]
+                        let rule = Splatoon3Rule(rawValue: matchSetting["vsRule"]["rule"].stringValue.lowercased())!
+                        var stages: [Splatoon3ScheduleStage] = []
+                        for stage in matchSetting["vsStages"].arrayValue {
+                            stages.append(Splatoon3ScheduleStage(rawValue: stage["vsStageId"].intValue)!)
+                        }
+                        
+                        schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: .regular, rule: rule, stages: stages))
+                    }
+                    for schedule in innerData["bankaraSchedules"]["nodes"].arrayValue {
+                        let startTime = utcToDate(date: schedule["startTime"].stringValue)
+                        let endTime = utcToDate(date: schedule["endTime"].stringValue)
+                        for matchSetting in schedule["bankaraMatchSettings"].arrayValue {
+                            let mode = Splatoon3ScheduleMode(rawValue: matchSetting["mode"].stringValue.lowercased())!
+                            let rule = Splatoon3Rule(rawValue: matchSetting["vsRule"]["rule"].stringValue.lowercased())!
+                            var stages: [Splatoon3ScheduleStage] = []
+                            for stage in matchSetting["vsStages"].arrayValue {
+                                stages.append(Splatoon3ScheduleStage(rawValue: stage["vsStageId"].intValue)!)
+                            }
+                            
+                            schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: mode, rule: rule, stages: stages))
+                        }
+                    }
+                    
+                    completion(schedules, error)
                 } else {
                     completion(nil, error)
                 }

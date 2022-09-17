@@ -15,8 +15,7 @@ struct SchedulesView: View {
     @Binding var showModal: Bool?
     
     @State var mode = "regular_battle"
-    // HACK: Consider rule turfWar as no filtering.
-    @State var rule = "turfWar"
+    @State var rule = ""
     
     init() {
         _showModal = .constant(nil)
@@ -48,26 +47,24 @@ struct SchedulesView: View {
                     }
                     
                     Picker(selection: $mode, label: Text("")) {
-                        ForEach(Splatoon2ScheduleMode.allCases, id: \.self) { mode in
-                            Text(LocalizedStringKey(mode.shortName))
-                                .tag(mode.name)
+                        ForEach(0..<modelData.game.modes.count, id: \.self) { i in
+                            Text(LocalizedStringKey(modelData.game.modes[i].shortName))
+                                .tag(modelData.game.modes[i].name)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                if rule == "turfWar" {
+                if rule == "" {
                     Menu(content: {
-                        ForEach(Splatoon2Rule.allCases.filter { rule in
-                            rule.name != "turfWar"
-                        }, id: \.self) { rule in
+                        ForEach(0..<modelData.game.rules.count, id: \.self) { i in
                             Button(action: {
                                 Impact(style: .light)
-                                self.rule = rule.name
+                                self.rule = modelData.game.rules[i].name
                             }) {
-                                Text(LocalizedStringKey(rule.name))
-                                Image(rule.image)
+                                Text(LocalizedStringKey(modelData.game.rules[i].name))
+                                Image(modelData.game.rules[i].image)
                             }
                         }
                     }) {
@@ -78,7 +75,7 @@ struct SchedulesView: View {
                 } else {
                     Button(action: {
                         Impact(style: .light)
-                        rule = "turfWar"
+                        rule = ""
                     }) {
                         Image(systemName: "line.horizontal.3.decrease.circle.fill")
                     }
@@ -97,12 +94,12 @@ struct SchedulesView: View {
     
     var schedules: [Schedule] {
         modelData.schedules.filter { schedule in
-            schedule.mode.name == mode && (rule == "turfWar" || schedule.rule.name == rule)
+            schedule.mode.name == mode && (rule == "" || schedule.rule.name == rule)
         }
     }
     
     func update() {
-        modelData.updateSplatoon2Schedules()
+        modelData.updateSchedules()
     }
 }
 

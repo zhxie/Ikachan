@@ -44,9 +44,9 @@
 		E4400F3325CD012C00BF94C6 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E136C25C9A3BA008A0FE6 /* IntentHandler.swift */; };
 		E4400F3425CD012C00BF94C6 /* ScheduleIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4613F8F25C9AFD100561D53 /* ScheduleIntentHandler.swift */; };
 		E4400F3525CD012C00BF94C6 /* ShiftIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4613F9C25C9AFF700561D53 /* ShiftIntentHandler.swift */; };
-		E4400F3B25CD03F900BF94C6 /* Splatoon2Ink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4400F3A25CD03F900BF94C6 /* Splatoon2Ink.swift */; };
-		E4400F4925CD069A00BF94C6 /* Splatoon2Ink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4400F3A25CD03F900BF94C6 /* Splatoon2Ink.swift */; };
-		E4400F4E25CD069B00BF94C6 /* Splatoon2Ink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4400F3A25CD03F900BF94C6 /* Splatoon2Ink.swift */; };
+		E4400F3B25CD03F900BF94C6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4400F3A25CD03F900BF94C6 /* API.swift */; };
+		E4400F4925CD069A00BF94C6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4400F3A25CD03F900BF94C6 /* API.swift */; };
+		E4400F4E25CD069B00BF94C6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4400F3A25CD03F900BF94C6 /* API.swift */; };
 		E4405D7B25AF64D2002EF1AB /* IkachanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4405D7A25AF64D2002EF1AB /* IkachanApp.swift */; };
 		E4405D7D25AF64D2002EF1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4405D7C25AF64D2002EF1AB /* ContentView.swift */; };
 		E4405D7F25AF64D6002EF1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4405D7E25AF64D6002EF1AB /* Assets.xcassets */; };
@@ -134,6 +134,10 @@
 		E48BECC125CD31F100B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
 		E48BECC225CD31F200B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
 		E48BECC325CD31F200B301D1 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
+		E49BD9E028D5837C0034E0B4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49BD9DF28D5837B0034E0B4 /* Game.swift */; };
+		E49BD9E128D5837C0034E0B4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49BD9DF28D5837B0034E0B4 /* Game.swift */; };
+		E49BD9E228D5837C0034E0B4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49BD9DF28D5837B0034E0B4 /* Game.swift */; };
+		E49BD9E328D5837C0034E0B4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49BD9DF28D5837B0034E0B4 /* Game.swift */; };
 		E4BC7AD428D2260B00FDBF7F /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BC7AD328D2260B00FDBF7F /* Rule.swift */; };
 		E4BC7AD528D2260B00FDBF7F /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BC7AD328D2260B00FDBF7F /* Rule.swift */; };
 		E4BC7AD628D2260B00FDBF7F /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BC7AD328D2260B00FDBF7F /* Rule.swift */; };
@@ -219,7 +223,7 @@
 		E43E137A25C9A3BA008A0FE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E43E137C25C9A3BA008A0FE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E43E139A25C9A3E6008A0FE6 /* IkachanIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IkachanIntents.entitlements; sourceTree = "<group>"; };
-		E4400F3A25CD03F900BF94C6 /* Splatoon2Ink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2Ink.swift; sourceTree = "<group>"; };
+		E4400F3A25CD03F900BF94C6 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		E4405D7725AF64D2002EF1AB /* Ikachan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ikachan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4405D7A25AF64D2002EF1AB /* IkachanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkachanApp.swift; sourceTree = "<group>"; };
 		E4405D7C25AF64D2002EF1AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 		E485DA1227534D0100B82AE0 /* KFImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFImage.swift; sourceTree = "<group>"; };
 		E48BECBF25CD31F100B301D1 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		E48BED4125CD855800B301D1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
+		E49BD9DF28D5837B0034E0B4 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		E4B1144A25BD1E7A00303542 /* MediumShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumShiftView.swift; sourceTree = "<group>"; };
 		E4B1144F25BD43B400303542 /* ShiftWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftWidget.swift; sourceTree = "<group>"; };
 		E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkachanWidgetBundle.swift; sourceTree = "<group>"; };
@@ -498,8 +503,9 @@
 			children = (
 				E468B7AC25B34AFC001254FE /* Constant.swift */,
 				E45371DE28D1C5E200E3FC66 /* Stage.swift */,
-				E45371E328D1D5E800E3FC66 /* Mode.swift */,
 				E4BC7AD328D2260B00FDBF7F /* Rule.swift */,
+				E45371E328D1D5E800E3FC66 /* Mode.swift */,
+				E49BD9DF28D5837B0034E0B4 /* Game.swift */,
 				E477990125B1F1F600F8AE9F /* Schedule.swift */,
 				E477990C25B203F900F8AE9F /* Weapon.swift */,
 				E477990925B2029C00F8AE9F /* Shift.swift */,
@@ -523,10 +529,10 @@
 			isa = PBXGroup;
 			children = (
 				E485DA182753504100B82AE0 /* UI */,
+				E4400F3A25CD03F900BF94C6 /* API.swift */,
 				E48BECBF25CD31F100B301D1 /* Collection.swift */,
 				E468B7B425B46080001254FE /* Date.swift */,
 				E461413F25CA880500561D53 /* String.swift */,
-				E4400F3A25CD03F900BF94C6 /* Splatoon2Ink.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -767,7 +773,7 @@
 			files = (
 				E4613F1625C9A96500561D53 /* Weapon.swift in Sources */,
 				E4613FB725C9B62000561D53 /* IkachanIntents.intentdefinition in Sources */,
-				E4400F4E25CD069B00BF94C6 /* Splatoon2Ink.swift in Sources */,
+				E4400F4E25CD069B00BF94C6 /* API.swift in Sources */,
 				E48BECC225CD31F200B301D1 /* Collection.swift in Sources */,
 				E4613F0225C9A70C00561D53 /* Shift.swift in Sources */,
 				E4613F0325C9A70C00561D53 /* Schedule.swift in Sources */,
@@ -780,6 +786,7 @@
 				E485DA192753509400B82AE0 /* Date.swift in Sources */,
 				E461414225CA880500561D53 /* String.swift in Sources */,
 				E45371E128D1C5E200E3FC66 /* Stage.swift in Sources */,
+				E49BD9E228D5837C0034E0B4 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,6 +810,7 @@
 				E45371E228D1C5E200E3FC66 /* Stage.swift in Sources */,
 				E461414325CA880500561D53 /* String.swift in Sources */,
 				E45371E728D1D5E800E3FC66 /* Mode.swift in Sources */,
+				E49BD9E328D5837C0034E0B4 /* Game.swift in Sources */,
 				E42AE86227550951006F7CBD /* StageView.swift in Sources */,
 				E4613F1B25C9A96600561D53 /* Weapon.swift in Sources */,
 				E42AE85F2754F2C4006F7CBD /* ScheduleBaseView.swift in Sources */,
@@ -816,7 +824,7 @@
 			files = (
 				E438EF4525B5E3F8005AB9D9 /* ShiftsView.swift in Sources */,
 				E4E13CE325C7DBB100150544 /* Color.swift in Sources */,
-				E4400F3B25CD03F900BF94C6 /* Splatoon2Ink.swift in Sources */,
+				E4400F3B25CD03F900BF94C6 /* API.swift in Sources */,
 				E4400F3425CD012C00BF94C6 /* ScheduleIntentHandler.swift in Sources */,
 				E485DA1327534D0100B82AE0 /* KFImage.swift in Sources */,
 				E4BC7AD428D2260B00FDBF7F /* Rule.swift in Sources */,
@@ -830,6 +838,7 @@
 				E438EF4825B5E533005AB9D9 /* ShiftView.swift in Sources */,
 				E46B510325BB1E3E001F88CE /* AboutView.swift in Sources */,
 				E4405D7B25AF64D2002EF1AB /* IkachanApp.swift in Sources */,
+				E49BD9E028D5837C0034E0B4 /* Game.swift in Sources */,
 				E477990D25B203F900F8AE9F /* Weapon.swift in Sources */,
 				E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */,
 				E45371DF28D1C5E200E3FC66 /* Stage.swift in Sources */,
@@ -874,11 +883,12 @@
 				E4444EF525BF14A50003A676 /* MediumScheduleView.swift in Sources */,
 				E42AE8762755F9F8006F7CBD /* WeaponView.swift in Sources */,
 				E445762A25CEF5A9004AA74D /* SmallShiftView.swift in Sources */,
+				E49BD9E128D5837C0034E0B4 /* Game.swift in Sources */,
 				E45371E028D1C5E200E3FC66 /* Stage.swift in Sources */,
 				E461414125CA880500561D53 /* String.swift in Sources */,
 				E48BECC125CD31F100B301D1 /* Collection.swift in Sources */,
 				E4400F2925CD010A00BF94C6 /* ShiftIntentHandler.swift in Sources */,
-				E4400F4925CD069A00BF94C6 /* Splatoon2Ink.swift in Sources */,
+				E4400F4925CD069A00BF94C6 /* API.swift in Sources */,
 				E485DA1127534A3700B82AE0 /* Image.swift in Sources */,
 				E4C98CFC25C98099006940E9 /* View.swift in Sources */,
 				E4444EF025BF149B0003A676 /* Schedule.swift in Sources */,
