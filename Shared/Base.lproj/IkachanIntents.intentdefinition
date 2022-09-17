@@ -6,13 +6,13 @@
 	<array>
 		<dict>
 			<key>INEnumDisplayName</key>
-			<string>Game Mode</string>
+			<string>INMode</string>
 			<key>INEnumDisplayNameID</key>
 			<string>RTR7w4</string>
 			<key>INEnumGeneratesHeader</key>
 			<true/>
 			<key>INEnumName</key>
-			<string>GameMode</string>
+			<string>INMode</string>
 			<key>INEnumType</key>
 			<string>Regular</string>
 			<key>INEnumValues</key>
@@ -106,11 +106,11 @@
 	<key>INIntentDefinitionNamespace</key>
 	<string>AL54Nd</string>
 	<key>INIntentDefinitionSystemVersion</key>
-	<string>21C52</string>
+	<string>21G115</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
-	<string>13C100</string>
+	<string>14A309</string>
 	<key>INIntentDefinitionToolsVersion</key>
-	<string>13.2.1</string>
+	<string>14.0</string>
 	<key>INIntents</key>
 	<array>
 		<dict>
@@ -134,13 +134,13 @@
 					<key>INIntentParameterConfigurable</key>
 					<true/>
 					<key>INIntentParameterDisplayName</key>
-					<string>Game Mode</string>
+					<string>Mode</string>
 					<key>INIntentParameterDisplayNameID</key>
 					<string>LwDtQE</string>
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>1</integer>
 					<key>INIntentParameterEnumType</key>
-					<string>GameMode</string>
+					<string>INMode</string>
 					<key>INIntentParameterEnumTypeNamespace</key>
 					<string>AL54Nd</string>
 					<key>INIntentParameterMetadata</key>
@@ -149,7 +149,7 @@
 						<string>regular</string>
 					</dict>
 					<key>INIntentParameterName</key>
-					<string>gameMode</string>
+					<string>mode</string>
 					<key>INIntentParameterPromptDialogs</key>
 					<array>
 						<dict>
@@ -168,7 +168,7 @@
 							<key>INIntentParameterPromptDialogCustom</key>
 							<true/>
 							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>There are ${count} options matching ‘${gameMode}’.</string>
+							<string>There are ${count} options matching ‘${mode}’.</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
 							<string>M7gD7t</string>
 							<key>INIntentParameterPromptDialogType</key>
@@ -178,7 +178,7 @@
 							<key>INIntentParameterPromptDialogCustom</key>
 							<true/>
 							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>Just to confirm, you wanted ‘${gameMode}’?</string>
+							<string>Just to confirm, you wanted ‘${mode}’?</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
 							<string>doN3a4</string>
 							<key>INIntentParameterPromptDialogType</key>
@@ -228,17 +228,17 @@
 			<key>INIntentEligibleForWidgets</key>
 			<true/>
 			<key>INIntentKeyParameter</key>
-			<string>gameMode</string>
+			<string>mode</string>
 			<key>INIntentLastParameterTag</key>
 			<integer>8</integer>
 			<key>INIntentManagedParameterCombinations</key>
 			<dict>
-				<key>gameMode,rotation</key>
+				<key>mode,rotation</key>
 				<dict>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>${rotation} schedule of ${gameMode}</string>
+					<string>${rotation} schedule of ${mode}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>pYS45i</string>
 				</dict>
@@ -256,23 +256,23 @@
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>6cLrqJ</string>
 				</dict>
-				<key>gameMode</key>
+				<key>mode</key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>View schedules of ${gameMode}</string>
+					<string>View schedules of ${mode}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>ffldub</string>
 				</dict>
-				<key>gameMode,rotation</key>
+				<key>mode,rotation</key>
 				<dict>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>View schedules of ${gameMode}</string>
+					<string>View schedules of ${mode}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>1rsv8F</string>
 				</dict>
@@ -294,13 +294,13 @@
 					<key>INIntentParameterCustomDisambiguation</key>
 					<true/>
 					<key>INIntentParameterDisplayName</key>
-					<string>Game Mode</string>
+					<string>Mode</string>
 					<key>INIntentParameterDisplayNameID</key>
 					<string>2z9Dkd</string>
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>1</integer>
 					<key>INIntentParameterEnumType</key>
-					<string>GameMode</string>
+					<string>INMode</string>
 					<key>INIntentParameterEnumTypeNamespace</key>
 					<string>AL54Nd</string>
 					<key>INIntentParameterMetadata</key>
@@ -309,7 +309,7 @@
 						<string>regular</string>
 					</dict>
 					<key>INIntentParameterName</key>
-					<string>gameMode</string>
+					<string>mode</string>
 					<key>INIntentParameterPromptDialogs</key>
 					<array>
 						<dict>
@@ -328,7 +328,7 @@
 							<key>INIntentParameterPromptDialogCustom</key>
 							<true/>
 							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>There are ${count} options matching ‘${gameMode}’.</string>
+							<string>There are ${count} options matching ‘${mode}’.</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
 							<string>oMMIWT</string>
 							<key>INIntentParameterPromptDialogType</key>
@@ -338,7 +338,7 @@
 							<key>INIntentParameterPromptDialogCustom</key>
 							<true/>
 							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>Just to confirm, you wanted ‘${gameMode}’?</string>
+							<string>Just to confirm, you wanted ‘${mode}’?</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
 							<string>10v9re</string>
 							<key>INIntentParameterPromptDialogType</key>
@@ -423,7 +423,7 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Here's the schedule of ${gameMode}.</string>
+						<string>Here's the schedule of ${mode}.</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>U9s5b8</string>
 						<key>INIntentResponseCodeFormatString</key>
@@ -441,26 +441,26 @@
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
-				<integer>12</integer>
+				<integer>13</integer>
 				<key>INIntentResponseOutput</key>
 				<string>result</string>
 				<key>INIntentResponseParameters</key>
 				<array>
 					<dict>
 						<key>INIntentResponseParameterDisplayName</key>
-						<string>Game Mode</string>
+						<string>Mode</string>
 						<key>INIntentResponseParameterDisplayNameID</key>
 						<string>vtf9zV</string>
 						<key>INIntentResponseParameterDisplayPriority</key>
 						<integer>1</integer>
 						<key>INIntentResponseParameterEnumType</key>
-						<string>GameMode</string>
+						<string>INMode</string>
 						<key>INIntentResponseParameterEnumTypeNamespace</key>
 						<string>AL54Nd</string>
 						<key>INIntentResponseParameterName</key>
-						<string>gameMode</string>
+						<string>mode</string>
 						<key>INIntentResponseParameterTag</key>
-						<integer>10</integer>
+						<integer>13</integer>
 						<key>INIntentResponseParameterType</key>
 						<string>Integer</string>
 					</dict>

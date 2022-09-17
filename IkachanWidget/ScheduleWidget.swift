@@ -16,7 +16,7 @@ struct ScheduleProvider: IntentTimelineProvider {
     }
 
     func getSnapshot(for configuration: ScheduleIntent, in context: Context, completion: @escaping (ScheduleEntry) -> ()) {
-        fetchSchedules { (schedules, error) in
+        fetchSplatoon2Schedules { (schedules, error) in
             let current = Date().floorToMin()
             
             guard let schedules = schedules else {
@@ -26,12 +26,12 @@ struct ScheduleProvider: IntentTimelineProvider {
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.gameMode == IntentHandler.gameModeConvertTo(gameMode: configuration.gameMode)
+                schedule.mode.name == IntentHandler.modeConvertTo(mode: configuration.mode).name
             }
             
             if filtered.count > 0 {
                 let entry = ScheduleEntry(date: current, configuration: configuration, schedule: filtered[0])
-                let resources = [ImageResource(downloadURL: URL(string: filtered[0].stageA.url)!), ImageResource(downloadURL: URL(string: filtered[0].stageB.url)!)]
+                let resources = [ImageResource(downloadURL: URL(string: filtered[0].stages[0].imageUrl)!), ImageResource(downloadURL: URL(string: filtered[0].stages[1].imageUrl)!)]
                 
                 ImagePrefetcher(resources: resources) { (_, _, _) in
                     completion(entry)
@@ -44,7 +44,7 @@ struct ScheduleProvider: IntentTimelineProvider {
     }
 
     func getTimeline(for configuration: ScheduleIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        fetchSchedules { (schedules, error) in
+        fetchSplatoon2Schedules { (schedules, error) in
             var entries: [ScheduleEntry] = []
             var urls: Set<String> = []
             var resources: [Resource] = []
@@ -60,7 +60,7 @@ struct ScheduleProvider: IntentTimelineProvider {
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.gameMode == IntentHandler.gameModeConvertTo(gameMode: configuration.gameMode)
+                schedule.mode.name == IntentHandler.modeConvertTo(mode: configuration.mode).name
             }
             // HACK: Since each schedule lasts for 2 hours, it's ok to add a fixed time shift.
             let timeShift = 7200 * IntentHandler.rotationConvertTo(rotation: configuration.rotation)
@@ -69,8 +69,8 @@ struct ScheduleProvider: IntentTimelineProvider {
                 while current.addingTimeInterval(TimeInterval(timeShift)) < schedule.endTime && entries.count < MaxWidgetEntryCount {
                     let entry = ScheduleEntry(date: current, configuration: configuration, schedule: schedule)
                     entries.append(entry)
-                    urls.insert(schedule.stageA.url)
-                    urls.insert(schedule.stageB.url)
+                    urls.insert(schedule.stages[0].imageUrl)
+                    urls.insert(schedule.stages[1].imageUrl)
                     
                     current = current.addingTimeInterval(60)
                 }
@@ -119,14 +119,14 @@ struct ScheduleWidgetEntryView : View {
     var body: some View {
         switch family {
         case .systemSmall:
-            SmallScheduleView(current: entry.date, schedule: entry.schedule, gameMode: gameMode)
+            SmallScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
         default:
-            MediumScheduleView(current: entry.date, schedule: entry.schedule, gameMode: gameMode)
+            MediumScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
         }
     }
     
-    var gameMode: Schedule.GameMode {
-        IntentHandler.gameModeConvertTo(gameMode: entry.configuration.gameMode)
+    var mode: Mode {
+        IntentHandler.modeConvertTo(mode: entry.configuration.mode)
     }
 }
 

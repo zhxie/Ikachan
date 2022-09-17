@@ -15,7 +15,7 @@ struct DayProvider: IntentTimelineProvider {
     }
     
     func getSnapshot(for configuration: DayIntent, in context: Context, completion: @escaping (DayEntry) -> Void) {
-        fetchSchedules { (schedules, error) in
+        fetchSplatoon2Schedules { (schedules, error) in
             let current = Date().floorToMin()
             
             guard let schedules = schedules else {
@@ -25,7 +25,7 @@ struct DayProvider: IntentTimelineProvider {
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.gameMode == IntentHandler.gameModeConvertTo(gameMode: configuration.gameMode)
+                schedule.mode.name == IntentHandler.modeConvertTo(mode: configuration.mode).name
             }
             
             if filtered.count > 0 {
@@ -39,7 +39,7 @@ struct DayProvider: IntentTimelineProvider {
     }
     
     func getTimeline(for configuration: DayIntent, in context: Context, completion: @escaping (Timeline<DayEntry>) -> Void) {
-        fetchSchedules { (schedules, error) in
+        fetchSplatoon2Schedules { (schedules, error) in
             var entries: [DayEntry] = []
             
             var current = Date().floorToMin()
@@ -53,7 +53,7 @@ struct DayProvider: IntentTimelineProvider {
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.gameMode == IntentHandler.gameModeConvertTo(gameMode: configuration.gameMode)
+                schedule.mode.name == IntentHandler.modeConvertTo(mode: configuration.mode).name
             }
             
             for schedule in filtered {

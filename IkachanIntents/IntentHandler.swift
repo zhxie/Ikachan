@@ -18,25 +18,27 @@ class IntentHandler: INExtension {
         }
     }
     
-    static func gameModeConvertTo(gameMode: GameMode) -> Schedule.GameMode {
-        switch gameMode {
+    static func modeConvertTo(mode: INMode) -> Mode {
+        switch mode {
         case .regular, .unknown:
-            return .regular
+            return Splatoon2ScheduleMode.regular
         case .gachi:
-            return .gachi
+            return Splatoon2ScheduleMode.gachi
         case .league:
-            return .league
+            return Splatoon2ScheduleMode.league
         }
     }
     
-    static func gameModeConvertFrom(gameMode: Schedule.GameMode) -> GameMode {
-        switch gameMode {
-        case .regular:
+    static func modeConvertFrom(mode: Mode) -> INMode {
+        switch mode.name {
+        case "regular":
             return .regular
-        case .gachi:
+        case "gachi":
             return .gachi
-        case .league:
+        case "league":
             return .league
+        default:
+            return .unknown
         }
     }
     

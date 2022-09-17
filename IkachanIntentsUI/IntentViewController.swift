@@ -20,7 +20,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
         
         if let scheduleData = scheduleData {
             let decoder = JSONDecoder()
-            let schedule = try! decoder.decode(Schedule.self, from: Data(base64Encoded: scheduleData)!)
+            let schedule = try! decoder.decode(Splatoon2Schedule.self, from: Data(base64Encoded: scheduleData)!)
             
             let controller = UIHostingController(rootView: ScheduleView(schedule: schedule).animation(.default).padding())
             addChild(controller)
@@ -38,9 +38,9 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
             completion(true, parameters, desiredSize)
         } else if let shiftData = shiftData {
             let decoder = JSONDecoder()
-            let shift = try! decoder.decode(Shift.self, from: Data(base64Encoded: shiftData)!)
+            let shift = try! decoder.decode(Splatoon2Shift.self, from: Data(base64Encoded: shiftData)!)
             
-            let controller = UIHostingController(rootView: ShiftView(shift: shift, title: shift.status).animation(.default).padding())
+            let controller = UIHostingController(rootView: ShiftView(shift: shift, isFirst: true).animation(.default).padding())
             addChild(controller)
             controller.view.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(controller.view)

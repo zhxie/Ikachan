@@ -16,7 +16,7 @@ struct ShiftProvider: IntentTimelineProvider {
     }
     
     func getSnapshot(for configuration: ShiftIntent, in context: Context, completion: @escaping (ShiftEntry) -> ()) {
-        fetchShifts { (shifts, error) in
+        fetchSplatoon2Shifts { (shifts, error) in
             let current = Date().floorToMin()
             
             guard let shifts = shifts else {
@@ -31,7 +31,7 @@ struct ShiftProvider: IntentTimelineProvider {
             
             if details.count > 0 {
                 let entry = ShiftEntry(date: current, shift: details[0])
-                let resources = [ImageResource(downloadURL: URL(string: details[0].stage!.url)!), ImageResource(downloadURL: URL(string: details[0].weapons[0].url)!), ImageResource(downloadURL: URL(string: details[0].weapons[1].url)!), ImageResource(downloadURL: URL(string: details[0].weapons[2].url)!), ImageResource(downloadURL: URL(string: details[0].weapons[3].url)!)]
+                let resources = [ImageResource(downloadURL: URL(string: details[0].stage!.imageUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[0].imageUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[1].imageUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[2].imageUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[3].imageUrl)!)]
                 
                 ImagePrefetcher(resources: resources) { (_, _, _) in
                     completion(entry)
@@ -44,7 +44,7 @@ struct ShiftProvider: IntentTimelineProvider {
     }
     
     func getTimeline(for configuration: ShiftIntent, in context: Context, completion: @escaping (Timeline<ShiftEntry>) -> ()) {
-        fetchShifts { (shifts, error) in
+        fetchSplatoon2Shifts { (shifts, error) in
             var entries: [ShiftEntry] = []
             var urls: Set<String> = []
             var resources: [Resource] = []
@@ -69,11 +69,11 @@ struct ShiftProvider: IntentTimelineProvider {
                 while current < shift.endTime && entries.count < MaxWidgetEntryCount {
                     let entry = ShiftEntry(date: current, shift: shift)
                     entries.append(entry)
-                    urls.insert(shift.stage!.url)
-                    urls.insert(shift.weapons[0].url)
-                    urls.insert(shift.weapons[1].url)
-                    urls.insert(shift.weapons[2].url)
-                    urls.insert(shift.weapons[3].url)
+                    urls.insert(shift.stage!.imageUrl)
+                    urls.insert(shift.weapons[0].imageUrl)
+                    urls.insert(shift.weapons[1].imageUrl)
+                    urls.insert(shift.weapons[2].imageUrl)
+                    urls.insert(shift.weapons[3].imageUrl)
                     
                     var distance = shift.endTime - current
                     if current < shift.startTime {
@@ -135,9 +135,9 @@ struct ShiftWidgetEntryView: View {
     var body: some View {
         switch family {
         case .systemSmall:
-            SmallShiftView(current: entry.date, shift: entry.shift)
+            SmallShiftView(current: entry.date, shift: entry.shift, mode: Splatoon2ShiftMode.salmonRun)
         default:
-            MediumShiftView(current: entry.date, shift: entry.shift)
+            MediumShiftView(current: entry.date, shift: entry.shift, mode: Splatoon2ShiftMode.salmonRun)
         }
     }
 }

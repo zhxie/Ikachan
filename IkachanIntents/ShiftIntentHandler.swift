@@ -21,7 +21,7 @@ class ShiftIntentHandler: IntentHandler, ShiftIntentHandling {
     }
     
     func handle(intent: ShiftIntent, completion: @escaping (ShiftIntentResponse) -> Void) {
-        fetchShifts { (shifts, error) in
+        fetchSplatoon2Shifts { (shifts, error) in
             guard let shifts = shifts else {
                 completion(ShiftIntentResponse(code: .failure, userActivity: nil))
                 
@@ -50,7 +50,7 @@ class ShiftIntentHandler: IntentHandler, ShiftIntentHandling {
                 formatter = "next_shift"
             }
             
-            let result = String(format: formatter.localizedIntentsString, shift.stage!.description.localizedIntentsString, shift.weapons[0].description.localizedIntentsString, shift.weapons[1].description.localizedIntentsString, shift.weapons[2].description.localizedIntentsString, shift.weapons[3].description.localizedIntentsString, intentsLongTimeSpan(current: Date(), startTime: shift.startTime, endTime: shift.endTime))
+            let result = String(format: formatter.localizedIntentsString, shift.stage!.name.localizedIntentsString, shift.weapons[0].name.localizedIntentsString, shift.weapons[1].name.localizedIntentsString, shift.weapons[2].name.localizedIntentsString, shift.weapons[3].name.localizedIntentsString, intentsLongTimeSpan(current: Date(), startTime: shift.startTime, endTime: shift.endTime))
             
             let encoder = JSONEncoder()
             let data = try! encoder.encode(shift)
