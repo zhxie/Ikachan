@@ -139,11 +139,19 @@ struct AboutView: View {
                         VStack(alignment: .leading) {
                             VStack(alignment: .leading) {
                                 HStack {
-                                    Text("data_source")
-                                        .bold()
-
                                     Link(destination: URL(string: "https://splatoon2.ink/")!) {
                                         Text("Splatoon2.ink")
+                                            .bold()
+                                    }
+                                }
+                                
+                                Text("")
+                            }
+                            
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Link(destination: URL(string: "https://splatoon3.ink/")!) {
+                                        Text("Splatoon3.ink")
                                             .bold()
                                     }
                                 }
