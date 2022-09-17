@@ -40,13 +40,21 @@ struct SchedulesView: View {
                 }
             }
             ToolbarItem(placement: .principal) {
-                Picker(selection: $mode, label: Text("")) {
-                    ForEach(Splatoon2ScheduleMode.allCases, id: \.self) { mode in
-                        Text(LocalizedStringKey(mode.shortName))
-                            .tag(mode.name)
+                VStack {
+                    // HACK: Offset for iOS 16.
+                    if #available(iOS 16.0, *) {
+                        Spacer()
+                            .frame(height: 6)
                     }
+                    
+                    Picker(selection: $mode, label: Text("")) {
+                        ForEach(Splatoon2ScheduleMode.allCases, id: \.self) { mode in
+                            Text(LocalizedStringKey(mode.shortName))
+                                .tag(mode.name)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
                 }
-                .pickerStyle(SegmentedPickerStyle())
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 if rule == "turfWar" {
