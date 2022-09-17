@@ -11,7 +11,7 @@ import WidgetKit
 struct SmallScheduleView: View {
     let current: Date
     let schedule: Schedule?
-    let gameMode: Schedule.GameMode
+    let mode: Mode
     var subview = false
     
     var body: some View {
@@ -20,11 +20,11 @@ struct SmallScheduleView: View {
                 .ignoresSafeArea(edges: .all)
             
             if let schedule = schedule {
-                SmallBaseView(text: absoluteTimeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime), indicatorText: schedule.gameMode.description, color: schedule.gameMode.accentColor) {
+                SmallBaseView(text: absoluteTimeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime), indicatorText: schedule.mode.name, color: schedule.mode.accentColor) {
                     HStack {
                         VStack(alignment: .leading) {
-                            BottomView(text: schedule.stageA.description)
-                            BottomView(text: schedule.stageB.description)
+                            BottomView(text: schedule.stages[0].name)
+                            BottomView(text: schedule.stages[1].name)
                         }
                         .layoutPriority(1)
                         
@@ -38,11 +38,11 @@ struct SmallScheduleView: View {
                         TopLeadingView(text: scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
                     }
                 } leadingRight: {
-                    TopTrailingView(text: subview ? schedule.shortDescription : schedule.rule.shorterDescription, color: schedule.gameMode.accentColor)
+                    TopTrailingView(text: subview ? schedule.localizedDescription : schedule.rule.shorterName, color: schedule.mode.accentColor)
                 }
                 .padding(subview ? [] : [.all])
             } else {
-                FailedToLoadView(accentColor: gameMode.accentColor)
+                FailedToLoadView(accentColor: mode.accentColor)
                     .padding()
             }
         }
@@ -51,7 +51,7 @@ struct SmallScheduleView: View {
 
 struct SmallScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        SmallScheduleView(current: Date(), schedule: SchedulePlaceholder, gameMode: SchedulePlaceholder.gameMode)
+        SmallScheduleView(current: Date(), schedule: SchedulePlaceholder, mode: SchedulePlaceholder.mode)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

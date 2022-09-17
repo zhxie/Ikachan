@@ -9,8 +9,9 @@ import SwiftUI
 import WidgetKit
 
 struct MediumShiftView: View {
-    var current: Date
-    var shift: Shift?
+    let current: Date
+    let shift: Shift?
+    let mode: Mode
     
     var body: some View {
         ZStack {
@@ -33,13 +34,13 @@ struct MediumShiftView: View {
                                 .frame(height: 8)
                             
                             VStack {
-                                StageView(image: shift.stage?.url ?? "", title: shift.stage?.description ?? "")
+                                StageView(stage: shift.stage!)
                                 
                                 HStack {
-                                    WeaponView(image: shift.weapons[0].url, title: shift.weapons[0].description)
-                                    WeaponView(image: shift.weapons[1].url, title: shift.weapons[1].description)
-                                    WeaponView(image: shift.weapons[2].url, title: shift.weapons[2].description)
-                                    WeaponView(image: shift.weapons[3].url, title: shift.weapons[3].description)
+                                    WeaponView(weapon: shift.weapons[0])
+                                    WeaponView(weapon: shift.weapons[1])
+                                    WeaponView(weapon: shift.weapons[2])
+                                    WeaponView(weapon: shift.weapons[3])
                                 }
                             }
                         }
@@ -48,12 +49,12 @@ struct MediumShiftView: View {
                         Spacer()
                             .frame(width: 15)
                         
-                        SmallShiftView(current: current, shift: shift, subview: true)
+                        SmallShiftView(current: current, shift: shift, mode: mode, subview: true)
                     }
                 }
                 .padding()
             } else {
-                FailedToLoadView(accentColor: Shift.accentColor)
+                FailedToLoadView(accentColor: mode.accentColor)
                     .padding()
             }
         }
@@ -63,7 +64,7 @@ struct MediumShiftView: View {
 struct MediumShiftView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            MediumShiftView(current: Date(), shift: ShiftPlaceholder)
+            MediumShiftView(current: Date(), shift: ShiftPlaceholder, mode: Splatoon2ShiftMode.salmonRun)
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
         }
     }

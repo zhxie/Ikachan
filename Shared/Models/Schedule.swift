@@ -13,6 +13,7 @@ protocol Schedule: Codable {
     var mode: Mode { get }
     var rule: Rule { get }
     var stages: [Stage] { get }
+    var localizedDescription: String { get }
 }
 
 struct Splatoon2Schedule: Schedule {
@@ -41,5 +42,13 @@ struct Splatoon2Schedule: Schedule {
     }
     var stages: [Stage] {
         return _stages
+    }
+    var localizedDescription: String {
+        switch _mode {
+        case .regular:
+            return _rule.shortName.localizedString
+        case .gachi, .league:
+            return String(format: "%@_%@".localizedString, mode.shorterName, rule.shorterName)
+        }
     }
 }

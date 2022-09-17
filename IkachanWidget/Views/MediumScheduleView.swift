@@ -11,7 +11,7 @@ import WidgetKit
 struct MediumScheduleView: View {
     var current: Date
     var schedule: Schedule?
-    var gameMode: Schedule.GameMode
+    var mode: Mode
     
     var body: some View {
         ZStack {
@@ -34,8 +34,8 @@ struct MediumScheduleView: View {
                                 .frame(height: 8)
                             
                             VStack {
-                                StageView(image: schedule.stageA.url, title: schedule.stageA.description)
-                                StageView(image: schedule.stageB.url, title: schedule.stageB.description)
+                                StageView(stage: schedule.stages[0])
+                                StageView(stage: schedule.stages[1])
                             }
                         }
                         .frame(width: g.size.width / 2 - 5)
@@ -43,12 +43,12 @@ struct MediumScheduleView: View {
                         Spacer()
                             .frame(width: 15)
                         
-                        SmallScheduleView(current: current, schedule: schedule, gameMode: gameMode, subview: true)
+                        SmallScheduleView(current: current, schedule: schedule, mode: mode, subview: true)
                     }
                 }
                 .padding()
             } else {
-                FailedToLoadView(accentColor: gameMode.accentColor)
+                FailedToLoadView(accentColor: mode.accentColor)
                     .padding()
             }
         }
@@ -57,7 +57,7 @@ struct MediumScheduleView: View {
 
 struct MediumScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        MediumScheduleView(current: Date(), schedule: SchedulePlaceholder, gameMode: SchedulePlaceholder.gameMode)
+        MediumScheduleView(current: Date(), schedule: SchedulePlaceholder, mode: SchedulePlaceholder.mode)
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

@@ -9,22 +9,21 @@ import SwiftUI
 import Kingfisher
 
 struct WeaponView: View {
-    let image: String
-    let title: String
+    let weapon: Weapon
     
     var body: some View {
         Rectangle()
             .fill(Color.clear)
             .aspectRatio(1, contentMode: .fit)
             .overlay(
-                KFImage(URL(string: image)!)
+                KFImage(URL(string: weapon.imageUrl)!)
                     .placeholder {
                         Circle()
                             .foregroundColor(Color(UIColor.secondarySystemBackground))
                     }
                     .resizedToFill()
                     .clipped()
-                    .accessibilityLabel(LocalizedStringKey(title))
+                    .accessibilityLabel(LocalizedStringKey(weapon.name))
             )
             .cornerRadius(7.5)
     }
@@ -32,6 +31,6 @@ struct WeaponView: View {
 
 struct WeaponView_Previews: PreviewProvider {
     static var previews: some View {
-        WeaponView(image: "http://www.apple.com", title: "")
+        WeaponView(weapon: Splatoon2Weapon.random)
     }
 }

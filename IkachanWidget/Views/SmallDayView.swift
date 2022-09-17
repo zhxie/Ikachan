@@ -54,7 +54,7 @@ struct SmallDayView: View {
                         
                         Spacer()
                         
-                        TopTrailingView(text: schedule.shortDescription, color: .white)
+                        TopTrailingView(text: schedule.localizedDescription, color: .white)
                             .layoutPriority(2)
                     }
                     .layoutPriority(1)
@@ -84,8 +84,8 @@ struct SmallDayView: View {
                     
                     HStack {
                         VStack(alignment: .leading) {
-                            BottomView(text: schedule.stageA.description, color: .white)
-                            BottomView(text: schedule.stageB.description, color: .white)
+                            BottomView(text: schedule.stages[0].name, color: .white)
+                            BottomView(text: schedule.stages[1].name, color: .white)
                         }
                         .layoutPriority(1)
                         

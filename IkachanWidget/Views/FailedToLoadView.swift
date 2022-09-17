@@ -42,9 +42,9 @@ struct FailedToLoadView: View {
 struct FailedToLoadView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            FailedToLoadView(accentColor: Schedule.GameMode.regular.accentColor)
+            FailedToLoadView(accentColor: Splatoon2ScheduleMode.regular.accentColor)
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-            FailedToLoadView(accentColor: Schedule.GameMode.regular.accentColor)
+            FailedToLoadView(accentColor: Splatoon2ScheduleMode.regular.accentColor)
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
         }
     }
