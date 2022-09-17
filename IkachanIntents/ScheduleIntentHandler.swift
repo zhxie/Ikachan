@@ -8,6 +8,13 @@
 import Intents
 
 class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
+    func resolveGame(for intent: ScheduleIntent, with completion: @escaping (INGameResolutionResult) -> Void) {
+        if intent.game == .unknown {
+            completion(INGameResolutionResult.needsValue())
+        } else {
+            completion(INGameResolutionResult.success(with: intent.game))
+        }
+    }
     func resolveMode(for intent: ScheduleIntent, with completion: @escaping (INModeResolutionResult) -> Void) {
         if intent.mode == .unknown {
             completion(INModeResolutionResult.needsValue())
@@ -15,7 +22,6 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
             completion(INModeResolutionResult.success(with: intent.mode))
         }
     }
-    
     func resolveRotation(for intent: ScheduleIntent, with completion: @escaping (RotationResolutionResult) -> Void) {
         if intent.rotation == .unknown {
             completion(RotationResolutionResult.needsValue())
@@ -27,10 +33,23 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
     override func handler(for intent: INIntent) -> Any {
         return self
     }
-    
+
     func handle(intent: ScheduleIntent, completion: @escaping (ScheduleIntentResponse) -> Void) {
-        let mode = IntentHandler.modeConvertTo(mode: intent.mode)
-        fetchSplatoon2Schedules { (schedules, error) in
+        let game = Game(intent: intent.game)
+        var mode: Mode?
+        switch game {
+        case .splatoon2:
+            mode = Splatoon2ScheduleMode(intent: intent.mode)
+        case .splatoon3:
+            mode = Splatoon3ScheduleMode(intent: intent.mode)
+        }
+        guard let mode = mode else {
+            completion(ScheduleIntentResponse(code: .failure, userActivity: nil))
+            
+            return
+        }
+        
+        fetchSchedules(game: game) { schedules, error in
             guard let schedules = schedules else {
                 completion(ScheduleIntentResponse(code: .failure, userActivity: nil))
 
@@ -38,9 +57,8 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.mode.name == IntentHandler.modeConvertTo(mode: intent.mode).name
+                schedule.mode.intent == intent.mode
             }
-            
             guard let schedule = filtered.at(index: IntentHandler.rotationConvertTo(rotation: intent.rotation)) else {
                 completion(ScheduleIntentResponse(code: .failure, userActivity: nil))
                 
@@ -54,7 +72,6 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
             case .next:
                 formatter = "next_schedule"
             }
-            
             let result = String(format: formatter.localizedIntentsString, mode.name.localizedIntentsString, schedule.rule.name.localizedIntentsString, schedule.stages[0].name.localizedIntentsString, schedule.stages[1].name.localizedIntentsString, intentsLongTimeSpan(current: Date(), startTime: schedule.startTime, endTime: schedule.endTime))
             
             let encoder = JSONEncoder()

@@ -8,7 +8,7 @@
 import UIKit
 import SwiftyJSON
 
-func fetchSplatoon2Schedules(completion:@escaping ([Splatoon2Schedule]?, Error?) -> Void) {
+private func fetchSplatoon2Schedules(completion: @escaping ([Splatoon2Schedule]?, Error?) -> Void) {
     do {
         var request = URLRequest(url: URL(string: Splatoon2InkScheduleURL)!)
         request.timeoutInterval = Timeout
@@ -49,8 +49,7 @@ func fetchSplatoon2Schedules(completion:@escaping ([Splatoon2Schedule]?, Error?)
         .resume()
     }
 }
-
-func fetchSplatoon2Shifts(completion:@escaping ([Splatoon2Shift]?, Error?) -> Void) {
+func fetchSplatoon2Shifts(completion: @escaping ([Splatoon2Shift]?, Error?) -> Void) {
     do {
         var request = URLRequest(url: URL(string: Splatoon2InkShiftURL)!)
         request.timeoutInterval = Timeout
@@ -103,8 +102,7 @@ func fetchSplatoon2Shifts(completion:@escaping ([Splatoon2Shift]?, Error?) -> Vo
         .resume()
     }
 }
-
-func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?, Error?) -> Void) {
+private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?, Error?) -> Void) {
     do {
         var request = URLRequest(url: URL(string: Splatoon3InkScheduleURL)!)
         request.timeoutInterval = Timeout
@@ -159,5 +157,14 @@ func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?, Error?
             }
         }
         .resume()
+    }
+}
+
+func fetchSchedules(game: Game, completion: @escaping ([Schedule]?, Error?) -> Void) {
+    switch game {
+    case .splatoon2:
+        return fetchSplatoon2Schedules(completion: completion)
+    case .splatoon3:
+        return fetchSplatoon3Schedules(completion: completion)
     }
 }

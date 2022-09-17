@@ -14,10 +14,27 @@ protocol Mode: Codable {
     var accentColor: Color { get }
 }
 
-enum Splatoon2ScheduleMode: String, Mode, CaseIterable {
+protocol ScheduleMode: Mode {
+    var intent: INMode { get }
+}
+
+enum Splatoon2ScheduleMode: String, ScheduleMode, CaseIterable {
     case regular = "regular"
     case gachi = "gachi"
     case league = "league"
+    
+    init?(intent: INMode) {
+        switch intent {
+        case .regular, .unknown:
+            self = .regular
+        case .gachi:
+            self = .gachi
+        case .league:
+            self = .league
+        case .bankaraChallenge, .bankaraOpen:
+            return nil
+        }
+    }
     
     var name: String {
         switch self {
@@ -59,6 +76,16 @@ enum Splatoon2ScheduleMode: String, Mode, CaseIterable {
             return Color(red: 232 / 255, green: 61 / 255, blue: 136 / 255)
         }
     }
+    var intent: INMode {
+        switch self {
+        case .regular:
+            return .regular
+        case .gachi:
+            return .gachi
+        case .league:
+            return .league
+        }
+    }
 }
 
 enum Splatoon2ShiftMode: String, Mode, CaseIterable {
@@ -78,18 +105,31 @@ enum Splatoon2ShiftMode: String, Mode, CaseIterable {
     }
 }
 
-enum Splatoon3ScheduleMode: String, Mode, CaseIterable {
+enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
     case regular = "regular"
-    case anarchyChallenge = "challenge"
-    case anarchyOpen = "open"
+    case bankaraChallenge = "challenge"
+    case bankaraOpen = "open"
+    
+    init?(intent: INMode) {
+        switch intent {
+        case .regular, .unknown:
+            self = .regular
+        case .bankaraChallenge:
+            self = .bankaraChallenge
+        case .bankaraOpen:
+            self = .bankaraOpen
+        case .gachi, .league:
+            return nil
+        }
+    }
     
     var name: String {
         switch self {
         case .regular:
             return "regular_battle"
-        case .anarchyChallenge:
+        case .bankaraChallenge:
             return "anarchy_battle_challenge"
-        case .anarchyOpen:
+        case .bankaraOpen:
             return "anarchy_battle_open"
         }
     }
@@ -97,9 +137,9 @@ enum Splatoon3ScheduleMode: String, Mode, CaseIterable {
         switch self {
         case .regular:
             return "regular"
-        case .anarchyChallenge:
+        case .bankaraChallenge:
             return "challenge"
-        case .anarchyOpen:
+        case .bankaraOpen:
             return "open"
         }
     }
@@ -107,9 +147,9 @@ enum Splatoon3ScheduleMode: String, Mode, CaseIterable {
         switch self {
         case .regular:
             return "regular"
-        case .anarchyChallenge:
+        case .bankaraChallenge:
             return "challenge_ss"
-        case .anarchyOpen:
+        case .bankaraOpen:
             return "open_ss"
         }
     }
@@ -117,8 +157,18 @@ enum Splatoon3ScheduleMode: String, Mode, CaseIterable {
         switch self {
         case .regular:
             return Color(red: 25 / 255, green: 215 / 255, blue: 25 / 255)
-        case .anarchyChallenge, .anarchyOpen:
+        case .bankaraChallenge, .bankaraOpen:
             return Color(red: 245 / 255, green: 73 / 255, blue: 16 / 255)
+        }
+    }
+    var intent: INMode {
+        switch self {
+        case .regular:
+            return .regular
+        case .bankaraChallenge:
+            return .bankaraChallenge
+        case .bankaraOpen:
+            return .bankaraOpen
         }
     }
 }

@@ -15,9 +15,8 @@ struct DayProvider: IntentTimelineProvider {
     }
     
     func getSnapshot(for configuration: DayIntent, in context: Context, completion: @escaping (DayEntry) -> Void) {
-        fetchSplatoon2Schedules { (schedules, error) in
+        fetchSchedules(game: Game(intent: configuration.game)) { schedules, error in
             let current = Date().floorToMin()
-            
             guard let schedules = schedules else {
                 completion(DayEntry(date: current, configuration: configuration, schedule: nil))
                 
@@ -25,9 +24,8 @@ struct DayProvider: IntentTimelineProvider {
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.mode.name == IntentHandler.modeConvertTo(mode: configuration.mode).name
+                schedule.mode.intent == configuration.mode
             }
-            
             if filtered.count > 0 {
                 let entry = DayEntry(date: current, configuration: configuration, schedule: filtered[0])
                 
@@ -39,11 +37,9 @@ struct DayProvider: IntentTimelineProvider {
     }
     
     func getTimeline(for configuration: DayIntent, in context: Context, completion: @escaping (Timeline<DayEntry>) -> Void) {
-        fetchSplatoon2Schedules { (schedules, error) in
+        fetchSchedules(game: Game(intent: configuration.game)) { schedules, error in
             var entries: [DayEntry] = []
-            
             var current = Date().floorToMin()
-            
             guard let schedules = schedules else {
                 let entry = DayEntry(date: current, configuration: configuration, schedule: nil)
 
@@ -53,9 +49,8 @@ struct DayProvider: IntentTimelineProvider {
             }
             
             let filtered = schedules.filter { schedule in
-                schedule.mode.name == IntentHandler.modeConvertTo(mode: configuration.mode).name
+                schedule.mode.intent == configuration.mode
             }
-            
             for schedule in filtered {
                 while current < schedule.endTime && entries.count < MaxWidgetEntryCount {
                     let entry = DayEntry(date: current, configuration: configuration, schedule: schedule)
@@ -68,7 +63,6 @@ struct DayProvider: IntentTimelineProvider {
                     break
                 }
             }
-            
             if entries.count > 0 {
                 if entries.last!.date < Date() {
                     let entry = DayEntry(date: current, configuration: configuration, schedule: nil)

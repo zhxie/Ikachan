@@ -10,7 +10,7 @@ import SwiftUI
 protocol Schedule: Codable {
     var startTime: Date { get set }
     var endTime: Date { get set }
-    var mode: Mode { get }
+    var mode: ScheduleMode { get }
     var rule: Rule { get }
     var stages: [Stage] { get }
     var localizedDescription: String { get }
@@ -34,7 +34,7 @@ struct Splatoon2Schedule: Schedule {
     }
     var startTime: Date
     var endTime: Date
-    var mode: Mode {
+    var mode: ScheduleMode {
         return _mode
     }
     var rule: Rule {
@@ -71,7 +71,7 @@ struct Splatoon3Schedule: Schedule {
     }
     var startTime: Date
     var endTime: Date
-    var mode: Mode {
+    var mode: ScheduleMode {
         return _mode
     }
     var rule: Rule {
@@ -84,7 +84,7 @@ struct Splatoon3Schedule: Schedule {
         switch _mode {
         case .regular:
             return _rule.shortName.localizedString
-        case .anarchyChallenge, .anarchyOpen:
+        case .bankaraChallenge, .bankaraOpen:
             return String(format: "%@_%@".localizedString, mode.shorterName.localizedString, rule.shorterName.localizedString)
         }
     }

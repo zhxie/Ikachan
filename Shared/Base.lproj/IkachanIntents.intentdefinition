@@ -6,6 +6,49 @@
 	<array>
 		<dict>
 			<key>INEnumDisplayName</key>
+			<string>INGame</string>
+			<key>INEnumDisplayNameID</key>
+			<string>ToHVj4</string>
+			<key>INEnumGeneratesHeader</key>
+			<true/>
+			<key>INEnumName</key>
+			<string>INGame</string>
+			<key>INEnumType</key>
+			<string>Regular</string>
+			<key>INEnumValues</key>
+			<array>
+				<dict>
+					<key>INEnumValueDisplayName</key>
+					<string>unknown</string>
+					<key>INEnumValueDisplayNameID</key>
+					<string>Z7VZnW</string>
+					<key>INEnumValueName</key>
+					<string>unknown</string>
+				</dict>
+				<dict>
+					<key>INEnumValueDisplayName</key>
+					<string>splatoon 2</string>
+					<key>INEnumValueDisplayNameID</key>
+					<string>pwAAGk</string>
+					<key>INEnumValueIndex</key>
+					<integer>1</integer>
+					<key>INEnumValueName</key>
+					<string>splatoon2</string>
+				</dict>
+				<dict>
+					<key>INEnumValueDisplayName</key>
+					<string>splatoon 3</string>
+					<key>INEnumValueDisplayNameID</key>
+					<string>Q5vXYy</string>
+					<key>INEnumValueIndex</key>
+					<integer>2</integer>
+					<key>INEnumValueName</key>
+					<string>splatoon3</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>INEnumDisplayName</key>
 			<string>INMode</string>
 			<key>INEnumDisplayNameID</key>
 			<string>RTR7w4</string>
@@ -54,6 +97,26 @@
 					<integer>3</integer>
 					<key>INEnumValueName</key>
 					<string>league</string>
+				</dict>
+				<dict>
+					<key>INEnumValueDisplayName</key>
+					<string>bankara challenge</string>
+					<key>INEnumValueDisplayNameID</key>
+					<string>fabMnB</string>
+					<key>INEnumValueIndex</key>
+					<integer>4</integer>
+					<key>INEnumValueName</key>
+					<string>bankaraChallenge</string>
+				</dict>
+				<dict>
+					<key>INEnumValueDisplayName</key>
+					<string>bankara open</string>
+					<key>INEnumValueDisplayNameID</key>
+					<string>5utC7w</string>
+					<key>INEnumValueIndex</key>
+					<integer>5</integer>
+					<key>INEnumValueName</key>
+					<string>bankaraOpen</string>
 				</dict>
 			</array>
 		</dict>
@@ -125,7 +188,7 @@
 			<key>INIntentIneligibleForSuggestions</key>
 			<true/>
 			<key>INIntentLastParameterTag</key>
-			<integer>2</integer>
+			<integer>4</integer>
 			<key>INIntentName</key>
 			<string>Day</string>
 			<key>INIntentParameters</key>
@@ -134,11 +197,71 @@
 					<key>INIntentParameterConfigurable</key>
 					<true/>
 					<key>INIntentParameterDisplayName</key>
+					<string>Game</string>
+					<key>INIntentParameterDisplayNameID</key>
+					<string>Lez4pk</string>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>1</integer>
+					<key>INIntentParameterEnumType</key>
+					<string>INGame</string>
+					<key>INIntentParameterEnumTypeNamespace</key>
+					<string>AL54Nd</string>
+					<key>INIntentParameterMetadata</key>
+					<dict>
+						<key>INIntentParameterMetadataDefaultValue</key>
+						<string>splatoon3</string>
+					</dict>
+					<key>INIntentParameterName</key>
+					<string>game</string>
+					<key>INIntentParameterPromptDialogs</key>
+					<array>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Configuration</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Primary</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>There are ${count} options matching ‘${game}’.</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>YWOXrC</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>DisambiguationIntroduction</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>Just to confirm, you wanted ‘${game}’?</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>9FuCXE</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Confirmation</string>
+						</dict>
+					</array>
+					<key>INIntentParameterTag</key>
+					<integer>4</integer>
+					<key>INIntentParameterType</key>
+					<string>Integer</string>
+				</dict>
+				<dict>
+					<key>INIntentParameterConfigurable</key>
+					<true/>
+					<key>INIntentParameterDisplayName</key>
 					<string>Mode</string>
 					<key>INIntentParameterDisplayNameID</key>
 					<string>LwDtQE</string>
 					<key>INIntentParameterDisplayPriority</key>
-					<integer>1</integer>
+					<integer>2</integer>
 					<key>INIntentParameterEnumType</key>
 					<string>INMode</string>
 					<key>INIntentParameterEnumTypeNamespace</key>
@@ -227,67 +350,90 @@
 			<string>XALQ6Y</string>
 			<key>INIntentEligibleForWidgets</key>
 			<true/>
-			<key>INIntentKeyParameter</key>
-			<string>mode</string>
+			<key>INIntentIneligibleForSuggestions</key>
+			<true/>
 			<key>INIntentLastParameterTag</key>
-			<integer>8</integer>
+			<integer>10</integer>
 			<key>INIntentManagedParameterCombinations</key>
 			<dict>
-				<key>mode,rotation</key>
+				<key>mode,rotation,game</key>
 				<dict>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>${rotation} schedule of ${mode}</string>
+					<string>${rotation} schedule of ${mode} in ${game}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>pYS45i</string>
 				</dict>
 			</dict>
 			<key>INIntentName</key>
 			<string>Schedule</string>
-			<key>INIntentParameterCombinations</key>
-			<dict>
-				<key></key>
-				<dict>
-					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<true/>
-					<key>INIntentParameterCombinationTitle</key>
-					<string>View schedules</string>
-					<key>INIntentParameterCombinationTitleID</key>
-					<string>6cLrqJ</string>
-				</dict>
-				<key>mode</key>
-				<dict>
-					<key>INIntentParameterCombinationIsPrimary</key>
-					<true/>
-					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<true/>
-					<key>INIntentParameterCombinationTitle</key>
-					<string>View schedules of ${mode}</string>
-					<key>INIntentParameterCombinationTitleID</key>
-					<string>ffldub</string>
-				</dict>
-				<key>mode,rotation</key>
-				<dict>
-					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<true/>
-					<key>INIntentParameterCombinationTitle</key>
-					<string>View schedules of ${mode}</string>
-					<key>INIntentParameterCombinationTitleID</key>
-					<string>1rsv8F</string>
-				</dict>
-				<key>rotation</key>
-				<dict>
-					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<true/>
-					<key>INIntentParameterCombinationTitle</key>
-					<string>View schedules</string>
-					<key>INIntentParameterCombinationTitleID</key>
-					<string>WaDZel</string>
-				</dict>
-			</dict>
 			<key>INIntentParameters</key>
 			<array>
+				<dict>
+					<key>INIntentParameterConfigurable</key>
+					<true/>
+					<key>INIntentParameterCustomDisambiguation</key>
+					<true/>
+					<key>INIntentParameterDisplayName</key>
+					<string>Game</string>
+					<key>INIntentParameterDisplayNameID</key>
+					<string>rpKaAQ</string>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>1</integer>
+					<key>INIntentParameterEnumType</key>
+					<string>INGame</string>
+					<key>INIntentParameterEnumTypeNamespace</key>
+					<string>AL54Nd</string>
+					<key>INIntentParameterMetadata</key>
+					<dict>
+						<key>INIntentParameterMetadataDefaultValue</key>
+						<string>splatoon3</string>
+					</dict>
+					<key>INIntentParameterName</key>
+					<string>game</string>
+					<key>INIntentParameterPromptDialogs</key>
+					<array>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Configuration</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Primary</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>There are ${count} options matching ‘${game}’.</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>0QlgZr</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>DisambiguationIntroduction</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>Just to confirm, you wanted ‘${game}’?</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>jjWzZl</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Confirmation</string>
+						</dict>
+					</array>
+					<key>INIntentParameterSupportsResolution</key>
+					<true/>
+					<key>INIntentParameterTag</key>
+					<integer>10</integer>
+					<key>INIntentParameterType</key>
+					<string>Integer</string>
+				</dict>
 				<dict>
 					<key>INIntentParameterConfigurable</key>
 					<true/>
@@ -298,7 +444,7 @@
 					<key>INIntentParameterDisplayNameID</key>
 					<string>2z9Dkd</string>
 					<key>INIntentParameterDisplayPriority</key>
-					<integer>1</integer>
+					<integer>2</integer>
 					<key>INIntentParameterEnumType</key>
 					<string>INMode</string>
 					<key>INIntentParameterEnumTypeNamespace</key>
@@ -362,7 +508,7 @@
 					<key>INIntentParameterDisplayNameID</key>
 					<string>3ADlh5</string>
 					<key>INIntentParameterDisplayPriority</key>
-					<integer>2</integer>
+					<integer>3</integer>
 					<key>INIntentParameterEnumType</key>
 					<string>Rotation</string>
 					<key>INIntentParameterEnumTypeNamespace</key>
@@ -441,18 +587,36 @@
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
-				<integer>13</integer>
+				<integer>15</integer>
 				<key>INIntentResponseOutput</key>
 				<string>result</string>
 				<key>INIntentResponseParameters</key>
 				<array>
 					<dict>
 						<key>INIntentResponseParameterDisplayName</key>
+						<string>Game</string>
+						<key>INIntentResponseParameterDisplayNameID</key>
+						<string>sZ3qh2</string>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>1</integer>
+						<key>INIntentResponseParameterEnumType</key>
+						<string>INGame</string>
+						<key>INIntentResponseParameterEnumTypeNamespace</key>
+						<string>AL54Nd</string>
+						<key>INIntentResponseParameterName</key>
+						<string>game</string>
+						<key>INIntentResponseParameterTag</key>
+						<integer>15</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>Integer</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseParameterDisplayName</key>
 						<string>Mode</string>
 						<key>INIntentResponseParameterDisplayNameID</key>
 						<string>vtf9zV</string>
 						<key>INIntentResponseParameterDisplayPriority</key>
-						<integer>1</integer>
+						<integer>2</integer>
 						<key>INIntentResponseParameterEnumType</key>
 						<string>INMode</string>
 						<key>INIntentResponseParameterEnumTypeNamespace</key>
@@ -470,7 +634,7 @@
 						<key>INIntentResponseParameterDisplayNameID</key>
 						<string>n2daln</string>
 						<key>INIntentResponseParameterDisplayPriority</key>
-						<integer>2</integer>
+						<integer>3</integer>
 						<key>INIntentResponseParameterEnumType</key>
 						<string>Rotation</string>
 						<key>INIntentResponseParameterEnumTypeNamespace</key>
@@ -488,7 +652,7 @@
 						<key>INIntentResponseParameterDisplayNameID</key>
 						<string>XGNvY7</string>
 						<key>INIntentResponseParameterDisplayPriority</key>
-						<integer>3</integer>
+						<integer>4</integer>
 						<key>INIntentResponseParameterName</key>
 						<string>result</string>
 						<key>INIntentResponseParameterTag</key>
@@ -518,6 +682,8 @@
 			<string>LTajCZ</string>
 			<key>INIntentEligibleForWidgets</key>
 			<true/>
+			<key>INIntentIneligibleForSuggestions</key>
+			<true/>
 			<key>INIntentLastParameterTag</key>
 			<integer>2</integer>
 			<key>INIntentManagedParameterCombinations</key>
@@ -536,29 +702,6 @@
 			</dict>
 			<key>INIntentName</key>
 			<string>Shift</string>
-			<key>INIntentParameterCombinations</key>
-			<dict>
-				<key></key>
-				<dict>
-					<key>INIntentParameterCombinationIsPrimary</key>
-					<true/>
-					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<true/>
-					<key>INIntentParameterCombinationTitle</key>
-					<string>View shifts of Salmon Run</string>
-					<key>INIntentParameterCombinationTitleID</key>
-					<string>0dhvDV</string>
-				</dict>
-				<key>rotation</key>
-				<dict>
-					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<true/>
-					<key>INIntentParameterCombinationTitle</key>
-					<string>View shifts of Salmon Run</string>
-					<key>INIntentParameterCombinationTitleID</key>
-					<string>BvudQ0</string>
-				</dict>
-			</dict>
 			<key>INIntentParameters</key>
 			<array>
 				<dict>

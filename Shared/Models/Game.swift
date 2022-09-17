@@ -11,6 +11,15 @@ enum Game: Int, CaseIterable, Codable {
     case splatoon2 = 2
     case splatoon3 = 3
     
+    init(intent: INGame) {
+        switch intent {
+        case .splatoon2:
+            self = .splatoon2
+        case .splatoon3, .unknown:
+            self = .splatoon3
+        }
+    }
+    
     var name: String {
         switch self {
         case .splatoon2:
@@ -33,6 +42,14 @@ enum Game: Int, CaseIterable, Codable {
             return Splatoon2Rule.allCases
         case .splatoon3:
             return Splatoon3Rule.allCases
+        }
+    }
+    var intent: INGame {
+        switch self {
+        case .splatoon2:
+            return .splatoon2
+        case .splatoon3:
+            return .splatoon3
         }
     }
 }

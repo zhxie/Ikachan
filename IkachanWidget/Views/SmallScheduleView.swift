@@ -11,7 +11,7 @@ import WidgetKit
 struct SmallScheduleView: View {
     let current: Date
     let schedule: Schedule?
-    let mode: Mode
+    let mode: Mode?
     var subview = false
     
     var body: some View {
@@ -42,7 +42,7 @@ struct SmallScheduleView: View {
                 }
                 .padding(subview ? [] : [.all])
             } else {
-                FailedToLoadView(accentColor: mode.accentColor)
+                FailedToLoadView(accentColor: mode?.accentColor ?? Color(UIColor.label))
                     .padding()
             }
         }

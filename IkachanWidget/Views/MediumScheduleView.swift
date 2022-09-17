@@ -11,7 +11,7 @@ import WidgetKit
 struct MediumScheduleView: View {
     var current: Date
     var schedule: Schedule?
-    var mode: Mode
+    var mode: Mode?
     
     var body: some View {
         ZStack {
@@ -48,7 +48,7 @@ struct MediumScheduleView: View {
                 }
                 .padding()
             } else {
-                FailedToLoadView(accentColor: mode.accentColor)
+                FailedToLoadView(accentColor: mode?.accentColor ?? Color(UIColor.label))
                     .padding()
             }
         }

@@ -16,33 +16,27 @@ final class ModelData: ObservableObject {
     
     var isSchedulesUpdating = false
     var isShiftsUpdating = false
-    
-    private func schedulesHandler(schedules: [Schedule]?, error: Error?) {
-        guard let schedules = schedules else {
-            DispatchQueue.main.async {
-                self.isSchedulesUpdating = false
-            }
-            
-            return
-        }
-        
-        DispatchQueue.main.async {
-            self.schedules = schedules
-            
-            self.isSchedulesUpdating = false
-        }
-    }
+
     func updateSchedules() {
         if isSchedulesUpdating {
             return
         } else {
             isSchedulesUpdating = true
             
-            switch game {
-            case .splatoon2:
-                return fetchSplatoon2Schedules(completion: schedulesHandler)
-            case .splatoon3:
-                return fetchSplatoon3Schedules(completion: schedulesHandler)
+            fetchSchedules(game: game) { schedules, error in
+                guard let schedules = schedules else {
+                    DispatchQueue.main.async {
+                        self.isSchedulesUpdating = false
+                    }
+                    
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self.schedules = schedules
+                    
+                    self.isSchedulesUpdating = false
+                }
             }
         }
     }
