@@ -502,10 +502,10 @@
 			isa = PBXGroup;
 			children = (
 				E468B7AC25B34AFC001254FE /* Constant.swift */,
-				E45371DE28D1C5E200E3FC66 /* Stage.swift */,
-				E4BC7AD328D2260B00FDBF7F /* Rule.swift */,
 				E45371E328D1D5E800E3FC66 /* Mode.swift */,
+				E4BC7AD328D2260B00FDBF7F /* Rule.swift */,
 				E49BD9DF28D5837B0034E0B4 /* Game.swift */,
+				E45371DE28D1C5E200E3FC66 /* Stage.swift */,
 				E477990125B1F1F600F8AE9F /* Schedule.swift */,
 				E477990C25B203F900F8AE9F /* Weapon.swift */,
 				E477990925B2029C00F8AE9F /* Shift.swift */,
