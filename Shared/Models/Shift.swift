@@ -44,11 +44,11 @@ struct Splatoon3Shift: Shift {
     private var _stage: Splatoon3ShiftStage?
     private var _weapons: [Splatoon3Weapon]
     
-    init(startTime: Date, endTime: Date, stage: Splatoon3ShiftStage?) {
+    init(startTime: Date, endTime: Date, stage: Splatoon3ShiftStage?, weapons: [Splatoon3Weapon]) {
         self.startTime = startTime
         self.endTime = endTime
         _stage = stage
-        _weapons = [.unknown, .unknown, .unknown, .unknown]
+        _weapons = weapons
     }
     
     var startTime: Date

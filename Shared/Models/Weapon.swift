@@ -309,19 +309,9 @@ enum Splatoon2Weapon: Int, Weapon, CaseIterable {
 }
 
 // TODO: Unknown Splatoon 3 weapons.
-enum Splatoon3Weapon: Int, Weapon, CaseIterable {
-    case unknown = -1
-    
+struct Splatoon3Weapon: Weapon {
     var name: String {
-        switch self {
-        case .unknown:
-            return "unknown"
-        }
+        return "unknown"
     }
-    var imageUrl: String {
-        switch self {
-        case .unknown:
-            return Splatoon2Weapon.random.imageUrl
-        }
-    }
+    var imageUrl: String
 }
