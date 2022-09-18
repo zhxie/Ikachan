@@ -63,4 +63,13 @@ final class ModelData: ObservableObject {
             }
         }
     }
+    
+    func changeGame() {
+        switch game {
+        case .splatoon2:
+            game = .splatoon3
+        case .splatoon3:
+            game = .splatoon2
+        }
+    }
 }

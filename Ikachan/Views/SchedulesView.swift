@@ -39,50 +39,47 @@ struct SchedulesView: View {
                 }
             }
             ToolbarItem(placement: .principal) {
-                VStack {
-                    Picker(selection: $mode, label: Text("")) {
-                        ForEach(0..<modelData.game.modes.count, id: \.self) { i in
-                            Text(LocalizedStringKey(modelData.game.modes[i].shortName))
-                                .tag(modelData.game.modes[i].name)
-                        }
+                Picker(selection: $mode, label: Text("")) {
+                    ForEach(0..<modelData.game.modes.count, id: \.self) { i in
+                        Text(LocalizedStringKey(modelData.game.modes[i].shortName))
+                            .tag(modelData.game.modes[i].name)
                     }
-                    .pickerStyle(SegmentedPickerStyle())
+                }
+                .pickerStyle(SegmentedPickerStyle())
+            }
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    Impact(style: .light)
+                    modelData.changeGame()
+                    update()
+                } label: {
+                    Image(systemName: modelData.game.image)
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                Menu {
-                    ForEach(Game.allCases, id: \.self) { game in
-                        Button(action: {
-                            Impact(style: .light)
-                            modelData.game = game
-                            update()
-                        }) {
-                            Text(LocalizedStringKey(game.name))
-                            Image(systemName: String(format: "%d.circle", game.rawValue))
-                                .imageScale(.large)
+                if rule == "" {
+                    Menu(content: {
+                        ForEach(0..<modelData.game.rules.count, id: \.self) { i in
+                            Button(action: {
+                                Impact(style: .light)
+                                self.rule = modelData.game.rules[i].name
+                            }) {
+                                Text(LocalizedStringKey(modelData.game.rules[i].name))
+                                Image(modelData.game.rules[i].image)
+                            }
                         }
-                    }
-                    Divider()
-                    Button(action: {
-                        Impact(style: .light)
-                        self.rule = ""
                     }) {
-                        Text(LocalizedStringKey("all"))
-                        Image(systemName: "line.3.horizontal.decrease.circle")
+                        Image(systemName: "line.horizontal.3.decrease.circle")
                             .imageScale(.large)
                     }
-                    ForEach(0..<modelData.game.rules.count, id: \.self) { i in
-                        Button(action: {
-                            Impact(style: .light)
-                            self.rule = modelData.game.rules[i].name
-                        }) {
-                            Text(LocalizedStringKey(modelData.game.rules[i].name))
-                            Image(modelData.game.rules[i].image)
-                        }
+                    .accessibilityLabel("filter")
+                } else {
+                    Button(action: {
+                        Impact(style: .light)
+                        rule = "turfWar"
+                    }) {
+                        Image(systemName: "line.horizontal.3.decrease.circle.fill")
                     }
-                } label: {
-                    Image(systemName: "ellipsis.circle")
-                        .imageScale(.large)
                 }
             }
         }

@@ -35,6 +35,15 @@ struct ShiftsView: View {
                     }
                 }
             }
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    Impact(style: .light)
+                    modelData.changeGame()
+                    update()
+                } label: {
+                    Image(systemName: modelData.game.image)
+                }
+            }
         }
         .onAppear(perform: {
             update()

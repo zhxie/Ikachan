@@ -52,4 +52,12 @@ enum Game: Int, CaseIterable, Codable {
             return .splatoon3
         }
     }
+    var image: String {
+        switch self {
+        case .splatoon2:
+            return "2.circle"
+        case .splatoon3:
+            return "3.circle"
+        }
+    }
 }
