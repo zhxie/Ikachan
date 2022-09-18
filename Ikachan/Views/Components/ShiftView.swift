@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ShiftView: View {
-    let game: Game
     let shift: Shift
     let sequence: Int
     
@@ -49,15 +48,10 @@ struct ShiftView: View {
     var title: String {
         switch sequence {
         case 0:
-            switch game {
-            case .splatoon2:
-                if shift.startTime < Date() {
-                    return "job_open"
-                } else {
-                    return "job_soon"
-                }
-            case .splatoon3:
-                return "current"
+            if shift.startTime < Date() {
+                return "job_open"
+            } else {
+                return "job_soon"
             }
         case 1:
             return "job_next"
@@ -79,6 +73,6 @@ struct ShiftView: View {
 
 struct ShiftView_Previews: PreviewProvider {
     static var previews: some View {
-        ShiftView(game: .splatoon2, shift: ShiftPlaceholder, sequence: 0)
+        ShiftView(shift: ShiftPlaceholder, sequence: 0)
     }
 }

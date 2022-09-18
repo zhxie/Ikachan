@@ -44,11 +44,10 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
             
             completion(true, parameters, desiredSize)
         } else if let shiftData = shiftData {
-            let game = (interaction.intentResponse as! ShiftIntentResponse).game
             let decoder = JSONDecoder()
             let shift = try! decoder.decode(Splatoon2Shift.self, from: Data(base64Encoded: shiftData)!)
             
-            let controller = UIHostingController(rootView: ShiftView(game: Game(intent: game), shift: shift, sequence: 0).animation(.default).padding())
+            let controller = UIHostingController(rootView: ShiftView(shift: shift, sequence: 0).animation(.default).padding())
             addChild(controller)
             controller.view.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(controller.view)
