@@ -58,7 +58,7 @@ struct ShiftProvider: IntentTimelineProvider {
             var details = shifts.filter { shift in
                 shift.stage != nil
             }
-            // HACK: Since there're only limited detailed shifts at once, it's ok to pop the former one.
+            // HACK: Since there are at least more than 2 detailed shifts at once, it's ok to pop the former one.
             details = details.suffix(details.count - IntentHandler.rotationConvertTo(rotation: configuration.rotation))
             for shift in details {
                 while current < shift.endTime && entries.count < MaxWidgetEntryCount {
@@ -129,16 +129,35 @@ struct ShiftWidgetEntryView: View {
     
     @ViewBuilder
     var body: some View {
-        switch family {
-        case .systemSmall:
-            SmallShiftView(current: entry.date, shift: entry.shift, mode: Splatoon2ShiftMode.salmonRun)
-        default:
-            MediumShiftView(current: entry.date, shift: entry.shift, mode: Splatoon2ShiftMode.salmonRun)
+        if #available(iOSApplicationExtension 16.0, *) {
+            switch family {
+            case .accessoryCircular:
+                AccessoryCircularShiftView(current: entry.date, shift: entry.shift, mode: mode)
+            case .systemSmall:
+                SmallShiftView(current: entry.date, shift: entry.shift, mode: mode)
+            default:
+                MediumShiftView(current: entry.date, shift: entry.shift, mode: mode)
+            }
+        } else {
+            switch family {
+            case .systemSmall:
+                SmallShiftView(current: entry.date, shift: entry.shift, mode: mode)
+            default:
+                MediumShiftView(current: entry.date, shift: entry.shift, mode: mode)
+            }
         }
     }
     
     var game: Game {
         Game(intent: entry.configuration.game)
+    }
+    var mode: Mode {
+        switch game {
+        case .splatoon2:
+            return Splatoon2ShiftMode.salmonRun
+        case .splatoon3:
+            return Splatoon3ShiftMode.salmonRun
+        }
     }
 }
 
@@ -146,18 +165,32 @@ struct ShiftWidget: Widget {
     let kind = "ShiftWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent:ShiftIntent.self, provider: ShiftProvider()) { entry in
-            ShiftWidgetEntryView(entry: entry)
+        if #available(iOSApplicationExtension 16.0, *) {
+            return IntentConfiguration(kind: kind, intent:ShiftIntent.self, provider: ShiftProvider()) { entry in
+                ShiftWidgetEntryView(entry: entry)
+            }
+            .configurationDisplayName("shift")
+            .description("shift_widget_description")
+            .supportedFamilies([.accessoryCircular, .systemSmall, .systemMedium])
+        } else {
+            return IntentConfiguration(kind: kind, intent:ShiftIntent.self, provider: ShiftProvider()) { entry in
+                ShiftWidgetEntryView(entry: entry)
+            }
+            .configurationDisplayName("shift")
+            .description("shift_widget_description")
+            .supportedFamilies([.systemSmall, .systemMedium])
         }
-        .configurationDisplayName("shift")
-        .description("shift_widget_description")
-        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
 struct ShiftWidget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
+            if #available(iOSApplicationExtension 16.0, *) {
+                ShiftWidgetEntryView(entry: ShiftEntry(date: Date(), configuration: ShiftIntent(), shift: ShiftPlaceholder))
+                    .previewContext(WidgetPreviewContext(family: .accessoryCircular))
+                    .previewDisplayName("Circular")
+            }
             ShiftWidgetEntryView(entry: ShiftEntry(date: Date(), configuration: ShiftIntent(), shift: ShiftPlaceholder))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
             ShiftWidgetEntryView(entry: ShiftEntry(date: Date(), configuration: ShiftIntent(), shift: ShiftPlaceholder))

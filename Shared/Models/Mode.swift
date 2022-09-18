@@ -18,6 +18,10 @@ protocol ScheduleMode: Mode {
     var intent: INMode { get }
 }
 
+protocol ShiftMode: Mode {
+    var image: String { get }
+}
+
 enum Splatoon2ScheduleMode: String, ScheduleMode, CaseIterable {
     case regular = "regular"
     case gachi = "gachi"
@@ -88,7 +92,7 @@ enum Splatoon2ScheduleMode: String, ScheduleMode, CaseIterable {
     }
 }
 
-enum Splatoon2ShiftMode: String, Mode, CaseIterable {
+enum Splatoon2ShiftMode: String, ShiftMode, CaseIterable {
     case salmonRun = "salmon_run"
     
     var name: String {
@@ -102,6 +106,9 @@ enum Splatoon2ShiftMode: String, Mode, CaseIterable {
     }
     var accentColor: Color {
         return Color(red: 252 / 255, green: 86 / 255, blue: 32 / 255)
+    }
+    var image: String {
+        return rawValue + "_2"
     }
 }
 

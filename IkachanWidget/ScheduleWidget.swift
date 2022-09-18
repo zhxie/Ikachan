@@ -115,37 +115,9 @@ struct ScheduleWidgetEntryView : View {
         if #available(iOSApplicationExtension 16.0, *) {
             switch family {
             case .accessoryCircular:
-                Gauge(value: percent) {
-                    Text(LocalizedStringKey(mode?.shorterName ?? "error"))
-                } currentValueLabel: {
-                    // TODO: Image should be replaced to SVG text.
-                    // TODO: Lacking accesibility.
-                    Image(entry.schedule?.rule.image ?? "inkling_splatted")
-                        .resizedToFit()
-                        .frame(width: 28, height: 28)
-                }
-                .gaugeStyle(.accessoryCircular)
+                AccessoryCircularScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
             case .accessoryRectangular:
-                if let schedule = entry.schedule {
-                    VStack (alignment: .leading, spacing: 0) {
-                        HStack (spacing: 4) {
-                            // TODO: Image should be replaced to SVG text.
-                            Image(schedule.rule.image)
-                                .resizedToFit()
-                                .frame(width: 16, height: 16)
-                            
-                            Text(LocalizedStringKey(schedule.localizedDescription))
-                                .font(.headline)
-                                .widgetAccentable()
-                        }
-                        
-                        Text(LocalizedStringKey(schedule.stages[0].name))
-                        Text(LocalizedStringKey(schedule.stages[1].name))
-                    }
-                    .frame(alignment: .leading)
-                } else {
-                    FailedToLoadView(accentColor: .white, transparent: true)
-                }
+                AccessoryRectangularScheduleView(schedule: entry.schedule)
             case .accessoryInline:
                 Text(LocalizedStringKey(entry.schedule?.localizedDescription ?? "error"))
             case .systemSmall:
@@ -173,16 +145,6 @@ struct ScheduleWidgetEntryView : View {
         case .splatoon3:
             return Splatoon3ScheduleMode(intent: entry.configuration.mode)
         }
-    }
-    var percent: Double {
-        guard let schedule = entry.schedule else {
-            return 0
-        }
-        
-        let current = Date() - schedule.startTime
-        let total = schedule.endTime - schedule.startTime
-        
-        return min(max(current / total, 0), 1)
     }
 }
 

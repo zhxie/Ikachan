@@ -10,7 +10,7 @@ import SwiftUI
 protocol Shift: Codable {
     var startTime: Date { get set }
     var endTime: Date { get set }
-    var mode: Mode { get }
+    var mode: ShiftMode { get }
     var stage: Stage? { get }
     var weapons: [Weapon] { get }
 }
@@ -28,7 +28,7 @@ struct Splatoon2Shift: Shift {
     
     var startTime: Date
     var endTime: Date
-    var mode: Mode {
+    var mode: ShiftMode {
         return Splatoon2ShiftMode.salmonRun
     }
     var stage: Stage? {
@@ -53,7 +53,7 @@ struct Splatoon3Shift: Shift {
     
     var startTime: Date
     var endTime: Date
-    var mode: Mode {
+    var mode: ShiftMode {
         return Splatoon3ShiftMode.salmonRun
     }
     var stage: Stage? {
