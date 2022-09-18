@@ -53,7 +53,7 @@ class ShiftIntentHandler: IntentHandler, ShiftIntentHandling {
             
             let encoder = JSONEncoder()
             let data = try! encoder.encode(shift)
-            let activity = NSUserActivity(activityType: IkachanShiftsActivity)
+            let activity = NSUserActivity(activityType: IkachanActivity)
             activity.userInfo?["shift"] = data.base64EncodedString()
             let response = ShiftIntentResponse.success(result: result)
             response.game = intent.game

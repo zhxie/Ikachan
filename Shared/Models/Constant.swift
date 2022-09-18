@@ -21,8 +21,6 @@ let ShiftPlaceholder = Splatoon2Shift(startTime: Date(timeIntervalSince1970: 306
 
 let IkachanScheme = "ikachan"
 let IkachanActivity = "name.sketch.Ikachan"
-let IkachanSchedulesActivity = IkachanActivity + ".schedules"
-let IkachanShiftsActivity = IkachanActivity + ".shifts"
 
 // Widget.
 let MaxWidgetEntryCount = 60
