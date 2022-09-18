@@ -17,9 +17,25 @@ struct AccessoryCircularBaseView: View {
             Gauge(value: value) {
                 Text(LocalizedStringKey(text))
             } currentValueLabel: {
-                Image(image)
-                    .resizedToFit()
-                    .frame(width: 28, height: 28)
+                GeometryReader { g in
+                    VStack {
+                        Spacer()
+                        
+                        HStack {
+                            Spacer()
+                            
+                            Image(image)
+                                .resizedToFit()
+                                .frame(height: g.size.height * 0.67)
+                                .layoutPriority(1)
+                            
+                            Spacer()
+                        }
+                        .layoutPriority(1)
+                        
+                        Spacer()
+                    }
+                }
             }
             .gaugeStyle(.accessoryCircular)
         } else {
