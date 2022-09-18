@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShiftView: View {
     let shift: Shift
-    let isFirst: Bool
+    let sequence: Int
     
     var body: some View {
         ScheduleBaseView(title: title, subtitle: status(startTime: shift.startTime, endTime: shift.endTime), image: "salmon_run") {
@@ -46,18 +46,17 @@ struct ShiftView: View {
     }
     
     var title: String {
-        if shift.stage == nil {
-            return "job_future"
-        } else {
-            if isFirst {
-                if shift.startTime < Date() {
-                    return "job_open"
-                } else {
-                    return "job_soon"
-                }
+        switch sequence {
+        case 0:
+            if shift.startTime < Date() {
+                return "job_open"
             } else {
-                return "job_next"
+                return "job_soon"
             }
+        case 1:
+            return "job_next"
+        default:
+            return "job_future"
         }
     }
     
@@ -74,6 +73,6 @@ struct ShiftView: View {
 
 struct ShiftView_Previews: PreviewProvider {
     static var previews: some View {
-        ShiftView(shift: ShiftPlaceholder, isFirst: true)
+        ShiftView(shift: ShiftPlaceholder, sequence: 0)
     }
 }

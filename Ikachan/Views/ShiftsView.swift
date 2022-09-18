@@ -23,7 +23,7 @@ struct ShiftsView: View {
     
     var body: some View {
         SchedulesScrollView(data: shifts, title: "salmon_run") { shift in
-            ShiftView(shift: shift.0, isFirst: shift.1)
+            ShiftView(shift: shift.0, sequence: shift.1)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -55,11 +55,11 @@ struct ShiftsView: View {
         }
     }
     
-    var shifts: [(Shift, Bool)] {
-        var shifts: [(Shift, Bool)] = []
+    var shifts: [(Shift, Int)] {
+        var shifts: [(Shift, Int)] = []
         
         for (i, shift) in modelData.shifts.enumerated() {
-            shifts.append((shift, i == 0))
+            shifts.append((shift, i))
         }
         
         return shifts

@@ -161,6 +161,7 @@
 "%@_remaining" = "%@ remaining";
 "in_%@" = "in %@";
 "remaining" = "Remaining";
+"next" = "Next";
 "%dd" = "%dd";
 "%dh" = "%dh";
 "%dm" = "%dm";
