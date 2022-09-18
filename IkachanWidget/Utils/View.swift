@@ -7,8 +7,14 @@
 
 import SwiftUI
 
+enum Orientation {
+    case horizontal
+    case vertical
+}
+
 struct ColorBlended: ViewModifier {
     fileprivate var color: Color
+    fileprivate var orientation: Orientation = .vertical
   
     func body(content: Content) -> some View {
         VStack {
@@ -22,7 +28,7 @@ struct ColorBlended: ViewModifier {
 }
 
 extension View {
-    func blending(color: Color) -> some View {
-        modifier(ColorBlended(color: color))
+    func blending(color: Color, orientation: Orientation = .vertical) -> some View {
+        modifier(ColorBlended(color: color, orientation: orientation))
     }
 }
