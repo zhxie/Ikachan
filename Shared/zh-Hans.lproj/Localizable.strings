@@ -161,7 +161,7 @@
 "%@_remaining" = "剩余%@";
 "in_%@" = "%@后";
 "remaining" = "剩余";
-"next" = "接下来";
+"next" = "下次";
 "%dd" = "%d日";
 "%dh" = "%d小时";
 "%dm" = "%d分";
@@ -181,11 +181,11 @@
 "shift" = "排班表";
 "more" = "更多";
 "all" = "全部";
-"current" = "当前";
+"current" = "目前";
 "job_open" = "现正开放!";
 "job_soon" = "即将开放";
-"job_next" = "接下来";
-"job_future" = "之后";
+"job_next" = "下次";
+"job_future" = "下下次";
 "ikachan" = "鱿鱼酱";
 "settings" = "设置";
 "language" = "语言";
@@ -210,7 +210,7 @@
 "data_source" = "数据源";
 "acknowledgements" = "致谢";
 "disclaimer" = "本应用是使用鱿鱼圈2和鱿鱼圈3的信息的非官方应用，与任天堂有限公司无关。";
-"ika_shrine" = "乌贼神社";
+"ika_shrine" = "鱿鱼神社";
 "version" = "版本";
 "close" = "关闭";
 
@@ -242,14 +242,14 @@
 "%@_%@" = "%@%@";
 "error" = "错误";
 "failed_to_load" = "无法载入";
-"schedule_widget_description" = "查看某模式当前和接下来的日程。";
-"shift_widget_description" = "查看鲑鱼跑当前和接下来的排班表。";
+"schedule_widget_description" = "查看某模式目前和下次的日程。";
+"shift_widget_description" = "查看鲑鱼跑目前和下次的排班表。";
 "day_widget_name" = "一日Splatoon";
-"day_widget_description" = "成为乌贼的同时感受时间的流逝。";
+"day_widget_description" = "成为鱿鱼的同时感受时间的流逝。";
 
 // Intent.
-"current_schedule" = "当前，%1$@%2$@正进行于%4$@和%5$@的%3$@，剩余%6$@。";
-"next_schedule" = "接下来，%1$@%2$@将于%6$@后进行于%4$@和%5$@的%3$@。";
-"open_shift" = "当前，%1$@鲑鱼跑正开放于%2$@，配给%3$@、%4$@、%5$@和%6$@的打工，剩余%7$@。";
+"current_schedule" = "%1$@%2$@目前正进行于%4$@和%5$@的%3$@，剩余%6$@。";
+"next_schedule" = "%1$@%2$@下次将于%6$@后进行于%4$@和%5$@的%3$@。";
+"open_shift" = "%1$@鲑鱼跑目前正开放于%2$@，配给%3$@、%4$@、%5$@和%6$@的打工，剩余%7$@。";
 "soon_shift" = "%1$@鲑鱼跑即将于%7$@后开放于%2$@，配给%3$@、%4$@、%5$@和%6$@的打工。";
-"next_shift" = "接下来，%1$@鲑鱼跑将于%7$@后开放于%2$@，配给%3$@、%4$@、%5$@和%6$@的打工。";
+"next_shift" = "%1$@鲑鱼跑下次将于%7$@后开放于%2$@，配给%3$@、%4$@、%5$@和%6$@的打工。";

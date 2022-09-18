@@ -23,7 +23,7 @@ struct ShiftsView: View {
     
     var body: some View {
         SchedulesScrollView(data: shifts, title: "salmon_run") { shift in
-            ShiftView(shift: shift.0, sequence: shift.1)
+            ShiftView(game: modelData.game, shift: shift.0, sequence: shift.1)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
