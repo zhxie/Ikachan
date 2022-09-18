@@ -44,8 +44,10 @@
 // Shift.
 "QjGFWc" = "排班表";
 "LTajCZ" = "显示鲑鱼跑的排班表。";
+"DqGVQO" = "游戏";
 "P0sKEJ" = "轮次";
-"KM8zVO" = "鲑鱼跑${rotation}的排班表";
+"KM8zVO" = "${game}鲑鱼跑${rotation}的排班表";
+"4kvf89" = "游戏";
 "od31Z2" = "轮次";
 "6RxUlZ" = "结果";
 "bXSdro" = "${result}";

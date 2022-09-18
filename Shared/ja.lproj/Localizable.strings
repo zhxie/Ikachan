@@ -10,6 +10,8 @@
 "splatoon2" = "スプラトゥーン2";
 "splatoon3" = "スプラトゥーン3";
 
+"unknown" = "アンノウン";
+
 // Mode.
 "regular" = "レギュラー";
 "ranked" = "ガチ";

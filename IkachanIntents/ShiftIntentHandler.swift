@@ -21,7 +21,8 @@ class ShiftIntentHandler: IntentHandler, ShiftIntentHandling {
     }
     
     func handle(intent: ShiftIntent, completion: @escaping (ShiftIntentResponse) -> Void) {
-        fetchSplatoon2Shifts { (shifts, error) in
+        let game = Game(intent: intent.game)
+        fetchShifts(game: game) { shifts, error in
             guard let shifts = shifts else {
                 completion(ShiftIntentResponse(code: .failure, userActivity: nil))
                 
@@ -31,7 +32,6 @@ class ShiftIntentHandler: IntentHandler, ShiftIntentHandling {
             let details = shifts.filter { shift in
                 shift.stage != nil
             }
-            
             guard let shift = details.at(index: IntentHandler.rotationConvertTo(rotation: intent.rotation)) else {
                 completion(ShiftIntentResponse(code: .failure, userActivity: nil))
                 
@@ -49,14 +49,14 @@ class ShiftIntentHandler: IntentHandler, ShiftIntentHandling {
             case .next:
                 formatter = "next_shift"
             }
-            
-            let result = String(format: formatter.localizedIntentsString, shift.stage!.name.localizedIntentsString, shift.weapons[0].name.localizedIntentsString, shift.weapons[1].name.localizedIntentsString, shift.weapons[2].name.localizedIntentsString, shift.weapons[3].name.localizedIntentsString, intentsLongTimeSpan(current: Date(), startTime: shift.startTime, endTime: shift.endTime))
+            let result = String(format: formatter.localizedIntentsString, game.name.localizedString, shift.stage!.name.localizedIntentsString, shift.weapons[0].name.localizedIntentsString, shift.weapons[1].name.localizedIntentsString, shift.weapons[2].name.localizedIntentsString, shift.weapons[3].name.localizedIntentsString, intentsLongTimeSpan(current: Date(), startTime: shift.startTime, endTime: shift.endTime))
             
             let encoder = JSONEncoder()
             let data = try! encoder.encode(shift)
             let activity = NSUserActivity(activityType: IkachanShiftsActivity)
             activity.userInfo?["shift"] = data.base64EncodedString()
             let response = ShiftIntentResponse.success(result: result)
+            response.game = intent.game
             response.rotation = intent.rotation
             response.userActivity = activity
             completion(response)

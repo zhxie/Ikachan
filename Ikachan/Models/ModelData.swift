@@ -40,28 +40,27 @@ final class ModelData: ObservableObject {
             }
         }
     }
-    private func shiftsHandler(shifts: [Shift]?, error: Error?) {
-        guard let shifts = shifts else {
-            DispatchQueue.main.async {
-                self.isShiftsUpdating = false
-            }
-            
-            return
-        }
-        
-        DispatchQueue.main.async {
-            self.shifts = shifts
-            
-            self.isShiftsUpdating = false
-        }
-    }
     func updateShifts() {
         if isShiftsUpdating {
             return
         } else {
             isShiftsUpdating = true
             
-            fetchSplatoon2Shifts(completion: shiftsHandler)
+            fetchShifts(game: game) { shifts, error in
+                guard let shifts = shifts else {
+                    DispatchQueue.main.async {
+                        self.isShiftsUpdating = false
+                    }
+                    
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self.shifts = shifts
+                    
+                    self.isShiftsUpdating = false
+                }
+            }
         }
     }
 }

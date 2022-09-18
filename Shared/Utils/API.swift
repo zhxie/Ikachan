@@ -49,7 +49,7 @@ private func fetchSplatoon2Schedules(completion: @escaping ([Splatoon2Schedule]?
         .resume()
     }
 }
-func fetchSplatoon2Shifts(completion: @escaping ([Splatoon2Shift]?, Error?) -> Void) {
+private func fetchSplatoon2Shifts(completion: @escaping ([Splatoon2Shift]?, Error?) -> Void) {
     do {
         var request = URLRequest(url: URL(string: Splatoon2InkShiftURL)!)
         request.timeoutInterval = Timeout
@@ -159,6 +159,44 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
         .resume()
     }
 }
+private func fetchSplatoon3Shifts(completion: @escaping ([Splatoon3Shift]?, Error?) -> Void) {
+    do {
+        var request = URLRequest(url: URL(string: Splatoon3InkScheduleURL)!)
+        request.timeoutInterval = Timeout
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if error != nil {
+                completion(nil, error)
+            } else {
+                let response = response as! HTTPURLResponse
+                let status = response.statusCode
+                guard (200...299).contains(status) else {
+                    completion(nil, error)
+                    
+                    return
+                }
+                
+                if let json = try? JSON(data: data!) {
+                    var shifts: [Splatoon3Shift] = []
+                    
+                    for shift in json["data"]["coopGroupingSchedule"]["regularSchedules"]["nodes"].arrayValue {
+                        let startTime = utcToDate(date: shift["startTime"].stringValue)
+                        let endTime = utcToDate(date: shift["endTime"].stringValue)
+                        let setting = shift["setting"]
+                        let stage = Splatoon3ShiftStage(rawValue: setting["coopStage"]["coopStageId"].intValue)!
+                        
+                        shifts.append(Splatoon3Shift(startTime: startTime, endTime: endTime, stage: stage))
+                    }
+                    
+                    completion(shifts, error)
+                } else {
+                    completion(nil, error)
+                }
+            }
+        }
+        .resume()
+    }
+}
 
 func fetchSchedules(game: Game, completion: @escaping ([Schedule]?, Error?) -> Void) {
     switch game {
@@ -166,5 +204,13 @@ func fetchSchedules(game: Game, completion: @escaping ([Schedule]?, Error?) -> V
         return fetchSplatoon2Schedules(completion: completion)
     case .splatoon3:
         return fetchSplatoon3Schedules(completion: completion)
+    }
+}
+func fetchShifts(game: Game, completion: @escaping ([Shift]?, Error?) -> Void) {
+    switch game {
+    case .splatoon2:
+        return fetchSplatoon2Shifts(completion: completion)
+    case .splatoon3:
+        return fetchSplatoon3Shifts(completion: completion)
     }
 }

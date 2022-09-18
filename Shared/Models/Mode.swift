@@ -172,3 +172,6 @@ enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
         }
     }
 }
+
+// TODO: Unknown Splatoon 3 Salmon Run accent color.
+typealias Splatoon3ShiftMode = Splatoon2ShiftMode

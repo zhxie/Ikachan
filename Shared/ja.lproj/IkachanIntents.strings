@@ -44,8 +44,10 @@
 // Shift.
 "QjGFWc" = "シフト表";
 "LTajCZ" = "サーモンランのシフト表を表示します。";
+"DqGVQO" = "ゲーム";
 "P0sKEJ" = "ローテーション";
-"KM8zVO" = "サーモンランの${rotation}のシフト";
+"KM8zVO" = "${game}サーモンランの${rotation}のシフト";
+"4kvf89" = "ゲーム";
 "od31Z2" = "ローテーション";
 "6RxUlZ" = "結果";
 "bXSdro" = "${result}";

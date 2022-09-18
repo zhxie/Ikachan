@@ -29,7 +29,7 @@
 "rpKaAQ" = "Game";
 "2z9Dkd" = "Mode";
 "3ADlh5" = "Rotation";
-"pYS45i" = "${rotation} schedule of ${mode} in ${game}";
+"pYS45i" = "${rotation} schedule of ${game} ${mode}";
 "sZ3qh2" = "Game";
 "vtf9zV" = "Mode";
 "n2daln" = "Rotation";
@@ -44,8 +44,10 @@
 // Shift.
 "QjGFWc" = "Shifts";
 "LTajCZ" = "Shows shifts of Salmon Run.";
+"DqGVQO" = "Game";
 "P0sKEJ" = "Rotation";
-"KM8zVO" = "${rotation} shift of Salmon Run";
+"KM8zVO" = "${rotation} shift of ${game} Salmon Run";
+"4kvf89" = "Game";
 "od31Z2" = "Rotation";
 "6RxUlZ" = "Result";
 "bXSdro" = "${result}";

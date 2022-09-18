@@ -307,3 +307,21 @@ enum Splatoon2Weapon: Int, Weapon, CaseIterable {
         return Splatnet2URL + image
     }
 }
+
+// TODO: Unknown Splatoon 3 weapons.
+enum Splatoon3Weapon: Int, Weapon, CaseIterable {
+    case unknown = -1
+    
+    var name: String {
+        switch self {
+        case .unknown:
+            return "unknown"
+        }
+    }
+    var imageUrl: String {
+        switch self {
+        case .unknown:
+            return Splatoon2Weapon.random.imageUrl
+        }
+    }
+}
