@@ -44,8 +44,15 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
             
             completion(true, parameters, desiredSize)
         } else if let shiftData = shiftData {
+            let game = Game(intent: (interaction.intentResponse! as! ShiftIntentResponse).game)
             let decoder = JSONDecoder()
-            let shift = try! decoder.decode(Splatoon2Shift.self, from: Data(base64Encoded: shiftData)!)
+            var shift: Shift
+            switch game {
+            case .splatoon2:
+                shift = try! decoder.decode(Splatoon2Shift.self, from: Data(base64Encoded: shiftData)!)
+            case .splatoon3:
+                shift = try! decoder.decode(Splatoon3Shift.self, from: Data(base64Encoded: shiftData)!)
+            }
             
             let controller = UIHostingController(rootView: ShiftView(shift: shift, sequence: 0).animation(.default).padding())
             addChild(controller)
