@@ -198,8 +198,6 @@
 "resources_downloaded" = "已下载资源";
 "reload_widgets" = "重新载入小组件";
 "widgets_reloaded" = "已重新载入小组件";
-"reset_siri_suggestions" = "重置Siri建议";
-"siri_suggestions_reset" = "已重置Siri建议";
 "clear_cache" = "清除缓存";
 "cache_cleared" = "已清除缓存";
 "about" = "关于";

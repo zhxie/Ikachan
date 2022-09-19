@@ -119,11 +119,6 @@ struct AboutView: View {
                         SPAlert.present(title: "widgets_reloaded".localizedString, preset: .done)
                     }
                     .disabled(isDownloadingAllResources)
-                    Button("reset_siri_suggestions") {
-                        INInteraction.deleteAll()
-                        
-                        SPAlert.present(title: "siri_suggestions_reset".localizedString, preset: .done)
-                    }
                     Button("clear_cache") {
                         KingfisherManager.shared.cache.clearMemoryCache()
                         KingfisherManager.shared.cache.clearDiskCache()
