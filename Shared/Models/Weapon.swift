@@ -264,7 +264,7 @@ enum Splatoon2Weapon: Int, Weapon, CaseIterable {
         case .explosher:
             return "explosher"
         case .splatspinner:
-            return "splatling"
+            return "mini_splatling"
         case .barrelspinner:
             return "heavy_splatling"
         case .hydra:
@@ -308,10 +308,288 @@ enum Splatoon2Weapon: Int, Weapon, CaseIterable {
     }
 }
 
-// TODO: Unknown Splatoon 3 weapons.
-struct Splatoon3Weapon: Weapon {
-    var name: String {
-        return "unknown"
+enum Splatoon3Weapon: Int, Weapon, CaseIterable {
+    case splooshOMatic = 0
+    case splattershotJr = 10
+    case splashOMatic = 20
+    case aerosprayMg = 30
+    case splattershot = 40
+    case _52gal = 50
+    case nZap85 = 60
+    case splattershotPro = 70
+    case _96Gal = 80
+    case jetSquelcher = 90
+    case lunaBlaster = 200
+    case blaster = 210
+    case rangeBlaster = 220
+    case clashBlaster = 230
+    case rapidBlaster = 240
+    case rapidBlasterPro = 250
+    case l3Nozzlenose = 300
+    case h3Nozzlenose = 310
+    case squeezer = 400
+    case carbonRoller = 1000
+    case splatRoller = 1010
+    case dynamoRoller = 1020
+    case flingzaRoller = 1030
+    case inkbrush = 1100
+    case octobrush = 1110
+    case classicSquiffer = 2000
+    case splatCharger = 2010
+    case splatterscope = 2020
+    case eLiter4k = 2030
+    case eLiter4kScope = 2040
+    case bamboozler14MkI = 2050
+    case gooTuber = 2060
+    case slosher = 3000
+    case triSlosher = 3010
+    case sloshingMachine = 3020
+    case bloblobber = 3030
+    case explosher = 3040
+    case miniSplatling = 4000
+    case heavySplatling = 4010
+    case hydraSplatling = 4020
+    case ballpointSplatling = 4030
+    case nautilus47 = 4040
+    case dappleDualies = 5000
+    case splatDualies = 5010
+    case gloogaDualies = 5020
+    case dualieSquelchers = 5030
+    case darkTetraDualies = 5040
+    case splatBrella = 6000
+    case tentaBrella = 6010
+    case undercoverBrella = 6020
+    case triStringer = 7010
+    case reefLux450 = 7020
+    case splatanaStamper = 8000
+    case splatanaWiper = 8010
+    
+    private var image: String {
+        switch self {
+        case .splooshOMatic:
+            return "/weapon_illust/6e58a0747ab899badcb6f351512c6034e0a49bd6453281f32c7f550a2132fd65_0.png"
+        case .splattershotJr:
+            return "/weapon_illust/8e134a80cd54f4235329493afd43ff754b367a65e460facfcca862b174754b0e_0.png"
+        case .splashOMatic:
+            return "/weapon_illust/25e98eaba1e17308db191b740d9b89e6a977bfcd37c8dc1d65883731c0c72609_0.png"
+        case .aerosprayMg:
+            return "/weapon_illust/5ec00bcf96c7a3f731d7a2e67f60f802f33d22f07177b94d5905f471b08b629f_0.png"
+        case .splattershot:
+            return "/weapon_illust/e3874d7d504acf89488ad7f68d29a348caea1a41cd43bd9a272069b0c0466570_0.png"
+        case ._52gal:
+            return "/weapon_illust/01e8399a3c56707b6e9f7500d3d583ba1d400eec06449d8fe047cda1956a4ccc_0.png"
+        case .nZap85:
+            return "/weapon_illust/e6dbf73aa6ff9d1feb61fcabadb2d31e08b228a9736b4f5d8a5baeab9b493255_0.png"
+        case .splattershotPro:
+            return "/weapon_illust/5607f7014bbc7339feeb67218c05ef19c7a466152b1bd056a899b955127ea433_0.png"
+        case ._96Gal:
+            return "/weapon_illust/fe2b351799aa48fcb48154299ff0ccf0b0413fc291ffc49456e93db29d2f1db5_0.png"
+        case .jetSquelcher:
+            return "/weapon_illust/035920eb9428955c25aecb8a56c2b1b58f3e322af3657d921db1778de4b80c59_0.png"
+        case .lunaBlaster:
+            return "/weapon_illust/10d4a1584d1428cb164ddfbc5febc9b1e77fd05e2e9ed9de851838a94d202c15_0.png"
+        case .blaster:
+            return "/weapon_illust/29ccca01285a04f42dc15911f3cd1ee940f9ca0e94c75ba07378828afb3165c0_0.png"
+        case .rangeBlaster:
+            return "/weapon_illust/0d2963b386b6da598b8da1087eab3f48b99256e2e6a20fc8bbe53b34579fb338_0.png"
+        case .clashBlaster:
+            return "/weapon_illust/be8ba95bd3017a83876e7f769ee37ee459ee4b2d6eca03fceeb058c510adbb61_0.png"
+        case .rapidBlaster:
+            return "/weapon_illust/0a929d514403d07e1543e638141ebace947ffd539f5f766b42f4d6577d40d7b8_0.png"
+        case .rapidBlasterPro:
+            return "/weapon_illust/954a5ea059f841fa5f1cd2596bb32f23b3d3b03fc3fa7972077bdbafe6051215_0.png"
+        case .l3Nozzlenose:
+            return "/weapon_illust/96833fc0f74242cd2bc73b241aab8a00d499ce9f6557722ef6503e12af8979f4_0.png"
+        case .h3Nozzlenose:
+            return "/weapon_illust/418d75d9ca0304922f06eff539c511238b143ef8331969e20d54a9560df57d5a_0.png"
+        case .squeezer:
+            return "/weapon_illust/db9f2ff8fab9f74c05c7589d43f132eacbff94154dcc20e09c864fced36d4d95_0.png"
+        case .carbonRoller:
+            return "/weapon_illust/29358fd25b6ad1ba9e99f5721f0248af8bde7f1f757d00cbbc7a8a6be02a880d_0.png"
+        case .splatRoller:
+            return "/weapon_illust/536b28d9dd9fc6633a4bea4a141d63942a0ba3470fc504e5b0d02ee408798a87_0.png"
+        case .dynamoRoller:
+            return "/weapon_illust/18fdddee9c918842f076c10f12e46d891aca302d2677bf968ee2fe4e65b831a8_0.png"
+        case .flingzaRoller:
+            return "/weapon_illust/8351e99589f03f49b5d681d36b083aaffd9c486a0558ab957ac44b0db0bb58bb_0.png"
+        case .inkbrush:
+            return "/weapon_illust/260428edbf919f5c9e8c8517516d6a7a8133cf7348d216768ab4fb9434053f08_0.png"
+        case .octobrush:
+            return "/weapon_illust/ce0bb38588e497586a60f16e0aca914f181f42be29953742fd4a55a97e2ebd22_0.png"
+        case .classicSquiffer:
+            return "/weapon_illust/0cdd6036a6677d68bf28e1014b09a6f5a043e969027e532cd008049baace6527_0.png"
+        case .splatCharger:
+            return "/weapon_illust/3f99800b569e286305669b7ab28dc3ff0f0b1b015600569d5ac30ab8a97047a0_0.png"
+        case .splatterscope:
+            return "/weapon_illust/f6354a66c47ec15517bb457e3c48c97c3ff62d34ff38879dbb3e1665dea1be5a_0.png"
+        case .eLiter4k:
+            return "/weapon_illust/ed294b2c7b3111988d577d7efddb9e5e475efc5e0932e5416efedc41fd98eb04_0.png"
+        case .eLiter4kScope:
+            return "/weapon_illust/ebc007b2f27b0813f0c9ce7371bdab78c62e6a05777c928bf34222a79d99de8f_0.png"
+        case .bamboozler14MkI:
+            return "/weapon_illust/9c71334ea792864a00531040e0d05a183512e11277fd1fa681170874ba039268_0.png"
+        case .gooTuber:
+            return "/weapon_illust/2b349390a464710982d7e1496130898e7b5a66c301aa44fc9e19332d42e360ad_0.png"
+        case .slosher:
+            return "/weapon_illust/4a8bf6b4ad3b2942728bbd270bf64d5848b64f3c843a3b12ef83c0ebb5de1b3d_0.png"
+        case .triSlosher:
+            return "/weapon_illust/f3dbd98d5b0e89f7be7eff25a5c63a06045fe64d8ffd5886e79c855e16791563_0.png"
+        case .sloshingMachine:
+            return "/weapon_illust/bd2eca9a7b4109c1d96e804c74aaf2ca525011e1348d0b312fe4f034e35e5d4c_0.png"
+        case .bloblobber:
+            return "/weapon_illust/0199e455872acba1ab8ef0040eca7f41afca48c1f9ad2c5d274323d6dbc49133_0.png"
+        case .explosher:
+            return "/weapon_illust/1e32f5e1e65793585f6423e4fcae1a146a79d2a09e6e15575015af8a2032a4fe_0.png"
+        case .miniSplatling:
+            return "/weapon_illust/32dbc48e000d5d2015468e1dafc05e7c24581a73e54e758af0c8b9e2db3db550_0.png"
+        case .heavySplatling:
+            return "/weapon_illust/fd06f01742a3b25ac57941150b3b81d56633831902f2da1f19a6244f2d8dd6fd_0.png"
+        case .hydraSplatling:
+            return "/weapon_illust/34fe0401b6f6a0b09839696fc820ece9570a9d56e3a746b65f0604dec91a9920_0.png"
+        case .ballpointSplatling:
+            return "/weapon_illust/206dbf3b5dfc9962b6a783acf68a856f0c8fbf0c56257c2ca5c25d63198dd6e1_0.png"
+        case .nautilus47:
+            return "/weapon_illust/be4316928f4b031b470ec2cc2c48fb922a303c882802e32d7fa802249edaa212_0.png"
+        case .dappleDualies:
+            return "/weapon_illust/f1c8fc32bd90fc9258dc17e9f9bcfd5e6498f6e283709bf1896b78193b8e39e9_0.png"
+        case .splatDualies:
+            return "/weapon_illust/b43978029ea582de3aca34549cafd810df20082b94104634093392e11e30d9bd_0.png"
+        case .gloogaDualies:
+            return "/weapon_illust/802d3d501738c620b4f709203ccad343490bd3340b2fda21eb38a362320dc6ed_0.png"
+        case .dualieSquelchers:
+            return "/weapon_illust/b8f50833f99b0db251dc1812e5d13df09b393635b9b6bd684525112cbb38e5e4_0.png"
+        case .darkTetraDualies:
+            return "/weapon_illust/e68609e51d30dfb13e1ea996e46995ed1f7cf561caef0fe96314966d0a039109_0.png"
+        case .splatBrella:
+            return "/weapon_illust/15d101d0d11acbb8159e2701282879f2617d90c8573fd2f2239807721ff54ca4_0.png"
+        case .tentaBrella:
+            return "/weapon_illust/a7b1903741696c0ebeda76c9e16fa0a81ae4e37f5331ad6282fc2be1ae1c1c59_0.png"
+        case .undercoverBrella:
+            return "/weapon_illust/7508ba286e5ac5befe63daea807ab54996c3f0ef3577be9ab5d2827c49dedd75_0.png"
+        case .triStringer:
+            return "/weapon_illust/676d9f49276f171a93ac06646c0fbdfbeb8c3d0284a057aee306404a6034ffef_0.png"
+        case .reefLux450:
+            return "/weapon_illust/9baac6cc774d0e6f2ac8f6e217d700e6f1f47320130598c5f1e922210ccdcc89_0.png"
+        case .splatanaStamper:
+            return "/weapon_illust/ddd2a4258a70cdaf8a1dbc0ded024db497445d71f950fe7645fa8c69a178a082_0.png"
+        case .splatanaWiper:
+            return "/weapon_illust/3aa72d418643038a9e3248af734b0d6a0bf3d3bf9793d75912b1b959f93c2258_0.png"
+        }
     }
-    var imageUrl: String
+    
+    var name: String {
+        switch self {
+        case .splooshOMatic:
+            return "sploosh_o_matic"
+        case .splattershotJr:
+            return "splattershot_jr"
+        case .splashOMatic:
+            return "splash_o_matic"
+        case .aerosprayMg:
+            return "aerospray_mg"
+        case .splattershot:
+            return "splattershot"
+        case ._52gal:
+            return "_52_gal"
+        case .nZap85:
+            return "n_zap_85"
+        case .splattershotPro:
+            return "splattershot_pro"
+        case ._96Gal:
+            return "_96_gal"
+        case .jetSquelcher:
+            return "jet_squelcher"
+        case .lunaBlaster:
+            return "luna_blaster"
+        case .blaster:
+            return "blaster"
+        case .rangeBlaster:
+            return "range_blaster"
+        case .clashBlaster:
+            return "clash_blaster"
+        case .rapidBlaster:
+            return "rapid_blaster"
+        case .rapidBlasterPro:
+            return "rapid_blaster_pro"
+        case .l3Nozzlenose:
+            return "l_3_nozzlenose"
+        case .h3Nozzlenose:
+            return "h_3_nozzlenose"
+        case .squeezer:
+            return "squeezer"
+        case .carbonRoller:
+            return "carbon_roller"
+        case .splatRoller:
+            return "splat_roller"
+        case .dynamoRoller:
+            return "dynamo_roller"
+        case .flingzaRoller:
+            return "flingza_roller"
+        case .inkbrush:
+            return "inkbrush"
+        case .octobrush:
+            return "octobrush"
+        case .classicSquiffer:
+            return "classic_squiffer"
+        case .splatCharger:
+            return "splat_charger"
+        case .splatterscope:
+            return "splatterscope"
+        case .eLiter4k:
+            return "e_liter_4k"
+        case .eLiter4kScope:
+            return "e_liter_4k_scope"
+        case .bamboozler14MkI:
+            return "bamboozler_14_mk_i"
+        case .gooTuber:
+            return "goo_tuber"
+        case .slosher:
+            return "slosher"
+        case .triSlosher:
+            return "tri_slosher"
+        case .sloshingMachine:
+            return "sloshing_machine"
+        case .bloblobber:
+            return "bloblobber"
+        case .explosher:
+            return "explosher"
+        case .miniSplatling:
+            return "mini_splatling"
+        case .heavySplatling:
+            return "heavy_splatling"
+        case .hydraSplatling:
+            return "hydra_splatling"
+        case .ballpointSplatling:
+            return "ballpoint_splatling"
+        case .nautilus47:
+            return "nautilus_47"
+        case .dappleDualies:
+            return "dapple_dualies"
+        case .splatDualies:
+            return "splat_dualies"
+        case .gloogaDualies:
+            return "glooga_dualies"
+        case .dualieSquelchers:
+            return "dualie_squelchers"
+        case .darkTetraDualies:
+            return "dark_tetra_dualies"
+        case .splatBrella:
+            return "splat_brella"
+        case .tentaBrella:
+            return "tenta_brella"
+        case .undercoverBrella:
+            return "undercover_brella"
+        case .triStringer:
+            return "tri_stringer"
+        case .reefLux450:
+            return "reef_lux_450"
+        case .splatanaStamper:
+            return "splatana_stamper"
+        case .splatanaWiper:
+            return "splatana_wiper"
+        }
+    }
+    var imageUrl: String {
+        return Splatoon3InkAssetsURL + image
+    }
 }

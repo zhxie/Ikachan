@@ -79,8 +79,8 @@ private func fetchSplatoon2Shifts(completion: @escaping ([Splatoon2Shift]?, Erro
                         var stage: Splatoon2ShiftStage?
                         let stageImage = shift["stage"]["image"].string
                         if stageImage != nil {
-                            stage = Splatoon2ShiftStage.allCases.first { i in
-                                i.image == stageImage
+                            stage = Splatoon2ShiftStage.allCases.first { stage in
+                                stage.image == stageImage
                             }!
                         }
                         var weapons: [Splatoon2Weapon] = []
@@ -186,7 +186,9 @@ private func fetchSplatoon3Shifts(completion: @escaping ([Splatoon3Shift]?, Erro
                         let stage = Splatoon3ShiftStage(rawValue: setting["coopStage"]["coopStageId"].intValue)!
                         var weapons: [Splatoon3Weapon] = []
                         for weapon in setting["weapons"].arrayValue {
-                            weapons.append(Splatoon3Weapon(imageUrl: weapon["image"]["url"].stringValue))
+                            weapons.append(Splatoon3Weapon.allCases.first { w in
+                                w.imageUrl == weapon["image"]["url"].stringValue
+                            }!)
                         }
                         
                         shifts.append(Splatoon3Shift(startTime: startTime, endTime: endTime, stage: stage, weapons: weapons))

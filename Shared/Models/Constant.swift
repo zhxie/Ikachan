@@ -12,6 +12,7 @@ let Splatoon2InkURL = "https://splatoon2.ink"
 let Splatoon2InkScheduleURL = Splatoon2InkURL + "/data/schedules.json"
 let Splatoon2InkShiftURL = Splatoon2InkURL + "/data/coop-schedules.json"
 let Splatoon3InkURL = "https://splatoon3.ink"
+let Splatoon3InkAssetsURL = Splatoon3InkURL + "/assets/splatnet"
 let Splatoon3InkScheduleURL = Splatoon3InkURL + "/data/schedules.json"
 
 let Timeout: Double = 60

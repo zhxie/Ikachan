@@ -137,7 +137,7 @@
 "sloshing_machine" = "スクリュースロッシャー";
 "bloblobber" = "オーバーフロッシャー";
 "explosher" = "エクスプロッシャー";
-"splatling" = "スプラスピナー";
+"mini_splatling" = "スプラスピナー";
 "heavy_splatling" = "バレルスピナー";
 "hydra_splatling" = "ハイドラント";
 "ballpoint_splatling" = "クーゲルシュライバー";
@@ -156,6 +156,11 @@
 "kuma_slosher" = "バイト専用 クマサン印のスロッシャー";
 "random" = "ランダムブキ";
 "random2" = "バイト専用 クマサン印のランダムブキ";
+
+"tri_stringer" = "トライストリンガー";
+"reef_lux_450" = "LACT-450";
+"splatana_stamper" = "ジムワイパー";
+"splatana_wiper" = "ドライブワイパー";
 
 // Utils.
 "%@_remaining" = "残り%@";
