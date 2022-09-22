@@ -13,8 +13,6 @@ import Kingfisher
 import SPAlert
 
 struct AboutView: View {
-    @Binding var showModal: Bool
-    
     @State var isDownloadingAllResources = false
     @State var progressValue: Double = 0
     @State var progressTotal: Double = 0
@@ -30,204 +28,181 @@ struct AboutView: View {
     @State var timer: Timer? = nil
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section(header: Text("settings")) {
-                    Link("language", destination: URL(string: UIApplication.openSettingsURLString)!)
-                    Button("siri_and_shortcuts") {
-                        let url = URL(string: "shortcuts://")!
-                        
-                        if UIApplication.shared.canOpenURL(url) {
-                            UIApplication.shared.open(url)
-                        } else {
-                            UIApplication.shared.open(URL(string: "itms-apps://apple.com/app/id915249334")!)
-                        }
-                    }
-                    NavigationLink(destination: ZStack {
-                        Color(UIColor.secondarySystemBackground)
-                            .ignoresSafeArea(edges: .all)
-                        
-                        Form {
-                            Section {
-                                IconView(name: "kuro", iconName: nil, text: "kuro")
-                                IconView(name: "ichi", iconName: "ichi", text: "ichi")
-                            }
-                        }
-                        .navigationTitle("app_icon")
-                        .toolbar {
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                Button("close") {
-                                    showModal.toggle()
-                                }
-                            }
-                        }
-                    }) {
-                        Text("app_icon")
-                    }
-                }
-                Section(header: Text("support")) {
-                    HStack {
-                        Button("download_all_resources") {
-                            var urls: Set<String> = []
-                            var resources: [Resource] = []
-                            
-                            for stage in Splatoon2ScheduleStage.allCases {
-                                urls.insert(stage.imageUrl)
-                            }
-                            for stage in Splatoon2ShiftStage.allCases {
-                                urls.insert(stage.imageUrl)
-                            }
-                            for weapon in Splatoon2Weapon.allCases {
-                                urls.insert(weapon.imageUrl)
-                            }
-                            for stage in Splatoon3ScheduleStage.allCases {
-                                urls.insert(stage.imageUrl)
-                            }
-                            for stage in Splatoon3ShiftStage.allCases {
-                                urls.insert(stage.imageUrl)
-                            }
-                            
-                            progressValue = 0
-                            progressTotal = Double(urls.count)
-                            isDownloadingAllResources = true
-
-                            for url in urls {
-                                resources.append(ImageResource(downloadURL: URL(string: url)!))
-                            }
-                            ImagePrefetcher(resources: resources, progressBlock: { (skipped, failed, completed) in
-                                progressValue = Double(skipped.count + failed.count + completed.count)
-                            }) { (_, _, _) in
-                                isDownloadingAllResources = false
-                                
-                                SPAlert.present(title: "resources_downloaded".localizedString, preset: .done)
-                            }
-                            .start()
-                        }
-                        .disabled(isDownloadingAllResources)
-                        .layoutPriority(1)
-                        
-                        Spacer()
-                        
-                        if isDownloadingAllResources {
-                            ProgressView(value: progressValue, total: progressTotal)
-                                .frame(maxWidth: 100)
-                        }
-                    }
-                    Button("reload_widgets") {
-                        WidgetCenter.shared.reloadAllTimelines()
-                        
-                        SPAlert.present(title: "widgets_reloaded".localizedString, preset: .done)
-                    }
-                    .disabled(isDownloadingAllResources)
-                    Button("clear_cache") {
-                        KingfisherManager.shared.cache.clearMemoryCache()
-                        KingfisherManager.shared.cache.clearDiskCache()
-                        
-                        SPAlert.present(title: "cache_cleared".localizedString, preset: .done)
-                    }
-                    .disabled(isDownloadingAllResources)
-                }
-                
-                Section(header: Text("about")) {
-                    Link("repository", destination: URL(string: "https://github.com/zhxie/Ikachan")!)
-                    Link("privacy_policy", destination: URL(string: "https://github.com/zhxie/Ikachan/wiki/Privacy-Policy")!)
-                    Link("developer_sketch", destination: URL(string: isChinese ? "https://weibo.com/u/2269567390" : "https://twitter.com/xzh1206")!)
-                    Link("designer_shooky", destination: URL(string: isChinese ? "https://weibo.com/u/6622470330" : "https://twitter.com/ShellShooky")!)
-                }
-                
-                Section(footer: Text("disclaimer")) {
-                    NavigationLink(destination: ScrollView {
-                        VStack(alignment: .leading) {
-                            VStack(alignment: .leading) {
-                                HStack {
-                                    Link(destination: URL(string: "https://splatoon2.ink/")!) {
-                                        Text("Splatoon2.ink")
-                                            .bold()
-                                    }
-                                }
-                                
-                                Text("")
-                            }
-                            
-                            VStack(alignment: .leading) {
-                                HStack {
-                                    Link(destination: URL(string: "https://splatoon3.ink/")!) {
-                                        Text("Splatoon3.ink")
-                                            .bold()
-                                    }
-                                }
-                                
-                                Text("")
-                            }
-                            
-                            VStack(alignment: .leading) {
-                                Text("Kingfisher")
-                                    .bold()
-                                
-                                Text(license_kingfisher)
-                            }
-                            
-                            VStack(alignment: .leading) {
-                                Text("SPAlert")
-                                    .bold()
-                                
-                                Text(license_s_p_alert)
-                            }
-                            
-                            VStack(alignment: .leading) {
-                                Text("SwiftyJSON")
-                                    .bold()
-                                
-                                Text(license_swifty_json)
-                            }
-                        }
-                        .navigationTitle("acknowledgements")
-                        .toolbar {
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                Button("close") {
-                                    showModal.toggle()
-                                }
-                            }
-                        }
-                        .padding()
-                    }) {
-                        Text("acknowledgements")
-                    }
-                }
-                
-                Section(footer: HStack {
-                    Spacer()
+        Form {
+            Section(header: Text("settings")) {
+                Link("language", destination: URL(string: UIApplication.openSettingsURLString)!)
+                Button("siri_and_shortcuts") {
+                    let url = URL(string: "shortcuts://")!
                     
-                    VStack {
-                        Image("inkling.splat")
-                            .resizedToFit()
-                            .foregroundColor(.secondary)
-                            .frame(width: 96)
-                            .accessibilityLabel("ika_shrine")
-                            .onTapGesture {
-                                Impact(style: .light)
-                                
-                                showShrine.toggle()
-                            }
-                        
-                        Text(String(format: "%@ %@", "version".localizedString, version))
-                            .foregroundColor(.secondary)
+                    if UIApplication.shared.canOpenURL(url) {
+                        UIApplication.shared.open(url)
+                    } else {
+                        UIApplication.shared.open(URL(string: "itms-apps://apple.com/app/id915249334")!)
                     }
+                }
+                NavigationLink(destination: ZStack {
+                    Color(UIColor.secondarySystemBackground)
+                        .ignoresSafeArea(edges: .all)
                     
-                    Spacer()
+                    Form {
+                        Section {
+                            IconView(name: "kuro", iconName: nil, text: "kuro")
+                            IconView(name: "ichi", iconName: "ichi", text: "ichi")
+                        }
+                    }
+                    .navigationTitle("app_icon")
                 }) {
-                    EmptyView()
+                    Text("app_icon")
                 }
             }
-            .navigationTitle("ikachan")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("close") {
-                        showModal.toggle()
+            Section(header: Text("support")) {
+                HStack {
+                    Button("download_all_resources") {
+                        var urls: Set<String> = []
+                        var resources: [Resource] = []
+                        
+                        for stage in Splatoon2ScheduleStage.allCases {
+                            urls.insert(stage.imageUrl)
+                        }
+                        for stage in Splatoon2ShiftStage.allCases {
+                            urls.insert(stage.imageUrl)
+                        }
+                        for weapon in Splatoon2Weapon.allCases {
+                            urls.insert(weapon.imageUrl)
+                        }
+                        for stage in Splatoon3ScheduleStage.allCases {
+                            urls.insert(stage.imageUrl)
+                        }
+                        for stage in Splatoon3ShiftStage.allCases {
+                            urls.insert(stage.imageUrl)
+                        }
+                        
+                        progressValue = 0
+                        progressTotal = Double(urls.count)
+                        isDownloadingAllResources = true
+
+                        for url in urls {
+                            resources.append(ImageResource(downloadURL: URL(string: url)!))
+                        }
+                        ImagePrefetcher(resources: resources, progressBlock: { (skipped, failed, completed) in
+                            progressValue = Double(skipped.count + failed.count + completed.count)
+                        }) { (_, _, _) in
+                            isDownloadingAllResources = false
+                            
+                            SPAlert.present(title: "resources_downloaded".localizedString, preset: .done)
+                        }
+                        .start()
+                    }
+                    .disabled(isDownloadingAllResources)
+                    .layoutPriority(1)
+                    
+                    Spacer()
+                    
+                    if isDownloadingAllResources {
+                        ProgressView(value: progressValue, total: progressTotal)
+                            .frame(maxWidth: 100)
                     }
                 }
+                Button("reload_widgets") {
+                    WidgetCenter.shared.reloadAllTimelines()
+                    
+                    SPAlert.present(title: "widgets_reloaded".localizedString, preset: .done)
+                }
+                .disabled(isDownloadingAllResources)
+                Button("clear_cache") {
+                    KingfisherManager.shared.cache.clearMemoryCache()
+                    KingfisherManager.shared.cache.clearDiskCache()
+                    
+                    SPAlert.present(title: "cache_cleared".localizedString, preset: .done)
+                }
+                .disabled(isDownloadingAllResources)
+            }
+            
+            Section(header: Text("about")) {
+                Link("repository", destination: URL(string: "https://github.com/zhxie/Ikachan")!)
+                Link("privacy_policy", destination: URL(string: "https://github.com/zhxie/Ikachan/wiki/Privacy-Policy")!)
+                Link("developer_sketch", destination: URL(string: isChinese ? "https://weibo.com/u/2269567390" : "https://twitter.com/xzh1206")!)
+                Link("designer_shooky", destination: URL(string: isChinese ? "https://weibo.com/u/6622470330" : "https://twitter.com/ShellShooky")!)
+            }
+            
+            Section(footer: Text("disclaimer")) {
+                NavigationLink(destination: ScrollView {
+                    VStack(alignment: .leading) {
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Link(destination: URL(string: "https://splatoon2.ink/")!) {
+                                    Text("Splatoon2.ink")
+                                        .bold()
+                                }
+                            }
+                            
+                            Text("")
+                        }
+                        
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Link(destination: URL(string: "https://splatoon3.ink/")!) {
+                                    Text("Splatoon3.ink")
+                                        .bold()
+                                }
+                            }
+                            
+                            Text("")
+                        }
+                        
+                        VStack(alignment: .leading) {
+                            Text("Kingfisher")
+                                .bold()
+                            
+                            Text(license_kingfisher)
+                        }
+                        
+                        VStack(alignment: .leading) {
+                            Text("SPAlert")
+                                .bold()
+                            
+                            Text(license_s_p_alert)
+                        }
+                        
+                        VStack(alignment: .leading) {
+                            Text("SwiftyJSON")
+                                .bold()
+                            
+                            Text(license_swifty_json)
+                        }
+                    }
+                    .navigationTitle("acknowledgements")
+                    .padding()
+                }) {
+                    Text("acknowledgements")
+                }
+            }
+            
+            Section(footer: HStack {
+                Spacer()
+                
+                VStack {
+                    Image("inkling.splat")
+                        .resizedToFit()
+                        .foregroundColor(.secondary)
+                        .frame(width: 96)
+                        .accessibilityLabel("ika_shrine")
+                        .onTapGesture {
+                            Impact(style: .light)
+                            
+                            showShrine.toggle()
+                        }
+                    
+                    Text(String(format: "%@ %@", "version".localizedString, version))
+                        .foregroundColor(.secondary)
+                }
+                
+                Spacer()
+            }) {
+                EmptyView()
             }
         }
+        .navigationTitle("ikachan")
         .sheet(isPresented: $showShrine) {
             ShrineView(showModal: $showShrine)
         }
@@ -349,6 +324,6 @@ struct AboutView: View {
 
 struct AboutView_Previews: PreviewProvider {
     static var previews: some View {
-        AboutView(showModal: .constant(true))
+        AboutView()
     }
 }

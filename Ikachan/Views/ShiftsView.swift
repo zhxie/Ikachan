@@ -11,30 +11,12 @@ import Intents
 struct ShiftsView: View {
     @EnvironmentObject var modelData: ModelData
     @Environment(\.scenePhase) var scenePhase
-
-    @Binding var showModal: Bool?
-    
-    init() {
-        _showModal = .constant(nil)
-    }
-    init(showModal: Binding<Bool>) {
-        _showModal = Binding(showModal)
-    }
     
     var body: some View {
         SchedulesScrollView(data: shifts, title: "salmon_run") { shift in
             ShiftView(shift: shift.0, sequence: shift.1)
         }
         .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                if showModal != nil {
-                    Button(action: {
-                        showModal!.toggle()
-                    }) {
-                        Image(systemName: "info.circle")
-                    }
-                }
-            }
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
                     Impact(style: .light)
@@ -72,7 +54,7 @@ struct ShiftsView: View {
 
 struct ShiftsView_Previews: PreviewProvider {
     static var previews: some View {
-        ShiftsView(showModal: .constant(false))
+        ShiftsView()
             .environmentObject(ModelData())
     }
 }

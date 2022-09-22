@@ -11,18 +11,9 @@ import Intents
 struct SchedulesView: View {
     @EnvironmentObject var modelData: ModelData
     @Environment(\.scenePhase) var scenePhase
-
-    @Binding var showModal: Bool?
     
     @State var mode = "regular_battle"
     @State var rule = ""
-    
-    init() {
-        _showModal = .constant(nil)
-    }
-    init(showModal: Binding<Bool>) {
-        _showModal = Binding(showModal)
-    }
     
     var body: some View {
         SchedulesScrollView(data: schedules, title: mode) { schedule in
@@ -30,12 +21,12 @@ struct SchedulesView: View {
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                if showModal != nil {
-                    Button(action: {
-                        showModal!.toggle()
-                    }) {
-                        Image(systemName: "info.circle")
-                    }
+                Button {
+                    Impact(style: .light)
+                    modelData.changeGame()
+                    update()
+                } label: {
+                    Image(systemName: modelData.game.image)
                 }
             }
             ToolbarItem(placement: .principal) {
@@ -53,15 +44,6 @@ struct SchedulesView: View {
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
-                }
-            }
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    Impact(style: .light)
-                    modelData.changeGame()
-                    update()
-                } label: {
-                    Image(systemName: modelData.game.image)
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -114,7 +96,7 @@ struct SchedulesView: View {
 
 struct SchedulesView_Previews: PreviewProvider {
     static var previews: some View {
-        SchedulesView(showModal: .constant(false))
+        SchedulesView()
             .environmentObject(ModelData())
     }
 }

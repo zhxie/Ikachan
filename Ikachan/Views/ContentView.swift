@@ -10,13 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var modelData: ModelData
     
-    @State var showAbout = false
-    
     var body: some View {
         ZStack {
             TabView {
                 NavigationView {
-                    SchedulesView(showModal: $showAbout)
+                    SchedulesView()
                 }
                 .navigationViewStyle(StackNavigationViewStyle())
                 .tabItem {
@@ -24,16 +22,21 @@ struct ContentView: View {
                 }
                 
                 NavigationView {
-                    ShiftsView(showModal: $showAbout)
+                    ShiftsView()
                 }
                 .navigationViewStyle(StackNavigationViewStyle())
                 .tabItem {
                     Label("shift", systemImage: "lifepreserver")
                 }
+                
+                NavigationView {
+                    AboutView()
+                }
+                .navigationViewStyle(.stack)
+                .tabItem {
+                    Label("ikachan", systemImage: "info.circle")
+                }
             }
-        }
-        .sheet(isPresented: $showAbout) {
-            AboutView(showModal: $showAbout)
         }
     }
 }
