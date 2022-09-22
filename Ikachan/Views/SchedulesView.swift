@@ -39,13 +39,21 @@ struct SchedulesView: View {
                 }
             }
             ToolbarItem(placement: .principal) {
-                Picker(selection: $mode, label: Text("")) {
-                    ForEach(0..<modelData.game.modes.count, id: \.self) { i in
-                        Text(LocalizedStringKey(modelData.game.modes[i].shortName))
-                            .tag(modelData.game.modes[i].name)
+                VStack {
+                    // HACK: Offset for iOS 16.
+                    if #available(iOS 16.0, *) {
+                        Spacer()
+                            .frame(height: 6)
                     }
+                    
+                    Picker(selection: $mode, label: Text("")) {
+                        ForEach(0..<modelData.game.modes.count, id: \.self) { i in
+                            Text(LocalizedStringKey(modelData.game.modes[i].shortName))
+                                .tag(modelData.game.modes[i].name)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
                 }
-                .pickerStyle(SegmentedPickerStyle())
             }
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
