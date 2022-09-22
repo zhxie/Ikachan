@@ -69,6 +69,7 @@ enum Splatoon2Weapon: Int, Weapon, CaseIterable {
     case grizzcoSlosher = 20030
     case random = -1
     case randomGold = -2
+    case unknown = -9999
     
     private var image: String {
         switch self {
@@ -184,6 +185,8 @@ enum Splatoon2Weapon: Int, Weapon, CaseIterable {
             return "/images/coop_weapons/746f7e90bc151334f0bf0d2a1f0987e311b03736.png"
         case .randomGold:
             return "/images/coop_weapons/7076c8181ab5c49d2ac91e43a2d945a46a99c17d.png"
+        case .unknown:
+            return Unknown.iconImage
         }
     }
     
@@ -301,10 +304,17 @@ enum Splatoon2Weapon: Int, Weapon, CaseIterable {
             return "random"
         case .randomGold:
             return "random2"
+        case .unknown:
+            return Unknown.name
         }
     }
     var imageUrl: String {
-        return Splatnet2URL + image
+        switch self {
+        case .unknown:
+            return Unknown.iconImageUrl
+        default:
+            return Splatnet2URL + image
+        }
     }
 }
 
@@ -363,6 +373,7 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
     case reefLux450 = 7020
     case splatanaStamper = 8000
     case splatanaWiper = 8010
+    case unknown = -9999
     
     private var image: String {
         switch self {
@@ -474,6 +485,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "/weapon_illust/ddd2a4258a70cdaf8a1dbc0ded024db497445d71f950fe7645fa8c69a178a082_0.png"
         case .splatanaWiper:
             return "/weapon_illust/3aa72d418643038a9e3248af734b0d6a0bf3d3bf9793d75912b1b959f93c2258_0.png"
+        case .unknown:
+            return Unknown.iconImage
         }
     }
     
@@ -587,9 +600,16 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "splatana_stamper"
         case .splatanaWiper:
             return "splatana_wiper"
+        case .unknown:
+            return Unknown.name
         }
     }
     var imageUrl: String {
-        return Splatoon3InkAssetsURL + image
+        switch self {
+        case .unknown:
+            return Unknown.iconImage
+        default:
+            return Splatoon3InkAssetsURL + image
+        }
     }
 }

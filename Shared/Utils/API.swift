@@ -33,8 +33,8 @@ private func fetchSplatoon2Schedules(completion: @escaping ([Splatoon2Schedule]?
                             let startTime = Date(timeIntervalSince1970: schedule["start_time"].doubleValue)
                             let endTime = Date(timeIntervalSince1970: schedule["end_time"].doubleValue)
                             let mode = Splatoon2ScheduleMode(rawValue: schedule["game_mode"]["key"].stringValue)!
-                            let rule = Splatoon2Rule(rawValue: schedule["rule"]["key"].stringValue)!
-                            let stages = [Splatoon2ScheduleStage(rawValue: Int(schedule["stage_a"]["id"].stringValue)!)!, Splatoon2ScheduleStage(rawValue: Int(schedule["stage_b"]["id"].stringValue)!)!]
+                            let rule = Splatoon2Rule(rawValue: schedule["rule"]["key"].stringValue) ?? .unknown
+                            let stages = [Splatoon2ScheduleStage(rawValue: Int(schedule["stage_a"]["id"].stringValue)!) ?? .unknown, Splatoon2ScheduleStage(rawValue: Int(schedule["stage_b"]["id"].stringValue)!) ?? .unknown]
                             
                             schedules.append(Splatoon2Schedule(startTime: startTime, endTime: endTime, mode: mode, rule: rule, stages: stages))
                         }
@@ -81,11 +81,11 @@ private func fetchSplatoon2Shifts(completion: @escaping ([Splatoon2Shift]?, Erro
                         if stageImage != nil {
                             stage = Splatoon2ShiftStage.allCases.first { stage in
                                 stage.image == stageImage
-                            }!
+                            } ?? .unknown
                         }
                         var weapons: [Splatoon2Weapon] = []
                         for weapon in shift["weapons"].arrayValue {
-                            weapons.append(Splatoon2Weapon(rawValue: Int(weapon["id"].stringValue)!)!)
+                            weapons.append(Splatoon2Weapon(rawValue: Int(weapon["id"].stringValue)!) ?? .unknown)
                         }
                         
                         shifts.append(Splatoon2Shift(startTime: startTime, endTime: endTime, stage: stage, weapons: weapons))
@@ -127,10 +127,10 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                         let startTime = utcToDate(date: schedule["startTime"].stringValue)
                         let endTime = utcToDate(date: schedule["endTime"].stringValue)
                         let matchSetting = schedule["regularMatchSetting"]
-                        let rule = Splatoon3Rule(rawValue: matchSetting["vsRule"]["rule"].stringValue.lowercased())!
+                        let rule = Splatoon3Rule(rawValue: matchSetting["vsRule"]["rule"].stringValue.lowercased()) ?? .unknown
                         var stages: [Splatoon3ScheduleStage] = []
                         for stage in matchSetting["vsStages"].arrayValue {
-                            stages.append(Splatoon3ScheduleStage(rawValue: stage["vsStageId"].intValue)!)
+                            stages.append(Splatoon3ScheduleStage(rawValue: stage["vsStageId"].intValue) ?? .unknown)
                         }
                         
                         schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: .regular, rule: rule, stages: stages))
@@ -140,10 +140,10 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                         let endTime = utcToDate(date: schedule["endTime"].stringValue)
                         for matchSetting in schedule["bankaraMatchSettings"].arrayValue {
                             let mode = Splatoon3ScheduleMode(rawValue: matchSetting["mode"].stringValue.lowercased())!
-                            let rule = Splatoon3Rule(rawValue: matchSetting["vsRule"]["rule"].stringValue.lowercased())!
+                            let rule = Splatoon3Rule(rawValue: matchSetting["vsRule"]["rule"].stringValue.lowercased()) ?? .unknown
                             var stages: [Splatoon3ScheduleStage] = []
                             for stage in matchSetting["vsStages"].arrayValue {
-                                stages.append(Splatoon3ScheduleStage(rawValue: stage["vsStageId"].intValue)!)
+                                stages.append(Splatoon3ScheduleStage(rawValue: stage["vsStageId"].intValue) ?? .unknown)
                             }
                             
                             schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: mode, rule: rule, stages: stages))
@@ -183,12 +183,12 @@ private func fetchSplatoon3Shifts(completion: @escaping ([Splatoon3Shift]?, Erro
                         let startTime = utcToDate(date: shift["startTime"].stringValue)
                         let endTime = utcToDate(date: shift["endTime"].stringValue)
                         let setting = shift["setting"]
-                        let stage = Splatoon3ShiftStage(rawValue: setting["coopStage"]["coopStageId"].intValue)!
+                        let stage = Splatoon3ShiftStage(rawValue: setting["coopStage"]["coopStageId"].intValue) ?? .unknown
                         var weapons: [Splatoon3Weapon] = []
                         for weapon in setting["weapons"].arrayValue {
                             weapons.append(Splatoon3Weapon.allCases.first { w in
                                 w.imageUrl == weapon["image"]["url"].stringValue
-                            }!)
+                            } ?? .unknown)
                         }
                         
                         shifts.append(Splatoon3Shift(startTime: startTime, endTime: endTime, stage: stage, weapons: weapons))

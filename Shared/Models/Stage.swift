@@ -36,6 +36,7 @@ enum Splatoon2ScheduleStage: Int, Stage, CaseIterable {
     case wahooWorld = 20
     case anchoVGames = 21
     case skipperPavilion = 22
+    case unknown = -9999
     
     private var image: String {
         switch self {
@@ -85,6 +86,8 @@ enum Splatoon2ScheduleStage: Int, Stage, CaseIterable {
             return "/images/stage/1430e5ac7ae9396a126078eeab824a186b490b5a.png"
         case .skipperPavilion:
             return "/images/stage/132327c819abf2bd44d0adc0f4a21aad9cc84bb2.png"
+        case .unknown:
+            return Unknown.stageImage
         }
     }
     
@@ -136,10 +139,17 @@ enum Splatoon2ScheduleStage: Int, Stage, CaseIterable {
             return "ancho_v_games"
         case .skipperPavilion:
             return "skipper_pavilion"
+        case .unknown:
+            return Unknown.name
         }
     }
     var imageUrl: String {
-        return Splatnet2URL + image
+        switch self {
+        case .unknown:
+            return Unknown.stageImageUrl
+        default:
+            return Splatnet2URL + image
+        }
     }
 }
 
@@ -149,6 +159,7 @@ enum Splatoon2ShiftStage: Int, Stage, CaseIterable {
     case lostOutpost = 5002
     case salmonidSmokeyard = 5003
     case ruinsOfArkPolaris = 5004
+    case unknown = -9999
     
     var image: String {
         switch self {
@@ -162,6 +173,8 @@ enum Splatoon2ShiftStage: Int, Stage, CaseIterable {
             return "/images/coop_stage/e9f7c7b35e6d46778cd3cbc0d89bd7e1bc3be493.png"
         case .ruinsOfArkPolaris:
             return "/images/coop_stage/50064ec6e97aac91e70df5fc2cfecf61ad8615fd.png"
+        case .unknown:
+            return Unknown.stageImage
         }
     }
     
@@ -177,10 +190,17 @@ enum Splatoon2ShiftStage: Int, Stage, CaseIterable {
             return "salmonid_smokeyard"
         case .ruinsOfArkPolaris:
             return "ruins_of_ark_polaris"
+        case .unknown:
+            return Unknown.name
         }
     }
     var imageUrl: String {
-        return Splatnet2URL + image
+        switch self {
+        case .unknown:
+            return Unknown.stageImageUrl
+        default:
+            return Splatnet2URL + image
+        }
     }
 }
 
@@ -197,6 +217,7 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
     case sturgeonShipyard = 14
     case makoMart = 15
     case wahooWorld = 16
+    case unknown = -9999
     
     private var image: String {
         switch self {
@@ -224,6 +245,8 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/high_resolution/a8ba96c3dbd015b7bc6ea4fa067245c4e9aee62b6696cb41e02d35139dd21fe7_0.png"
         case .wahooWorld:
             return "/stage_img/icon/high_resolution/61ea801fa4ed32360dcaf83986222ded46a72dbf56194acc6d0cf4659a92ba85_0.png"
+        case .unknown:
+            return Unknown.stageImage
         }
     }
     
@@ -253,10 +276,17 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
             return "mako_mart"
         case .wahooWorld:
             return "wahoo_world"
+        case .unknown:
+            return Unknown.name
         }
     }
     var imageUrl: String {
-        return Splatoon3InkAssetsURL + image
+        switch self {
+        case .unknown:
+            return Unknown.stageImageUrl
+        default:
+            return Splatoon3InkAssetsURL + image
+        }
     }
 }
 
@@ -264,6 +294,7 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
     case spawningGrounds = 1
     case sockeyeStation = 2
     case goneFissionHydroplant = 7
+    case unknown = -9999
     
     private var image: String {
         switch self {
@@ -273,6 +304,8 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/high_resolution/3418d2d89ef84288c78915b9acb63b4ad48df7bfcb48c27d6597920787e147ec_0.png"
         case .goneFissionHydroplant:
             return "/stage_img/icon/high_resolution/f1e4df4cff1dc5e0acc66a9654fecf949224f7e4f6bd36305d4600ac3fa3db7b_0.png"
+        case .unknown:
+            return Unknown.stageImage
         }
     }
     
@@ -284,9 +317,16 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
             return "sockeye_station"
         case .goneFissionHydroplant:
             return "gone_fission_hydroplant"
+        case .unknown:
+            return Unknown.name
         }
     }
     var imageUrl: String {
-        return Splatoon3InkAssetsURL + image
+        switch self {
+        case .unknown:
+            return Unknown.stageImageUrl
+        default:
+            return Splatoon3InkAssetsURL + image
+        }
     }
 }

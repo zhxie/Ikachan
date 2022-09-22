@@ -20,6 +20,7 @@ enum Splatoon2Rule: String, Rule, CaseIterable {
     case towerControl = "tower_control"
     case rainmaker = "rainmaker"
     case clamBlitz = "clam_blitz"
+    case unknown = "unknown"
     
     var name: String {
         return rawValue
@@ -36,6 +37,8 @@ enum Splatoon2Rule: String, Rule, CaseIterable {
             return "rainmaker_s"
         case .clamBlitz:
             return "clam"
+        case .unknown:
+            return Unknown.name
         }
     }
     var shorterName: String {
@@ -50,10 +53,17 @@ enum Splatoon2Rule: String, Rule, CaseIterable {
             return "rainmaker_ss"
         case .clamBlitz:
             return "clam_ss"
+        case .unknown:
+            return Unknown.name
         }
     }
     var image: String {
-        return rawValue + "_2"
+        switch self {
+        case .turfWar, .splatZones, .towerControl, .rainmaker, .clamBlitz:
+            return rawValue + "_2"
+        case .unknown:
+            return Unknown.assetImage
+        }
     }
 }
 
@@ -63,6 +73,7 @@ enum Splatoon3Rule: String, Rule, CaseIterable {
     case towerControl = "loft"
     case rainmaker = "goal"
     case clamBlitz = "clam"
+    case unknown = "unknown"
 
     var name: String {
         switch self {
@@ -76,6 +87,8 @@ enum Splatoon3Rule: String, Rule, CaseIterable {
             return "rainmaker"
         case .clamBlitz:
             return "clam_blitz"
+        case .unknown:
+            return Unknown.name
         }
     }
     var shortName: String {
@@ -90,6 +103,8 @@ enum Splatoon3Rule: String, Rule, CaseIterable {
             return "rainmaker_s"
         case .clamBlitz:
             return "clam"
+        case .unknown:
+            return Unknown.name
         }
     }
     var shorterName: String {
@@ -104,10 +119,17 @@ enum Splatoon3Rule: String, Rule, CaseIterable {
             return "rainmaker_ss"
         case .clamBlitz:
             return "clam_ss"
+        case .unknown:
+            return Unknown.name
         }
     }
     var image: String {
-        // TODO: Splatoon 3 SVG rule icons render incorrectly.
-        return name + "_2"
+        switch self {
+        case .turfWar, .splatZones, .towerControl, .rainmaker, .clamBlitz:
+            // TODO: Splatoon 3 SVG rule icons render incorrectly.
+            return name + "_2"
+        case .unknown:
+            return Unknown.assetImage
+        }
     }
 }
