@@ -13,13 +13,13 @@
 "unknown" = "アンノウン";
 
 // Mode.
-"regular" = "レギュラー";
-"ranked" = "ガチ";
-"league" = "リーグ";
-
 "regular_battle" = "レギュラーマッチ";
 "ranked_battle" = "ガチマッチ";
 "league_battle" = "リーグマッチ";
+
+"regular" = "レギュラー";
+"ranked" = "ガチ";
+"league" = "リーグ";
 
 "regular_ss" = "レギュラー";
 "ranked_ss" = "ガチ";
@@ -28,14 +28,14 @@
 "salmon_run" = "サーモンラン";
 "job" = "バイト";
 
-"series" = "チャレンジ";
-"open" = "オープン";
-
 "anarchy_battle_series" = "バンカラマッチ (チャレンジ)";
 "anarchy_battle_open" = "バンカラマッチ (オープン)";
 
-"series_ss" = " チ ";
-"open_ss" = " オ ";
+"series" = "チャレンジ";
+"open" = "オープン";
+
+"series_ss" = "チ·";
+"open_ss" = "オ·";
 
 // Rule.
 "turf_war" = "ナワバリバトル";

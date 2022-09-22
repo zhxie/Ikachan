@@ -13,13 +13,13 @@
 "unknown" = "Unknown";
 
 // Mode.
-"regular" = "Regular";
-"ranked" = "Ranked";
-"league" = "League";
-
 "regular_battle" = "Regular Battle";
 "ranked_battle" = "Ranked Battle";
 "league_battle" = "League Battle";
+
+"regular" = "Regular";
+"ranked" = "Ranked";
+"league" = "League";
 
 "regular_ss" = "R.";
 "ranked_ss" = "R.";
@@ -28,11 +28,11 @@
 "salmon_run" = "Salmon Run";
 "job" = "Job";
 
-"series" = "Series";
-"open" = "Open";
-
 "anarchy_battle_series" = "Anarchy Battle (Series)";
 "anarchy_battle_open" = "Anarchy Battle (Open)";
+
+"series" = "Series";
+"open" = "Open";
 
 "series_ss" = "S.";
 "open_ss" = "O.";

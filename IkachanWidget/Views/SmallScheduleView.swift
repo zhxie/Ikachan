@@ -38,7 +38,7 @@ struct SmallScheduleView: View {
                         TopLeadingView(text: scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
                     }
                 } leadingRight: {
-                    TopTrailingView(text: subview ? schedule.localizedDescription : schedule.rule.shorterName, color: schedule.mode.accentColor)
+                    TopTrailingView(text: subview ? schedule.localizedShorterDescription : schedule.rule.shorterName, color: schedule.mode.accentColor)
                 }
                 .padding(subview ? [] : [.all])
             } else {

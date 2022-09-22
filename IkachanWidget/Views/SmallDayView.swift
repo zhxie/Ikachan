@@ -54,7 +54,7 @@ struct SmallDayView: View {
                         
                         Spacer()
                         
-                        TopTrailingView(text: schedule.localizedDescription, color: .white)
+                        TopTrailingView(text: schedule.localizedShorterDescription, color: .white)
                             .layoutPriority(2)
                     }
                     .layoutPriority(1)

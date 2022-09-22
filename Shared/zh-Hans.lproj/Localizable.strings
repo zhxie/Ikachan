@@ -13,13 +13,13 @@
 "unknown" = "未知";
 
 // Mode.
-"regular" = "一般";
-"ranked" = "真格";
-"league" = "组排";
-
 "regular_battle" = "一般比赛";
 "ranked_battle" = "真格比赛";
 "league_battle" = "组排比赛";
+
+"regular" = "一般";
+"ranked" = "真格";
+"league" = "组排";
 
 "regular_ss" = "一般";
 "ranked_ss" = "真格";
@@ -28,11 +28,11 @@
 "salmon_run" = "鲑鱼跑";
 "job" = "打工";
 
-"series" = "蛮颓挑战";
-"open" = "蛮颓开放";
-
 "anarchy_battle_series" = "蛮颓比赛 (挑战)";
 "anarchy_battle_open" = "蛮颓比赛 (开放)";
+
+"series" = "蛮颓挑战";
+"open" = "蛮颓开放";
 
 "series_ss" = "挑战";
 "open_ss" = "开放";

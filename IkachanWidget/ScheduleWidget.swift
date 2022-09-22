@@ -118,8 +118,6 @@ struct ScheduleWidgetEntryView : View {
                 AccessoryCircularScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
             case .accessoryRectangular:
                 AccessoryRectangularScheduleView(schedule: entry.schedule)
-            case .accessoryInline:
-                Text(LocalizedStringKey(entry.schedule?.localizedDescription ?? "error"))
             case .systemSmall:
                 SmallScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
             default:
@@ -158,7 +156,7 @@ struct ScheduleWidget: Widget {
             }
             .configurationDisplayName("schedule")
             .description("schedule_widget_description")
-            .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline, .systemSmall, .systemMedium])
+            .supportedFamilies([.accessoryCircular, .accessoryRectangular, .systemSmall, .systemMedium])
         } else {
             return IntentConfiguration(kind: kind, intent: ScheduleIntent.self, provider: ScheduleProvider()) { entry in
                 ScheduleWidgetEntryView(entry: entry)
@@ -180,9 +178,6 @@ struct ScheduleWidget_Previews: PreviewProvider {
                 ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder))
                     .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
                     .previewDisplayName("Rectangular")
-                ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder))
-                    .previewContext(WidgetPreviewContext(family: .accessoryInline))
-                    .previewDisplayName("Inline")
             }
             ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), configuration: ScheduleIntent(), schedule: SchedulePlaceholder))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))

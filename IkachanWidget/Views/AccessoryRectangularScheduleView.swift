@@ -12,7 +12,7 @@ struct AccessoryRectangularScheduleView: View {
     
     var body: some View {
         if let schedule = schedule {
-            AccessoryRectangularBaseView(image: schedule.rule.image, title: schedule.localizedDescription, text: schedule.stages[0].name, text2: schedule.stages[1].name)
+            AccessoryRectangularBaseView(image: schedule.rule.image, title: schedule.localizedShorterDescription, text: schedule.stages[0].name, text2: schedule.stages[1].name)
         } else {
             FailedToLoadView(accentColor: .white, transparent: true)
         }
