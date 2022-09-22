@@ -133,6 +133,8 @@ struct ShiftWidgetEntryView: View {
             switch family {
             case .accessoryCircular:
                 AccessoryCircularShiftView(current: entry.date, shift: entry.shift, mode: mode)
+            case .accessoryRectangular:
+                AccessoryRectangularShiftView(shift: entry.shift)
             case .systemSmall:
                 SmallShiftView(current: entry.date, shift: entry.shift, mode: mode)
             default:
@@ -171,7 +173,7 @@ struct ShiftWidget: Widget {
             }
             .configurationDisplayName("shift")
             .description("shift_widget_description")
-            .supportedFamilies([.accessoryCircular, .systemSmall, .systemMedium])
+            .supportedFamilies([.accessoryCircular, .accessoryRectangular, .systemSmall, .systemMedium])
         } else {
             return IntentConfiguration(kind: kind, intent:ShiftIntent.self, provider: ShiftProvider()) { entry in
                 ShiftWidgetEntryView(entry: entry)
@@ -190,6 +192,9 @@ struct ShiftWidget_Previews: PreviewProvider {
                 ShiftWidgetEntryView(entry: ShiftEntry(date: Date(), configuration: ShiftIntent(), shift: ShiftPlaceholder))
                     .previewContext(WidgetPreviewContext(family: .accessoryCircular))
                     .previewDisplayName("Circular")
+                ShiftWidgetEntryView(entry: ShiftEntry(date: Date(), configuration: ShiftIntent(), shift: ShiftPlaceholder))
+                    .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+                    .previewDisplayName("Rectangular")
             }
             ShiftWidgetEntryView(entry: ShiftEntry(date: Date(), configuration: ShiftIntent(), shift: ShiftPlaceholder))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))

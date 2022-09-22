@@ -1,33 +1,37 @@
 //
-//  AccessoryRectangularScheduleView.swift
+//  AccessoryRectangularShiftView.swift
 //  IkachanWidget
 //
-//  Created by Sketch on 2022/9/18.
+//  Created by Sketch on 2022/9/22.
 //
 
 import SwiftUI
 
-struct AccessoryRectangularScheduleView: View {
-    var schedule: Schedule?
+struct AccessoryRectangularShiftView: View {
+    var shift: Shift?
     
     var body: some View {
-        if let schedule = schedule {
+        if let shift = shift {
             if #available(iOSApplicationExtension 16.0, *) {
                 HStack (alignment: .top) {
                     VStack (alignment: .leading, spacing: 0) {
                         HStack (spacing: 4) {
                             // TODO: Image should be replaced to SVG text.
-                            Image(schedule.rule.image)
+                            Image(shift.mode.image)
                                 .resizedToFit()
                                 .frame(width: 16, height: 16)
                             
-                            Text(LocalizedStringKey(schedule.localizedShorterDescription))
+                            Text(LocalizedStringKey(shift.stage!.name))
                                 .font(.headline)
                                 .widgetAccentable()
                         }
                         
-                        Text(LocalizedStringKey(schedule.stages[0].name))
-                        Text(LocalizedStringKey(schedule.stages[1].name))
+                        HStack (spacing: 4) {
+                            WeaponView(weapon: shift.weapons[0])
+                            WeaponView(weapon: shift.weapons[1])
+                            WeaponView(weapon: shift.weapons[2])
+                            WeaponView(weapon: shift.weapons[3])
+                        }
                     }
                     
                     Spacer()
@@ -41,8 +45,8 @@ struct AccessoryRectangularScheduleView: View {
     }
 }
 
-struct AccessoryRectangularScheduleView_Previews: PreviewProvider {
+struct AccessoryRectangularShiftView_Previews: PreviewProvider {
     static var previews: some View {
-        AccessoryRectangularScheduleView(schedule: SchedulePlaceholder)
+        AccessoryRectangularShiftView(shift: ShiftPlaceholder)
     }
 }
