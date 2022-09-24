@@ -10,6 +10,8 @@ import SwiftyJSON
 
 final class ModelData: ObservableObject {
     @Published var game: Game = .splatoon3
+    @Published var mode = "regular_battle"
+    @Published var rule = ""
     
     @Published var schedules: [Schedule] = []
     @Published var shifts: [Shift] = []
@@ -68,8 +70,12 @@ final class ModelData: ObservableObject {
         switch game {
         case .splatoon2:
             game = .splatoon3
+            mode = "regular_battle"
+            rule = ""
         case .splatoon3:
             game = .splatoon2
+            mode = "regular_battle"
+            rule = ""
         }
     }
 }

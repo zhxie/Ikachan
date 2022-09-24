@@ -12,11 +12,8 @@ struct SchedulesView: View {
     @EnvironmentObject var modelData: ModelData
     @Environment(\.scenePhase) var scenePhase
     
-    @State var mode = "regular_battle"
-    @State var rule = ""
-    
     var body: some View {
-        SchedulesScrollView(data: schedules, title: mode) { schedule in
+        SchedulesScrollView(data: schedules, title: modelData.mode) { schedule in
             ScheduleView(schedule: schedule)
         }
         .toolbar {
@@ -37,7 +34,7 @@ struct SchedulesView: View {
                             .frame(height: 6)
                     }
                     
-                    Picker(selection: $mode, label: Text("")) {
+                    Picker(selection: $modelData.mode, label: Text("")) {
                         ForEach(0..<modelData.game.modes.count, id: \.self) { i in
                             Text(LocalizedStringKey(modelData.game.modes[i].shortName))
                                 .tag(modelData.game.modes[i].name)
@@ -47,12 +44,12 @@ struct SchedulesView: View {
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                if rule == "" {
+                if modelData.rule == "" {
                     Menu(content: {
                         ForEach(0..<modelData.game.rules.count, id: \.self) { i in
                             Button(action: {
                                 Impact(style: .light)
-                                self.rule = modelData.game.rules[i].name
+                                modelData.rule = modelData.game.rules[i].name
                             }) {
                                 Text(LocalizedStringKey(modelData.game.rules[i].name))
                                 Image(modelData.game.rules[i].image)
@@ -66,7 +63,7 @@ struct SchedulesView: View {
                 } else {
                     Button(action: {
                         Impact(style: .light)
-                        rule = "turfWar"
+                        modelData.rule = "turfWar"
                     }) {
                         Image(systemName: "line.horizontal.3.decrease.circle.fill")
                     }
@@ -85,7 +82,7 @@ struct SchedulesView: View {
     
     var schedules: [Schedule] {
         modelData.schedules.filter { schedule in
-            schedule.mode.name == mode && (rule == "" || schedule.rule.name == rule)
+            schedule.mode.name == modelData.mode && (modelData.rule == "" || schedule.rule.name == modelData.rule)
         }
     }
     
