@@ -127,6 +127,9 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                         let startTime = utcToDate(date: schedule["startTime"].stringValue)
                         let endTime = utcToDate(date: schedule["endTime"].stringValue)
                         let matchSetting = schedule["regularMatchSetting"]
+                        if let _ = matchSetting.null {
+                            continue
+                        }
                         let rule = Splatoon3Rule(rawValue: matchSetting["vsRule"]["rule"].stringValue.lowercased()) ?? .unknown
                         var stages: [Splatoon3ScheduleStage] = []
                         for stage in matchSetting["vsStages"].arrayValue {
@@ -139,6 +142,9 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                         let startTime = utcToDate(date: schedule["startTime"].stringValue)
                         let endTime = utcToDate(date: schedule["endTime"].stringValue)
                         for matchSetting in schedule["bankaraMatchSettings"].arrayValue {
+                            if let _ = matchSetting.null {
+                                continue
+                            }
                             let mode = Splatoon3ScheduleMode(rawValue: matchSetting["mode"].stringValue.lowercased())!
                             let rule = Splatoon3Rule(rawValue: matchSetting["vsRule"]["rule"].stringValue.lowercased()) ?? .unknown
                             var stages: [Splatoon3ScheduleStage] = []
@@ -148,6 +154,21 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                             
                             schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: mode, rule: rule, stages: stages))
                         }
+                    }
+                    for schedule in innerData["festSchedules"]["nodes"].arrayValue {
+                        let startTime = utcToDate(date: schedule["startTime"].stringValue)
+                        let endTime = utcToDate(date: schedule["endTime"].stringValue)
+                        let matchSetting = schedule["festMatchSetting"]
+                        if let _ = matchSetting.null {
+                            continue
+                        }
+                        let rule = Splatoon3Rule(rawValue: matchSetting["vsRule"]["rule"].stringValue.lowercased()) ?? .unknown
+                        var stages: [Splatoon3ScheduleStage] = []
+                        for stage in matchSetting["vsStages"].arrayValue {
+                            stages.append(Splatoon3ScheduleStage(rawValue: stage["vsStageId"].intValue) ?? .unknown)
+                        }
+                        
+                        schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: .regular, rule: rule, stages: stages))
                     }
                     
                     completion(schedules, error)
