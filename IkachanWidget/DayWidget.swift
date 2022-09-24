@@ -91,7 +91,19 @@ struct DayWidgetEntryView: View {
     var entry: DayProvider.Entry
     
     var body: some View {
-        SmallDayView(current: entry.date, schedule: entry.schedule)
+        SmallDayView(current: entry.date, schedule: entry.schedule, mode: mode)
+    }
+    
+    var game: Game {
+        Game(intent: entry.configuration.game)
+    }
+    var mode: Mode? {
+        switch game {
+        case .splatoon2:
+            return Splatoon2ScheduleMode(intent: entry.configuration.mode)
+        case .splatoon3:
+            return Splatoon3ScheduleMode(intent: entry.configuration.mode)
+        }
     }
 }
 

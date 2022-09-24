@@ -11,6 +11,7 @@ import WidgetKit
 struct SmallDayView: View {
     var current: Date
     var schedule: Schedule?
+    var mode: Mode?
     
     var body: some View {
         ZStack {
@@ -46,66 +47,69 @@ struct SmallDayView: View {
             }
             .ignoresSafeArea(edges: .all)
             
-            if let schedule = schedule {
-                VStack(spacing: 0) {
-                    HStack(spacing: 0) {
-                        TopLeadingView(text: LocalizedStringKey(timeSpanDescriptor(current: current, startTime: schedule.startTime)), color: .white)
-                            .layoutPriority(1)
-                        
-                        Spacer()
-                        
-                        TopTrailingView(text: schedule.localizedShorterDescription, color: .white)
-                            .layoutPriority(2)
-                    }
-                    .layoutPriority(1)
-                    
-                    Spacer()
-                        .frame(height: 4)
-                        .layoutPriority(1)
-                    
-                    HStack {
-                        Text(timeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime))
-                            .fontWeight(.light)
-                            .font(.largeTitle)
-                            .foregroundColor(.white)
-                            .lineLimit(1)
-                            .layoutPriority(1)
-                        
-                        Spacer()
-                        
-                        Image(systemName: icon)
-                            .font(.footnote)
-                            .foregroundColor(Color(red: 247 / 255, green: 209 / 255, blue: 87 / 255))
-                            .accessibilityLabel(LocalizedStringKey(iconText))
-                    }
-                    .layoutPriority(1)
-                    
-                    Spacer()
-                    
-                    HStack {
-                        VStack(alignment: .leading) {
-                            BottomView(text: schedule.stages[0].name, color: .white)
-                            BottomView(text: schedule.stages[1].name, color: .white)
+            if let _ = mode {
+                if let schedule = schedule {
+                    VStack(spacing: 0) {
+                        HStack(spacing: 0) {
+                            TopLeadingView(text: LocalizedStringKey(timeSpanDescriptor(current: current, startTime: schedule.startTime)), color: .white)
+                                .layoutPriority(1)
+                            
+                            Spacer()
+                            
+                            TopTrailingView(text: schedule.localizedShorterDescription, color: .white)
+                                .layoutPriority(2)
                         }
                         .layoutPriority(1)
                         
                         Spacer()
-                            .frame(minWidth: 0)
+                            .frame(height: 4)
+                            .layoutPriority(1)
+                        
+                        HStack {
+                            Text(timeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime))
+                                .fontWeight(.light)
+                                .font(.largeTitle)
+                                .foregroundColor(.white)
+                                .lineLimit(1)
+                                .layoutPriority(1)
+                            
+                            Spacer()
+                            
+                            Image(systemName: icon)
+                                .font(.footnote)
+                                .foregroundColor(Color(red: 247 / 255, green: 209 / 255, blue: 87 / 255))
+                                .accessibilityLabel(LocalizedStringKey(iconText))
+                        }
+                        .layoutPriority(1)
+                        
+                        Spacer()
+                        
+                        HStack {
+                            VStack(alignment: .leading) {
+                                BottomView(text: schedule.stages[0].name, color: .white)
+                                BottomView(text: schedule.stages[1].name, color: .white)
+                            }
+                            .layoutPriority(1)
+                            
+                            Spacer()
+                                .frame(minWidth: 0)
+                        }
                     }
+                    .padding()
+                } else {
+                    FailedToLoadView(accentColor: .white, error: .noSchedule)
+                        .padding()
                 }
-                .padding()
             } else {
-                FailedToLoadView(accentColor: .white, error: .noSchedule)
+                FailedToLoadView(accentColor: .white, error: .failedToLoad)
                     .padding()
             }
-            
         }
     }
     
     var hour: Int {
         Calendar.current.component(.hour, from: current)
     }
-    
     var isDay: Bool {
         return hour >= 5 && hour < 19
     }
@@ -117,7 +121,6 @@ struct SmallDayView: View {
             return "moon.fill"
         }
     }
-    
     var iconText: String {
         if isDay {
             return "in_the_day"
@@ -129,7 +132,7 @@ struct SmallDayView: View {
 
 struct SmallDayView_Previews: PreviewProvider {
     static var previews: some View {
-        SmallDayView(current: Date(), schedule: SchedulePlaceholder)
+        SmallDayView(current: Date(), schedule: SchedulePlaceholder, mode: Splatoon2ScheduleMode.regular)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

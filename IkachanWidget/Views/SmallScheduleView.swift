@@ -19,30 +19,35 @@ struct SmallScheduleView: View {
             Color(UIColor.systemBackground)
                 .ignoresSafeArea(edges: .all)
             
-            if let schedule = schedule {
-                SmallBaseView(text: absoluteTimeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime), indicatorText: schedule.mode.name, color: schedule.mode.accentColor) {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            BottomView(text: schedule.stages[0].name)
-                            BottomView(text: schedule.stages[1].name)
+            if let mode = mode {
+                if let schedule = schedule {
+                    SmallBaseView(text: absoluteTimeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime), indicatorText: schedule.mode.name, color: schedule.mode.accentColor) {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                BottomView(text: schedule.stages[0].name)
+                                BottomView(text: schedule.stages[1].name)
+                            }
+                            .layoutPriority(1)
+                            
+                            Spacer()
+                                .frame(minWidth: 0)
                         }
-                        .layoutPriority(1)
-                        
-                        Spacer()
-                            .frame(minWidth: 0)
+                    } leadingLeft: {
+                        if subview {
+                            TopLeadingView(text: LocalizedStringKey(timeSpanDescriptor(current: current, startTime: schedule.startTime)))
+                        } else {
+                            TopLeadingView(text: scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
+                        }
+                    } leadingRight: {
+                        TopTrailingView(text: subview ? schedule.localizedShorterDescription : schedule.rule.shorterName, color: schedule.mode.accentColor)
                     }
-                } leadingLeft: {
-                    if subview {
-                        TopLeadingView(text: LocalizedStringKey(timeSpanDescriptor(current: current, startTime: schedule.startTime)))
-                    } else {
-                        TopLeadingView(text: scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
-                    }
-                } leadingRight: {
-                    TopTrailingView(text: subview ? schedule.localizedShorterDescription : schedule.rule.shorterName, color: schedule.mode.accentColor)
+                    .padding(subview ? [] : [.all])
+                } else {
+                    FailedToLoadView(accentColor: mode.accentColor, error: .noSchedule)
+                        .padding()
                 }
-                .padding(subview ? [] : [.all])
             } else {
-                FailedToLoadView(accentColor: mode?.accentColor ?? Color(UIColor.label), error: .noSchedule)
+                FailedToLoadView(accentColor: Color(UIColor.label), error: .failedToLoad)
                     .padding()
             }
         }

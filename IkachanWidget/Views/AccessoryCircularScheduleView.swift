@@ -13,7 +13,12 @@ struct AccessoryCircularScheduleView: View {
     var mode: Mode?
     
     var body: some View {
-        AccessoryCircularBaseView(value: percent, image: schedule?.rule.image ?? "inkling_splatted", text: mode?.shorterName ?? "error")
+        if let mode = mode {
+            AccessoryCircularBaseView(value: percent, image: schedule?.rule.image ?? "inkling_splatted", text: mode.shorterName)
+        } else {
+            AccessoryCircularBaseView(value: 0, image: "inkling_splatted", text: "error")
+        }
+        
     }
     
     var percent: Double {

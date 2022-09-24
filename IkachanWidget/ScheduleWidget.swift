@@ -117,7 +117,7 @@ struct ScheduleWidgetEntryView : View {
             case .accessoryCircular:
                 AccessoryCircularScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
             case .accessoryRectangular:
-                AccessoryRectangularScheduleView(schedule: entry.schedule)
+                AccessoryRectangularScheduleView(schedule: entry.schedule, mode: mode)
             case .systemSmall:
                 SmallScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
             default:
