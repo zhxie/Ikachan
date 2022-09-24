@@ -147,6 +147,15 @@
 		E4BC7AD528D2260B00FDBF7F /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BC7AD328D2260B00FDBF7F /* Rule.swift */; };
 		E4BC7AD628D2260B00FDBF7F /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BC7AD328D2260B00FDBF7F /* Rule.swift */; };
 		E4BC7AD728D2260B00FDBF7F /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BC7AD328D2260B00FDBF7F /* Rule.swift */; };
+		E4BE376B28DEBD3C00BDB75F /* Splatfest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376A28DEBD3C00BDB75F /* Splatfest.swift */; };
+		E4BE376C28DEBD3C00BDB75F /* Splatfest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376A28DEBD3C00BDB75F /* Splatfest.swift */; };
+		E4BE376D28DEBD3C00BDB75F /* Splatfest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376A28DEBD3C00BDB75F /* Splatfest.swift */; };
+		E4BE376E28DEBD3C00BDB75F /* Splatfest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376A28DEBD3C00BDB75F /* Splatfest.swift */; };
+		E4BE377028DEC02D00BDB75F /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */; };
+		E4BE377128DEC02D00BDB75F /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */; };
+		E4BE377228DEC02D00BDB75F /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */; };
+		E4BE377328DEC02D00BDB75F /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */; };
+		E4BE377528DEC1F800BDB75F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4BE377428DEC1F800BDB75F /* SwiftyJSON */; };
 		E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7A2C225B7395500E26B20 /* Localizable.strings */; };
 		E4C98CFC25C98099006940E9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C98CFA25C98099006940E9 /* View.swift */; };
 		E4D8F02C25D02A460064B40A /* ichi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4D8F02625D02A450064B40A /* ichi@2x.png */; };
@@ -288,6 +297,8 @@
 		E4B1145925BD515F00303542 /* SmallDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDayView.swift; sourceTree = "<group>"; };
 		E4B1145E25BD5AC600303542 /* DayWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWidget.swift; sourceTree = "<group>"; };
 		E4BC7AD328D2260B00FDBF7F /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
+		E4BE376A28DEBD3C00BDB75F /* Splatfest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatfest.swift; sourceTree = "<group>"; };
+		E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftJSON.swift; sourceTree = "<group>"; };
 		E4C7A2C125B7395500E26B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E4C98CFA25C98099006940E9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		E4D8F02625D02A450064B40A /* ichi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ichi@2x.png"; sourceTree = "<group>"; };
@@ -311,6 +322,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4BE377528DEC1F800BDB75F /* SwiftyJSON in Frameworks */,
 				E4613F4525C9AC5E00561D53 /* Kingfisher in Frameworks */,
 				E43E137525C9A3BA008A0FE6 /* IntentsUI.framework in Frameworks */,
 			);
@@ -520,6 +532,7 @@
 				E477990125B1F1F600F8AE9F /* Schedule.swift */,
 				E477990C25B203F900F8AE9F /* Weapon.swift */,
 				E477990925B2029C00F8AE9F /* Shift.swift */,
+				E4BE376A28DEBD3C00BDB75F /* Splatfest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -544,6 +557,7 @@
 				E48BECBF25CD31F100B301D1 /* Collection.swift */,
 				E468B7B425B46080001254FE /* Date.swift */,
 				E461413F25CA880500561D53 /* String.swift */,
+				E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -626,6 +640,7 @@
 			name = IkachanIntentsUI;
 			packageProductDependencies = (
 				E4613F4425C9AC5E00561D53 /* Kingfisher */,
+				E4BE377428DEC1F800BDB75F /* SwiftyJSON */,
 			);
 			productName = IkachanIntentsUI;
 			productReference = E43E137325C9A3BA008A0FE6 /* IkachanIntentsUI.appex */;
@@ -793,11 +808,13 @@
 				E4613F0225C9A70C00561D53 /* Shift.swift in Sources */,
 				E4613F0325C9A70C00561D53 /* Schedule.swift in Sources */,
 				E4BC7AD628D2260B00FDBF7F /* Rule.swift in Sources */,
+				E4BE376D28DEBD3C00BDB75F /* Splatfest.swift in Sources */,
 				E45371E628D1D5E800E3FC66 /* Mode.swift in Sources */,
 				E43E136D25C9A3BA008A0FE6 /* IntentHandler.swift in Sources */,
 				E4613F9225C9AFD100561D53 /* ScheduleIntentHandler.swift in Sources */,
 				E4613F9F25C9AFF700561D53 /* ShiftIntentHandler.swift in Sources */,
 				E4613F2025C9A97A00561D53 /* Constant.swift in Sources */,
+				E4BE377228DEC02D00BDB75F /* SwiftJSON.swift in Sources */,
 				E485DA192753509400B82AE0 /* Date.swift in Sources */,
 				E461414225CA880500561D53 /* String.swift in Sources */,
 				E45371E128D1C5E200E3FC66 /* Stage.swift in Sources */,
@@ -812,9 +829,11 @@
 				E42AE865275509DB006F7CBD /* WeaponView.swift in Sources */,
 				E4BC7AD728D2260B00FDBF7F /* Rule.swift in Sources */,
 				E4613F2525C9A97A00561D53 /* Constant.swift in Sources */,
+				E4BE377328DEC02D00BDB75F /* SwiftJSON.swift in Sources */,
 				E485DA0D2753444600B82AE0 /* Image.swift in Sources */,
 				E4613F0825C9A70C00561D53 /* Shift.swift in Sources */,
 				E4613FB825C9B62000561D53 /* IkachanIntents.intentdefinition in Sources */,
+				E4BE376E28DEBD3C00BDB75F /* Splatfest.swift in Sources */,
 				E4613F0925C9A70D00561D53 /* Schedule.swift in Sources */,
 				E48BECC325CD31F200B301D1 /* Collection.swift in Sources */,
 				E43E137825C9A3BA008A0FE6 /* IntentViewController.swift in Sources */,
@@ -847,6 +866,7 @@
 				E4400F3325CD012C00BF94C6 /* IntentHandler.swift in Sources */,
 				E485D9FC275342A300B82AE0 /* Image.swift in Sources */,
 				E42AE86727551ADF006F7CBD /* SchedulesScrollView.swift in Sources */,
+				E4BE377028DEC02D00BDB75F /* SwiftJSON.swift in Sources */,
 				E4400F3525CD012C00BF94C6 /* ShiftIntentHandler.swift in Sources */,
 				E4405D7D25AF64D2002EF1AB /* ContentView.swift in Sources */,
 				E42AE864275509DB006F7CBD /* WeaponView.swift in Sources */,
@@ -865,6 +885,7 @@
 				E468B7A325B282F5001254FE /* ModelData.swift in Sources */,
 				E445762425CE9B70004AA74D /* Fortune.swift in Sources */,
 				E4E60D8925B5CBC80039A6E6 /* SchedulesView.swift in Sources */,
+				E4BE376B28DEBD3C00BDB75F /* Splatfest.swift in Sources */,
 				E468B7AD25B34AFC001254FE /* Constant.swift in Sources */,
 				E42AE86A2755C895006F7CBD /* IconView.swift in Sources */,
 				E468B7B525B46080001254FE /* Date.swift in Sources */,
@@ -907,6 +928,7 @@
 				E48BECC125CD31F100B301D1 /* Collection.swift in Sources */,
 				E4400F2925CD010A00BF94C6 /* ShiftIntentHandler.swift in Sources */,
 				E4400F4925CD069A00BF94C6 /* API.swift in Sources */,
+				E4BE376C28DEBD3C00BDB75F /* Splatfest.swift in Sources */,
 				E485DA1127534A3700B82AE0 /* Image.swift in Sources */,
 				E4C98CFC25C98099006940E9 /* View.swift in Sources */,
 				E4444EF025BF149B0003A676 /* Schedule.swift in Sources */,
@@ -915,6 +937,7 @@
 				E42AE8722755E331006F7CBD /* StageView.swift in Sources */,
 				E4444EF125BF149B0003A676 /* Weapon.swift in Sources */,
 				E45371E528D1D5E800E3FC66 /* Mode.swift in Sources */,
+				E4BE377128DEC02D00BDB75F /* SwiftJSON.swift in Sources */,
 				E47BA09428DC92BF007F02E9 /* AccessoryRectangularShiftView.swift in Sources */,
 				E4444F2325BF15090003A676 /* ShiftWidget.swift in Sources */,
 				E4400F2E25CD011500BF94C6 /* IntentHandler.swift in Sources */,
@@ -1405,6 +1428,11 @@
 			productName = Kingfisher;
 		};
 		E477990625B1F62500F8AE9F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E477990525B1F62500F8AE9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		E4BE377428DEC1F800BDB75F /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E477990525B1F62500F8AE9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;

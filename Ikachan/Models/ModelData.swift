@@ -23,7 +23,7 @@ final class ModelData: ObservableObject {
         } else {
             isSchedulesUpdating = true
             
-            fetchSchedules(game: game) { schedules, error in
+            fetchSchedules(game: game) { schedules, _, error in
                 guard let schedules = schedules else {
                     DispatchQueue.main.async {
                         self.isSchedulesUpdating = false

@@ -102,19 +102,19 @@ private func fetchSplatoon2Shifts(completion: @escaping ([Splatoon2Shift]?, Erro
         .resume()
     }
 }
-private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?, Error?) -> Void) {
+private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?, Splatoon3Splatfest?, Error?) -> Void) {
     do {
         var request = URLRequest(url: URL(string: Splatoon3InkScheduleURL)!)
         request.timeoutInterval = Timeout
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if error != nil {
-                completion(nil, error)
+                completion(nil, nil, error)
             } else {
                 let response = response as! HTTPURLResponse
                 let status = response.statusCode
                 guard (200...299).contains(status) else {
-                    completion(nil, error)
+                    completion(nil, nil, error)
                     
                     return
                 }
@@ -127,7 +127,7 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                         let startTime = utcToDate(date: schedule["startTime"].stringValue)
                         let endTime = utcToDate(date: schedule["endTime"].stringValue)
                         let matchSetting = schedule["regularMatchSetting"]
-                        if let _ = matchSetting.null {
+                        if matchSetting.isNull {
                             continue
                         }
                         let rule = Splatoon3Rule(rawValue: matchSetting["vsRule"]["rule"].stringValue.lowercased()) ?? .unknown
@@ -142,7 +142,7 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                         let startTime = utcToDate(date: schedule["startTime"].stringValue)
                         let endTime = utcToDate(date: schedule["endTime"].stringValue)
                         for matchSetting in schedule["bankaraMatchSettings"].arrayValue {
-                            if let _ = matchSetting.null {
+                            if matchSetting.isNull {
                                 continue
                             }
                             let mode = Splatoon3ScheduleMode(rawValue: matchSetting["mode"].stringValue.lowercased())!
@@ -155,11 +155,20 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                             schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: mode, rule: rule, stages: stages))
                         }
                     }
+                    
+                    var fest: Splatoon3Splatfest? = nil
+                    let currentFest = innerData["currentFest"]
+                    if !currentFest.isNull {
+                        let startTime = utcToDate(date: currentFest["startTime"].stringValue)
+                        let midtermTime = utcToDate(date: currentFest["midtermTime"].stringValue)
+                        let endTime = utcToDate(date: currentFest["endTime"].stringValue)
+                        fest = Splatoon3Splatfest(startTime: startTime, midtermTime: midtermTime, endTime: endTime)
+                    }
                     for schedule in innerData["festSchedules"]["nodes"].arrayValue {
                         let startTime = utcToDate(date: schedule["startTime"].stringValue)
                         let endTime = utcToDate(date: schedule["endTime"].stringValue)
                         let matchSetting = schedule["festMatchSetting"]
-                        if let _ = matchSetting.null {
+                        if matchSetting.isNull {
                             continue
                         }
                         let rule = Splatoon3Rule(rawValue: matchSetting["vsRule"]["rule"].stringValue.lowercased()) ?? .unknown
@@ -171,9 +180,9 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                         schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: .regular, rule: rule, stages: stages))
                     }
                     
-                    completion(schedules, error)
+                    completion(schedules, fest, error)
                 } else {
-                    completion(nil, error)
+                    completion(nil, nil, error)
                 }
             }
         }
@@ -225,10 +234,12 @@ private func fetchSplatoon3Shifts(completion: @escaping ([Splatoon3Shift]?, Erro
     }
 }
 
-func fetchSchedules(game: Game, completion: @escaping ([Schedule]?, Error?) -> Void) {
+func fetchSchedules(game: Game, completion: @escaping ([Schedule]?, Splatfest?, Error?) -> Void) {
     switch game {
     case .splatoon2:
-        return fetchSplatoon2Schedules(completion: completion)
+        return fetchSplatoon2Schedules { schedules, error in
+            completion(schedules, nil, error)
+        }
     case .splatoon3:
         return fetchSplatoon3Schedules(completion: completion)
     }

@@ -15,7 +15,7 @@ struct DayProvider: IntentTimelineProvider {
     }
     
     func getSnapshot(for configuration: DayIntent, in context: Context, completion: @escaping (DayEntry) -> Void) {
-        fetchSchedules(game: Game(intent: configuration.game)) { schedules, error in
+        fetchSchedules(game: Game(intent: configuration.game)) { schedules, _, error in
             let current = Date().floorToMin()
             guard let schedules = schedules else {
                 completion(DayEntry(date: current, configuration: configuration, schedule: nil))
@@ -37,7 +37,7 @@ struct DayProvider: IntentTimelineProvider {
     }
     
     func getTimeline(for configuration: DayIntent, in context: Context, completion: @escaping (Timeline<DayEntry>) -> Void) {
-        fetchSchedules(game: Game(intent: configuration.game)) { schedules, error in
+        fetchSchedules(game: Game(intent: configuration.game)) { schedules, _, error in
             var entries: [DayEntry] = []
             var current = Date().floorToMin()
             guard let schedules = schedules else {
