@@ -245,6 +245,8 @@
 "%@_%@" = "%@%@";
 "error" = "错误";
 "failed_to_load" = "无法载入";
+"no_schedule" = "无日程";
+"no_shift" = "无排班";
 "schedule_widget_description" = "查看某模式目前和下次的日程。";
 "shift_widget_description" = "查看鲑鱼跑目前和下次的排班表。";
 "day_widget_name" = "一日Splatoon";

@@ -11,6 +11,7 @@ import WidgetKit
 struct FailedToLoadView: View {
     var accentColor: Color
     var transparent: Bool = false
+    var error: WidgetError = .failedToLoad
     
     var body: some View {
         ZStack {
@@ -27,10 +28,10 @@ struct FailedToLoadView: View {
                         Image("inkling_splatted")
                             .resizedToFit()
                             .blending(color: accentColor)
-                            .accessibilityLabel("failed_to_load")
+                            .accessibilityLabel(LocalizedStringKey(error.rawValue))
                     }
                     .frame(height: g.size.height / 3)
-                    Text("failed_to_load")
+                    Text(LocalizedStringKey(error.rawValue))
                         .font(.footnote)
                         .foregroundColor(accentColor)
                         .multilineTextAlignment(.center)

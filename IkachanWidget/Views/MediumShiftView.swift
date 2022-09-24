@@ -54,7 +54,7 @@ struct MediumShiftView: View {
                 }
                 .padding()
             } else {
-                FailedToLoadView(accentColor: mode.accentColor)
+                FailedToLoadView(accentColor: mode.accentColor, error: .noShift)
                     .padding()
             }
         }

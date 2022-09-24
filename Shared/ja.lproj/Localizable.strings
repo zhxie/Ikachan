@@ -245,6 +245,8 @@
 "%@_%@" = "%@%@";
 "error" = "エラー";
 "failed_to_load" = "読み込むことが\nできません";
+"no_schedule" = "スケジュールなし";
+"no_shift" = "シフトなし";
 "schedule_widget_description" = "そのモードのいまとつぎのスケジュールを表示できます。";
 "shift_widget_description" = "サーモンランのいまとつぎのシフト表を表示できます。";
 "day_widget_name" = "一日スプラ";

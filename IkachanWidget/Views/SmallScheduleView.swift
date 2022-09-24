@@ -42,7 +42,7 @@ struct SmallScheduleView: View {
                 }
                 .padding(subview ? [] : [.all])
             } else {
-                FailedToLoadView(accentColor: mode?.accentColor ?? Color(UIColor.label))
+                FailedToLoadView(accentColor: mode?.accentColor ?? Color(UIColor.label), error: .noSchedule)
                     .padding()
             }
         }

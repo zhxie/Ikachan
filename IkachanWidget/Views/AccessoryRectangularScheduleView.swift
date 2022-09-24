@@ -36,7 +36,7 @@ struct AccessoryRectangularScheduleView: View {
                 EmptyView()
             }
         } else {
-            FailedToLoadView(accentColor: .white, transparent: true)
+            FailedToLoadView(accentColor: .white, transparent: true, error: .noSchedule)
         }
     }
 }

@@ -95,7 +95,7 @@ struct SmallDayView: View {
                 }
                 .padding()
             } else {
-                FailedToLoadView(accentColor: .white)
+                FailedToLoadView(accentColor: .white, error: .noSchedule)
                     .padding()
             }
             

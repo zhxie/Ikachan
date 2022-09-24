@@ -53,7 +53,7 @@ struct SmallShiftView: View {
                 }
                 .padding(subview ? [] : [.all])
             } else {
-                FailedToLoadView(accentColor: mode.accentColor)
+                FailedToLoadView(accentColor: mode.accentColor, error: .noShift)
                     .padding()
             }
         }

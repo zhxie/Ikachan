@@ -156,6 +156,10 @@
 		E4BE377228DEC02D00BDB75F /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */; };
 		E4BE377328DEC02D00BDB75F /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */; };
 		E4BE377528DEC1F800BDB75F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4BE377428DEC1F800BDB75F /* SwiftyJSON */; };
+		E4BE377828DEC2A400BDB75F /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE377728DEC2A400BDB75F /* Error.swift */; };
+		E4BE377928DEC2A400BDB75F /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE377728DEC2A400BDB75F /* Error.swift */; };
+		E4BE377A28DEC2A400BDB75F /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE377728DEC2A400BDB75F /* Error.swift */; };
+		E4BE377B28DEC2A400BDB75F /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE377728DEC2A400BDB75F /* Error.swift */; };
 		E4C7A2C025B7395500E26B20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7A2C225B7395500E26B20 /* Localizable.strings */; };
 		E4C98CFC25C98099006940E9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C98CFA25C98099006940E9 /* View.swift */; };
 		E4D8F02C25D02A460064B40A /* ichi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4D8F02625D02A450064B40A /* ichi@2x.png */; };
@@ -299,6 +303,7 @@
 		E4BC7AD328D2260B00FDBF7F /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		E4BE376A28DEBD3C00BDB75F /* Splatfest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatfest.swift; sourceTree = "<group>"; };
 		E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftJSON.swift; sourceTree = "<group>"; };
+		E4BE377728DEC2A400BDB75F /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		E4C7A2C125B7395500E26B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E4C98CFA25C98099006940E9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		E4D8F02625D02A450064B40A /* ichi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ichi@2x.png"; sourceTree = "<group>"; };
@@ -464,6 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				E4400EFD25CC6C5F00BF94C6 /* Utils */,
+				E4BE377628DEC29400BDB75F /* Models */,
 				E484FDBD25C9460C006E748F /* Views */,
 				E4B1145E25BD5AC600303542 /* DayWidget.swift */,
 				E46B507525B9C2AC001F88CE /* ScheduleWidget.swift */,
@@ -588,6 +594,14 @@
 				E485DA1227534D0100B82AE0 /* KFImage.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		E4BE377628DEC29400BDB75F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4BE377728DEC2A400BDB75F /* Error.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E4D8F01025D01F5B0064B40A /* Icons */ = {
@@ -819,6 +833,7 @@
 				E461414225CA880500561D53 /* String.swift in Sources */,
 				E45371E128D1C5E200E3FC66 /* Stage.swift in Sources */,
 				E49BD9E228D5837C0034E0B4 /* Game.swift in Sources */,
+				E4BE377A28DEC2A400BDB75F /* Error.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,6 +857,7 @@
 				E46141A425CADF5600561D53 /* ShiftView.swift in Sources */,
 				E46141A525CADF5600561D53 /* ScheduleView.swift in Sources */,
 				E45371E228D1C5E200E3FC66 /* Stage.swift in Sources */,
+				E4BE377B28DEC2A400BDB75F /* Error.swift in Sources */,
 				E461414325CA880500561D53 /* String.swift in Sources */,
 				E45371E728D1D5E800E3FC66 /* Mode.swift in Sources */,
 				E49BD9E328D5837C0034E0B4 /* Game.swift in Sources */,
@@ -874,6 +890,7 @@
 				E46B510325BB1E3E001F88CE /* AboutView.swift in Sources */,
 				E4405D7B25AF64D2002EF1AB /* IkachanApp.swift in Sources */,
 				E49BD9E028D5837C0034E0B4 /* Game.swift in Sources */,
+				E4BE377828DEC2A400BDB75F /* Error.swift in Sources */,
 				E477990D25B203F900F8AE9F /* Weapon.swift in Sources */,
 				E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */,
 				E45371DF28D1C5E200E3FC66 /* Stage.swift in Sources */,
@@ -936,6 +953,7 @@
 				E42AE86E2755CF06006F7CBD /* TopLeadingView.swift in Sources */,
 				E42AE8722755E331006F7CBD /* StageView.swift in Sources */,
 				E4444EF125BF149B0003A676 /* Weapon.swift in Sources */,
+				E4BE377928DEC2A400BDB75F /* Error.swift in Sources */,
 				E45371E528D1D5E800E3FC66 /* Mode.swift in Sources */,
 				E4BE377128DEC02D00BDB75F /* SwiftJSON.swift in Sources */,
 				E47BA09428DC92BF007F02E9 /* AccessoryRectangularShiftView.swift in Sources */,
