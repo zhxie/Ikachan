@@ -61,11 +61,17 @@ struct ScheduleProvider: IntentTimelineProvider {
             // HACK: Since each schedule lasts for 2 hours, it's ok to add a fixed time shift.
             let timeShift = 7200 * IntentHandler.rotationConvertTo(rotation: configuration.rotation)
             for schedule in filtered {
-                while current.addingTimeInterval(TimeInterval(timeShift)) < schedule.endTime && entries.count < MaxWidgetEntryCount {
-                    let entry = ScheduleEntry(date: current, configuration: configuration, schedule: schedule)
+                let shifted = current.addingTimeInterval(TimeInterval(timeShift))
+                while shifted < schedule.endTime && entries.count < MaxWidgetEntryCount {
+                    var entry: ScheduleEntry
+                    if shifted < schedule.startTime {
+                        entry = ScheduleEntry(date: current, configuration: configuration, schedule: nil)
+                    } else {
+                        entry = ScheduleEntry(date: current, configuration: configuration, schedule: schedule)
+                        urls.insert(schedule.stages[0].imageUrl)
+                        urls.insert(schedule.stages[1].imageUrl)
+                    }
                     entries.append(entry)
-                    urls.insert(schedule.stages[0].imageUrl)
-                    urls.insert(schedule.stages[1].imageUrl)
                     
                     current = current.addingTimeInterval(60)
                 }

@@ -59,7 +59,12 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
             let filtered = schedules.filter { schedule in
                 schedule.mode.intent == intent.mode
             }
-            guard let schedule = filtered.at(index: IntentHandler.rotationConvertTo(rotation: intent.rotation)) else {
+            // HACK: Since each schedule lasts for 2 hours, it's ok to add a fixed time shift.
+            let timeShift = 7200 * IntentHandler.rotationConvertTo(rotation: intent.rotation)
+            let shifted = Date().addingTimeInterval(TimeInterval(timeShift))
+            guard let schedule = filtered.first(where: { schedule in
+                shifted < schedule.endTime && shifted >= schedule.startTime
+            }) else {
                 completion(ScheduleIntentResponse(code: .failure, userActivity: nil))
                 
                 return
