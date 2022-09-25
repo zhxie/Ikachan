@@ -179,7 +179,10 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                         
                         schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: .regular, rule: rule, stages: stages))
                     }
-                    
+
+                    schedules.sort { a, b in
+                        a.startTime < b.startTime
+                    }
                     completion(schedules, fest, error)
                 } else {
                     completion(nil, nil, error)
