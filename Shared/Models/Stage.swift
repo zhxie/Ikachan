@@ -219,7 +219,7 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
     case wahooWorld = 16
     case unknown = -9999
     
-    private var image: String {
+    var image: String {
         switch self {
         case .scorchGorge:
             return "/stage_img/icon/high_resolution/35f9ca08ccc2bf759774ab2cb886567c117b9287875ca92fb590c1294ddcdc1e_0.png"

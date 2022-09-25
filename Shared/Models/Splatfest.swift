@@ -13,13 +13,22 @@ protocol Splatfest: Codable {
 }
 
 struct Splatoon3Splatfest: Splatfest {
-    init(startTime: Date, midtermTime: Date, endTime: Date) {
+    enum State: String, CaseIterable, Codable {
+        case firstHalf = "first_half"
+        case secondHalf = "second_half"
+    }
+    
+    init(startTime: Date, midtermTime: Date, endTime: Date, state: State, stage: Splatoon3ScheduleStage) {
         self.startTime = startTime
         self.midtermTime = midtermTime
         self.endTime = endTime
+        self.state = state
+        self.stage = stage
     }
     
     var startTime: Date
     var midtermTime: Date
     var endTime: Date
+    var state: State
+    var stage: Splatoon3ScheduleStage
 }
