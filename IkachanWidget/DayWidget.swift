@@ -92,6 +92,7 @@ struct DayWidgetEntryView: View {
     
     var body: some View {
         SmallDayView(current: entry.date, schedule: entry.schedule, mode: mode)
+            .widgetURL(URL(string: String(format: IkachanScheduleScheme, game.name, mode?.name ?? ""))!)
     }
     
     var game: Game {

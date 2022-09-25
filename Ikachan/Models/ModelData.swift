@@ -8,7 +8,14 @@
 import Foundation
 import SwiftyJSON
 
+enum Tab {
+    case schedule
+    case shift
+    case about
+}
+
 final class ModelData: ObservableObject {
+    @Published var tab: Tab = .schedule
     @Published var game: Game = .splatoon3
     @Published var mode = "regular_battle"
     @Published var rule = ""
@@ -69,11 +76,19 @@ final class ModelData: ObservableObject {
     func changeGame() {
         switch game {
         case .splatoon2:
-            game = .splatoon3
+            changeGame(game: .splatoon3)
+        case .splatoon3:
+            changeGame(game: .splatoon2)
+        }
+    }
+    func changeGame(game: Game) {
+        switch game {
+        case .splatoon2:
+            self.game = .splatoon2
             mode = "regular_battle"
             rule = ""
         case .splatoon3:
-            game = .splatoon2
+            self.game = .splatoon3
             mode = "regular_battle"
             rule = ""
         }

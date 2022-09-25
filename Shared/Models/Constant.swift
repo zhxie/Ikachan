@@ -30,7 +30,11 @@ let SchedulePlaceholder = Splatoon2Schedule(startTime: Date(timeIntervalSince197
 let ShiftPlaceholder = Splatoon2Shift(startTime: Date(timeIntervalSince1970: 30672000), endTime: Date(timeIntervalSince1970: 30736800), stage: .spawningGrounds, weapons: [.random, .random, .random, .random])
 
 let IkachanScheme = "ikachan"
+let IkachanScheduleScheme = IkachanScheme + "://schedule/%@/%@"
+let IkachanShiftScheme = IkachanScheme + "://shift/%@"
 let IkachanActivity = "name.sketch.Ikachan"
+let IkachanScheduleActivity = IkachanActivity + "/schedule/%@/%@"
+let IkachanShiftActivity = IkachanActivity + "/shift/%@"
 
 // Widget.
 let MaxWidgetEntryCount = 60

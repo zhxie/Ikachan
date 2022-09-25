@@ -81,7 +81,7 @@ class ScheduleIntentHandler: IntentHandler, ScheduleIntentHandling {
             
             let encoder = JSONEncoder()
             let data = try! encoder.encode(schedule)
-            let activity = NSUserActivity(activityType: IkachanActivity)
+            let activity = NSUserActivity(activityType: String(format: IkachanScheduleActivity, game.name, mode.name))
             activity.userInfo?["schedule"] = data.base64EncodedString()
             let response = ScheduleIntentResponse.success(result: result, mode: intent.mode)
             response.game = intent.game

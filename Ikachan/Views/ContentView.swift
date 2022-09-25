@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            TabView {
+            TabView(selection: $modelData.tab) {
                 NavigationView {
                     SchedulesView()
                 }
@@ -20,6 +20,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("schedule", systemImage: "calendar")
                 }
+                .tag(Tab.schedule)
                 
                 NavigationView {
                     ShiftsView()
@@ -28,6 +29,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("shift", systemImage: "lifepreserver")
                 }
+                .tag(Tab.shift)
                 
                 NavigationView {
                     AboutView()
@@ -36,6 +38,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("ikachan", systemImage: "info.circle")
                 }
+                .tag(Tab.about)
             }
         }
     }

@@ -133,19 +133,25 @@ struct ShiftWidgetEntryView: View {
             switch family {
             case .accessoryCircular:
                 AccessoryCircularShiftView(current: entry.date, shift: entry.shift, mode: mode)
+                    .widgetURL(URL(string: String(format: IkachanShiftScheme, game.name))!)
             case .accessoryRectangular:
                 AccessoryRectangularShiftView(shift: entry.shift)
+                    .widgetURL(URL(string: String(format: IkachanShiftScheme, game.name))!)
             case .systemSmall:
                 SmallShiftView(current: entry.date, shift: entry.shift, mode: mode)
+                    .widgetURL(URL(string: String(format: IkachanShiftScheme, game.name))!)
             default:
                 MediumShiftView(current: entry.date, shift: entry.shift, mode: mode)
+                    .widgetURL(URL(string: String(format: IkachanShiftScheme, game.name))!)
             }
         } else {
             switch family {
             case .systemSmall:
                 SmallShiftView(current: entry.date, shift: entry.shift, mode: mode)
+                    .widgetURL(URL(string: String(format: IkachanShiftScheme, game.name))!)
             default:
                 MediumShiftView(current: entry.date, shift: entry.shift, mode: mode)
+                    .widgetURL(URL(string: String(format: IkachanShiftScheme, game.name))!)
             }
         }
     }

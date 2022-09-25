@@ -122,19 +122,25 @@ struct ScheduleWidgetEntryView : View {
             switch family {
             case .accessoryCircular:
                 AccessoryCircularScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
+                    .widgetURL(URL(string: String(format: IkachanScheduleScheme, game.name, mode?.name ?? ""))!)
             case .accessoryRectangular:
                 AccessoryRectangularScheduleView(schedule: entry.schedule, mode: mode)
+                    .widgetURL(URL(string: String(format: IkachanScheduleScheme, game.name, mode?.name ?? ""))!)
             case .systemSmall:
                 SmallScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
+                    .widgetURL(URL(string: String(format: IkachanScheduleScheme, game.name, mode?.name ?? ""))!)
             default:
                 MediumScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
+                    .widgetURL(URL(string: String(format: IkachanScheduleScheme, game.name, mode?.name ?? ""))!)
             }
         } else {
             switch family {
             case .systemSmall:
                 SmallScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
+                    .widgetURL(URL(string: String(format: IkachanScheduleScheme, game.name, mode?.name ?? ""))!)
             default:
                 MediumScheduleView(current: entry.date, schedule: entry.schedule, mode: mode)
+                    .widgetURL(URL(string: String(format: IkachanScheduleScheme, game.name, mode?.name ?? ""))!)
             }
         }
     }
