@@ -66,7 +66,7 @@ struct SmallDayView: View {
                             .layoutPriority(1)
                         
                         HStack {
-                            Text(timeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime))
+                            Text(absoluteTimeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime))
                                 .fontWeight(.light)
                                 .font(.largeTitle)
                                 .foregroundColor(.white)
@@ -97,11 +97,11 @@ struct SmallDayView: View {
                     }
                     .padding()
                 } else {
-                    FailedToLoadView(accentColor: .white, error: .noSchedule)
+                    FailedToLoadView(accentColor: .white, transparent: true, error: .noSchedule)
                         .padding()
                 }
             } else {
-                FailedToLoadView(accentColor: .white, error: .failedToLoad)
+                FailedToLoadView(accentColor: .white, transparent: true, error: .failedToLoad)
                     .padding()
             }
         }
