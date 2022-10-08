@@ -63,7 +63,7 @@ struct SchedulesView: View {
                 } else {
                     Button(action: {
                         Impact(style: .light)
-                        modelData.rule = "turfWar"
+                        modelData.rule = ""
                     }) {
                         Image(systemName: "line.horizontal.3.decrease.circle.fill")
                     }
