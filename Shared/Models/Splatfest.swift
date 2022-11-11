@@ -14,6 +14,7 @@ protocol Splatfest: Codable {
 
 struct Splatoon3Splatfest: Splatfest {
     enum State: String, CaseIterable, Codable {
+        case scheduled = "scheduled"
         case firstHalf = "first_half"
         case secondHalf = "second_half"
     }
