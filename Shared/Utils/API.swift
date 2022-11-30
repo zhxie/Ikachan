@@ -155,6 +155,21 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                             schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: mode, rule: rule, stages: stages))
                         }
                     }
+                    for schedule in innerData["xSchedules"]["nodes"].arrayValue {
+                        let startTime = utcToDate(date: schedule["startTime"].stringValue)
+                        let endTime = utcToDate(date: schedule["endTime"].stringValue)
+                        let matchSetting = schedule["xMatchSetting"]
+                        if matchSetting.isNull {
+                            continue
+                        }
+                        let rule = Splatoon3Rule(rawValue: matchSetting["vsRule"]["rule"].stringValue.lowercased()) ?? .unknown
+                        var stages: [Splatoon3ScheduleStage] = []
+                        for stage in matchSetting["vsStages"].arrayValue {
+                            stages.append(Splatoon3ScheduleStage(rawValue: stage["vsStageId"].intValue) ?? .unknown)
+                        }
+                        
+                        schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: .x, rule: rule, stages: stages))
+                    }
                     
                     var fest: Splatoon3Splatfest? = nil
                     let currentFest = innerData["currentFest"]

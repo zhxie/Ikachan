@@ -30,12 +30,15 @@
 
 "anarchy_battle_series" = "Anarchy Battle (Series)";
 "anarchy_battle_open" = "Anarchy Battle (Open)";
+"x_battle" = "X Battle";
 
 "series" = "Series";
 "open" = "Open";
+"x" = "X";
 
 "series_ss" = "S.";
 "open_ss" = "O.";
+"x_ss" = "X";
 
 // Rule.
 "turf_war" = "Turf War";

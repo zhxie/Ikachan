@@ -35,7 +35,7 @@ enum Splatoon2ScheduleMode: String, ScheduleMode, CaseIterable {
             self = .gachi
         case .league:
             self = .league
-        case .bankaraChallenge, .bankaraOpen:
+        case .bankaraChallenge, .bankaraOpen, .x:
             return nil
         }
     }
@@ -116,6 +116,7 @@ enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
     case regular = "regular"
     case bankaraChallenge = "challenge"
     case bankaraOpen = "open"
+    case x = "x"
     
     init?(intent: INMode) {
         switch intent {
@@ -125,6 +126,8 @@ enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
             self = .bankaraChallenge
         case .bankaraOpen:
             self = .bankaraOpen
+        case .x:
+            self = .x
         case .gachi, .league:
             return nil
         }
@@ -138,6 +141,8 @@ enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
             return "anarchy_battle_series"
         case .bankaraOpen:
             return "anarchy_battle_open"
+        case .x:
+            return "x_battle"
         }
     }
     var shortName: String {
@@ -148,6 +153,8 @@ enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
             return "series"
         case .bankaraOpen:
             return "open"
+        case .x:
+            return "x"
         }
     }
     var shorterName: String {
@@ -158,6 +165,8 @@ enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
             return "series_ss"
         case .bankaraOpen:
             return "open_ss"
+        case .x:
+            return "x_ss"
         }
     }
     var accentColor: Color {
@@ -166,6 +175,8 @@ enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
             return Color(red: 25 / 255, green: 215 / 255, blue: 25 / 255)
         case .bankaraChallenge, .bankaraOpen:
             return Color(red: 245 / 255, green: 73 / 255, blue: 16 / 255)
+        case .x:
+            return Color(red: 101 / 255, green: 216 / 255, blue: 160 / 255)
         }
     }
     var intent: INMode {
@@ -176,6 +187,8 @@ enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
             return .bankaraChallenge
         case .bankaraOpen:
             return .bankaraOpen
+        case .x:
+            return .x
         }
     }
 }

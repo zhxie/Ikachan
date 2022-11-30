@@ -30,12 +30,15 @@
 
 "anarchy_battle_series" = "蛮颓比赛 (挑战)";
 "anarchy_battle_open" = "蛮颓比赛 (开放)";
+"x_battle" = "X比赛";
 
 "series" = "蛮颓挑战";
 "open" = "蛮颓开放";
+"x" = "X";
 
 "series_ss" = "挑战";
 "open_ss" = "开放";
+"x_ss" = "X";
 
 // Rule.
 "turf_war" = "占地对战";

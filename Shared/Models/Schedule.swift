@@ -84,7 +84,7 @@ struct Splatoon3Schedule: Schedule {
         switch _mode {
         case .regular:
             return _rule.shortName.localizedString
-        case .bankaraChallenge, .bankaraOpen:
+        case .bankaraChallenge, .bankaraOpen, .x:
             return String(format: "%@_%@".localizedString, mode.shorterName.localizedString, rule.shorterName.localizedString)
         }
     }

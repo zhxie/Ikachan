@@ -30,12 +30,15 @@
 
 "anarchy_battle_series" = "バンカラマッチ (チャレンジ)";
 "anarchy_battle_open" = "バンカラマッチ (オープン)";
+"x_battle" = "Xマッチ";
 
 "series" = "チャレンジ";
 "open" = "オープン";
+"x" = "X";
 
 "series_ss" = "チ·";
 "open_ss" = "オ·";
+"x_ss" = "X";
 
 // Rule.
 "turf_war" = "ナワバリバトル";
