@@ -210,6 +210,8 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
     case hagglefishMarket = 3
     case undertowSpillway = 4
     case mincemeatMetalworks = 6
+    case brinewaterSprings = 7
+    case flounderHeights = 9
     case hammerheadBridge = 10
     case museumDAlfonsino = 11
     case mahiMahiResort = 12
@@ -231,6 +233,10 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/high_resolution/9b1c17b2075479d0397d2fb96efbc6fa3a28900712920e5fe1e9dfc59c6abc5c_0.png"
         case .mincemeatMetalworks:
             return "/stage_img/icon/high_resolution/de1f212e9ff0648f36cd3b8e0917ef36b3bd51445159297dcb948f34a09f2f05_0.png"
+        case .brinewaterSprings:
+            return "/stage_img/icon/high_resolution/cd84d711b47a424334569ac20f33f8e0ab6a652dc07854dcd36508a0081e9034_0.png"
+        case .flounderHeights:
+            return "/stage_img/icon/high_resolution/488017f3ce712fca9fb37d61fe306343054449bb2d2bb1751d95f54a98564cae_0.png"
         case .hammerheadBridge:
             return "/stage_img/icon/high_resolution/1db8ab338b64b464df50e7f9e270e59423ff8caac6f09679a24f1b7acf3a82f3_0.png"
         case .museumDAlfonsino:
@@ -262,6 +268,10 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
             return "undertow_spillway"
         case .mincemeatMetalworks:
             return "mincemeat_metalworks"
+        case .brinewaterSprings:
+            return "brinewater_springs"
+        case .flounderHeights:
+            return "flounder_heights"
         case .hammerheadBridge:
             return "hammerhead_bridge"
         case .museumDAlfonsino:
@@ -293,6 +303,7 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
 enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
     case spawningGrounds = 1
     case sockeyeStation = 2
+    case maroonersBay = 6
     case goneFissionHydroplant = 7
     case unknown = -9999
     
@@ -302,6 +313,8 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/high_resolution/be584c7c7f547b8cbac318617f646680541f88071bc71db73cd461eb3ea6326e_0.png"
         case .sockeyeStation:
             return "/stage_img/icon/high_resolution/3418d2d89ef84288c78915b9acb63b4ad48df7bfcb48c27d6597920787e147ec_0.png"
+        case .maroonersBay:
+            return "/stage_img/icon/high_resolution/1a29476c1ab5fdbc813e2df99cd290ce56dfe29755b97f671a7250e5f77f4961_0.png"
         case .goneFissionHydroplant:
             return "/stage_img/icon/high_resolution/f1e4df4cff1dc5e0acc66a9654fecf949224f7e4f6bd36305d4600ac3fa3db7b_0.png"
         case .unknown:
@@ -315,6 +328,8 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
             return "spawning_grounds"
         case .sockeyeStation:
             return "sockeye_station"
+        case .maroonersBay:
+            return "marooners_bay"
         case .goneFissionHydroplant:
             return "gone_fission_hydroplant"
         case .unknown:
