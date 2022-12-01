@@ -236,7 +236,9 @@ private func fetchSplatoon3Shifts(completion: @escaping ([Splatoon3Shift]?, Erro
                         let startTime = utcToDate(date: shift["startTime"].stringValue)
                         let endTime = utcToDate(date: shift["endTime"].stringValue)
                         let setting = shift["setting"]
-                        let stage = Splatoon3ShiftStage(rawValue: setting["coopStage"]["coopStageId"].intValue) ?? .unknown
+                        let stage = Splatoon3ShiftStage.allCases.first { stage in
+                            setting["coopStage"]["image"]["url"].stringValue.hasSuffix(stage.image)
+                        } ?? .unknown
                         var weapons: [Splatoon3Weapon] = []
                         for weapon in setting["weapons"].arrayValue {
                             weapons.append(Splatoon3Weapon.allCases.first { w in

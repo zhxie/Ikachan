@@ -307,7 +307,7 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
     case goneFissionHydroplant = 7
     case unknown = -9999
     
-    private var image: String {
+    var image: String {
         switch self {
         case .spawningGrounds:
             return "/stage_img/icon/high_resolution/be584c7c7f547b8cbac318617f646680541f88071bc71db73cd461eb3ea6326e_0.png"
