@@ -324,11 +324,12 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
     case splashOMatic = 20
     case aerosprayMg = 30
     case splattershot = 40
-    case _52gal = 50
+    case _52Gal = 50
     case nZap85 = 60
     case splattershotPro = 70
     case _96Gal = 80
     case jetSquelcher = 90
+    case splattershotNova = 100
     case lunaBlaster = 200
     case blaster = 210
     case rangeBlaster = 220
@@ -342,6 +343,7 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
     case splatRoller = 1010
     case dynamoRoller = 1020
     case flingzaRoller = 1030
+    case bigSwigRoller = 1040
     case inkbrush = 1100
     case octobrush = 1110
     case classicSquiffer = 2000
@@ -351,6 +353,7 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
     case eLiter4kScope = 2040
     case bamboozler14MkI = 2050
     case gooTuber = 2060
+    case snipewriter5h = 2070
     case slosher = 3000
     case triSlosher = 3010
     case sloshingMachine = 3020
@@ -388,7 +391,7 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "/weapon_illust/5ec00bcf96c7a3f731d7a2e67f60f802f33d22f07177b94d5905f471b08b629f_0.png"
         case .splattershot:
             return "/weapon_illust/e3874d7d504acf89488ad7f68d29a348caea1a41cd43bd9a272069b0c0466570_0.png"
-        case ._52gal:
+        case ._52Gal:
             return "/weapon_illust/01e8399a3c56707b6e9f7500d3d583ba1d400eec06449d8fe047cda1956a4ccc_0.png"
         case .nZap85:
             return "/weapon_illust/e6dbf73aa6ff9d1feb61fcabadb2d31e08b228a9736b4f5d8a5baeab9b493255_0.png"
@@ -398,6 +401,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "/weapon_illust/fe2b351799aa48fcb48154299ff0ccf0b0413fc291ffc49456e93db29d2f1db5_0.png"
         case .jetSquelcher:
             return "/weapon_illust/035920eb9428955c25aecb8a56c2b1b58f3e322af3657d921db1778de4b80c59_0.png"
+        case .splattershotNova:
+            return "/weapon_illust/8034dd1acde77c1a2df32197c12faa5ba1d65b43d008edd1b40f16fa8d106944_0.png"
         case .lunaBlaster:
             return "/weapon_illust/10d4a1584d1428cb164ddfbc5febc9b1e77fd05e2e9ed9de851838a94d202c15_0.png"
         case .blaster:
@@ -424,6 +429,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "/weapon_illust/18fdddee9c918842f076c10f12e46d891aca302d2677bf968ee2fe4e65b831a8_0.png"
         case .flingzaRoller:
             return "/weapon_illust/8351e99589f03f49b5d681d36b083aaffd9c486a0558ab957ac44b0db0bb58bb_0.png"
+        case .bigSwigRoller:
+            return "/weapon_illust/137559b59547c853e04c6cc8239cff648d2f6b297edb15d45504fae91dfc9765_0.png"
         case .inkbrush:
             return "/weapon_illust/260428edbf919f5c9e8c8517516d6a7a8133cf7348d216768ab4fb9434053f08_0.png"
         case .octobrush:
@@ -442,6 +449,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "/weapon_illust/9c71334ea792864a00531040e0d05a183512e11277fd1fa681170874ba039268_0.png"
         case .gooTuber:
             return "/weapon_illust/2b349390a464710982d7e1496130898e7b5a66c301aa44fc9e19332d42e360ad_0.png"
+        case .snipewriter5h:
+            return "/weapon_illust/082489b182fbbabddde40831dac5867d6acc4778b6a38d8f5c8d445455d638eb_0.png"
         case .slosher:
             return "/weapon_illust/4a8bf6b4ad3b2942728bbd270bf64d5848b64f3c843a3b12ef83c0ebb5de1b3d_0.png"
         case .triSlosher:
@@ -505,7 +514,7 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "aerospray_mg"
         case .splattershot:
             return "splattershot"
-        case ._52gal:
+        case ._52Gal:
             return "_52_gal"
         case .nZap85:
             return "n_zap_85"
@@ -515,6 +524,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "_96_gal"
         case .jetSquelcher:
             return "jet_squelcher"
+        case .splattershotNova:
+            return "splattershot_nova"
         case .lunaBlaster:
             return "luna_blaster"
         case .blaster:
@@ -541,6 +552,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "dynamo_roller"
         case .flingzaRoller:
             return "flingza_roller"
+        case .bigSwigRoller:
+            return "big_swig_roller"
         case .inkbrush:
             return "inkbrush"
         case .octobrush:
@@ -559,6 +572,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "bamboozler_14_mk_i"
         case .gooTuber:
             return "goo_tuber"
+        case .snipewriter5h:
+            return "snipewriter_5h"
         case .slosher:
             return "slosher"
         case .triSlosher:
