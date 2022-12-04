@@ -246,7 +246,26 @@ private func fetchSplatoon3Shifts(completion: @escaping ([Splatoon3Shift]?, Erro
                             } ?? .unknown)
                         }
                         
-                        shifts.append(Splatoon3Shift(startTime: startTime, endTime: endTime, stage: stage, weapons: weapons))
+                        shifts.append(Splatoon3Shift(startTime: startTime, endTime: endTime, mode: .salmonRun, stage: stage, weapons: weapons))
+                    }
+                    for shift in json["data"]["coopGroupingSchedule"]["bigRunSchedules"]["nodes"].arrayValue {
+                        let startTime = utcToDate(date: shift["startTime"].stringValue)
+                        let endTime = utcToDate(date: shift["endTime"].stringValue)
+                        let setting = shift["setting"]
+                        let stage = Splatoon3ShiftStage.allCases.first { stage in
+                            setting["coopStage"]["image"]["url"].stringValue.hasSuffix(stage.image)
+                        } ?? .unknown
+                        var weapons: [Splatoon3Weapon] = []
+                        for weapon in setting["weapons"].arrayValue {
+                            weapons.append(Splatoon3Weapon.allCases.first { w in
+                                w.imageUrl == weapon["image"]["url"].stringValue
+                            } ?? .unknown)
+                        }
+                        
+                        shifts.sort { a, b in
+                            a.startTime < b.startTime
+                        }
+                        shifts.append(Splatoon3Shift(startTime: startTime, endTime: endTime, mode: .bigRun, stage: stage, weapons: weapons))
                     }
                     
                     completion(shifts, error)

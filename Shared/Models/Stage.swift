@@ -305,6 +305,7 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
     case sockeyeStation = 2
     case maroonersBay = 6
     case goneFissionHydroplant = 7
+    case wahooWorld = 100
     case unknown = -9999
     
     var image: String {
@@ -317,6 +318,8 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/high_resolution/1a29476c1ab5fdbc813e2df99cd290ce56dfe29755b97f671a7250e5f77f4961_0.png"
         case .goneFissionHydroplant:
             return "/stage_img/icon/high_resolution/f1e4df4cff1dc5e0acc66a9654fecf949224f7e4f6bd36305d4600ac3fa3db7b_0.png"
+        case .wahooWorld:
+            return "/stage_img/icon/high_resolution/2276a46e42a11637776ebc15cf2d46a589f1dba34a76d5c940c418ed7371d071_0.png"
         case .unknown:
             return Unknown.stageImage
         }
@@ -332,6 +335,8 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
             return "marooners_bay"
         case .goneFissionHydroplant:
             return "gone_fission_hydroplant"
+        case .wahooWorld:
+            return "wahoo_world"
         case .unknown:
             return Unknown.name
         }

@@ -39,14 +39,15 @@ struct Splatoon2Shift: Shift {
     }
 }
 
-// TODO: Unknown Splatoon 3 weapons.
 struct Splatoon3Shift: Shift {
+    private var _mode: Splatoon3ShiftMode
     private var _stage: Splatoon3ShiftStage?
     private var _weapons: [Splatoon3Weapon]
     
-    init(startTime: Date, endTime: Date, stage: Splatoon3ShiftStage?, weapons: [Splatoon3Weapon]) {
+    init(startTime: Date, endTime: Date, mode: Splatoon3ShiftMode, stage: Splatoon3ShiftStage?, weapons: [Splatoon3Weapon]) {
         self.startTime = startTime
         self.endTime = endTime
+        _mode = mode;
         _stage = stage
         _weapons = weapons
     }
@@ -54,7 +55,7 @@ struct Splatoon3Shift: Shift {
     var startTime: Date
     var endTime: Date
     var mode: ShiftMode {
-        return Splatoon3ShiftMode.salmonRun
+        return _mode
     }
     var stage: Stage? {
         return _stage

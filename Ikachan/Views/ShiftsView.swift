@@ -13,8 +13,8 @@ struct ShiftsView: View {
     @Environment(\.scenePhase) var scenePhase
     
     var body: some View {
-        SchedulesScrollView(data: shifts, title: "salmon_run") { shift in
-            ShiftView(shift: shift.0, sequence: shift.1)
+        SchedulesScrollView(data: modelData.shifts, title: "salmon_run") { shift in
+            ShiftView(shift: shift)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -35,16 +35,6 @@ struct ShiftsView: View {
                 update()
             }
         }
-    }
-    
-    var shifts: [(Shift, Int)] {
-        var shifts: [(Shift, Int)] = []
-        
-        for (i, shift) in modelData.shifts.enumerated() {
-            shifts.append((shift, i))
-        }
-        
-        return shifts
     }
     
     func update() {

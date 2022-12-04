@@ -26,6 +26,7 @@
 "league_ss" = "L.";
 
 "salmon_run" = "Salmon Run";
+"big_run" = "Big Run";
 "job" = "Job";
 
 "anarchy_battle_series" = "Anarchy Battle (Series)";
@@ -192,13 +193,6 @@
 // UI.
 "schedule" = "Schedule";
 "shift" = "Shift";
-"more" = "More";
-"all" = "All";
-"current" = "Current";
-"job_open" = "Open!";
-"job_soon" = "Soon!";
-"job_next" = "Next";
-"job_future" = "Future";
 "ikachan" = "Ikachan";
 "settings" = "Settings";
 "language" = "Language";
@@ -263,6 +257,6 @@
 // Intent.
 "current_schedule" = "Currently, %3$@ in %4$@ and %5$@ of %1$@ %2$@ is undergoing, remaining %6$@.";
 "next_schedule" = "Next, %3$@ in %4$@ and %5$@ of %1$@ %2$@ will be started in %6$@.";
-"open_shift" = "Currently, %1$@ Salmon Run in %2$@ with %3$@, %4$@, %5$@ and %6$@ for loan is open, remaining %7$@.";
-"soon_shift" = "Soon, %1$@ Salmon Run in %2$@ with %3$@, %4$@, %5$@ and %6$@ for loan will be open in %7$@.";
-"next_shift" = "Next, %1$@ Salmon Run in %2$@ with %3$@, %4$@, %5$@ and %6$@ for loan will be open in %6$@.";
+"open_shift" = "Currently, %2$@ in %3$@ with %4$@, %5$@, %6$@ and %7$@ for loan of %1$@ Salmon Run is open, remaining %8$@.";
+"soon_shift" = "Soon, %2$@ in %3$@ with %4$@, %5$@, %6$@ and %7$@ for loan of %1$@ Salmon Run will be open in %8$@.";
+"next_shift" = "Next, %2$@ in %3$@ with %4$@, %5$@, %6$@ and %7$@ for loan of %1$@ Salmon Run will be open in %8$@.";

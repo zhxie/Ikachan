@@ -9,10 +9,9 @@ import SwiftUI
 
 struct ShiftView: View {
     let shift: Shift
-    let sequence: Int
     
     var body: some View {
-        ScheduleBaseView(title: title, subtitle: status(startTime: shift.startTime, endTime: shift.endTime), image: shift.mode.image) {
+        ScheduleBaseView(title: shift.mode.name, subtitle: status(startTime: shift.startTime, endTime: shift.endTime), image: shift.mode.image) {
             if let stage = shift.stage {
                 HStack {
                     StageView(stage: stage)
@@ -45,21 +44,6 @@ struct ShiftView: View {
         }
     }
     
-    var title: String {
-        switch sequence {
-        case 0:
-            if shift.startTime < Date() {
-                return "job_open"
-            } else {
-                return "job_soon"
-            }
-        case 1:
-            return "job_next"
-        default:
-            return "job_future"
-        }
-    }
-    
     func status(startTime: Date, endTime: Date) -> String {
         let current = Date()
         
@@ -73,6 +57,6 @@ struct ShiftView: View {
 
 struct ShiftView_Previews: PreviewProvider {
     static var previews: some View {
-        ShiftView(shift: ShiftPlaceholder, sequence: 0)
+        ShiftView(shift: ShiftPlaceholder)
     }
 }

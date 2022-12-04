@@ -193,5 +193,33 @@ enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
     }
 }
 
-// TODO: Unknown Splatoon 3 Salmon Run accent color.
-typealias Splatoon3ShiftMode = Splatoon2ShiftMode
+enum Splatoon3ShiftMode: String, ShiftMode, CaseIterable {
+    case salmonRun = "salmon_run"
+    case bigRun = "big_run"
+    
+    var name: String {
+        return rawValue
+    }
+    var shortName: String {
+        return "job"
+    }
+    var shorterName: String {
+        return "job"
+    }
+    var accentColor: Color {
+        switch self {
+        case .salmonRun:
+            return Color(red: 252 / 255, green: 86 / 255, blue: 32 / 255)
+        case .bigRun:
+            return Color(red: 164 / 255, green: 49 / 255, blue: 246 / 255)
+        }
+    }
+    var image: String {
+        switch self {
+        case .salmonRun:
+            return rawValue + "_2"
+        case .bigRun:
+            return rawValue + "_3"
+        }
+    }
+}
