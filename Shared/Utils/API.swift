@@ -262,12 +262,12 @@ private func fetchSplatoon3Shifts(completion: @escaping ([Splatoon3Shift]?, Erro
                             } ?? .unknown)
                         }
                         
-                        shifts.sort { a, b in
-                            a.startTime < b.startTime
-                        }
                         shifts.append(Splatoon3Shift(startTime: startTime, endTime: endTime, mode: .bigRun, stage: stage, weapons: weapons))
                     }
                     
+                    shifts.sort { a, b in
+                        a.startTime < b.startTime
+                    }
                     completion(shifts, error)
                 } else {
                     completion(nil, error)
