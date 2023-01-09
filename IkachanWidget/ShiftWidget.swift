@@ -29,7 +29,7 @@ struct ShiftProvider: IntentTimelineProvider {
             }
             if details.count > 0 {
                 let entry = ShiftEntry(date: current, configuration: configuration, shift: details[0])
-                let resources = [ImageResource(downloadURL: URL(string: details[0].stage!.imageUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[0].imageUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[1].imageUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[2].imageUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[3].imageUrl)!)]
+                let resources = [ImageResource(downloadURL: URL(string: details[0].stage!.thumbnailUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[0].thumbnailUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[1].thumbnailUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[2].thumbnailUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[3].thumbnailUrl)!)]
                 
                 ImagePrefetcher(resources: resources) { (_, _, _) in
                     completion(entry)
@@ -64,11 +64,11 @@ struct ShiftProvider: IntentTimelineProvider {
                 while current < shift.endTime && entries.count < MaxWidgetEntryCount {
                     let entry = ShiftEntry(date: current, configuration: configuration, shift: shift)
                     entries.append(entry)
-                    urls.insert(shift.stage!.imageUrl)
-                    urls.insert(shift.weapons[0].imageUrl)
-                    urls.insert(shift.weapons[1].imageUrl)
-                    urls.insert(shift.weapons[2].imageUrl)
-                    urls.insert(shift.weapons[3].imageUrl)
+                    urls.insert(shift.stage!.thumbnailUrl)
+                    urls.insert(shift.weapons[0].thumbnailUrl)
+                    urls.insert(shift.weapons[1].thumbnailUrl)
+                    urls.insert(shift.weapons[2].thumbnailUrl)
+                    urls.insert(shift.weapons[3].thumbnailUrl)
                     
                     var distance = shift.endTime - current
                     if current < shift.startTime {

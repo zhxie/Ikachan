@@ -10,6 +10,7 @@ import Foundation
 protocol Stage: Codable {
     var name: String { get }
     var imageUrl: String { get }
+    var thumbnailUrl: String { get }
 }
 
 enum Splatoon2ScheduleStage: Int, Stage, CaseIterable {
@@ -151,6 +152,9 @@ enum Splatoon2ScheduleStage: Int, Stage, CaseIterable {
             return Splatnet2URL + image
         }
     }
+    var thumbnailUrl: String {
+        return imageUrl
+    }
 }
 
 enum Splatoon2ShiftStage: Int, Stage, CaseIterable {
@@ -201,6 +205,9 @@ enum Splatoon2ShiftStage: Int, Stage, CaseIterable {
         default:
             return Splatnet2URL + image
         }
+    }
+    var thumbnailUrl: String {
+        return imageUrl
     }
 }
 
@@ -255,6 +262,40 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
             return Unknown.stageImage
         }
     }
+    private var thumbnail: String {
+        switch self {
+        case .scorchGorge:
+            return "/stage_img/icon/low_resolution/35f9ca08ccc2bf759774ab2cb886567c117b9287875ca92fb590c1294ddcdc1e_1.png"
+        case .eeltailAlley:
+            return "/stage_img/icon/low_resolution/898e1ae6c737a9d44552c7c81f9b710676492681525c514eadc68a6780aa52af_1.png"
+        case .hagglefishMarket:
+            return "/stage_img/icon/low_resolution/8dc2f16d39c630bab40cead5b2485ca3559e829d0d3de0c2232c7a62fefb5fa9_1.png"
+        case .undertowSpillway:
+            return "/stage_img/icon/low_resolution/9b1c17b2075479d0397d2fb96efbc6fa3a28900712920e5fe1e9dfc59c6abc5c_1.png"
+        case .mincemeatMetalworks:
+            return "/stage_img/icon/low_resolution/de1f212e9ff0648f36cd3b8e0917ef36b3bd51445159297dcb948f34a09f2f05_1.png"
+        case .brinewaterSprings:
+            return "/stage_img/icon/low_resolution/cd84d711b47a424334569ac20f33f8e0ab6a652dc07854dcd36508a0081e9034_1.png"
+        case .flounderHeights:
+            return "/stage_img/icon/low_resolution/488017f3ce712fca9fb37d61fe306343054449bb2d2bb1751d95f54a98564cae_1.png"
+        case .hammerheadBridge:
+            return "/stage_img/icon/low_resolution/1db8ab338b64b464df50e7f9e270e59423ff8caac6f09679a24f1b7acf3a82f3_1.png"
+        case .museumDAlfonsino:
+            return "/stage_img/icon/low_resolution/b9d8cfa186d197a27e075600a107c99d9e21646d116730f0843e0fff0aaba7dd_1.png"
+        case .mahiMahiResort:
+            return "/stage_img/icon/low_resolution/8273118c1ffe1bf6fe031c7d8c9795dab52632c9b76e8e9f01f644ac5ae0ccc0_1.png"
+        case .inkblotArtAcademy:
+            return "/stage_img/icon/low_resolution/40aba8b36a9439e2d670fde5b3478819ea8a94f9e503b9d783248a5716786f35_1.png"
+        case .sturgeonShipyard:
+            return "/stage_img/icon/low_resolution/48684c69d5c5a4ffaf16b712a4895545a8d01196115d514fc878ce99863bb3e9_1.png"
+        case .makoMart:
+            return "/stage_img/icon/low_resolution/a8ba96c3dbd015b7bc6ea4fa067245c4e9aee62b6696cb41e02d35139dd21fe7_1.png"
+        case .wahooWorld:
+            return "/stage_img/icon/low_resolution/61ea801fa4ed32360dcaf83986222ded46a72dbf56194acc6d0cf4659a92ba85_1.png"
+        case .unknown:
+            return Unknown.stageImage
+        }
+    }
     
     var name: String {
         switch self {
@@ -298,6 +339,14 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
             return Splatoon3InkAssetsURL + image
         }
     }
+    var thumbnailUrl: String {
+        switch self {
+        case .unknown:
+            return Unknown.stageImageUrl
+        default:
+            return Splatoon3InkAssetsURL + thumbnail
+        }
+    }
 }
 
 enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
@@ -320,6 +369,22 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/high_resolution/f1e4df4cff1dc5e0acc66a9654fecf949224f7e4f6bd36305d4600ac3fa3db7b_0.png"
         case .wahooWorld:
             return "/stage_img/icon/high_resolution/2276a46e42a11637776ebc15cf2d46a589f1dba34a76d5c940c418ed7371d071_0.png"
+        case .unknown:
+            return Unknown.stageImage
+        }
+    }
+    private var thumbnail: String {
+        switch self {
+        case .spawningGrounds:
+            return "/stage_img/icon/low_resolution/be584c7c7f547b8cbac318617f646680541f88071bc71db73cd461eb3ea6326e_1.png"
+        case .sockeyeStation:
+            return "/stage_img/icon/low_resolution/3418d2d89ef84288c78915b9acb63b4ad48df7bfcb48c27d6597920787e147ec_1.png"
+        case .maroonersBay:
+            return "/stage_img/icon/low_resolution/1a29476c1ab5fdbc813e2df99cd290ce56dfe29755b97f671a7250e5f77f4961_1.png"
+        case .goneFissionHydroplant:
+            return "/stage_img/icon/low_resolution/f1e4df4cff1dc5e0acc66a9654fecf949224f7e4f6bd36305d4600ac3fa3db7b_1.png"
+        case .wahooWorld:
+            return "/stage_img/icon/low_resolution/2276a46e42a11637776ebc15cf2d46a589f1dba34a76d5c940c418ed7371d071_1.png"
         case .unknown:
             return Unknown.stageImage
         }
@@ -347,6 +412,14 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
             return Unknown.stageImageUrl
         default:
             return Splatoon3InkAssetsURL + image
+        }
+    }
+    var thumbnailUrl: String {
+        switch self {
+        case .unknown:
+            return Unknown.stageImageUrl
+        default:
+            return Splatoon3InkAssetsURL + thumbnail
         }
     }
 }

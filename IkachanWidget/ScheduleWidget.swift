@@ -29,7 +29,7 @@ struct ScheduleProvider: IntentTimelineProvider {
             }
             if filtered.count > 0 {
                 let entry = ScheduleEntry(date: current, configuration: configuration, schedule: filtered[0])
-                let resources = [ImageResource(downloadURL: URL(string: filtered[0].stages[0].imageUrl)!), ImageResource(downloadURL: URL(string: filtered[0].stages[1].imageUrl)!)]
+                let resources = [ImageResource(downloadURL: URL(string: filtered[0].stages[0].thumbnailUrl)!), ImageResource(downloadURL: URL(string: filtered[0].stages[1].thumbnailUrl)!)]
                 
                 ImagePrefetcher(resources: resources) { (_, _, _) in
                     completion(entry)
@@ -68,8 +68,8 @@ struct ScheduleProvider: IntentTimelineProvider {
                         entry = ScheduleEntry(date: current, configuration: configuration, schedule: nil)
                     } else {
                         entry = ScheduleEntry(date: current, configuration: configuration, schedule: schedule)
-                        urls.insert(schedule.stages[0].imageUrl)
-                        urls.insert(schedule.stages[1].imageUrl)
+                        urls.insert(schedule.stages[0].thumbnailUrl)
+                        urls.insert(schedule.stages[1].thumbnailUrl)
                     }
                     entries.append(entry)
                     
