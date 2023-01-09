@@ -37,4 +37,4 @@ let IkachanScheduleActivity = IkachanActivity + "/schedule/%@/%@"
 let IkachanShiftActivity = IkachanActivity + "/shift/%@"
 
 // Widget.
-let MaxWidgetEntryCount = 60
+let MaxWidgetEntryCount = 30
