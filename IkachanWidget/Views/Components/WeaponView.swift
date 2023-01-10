@@ -16,7 +16,7 @@ struct WeaponView: View {
             .fill(Color.clear)
             .aspectRatio(1, contentMode: .fit)
             .overlay(
-                KFImage(URL(string: weapon.imageUrl)!)
+                KFImage(URL(string: weapon.thumbnailUrl)!)
                     .placeholder {
                         Circle()
                             .foregroundColor(Color(UIColor.secondarySystemBackground))

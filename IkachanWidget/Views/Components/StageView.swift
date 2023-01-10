@@ -15,7 +15,7 @@ struct StageView: View {
         Rectangle()
             .fill(Color(UIColor.secondarySystemBackground))
             .overlay (
-                KFImage(URL(string: stage.imageUrl)!)
+                KFImage(URL(string: stage.thumbnailUrl)!)
                     .placeholder {
                         Rectangle()
                             .foregroundColor(Color(UIColor.secondarySystemBackground))
