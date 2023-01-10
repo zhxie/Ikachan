@@ -164,7 +164,7 @@ struct ShiftWidgetEntryView: View {
         case .splatoon2:
             return Splatoon2ShiftMode.salmonRun
         case .splatoon3:
-            return Splatoon3ShiftMode.salmonRun
+            return Splatoon3ShiftMode.regularJob
         }
     }
 }

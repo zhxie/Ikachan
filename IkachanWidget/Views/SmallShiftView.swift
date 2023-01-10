@@ -49,7 +49,7 @@ struct SmallShiftView: View {
                         TopLeadingView(text: shiftShortTimePeriod(startTime: shift.startTime, endTime: shift.endTime))
                     }
                 } leadingRight: {
-                    TopTrailingView(text: subview ? shift.mode.name : shift.mode.shortName, color: shift.mode.accentColor)
+                    TopTrailingView(text: shift.mode.shortName, color: shift.mode.accentColor)
                 }
                 .padding(subview ? [] : [.all])
             } else {

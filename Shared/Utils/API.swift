@@ -246,7 +246,7 @@ private func fetchSplatoon3Shifts(completion: @escaping ([Splatoon3Shift]?, Erro
                             } ?? .unknown)
                         }
                         
-                        shifts.append(Splatoon3Shift(startTime: startTime, endTime: endTime, mode: .salmonRun, stage: stage, weapons: weapons))
+                        shifts.append(Splatoon3Shift(startTime: startTime, endTime: endTime, mode: .regularJob, stage: stage, weapons: weapons))
                     }
                     for shift in json["data"]["coopGroupingSchedule"]["bigRunSchedules"]["nodes"].arrayValue {
                         let startTime = utcToDate(date: shift["startTime"].stringValue)

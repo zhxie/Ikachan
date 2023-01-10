@@ -194,7 +194,7 @@ enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
 }
 
 enum Splatoon3ShiftMode: String, ShiftMode, CaseIterable {
-    case salmonRun = "salmon_run"
+    case regularJob = "regular_job"
     case bigRun = "big_run"
     
     var name: String {
@@ -208,7 +208,7 @@ enum Splatoon3ShiftMode: String, ShiftMode, CaseIterable {
     }
     var accentColor: Color {
         switch self {
-        case .salmonRun:
+        case .regularJob:
             return Color(red: 252 / 255, green: 86 / 255, blue: 32 / 255)
         case .bigRun:
             return Color(red: 164 / 255, green: 49 / 255, blue: 246 / 255)
@@ -216,8 +216,8 @@ enum Splatoon3ShiftMode: String, ShiftMode, CaseIterable {
     }
     var image: String {
         switch self {
-        case .salmonRun:
-            return rawValue + "_2"
+        case .regularJob:
+            return "salmon_run_2"
         case .bigRun:
             return rawValue + "_3"
         }
