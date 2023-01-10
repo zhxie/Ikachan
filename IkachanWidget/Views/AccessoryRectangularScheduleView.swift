@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct AccessoryRectangularScheduleView: View {
-    var schedule: Schedule?
-    var mode: Mode?
+    let schedule: Schedule?
+    let mode: Mode?
     
     var body: some View {
         if let _ = mode {

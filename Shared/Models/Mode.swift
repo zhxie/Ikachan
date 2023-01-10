@@ -18,10 +18,6 @@ protocol ScheduleMode: Mode {
     var intent: INMode { get }
 }
 
-protocol ShiftMode: Mode {
-    var image: String { get }
-}
-
 enum Splatoon2ScheduleMode: String, ScheduleMode, CaseIterable {
     case regular = "regular"
     case gachi = "gachi"
@@ -92,7 +88,7 @@ enum Splatoon2ScheduleMode: String, ScheduleMode, CaseIterable {
     }
 }
 
-enum Splatoon2ShiftMode: String, ShiftMode, CaseIterable {
+enum Splatoon2ShiftMode: String, Mode, CaseIterable {
     case salmonRun = "salmon_run"
     
     var name: String {
@@ -106,9 +102,6 @@ enum Splatoon2ShiftMode: String, ShiftMode, CaseIterable {
     }
     var accentColor: Color {
         return Color(red: 252 / 255, green: 86 / 255, blue: 32 / 255)
-    }
-    var image: String {
-        return rawValue + "_2"
     }
 }
 
@@ -193,9 +186,8 @@ enum Splatoon3ScheduleMode: String, ScheduleMode, CaseIterable {
     }
 }
 
-enum Splatoon3ShiftMode: String, ShiftMode, CaseIterable {
-    case regularJob = "regular_job"
-    case bigRun = "big_run"
+enum Splatoon3ShiftMode: String, Mode, CaseIterable {
+    case salmonRun = "salmon_run"
     
     var name: String {
         return rawValue
@@ -207,19 +199,6 @@ enum Splatoon3ShiftMode: String, ShiftMode, CaseIterable {
         return "job"
     }
     var accentColor: Color {
-        switch self {
-        case .regularJob:
-            return Color(red: 252 / 255, green: 86 / 255, blue: 32 / 255)
-        case .bigRun:
-            return Color(red: 164 / 255, green: 49 / 255, blue: 246 / 255)
-        }
-    }
-    var image: String {
-        switch self {
-        case .regularJob:
-            return "salmon_run_2"
-        case .bigRun:
-            return rawValue + "_3"
-        }
+        return Color(red: 252 / 255, green: 86 / 255, blue: 32 / 255)
     }
 }

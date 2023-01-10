@@ -20,7 +20,7 @@ struct SmallShiftView: View {
                 .ignoresSafeArea(edges: .all)
             
             if let shift = shift {
-                SmallBaseView(text: absoluteTimeSpan(current: current, startTime: shift.startTime, endTime: shift.endTime), indicatorText: shift.mode.name, color: shift.mode.accentColor) {
+                SmallBaseView(text: absoluteTimeSpan(current: current, startTime: shift.startTime, endTime: shift.endTime), indicatorText: shift.rule.name, color: shift.rule.accentColor) {
                     VStack(spacing: 0) {
                         HStack {
                             BottomView(text: shift.stage?.name ?? "")
@@ -49,7 +49,7 @@ struct SmallShiftView: View {
                         TopLeadingView(text: shiftShortTimePeriod(startTime: shift.startTime, endTime: shift.endTime))
                     }
                 } leadingRight: {
-                    TopTrailingView(text: shift.mode.shortName, color: shift.mode.accentColor)
+                    TopTrailingView(text: shift.rule.shortName, color: shift.rule.accentColor)
                 }
                 .padding(subview ? [] : [.all])
             } else {

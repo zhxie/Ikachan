@@ -39,11 +39,11 @@ enum Game: Int, CaseIterable, Codable {
     var rules: [Rule] {
         switch self {
         case .splatoon2:
-            return Splatoon2Rule.allCases.filter { rule in
+            return Splatoon2ScheduleRule.allCases.filter { rule in
                 rule != .unknown
             }
         case .splatoon3:
-            return Splatoon3Rule.allCases.filter { rule in
+            return Splatoon3ScheduleRule.allCases.filter { rule in
                 rule != .unknown
             }
         }

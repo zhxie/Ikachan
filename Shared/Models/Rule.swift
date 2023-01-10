@@ -5,7 +5,7 @@
 //  Created by Skecth on 2022/9/14.
 //
 
-import Foundation
+import SwiftUI
 
 protocol Rule: Codable {
     var name: String { get }
@@ -14,7 +14,11 @@ protocol Rule: Codable {
     var image: String { get }
 }
 
-enum Splatoon2Rule: String, Rule, CaseIterable {
+protocol ShiftRule: Rule {
+    var accentColor: Color { get }
+}
+
+enum Splatoon2ScheduleRule: String, Rule, CaseIterable {
     case turfWar = "turf_war"
     case splatZones = "splat_zones"
     case towerControl = "tower_control"
@@ -67,7 +71,27 @@ enum Splatoon2Rule: String, Rule, CaseIterable {
     }
 }
 
-enum Splatoon3Rule: String, Rule, CaseIterable {
+enum Splatoon2ShiftRule: String, ShiftRule, CaseIterable {
+    case salmonRun = "salmon_run"
+    
+    var name: String {
+        return rawValue
+    }
+    var shortName: String {
+        return "job"
+    }
+    var shorterName: String {
+        return "job"
+    }
+    var image: String {
+        return rawValue + "_2"
+    }
+    var accentColor: Color {
+        return Color(red: 252 / 255, green: 86 / 255, blue: 32 / 255)
+    }
+}
+
+enum Splatoon3ScheduleRule: String, Rule, CaseIterable {
     case turfWar = "turf_war"
     case splatZones = "area"
     case towerControl = "loft"
@@ -130,6 +154,47 @@ enum Splatoon3Rule: String, Rule, CaseIterable {
             return name + "_2"
         case .unknown:
             return Unknown.assetImage
+        }
+    }
+}
+
+enum Splatoon3ShiftRule: String, ShiftRule, CaseIterable {
+    case regularJob = "regular_job"
+    case bigRun = "big_run"
+
+    var name: String {
+        return rawValue
+    }
+    var shortName: String {
+        switch self {
+        case .regularJob:
+            return "regular"
+        case .bigRun:
+            return "big_run"
+        }
+    }
+    var shorterName: String {
+        switch self {
+        case .regularJob:
+            return "regular"
+        case .bigRun:
+            return "big_run"
+        }
+    }
+    var image: String {
+        switch self {
+        case .regularJob:
+            return "salmon_run_2"
+        case .bigRun:
+            return rawValue + "_3"
+        }
+    }
+    var accentColor: Color {
+        switch self {
+        case .regularJob:
+            return Color(red: 252 / 255, green: 86 / 255, blue: 32 / 255)
+        case .bigRun:
+            return Color(red: 164 / 255, green: 49 / 255, blue: 246 / 255)
         }
     }
 }

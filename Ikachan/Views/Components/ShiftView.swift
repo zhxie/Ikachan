@@ -11,7 +11,7 @@ struct ShiftView: View {
     let shift: Shift
     
     var body: some View {
-        ScheduleBaseView(title: shift.mode.name, subtitle: status(startTime: shift.startTime, endTime: shift.endTime), image: shift.mode.image) {
+        ScheduleBaseView(title: shift.rule.name, subtitle: status(startTime: shift.startTime, endTime: shift.endTime), image: shift.rule.image) {
             if let stage = shift.stage {
                 HStack {
                     StageView(stage: stage)

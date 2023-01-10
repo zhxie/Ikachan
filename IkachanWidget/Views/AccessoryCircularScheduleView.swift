@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct AccessoryCircularScheduleView: View {
-    var current: Date
-    var schedule: Schedule?
-    var mode: Mode?
+    let current: Date
+    let schedule: Schedule?
+    let mode: Mode?
     
     var body: some View {
         if let mode = mode {

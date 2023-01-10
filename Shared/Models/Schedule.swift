@@ -18,10 +18,10 @@ protocol Schedule: Codable {
 
 struct Splatoon2Schedule: Schedule {
     private var _mode: Splatoon2ScheduleMode
-    private var _rule: Splatoon2Rule
+    private var _rule: Splatoon2ScheduleRule
     private var _stages: [Splatoon2ScheduleStage]
     
-    init(startTime: Date, endTime: Date, mode: Splatoon2ScheduleMode, rule: Splatoon2Rule, stages: [Splatoon2ScheduleStage]) {
+    init(startTime: Date, endTime: Date, mode: Splatoon2ScheduleMode, rule: Splatoon2ScheduleRule, stages: [Splatoon2ScheduleStage]) {
         self.startTime = startTime
         self.endTime = endTime
         _mode = mode
@@ -55,10 +55,10 @@ struct Splatoon2Schedule: Schedule {
 
 struct Splatoon3Schedule: Schedule {
     private var _mode: Splatoon3ScheduleMode
-    private var _rule: Splatoon3Rule
+    private var _rule: Splatoon3ScheduleRule
     private var _stages: [Splatoon3ScheduleStage]
     
-    init(startTime: Date, endTime: Date, mode: Splatoon3ScheduleMode, rule: Splatoon3Rule, stages: [Splatoon3ScheduleStage]) {
+    init(startTime: Date, endTime: Date, mode: Splatoon3ScheduleMode, rule: Splatoon3ScheduleRule, stages: [Splatoon3ScheduleStage]) {
         self.startTime = startTime
         self.endTime = endTime
         _mode = mode

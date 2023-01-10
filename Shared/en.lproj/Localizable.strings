@@ -26,8 +26,6 @@
 "league_ss" = "L.";
 
 "salmon_run" = "Salmon Run";
-"regular_job" = "Regular Job";
-"big_run" = "Big Run";
 "job" = "Job";
 
 "anarchy_battle_series" = "Anarchy Battle (Series)";
@@ -41,6 +39,11 @@
 "series_ss" = "S.";
 "open_ss" = "O.";
 "x_ss" = "X";
+
+"regular_job" = "Regular Job";
+"big_run" = "Big Run";
+
+"regular" = "Regular";
 
 // Rule.
 "turf_war" = "Turf War";

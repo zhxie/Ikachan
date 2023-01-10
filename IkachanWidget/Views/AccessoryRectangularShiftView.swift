@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AccessoryRectangularShiftView: View {
-    var shift: Shift?
+    let shift: Shift?
     
     var body: some View {
         if let shift = shift {
@@ -17,7 +17,7 @@ struct AccessoryRectangularShiftView: View {
                     VStack (alignment: .leading, spacing: 0) {
                         HStack (spacing: 4) {
                             // TODO: Image should be replaced to SVG text.
-                            Image(shift.mode.image)
+                            Image(shift.rule.image)
                                 .resizedToFit()
                                 .frame(width: 16, height: 16)
                             

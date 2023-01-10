@@ -26,8 +26,6 @@
 "league_ss" = "リーグ";
 
 "salmon_run" = "サーモンラン";
-"regular_job" = "いつものバイト";
-"big_run" = "ビッグラン";
 "job" = "バイト";
 
 "anarchy_battle_series" = "バンカラマッチ (チャレンジ)";
@@ -60,6 +58,11 @@
 "tower_ss" = "ヤグラ";
 "rainmaker_ss" = "ホコ";
 "clam_ss" = "アサリ";
+
+"regular_job" = "いつものバイト";
+"big_run" = "ビッグラン";
+
+"regular" = "いつもの";
 
 // Stage.
 "the_reef" = "バッテラストリート";

@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct AccessoryCircularShiftView: View {
-    var current: Date
-    var shift: Shift?
-    var mode: Mode
+    let current: Date
+    let shift: Shift?
+    let mode: Mode
     
     var body: some View {
-        AccessoryCircularBaseView(value: percent, image: shift?.mode.image ?? "inkling_splatted", text: mode.shorterName)
+        AccessoryCircularBaseView(value: percent, image: shift?.rule.image ?? "inkling_splatted", text: mode.shorterName)
     }
     
     var percent: Double {
