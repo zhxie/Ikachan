@@ -59,10 +59,10 @@
 "rainmaker_ss" = "鱼虎";
 "clam_ss" = "蛤蜊";
 
-"regular_job" = "平常的打工";
+"regular_job" = "平时的打工";
 "big_run" = "大型跑";
 
-"regular" = "平常的";
+"regular" = "平时的";
 
 // Stage.
 "the_reef" = "青花鱼寿司街";
