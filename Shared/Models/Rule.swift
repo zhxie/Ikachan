@@ -168,7 +168,7 @@ enum Splatoon3ShiftRule: String, ShiftRule, CaseIterable {
     var shortName: String {
         switch self {
         case .regularJob:
-            return "regular"
+            return "regular_j"
         case .bigRun:
             return "big_run"
         }
@@ -176,7 +176,7 @@ enum Splatoon3ShiftRule: String, ShiftRule, CaseIterable {
     var shorterName: String {
         switch self {
         case .regularJob:
-            return "regular"
+            return "regular_j"
         case .bigRun:
             return "big_run"
         }
