@@ -88,7 +88,7 @@ enum Splatoon2ScheduleStage: Int, Stage, CaseIterable {
         case .skipperPavilion:
             return "/images/stage/132327c819abf2bd44d0adc0f4a21aad9cc84bb2.png"
         case .unknown:
-            return Unknown.stageImage
+            return Unknown.stageImage2
         }
     }
     
@@ -147,7 +147,7 @@ enum Splatoon2ScheduleStage: Int, Stage, CaseIterable {
     var imageUrl: String {
         switch self {
         case .unknown:
-            return Unknown.stageImageUrl
+            return Unknown.stageImage2Url
         default:
             return Splatnet2URL + image
         }
@@ -178,7 +178,7 @@ enum Splatoon2ShiftStage: Int, Stage, CaseIterable {
         case .ruinsOfArkPolaris:
             return "/images/coop_stage/50064ec6e97aac91e70df5fc2cfecf61ad8615fd.png"
         case .unknown:
-            return Unknown.stageImage
+            return Unknown.stage2Image
         }
     }
     
@@ -201,7 +201,7 @@ enum Splatoon2ShiftStage: Int, Stage, CaseIterable {
     var imageUrl: String {
         switch self {
         case .unknown:
-            return Unknown.stageImageUrl
+            return Unknown.stageImage2Url
         default:
             return Splatnet2URL + image
         }
@@ -226,6 +226,7 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
     case sturgeonShipyard = 14
     case makoMart = 15
     case wahooWorld = 16
+    case empty = -999
     case unknown = -9999
     
     var image: String {
@@ -258,8 +259,10 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/high_resolution/a8ba96c3dbd015b7bc6ea4fa067245c4e9aee62b6696cb41e02d35139dd21fe7_0.png"
         case .wahooWorld:
             return "/stage_img/icon/high_resolution/61ea801fa4ed32360dcaf83986222ded46a72dbf56194acc6d0cf4659a92ba85_0.png"
+        case .empty:
+            return "/stage_img/icon/high_resolution/59a42245071d692c58b9825886f89f95e092ae0aa83a46617fdb4cbcb2f5f2b8_0.png"
         case .unknown:
-            return Unknown.stageImage
+            return Unknown.stage3Image
         }
     }
     private var thumbnail: String {
@@ -292,8 +295,10 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/low_resolution/a8ba96c3dbd015b7bc6ea4fa067245c4e9aee62b6696cb41e02d35139dd21fe7_1.png"
         case .wahooWorld:
             return "/stage_img/icon/low_resolution/61ea801fa4ed32360dcaf83986222ded46a72dbf56194acc6d0cf4659a92ba85_1.png"
+        case .empty:
+            return "/stage_img/icon/low_resolution/59a42245071d692c58b9825886f89f95e092ae0aa83a46617fdb4cbcb2f5f2b8_1.png"
         case .unknown:
-            return Unknown.stageImage
+            return Unknown.stage3Thumbnail
         }
     }
     
@@ -327,6 +332,8 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
             return "mako_mart"
         case .wahooWorld:
             return "wahoo_world"
+        case .empty:
+            return ""
         case .unknown:
             return Unknown.name
         }
@@ -334,7 +341,7 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
     var imageUrl: String {
         switch self {
         case .unknown:
-            return Unknown.stageImageUrl
+            return Unknown.stageImage3Url
         default:
             return Splatoon3InkAssetsURL + image
         }
@@ -342,7 +349,7 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
     var thumbnailUrl: String {
         switch self {
         case .unknown:
-            return Unknown.stageImageUrl
+            return Unknown.stageThumbnail3Url
         default:
             return Splatoon3InkAssetsURL + thumbnail
         }
@@ -355,6 +362,7 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
     case maroonersBay = 6
     case goneFissionHydroplant = 7
     case wahooWorld = 100
+    case empty = -999
     case unknown = -9999
     
     var image: String {
@@ -369,8 +377,10 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/high_resolution/f1e4df4cff1dc5e0acc66a9654fecf949224f7e4f6bd36305d4600ac3fa3db7b_0.png"
         case .wahooWorld:
             return "/stage_img/icon/high_resolution/2276a46e42a11637776ebc15cf2d46a589f1dba34a76d5c940c418ed7371d071_0.png"
+        case .empty:
+            return "/stage_img/icon/high_resolution/59a42245071d692c58b9825886f89f95e092ae0aa83a46617fdb4cbcb2f5f2b8_0.png"
         case .unknown:
-            return Unknown.stageImage
+            return Unknown.stage3Image
         }
     }
     private var thumbnail: String {
@@ -385,8 +395,10 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/low_resolution/f1e4df4cff1dc5e0acc66a9654fecf949224f7e4f6bd36305d4600ac3fa3db7b_1.png"
         case .wahooWorld:
             return "/stage_img/icon/low_resolution/2276a46e42a11637776ebc15cf2d46a589f1dba34a76d5c940c418ed7371d071_1.png"
+        case .empty:
+            return "/stage_img/icon/low_resolution/59a42245071d692c58b9825886f89f95e092ae0aa83a46617fdb4cbcb2f5f2b8_1.png"
         case .unknown:
-            return Unknown.stageImage
+            return Unknown.stage3Thumbnail
         }
     }
     
@@ -402,6 +414,8 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
             return "gone_fission_hydroplant"
         case .wahooWorld:
             return "wahoo_world"
+        case .empty:
+            return ""
         case .unknown:
             return Unknown.name
         }
@@ -409,7 +423,7 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
     var imageUrl: String {
         switch self {
         case .unknown:
-            return Unknown.stageImageUrl
+            return Unknown.stageImage3Url
         default:
             return Splatoon3InkAssetsURL + image
         }
@@ -417,7 +431,7 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
     var thumbnailUrl: String {
         switch self {
         case .unknown:
-            return Unknown.stageImageUrl
+            return Unknown.stageThumbnail3Url
         default:
             return Splatoon3InkAssetsURL + thumbnail
         }

@@ -62,7 +62,7 @@
 "regular_job" = "いつものバイト";
 "big_run" = "ビッグラン";
 
-"regular" = "いつもの";
+"regular_j" = "いつもの";
 
 // Stage.
 "the_reef" = "バッテラストリート";

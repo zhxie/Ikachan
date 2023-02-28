@@ -40,11 +40,6 @@
 "open_ss" = "O.";
 "x_ss" = "X";
 
-"regular_job" = "Regular Job";
-"big_run" = "Big Run";
-
-"regular" = "Regular";
-
 // Rule.
 "turf_war" = "Turf War";
 "splat_zones" = "Splat Zones";
@@ -63,6 +58,11 @@
 "tower_ss" = "Tower";
 "rainmaker_ss" = "Rain";
 "clam_ss" = "Clam";
+
+"regular_job" = "Regular Job";
+"big_run" = "Big Run";
+
+"regular_j" = "Regular";
 
 // Stage.
 "the_reef" = "The Reef";
