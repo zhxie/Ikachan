@@ -66,7 +66,7 @@ enum Splatoon2ScheduleRule: String, Rule, CaseIterable {
         case .turfWar, .splatZones, .towerControl, .rainmaker, .clamBlitz:
             return rawValue + "_2"
         case .unknown:
-            return Unknown.assetImage
+            return Unknown.assetImage2
         }
     }
 }
@@ -153,7 +153,7 @@ enum Splatoon3ScheduleRule: String, Rule, CaseIterable {
             // TODO: Splatoon 3 SVG rule icons render incorrectly.
             return name + "_2"
         case .unknown:
-            return Unknown.assetImage
+            return Unknown.assetImage3
         }
     }
 }

@@ -178,7 +178,7 @@ enum Splatoon2ShiftStage: Int, Stage, CaseIterable {
         case .ruinsOfArkPolaris:
             return "/images/coop_stage/50064ec6e97aac91e70df5fc2cfecf61ad8615fd.png"
         case .unknown:
-            return Unknown.stage2Image
+            return Unknown.stageImage2
         }
     }
     
@@ -262,7 +262,7 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
         case .empty:
             return "/stage_img/icon/high_resolution/59a42245071d692c58b9825886f89f95e092ae0aa83a46617fdb4cbcb2f5f2b8_0.png"
         case .unknown:
-            return Unknown.stage3Image
+            return Unknown.stageImage3
         }
     }
     private var thumbnail: String {
@@ -298,7 +298,7 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
         case .empty:
             return "/stage_img/icon/low_resolution/59a42245071d692c58b9825886f89f95e092ae0aa83a46617fdb4cbcb2f5f2b8_1.png"
         case .unknown:
-            return Unknown.stage3Thumbnail
+            return Unknown.stageThumbnail3
         }
     }
     
@@ -380,7 +380,7 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
         case .empty:
             return "/stage_img/icon/high_resolution/59a42245071d692c58b9825886f89f95e092ae0aa83a46617fdb4cbcb2f5f2b8_0.png"
         case .unknown:
-            return Unknown.stage3Image
+            return Unknown.stageImage3
         }
     }
     private var thumbnail: String {
@@ -398,7 +398,7 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
         case .empty:
             return "/stage_img/icon/low_resolution/59a42245071d692c58b9825886f89f95e092ae0aa83a46617fdb4cbcb2f5f2b8_1.png"
         case .unknown:
-            return Unknown.stage3Thumbnail
+            return Unknown.stageThumbnail3
         }
     }
     
