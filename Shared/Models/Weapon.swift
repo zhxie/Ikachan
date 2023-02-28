@@ -187,7 +187,7 @@ enum Splatoon2Weapon: Int, Weapon, CaseIterable {
         case .randomGold:
             return "/images/coop_weapons/7076c8181ab5c49d2ac91e43a2d945a46a99c17d.png"
         case .unknown:
-            return Unknown.iconImage
+            return Unknown.iconImage2
         }
     }
     
@@ -312,7 +312,7 @@ enum Splatoon2Weapon: Int, Weapon, CaseIterable {
     var imageUrl: String {
         switch self {
         case .unknown:
-            return Unknown.iconImageUrl
+            return Unknown.iconImage2Url
         default:
             return Splatnet2URL + image
         }
@@ -502,7 +502,7 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
         case .random:
             return "/ui_img/473fffb2442075078d8bb7125744905abdeae651b6a5b7453ae295582e45f7d1_0.png"
         case .unknown:
-            return Unknown.iconImage
+            return Unknown.iconImage3
         }
     }
     private var thumbnail: String {
@@ -624,7 +624,7 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
         case .random:
             return "/ui_img/473fffb2442075078d8bb7125744905abdeae651b6a5b7453ae295582e45f7d1_0.png"
         case .unknown:
-            return Unknown.iconImage
+            return Unknown.iconImage3
         }
     }
     
@@ -753,7 +753,7 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
     var imageUrl: String {
         switch self {
         case .unknown:
-            return Unknown.iconImage
+            return Unknown.iconImage3Url
         default:
             return Splatoon3InkAssetsURL + image
         }
@@ -761,7 +761,7 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
     var thumbnailUrl: String {
         switch self {
         case .unknown:
-            return Unknown.iconImage
+            return Unknown.iconImage3Url
         default:
             return Splatoon3InkAssetsURL + thumbnail
         }
