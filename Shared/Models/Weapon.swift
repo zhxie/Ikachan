@@ -384,7 +384,7 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
     case randomGold = -2
     case unknown = -9999
     
-    private var image: String {
+    var image: String {
         switch self {
         case .splooshOMatic:
             return "/weapon_illust/6e58a0747ab899badcb6f351512c6034e0a49bd6453281f32c7f550a2132fd65_0.png"

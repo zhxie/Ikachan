@@ -242,7 +242,7 @@ private func fetchSplatoon3Shifts(completion: @escaping ([Splatoon3Shift]?, Erro
                         var weapons: [Splatoon3Weapon] = []
                         for weapon in setting["weapons"].arrayValue {
                             weapons.append(Splatoon3Weapon.allCases.first { w in
-                                w.imageUrl == weapon["image"]["url"].stringValue
+                                weapon["image"]["url"].stringValue.hasSuffix(w.image)
                             } ?? .unknown)
                         }
                         
@@ -258,7 +258,7 @@ private func fetchSplatoon3Shifts(completion: @escaping ([Splatoon3Shift]?, Erro
                         var weapons: [Splatoon3Weapon] = []
                         for weapon in setting["weapons"].arrayValue {
                             weapons.append(Splatoon3Weapon.allCases.first { w in
-                                w.imageUrl == weapon["image"]["url"].stringValue
+                                weapon["image"]["url"].stringValue.hasSuffix(w.image)
                             } ?? .unknown)
                         }
                         
