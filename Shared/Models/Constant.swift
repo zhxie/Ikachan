@@ -29,6 +29,8 @@ struct Unknown {
     static let stageImage3Url = Splatoon3InkAssetsURL + stageImage3
     static let stageThumbnail3 = "/stage_img/icon/low_resolution/59a42245071d692c58b9825886f89f95e092ae0aa83a46617fdb4cbcb2f5f2b8_1.png"
     static let stageThumbnail3Url = Splatoon3InkAssetsURL + stageThumbnail3
+    static let weaponImage3 = "/ui_img/a23d035e2f37c502e85b6065ba777d93f42d6ca7017ed029baac6db512e3e17f_0.png"
+    static let weaponImage3Url = Splatoon3InkAssetsURL + weaponImage3
 }
 
 let Timeout: Double = 60

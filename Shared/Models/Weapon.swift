@@ -760,7 +760,7 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
     var imageUrl: String {
         switch self {
         case .unknown:
-            return Unknown.iconImage3Url
+            return Unknown.weaponImage3Url
         default:
             return Splatoon3InkAssetsURL + image
         }
@@ -768,7 +768,7 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
     var thumbnailUrl: String {
         switch self {
         case .unknown:
-            return Unknown.iconImage3Url
+            return Unknown.weaponImage3Url
         default:
             return Splatoon3InkAssetsURL + thumbnail
         }
