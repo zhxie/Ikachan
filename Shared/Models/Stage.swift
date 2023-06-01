@@ -219,6 +219,7 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
     case umAmiRuins = 5
     case mincemeatMetalworks = 6
     case brinewaterSprings = 7
+    case barnacleDime = 8
     case flounderHeights = 9
     case hammerheadBridge = 10
     case museumDAlfonsino = 11
@@ -227,6 +228,7 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
     case sturgeonShipyard = 14
     case makoMart = 15
     case wahooWorld = 16
+    case humpbackPumpTrack = 17
     case mantaMaria = 18
     case empty = -999
     case unknown = -9999
@@ -247,6 +249,8 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/high_resolution/de1f212e9ff0648f36cd3b8e0917ef36b3bd51445159297dcb948f34a09f2f05_0.png"
         case .brinewaterSprings:
             return "/stage_img/icon/high_resolution/cd84d711b47a424334569ac20f33f8e0ab6a652dc07854dcd36508a0081e9034_0.png"
+        case .barnacleDime:
+            return "/stage_img/icon/high_resolution/f70e9f5af477a39ccfab631bfb81c9e2cedb4cd0947fe260847c214a6d23695f_0.png"
         case .flounderHeights:
             return "/stage_img/icon/high_resolution/488017f3ce712fca9fb37d61fe306343054449bb2d2bb1751d95f54a98564cae_0.png"
         case .hammerheadBridge:
@@ -263,6 +267,8 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/high_resolution/a8ba96c3dbd015b7bc6ea4fa067245c4e9aee62b6696cb41e02d35139dd21fe7_0.png"
         case .wahooWorld:
             return "/stage_img/icon/high_resolution/61ea801fa4ed32360dcaf83986222ded46a72dbf56194acc6d0cf4659a92ba85_0.png"
+        case .humpbackPumpTrack:
+            return "/stage_img/icon/high_resolution/7b3cf118bd9f45d141cd6db0ee75b06e697fa83945c7fe1e6f8483de6a591f5f_0.png"
         case .mantaMaria:
             return "/stage_img/icon/high_resolution/0b7fd997781e03eb9d5bf1875ed070f698afc654f4fe929452c65aa26c0a35fd_0.png"
         case .empty:
@@ -287,6 +293,8 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/low_resolution/de1f212e9ff0648f36cd3b8e0917ef36b3bd51445159297dcb948f34a09f2f05_1.png"
         case .brinewaterSprings:
             return "/stage_img/icon/low_resolution/cd84d711b47a424334569ac20f33f8e0ab6a652dc07854dcd36508a0081e9034_1.png"
+        case .barnacleDime:
+            return "/stage_img/icon/low_resolution/f70e9f5af477a39ccfab631bfb81c9e2cedb4cd0947fe260847c214a6d23695f_1.png"
         case .flounderHeights:
             return "/stage_img/icon/low_resolution/488017f3ce712fca9fb37d61fe306343054449bb2d2bb1751d95f54a98564cae_1.png"
         case .hammerheadBridge:
@@ -303,6 +311,8 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/low_resolution/a8ba96c3dbd015b7bc6ea4fa067245c4e9aee62b6696cb41e02d35139dd21fe7_1.png"
         case .wahooWorld:
             return "/stage_img/icon/low_resolution/61ea801fa4ed32360dcaf83986222ded46a72dbf56194acc6d0cf4659a92ba85_1.png"
+        case .humpbackPumpTrack:
+            return "/stage_img/icon/low_resolution/7b3cf118bd9f45d141cd6db0ee75b06e697fa83945c7fe1e6f8483de6a591f5f_1.png"
         case .mantaMaria:
             return "/stage_img/icon/low_resolution/0b7fd997781e03eb9d5bf1875ed070f698afc654f4fe929452c65aa26c0a35fd_1.png"
         case .empty:
@@ -328,6 +338,8 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
             return "mincemeat_metalworks"
         case .brinewaterSprings:
             return "brinewater_springs"
+        case .barnacleDime:
+            return "barnacle_dime"
         case .flounderHeights:
             return "flounder_heights"
         case .hammerheadBridge:
@@ -344,6 +356,8 @@ enum Splatoon3ScheduleStage: Int, Stage, CaseIterable {
             return "mako_mart"
         case .wahooWorld:
             return "wahoo_world"
+        case .humpbackPumpTrack:
+            return "humpback_pump_track"
         case .mantaMaria:
             return "manta_maria"
         case .empty:
@@ -375,8 +389,10 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
     case sockeyeStation = 2
     case maroonersBay = 6
     case goneFissionHydroplant = 7
+    case jamminSalmonJunction = 8
     case wahooWorld = 100
     case inkblotArtAcademy = 102
+    case undertowSpillway = 103
     case empty = -999
     case unknown = -9999
     
@@ -390,10 +406,15 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/high_resolution/1a29476c1ab5fdbc813e2df99cd290ce56dfe29755b97f671a7250e5f77f4961_0.png"
         case .goneFissionHydroplant:
             return "/stage_img/icon/high_resolution/f1e4df4cff1dc5e0acc66a9654fecf949224f7e4f6bd36305d4600ac3fa3db7b_0.png"
+        case .jamminSalmonJunction:
+            return "/stage_img/icon/high_resolution/0e05d4caa34089a447535708370286f4ee6068661359b4d7cf6c319863424f84_0.png"
         case .wahooWorld:
             return "/stage_img/icon/high_resolution/2276a46e42a11637776ebc15cf2d46a589f1dba34a76d5c940c418ed7371d071_0.png"
         case .inkblotArtAcademy:
             return "/stage_img/icon/high_resolution/3598b7f54248b84c47cde6b99aa45ff296a41d3d5f38eaccfe2327b2874fff0b_0.png"
+        case .undertowSpillway:
+            // TODO: Replace with the coop one.
+            return "/stage_img/icon/high_resolution/9b1c17b2075479d0397d2fb96efbc6fa3a28900712920e5fe1e9dfc59c6abc5c_0.png"
         case .empty:
             return "/stage_img/icon/high_resolution/59a42245071d692c58b9825886f89f95e092ae0aa83a46617fdb4cbcb2f5f2b8_0.png"
         case .unknown:
@@ -410,10 +431,15 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
             return "/stage_img/icon/low_resolution/1a29476c1ab5fdbc813e2df99cd290ce56dfe29755b97f671a7250e5f77f4961_1.png"
         case .goneFissionHydroplant:
             return "/stage_img/icon/low_resolution/f1e4df4cff1dc5e0acc66a9654fecf949224f7e4f6bd36305d4600ac3fa3db7b_1.png"
+        case .jamminSalmonJunction:
+            return "/stage_img/icon/low_resolution/0e05d4caa34089a447535708370286f4ee6068661359b4d7cf6c319863424f84_1.png"
         case .wahooWorld:
             return "/stage_img/icon/low_resolution/2276a46e42a11637776ebc15cf2d46a589f1dba34a76d5c940c418ed7371d071_1.png"
         case .inkblotArtAcademy:
             return "/stage_img/icon/low_resolution/3598b7f54248b84c47cde6b99aa45ff296a41d3d5f38eaccfe2327b2874fff0b_1.png"
+        case .undertowSpillway:
+            // TODO: Replace with the coop one.
+            return "/stage_img/icon/low_resolution/9b1c17b2075479d0397d2fb96efbc6fa3a28900712920e5fe1e9dfc59c6abc5c_1.png"
         case .empty:
             return "/stage_img/icon/low_resolution/59a42245071d692c58b9825886f89f95e092ae0aa83a46617fdb4cbcb2f5f2b8_1.png"
         case .unknown:
@@ -431,10 +457,14 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
             return "marooners_bay"
         case .goneFissionHydroplant:
             return "gone_fission_hydroplant"
+        case .jamminSalmonJunction:
+            return "jammin_salmon_junction"
         case .wahooWorld:
             return "wahoo_world"
         case .inkblotArtAcademy:
             return "inkblot_art_academy"
+        case .undertowSpillway:
+            return "undertow_spillway"
         case .empty:
             return ""
         case .unknown:

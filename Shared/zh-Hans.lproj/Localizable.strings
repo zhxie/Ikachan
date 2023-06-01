@@ -102,6 +102,7 @@
 "um_ami_ruins" = "鱼露遗迹";
 "mincemeat_metalworks" = "鱼肉碎金属";
 "brinewater_springs" = "臭鱼干温泉";
+"barnacle_dime" = "塔拉波特购物公园";
 "flounder_heights" = "比目鱼住宅区";
 "hammerhead_bridge" = "真鲭跨海大桥";
 "museum_d_alfonsino" = "金眼鲷美术馆";
@@ -109,6 +110,7 @@
 
 "sockeye_station" = "新卷堡";
 "gone_fission_hydroplant" = "麦年海洋发电所";
+"jammin_salmon_junction" = "生筋子系统交流道遗址";
 
 // Weapon.
 "sploosh_o_matic" = "广域标记枪";

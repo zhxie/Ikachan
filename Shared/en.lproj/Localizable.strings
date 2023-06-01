@@ -102,6 +102,7 @@
 "um_ami_ruins" = "Um'ami Ruins";
 "mincemeat_metalworks" = "Mincemeat Metalworks";
 "brinewater_springs" = "Brinewater Springs";
+"barnacle_dime" = "Barnacle & Dime";
 "flounder_heights" = "Flounder Heights";
 "hammerhead_bridge" = "Hammerhead Bridge";
 "museum_d_alfonsino" = "Museum d'Alfonsino";
@@ -109,6 +110,7 @@
 
 "sockeye_station" = "Sockeye Station";
 "gone_fission_hydroplant" = "Gone Fission Hydroplant";
+"jammin_salmon_junction" = "Jammin' Salmon Junction";
 
 // Weapon.
 "sploosh_o_matic" = "Sploosh-o-matic";
