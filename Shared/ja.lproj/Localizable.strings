@@ -129,6 +129,7 @@
 "clash_blaster" = "クラッシュブラスター";
 "rapid_blaster" = "ラピッドブラスター";
 "rapid_blaster_pro" = "Rブラスターエリート";
+"s_blast_92" = "S-BLAST92";
 "l_3_nozzlenose" = "L3リールガン";
 "h_3_nozzlenose" = "H3リールガン";
 "squeezer" = "ボトルガイザー";
@@ -138,6 +139,7 @@
 "flingza_roller" = "ヴァリアブルローラー";
 "inkbrush" = "パブロ";
 "octobrush" = "ホクサイ";
+"painbrush" = "フィンセント";
 "classic_squiffer" = "スクイックリン";
 "splat_charger" = "スプラチャージャー";
 "splatterscope" = "スプラスコープ";

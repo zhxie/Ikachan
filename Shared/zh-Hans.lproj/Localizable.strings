@@ -129,6 +129,7 @@
 "clash_blaster" = "冲涂爆破枪";
 "rapid_blaster" = "快速爆破枪";
 "rapid_blaster_pro" = "快速爆破枪 精英";
+"s_blast_92" = "S-BLAST92";
 "l_3_nozzlenose" = "L3卷管枪";
 "h_3_nozzlenose" = "H3卷管枪";
 "squeezer" = "开瓶喷泉枪";
@@ -138,6 +139,7 @@
 "flingza_roller" = "可变式滚筒";
 "inkbrush" = "巴勃罗";
 "octobrush" = "北斋";
+"painbrush" = "文森";
 "classic_squiffer" = "鱿快洁α";
 "splat_charger" = "斯普拉蓄力狙击枪";
 "splatterscope" = "斯普拉准星枪";

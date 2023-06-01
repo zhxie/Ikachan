@@ -340,6 +340,7 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
     case clashBlaster = 230
     case rapidBlaster = 240
     case rapidBlasterPro = 250
+    case sBlast92 = 260
     case l3Nozzlenose = 300
     case h3Nozzlenose = 310
     case squeezer = 400
@@ -350,6 +351,7 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
     case bigSwigRoller = 1040
     case inkbrush = 1100
     case octobrush = 1110
+    case painbrush = 1120
     case classicSquiffer = 2000
     case splatCharger = 2010
     case splatterscope = 2020
@@ -420,6 +422,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "/weapon_illust/0a929d514403d07e1543e638141ebace947ffd539f5f766b42f4d6577d40d7b8_0.png"
         case .rapidBlasterPro:
             return "/weapon_illust/954a5ea059f841fa5f1cd2596bb32f23b3d3b03fc3fa7972077bdbafe6051215_0.png"
+        case .sBlast92:
+            return "/weapon_illust/3f8b7fb5cfa592fd251fe4f5707465e539ed79b8d4ae17df75198fbabec2e88f_0.png"
         case .l3Nozzlenose:
             return "/weapon_illust/96833fc0f74242cd2bc73b241aab8a00d499ce9f6557722ef6503e12af8979f4_0.png"
         case .h3Nozzlenose:
@@ -440,6 +444,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "/weapon_illust/260428edbf919f5c9e8c8517516d6a7a8133cf7348d216768ab4fb9434053f08_0.png"
         case .octobrush:
             return "/weapon_illust/ce0bb38588e497586a60f16e0aca914f181f42be29953742fd4a55a97e2ebd22_0.png"
+        case .painbrush:
+            return "/weapon_illust/c1f1f56982bd7d28714615a69da6e33c5157ec22b1c62092ec8d60a67b6b29ef_0.png"
         case .classicSquiffer:
             return "/weapon_illust/0cdd6036a6677d68bf28e1014b09a6f5a043e969027e532cd008049baace6527_0.png"
         case .splatCharger:
@@ -544,6 +550,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "/weapon_illust/0a929d514403d07e1543e638141ebace947ffd539f5f766b42f4d6577d40d7b8_1.png"
         case .rapidBlasterPro:
             return "/weapon_illust/954a5ea059f841fa5f1cd2596bb32f23b3d3b03fc3fa7972077bdbafe6051215_1.png"
+        case .sBlast92:
+            return "/weapon_illust/3f8b7fb5cfa592fd251fe4f5707465e539ed79b8d4ae17df75198fbabec2e88f_1.png"
         case .l3Nozzlenose:
             return "/weapon_illust/96833fc0f74242cd2bc73b241aab8a00d499ce9f6557722ef6503e12af8979f4_1.png"
         case .h3Nozzlenose:
@@ -564,6 +572,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "/weapon_illust/260428edbf919f5c9e8c8517516d6a7a8133cf7348d216768ab4fb9434053f08_1.png"
         case .octobrush:
             return "/weapon_illust/ce0bb38588e497586a60f16e0aca914f181f42be29953742fd4a55a97e2ebd22_1.png"
+        case .painbrush:
+            return "/weapon_illust/c1f1f56982bd7d28714615a69da6e33c5157ec22b1c62092ec8d60a67b6b29ef_1.png"
         case .classicSquiffer:
             return "/weapon_illust/0cdd6036a6677d68bf28e1014b09a6f5a043e969027e532cd008049baace6527_1.png"
         case .splatCharger:
@@ -669,6 +679,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "rapid_blaster"
         case .rapidBlasterPro:
             return "rapid_blaster_pro"
+        case .sBlast92:
+            return "s_blast_92"
         case .l3Nozzlenose:
             return "l_3_nozzlenose"
         case .h3Nozzlenose:
@@ -689,6 +701,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "inkbrush"
         case .octobrush:
             return "octobrush"
+        case .painbrush:
+            return "painbrush"
         case .classicSquiffer:
             return "classic_squiffer"
         case .splatCharger:

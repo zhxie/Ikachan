@@ -129,6 +129,7 @@
 "clash_blaster" = "Clash Blaster";
 "rapid_blaster" = "Rapid Blaster";
 "rapid_blaster_pro" = "Rapid Blaster Pro";
+"s_blast_92" = "S-BLAST '92";
 "l_3_nozzlenose" = "L-3 Nozzlenose";
 "h_3_nozzlenose" = "H-3 Nozzlenose";
 "squeezer" = "Squeezer";
@@ -138,6 +139,7 @@
 "flingza_roller" = "Flingza Roller";
 "inkbrush" = "Inkbrush";
 "octobrush" = "Octobrush";
+"painbrush" = "Painbrush";
 "classic_squiffer" = "Squiffer";
 "splat_charger" = "Splat Charger";
 "splatterscope" = "Splatterscope";
