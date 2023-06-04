@@ -413,8 +413,7 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
         case .inkblotArtAcademy:
             return "/stage_img/icon/high_resolution/3598b7f54248b84c47cde6b99aa45ff296a41d3d5f38eaccfe2327b2874fff0b_0.png"
         case .undertowSpillway:
-            // TODO: Replace with the coop one.
-            return "/stage_img/icon/high_resolution/9b1c17b2075479d0397d2fb96efbc6fa3a28900712920e5fe1e9dfc59c6abc5c_0.png"
+            return "/stage_img/icon/high_resolution/71c7076fc2d23f1833c923747e8582e29eb275bed96d8360aa5d0ed6ae069230_0.png"
         case .empty:
             return "/stage_img/icon/high_resolution/59a42245071d692c58b9825886f89f95e092ae0aa83a46617fdb4cbcb2f5f2b8_0.png"
         case .unknown:
@@ -438,8 +437,7 @@ enum Splatoon3ShiftStage: Int, Stage, CaseIterable {
         case .inkblotArtAcademy:
             return "/stage_img/icon/low_resolution/3598b7f54248b84c47cde6b99aa45ff296a41d3d5f38eaccfe2327b2874fff0b_1.png"
         case .undertowSpillway:
-            // TODO: Replace with the coop one.
-            return "/stage_img/icon/low_resolution/9b1c17b2075479d0397d2fb96efbc6fa3a28900712920e5fe1e9dfc59c6abc5c_1.png"
+            return "/stage_img/icon/low_resolution/71c7076fc2d23f1833c923747e8582e29eb275bed96d8360aa5d0ed6ae069230_1.png"
         case .empty:
             return "/stage_img/icon/low_resolution/59a42245071d692c58b9825886f89f95e092ae0aa83a46617fdb4cbcb2f5f2b8_1.png"
         case .unknown:
