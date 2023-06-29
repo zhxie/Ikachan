@@ -91,7 +91,7 @@ struct AboutView: View {
                         isDownloadingAllResources = true
 
                         for url in urls {
-                            resources.append(ImageResource(downloadURL: URL(string: url)!))
+                            resources.append(KF.ImageResource(downloadURL: URL(string: url)!))
                         }
                         ImagePrefetcher(resources: resources, progressBlock: { (skipped, failed, completed) in
                             progressValue = Double(skipped.count + failed.count + completed.count)

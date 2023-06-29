@@ -29,7 +29,7 @@ struct ShiftProvider: IntentTimelineProvider {
             }
             if details.count > 0 {
                 let entry = ShiftEntry(date: current, configuration: configuration, shift: details[0])
-                let resources = [ImageResource(downloadURL: URL(string: details[0].stage!.thumbnailUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[0].thumbnailUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[1].thumbnailUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[2].thumbnailUrl)!), ImageResource(downloadURL: URL(string: details[0].weapons[3].thumbnailUrl)!)]
+                let resources = [KF.ImageResource(downloadURL: URL(string: details[0].stage!.thumbnailUrl)!), KF.ImageResource(downloadURL: URL(string: details[0].weapons[0].thumbnailUrl)!), KF.ImageResource(downloadURL: URL(string: details[0].weapons[1].thumbnailUrl)!), KF.ImageResource(downloadURL: URL(string: details[0].weapons[2].thumbnailUrl)!), KF.ImageResource(downloadURL: URL(string: details[0].weapons[3].thumbnailUrl)!)]
                 
                 ImagePrefetcher(resources: resources) { (_, _, _) in
                     completion(entry)
@@ -93,7 +93,7 @@ struct ShiftProvider: IntentTimelineProvider {
             }
             
             for url in urls {
-                resources.append(ImageResource(downloadURL: URL(string: url)!))
+                resources.append(KF.ImageResource(downloadURL: URL(string: url)!))
             }
             ImagePrefetcher(resources: resources) { (_, _, _) in
                 if entries.count > 0 {

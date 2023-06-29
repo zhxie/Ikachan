@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher.git",
       "state" : {
-        "revision" : "318e319998bf555c3e914d5c3adb6da05af86a32",
-        "version" : "7.1.1"
+        "revision" : "c1f60c63f356d364f4284ba82961acbe7de79bcc",
+        "version" : "7.8.1"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ivanvorobei/SPAlert",
       "state" : {
-        "revision" : "7bb70ab93d066875341ae64b9d39d0957594f018",
-        "version" : "3.5.0"
+        "revision" : "17939549b8a7c7574c8de5b4f0c017cbbc5c79d2",
+        "version" : "3.5.1"
       }
     },
     {
