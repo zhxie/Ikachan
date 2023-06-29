@@ -20,10 +20,10 @@ extension Date {
     }
 }
 
-func utcToDate(date: String) -> Date {
+func utcToDate(date: String) -> Date? {
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-    return formatter.date(from: date)!
+    return formatter.date(from: date)
 }
 
 func timeSpan(current: Date, startTime: Date, endTime: Date) -> String {

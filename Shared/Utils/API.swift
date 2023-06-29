@@ -126,6 +126,9 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                     for schedule in innerData["regularSchedules"]["nodes"].arrayValue {
                         let startTime = utcToDate(date: schedule["startTime"].stringValue)
                         let endTime = utcToDate(date: schedule["endTime"].stringValue)
+                        guard let startTime = startTime, let endTime = endTime else {
+                            continue
+                        }
                         let matchSetting = schedule["regularMatchSetting"]
                         if matchSetting.isNull {
                             continue
@@ -141,6 +144,9 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                     for schedule in innerData["bankaraSchedules"]["nodes"].arrayValue {
                         let startTime = utcToDate(date: schedule["startTime"].stringValue)
                         let endTime = utcToDate(date: schedule["endTime"].stringValue)
+                        guard let startTime = startTime, let endTime = endTime else {
+                            continue
+                        }
                         for matchSetting in schedule["bankaraMatchSettings"].arrayValue {
                             if matchSetting.isNull {
                                 continue
@@ -158,6 +164,9 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                     for schedule in innerData["xSchedules"]["nodes"].arrayValue {
                         let startTime = utcToDate(date: schedule["startTime"].stringValue)
                         let endTime = utcToDate(date: schedule["endTime"].stringValue)
+                        guard let startTime = startTime, let endTime = endTime else {
+                            continue
+                        }
                         let matchSetting = schedule["xMatchSetting"]
                         if matchSetting.isNull {
                             continue
@@ -177,16 +186,21 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                         let startTime = utcToDate(date: currentFest["startTime"].stringValue)
                         let midtermTime = utcToDate(date: currentFest["midtermTime"].stringValue)
                         let endTime = utcToDate(date: currentFest["endTime"].stringValue)
-                        let state = Splatoon3Splatfest.State(rawValue: currentFest["state"].stringValue.lowercased())!
-                        let stageImage = currentFest["tricolorStage"]["image"]["url"].stringValue
-                        let stage = Splatoon3ScheduleStage.allCases.first { stage in
-                            stageImage.hasSuffix(stage.image.replacingOccurrences(of: "_0", with: "_1"))
-                        } ?? .unknown
-                        fest = Splatoon3Splatfest(startTime: startTime, midtermTime: midtermTime, endTime: endTime, state: state, stage: stage)
+                        if startTime != nil && midtermTime != nil && endTime != nil {
+                            let state = Splatoon3Splatfest.State(rawValue: currentFest["state"].stringValue.lowercased())!
+                            let stageImage = currentFest["tricolorStage"]["image"]["url"].stringValue
+                            let stage = Splatoon3ScheduleStage.allCases.first { stage in
+                                stageImage.hasSuffix(stage.image.replacingOccurrences(of: "_0", with: "_1"))
+                            } ?? .unknown
+                            fest = Splatoon3Splatfest(startTime: startTime!, midtermTime: midtermTime!, endTime: endTime!, state: state, stage: stage)
+                        }
                     }
                     for schedule in innerData["festSchedules"]["nodes"].arrayValue {
                         let startTime = utcToDate(date: schedule["startTime"].stringValue)
                         let endTime = utcToDate(date: schedule["endTime"].stringValue)
+                        guard let startTime = startTime, let endTime = endTime else {
+                            continue
+                        }
                         let matchSetting = schedule["festMatchSetting"]
                         if matchSetting.isNull {
                             continue
@@ -235,6 +249,9 @@ private func fetchSplatoon3Shifts(completion: @escaping ([Splatoon3Shift]?, Erro
                     for shift in json["data"]["coopGroupingSchedule"]["regularSchedules"]["nodes"].arrayValue {
                         let startTime = utcToDate(date: shift["startTime"].stringValue)
                         let endTime = utcToDate(date: shift["endTime"].stringValue)
+                        guard let startTime = startTime, let endTime = endTime else {
+                            continue
+                        }
                         let setting = shift["setting"]
                         let stage = Splatoon3ShiftStage.allCases.first { stage in
                             setting["coopStage"]["image"]["url"].stringValue.hasSuffix(stage.image)
@@ -251,6 +268,9 @@ private func fetchSplatoon3Shifts(completion: @escaping ([Splatoon3Shift]?, Erro
                     for shift in json["data"]["coopGroupingSchedule"]["bigRunSchedules"]["nodes"].arrayValue {
                         let startTime = utcToDate(date: shift["startTime"].stringValue)
                         let endTime = utcToDate(date: shift["endTime"].stringValue)
+                        guard let startTime = startTime, let endTime = endTime else {
+                            continue
+                        }
                         let setting = shift["setting"]
                         let stage = Splatoon3ShiftStage.allCases.first { stage in
                             setting["coopStage"]["image"]["url"].stringValue.hasSuffix(stage.image)
