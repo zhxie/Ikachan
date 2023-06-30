@@ -12,6 +12,17 @@ import Intents
 import Kingfisher
 import SPAlert
 
+struct GetButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.subheadline)
+            .foregroundColor(Color.accentColor)
+            .padding(EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12))
+            .background(Color(UIColor.secondarySystemFill))
+            .clipShape(Capsule())
+    }
+}
+
 struct AboutView: View {
     @State var isDownloadingAllResources = false
     @State var progressValue: Double = 0
@@ -29,6 +40,28 @@ struct AboutView: View {
     
     var body: some View {
         Form {
+            Section(header: Text("our_new_app")) {
+                HStack{
+                    Image("conch_bay")
+                        .resizedToFit()
+                        .frame(width: 60)
+                        .cornerRadius(13.2)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 13.2)
+                                .stroke(Color(UIColor.secondarySystemBackground), lineWidth: 2)
+                        )
+                        .accessibilityLabel("conch_bay")
+                    Text("conch_bay")
+                    
+                    Spacer()
+                    
+                    Button("get") {
+                        UIApplication.shared.open(URL(string: "https://apps.apple.com/app/apple-store/id1659268579?pt=122602395&ct=Ikachan&mt=8")!)
+                    }
+                    .buttonStyle(GetButton())
+                }
+            }
+            
             Section(header: Text("settings")) {
                 Link("language", destination: URL(string: UIApplication.openSettingsURLString)!)
                 Button("siri_and_shortcuts") {
@@ -55,6 +88,7 @@ struct AboutView: View {
                     Text("app_icon")
                 }
             }
+            
             Section(header: Text("support")) {
                 HStack {
                     Button("download_all_resources") {

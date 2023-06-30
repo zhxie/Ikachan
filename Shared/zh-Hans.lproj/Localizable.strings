@@ -203,6 +203,9 @@
 "schedule" = "日程";
 "shift" = "排班表";
 "ikachan" = "鱿鱼酱";
+"our_new_app" = "我们的新App";
+"conch_bay" = "法螺湾";
+"get" = "获取";
 "settings" = "设置";
 "language" = "语言";
 "siri_and_shortcuts" = "Siri与快捷指令";
@@ -221,7 +224,6 @@
 "privacy_policy" = "隐私政策";
 "developer_sketch" = "开发者 @xzh_Sketch";
 "designer_shooky" = "设计师 @贝壳牌砂糖";
-"data_source" = "数据源";
 "acknowledgements" = "致谢";
 "disclaimer" = "本应用是使用鱿鱼圈2和鱿鱼圈3的信息的非官方应用，与任天堂有限公司无关。";
 "ika_shrine" = "鱿鱼神社";

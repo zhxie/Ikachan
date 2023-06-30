@@ -203,6 +203,9 @@
 "schedule" = "Schedule";
 "shift" = "Shift";
 "ikachan" = "Ikachan";
+"our_new_app" = "Our New App";
+"conch_bay" = "Conch Bay";
+"get" = "GET";
 "settings" = "Settings";
 "language" = "Language";
 "siri_and_shortcuts" = "Siri & Shortcuts";
@@ -221,7 +224,6 @@
 "privacy_policy" = "Privacy Policy";
 "developer_sketch" = "Developer @xzh1206";
 "designer_shooky" = "Designer @ShellShooky";
-"data_source" = "Data Source";
 "acknowledgements" = "Acknowledgements";
 "disclaimer" = "This app is an unofficial app which uses the information of Splatnet 2 and Splatnet 3, and is not related to Nintendo Co., Ltd.";
 "ika_shrine" = "Ika Shrine";
