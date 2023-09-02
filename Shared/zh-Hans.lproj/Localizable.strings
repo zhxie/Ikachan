@@ -92,7 +92,7 @@
 "spawning_grounds" = "鲑坝";
 "marooners_bay" = "漂浮落难船";
 "lost_outpost" = "海上聚落鲑鱼屠宰场";
-"salmonid_smokeyard" = "不时鲑烟熏工房";
+"salmonid_smokeyard" = "时不知鲑烟熏工房";
 "ruins_of_ark_polaris" = "腐朽的方舟 北极星";
 
 "scorch_gorge" = "温泉花大峡谷";
@@ -107,6 +107,8 @@
 "hammerhead_bridge" = "真鲭跨海大桥";
 "museum_d_alfonsino" = "金眼鲷美术馆";
 "mahi_mahi_resort" = "鬼头刀SPA度假区";
+"crableg_capital" = "高脚经济特区";
+"shipshape_cargo_co" = "大比目鱼海运中心";
 
 "sockeye_station" = "新卷堡";
 "gone_fission_hydroplant" = "麦年海洋发电所";
