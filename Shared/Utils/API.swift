@@ -151,7 +151,7 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                             if matchSetting.isNull {
                                 continue
                             }
-                            let mode = Splatoon3ScheduleMode(rawValue: matchSetting["mode"].stringValue.lowercased())!
+                            let mode = Splatoon3ScheduleMode(rawValue: matchSetting["bankaraMode"].stringValue.lowercased())!
                             let rule = Splatoon3ScheduleRule(rawValue: matchSetting["vsRule"]["rule"].stringValue.lowercased()) ?? .unknown
                             var stages: [Splatoon3ScheduleStage] = []
                             for stage in matchSetting["vsStages"].arrayValue {
@@ -201,17 +201,22 @@ private func fetchSplatoon3Schedules(completion: @escaping ([Splatoon3Schedule]?
                         guard let startTime = startTime, let endTime = endTime else {
                             continue
                         }
-                        let matchSetting = schedule["festMatchSetting"]
-                        if matchSetting.isNull {
-                            continue
+                        for matchSetting in schedule["festMatchSettings"].arrayValue {
+                            if matchSetting.isNull {
+                                continue
+                            }
+                            let mode = Splatoon3ScheduleMode(rawValue: matchSetting["festMode"].stringValue.lowercased())!
+                            let rule = Splatoon3ScheduleRule(rawValue: matchSetting["vsRule"]["rule"].stringValue.lowercased()) ?? .unknown
+                            var stages: [Splatoon3ScheduleStage] = []
+                            for stage in matchSetting["vsStages"].arrayValue {
+                                stages.append(Splatoon3ScheduleStage(rawValue: stage["vsStageId"].intValue) ?? .unknown)
+                            }
+                            
+                            schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: mode, rule: rule, stages: stages))
+                            if mode == .bankaraOpen {
+                                schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: .regular, rule: rule, stages: stages))
+                            }
                         }
-                        let rule = Splatoon3ScheduleRule(rawValue: matchSetting["vsRule"]["rule"].stringValue.lowercased()) ?? .unknown
-                        var stages: [Splatoon3ScheduleStage] = []
-                        for stage in matchSetting["vsStages"].arrayValue {
-                            stages.append(Splatoon3ScheduleStage(rawValue: stage["vsStageId"].intValue) ?? .unknown)
-                        }
-                        
-                        schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: .regular, rule: rule, stages: stages))
                     }
 
                     schedules.sort { a, b in
