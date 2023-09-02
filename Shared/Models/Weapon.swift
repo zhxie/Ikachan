@@ -365,11 +365,13 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
     case sloshingMachine = 3020
     case bloblobber = 3030
     case explosher = 3040
+    case dreadWringer = 3050
     case miniSplatling = 4000
     case heavySplatling = 4010
     case hydraSplatling = 4020
     case ballpointSplatling = 4030
     case nautilus47 = 4040
+    case heavyEditSplatling = 4050
     case dappleDualies = 5000
     case splatDualies = 5010
     case gloogaDualies = 5020
@@ -472,6 +474,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "/weapon_illust/0199e455872acba1ab8ef0040eca7f41afca48c1f9ad2c5d274323d6dbc49133_0.png"
         case .explosher:
             return "/weapon_illust/1e32f5e1e65793585f6423e4fcae1a146a79d2a09e6e15575015af8a2032a4fe_0.png"
+        case .dreadWringer:
+            return "/weapon_illust/1cf241ee28b282db23d25f1cce3d586151b9b67f4ba20cf5e2e74c82e988c352_0.png"
         case .miniSplatling:
             return "/weapon_illust/32dbc48e000d5d2015468e1dafc05e7c24581a73e54e758af0c8b9e2db3db550_0.png"
         case .heavySplatling:
@@ -482,6 +486,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "/weapon_illust/206dbf3b5dfc9962b6a783acf68a856f0c8fbf0c56257c2ca5c25d63198dd6e1_0.png"
         case .nautilus47:
             return "/weapon_illust/be4316928f4b031b470ec2cc2c48fb922a303c882802e32d7fa802249edaa212_0.png"
+        case .heavyEditSplatling:
+            return "/weapon_illust/7f0192b8786a6fa7d5ed993022b1667de2fd90dadd8d34a3a7dff9578d34fa0a_0.png"
         case .dappleDualies:
             return "/weapon_illust/f1c8fc32bd90fc9258dc17e9f9bcfd5e6498f6e283709bf1896b78193b8e39e9_0.png"
         case .splatDualies:
@@ -600,6 +606,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "/weapon_illust/0199e455872acba1ab8ef0040eca7f41afca48c1f9ad2c5d274323d6dbc49133_1.png"
         case .explosher:
             return "/weapon_illust/1e32f5e1e65793585f6423e4fcae1a146a79d2a09e6e15575015af8a2032a4fe_1.png"
+        case .dreadWringer:
+            return "/weapon_illust/1cf241ee28b282db23d25f1cce3d586151b9b67f4ba20cf5e2e74c82e988c352_1.png"
         case .miniSplatling:
             return "/weapon_illust/32dbc48e000d5d2015468e1dafc05e7c24581a73e54e758af0c8b9e2db3db550_1.png"
         case .heavySplatling:
@@ -610,6 +618,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "/weapon_illust/206dbf3b5dfc9962b6a783acf68a856f0c8fbf0c56257c2ca5c25d63198dd6e1_1.png"
         case .nautilus47:
             return "/weapon_illust/be4316928f4b031b470ec2cc2c48fb922a303c882802e32d7fa802249edaa212_1.png"
+        case .heavyEditSplatling:
+            return "/weapon_illust/7f0192b8786a6fa7d5ed993022b1667de2fd90dadd8d34a3a7dff9578d34fa0a_1.png"
         case .dappleDualies:
             return "/weapon_illust/f1c8fc32bd90fc9258dc17e9f9bcfd5e6498f6e283709bf1896b78193b8e39e9_1.png"
         case .splatDualies:
@@ -729,6 +739,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "bloblobber"
         case .explosher:
             return "explosher"
+        case .dreadWringer:
+            return "dread_wringer"
         case .miniSplatling:
             return "mini_splatling"
         case .heavySplatling:
@@ -739,6 +751,8 @@ enum Splatoon3Weapon: Int, Weapon, CaseIterable {
             return "ballpoint_splatling"
         case .nautilus47:
             return "nautilus_47"
+        case .heavyEditSplatling:
+            return "heavy_edit_splatling"
         case .dappleDualies:
             return "dapple_dualies"
         case .splatDualies:
