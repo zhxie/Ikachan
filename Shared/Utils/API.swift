@@ -284,7 +284,17 @@ private func fetchSplatoon3Shifts(locale: JSON, completion: @escaping ([Splatoon
                         for weapon in setting["weapons"].arrayValue {
                             weapons.append(Weapon(name: locale["weapons"][weapon["__splatoon3ink_id"].stringValue]["name"].stringValue, image: URL(string: weapon["image"]["url"].stringValue)!, thumbnail: URL(string: weapon["image"]["url"].stringValue.replacingOccurrences(of: "_0", with: "_1"))!))
                         }
-                        let kingSalmonid = locale["bosses"][setting["boss"]["id"].stringValue]["name"].stringValue
+                        var kingSalmonid = KingSalmonid(name: locale["bosses"][setting["boss"]["id"].stringValue]["name"].stringValue)
+                        switch setting["boss"]["id"].stringValue {
+                        case "Q29vcEVuZW15LTIz":
+                            kingSalmonid.image = "cohozuna_3"
+                        case "Q29vcEVuZW15LTI0":
+                            kingSalmonid.image = "horrorboros_3"
+                        case "Q29vcEVuZW15LTI1":
+                            kingSalmonid.image = "megalodontia_3"
+                        default:
+                            break
+                        }
                         shifts.append(Splatoon3Shift(startTime: startTime, endTime: endTime, mode: Splatoon3ShiftMode.salmonRun, stage: stage, weapons: weapons, kingSalmonid: kingSalmonid))
                     }
                     for shift in innerData["bigRunSchedules"]["nodes"].arrayValue {
@@ -296,7 +306,17 @@ private func fetchSplatoon3Shifts(locale: JSON, completion: @escaping ([Splatoon
                         for weapon in setting["weapons"].arrayValue {
                             weapons.append(Weapon(name: locale["weapons"][weapon["__splatoon3ink_id"].stringValue]["name"].stringValue, image: URL(string: weapon["image"]["url"].stringValue)!, thumbnail: URL(string: weapon["image"]["url"].stringValue.replacingOccurrences(of: "_0", with: "_1"))!))
                         }
-                        let kingSalmonid = locale["bosses"][setting["boss"]["id"].stringValue]["name"].stringValue
+                        var kingSalmonid = KingSalmonid(name: locale["bosses"][setting["boss"]["id"].stringValue]["name"].stringValue)
+                        switch setting["boss"]["id"].stringValue {
+                        case "Q29vcEVuZW15LTIz":
+                            kingSalmonid.image = "cohozuna_3"
+                        case "Q29vcEVuZW15LTI0":
+                            kingSalmonid.image = "horrorboros_3"
+                        case "Q29vcEVuZW15LTI1":
+                            kingSalmonid.image = "megalodontia_3"
+                        default:
+                            break
+                        }
                         shifts.append(Splatoon3Shift(startTime: startTime, endTime: endTime, mode: Splatoon3ShiftMode.bigRun, stage: stage, weapons: weapons, kingSalmonid: kingSalmonid))
                     }
                     for shift in innerData["teamContestSchedules"]["nodes"].arrayValue {

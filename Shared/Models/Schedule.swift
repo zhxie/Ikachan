@@ -17,6 +17,10 @@ struct Weapon: Codable {
     var image: URL
     var thumbnail: URL?
 }
+struct KingSalmonid: Codable {
+    var name: String
+    var image: String?
+}
 
 protocol Schedule {
     var startTime: Date { get }
@@ -32,7 +36,7 @@ protocol Shift {
     var mode: any ShiftMode { get }
     var stage: Stage? { get }
     var weapons: [Weapon]? { get }
-    var kingSalmonid: String? { get }
+    var kingSalmonid: KingSalmonid? { get }
 }
 
 struct Splatoon2Schedule: Schedule, Codable {
@@ -69,7 +73,7 @@ struct Splatoon2Shift: Shift, Codable {
     var mode: any ShiftMode {
         return Splatoon2ShiftMode.salmonRun
     }
-    var kingSalmonid: String? {
+    var kingSalmonid: KingSalmonid? {
         return nil
     }
 }
@@ -103,9 +107,9 @@ struct Splatoon3Shift: Shift, Codable {
     var _mode: Splatoon3ShiftMode
     var _stage: Stage
     var _weapons: [Weapon]
-    var kingSalmonid: String?
+    var kingSalmonid: KingSalmonid?
     
-    init(startTime: Date, endTime: Date, mode: Splatoon3ShiftMode, stage: Stage, weapons: [Weapon], kingSalmonid: String? = nil) {
+    init(startTime: Date, endTime: Date, mode: Splatoon3ShiftMode, stage: Stage, weapons: [Weapon], kingSalmonid: KingSalmonid? = nil) {
         self.startTime = startTime
         self.endTime = endTime
         _mode = mode

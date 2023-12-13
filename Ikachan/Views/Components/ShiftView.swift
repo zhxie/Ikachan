@@ -35,7 +35,15 @@ struct ShiftView: View {
                     StageView(stage: shift.stage!, backgroundColor: backgroundColor)
                     VStack {
                         if let kingSalmonid = shift.kingSalmonid {
-                            Text(kingSalmonid)
+                            HStack {
+                                if let image = kingSalmonid.image {
+                                    Image(image)
+                                        .resizedToFit()
+                                        .frame(width: 20, height: 20)
+                                }
+                                Text(kingSalmonid.name)
+                                    .lineLimit(1)
+                            }
                         }
                         
                         WeaponsView(weapons: shift.weapons!, backgroundColor: backgroundColor)
