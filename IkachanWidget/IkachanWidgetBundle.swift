@@ -11,8 +11,9 @@ import SwiftUI
 struct IkachanWidgetBundle: WidgetBundle {
     @WidgetBundleBuilder
     var body: some Widget {
-        DayWidget()
-        ScheduleWidget()
-        ShiftWidget()
+        Splatoon3ScheduleWidget()
+        Splatoon3ShiftWidget()
+        Splatoon2ScheduleWidget()
+        Splatoon2ShiftWidget()
     }
 }

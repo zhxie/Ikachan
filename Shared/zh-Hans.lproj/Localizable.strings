@@ -1,44 +1,32 @@
-/*
-  Localization.strings
+/* 
+  Localizable.strings
   Ikachan
 
-  Created by Sketch on 2021/1/19.
+  Created by Sketch on 2023/12/12.
   
 */
 
 // Game.
-"splatoon2" = "斯普拉遁2";
-"splatoon3" = "斯普拉遁3";
-
-"unknown" = "未知";
+"splatoon_2" = "斯普拉遁2";
+"splatoon_3" = "斯普拉遁3";
 
 // Mode.
 "regular_battle" = "一般比赛";
 "ranked_battle" = "真格比赛";
 "league_battle" = "组排比赛";
 
-"regular" = "一般";
-"ranked" = "真格";
-"league" = "组排";
-
-"regular_ss" = "一般";
-"ranked_ss" = "真格";
-"league_ss" = "组排";
-
 "salmon_run" = "鲑鱼跑";
-"job" = "打工";
 
 "anarchy_battle_series" = "蛮颓比赛 (挑战)";
 "anarchy_battle_open" = "蛮颓比赛 (开放)";
 "x_battle" = "X比赛";
+"challenges" = "活动比赛";
+"splatfest_battle_open" = "祭典比赛 (开放)";
+"splatfest_battle_pro" = "祭典比赛 (挑战)";
+"tricolor_battle" = "三色夺宝比赛";
 
-"series" = "蛮颓挑战";
-"open" = "蛮颓开放";
-"x" = "X";
-
-"series_ss" = "挑战";
-"open_ss" = "开放";
-"x_ss" = "X";
+"big_run" = "大型跑";
+"eggstra_work" = "团队打工竞赛";
 
 // Rule.
 "turf_war" = "占地对战";
@@ -46,232 +34,24 @@
 "tower_control" = "真格塔楼";
 "rainmaker" = "真格鱼虎对战";
 "clam_blitz" = "真格蛤蜊";
-
-"turf" = "占地";
-"zones" = "区域";
-"tower" = "塔楼";
-"rainmaker_s" = "鱼虎";
-"clam" = "蛤蜊";
-
-"turf_ss" = "占地";
-"zones_ss" = "区域";
-"tower_ss" = "塔楼";
-"rainmaker_ss" = "鱼虎";
-"clam_ss" = "蛤蜊";
-
-"regular_job" = "平时的打工";
-"big_run" = "大型跑";
-
-"regular_j" = "平时的";
-
-// Stage.
-"the_reef" = "青花鱼寿司街";
-"mussel_forge_fitness" = "藤壶健身房";
-"starfish_mainstage" = "海胆露天音乐堂";
-"sturgeon_shipyard" = "鲟鱼造船厂";
-"inkblot_art_academy" = "海女美术大学";
-"humpback_pump_track" = "昆布赛道";
-"manta_maria" = "鬼蝠鲼玛利亚号";
-"port_mackerel" = "远东多线鱼码头";
-"moray_towers" = "带鱼停车场";
-"snapper_canal" = "比目鱼河川";
-"kelp_dome" = "海带温室园";
-"blackbelly_skatepark" = "黑鲈鱼滑板公园";
-"sehllendorf_institute" = "泥盆纪海洋博物馆";
-"mako_mart" = "座头购物中心";
-"walleye_warehouse" = "箱鲀仓库";
-"arowana_mall" = "龙鱼商业街";
-"camp_triggerfish" = "鳞鳟营地";
-"piranha_pit" = "鱼露矿山";
-"goby_arena" = "炸竹荚鱼体育馆";
-"new_albacore_hotel" = "新金枪鱼腹酒店";
-"wahoo_world" = "醋饭海洋世界";
-"ancho_v_games" = "凤尾鱼游戏公司";
-"skipper_pavilion" = "大弹涂鱼楼";
-
-"spawning_grounds" = "鲑坝";
-"marooners_bay" = "漂浮落难船";
-"lost_outpost" = "海上聚落鲑鱼屠宰场";
-"salmonid_smokeyard" = "时不知鲑烟熏工房";
-"ruins_of_ark_polaris" = "腐朽的方舟 北极星";
-
-"scorch_gorge" = "温泉花大峡谷";
-"eeltail_alley" = "鳗鲶区";
-"hagglefish_market" = "烟管鱼市场";
-"undertow_spillway" = "竹蛏疏洪道";
-"um_ami_ruins" = "鱼露遗迹";
-"mincemeat_metalworks" = "鱼肉碎金属";
-"brinewater_springs" = "臭鱼干温泉";
-"barnacle_dime" = "塔拉波特购物公园";
-"flounder_heights" = "比目鱼住宅区";
-"hammerhead_bridge" = "真鲭跨海大桥";
-"museum_d_alfonsino" = "金眼鲷美术馆";
-"mahi_mahi_resort" = "鬼头刀SPA度假区";
-"crableg_capital" = "高脚经济特区";
-"shipshape_cargo_co" = "大比目鱼海运中心";
-
-"sockeye_station" = "新卷堡";
-"gone_fission_hydroplant" = "麦年海洋发电所";
-"jammin_salmon_junction" = "生筋子系统交流道遗址";
-
-// Weapon.
-"sploosh_o_matic" = "广域标记枪";
-"splattershot_jr" = "新叶射击枪";
-"splash_o_matic" = "窄域标记枪";
-"aerospray_mg" = "专业模型枪MG";
-"splattershot" = "斯普拉射击枪";
-"_52_gal" = ".52加仑";
-"n_zap_85" = "N-ZAP85";
-"splattershot_pro" = "顶尖射击枪";
-"_96_gal" = ".96加仑";
-"jet_squelcher" = "喷射清洁枪";
-"luna_blaster" = "新星爆破枪";
-"blaster" = "火热爆破枪";
-"range_blaster" = "远距爆破枪";
-"clash_blaster" = "冲涂爆破枪";
-"rapid_blaster" = "快速爆破枪";
-"rapid_blaster_pro" = "快速爆破枪 精英";
-"s_blast_92" = "S-BLAST92";
-"l_3_nozzlenose" = "L3卷管枪";
-"h_3_nozzlenose" = "H3卷管枪";
-"squeezer" = "开瓶喷泉枪";
-"carbon_roller" = "碳纤维滚筒";
-"splat_roller" = "斯普拉滚筒";
-"dynamo_roller" = "电动马达滚筒";
-"flingza_roller" = "可变式滚筒";
-"inkbrush" = "巴勃罗";
-"octobrush" = "北斋";
-"painbrush" = "文森";
-"classic_squiffer" = "鱿快洁α";
-"splat_charger" = "斯普拉蓄力狙击枪";
-"splatterscope" = "斯普拉准星枪";
-"e_liter_4k" = "公升4K";
-"e_liter_4k_scope" = "4K准星枪";
-"bamboozler_14_mk_i" = "14式竹筒枪·甲";
-"goo_tuber" = "高压油管枪";
-"slosher" = "飞溅泼桶";
-"tri_slosher" = "洗笔桶";
-"sloshing_machine" = "回旋泼桶";
-"bloblobber" = "满溢泡澡泼桶";
-"explosher" = "爆炸泼桶";
-"mini_splatling" = "斯普拉旋转枪";
-"heavy_splatling" = "桶装旋转枪";
-"hydra_splatling" = "消防栓旋转枪";
-"ballpoint_splatling" = "圆珠笔";
-"nautilus_47" = "鹦鹉螺号47";
-"dapple_dualies" = "溅镀枪";
-"splat_dualies" = "斯普拉机动枪";
-"glooga_dualies" = "开尔文525";
-"dualie_squelchers" = "双重清洁枪";
-"dark_tetra_dualies" = "四重弹跳手枪 黑";
-"splat_brella" = "遮阳防空伞";
-"tenta_brella" = "露营防空伞";
-"undercover_brella" = "特工配件";
-"kuma_blaster" = "打工专用 熊泡";
-"kuma_brella" = "打工专用 熊伞";
-"kuma_charger" = "打工专用 熊狙";
-"kuma_slosher" = "打工专用 熊桶";
-"random" = "随机武器";
-"random2" = "打工专用 熊先生印章的随机武器";
-
-"splattershot_nova" = "太空射击枪";
-"big_swig_roller" = "宽滚筒";
-"snipewriter_5h" = "R-PEN/5H";
-"dread_wringer" = "墨瀑淋";
-"heavy_edit_splatling" = "审查者";
-"tri_stringer" = "三发猎鱼弓";
-"reef_lux_450" = "LACT-450";
-"splatana_stamper" = "工作刮水刀";
-"splatana_wiper" = "雨刷刮水刀";
-
-// Util.
-"%@_remaining" = "剩余%@";
-"in_%@" = "%@后";
-"remaining" = "剩余";
-"next" = "下次";
-"%dd" = "%d日";
-"%dh" = "%d小时";
-"%dm" = "%d分";
-"0m" = "0分";
-"and" = "";
-"_" = "";
-"%d_days" = "%d日";
-"%d_day" = "%d日";
-"%d_hours" = "%d小时";
-"%d_hour" = "%d小时";
-"%d_mins" = "%d分";
-"%d_min" = "%d分";
-"0_min" = "0分";
-
-// UI.
-"schedule" = "日程";
-"shift" = "排班表";
-"ikachan" = "鱿鱼酱";
-"our_new_app" = "我们的新App";
-"conch_bay" = "法螺湾";
-"get" = "获取";
-"settings" = "设置";
-"language" = "语言";
-"siri_and_shortcuts" = "Siri与快捷指令";
-"app_icon" = "应用图标";
-"kuro" = "小黑";
-"ichi" = "阿一";
-"support" = "支持";
-"download_all_resources" = "下载全部资源";
-"resources_downloaded" = "已下载资源";
-"reload_widgets" = "重新载入小组件";
-"widgets_reloaded" = "已重新载入小组件";
-"clear_cache" = "清除缓存";
-"cache_cleared" = "已清除缓存";
-"about" = "关于";
-"repository" = "代码仓库";
-"privacy_policy" = "隐私政策";
-"developer_sketch" = "开发者 @xzh_Sketch";
-"designer_shooky" = "设计师 @贝壳牌砂糖";
-"acknowledgements" = "致谢";
-"disclaimer" = "本应用是使用鱿鱼圈2和鱿鱼圈3的信息的非官方应用，与任天堂有限公司无关。";
-"ika_shrine" = "鱿鱼神社";
-"version" = "版本";
-"close" = "关闭";
-
-// Fortune.
-"great_blessing" = "大 吉";
-"middle_blessing" = "中 吉";
-"small_blessing" = "小 吉";
-"curse" = "凶";
-"reach_the_top" = "太好了！夺得第1位了";
-"find_the_goldie_in_the_first_try" = "好厉害！\n一下就找到金鲑鱼了";
-"make_friends" = "和朋友一起组排吧";
-"keep_the_peace" = "为了世界的和平";
-"love_forecast" = "这就是…恋爱的感觉吧";
-"jellyfishes_go_to_school" = "去学校了！好开心啊";
-"clear_with_4_lifesavers" = "努力到最后了呢，\n好棒好棒";
-"splatfest_100x" = "100倍的祭典！？加油呀";
-"telephone_is_ringing" = "嗯～呣？电话响了";
-"dj_octavio_escaped" = "DJ章鱼将军又逃走啦";
-"mothership_is_sucking_eggs_up" = "啊！\n不要对这些家伙出手啊";
-"danger_with_chance" = "真是好危险啊…\n但是还有机会";
-"splatted_by_maws" = "小心鼹鼠哦";
-"live_sold_out" = "很遗憾，\n演唱会的门票已经卖完了";
-"unstable_connection" = "通信安定的御守，\n要来一个吗";
-"be_careful_of_the_hydra_splatling" = "让开让开！\n我消防栓大人来啦";
+"tricolor_turf_war" = "三色夺宝对战";
 
 // Widget.
-"in_the_day" = "白天";
-"at_night" = "夜间";
-"%@_%@" = "%@%@";
-"error" = "错误";
-"failed_to_load" = "无法载入";
+"next" = "下次";
 "no_schedule" = "无日程";
 "no_shift" = "无排班";
-"schedule_widget_description" = "查看某模式目前和下次的日程。";
-"shift_widget_description" = "查看鲑鱼跑目前和下次的排班表。";
-"day_widget_name" = "一日Splatoon";
-"day_widget_description" = "成为鱿鱼的同时感受时间的流逝。";
 
-// Intent.
-"current_schedule" = "%1$@%2$@目前正进行于%4$@和%5$@的%3$@，剩余%6$@。";
-"next_schedule" = "%1$@%2$@下次将于%6$@后进行于%4$@和%5$@的%3$@。";
-"open_shift" = "%1$@鲑鱼跑目前正开放于%3$@，配给%4$@、%5$@、%6$@和%7$@的%2$@，剩余%8$@。";
-"soon_shift" = "%1$@鲑鱼跑即将于%8$@后开放于%3$@，配给%4$@、%5$@、%6$@和%7$@的%2$@。";
-"next_shift" = "%1$@鲑鱼跑下次将于%8$@后开放于%3$@，配给%4$@、%5$@、%6$@和%7$@的%2$@。";
+"splatoon_2_schedule" = "斯普拉遁2日程";
+"splatoon_2_schedule_widget_description" = "查看斯普拉遁2的某模式目前和下次的日程。";
+"splatoon_2_shift" = "斯普拉遁2排班表";
+"splatoon_2_shift_widget_description" = "查看斯普拉遁2的鲑鱼跑目前和下次的排班表。";
+"splatoon_3_schedule" = "斯普拉遁3日程";
+"splatoon_3_schedule_widget_description" = "查看斯普拉遁3的某模式目前和下次的日程。";
+"splatoon_3_shift" = "斯普拉遁3排班表";
+"splatoon_3_shift_widget_description" = "查看斯普拉遁3的某模式目前和下次的排班表。";
+
+
+// Intents.
+"schedule_dialog" = "%1$@%2$@目前正进行于%4$@和%5$@的%3$@。";
+"shift_dialog" = "%1$@目前正开放于%3$@，配给%4$@、%5$@、%6$@和%7$@的%2$@。";
+"soon_shift_dialog" = "%1$@即将开放于%3$@，配给%4$@、%5$@、%6$@和%7$@的%2$@。";

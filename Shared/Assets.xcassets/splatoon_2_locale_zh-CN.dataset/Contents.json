@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "splatoon_2_locale_zh-CN.json",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

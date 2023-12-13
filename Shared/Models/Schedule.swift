@@ -7,85 +7,120 @@
 
 import SwiftUI
 
-protocol Schedule: Codable {
-    var startTime: Date { get set }
-    var endTime: Date { get set }
-    var mode: ScheduleMode { get }
-    var rule: Rule { get }
+struct Stage: Codable {
+    var name: String
+    var image: URL
+    var thumbnail: URL?
+}
+struct Weapon: Codable {
+    var name: String
+    var image: URL
+    var thumbnail: URL?
+}
+
+protocol Schedule {
+    var startTime: Date { get }
+    var endTime: Date { get }
+    var mode: any ScheduleMode { get }
+    var rule: any Rule { get }
     var stages: [Stage] { get }
-    var localizedShorterDescription: String { get }
+    var challenge: String? { get }
+}
+protocol Shift {
+    var startTime: Date { get }
+    var endTime: Date { get }
+    var mode: any ShiftMode { get }
+    var stage: Stage? { get }
+    var weapons: [Weapon]? { get }
+    var kingSalmonid: String? { get }
 }
 
-struct Splatoon2Schedule: Schedule {
-    private var _mode: Splatoon2ScheduleMode
-    private var _rule: Splatoon2ScheduleRule
-    private var _stages: [Splatoon2ScheduleStage]
+struct Splatoon2Schedule: Schedule, Codable {
+    var startTime: Date
+    var endTime: Date
+    var _mode: Splatoon2ScheduleMode
+    var _rule: Splatoon2Rule
+    var stages: [Stage]
     
-    init(startTime: Date, endTime: Date, mode: Splatoon2ScheduleMode, rule: Splatoon2ScheduleRule, stages: [Splatoon2ScheduleStage]) {
+    init(startTime: Date, endTime: Date, mode: Splatoon2ScheduleMode, rule: Splatoon2Rule, stages: [Stage]) {
         self.startTime = startTime
         self.endTime = endTime
         _mode = mode
         _rule = rule
-        _stages = stages
+        self.stages = stages
     }
     
-    var id: Date {
-        return startTime
-    }
-    var startTime: Date
-    var endTime: Date
-    var mode: ScheduleMode {
+    var mode: any ScheduleMode {
         return _mode
     }
-    var rule: Rule {
+    var rule: any Rule {
         return _rule
     }
-    var stages: [Stage] {
-        return _stages
-    }
-    var localizedShorterDescription: String {
-        switch _mode {
-        case .regular:
-            return _rule.shortName.localizedString
-        case .gachi, .league:
-            return String(format: "%@_%@".localizedString, mode.shorterName.localizedString, rule.shorterName.localizedString)
-        }
+    var challenge: String? {
+        return nil
     }
 }
-
-struct Splatoon3Schedule: Schedule {
-    private var _mode: Splatoon3ScheduleMode
-    private var _rule: Splatoon3ScheduleRule
-    private var _stages: [Splatoon3ScheduleStage]
+struct Splatoon2Shift: Shift, Codable {
+    var startTime: Date
+    var endTime: Date
+    var stage: Stage?
+    var weapons: [Weapon]?
     
-    init(startTime: Date, endTime: Date, mode: Splatoon3ScheduleMode, rule: Splatoon3ScheduleRule, stages: [Splatoon3ScheduleStage]) {
+    var mode: any ShiftMode {
+        return Splatoon2ShiftMode.salmonRun
+    }
+    var kingSalmonid: String? {
+        return nil
+    }
+}
+struct Splatoon3Schedule: Schedule, Codable {
+    var startTime: Date
+    var endTime: Date
+    var _mode: Splatoon3ScheduleMode
+    var _rule: Splatoon3Rule
+    var stages: [Stage]
+    var challenge: String?
+    
+    init(startTime: Date, endTime: Date, mode: Splatoon3ScheduleMode, rule: Splatoon3Rule, stages: [Stage], challenge: String? = nil) {
         self.startTime = startTime
         self.endTime = endTime
         _mode = mode
         _rule = rule
-        _stages = stages
+        self.stages = stages
+        self.challenge = challenge
     }
     
-    var id: Date {
-        return startTime
-    }
-    var startTime: Date
-    var endTime: Date
-    var mode: ScheduleMode {
+    var mode: any ScheduleMode {
         return _mode
     }
-    var rule: Rule {
+    var rule: any Rule {
         return _rule
     }
-    var stages: [Stage] {
-        return _stages
+}
+struct Splatoon3Shift: Shift, Codable {
+    var startTime: Date
+    var endTime: Date
+    var _mode: Splatoon3ShiftMode
+    var _stage: Stage
+    var _weapons: [Weapon]
+    var kingSalmonid: String?
+    
+    init(startTime: Date, endTime: Date, mode: Splatoon3ShiftMode, stage: Stage, weapons: [Weapon], kingSalmonid: String? = nil) {
+        self.startTime = startTime
+        self.endTime = endTime
+        _mode = mode
+        _stage = stage
+        _weapons = weapons
+        self.kingSalmonid = kingSalmonid
     }
-    var localizedShorterDescription: String {
-        switch _mode {
-        case .regular:
-            return _rule.shortName.localizedString
-        case .bankaraChallenge, .bankaraOpen, .x:
-            return String(format: "%@_%@".localizedString, mode.shorterName.localizedString, rule.shorterName.localizedString)
-        }
+    
+    var mode: any ShiftMode {
+        return _mode
+    }
+    var stage: Stage? {
+        return _stage
+    }
+    var weapons: [Weapon]? {
+        return _weapons
     }
 }

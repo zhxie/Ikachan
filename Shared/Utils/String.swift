@@ -15,7 +15,7 @@ extension String {
     var localizedIntentsString: String {
         let languageCode = INPreferences.siriLanguageCode()
         
-        guard let path = Bundle.main.path(forResource: escapeLanguageCode(languageCode: languageCode), ofType: "lproj") else {
+        guard let path = Bundle.main.path(forResource: translateLanguageCode(languageCode: languageCode), ofType: "lproj") else {
             return self
         }
         let bundle = Bundle(path: path)
@@ -24,24 +24,7 @@ extension String {
     }
 }
 
-extension Array where Element == String {
-    func concate(delimiter: String) -> String {
-        var result = ""
-        
-        for s in self {
-            if !result.isEmpty {
-                result = result + delimiter
-            }
-            
-            result = result + s
-        }
-        
-        return result
-    }
-}
-
-/// HACK: Escapes language code to supported language.
-private func escapeLanguageCode(languageCode: String) -> String {
+private func translateLanguageCode(languageCode: String) -> String {
     if languageCode.starts(with: "en") {
         return "en"
     } else if languageCode.starts(with: "ja") {

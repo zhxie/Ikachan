@@ -1,44 +1,32 @@
-/*
-  Localization.strings
+/* 
+  Localizable.strings
   Ikachan
 
-  Created by Sketch on 2021/1/19.
+  Created by Sketch on 2023/12/12.
   
 */
 
 // Game.
-"splatoon2" = "スプラトゥーン2";
-"splatoon3" = "スプラトゥーン3";
-
-"unknown" = "アンノウン";
+"splatoon_2" = "スプラトゥーン2";
+"splatoon_3" = "スプラトゥーン3";
 
 // Mode.
 "regular_battle" = "レギュラーマッチ";
 "ranked_battle" = "ガチマッチ";
 "league_battle" = "リーグマッチ";
 
-"regular" = "レギュラー";
-"ranked" = "ガチ";
-"league" = "リーグ";
-
-"regular_ss" = "レ·";
-"ranked_ss" = "ガチ";
-"league_ss" = "リーグ";
-
 "salmon_run" = "サーモンラン";
-"job" = "バイト";
 
 "anarchy_battle_series" = "バンカラマッチ (チャレンジ)";
 "anarchy_battle_open" = "バンカラマッチ (オープン)";
 "x_battle" = "Xマッチ";
+"challenges" = "イベントマッチ";
+"splatfest_battle_open" = "フェスマッチ (オープン)";
+"splatfest_battle_pro" = "フェスマッチ (チャレンジ)";
+"tricolor_battle" = "トリカラマッチ";
 
-"series" = "チャレンジ";
-"open" = "オープン";
-"x" = "X";
-
-"series_ss" = "チ·";
-"open_ss" = "オ·";
-"x_ss" = "X";
+"big_run" = "ビッグラン";
+"eggstra_work" = "バイトチームコンテスト";
 
 // Rule.
 "turf_war" = "ナワバリバトル";
@@ -46,232 +34,23 @@
 "tower_control" = "ガチヤグラ";
 "rainmaker" = "ガチホコバトル";
 "clam_blitz" = "ガチアサリ";
-
-"turf" = "ナワバリ";
-"zones" = "ガチエリア";
-"tower" = "ガチヤグラ";
-"rainmaker_s" = "ガチホコ";
-"clam" = "ガチアサリ";
-
-"turf_ss" = "ナワバリ";
-"zones_ss" = "エリア";
-"tower_ss" = "ヤグラ";
-"rainmaker_ss" = "ホコ";
-"clam_ss" = "アサリ";
-
-"regular_job" = "いつものバイト";
-"big_run" = "ビッグラン";
-
-"regular_j" = "いつもの";
-
-// Stage.
-"the_reef" = "バッテラストリート";
-"mussel_forge_fitness" = "フジツボスポーツクラブ";
-"starfish_mainstage" = "ガンガゼ野外音楽堂";
-"sturgeon_shipyard" = "チョウザメ造船";
-"inkblot_art_academy" = "海女美術大学";
-"humpback_pump_track" = "コンブトラック";
-"manta_maria" = "マンタマリア号";
-"port_mackerel" = "ホッケふ頭";
-"moray_towers" = "タチウオパーキング";
-"snapper_canal" = "エンガワ河川敷";
-"kelp_dome" = "モズク農園";
-"blackbelly_skatepark" = "Bバスパーク";
-"sehllendorf_institute" = "デボン海洋博物館";
-"mako_mart" = "ザトウマーケット";
-"walleye_warehouse" = "ハコフグ倉庫";
-"arowana_mall" = "アロワナモール";
-"camp_triggerfish" = "モンガラキャンプ場";
-"piranha_pit" = "ショッツル鉱山";
-"goby_arena" = "アジフライスタジアム";
-"new_albacore_hotel" = "ホテルニューオートロ";
-"wahoo_world" = "スメーシーワールド";
-"ancho_v_games" = "アンチョビットゲームズ";
-"skipper_pavilion" = "ムツゴ楼";
-
-"spawning_grounds" = "シェケナダム";
-"marooners_bay" = "難破船ドン・ブラコ";
-"lost_outpost" = "海上集落シャケト場";
-"salmonid_smokeyard" = "トキシラズいぶし工房";
-"ruins_of_ark_polaris" = "朽ちた箱舟 ポラリス";
-
-"scorch_gorge" = "ユノハナ大渓谷";
-"eeltail_alley" = "ゴンズイ地区";
-"hagglefish_market" = "ヤガラ市場";
-"undertow_spillway" = "マテガイ放水路";
-"um_ami_ruins" = "ナンプラー遺跡";
-"mincemeat_metalworks" = "ナメロウ金属";
-"brinewater_springs" = "クサヤ温泉";
-"barnacle_dime" = "タラポートショッピングパーク";
-"flounder_heights" = "ヒラメが丘団地";
-"hammerhead_bridge" = "マサバ海峡大橋";
-"museum_d_alfonsino" = "キンメダイ美術館";
-"mahi_mahi_resort" = "マヒマヒリゾート＆スパ";
-"crableg_capital" = "タカアシ経済特区";
-"shipshape_cargo_co" = "オヒョウ海運";
-
-"sockeye_station" = "アラマキ砦";
-"gone_fission_hydroplant" = "ムニ・エール海洋発電所";
-"jammin_salmon_junction" = "すじこジャンクション跡";
-
-// Weapon.
-"sploosh_o_matic" = "ボールドマーカー";
-"splattershot_jr" = "わかばシューター";
-"splash_o_matic" = "シャープマーカー";
-"aerospray_mg" = "プロモデラー";
-"splattershot" = "スプラシューター";
-"_52_gal" = ".52ガロン";
-"n_zap_85" = "N-ZAP";
-"splattershot_pro" = "プライムシューター";
-"_96_gal" = ".96ガロン";
-"jet_squelcher" = "ジェットスイーパー";
-"luna_blaster" = "ノヴァブラスター";
-"blaster" = "ホットブラスター";
-"range_blaster" = "ロングブラスター";
-"clash_blaster" = "クラッシュブラスター";
-"rapid_blaster" = "ラピッドブラスター";
-"rapid_blaster_pro" = "Rブラスターエリート";
-"s_blast_92" = "S-BLAST92";
-"l_3_nozzlenose" = "L3リールガン";
-"h_3_nozzlenose" = "H3リールガン";
-"squeezer" = "ボトルガイザー";
-"carbon_roller" = "カーボンローラー";
-"splat_roller" = "スプラローラー";
-"dynamo_roller" = "ダイナモローラー";
-"flingza_roller" = "ヴァリアブルローラー";
-"inkbrush" = "パブロ";
-"octobrush" = "ホクサイ";
-"painbrush" = "フィンセント";
-"classic_squiffer" = "スクイックリン";
-"splat_charger" = "スプラチャージャー";
-"splatterscope" = "スプラスコープ";
-"e_liter_4k" = "リッター4K";
-"e_liter_4k_scope" = "4Kスコープ";
-"bamboozler_14_mk_i" = "14式竹筒銃";
-"goo_tuber" = "ソイチューバー";
-"slosher" = "バケットスロッシャー";
-"tri_slosher" = "ヒッセン";
-"sloshing_machine" = "スクリュースロッシャー";
-"bloblobber" = "オーバーフロッシャー";
-"explosher" = "エクスプロッシャー";
-"mini_splatling" = "スプラスピナー";
-"heavy_splatling" = "バレルスピナー";
-"hydra_splatling" = "ハイドラント";
-"ballpoint_splatling" = "クーゲルシュライバー";
-"nautilus_47" = "ノーチラス";
-"dapple_dualies" = "スパッタリー";
-"splat_dualies" = "スプラマニューバー";
-"glooga_dualies" = "ケルビン525";
-"dualie_squelchers" = "デュアルスイーパー";
-"dark_tetra_dualies" = "クアッドホッパー";
-"splat_brella" = "パラシェルター";
-"tenta_brella" = "キャンピングシェルター";
-"undercover_brella" = "スパイガジェット";
-"kuma_blaster" = "バイト専用 クマサン印のブラスター";
-"kuma_brella" = "バイト専用 クマサン印のシェルター";
-"kuma_charger" = "バイト専用 クマサン印のチャージャー";
-"kuma_slosher" = "バイト専用 クマサン印のスロッシャー";
-"random" = "ランダムブキ";
-"random2" = "バイト専用 クマサン印のランダムブキ";
-
-"splattershot_nova" = "スペースシューター";
-"big_swig_roller" = "ワイドローラー";
-"snipewriter_5h" = "R-PEN/5H";
-"dread_wringer" = "モップリン";
-"heavy_edit_splatling" = "イグザミナー";
-"tri_stringer" = "トライストリンガー";
-"reef_lux_450" = "LACT-450";
-"splatana_stamper" = "ジムワイパー";
-"splatana_wiper" = "ドライブワイパー";
-
-// Utils.
-"%@_remaining" = "残り%@";
-"in_%@" = "%@後";
-"remaining" = "残り";
-"next" = "つぎ";
-"%dd" = "%d日";
-"%dh" = "%d時間";
-"%dm" = "%d分";
-"0m" = "0分";
-"and" = "";
-"_" = "";
-"%d_days" = "%d日";
-"%d_day" = "%d日";
-"%d_hours" = "%d時間";
-"%d_hour" = "%d時間";
-"%d_mins" = "%d分";
-"%d_min" = "%d分";
-"0_min" = "0分";
-
-// UI.
-"schedule" = "スケジュール";
-"shift" = "シフト表";
-"ikachan" = "イカチャン";
-"our_new_app" = "私たちの新しいApp";
-"conch_bay" = "ホラガイベイ";
-"get" = "入手";
-"settings" = "設定";
-"language" = "言語";
-"siri_and_shortcuts" = "Siriとショートカット";
-"app_icon" = "アプリアイコン";
-"kuro" = "クロ";
-"ichi" = "いち";
-"support" = "サポート";
-"download_all_resources" = "すべてのリソースをダウンロードする";
-"resources_downloaded" = "リソースをダウンロードされました";
-"reload_widgets" = "ウィジェットがリロードする";
-"widgets_reloaded" = "ウィジェットがリロードされました";
-"clear_cache" = "キャッシュを消去する";
-"cache_cleared" = "キャッシュが消去されました";
-"about" = "イカチャンについて";
-"repository" = "リポジトリ";
-"privacy_policy" = "プライバシーポリシー";
-"developer_sketch" = "開発者 @xzh1206";
-"designer_shooky" = "デザイナー @ShellShooky";
-"acknowledgements" = "謝辞";
-"disclaimer" = "当アプリは、イカリング2とイカリング3の情報を利用した非公式アプリであり、任天堂株式会社とは一切関係はございません。";
-"ika_shrine" = "イカ神社";
-"version" = "バージョン";
-"close" = "閉じる";
-
-// Fortune.
-"great_blessing" = "大 吉";
-"middle_blessing" = "中 吉";
-"small_blessing" = "小 吉";
-"curse" = "凶";
-"reach_the_top" = "やった！トップを取った";
-"find_the_goldie_in_the_first_try" = "すごい！金魚一発";
-"make_friends" = "仲間を連れで\nガチにいっこう";
-"keep_the_peace" = "街の平和を守るために";
-"love_forecast" = "これは…恋の予感です";
-"jellyfishes_go_to_school" = "学校に行きます！\nうれしい";
-"clear_with_4_lifesavers" = "最後まで頑張った、\nえらいえらい";
-"splatfest_100x" = "フェスで１００倍！？\n頑張ろう";
-"telephone_is_ringing" = "お～や？\nデンワは来る";
-"dj_octavio_escaped" = "DJタコワサ将軍は\nまだ逃げた";
-"mothership_is_sucking_eggs_up" = "ああ！それらを\n盗まないでください";
-"danger_with_chance" = "危なかった…\nチャンスもうある";
-"splatted_by_maws" = "モグラを気を付けて";
-"live_sold_out" = "残念ながら、\nハイカライブの\nチケットは完売しました";
-"unstable_connection" = "通信安定のお守り、\n要らないか";
-"be_careful_of_the_hydra_splatling" = "どけどけ！\n俺ハイカス様が来るぞ";
+"tricolor_turf_war" = "トリカラバトル";
 
 // Widget.
-"in_the_day" = "日に";
-"at_night" = "夜に";
-"%@_%@" = "%@%@";
-"error" = "エラー";
-"failed_to_load" = "読み込むことが\nできません";
+"next" = "つぎ";
 "no_schedule" = "スケジュールなし";
 "no_shift" = "シフトなし";
-"schedule_widget_description" = "そのモードのいまとつぎのスケジュールを表示できます。";
-"shift_widget_description" = "サーモンランのいまとつぎのシフト表を表示できます。";
-"day_widget_name" = "一日スプラ";
-"day_widget_description" = "イカしながら一日経ることを感じる。";
 
-// Intent.
-"current_schedule" = "いま、%1$@%2$@は%4$@と%5$@の%3$@があります、残り%6$@。";
-"next_schedule" = "つぎ、%1$@%2$@は%4$@と%5$@の%3$@が%6$@後始まります。";
-"open_shift" = "いま、%1$@サーモンランは%3$@に、%4$@、%5$@、%6$@と%7$@を支給の%2$@がオープンします、残り%8$@。";
-"soon_shift" = "もうすぐ、%1$@サーモンランは%8$@後%3$@に、%4$@、%5$@、%6$@と%7$@を支給の%2$@がオープンします。";
-"next_shift" = "つぎ、%1$@サーモンランは%8$@後%3$@に、%4$@、%5$@、%6$@と%7$@を支給の%2$@がオープンします。";
+"splatoon_2_schedule" = "スプラトゥーン2スケジュール";
+"splatoon_2_schedule_widget_description" = "スプラトゥーン2のそのモードのいまとつぎのスケジュールを表示できます。";
+"splatoon_2_shift" = "スプラトゥーン2シフト表";
+"splatoon_2_shift_widget_description" = "スプラトゥーン2のサーモンランのいまとつぎのシフト表を表示できます。";
+"splatoon_3_schedule" = "スプラトゥーン3スケジュール";
+"splatoon_3_schedule_widget_description" = "スプラトゥーン3のそのモードのいまとつぎのスケジュールを表示できます。";
+"splatoon_3_shift" = "スプラトゥーン3シフト表";
+"splatoon_3_shift_widget_description" = "スプラトゥーン3のそのモードのいまとつぎのシフト表を表示できます。";
+
+// Intents.
+"schedule_dialog" = "%1$@%2$@は%4$@と%5$@の%3$@があります。";
+"shift_dialog" = "%1$@は%3$@に、%4$@、%5$@、%6$@と%7$@を支給の%2$@がオープンします";
+"soon_shift_dialog" = "%1$@は%3$@に、%4$@、%5$@、%6$@と%7$@を支給の%2$@がもうすぐオープンします";

@@ -2,36 +2,43 @@
 //  ScheduleView.swift
 //  Ikachan
 //
-//  Created by Sketch on 2021/1/18.
+//  Created by Sketch on 2023/12/11.
 //
 
 import SwiftUI
 
 struct ScheduleView: View {
-    let schedule: Schedule
+    var schedule: Schedule
+    var backgroundColor = Color(.secondarySystemBackground)
     
     var body: some View {
-        ScheduleBaseView(title: schedule.rule.name, subtitle: status(startTime: schedule.startTime, endTime: schedule.endTime), image: schedule.rule.image) {
-            HStack {
-                StageView(stage: schedule.stages[0])
-                StageView(stage: schedule.stages[1])
+        VStack {
+            HStack(alignment: .center) {
+                Image(schedule.rule.image)
+                    .resizedToFit()
+                    .frame(width: 16, height: 16)
+                    .layoutPriority(1)
+                Text(LocalizedStringKey(schedule.challenge ?? schedule.rule.name))
+                    .fontWeight(.bold)
+                    .lineLimit(1)
+                
+                Spacer()
+                
+                Text(timeSpan(start: schedule.startTime, end: schedule.endTime))
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                    .lineLimit(1)
+                    .layoutPriority(1)
             }
-        }
-    }
-    
-    func status(startTime: Date, endTime: Date) -> String {
-        let current = Date()
-        
-        if startTime < current {
-            return naturalTimeSpan(startTime: startTime, endTime: endTime)
-        } else {
-            return scheduleTimePeriod(startTime: startTime, endTime: endTime)
+            HStack {
+                ForEach(schedule.stages, id: \.name) { stage in
+                    StageView(stage: stage, backgroundColor: backgroundColor)
+                }
+            }
         }
     }
 }
 
-struct ScheduleView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScheduleView(schedule: SchedulePlaceholder)
-    }
+#Preview {
+    ScheduleView(schedule: PreviewSplatoon2Schedule)
 }

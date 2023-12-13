@@ -15,26 +15,23 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
 
     func configureView(for parameters: Set<INParameter>, of interaction: INInteraction, interactiveBehavior: INUIInteractiveBehavior, context: INUIHostedViewContext, completion: @escaping (Bool, Set<INParameter>, CGSize) -> Void) {
         let data = interaction.intentResponse?.userActivity?.userInfo
-        let scheduleData = data?["schedule"] as? String ?? nil
-        let shiftData = data?["shift"] as? String ?? nil
-        
-        if let scheduleData = scheduleData {
-            let game = Game(intent: (interaction.intentResponse! as! ScheduleIntentResponse).game)
+        let splatoon2ScheduleData = data?["splatoon2Schedule"] as? String ?? nil
+        let splatoon2ShiftData = data?["splatoon2Shift"] as? String ?? nil
+        let splatoon3ScheduleData = data?["splatoon3Schedule"] as? String ?? nil
+        let splatoon3ShiftData = data?["splatoon3Shift"] as? String ?? nil
+        if (splatoon2ScheduleData != nil) || (splatoon3ScheduleData != nil) {
             let decoder = JSONDecoder()
             var schedule: Schedule
-            switch game {
-            case .splatoon2:
-                schedule = try! decoder.decode(Splatoon2Schedule.self, from: Data(base64Encoded: scheduleData)!)
-            case .splatoon3:
-                schedule = try! decoder.decode(Splatoon3Schedule.self, from: Data(base64Encoded: scheduleData)!)
+            if let splatoon2ScheduleData = splatoon2ScheduleData {
+                schedule = try! decoder.decode(Splatoon2Schedule.self, from: Data(base64Encoded: splatoon2ScheduleData)!)
+            } else {
+                schedule = try! decoder.decode(Splatoon3Schedule.self, from: Data(base64Encoded: splatoon3ScheduleData!)!)
             }
-            
-            let controller = UIHostingController(rootView: ScheduleView(schedule: schedule).animation(.default).padding())
+            let controller = UIHostingController(rootView: ScheduleView(schedule: schedule, backgroundColor: Color(.systemBackground)).animation(.default).padding())
             addChild(controller)
             controller.view.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(controller.view)
             controller.didMove(toParent: self)
-            
             NSLayoutConstraint.activate([
                 controller.view.widthAnchor.constraint(equalTo: view.widthAnchor),
                 controller.view.heightAnchor.constraint(equalTo: view.heightAnchor),
@@ -43,23 +40,19 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
             ])
             
             completion(true, parameters, desiredSize)
-        } else if let shiftData = shiftData {
-            let game = Game(intent: (interaction.intentResponse! as! ShiftIntentResponse).game)
+        } else if (splatoon2ShiftData != nil) || (splatoon3ShiftData != nil) {
             let decoder = JSONDecoder()
             var shift: Shift
-            switch game {
-            case .splatoon2:
-                shift = try! decoder.decode(Splatoon2Shift.self, from: Data(base64Encoded: shiftData)!)
-            case .splatoon3:
-                shift = try! decoder.decode(Splatoon3Shift.self, from: Data(base64Encoded: shiftData)!)
+            if let splatoon2ShiftData = splatoon2ShiftData {
+                shift = try! decoder.decode(Splatoon2Shift.self, from: Data(base64Encoded: splatoon2ShiftData)!)
+            } else {
+                shift = try! decoder.decode(Splatoon3Shift.self, from: Data(base64Encoded: splatoon3ShiftData!)!)
             }
-            
-            let controller = UIHostingController(rootView: ShiftView(shift: shift).animation(.default).padding())
+            let controller = UIHostingController(rootView: ShiftView(shift: shift, backgroundColor: Color(.systemBackground)).animation(.default).padding())
             addChild(controller)
             controller.view.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(controller.view)
             controller.didMove(toParent: self)
-            
             NSLayoutConstraint.activate([
                 controller.view.widthAnchor.constraint(equalTo: view.widthAnchor),
                 controller.view.heightAnchor.constraint(equalTo: view.heightAnchor),

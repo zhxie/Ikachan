@@ -2,67 +2,84 @@
 //  MediumScheduleView.swift
 //  IkachanWidget
 //
-//  Created by Sketch on 2021/1/21.
+//  Created by Sketch on 2023/12/13.
 //
 
 import SwiftUI
 import WidgetKit
 
 struct MediumScheduleView: View {
-    let current: Date
-    let schedule: Schedule?
-    let mode: Mode?
-    
+    var schedule: Schedule?
+    var nextSchedule: Schedule?
+
     var body: some View {
-        ZStack {
-            Color(UIColor.systemBackground)
-                .ignoresSafeArea(edges: .all)
-            
-            if let mode = mode {
-                if let schedule = schedule {
-                    GeometryReader { g in
-                        HStack {
-                            VStack(spacing: 0) {
-                                HStack {
-                                    TopLeadingView(text: scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
-                                        .layoutPriority(1)
-                                    
-                                    Spacer()
-                                        .frame(minWidth: 0)
-                                }
-                                
-                                Spacer()
-                                    .frame(height: 8)
-                                
-                                VStack {
-                                    StageView(stage: schedule.stages[0])
-                                    StageView(stage: schedule.stages[1])
-                                }
-                            }
-                            .frame(width: g.size.width / 2 - 5)
-                            
-                            Spacer()
-                                .frame(width: 15)
-                            
-                            SmallScheduleView(current: current, schedule: schedule, mode: mode, subview: true)
-                        }
-                    }
-                    .padding()
-                } else {
-                    FailedToLoadView(accentColor: mode.accentColor, error: .noSchedule)
-                        .padding()
+        if let schedule = schedule {
+            VStack(spacing: 8) {
+                HStack(alignment: .center) {
+                    Image(schedule.mode.image)
+                        .resizedToFit()
+                        .frame(width: 20, height: 20)
+                        .layoutPriority(1)
+                    Text(LocalizedStringKey(schedule.challenge ?? schedule.rule.name))
+                        .fontWeight(.bold)
+                        .foregroundColor(schedule.mode.accentColor)
+                        .lineLimit(1)
+                    
+                    Spacer()
+                    
+                    Text(absoluteTimeSpan(start: schedule.startTime, end: schedule.endTime))
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                        .lineLimit(1)
+                        .layoutPriority(1)
                 }
-            } else {
-                FailedToLoadView(accentColor: Color(UIColor.label), error: .failedToLoad)
-                    .padding()
+                .layoutPriority(1)
+                
+                HStack {
+                    ForEach(schedule.stages, id: \.name) { stage in
+                        StageView(stage: stage)
+                    }
+                }
+                
+                if let schedule = nextSchedule {
+                    HStack(alignment: .center) {
+                        Text(LocalizedStringKey("next"))
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(.systemBackground))
+                            .padding(4)
+                            .background {
+                                Rectangle()
+                                    .foregroundColor(schedule.mode.accentColor)
+                                    .cornerRadius(4)
+                            }
+                            .layoutPriority(1)
+                        
+                        Spacer()
+                        
+                        Image(schedule.mode.image)
+                            .resizedToFit()
+                            .frame(width: 20, height: 20)
+                            .layoutPriority(1)
+                        Text(schedule.stages.map({ stage in
+                            stage.name
+                        }).joined(separator: " & "))
+                        .font(.footnote)
+                    }
+                    .layoutPriority(1)
+                }
             }
+        } else {
+            Text(LocalizedStringKey("no_schedule"))
         }
     }
 }
 
+@available(iOSApplicationExtension 17.0, *)
 struct MediumScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        MediumScheduleView(current: Date(), schedule: SchedulePlaceholder, mode: SchedulePlaceholder.mode)
+        MediumScheduleView(schedule: PreviewSplatoon2Schedule, nextSchedule: PreviewSplatoon3Schedule)
+            .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

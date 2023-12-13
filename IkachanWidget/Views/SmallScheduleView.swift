@@ -9,54 +9,40 @@ import SwiftUI
 import WidgetKit
 
 struct SmallScheduleView: View {
-    let current: Date
-    let schedule: Schedule?
-    let mode: Mode?
-    var subview = false
+    var schedule: Schedule?
     
     var body: some View {
-        ZStack {
-            Color(UIColor.systemBackground)
-                .ignoresSafeArea(edges: .all)
-            
-            if let mode = mode {
-                if let schedule = schedule {
-                    SmallBaseView(text: absoluteTimeSpan(current: current, startTime: schedule.startTime, endTime: schedule.endTime), indicatorText: schedule.mode.name, color: schedule.mode.accentColor) {
-                        HStack {
-                            VStack(alignment: .leading) {
-                                BottomView(text: schedule.stages[0].name)
-                                BottomView(text: schedule.stages[1].name)
-                            }
-                            .layoutPriority(1)
-                            
-                            Spacer()
-                                .frame(minWidth: 0)
-                        }
-                    } leadingLeft: {
-                        if subview {
-                            TopLeadingView(text: LocalizedStringKey(timeSpanDescriptor(current: current, startTime: schedule.startTime)))
-                        } else {
-                            TopLeadingView(text: scheduleTimePeriod(startTime: schedule.startTime, endTime: schedule.endTime))
-                        }
-                    } leadingRight: {
-                        TopTrailingView(text: subview ? schedule.localizedShorterDescription : schedule.rule.shorterName, color: schedule.mode.accentColor)
-                    }
-                    .padding(subview ? [] : [.all])
-                } else {
-                    FailedToLoadView(accentColor: mode.accentColor, error: .noSchedule)
-                        .padding()
+        if let schedule = schedule {
+            VStack(spacing: 8) {
+                HStack(alignment: .center) {
+                    Image(schedule.mode.image)
+                        .resizedToFit()
+                        .frame(width: 16, height: 16)
+                        .layoutPriority(1)
+                    Text(LocalizedStringKey(schedule.rule.name))
+                        .fontWeight(.bold)
+                        .foregroundColor(schedule.mode.accentColor)
+                        .lineLimit(1)
+                    
+                    Spacer()
                 }
-            } else {
-                FailedToLoadView(accentColor: Color(UIColor.label), error: .failedToLoad)
-                    .padding()
+                .layoutPriority(1)
+                
+                ForEach(schedule.stages, id: \.name) { stage in
+                    StageView(stage: stage)
+                }
             }
+        } else {
+            Text(LocalizedStringKey("no_schedule"))
         }
     }
 }
 
+@available(iOSApplicationExtension 17.0, *)
 struct SmallScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        SmallScheduleView(current: Date(), schedule: SchedulePlaceholder, mode: SchedulePlaceholder.mode)
+        SmallScheduleView(schedule: PreviewSplatoon2Schedule)
+            .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

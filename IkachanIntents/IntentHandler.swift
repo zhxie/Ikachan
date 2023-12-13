@@ -9,21 +9,16 @@ import Intents
 
 class IntentHandler: INExtension {
     override func handler(for intent: INIntent) -> Any {
-        if intent is ScheduleIntent {
-            return ScheduleIntentHandler()
-        } else if intent is ShiftIntent {
-            return ShiftIntentHandler()
+        if intent is Splatoon2ScheduleIntent {
+            return Splatoon2ScheduleIntentHandler()
+        } else if intent is Splatoon2ShiftIntent {
+            return Splatoon2ShiftIntentHandler()
+        } else if intent is Splatoon3ScheduleIntent {
+            return Splatoon3ShiftIntentHandler()
+        } else if intent is Splatoon3ShiftIntent {
+            return Splatoon3ShiftIntentHandler()
         } else {
             return self
-        }
-    }
-    
-    static func rotationConvertTo(rotation: Rotation) -> Int {
-        switch rotation {
-        case .current, .unknown:
-            return 0
-        case .next:
-            return 1
         }
     }
 }

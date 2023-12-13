@@ -2,70 +2,94 @@
 //  MediumShiftView.swift
 //  IkachanWidget
 //
-//  Created by Sketch on 2021/1/24.
+//  Created by Sketch on 2023/12/13.
 //
 
 import SwiftUI
 import WidgetKit
 
 struct MediumShiftView: View {
-    let current: Date
-    let shift: Shift?
-    let mode: Mode
-    
+    var shift: Shift?
+    var nextShift: Shift?
+
     var body: some View {
-        ZStack {
-            Color(UIColor.systemBackground)
-                .ignoresSafeArea(edges: .all)
-            
-            if let shift = shift {
-                GeometryReader { g in
-                    HStack {
-                        VStack(spacing: 0) {
-                            HStack {
-                                TopLeadingView(text: shiftTimePeriod(startTime: shift.startTime, endTime: shift.endTime))
-                                    .layoutPriority(1)
-                                
-                                Spacer()
-                                    .frame(minWidth: 0)
-                            }
-                            
-                            Spacer()
-                                .frame(height: 8)
-                            
-                            VStack {
-                                StageView(stage: shift.stage!)
-                                
-                                HStack {
-                                    WeaponView(weapon: shift.weapons[0])
-                                    WeaponView(weapon: shift.weapons[1])
-                                    WeaponView(weapon: shift.weapons[2])
-                                    WeaponView(weapon: shift.weapons[3])
-                                }
+        if let shift = shift {
+            VStack(spacing: 8) {
+                HStack(alignment: .center) {
+                    Image(shift.mode.image)
+                        .resizedToFit()
+                        .frame(width: 20, height: 20)
+                        .layoutPriority(1)
+                    Text(LocalizedStringKey(shift.mode.name))
+                        .fontWeight(.bold)
+                        .foregroundColor(shift.mode.accentColor)
+                        .lineLimit(1)
+                    
+                    Spacer()
+                    
+                    Text(absoluteTimeSpan(start: shift.startTime, end: shift.endTime))
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                        .lineLimit(1)
+                        .layoutPriority(1)
+                }
+                .layoutPriority(1)
+                
+                if let stage = shift.stage {
+                    HStack(alignment: .center) {
+                        StageView(stage: stage)
+                        
+                        HStack {
+                            ForEach(shift.weapons!, id: \.name) { weapon in
+                                WeaponView(weapon: weapon)
                             }
                         }
-                        .frame(width: g.size.width / 2 - 5)
-                        
-                        Spacer()
-                            .frame(width: 15)
-                        
-                        SmallShiftView(current: current, shift: shift, mode: mode, subview: true)
+                    }
+                } else {
+                    Spacer()
+                }
+                
+                if let shift = nextShift {
+                    if let stage = shift.stage {
+                        HStack(alignment: .center) {
+                            Text(LocalizedStringKey("next"))
+                                .font(.footnote)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemBackground))
+                                .padding(4)
+                                .background {
+                                    Rectangle()
+                                        .foregroundColor(shift.mode.accentColor)
+                                        .cornerRadius(4)
+                                }
+                                .layoutPriority(1)
+                            
+                            Spacer()
+                            
+                            Text(stage.name)
+                                .font(.footnote)
+                            
+                            ForEach(shift.weapons!, id: \.name) { weapon in
+                                WeaponView(weapon: weapon)
+                                    .frame(height: 20)
+                            }
+                            .layoutPriority(1)
+                        }
+                        .layoutPriority(1)
                     }
                 }
-                .padding()
-            } else {
-                FailedToLoadView(accentColor: mode.accentColor, error: .noShift)
-                    .padding()
             }
+        } else {
+            Text(LocalizedStringKey("no_shift"))
         }
     }
 }
 
+@available(iOSApplicationExtension 17.0, *)
 struct MediumShiftView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            MediumShiftView(current: Date(), shift: ShiftPlaceholder, mode: Splatoon2ShiftMode.salmonRun)
-                .previewContext(WidgetPreviewContext(family: .systemMedium))
-        }
+        MediumShiftView(shift: PreviewSplatoon2Shift, nextShift: PreviewSplatoon3Shift)
+            .containerBackground(for: .widget, content: {})
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

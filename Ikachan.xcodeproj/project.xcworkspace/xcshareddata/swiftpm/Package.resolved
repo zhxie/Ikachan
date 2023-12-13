@@ -1,21 +1,21 @@
 {
   "pins" : [
     {
+      "identity" : "alertkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sparrowcode/AlertKit",
+      "state" : {
+        "revision" : "3d35de60ad26aab58395ebecdd63b533546862ed",
+        "version" : "5.1.8"
+      }
+    },
+    {
       "identity" : "kingfisher",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher.git",
       "state" : {
         "revision" : "c1f60c63f356d364f4284ba82961acbe7de79bcc",
         "version" : "7.8.1"
-      }
-    },
-    {
-      "identity" : "spalert",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ivanvorobei/SPAlert",
-      "state" : {
-        "revision" : "17939549b8a7c7574c8de5b4f0c017cbbc5c79d2",
-        "version" : "3.5.1"
       }
     },
     {

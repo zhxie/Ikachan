@@ -9,29 +9,37 @@ import SwiftUI
 import Kingfisher
 
 struct StageView: View {
-    let stage: Stage
+    var stage: Stage
+    var backgroundColor = Color(.secondarySystemBackground)
     
     var body: some View {
-        VStack {
-            KFImage(URL(string: stage.imageUrl)!)
+        ZStack(alignment: .bottomTrailing) {
+            KFImage(stage.image)
                 .placeholder {
                     Rectangle()
-                        .foregroundColor(Color(UIColor.secondarySystemBackground))
+                        .foregroundColor(backgroundColor)
                         .aspectRatio(16 / 9, contentMode: .fit)
                 }
+                .fade(duration: 0.5)
                 .resizedToFit(16 / 9)
-                .cornerRadius(15)
-                .accessibilityLabel(LocalizedStringKey(stage.name))
+                .cornerRadius(16)
+                .accessibilityLabel(stage.name)
             
-            Text(LocalizedStringKey(stage.name))
+            Text(stage.name)
                 .font(.footnote)
                 .lineLimit(1)
+                .padding(4)
+                .background {
+                    Rectangle()
+                        .foregroundColor(backgroundColor)
+                        .cornerRadius(8, corners: .topLeft)
+                        .cornerRadius(16, corners: .bottomRight)
+                }
+                .padding([.leading], 16)
         }
     }
 }
 
-struct StageView_Previews: PreviewProvider {
-    static var previews: some View {
-        StageView(stage: Splatoon2ScheduleStage.theReef)
-    }
+#Preview {
+    StageView(stage: PreviewStage)
 }

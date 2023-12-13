@@ -26,10 +26,11 @@
 		<dict>
 			<key>IntentsSupported</key>
 			<array>
-				<string>DayIntent</string>
 				<string>INSendMessageIntent</string>
-				<string>ScheduleIntent</string>
-				<string>ShiftIntent</string>
+				<string>Splatoon2ScheduleIntent</string>
+				<string>Splatoon2ShiftIntent</string>
+				<string>Splatoon3ScheduleIntent</string>
+				<string>Splatoon3ShiftIntent</string>
 			</array>
 		</dict>
 		<key>NSExtensionMainStoryboard</key>

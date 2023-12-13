@@ -2,67 +2,54 @@
 //  SmallShiftView.swift
 //  IkachanWidget
 //
-//  Created by Sketch on 2021/2/7.
+//  Created by Sketch on 2023/12/13.
 //
 
 import SwiftUI
 import WidgetKit
 
 struct SmallShiftView: View {
-    let current: Date
-    let shift: Shift?
-    let mode: Mode
-    var subview = false
+    var shift: Shift?
     
     var body: some View {
-        ZStack {
-            Color(UIColor.systemBackground)
-                .ignoresSafeArea(edges: .all)
-            
-            if let shift = shift {
-                SmallBaseView(text: absoluteTimeSpan(current: current, startTime: shift.startTime, endTime: shift.endTime), indicatorText: shift.rule.name, color: shift.rule.accentColor) {
-                    VStack(spacing: 0) {
-                        HStack {
-                            BottomView(text: shift.stage?.name ?? "")
-                                .layoutPriority(1)
-                            
-                            Spacer()
-                                .frame(minWidth: 0)
-                        }
-                        
-                        if !subview {
-                            Spacer()
-                                .frame(height: 4)
-                            
-                            HStack {
-                                WeaponView(weapon: shift.weapons[0])
-                                WeaponView(weapon: shift.weapons[1])
-                                WeaponView(weapon: shift.weapons[2])
-                                WeaponView(weapon: shift.weapons[3])
-                            }
-                        }
-                    }
-                } leadingLeft: {
-                    if subview {
-                        TopLeadingView(text: LocalizedStringKey(timeSpanDescriptor(current: current, startTime: shift.startTime)))
-                    } else {
-                        TopLeadingView(text: shiftShortTimePeriod(startTime: shift.startTime, endTime: shift.endTime))
-                    }
-                } leadingRight: {
-                    TopTrailingView(text: shift.rule.shortName, color: shift.rule.accentColor)
+        if let shift = shift {
+            VStack(spacing: 8) {
+                HStack(alignment: .center) {
+                    Image(shift.mode.image)
+                        .resizedToFit()
+                        .frame(width: 16, height: 16)
+                        .layoutPriority(1)
+                    Text(LocalizedStringKey(shift.mode.name))
+                        .fontWeight(.bold)
+                        .foregroundColor(shift.mode.accentColor)
+                        .lineLimit(1)
+                    
+                    Spacer()
                 }
-                .padding(subview ? [] : [.all])
-            } else {
-                FailedToLoadView(accentColor: mode.accentColor, error: .noShift)
-                    .padding()
+                .layoutPriority(1)
+                
+                if let stage = shift.stage {
+                    StageView(stage: stage)
+                    
+                    HStack {
+                        ForEach(shift.weapons!, id: \.name) { weapon in
+                            WeaponView(weapon: weapon)
+                        }
+                    }
+                    .layoutPriority(1)
+                }
             }
+        } else {
+            Text(LocalizedStringKey("no_shift"))
         }
     }
 }
 
-struct SmallShiftView_Previews: PreviewProvider {
+@available(iOSApplicationExtension 17.0, *)
+struct SmallShift_Previews: PreviewProvider {
     static var previews: some View {
-        SmallShiftView(current: Date(), shift: ShiftPlaceholder, mode: Splatoon2ShiftMode.salmonRun)
+        SmallShiftView(shift: PreviewSplatoon2Shift)
+            .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

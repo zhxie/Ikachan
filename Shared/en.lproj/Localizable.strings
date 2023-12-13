@@ -1,44 +1,32 @@
-/*
-  Localization.strings
+/* 
+  Localizable.strings
   Ikachan
 
-  Created by Sketch on 2021/1/19.
+  Created by Sketch on 2023/12/12.
   
 */
 
 // Game.
-"splatoon2" = "Splatoon 2";
-"splatoon3" = "Splatoon 3";
-
-"unknown" = "Unknown";
+"splatoon_2" = "Splatoon 2";
+"splatoon_3" = "Splatoon 3";
 
 // Mode.
 "regular_battle" = "Regular Battle";
 "ranked_battle" = "Ranked Battle";
 "league_battle" = "League Battle";
 
-"regular" = "Regular";
-"ranked" = "Ranked";
-"league" = "League";
-
-"regular_ss" = "R.";
-"ranked_ss" = "R.";
-"league_ss" = "L.";
-
 "salmon_run" = "Salmon Run";
-"job" = "Job";
 
 "anarchy_battle_series" = "Anarchy Battle (Series)";
 "anarchy_battle_open" = "Anarchy Battle (Open)";
 "x_battle" = "X Battle";
+"challenges" = "Challenges";
+"splatfest_battle_open" = "Splatfest Battle (Open)";
+"splatfest_battle_pro" = "Splatfest Battle (Pro)";
+"tricolor_battle" = "Tricolor Battle";
 
-"series" = "Series";
-"open" = "Open";
-"x" = "X";
-
-"series_ss" = "S.";
-"open_ss" = "O.";
-"x_ss" = "X";
+"big_run" = "Big Run";
+"eggstra_work" = "Eggstra Work";
 
 // Rule.
 "turf_war" = "Turf War";
@@ -46,232 +34,23 @@
 "tower_control" = "Tower Control";
 "rainmaker" = "Rainmaker";
 "clam_blitz" = "Clam Blitz";
-
-"turf" = "Turf";
-"zones" = "Zones";
-"tower" = "Tower";
-"rainmaker_s" = "Rainmaker";
-"clam" = "Clam";
-
-"turf_ss" = "Turf";
-"zones_ss" = "Zones";
-"tower_ss" = "Tower";
-"rainmaker_ss" = "Rain";
-"clam_ss" = "Clam";
-
-"regular_job" = "Regular Job";
-"big_run" = "Big Run";
-
-"regular_j" = "Regular";
-
-// Stage.
-"the_reef" = "The Reef";
-"mussel_forge_fitness" = "Mussel Forge Fitness";
-"starfish_mainstage" = "Starfish Mainstage";
-"sturgeon_shipyard" = "Sturgeon Shipyard";
-"inkblot_art_academy" = "Inkblot Art Academy";
-"humpback_pump_track" = "Humpback Pump Track";
-"manta_maria" = "Manta Maria";
-"port_mackerel" = "Port Mackerel";
-"moray_towers" = "Moray Towers";
-"snapper_canal" = "Snapper Canal";
-"kelp_dome" = "Kelp Dome";
-"blackbelly_skatepark" = "Blackbelly Skatepark";
-"sehllendorf_institute" = "Shellendorf Institute";
-"mako_mart" = "MakoMart";
-"walleye_warehouse" = "Walleye Warehouse";
-"arowana_mall" = "Arowana Mall";
-"camp_triggerfish" = "Camp Triggerfish";
-"piranha_pit" = "Piranha Pit";
-"goby_arena" = "Goby Arena";
-"new_albacore_hotel" = "New Albacore Hotel";
-"wahoo_world" = "Wahoo World";
-"ancho_v_games" = "Ancho-V Games";
-"skipper_pavilion" = "Skipper Pavilion";
-
-"spawning_grounds" = "Spawning Grounds";
-"marooners_bay" = "Marooner's Bay";
-"lost_outpost" = "Lost Outpost";
-"salmonid_smokeyard" = "Salmonid Smokeyard";
-"ruins_of_ark_polaris" = "Ruins of Ark Polaris";
-
-"scorch_gorge" = "Scorch Gorge";
-"eeltail_alley" = "Eeltail Alley";
-"hagglefish_market" = "Hagglefish Market";
-"undertow_spillway" = "Undertow Spillway";
-"um_ami_ruins" = "Um'ami Ruins";
-"mincemeat_metalworks" = "Mincemeat Metalworks";
-"brinewater_springs" = "Brinewater Springs";
-"barnacle_dime" = "Barnacle & Dime";
-"flounder_heights" = "Flounder Heights";
-"hammerhead_bridge" = "Hammerhead Bridge";
-"museum_d_alfonsino" = "Museum d'Alfonsino";
-"mahi_mahi_resort" = "Mahi-Mahi Resort";
-"crableg_capital" = "Crableg Capital";
-"shipshape_cargo_co" = "Shipshape Cargo Co.";
-
-"sockeye_station" = "Sockeye Station";
-"gone_fission_hydroplant" = "Gone Fission Hydroplant";
-"jammin_salmon_junction" = "Jammin' Salmon Junction";
-
-// Weapon.
-"sploosh_o_matic" = "Sploosh-o-matic";
-"splattershot_jr" = "Splattershot Jr.";
-"splash_o_matic" = "Splash-o-matic";
-"aerospray_mg" = "Aerospray";
-"splattershot" = "Splattershot";
-"_52_gal" = ".52 Gal";
-"n_zap_85" = "N-ZAP";
-"splattershot_pro" = "Splattershot Pro";
-"_96_gal" = ".96 Gal";
-"jet_squelcher" = "Jet Squelcher";
-"luna_blaster" = "Luna Blaster";
-"blaster" = "Blaster";
-"range_blaster" = "Range Blaster";
-"clash_blaster" = "Clash Blaster";
-"rapid_blaster" = "Rapid Blaster";
-"rapid_blaster_pro" = "Rapid Blaster Pro";
-"s_blast_92" = "S-BLAST '92";
-"l_3_nozzlenose" = "L-3 Nozzlenose";
-"h_3_nozzlenose" = "H-3 Nozzlenose";
-"squeezer" = "Squeezer";
-"carbon_roller" = "Carbon Roller";
-"splat_roller" = "Splat Roller";
-"dynamo_roller" = "Dynamo Roller";
-"flingza_roller" = "Flingza Roller";
-"inkbrush" = "Inkbrush";
-"octobrush" = "Octobrush";
-"painbrush" = "Painbrush";
-"classic_squiffer" = "Squiffer";
-"splat_charger" = "Splat Charger";
-"splatterscope" = "Splatterscope";
-"e_liter_4k" = "E-liter 4K";
-"e_liter_4k_scope" = "E-liter 4K Scope";
-"bamboozler_14_mk_i" = "Bamboozler 14";
-"goo_tuber" = "Goo Tuber";
-"slosher" = "Slosher";
-"tri_slosher" = "Tri-Slosher";
-"sloshing_machine" = "Sloshing Machine";
-"bloblobber" = "Bloblobber";
-"explosher" = "Explosher";
-"mini_splatling" = "Mini Splatling";
-"heavy_splatling" = "Heavy Splatling";
-"hydra_splatling" = "Hydra Splatling";
-"ballpoint_splatling" = "Ballpoint Splatling";
-"nautilus_47" = "Nautilus";
-"dapple_dualies" = "Dapple Dualies";
-"splat_dualies" = "Splat Dualies";
-"glooga_dualies" = "Glooga Dualies";
-"dualie_squelchers" = "Dualie Squelchers";
-"dark_tetra_dualies" = "Tetra Dualies";
-"splat_brella" = "Splat Brella";
-"tenta_brella" = "Tenta Brella";
-"undercover_brella" = "Undercover Brella";
-"kuma_blaster" = "Grizzco Blaster";
-"kuma_brella" = "Grizzco Brella";
-"kuma_charger" = "Grizzco Charger";
-"kuma_slosher" = "Grizzco Slosher";
-"random" = "Random Weapon";
-"random2" = "Grizzco's Random Weapon";
-
-"splattershot_nova" = "Splattershot Nova";
-"big_swig_roller" = "Big Swig Roller";
-"snipewriter_5h" = "Snipewriter 5H";
-"dread_wringer" = "Dread Wringer";
-"heavy_edit_splatling" = "Heavy Edit Splatling";
-"tri_stringer" = "Tri-Stringer";
-"reef_lux_450" = "REEF-LUX 450";
-"splatana_stamper" = "Splatana Stamper";
-"splatana_wiper" = "Splatana Wiper";
-
-// Utils.
-"%@_remaining" = "%@ remaining";
-"in_%@" = "in %@";
-"remaining" = "Remaining";
-"next" = "Next";
-"%dd" = "%dd";
-"%dh" = "%dh";
-"%dm" = "%dm";
-"0m" = "0m";
-"and" = "and";
-"_" = " ";
-"%d_days" = "%d days";
-"%d_day" = "%d day";
-"%d_hours" = "%d hours";
-"%d_hour" = "%d hour";
-"%d_mins" = "%d minutes";
-"%d_min" = "%d minute";
-"0_min" = "0 minute";
-
-// UI.
-"schedule" = "Schedule";
-"shift" = "Shift";
-"ikachan" = "Ikachan";
-"our_new_app" = "Our New App";
-"conch_bay" = "Conch Bay";
-"get" = "GET";
-"settings" = "Settings";
-"language" = "Language";
-"siri_and_shortcuts" = "Siri & Shortcuts";
-"app_icon" = "App Icon";
-"kuro" = "Kuro";
-"ichi" = "Ichi";
-"support" = "Support";
-"download_all_resources" = "Download All Resources";
-"resources_downloaded" = "Resources Downloaded";
-"reload_widgets" = "Reload Widgets";
-"widgets_reloaded" = "Widgets Reloaded";
-"clear_cache" = "Clear Cache";
-"cache_cleared" = "Cache Cleared";
-"about" = "About";
-"repository" = "Repository";
-"privacy_policy" = "Privacy Policy";
-"developer_sketch" = "Developer @xzh1206";
-"designer_shooky" = "Designer @ShellShooky";
-"acknowledgements" = "Acknowledgements";
-"disclaimer" = "This app is an unofficial app which uses the information of Splatnet 2 and Splatnet 3, and is not related to Nintendo Co., Ltd.";
-"ika_shrine" = "Ika Shrine";
-"version" = "Version";
-"close" = "Close";
-
-// Fortune.
-"great_blessing" = "Great\nBlessing";
-"middle_blessing" = "Middle\nBlessing";
-"small_blessing" = "Small\nBlessing";
-"curse" = "Curse";
-"reach_the_top" = "Hooray! We are the first";
-"find_the_goldie_in_the_first_try" = "Wow! We find the Goldie\nat the first attempt";
-"make_friends" = "Let's go to League Battle\nwith friends";
-"keep_the_peace" = "For the peace of the city";
-"love_forecast" = "This is...the feeling of love";
-"jellyfishes_go_to_school" = "Let's go to school!\nSo happy";
-"clear_with_4_lifesavers" = "Did the best until the end,\ngood job";
-"splatfest_100x" = "100x Splatfest!?\nLet's do our best";
-"telephone_is_ringing" = "Oh? The TELEPHONE is\nringing";
-"dj_octavio_escaped" = "DJ Octavio escaped again";
-"mothership_is_sucking_eggs_up" = "Ah! Don't steal them";
-"danger_with_chance" = "So danger...\nbut we still have chance";
-"splatted_by_maws" = "Watch out for Maws";
-"live_sold_out" = "Unfortunately,\nthe live tickets are sold out";
-"unstable_connection" = "Do you want a amulet for\nconnection stability";
-"be_careful_of_the_hydra_splatling" = "Get out of the way!\nMy lord Hydra Splatling\nis here";
+"tricolor_turf_war" = "Tricolor Turf War";
 
 // Widget.
-"in_the_day" = "In the day";
-"at_night" = "At night";
-"%@_%@" = "%@ %@";
-"error" = "Error";
-"failed_to_load" = "Failed to Load";
+"next" = "Next";
 "no_schedule" = "No Schedule";
 "no_shift" = "No Shift";
-"schedule_widget_description" = "See the current and future schedules for a mode.";
-"shift_widget_description" = "See the current and future shifts for Salmon Run.";
-"day_widget_name" = "Splatoon the Whole Day";
-"day_widget_description" = "Feel the passing of time while becoming a squid.";
 
-// Intent.
-"current_schedule" = "Currently, %3$@ in %4$@ and %5$@ of %1$@ %2$@ is undergoing, remaining %6$@.";
-"next_schedule" = "Next, %3$@ in %4$@ and %5$@ of %1$@ %2$@ will be started in %6$@.";
-"open_shift" = "Currently, %2$@ in %3$@ with %4$@, %5$@, %6$@ and %7$@ for loan of %1$@ Salmon Run is open, remaining %8$@.";
-"soon_shift" = "Soon, %2$@ in %3$@ with %4$@, %5$@, %6$@ and %7$@ for loan of %1$@ Salmon Run will be open in %8$@.";
-"next_shift" = "Next, %2$@ in %3$@ with %4$@, %5$@, %6$@ and %7$@ for loan of %1$@ Salmon Run will be open in %8$@.";
+"splatoon_2_schedule" = "Splatoon 2 Schedule";
+"splatoon_2_schedule_widget_description" = "See the current and future schedules of a mode in Splatoon 2.";
+"splatoon_2_shift" = "Splatoon 2 Shift";
+"splatoon_2_shift_widget_description" = "See the current and future shifts of Salmon Run in Splatoon 2.";
+"splatoon_3_schedule" = "Splatoon 3 Schedule";
+"splatoon_3_schedule_widget_description" = "See the current and future schedules of a mode in Splatoon 3.";
+"splatoon_3_shift" = "Splatoon 3 Shift";
+"splatoon_3_shift_widget_description" = "See the current and future shifts of a mode in Splatoon 3.";
+
+// Intents.
+"schedule_dialog" = "%3$@ in %4$@ and %5$@ of %1$@ %2$@ is undergoing.";
+"shift_dialog" = "%2$@ in %3$@ with %4$@, %5$@, %6$@ and %7$@ for loan of %1$@ is open.";
+"soon_shift_dialog" = "%2$@ in %3$@ with %4$@, %5$@, %6$@ and %7$@ for loan of %1$@ will be open soon.";
