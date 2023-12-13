@@ -324,7 +324,7 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Here&apos;s the schedule of ${mode} in Splatoon 2.</string>
+						<string>Here's the schedule of ${mode} in Splatoon 2.</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>U9s5b8</string>
 						<key>INIntentResponseCodeFormatString</key>
@@ -427,7 +427,7 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Here&apos;s the shift of Salmon Run in Splatoon 2.</string>
+						<string>Here's the shift of Salmon Run in Splatoon 2.</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>Pj9O6l</string>
 						<key>INIntentResponseCodeFormatString</key>
@@ -570,7 +570,7 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Here&apos;s the schedule of ${mode} in Splatoon 3.</string>
+						<string>Here's the schedule of ${mode} in Splatoon 3.</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>3ALMmc</string>
 						<key>INIntentResponseCodeFormatString</key>
@@ -731,7 +731,7 @@
 				<array>
 					<dict>
 						<key>INIntentResponseCodeConciseFormatString</key>
-						<string>Here&apos;s the shift of ${mode} in Splatoon 3.</string>
+						<string>Here's the shift of ${mode} in Splatoon 3.</string>
 						<key>INIntentResponseCodeConciseFormatStringID</key>
 						<string>hyUjkm</string>
 						<key>INIntentResponseCodeFormatString</key>

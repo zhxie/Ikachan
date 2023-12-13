@@ -224,6 +224,9 @@
 		E47AC8962B29C7DC00B598AF /* Splatoon2ShiftWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ShiftWidget.swift; sourceTree = "<group>"; };
 		E47AC8982B29D62D00B598AF /* Splatoon3ScheduleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon3ScheduleWidget.swift; sourceTree = "<group>"; };
 		E47AC89A2B29D75A00B598AF /* Splatoon3ShiftWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon3ShiftWidget.swift; sourceTree = "<group>"; };
+		E47AC8A32B29EE5800B598AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
+		E47AC8A52B29EE5F00B598AF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IkachanIntents.strings"; sourceTree = "<group>"; };
+		E47AC8A72B29F00500B598AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
 		E485D9FB275342A300B82AE0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E485DA1227534D0100B82AE0 /* KFImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFImage.swift; sourceTree = "<group>"; };
 		E48ACAC62B29870200C840DD /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
@@ -806,6 +809,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				E4613FB925C9B62000561D53 /* Base */,
+				E47AC8A32B29EE5800B598AF /* en */,
+				E47AC8A52B29EE5F00B598AF /* zh-Hans */,
+				E47AC8A72B29F00500B598AF /* ja */,
 			);
 			name = IkachanIntents.intentdefinition;
 			sourceTree = "<group>";

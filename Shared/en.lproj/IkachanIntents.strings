@@ -1,0 +1,57 @@
+// INSplatoon2ScheduleMode
+"vQ9T9L" = "Regular Battle";
+"Vmno8H" = "Ranked Battle";
+"byIF5m" = "League Battle";
+
+// INSplatoon3ScheduleMode
+"eqOpuk" = "Regular Battle";
+"tjpTHP" = "Anarchy Battle (Series)";
+"gYyHNv" = "Anarchy Battle (Open)";
+"a6nVRn" = "X Battle";
+"58hpF6" = "Challenges";
+"Jr28U9" = "Splatfest Battle (Open)";
+"qYkIoP" = "Splatfest Battle (Pro)";
+"yMzY4p" = "Tricolor Battle";
+
+// INSplatoon3ShiftMode
+"cL3CLn" = "Salmon Run";
+"tD80vo" = "Big Run";
+"koMIyP" = "Eggstra Work";
+
+// Splatoon2Schedule
+"dCtLWO" = "Schedules in Splatoon 2";
+"XALQ6Y" = "Shows schedules of a mode in Splatoon 2.";
+"2z9Dkd" = "Mode";
+"pYS45i" = "Schedule of ${mode} in Splatoon 2";
+"U9s5b8-Vmno8H" = "Here's the schedule of Ranked Battle in Splatoon 2.";
+"U9s5b8-byIF5m" = "Here's the schedule of League Battle in Splatoon 2.";
+"U9s5b8-vQ9T9L" = "Here's the schedule of Regular Battle in Splatoon 2.";
+
+// Splatoon2Shift
+"QjGFWc" = "Shifts in Splatoon 2";
+"LTajCZ" = "Shows shifts of Salmon Run in Splatoon 2.";
+"KM8zVO" = "Shift of Salmon Run in Splatoon 2";
+"Pj9O6l" = "Here's the shift of Salmon Run in Splatoon 2.";
+
+// Splatoon3Schedule
+"UW8R7R" = "Schedules in Splatoon 3";
+"PBoiMS" = "Shows schedules of a mode in Splatoon 3.";
+"IH74Ip" = "Mode";
+"uDQZEt" = "Schedule of ${mode} in Splatoon 3";
+"3ALMmc-eqOpuk" = "Here's the schedule of Regular Battle in Splatoon 3.";
+"3ALMmc-tjpTHP" = "Here's the schedule of Anarchy Battle (Series) in Splatoon 3.";
+"3ALMmc-gYyHNv" = "Here's the schedule of Anarchy Battle (Open) in Splatoon 3.";
+"3ALMmc-a6nVRn" = "Here's the schedule of X Battle in Splatoon 3.";
+"3ALMmc-58hpF6" = "Here's the schedule of Challenges in Splatoon 3.";
+"3ALMmc-Jr28U9" = "Here's the schedule of Splatfest Battle (Open) in Splatoon 3.";
+"3ALMmc-qYkIoP" = "Here's the schedule of Splatfest Battle (Pro) in Splatoon 3.";
+"3ALMmc-yMzY4p" = "Here's the schedule of Tricolor Battle in Splatoon 3.";
+
+// Splatoon3Shift
+"1FvjRq" = "Shifts in Splatoon 3";
+"GqWdsS" = "Shows shifts of a mode in Splatoon 3.";
+"RUrIxS" = "Mode";
+"hwuahg" = "Shift of ${mode} in Splatoon 3";
+"hyUjkm-cL3CLn" = "Here's the shift of Salmon Run in Splatoon 3.";
+"hyUjkm-tD80vo" = "Here's the shift of Big Run in Splatoon 3.";
+"hyUjkm-koMIyP" = "Here's the shift of Eggstra Work in Splatoon 3.";

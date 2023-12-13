@@ -51,7 +51,7 @@ class Splatoon3ShiftIntentHandler: IntentHandler, Splatoon3ShiftIntentHandling {
             let encoder = JSONEncoder()
             let data = try! encoder.encode(shift)
             let activity = NSUserActivity(activityType: UserActivity)
-            activity.userInfo?["splatoon2Shift"] = data.base64EncodedString()
+            activity.userInfo?["splatoon3Shift"] = data.base64EncodedString()
             let response = Splatoon3ShiftIntentResponse.success(dialog: dialog, mode: intent.mode)
             response.userActivity = activity
             completion(response)
