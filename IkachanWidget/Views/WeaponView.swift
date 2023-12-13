@@ -19,7 +19,6 @@ struct WeaponView: View {
                 KFImage(weapon.thumbnail ?? weapon.image)
                     .placeholder {
                         Rectangle()
-                            .foregroundColor(Color(.secondarySystemGroupedBackground))
                             .cornerRadius(8)
                     }
                     .resizedToFill()

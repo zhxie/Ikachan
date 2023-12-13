@@ -57,7 +57,7 @@ struct MediumScheduleView: View {
                         
                         Spacer()
                         
-                        Image(schedule.mode.image)
+                        Image(schedule.rule.image)
                             .resizedToFit()
                             .frame(width: 20, height: 20)
                             .layoutPriority(1)

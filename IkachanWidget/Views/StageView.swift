@@ -19,7 +19,6 @@ struct StageView: View {
                     KFImage(stage.thumbnail ?? stage.image)
                         .placeholder {
                             Rectangle()
-                                .foregroundColor(Color(.secondarySystemGroupedBackground))
                         }
                         .resizedToFill()
                         .clipped()
