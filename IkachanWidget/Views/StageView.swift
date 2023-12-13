@@ -9,6 +9,8 @@ import SwiftUI
 import Kingfisher
 
 struct StageView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var stage: Stage
     
     var body: some View {
@@ -29,10 +31,12 @@ struct StageView: View {
             Text(stage.name)
                 .font(.footnote)
                 .lineLimit(1)
-                .padding(4)
+                .padding([.vertical, .trailing], 4)
+                .padding([.leading], 6)
                 .background {
                     Rectangle()
-                        .foregroundColor(Color(.systemBackground))
+                        // HACK: .systemBackground in widgets is not pure black which is different from the widget's background.
+                        .foregroundColor(colorScheme == .light ? Color(.systemBackground) : .black)
                         .cornerRadius(8, corners: .topLeft)
                         .cornerRadius(7, corners: .bottomRight)
                 }

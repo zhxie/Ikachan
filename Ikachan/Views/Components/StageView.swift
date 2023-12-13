@@ -28,7 +28,8 @@ struct StageView: View {
             Text(stage.name)
                 .font(.footnote)
                 .lineLimit(1)
-                .padding(4)
+                .padding([.vertical, .trailing], 4)
+                .padding([.leading], 6)
                 .background {
                     Rectangle()
                         .foregroundColor(backgroundColor)
