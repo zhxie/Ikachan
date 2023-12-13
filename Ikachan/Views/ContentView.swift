@@ -10,54 +10,62 @@ import AlertKit
 
 struct ContentView: View {
     @State var game = Game.splatoon3
-    @State var splatoon3Schedules: [Splatoon3Schedule] = []
-    @State var splatoon3Shifts: [Splatoon3Shift] = []
+    @State var splatoon2Error: Error? = nil
     @State var splatoon2Schedules: [Splatoon2Schedule] = []
     @State var splatoon2Shifts: [Splatoon2Shift] = []
+    @State var splatoon3Error: Error? = nil
+    @State var splatoon3Schedules: [Splatoon3Schedule] = []
+    @State var splatoon3Shifts: [Splatoon3Shift] = []
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                // HACK: To occupy horizontal space in advance.
-                HStack {
-                    Spacer()
-                }
+            ZStack {
+                if game == .splatoon2 && splatoon2Error == nil || game == .splatoon3 && splatoon3Error == nil {
+                    ProgressView()
+                } else {
+                    ScrollView {
+                        // HACK: To occupy horizontal space in advance.
+                        HStack {
+                            Spacer()
+                        }
 
-                switch game {
-                case .splatoon2:
-                    ForEach(Splatoon2ScheduleMode.allCases, id: \.rawValue) { mode in
-                        if !splatoon2Schedules.filter({ schedule in
-                            schedule._mode == mode
-                        }).isEmpty {
-                            SchedulesNavigationLink(schedules: splatoon2Schedules.filter { schedule in
-                                schedule._mode == mode
-                            })
-                            .padding([.horizontal])
-                        }
-                    }
-                    if !splatoon2Shifts.isEmpty {
-                        ShiftsNavigationLink(shifts: splatoon2Shifts)
-                            .padding([.horizontal])
-                    }
-                case .splatoon3:
-                    ForEach(Splatoon3ScheduleMode.allCases, id: \.rawValue) { mode in
-                        if !splatoon3Schedules.filter({ schedule in
-                            schedule._mode == mode
-                        }).isEmpty {
-                            SchedulesNavigationLink(schedules: splatoon3Schedules.filter { schedule in
-                                schedule._mode == mode
-                            })
-                            .padding([.horizontal])
-                        }
-                    }
-                    ForEach(Splatoon3ShiftMode.allCases, id: \.rawValue) { mode in
-                        if !splatoon3Shifts.filter({ shift in
-                            shift._mode == mode
-                        }).isEmpty {
-                            ShiftsNavigationLink(shifts: splatoon3Shifts.filter { shift in
-                                shift._mode == mode
-                            })
-                            .padding([.horizontal])
+                        switch game {
+                        case .splatoon2:
+                            ForEach(Splatoon2ScheduleMode.allCases, id: \.rawValue) { mode in
+                                if !splatoon2Schedules.filter({ schedule in
+                                    schedule._mode == mode
+                                }).isEmpty {
+                                    SchedulesNavigationLink(schedules: splatoon2Schedules.filter { schedule in
+                                        schedule._mode == mode
+                                    })
+                                    .padding([.horizontal])
+                                }
+                            }
+                            if !splatoon2Shifts.isEmpty {
+                                ShiftsNavigationLink(shifts: splatoon2Shifts)
+                                    .padding([.horizontal])
+                            }
+                        case .splatoon3:
+                            ForEach(Splatoon3ScheduleMode.allCases, id: \.rawValue) { mode in
+                                if !splatoon3Schedules.filter({ schedule in
+                                    schedule._mode == mode
+                                }).isEmpty {
+                                    SchedulesNavigationLink(schedules: splatoon3Schedules.filter { schedule in
+                                        schedule._mode == mode
+                                    })
+                                    .padding([.horizontal])
+                                }
+                            }
+                            ForEach(Splatoon3ShiftMode.allCases, id: \.rawValue) { mode in
+                                if !splatoon3Shifts.filter({ shift in
+                                    shift._mode == mode
+                                }).isEmpty {
+                                    ShiftsNavigationLink(shifts: splatoon3Shifts.filter { shift in
+                                        shift._mode == mode
+                                    })
+                                    .padding([.horizontal])
+                                }
+                            }
                         }
                     }
                 }
@@ -82,7 +90,6 @@ struct ContentView: View {
                         Image(systemName: "3.circle")
                     }
                 }
-
             }
         }
         .onAppear {
@@ -95,6 +102,7 @@ struct ContentView: View {
         case .splatoon2:
             fetchSplatoon2(locale: Locale.localizedLocale) { schedules, shifts, error in
                 withAnimation {
+                    splatoon2Error = error
                     splatoon2Schedules = schedules
                     splatoon2Shifts = shifts
                 }
@@ -105,6 +113,7 @@ struct ContentView: View {
         case .splatoon3:
             fetchSplatoon3(locale: Locale.localizedLocale) { schedules, shifts, error in
                 withAnimation {
+                    splatoon3Error = error
                     splatoon3Schedules = schedules
                     splatoon3Shifts = shifts
                 }
