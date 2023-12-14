@@ -11,6 +11,7 @@ struct ScheduleView: View {
     var schedule: Schedule
     var nextSchedule: Schedule? = nil
     var backgroundColor = Color(.secondarySystemBackground)
+    var shrinkToFit = false
     
     var body: some View {
         VStack {
@@ -33,6 +34,14 @@ struct ScheduleView: View {
                     .layoutPriority(1)
             }
             HStack {
+                if shrinkToFit {
+                    Spacer()
+                        .frame(width: 16)
+                        .layoutPriority(1)
+                    
+                    Spacer()
+                }
+                
                 ForEach(schedule.stages, id: \.name) { stage in
                     StageView(stage: stage, backgroundColor: backgroundColor)
                 }

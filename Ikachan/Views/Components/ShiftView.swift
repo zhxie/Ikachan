@@ -11,6 +11,7 @@ struct ShiftView: View {
     var shift: Shift
     var nextShift: Shift? = nil
     var backgroundColor = Color(.secondarySystemBackground)
+    var shrinkToFit = false
     
     var body: some View {
         VStack {
@@ -34,6 +35,14 @@ struct ShiftView: View {
             }
             if shift.stage != nil {
                 HStack {
+                    if shrinkToFit {
+                        Spacer()
+                            .frame(width: 16)
+                            .layoutPriority(1)
+                        
+                        Spacer()
+                    }
+                    
                     StageView(stage: shift.stage!, backgroundColor: backgroundColor)
                     VStack {
                         if let kingSalmonid = shift.kingSalmonid {
