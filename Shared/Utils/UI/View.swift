@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-// Referenced from https://stackoverflow.com/a/58606176.
 extension View {
+    // Referenced from https://stackoverflow.com/a/58606176.
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape( RoundedCorner(radius: radius, corners: corners) )
     }

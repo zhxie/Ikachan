@@ -33,41 +33,51 @@ struct ContentView: View {
 
                         switch game {
                         case .splatoon2:
-                            ForEach(Splatoon2ScheduleMode.allCases, id: \.rawValue) { mode in
-                                if !splatoon2Schedules.filter({ schedule in
-                                    schedule._mode == mode
-                                }).isEmpty {
-                                    SchedulesNavigationLink(schedules: splatoon2Schedules.filter { schedule in
+                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 450, maximum: 900))]) {
+                                ForEach(Splatoon2ScheduleMode.allCases, id: \.rawValue) { mode in
+                                    if !splatoon2Schedules.filter({ schedule in
                                         schedule._mode == mode
-                                    })
-                                    .padding([.horizontal])
+                                    }).isEmpty {
+                                        SchedulesNavigationLink(schedules: splatoon2Schedules.filter { schedule in
+                                            schedule._mode == mode
+                                        })
+                                    }
+                                }
+                                if !splatoon2Shifts.isEmpty {
+                                    ShiftsNavigationLink(shifts: splatoon2Shifts)
                                 }
                             }
-                            if !splatoon2Shifts.isEmpty {
-                                ShiftsNavigationLink(shifts: splatoon2Shifts)
-                                    .padding([.horizontal])
-                            }
+                            .padding([.horizontal])
                         case .splatoon3:
-                            ForEach(Splatoon3ScheduleMode.allCases, id: \.rawValue) { mode in
-                                if !splatoon3Schedules.filter({ schedule in
-                                    schedule._mode == mode
-                                }).isEmpty {
-                                    SchedulesNavigationLink(schedules: splatoon3Schedules.filter { schedule in
+                            if !splatoon3Schedules.filter({ schedule in
+                                schedule._mode == .tricolorBattle
+                            }).isEmpty {
+                                SchedulesNavigationLink(schedules: splatoon3Schedules.filter { schedule in
+                                    schedule._mode == .tricolorBattle
+                                })
+                                .padding([.horizontal])
+                            }
+                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 450, maximum: 900))]) {
+                                ForEach([Splatoon3ScheduleMode.splatfestBattleOpen, Splatoon3ScheduleMode.splatfestBattlePro, Splatoon3ScheduleMode.regularBattle, Splatoon3ScheduleMode.anarchyBattleSeries, Splatoon3ScheduleMode.anarchyBattleOpen, Splatoon3ScheduleMode.xBattle, Splatoon3ScheduleMode.challenges], id: \.rawValue) { mode in
+                                    if !splatoon3Schedules.filter({ schedule in
                                         schedule._mode == mode
-                                    })
-                                    .padding([.horizontal])
+                                    }).isEmpty {
+                                        SchedulesNavigationLink(schedules: splatoon3Schedules.filter { schedule in
+                                            schedule._mode == mode
+                                        })
+                                    }
                                 }
-                            }
-                            ForEach(Splatoon3ShiftMode.allCases, id: \.rawValue) { mode in
-                                if !splatoon3Shifts.filter({ shift in
-                                    shift._mode == mode
-                                }).isEmpty {
-                                    ShiftsNavigationLink(shifts: splatoon3Shifts.filter { shift in
+                                ForEach(Splatoon3ShiftMode.allCases, id: \.rawValue) { mode in
+                                    if !splatoon3Shifts.filter({ shift in
                                         shift._mode == mode
-                                    })
-                                    .padding([.horizontal])
+                                    }).isEmpty {
+                                        ShiftsNavigationLink(shifts: splatoon3Shifts.filter { shift in
+                                            shift._mode == mode
+                                        })
+                                    }
                                 }
                             }
+                            .padding([.horizontal])
                         }
                     }
                 }
