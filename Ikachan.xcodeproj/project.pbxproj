@@ -129,6 +129,7 @@
 		E4BE377228DEC02D00BDB75F /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */; };
 		E4BE377328DEC02D00BDB75F /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */; };
 		E4BE377528DEC1F800BDB75F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4BE377428DEC1F800BDB75F /* SwiftyJSON */; };
+		E4CB960B2B2B5E7200F322AE /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB960A2B2B5E7200F322AE /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,6 +252,8 @@
 		E490E9AF2B289FFC002A03D2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkachanWidgetBundle.swift; sourceTree = "<group>"; };
 		E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftJSON.swift; sourceTree = "<group>"; };
+		E4CB960A2B2B5E7200F322AE /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		E4CB960C2B2B5E9000F322AE /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -397,7 +400,7 @@
 				E440CA1A2B27325F00884D57 /* ScheduleView.swift */,
 				E440CA1F2B27329900884D57 /* ShiftView.swift */,
 				E490E9962B283946002A03D2 /* CardView.swift */,
-				E47AC8B72B2AE1D100B598AF /* AboutView.swift */,
+				E4CB960A2B2B5E7200F322AE /* SafariView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 		E46B506F25B9C2AC001F88CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E4CB960C2B2B5E9000F322AE /* SafariServices.framework */,
 				E46B507025B9C2AC001F88CE /* WidgetKit.framework */,
 				E46B507225B9C2AC001F88CE /* SwiftUI.framework */,
 				E43E136925C9A3BA008A0FE6 /* Intents.framework */,
@@ -421,6 +425,7 @@
 				E490E99A2B288478002A03D2 /* ShiftsView.swift */,
 				E490E99F2B2888F8002A03D2 /* SchedulesNavigationLink.swift */,
 				E490E9A12B288C3C002A03D2 /* ShiftsNavigationLink.swift */,
+				E47AC8B72B2AE1D100B598AF /* AboutView.swift */,
 				E4405D7C25AF64D2002EF1AB /* ContentView.swift */,
 			);
 			path = Views;
@@ -727,6 +732,7 @@
 				E4400F3B25CD03F900BF94C6 /* API.swift in Sources */,
 				E4400F3425CD012C00BF94C6 /* Splatoon2ScheduleIntentHandler.swift in Sources */,
 				E47AC8B82B2AE1D100B598AF /* AboutView.swift in Sources */,
+				E4CB960B2B2B5E7200F322AE /* SafariView.swift in Sources */,
 				E485DA1327534D0100B82AE0 /* KFImage.swift in Sources */,
 				E461414025CA880500561D53 /* String.swift in Sources */,
 				E490E9A02B2888F8002A03D2 /* SchedulesNavigationLink.swift in Sources */,
