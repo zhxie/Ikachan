@@ -18,7 +18,7 @@ struct SchedulesNavigationLink: View {
                 ScheduleView(schedule: schedules.first!, nextSchedule: schedules.at(index: 1))
             }
         }
-        .buttonStyle(PlainButtonStyle())
+        .buttonStyle(CardButtonStyle())
     }
 }
 

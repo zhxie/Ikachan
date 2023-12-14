@@ -18,7 +18,7 @@ struct ShiftsNavigationLink: View {
                 ShiftView(shift: shifts.first!, nextShift: shifts.at(index: 1))
             }
         }
-        .buttonStyle(PlainButtonStyle())
+        .buttonStyle(CardButtonStyle())
     }
 }
 

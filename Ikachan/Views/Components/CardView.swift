@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+struct CardButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.95 : 1)
+            .animation(.smooth(duration: 0.2), value: configuration.isPressed)
+    }
+}
+
 struct CardView<Content: View>: View {
     var image: String
     var name: String
