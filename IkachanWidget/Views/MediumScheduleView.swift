@@ -28,6 +28,7 @@ struct MediumScheduleView: View {
                     Spacer()
                     
                     Text(absoluteTimeSpan(start: schedule.startTime, end: schedule.endTime))
+                        .monospacedDigit()
                         .font(.footnote)
                         .foregroundColor(.secondary)
                         .lineLimit(1)

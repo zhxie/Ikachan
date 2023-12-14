@@ -28,6 +28,7 @@ struct MediumShiftView: View {
                     Spacer()
                     
                     Text(absoluteTimeSpan(start: shift.startTime, end: shift.endTime))
+                        .monospacedDigit()
                         .font(.footnote)
                         .foregroundColor(.secondary)
                         .lineLimit(1)

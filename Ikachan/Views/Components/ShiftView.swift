@@ -26,6 +26,7 @@ struct ShiftView: View {
                 Spacer()
                 
                 Text(timeSpan(start: shift.startTime, end: shift.endTime))
+                    .monospacedDigit()
                     .font(.footnote)
                     .foregroundColor(.secondary)
                     .lineLimit(1)
