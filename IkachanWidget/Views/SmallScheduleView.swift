@@ -17,17 +17,21 @@ struct SmallScheduleView: View {
     var body: some View {
         if let schedule = schedule {
             VStack(alignment: .leading, spacing: 8) {
-                HStack(alignment: .center) {
-                    Image(schedule.mode.image)
-                        .resizedToFit()
-                        .frame(width: 16, height: 16)
-                        .layoutPriority(1)
-                    Text(LocalizedStringKey(schedule.rule.name))
-                        .fontWeight(.bold)
-                        .foregroundColor(schedule.mode.accentColor)
-                        .lineLimit(1)
+                HStack {
+                    HStack(alignment: .center) {
+                        Image(schedule.mode.image)
+                            .resizedToFit()
+                            .frame(width: 16, height: 16)
+                            .layoutPriority(1)
+                        Text(LocalizedStringKey(schedule.rule.name))
+                            .fontWeight(.bold)
+                            .foregroundColor(schedule.mode.accentColor)
+                            .lineLimit(1)
+                    }
+                    .layoutPriority(1)
                     
                     Spacer()
+                        .frame(minWidth: 0)
                 }
                 .layoutPriority(1)
                 
@@ -44,18 +48,22 @@ struct SmallScheduleView: View {
                     }
                     
                     if let schedule = nextSchedule {
-                        HStack(alignment: .center) {
-                            Image(schedule.mode.image)
-                                .resizedToFit()
-                                .frame(width: 12, height: 12)
-                                .layoutPriority(1)
-                            Text(LocalizedStringKey(schedule.rule.name))
-                                .font(.footnote)
-                                .fontWeight(.bold)
-                                .foregroundColor(schedule.mode.accentColor)
-                                .lineLimit(1)
+                        HStack {
+                            HStack(alignment: .center) {
+                                Image(schedule.mode.image)
+                                    .resizedToFit()
+                                    .frame(width: 12, height: 12)
+                                    .layoutPriority(1)
+                                Text(LocalizedStringKey(schedule.rule.name))
+                                    .font(.footnote)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(schedule.mode.accentColor)
+                                    .lineLimit(1)
+                            }
+                            .layoutPriority(1)
                             
                             Spacer()
+                                .frame(minWidth: 0)
                         }
                         .layoutPriority(1)
                         

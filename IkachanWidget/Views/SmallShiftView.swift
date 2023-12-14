@@ -17,17 +17,21 @@ struct SmallShiftView: View {
     var body: some View {
         if let shift = shift {
             VStack(alignment: .leading, spacing: 8) {
-                HStack(alignment: .center) {
-                    Image(shift.mode.image)
-                        .resizedToFit()
-                        .frame(width: 16, height: 16)
-                        .layoutPriority(1)
-                    Text(LocalizedStringKey(shift.mode.name))
-                        .fontWeight(.bold)
-                        .foregroundColor(shift.mode.accentColor)
-                        .lineLimit(1)
+                HStack {
+                    HStack(alignment: .center) {
+                        Image(shift.mode.image)
+                            .resizedToFit()
+                            .frame(width: 16, height: 16)
+                            .layoutPriority(1)
+                        Text(LocalizedStringKey(shift.mode.name))
+                            .fontWeight(.bold)
+                            .foregroundColor(shift.mode.accentColor)
+                            .lineLimit(1)
+                    }
+                    .layoutPriority(1)
                     
                     Spacer()
+                        .frame(minWidth: 0)
                 }
                 .layoutPriority(1)
                 
@@ -48,18 +52,22 @@ struct SmallShiftView: View {
                             .lineLimit(1)
                         
                         if let shift = nextShift {
-                            HStack(alignment: .center) {
-                                Image(shift.mode.image)
-                                    .resizedToFit()
-                                    .frame(width: 12, height: 12)
-                                    .layoutPriority(1)
-                                Text(LocalizedStringKey(shift.mode.name))
-                                    .font(.footnote)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(shift.mode.accentColor)
-                                    .lineLimit(1)
+                            HStack {
+                                HStack(alignment: .center) {
+                                    Image(shift.mode.image)
+                                        .resizedToFit()
+                                        .frame(width: 12, height: 12)
+                                        .layoutPriority(1)
+                                    Text(LocalizedStringKey(shift.mode.name))
+                                        .font(.footnote)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(shift.mode.accentColor)
+                                        .lineLimit(1)
+                                }
+                                .layoutPriority(1)
                                 
                                 Spacer()
+                                    .frame(minWidth: 0)
                             }
                             .layoutPriority(1)
                             
