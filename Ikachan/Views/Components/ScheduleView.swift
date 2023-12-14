@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ScheduleView: View {
     var schedule: Schedule
+    var nextSchedule: Schedule? = nil
     var backgroundColor = Color(.secondarySystemBackground)
     
     var body: some View {
@@ -35,10 +36,39 @@ struct ScheduleView: View {
                     StageView(stage: stage, backgroundColor: backgroundColor)
                 }
             }
+            
+            if let schedule = nextSchedule {
+                HStack(alignment: .center) {
+                    Text(LocalizedStringKey("next"))
+                        .font(.footnote)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(.systemBackground))
+                        .padding(4)
+                        .background {
+                            Rectangle()
+                                .foregroundColor(schedule.mode.accentColor)
+                                .cornerRadius(4)
+                        }
+                        .layoutPriority(1)
+                    
+                    Spacer()
+                    
+                    Image(schedule.rule.image)
+                        .resizedToFit()
+                        .frame(width: 20, height: 20)
+                        .layoutPriority(1)
+                    Text(schedule.stages.map({ stage in
+                        stage.name
+                    }).joined(separator: " & "))
+                    .font(.footnote)
+                }
+                // HACK: I do not know why but we need this padding to make spacing in the VStack equal.
+                .padding([.top], 2)
+            }
         }
     }
 }
 
 #Preview {
-    ScheduleView(schedule: PreviewSplatoon2Schedule)
+    ScheduleView(schedule: PreviewSplatoon2Schedule, nextSchedule: PreviewSplatoon3Schedule)
 }

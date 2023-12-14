@@ -15,7 +15,7 @@ struct ShiftsNavigationLink: View {
             ShiftsView(mode: shifts.first!.mode, shifts: shifts)
         } label: {
             CardView(image: shifts.first!.mode.image, name: shifts.first!.mode.name) {
-                ShiftView(shift: shifts.first!)
+                ShiftView(shift: shifts.first!, nextShift: shifts.at(index: 1))
             }
         }
         .buttonStyle(PlainButtonStyle())

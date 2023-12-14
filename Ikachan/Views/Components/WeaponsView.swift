@@ -10,7 +10,6 @@ import Kingfisher
 
 struct WeaponsView: View {
     var weapons: [Weapon]
-    var backgroundColor = Color(.secondarySystemBackground)
     
     var body: some View {
         HStack(spacing: 4) {
@@ -30,11 +29,6 @@ struct WeaponsView: View {
                             .accessibilityLabel(weapon.name)
                     )
             }
-        }
-        .padding(8)
-        .background {
-            Capsule()
-                .foregroundColor(backgroundColor)
         }
     }
 }

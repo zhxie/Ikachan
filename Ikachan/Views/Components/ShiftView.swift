@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ShiftView: View {
     var shift: Shift
+    var nextShift: Shift? = nil
     var backgroundColor = Color(.secondarySystemBackground)
     
     var body: some View {
@@ -46,8 +47,38 @@ struct ShiftView: View {
                             }
                         }
                         
-                        WeaponsView(weapons: shift.weapons!, backgroundColor: backgroundColor)
+                        WeaponsView(weapons: shift.weapons!)
+                            .padding(8)
                     }
+                }
+            }
+            
+            if let shift = nextShift {
+                if let stage = shift.stage {
+                    HStack(alignment: .center) {
+                        Text(LocalizedStringKey("next"))
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(.systemBackground))
+                            .padding(4)
+                            .background {
+                                Rectangle()
+                                    .foregroundColor(shift.mode.accentColor)
+                                    .cornerRadius(4)
+                            }
+                            .layoutPriority(1)
+                        
+                        Spacer()
+                        
+                        Text(stage.name)
+                            .font(.footnote)
+                        
+                        WeaponsView(weapons: shift.weapons!)
+                            .frame(height: 20)
+                            .layoutPriority(1)
+                    }
+                    // HACK: I do not know why but we need this padding to make spacing in the VStack equal.
+                    .padding([.top], 2)
                 }
             }
         }
@@ -55,5 +86,5 @@ struct ShiftView: View {
 }
 
 #Preview {
-    ShiftView(shift: PreviewSplatoon3Shift)
+    ShiftView(shift: PreviewSplatoon3Shift, nextShift: PreviewSplatoon2Shift)
 }

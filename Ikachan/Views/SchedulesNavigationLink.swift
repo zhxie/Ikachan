@@ -15,7 +15,7 @@ struct SchedulesNavigationLink: View {
             SchedulesView(mode: schedules.first!.mode, schedules: schedules)
         } label: {
             CardView(image: schedules.first!.mode.image, name: schedules.first!.mode.name) {
-                ScheduleView(schedule: schedules.first!)
+                ScheduleView(schedule: schedules.first!, nextSchedule: schedules.at(index: 1))
             }
         }
         .buttonStyle(PlainButtonStyle())
