@@ -48,7 +48,12 @@ func timeSpan(start: Date, end: Date) -> String {
     if endComponents.month == startComponents.month && endComponents.day == startComponents.day {
         endString = short.string(from: end)
     } else {
-        endString = long.string(from: end)
+        let beforeEndComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute], from: end.addingTimeInterval(-24 * 60 * 60))
+        if beforeEndComponents.month == startComponents.month && beforeEndComponents.day == startComponents.day && beforeEndComponents.hour == 0 && beforeEndComponents.minute == 0 {
+            endString = "24:00"
+        } else {
+            endString = long.string(from: end)
+        }
     }
     
     return String(format: "%@ - %@", startString, endString)
@@ -68,7 +73,12 @@ func absoluteTimeSpan(start: Date, end: Date) -> String {
     if endComponents.month == startComponents.month && endComponents.day == startComponents.day {
         endString = short.string(from: end)
     } else {
-        endString = long.string(from: end)
+        let beforeEndComponents = Calendar.current.dateComponents([.month, .day, .hour, .minute], from: end.addingTimeInterval(-24 * 60 * 60))
+        if beforeEndComponents.month == startComponents.month && beforeEndComponents.day == startComponents.day && beforeEndComponents.hour == 0 && beforeEndComponents.minute == 0 {
+            endString = "24:00"
+        } else {
+            endString = long.string(from: end)
+        }
     }
     
     return String(format: "%@ - %@", startString, endString)
