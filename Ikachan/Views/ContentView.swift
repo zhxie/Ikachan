@@ -99,6 +99,7 @@ struct ContentView: View {
                 }
             }
         }
+        .navigationViewStyle(.stack)
         .onAppear {
             update()
         }
