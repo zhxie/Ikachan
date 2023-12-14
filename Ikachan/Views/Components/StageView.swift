@@ -34,7 +34,7 @@ struct StageView: View {
                             .foregroundColor(backgroundColor)
                             .cornerRadius(8, corners: .topLeft)
                     }
-                    .padding([.leading], 16)
+                    .padding([.leading], 8)
                     // HACK: There may be edge overflow on scale effect.
                     .offset(x: 1, y: 1)
             }
