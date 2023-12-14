@@ -36,6 +36,33 @@
 "clam_blitz" = "真格蛤蜊";
 "tricolor_turf_war" = "三色夺宝对战";
 
+// UI.
+"ikachan" = "鱿鱼酱";
+"our_new_app" = "我们的新App";
+"conch_bay" = "法螺湾";
+"get" = "获取";
+"settings" = "设置";
+"language" = "语言";
+"siri_and_shortcuts" = "Siri与快捷指令";
+"support" = "支持";
+"reload_widgets" = "重新载入小组件";
+"widgets_reloaded" = "已重新载入小组件";
+"clear_cache" = "清除缓存";
+"cache_cleared" = "已清除缓存";
+"about" = "关于";
+"version" = "版本";
+"source_code_repository" = "源代码仓库";
+"privacy_policy" = "隐私政策";
+"developer_sketch" = "开发者 @xzh_Sketch";
+"designer_shooky" = "设计师 @贝壳牌砂糖";
+"acknowledgements" = "致谢";
+"splatoon2_ink" = "Splatoon2.ink";
+"splatoon3_ink" = "Splatoon3.ink";
+"alert_kit" = "AlertKit";
+"kingfisher" = "Kingfisher";
+"swifty_json" = "SwiftyJSON";
+"disclaimer" = "本应用是使用鱿鱼圈2和鱿鱼圈3的信息的非官方应用，与任天堂有限公司无关。";
+
 // Widget.
 "next" = "下次";
 "no_schedule" = "无日程";
@@ -49,7 +76,6 @@
 "splatoon_3_schedule_widget_description" = "查看斯普拉遁3的某模式目前和下次的日程。";
 "splatoon_3_shift" = "斯普拉遁3排班表";
 "splatoon_3_shift_widget_description" = "查看斯普拉遁3的某模式目前和下次的排班表。";
-
 
 // Intents.
 "schedule_dialog" = "%1$@%2$@目前正进行于%4$@和%5$@的%3$@。";

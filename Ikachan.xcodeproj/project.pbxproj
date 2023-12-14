@@ -19,7 +19,6 @@
 		E42AE86227550951006F7CBD /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE86027550951006F7CBD /* StageView.swift */; };
 		E42AE864275509DB006F7CBD /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponsView.swift */; };
 		E42AE865275509DB006F7CBD /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponsView.swift */; };
-		E42AE87F27566001006F7CBD /* LICENSE.SPAlert.md in Resources */ = {isa = PBXBuildFile; fileRef = E42AE87E27566001006F7CBD /* LICENSE.SPAlert.md */; };
 		E434673D265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
 		E434673E265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
 		E434673F265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
@@ -87,8 +86,6 @@
 		E464ADCF2B29B3D3001DC83D /* WeaponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464ADCE2B29B3D3001DC83D /* WeaponView.swift */; };
 		E464ADD12B29B51D001DC83D /* MediumShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464ADD02B29B51D001DC83D /* MediumShiftView.swift */; };
 		E468B7B525B46080001254FE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
-		E46B512C25BB30C7001F88CE /* LICENSE.SwiftyJSON.md in Resources */ = {isa = PBXBuildFile; fileRef = E46B512A25BB30C7001F88CE /* LICENSE.SwiftyJSON.md */; };
-		E46B512D25BB30C7001F88CE /* LICENSE.Kingfisher.md in Resources */ = {isa = PBXBuildFile; fileRef = E46B512B25BB30C7001F88CE /* LICENSE.Kingfisher.md */; };
 		E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E477990725B1F62500F8AE9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E477990625B1F62500F8AE9F /* SwiftyJSON */; };
 		E47AC8972B29C7DC00B598AF /* Splatoon2ShiftWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8962B29C7DC00B598AF /* Splatoon2ShiftWidget.swift */; };
@@ -101,6 +98,7 @@
 		E47AC8B22B2ACE8F00B598AF /* Splatoon2ShiftDynamicWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8B12B2ACE8F00B598AF /* Splatoon2ShiftDynamicWidget.swift */; };
 		E47AC8B42B2ACFB600B598AF /* Splatoon3ScheduleDynamicWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8B32B2ACFB600B598AF /* Splatoon3ScheduleDynamicWidget.swift */; };
 		E47AC8B62B2AD03200B598AF /* Splatoon3ShiftDynamicWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8B52B2AD03200B598AF /* Splatoon3ShiftDynamicWidget.swift */; };
+		E47AC8B82B2AE1D100B598AF /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8B72B2AE1D100B598AF /* AboutView.swift */; };
 		E484FDC725C94694006E748F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4444F3725BF164C0003A676 /* Assets.xcassets */; };
 		E484FDCE25C946C9006E748F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46B514C25BB46C5001F88CE /* InfoPlist.strings */; };
 		E485D9FC275342A300B82AE0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E485D9FB275342A300B82AE0 /* Image.swift */; };
@@ -179,7 +177,6 @@
 		E417636D2B271CE500B52CE9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E42AE86027550951006F7CBD /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
 		E42AE863275509DB006F7CBD /* WeaponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsView.swift; sourceTree = "<group>"; };
-		E42AE87E27566001006F7CBD /* LICENSE.SPAlert.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.SPAlert.md; sourceTree = "<group>"; };
 		E434673C265FC51E0018F130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E43D3F5725BBC75600D944A1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E43D3F5825BBC7E700D944A1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -223,8 +220,6 @@
 		E46B507025B9C2AC001F88CE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		E46B507225B9C2AC001F88CE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		E46B507525B9C2AC001F88CE /* Splatoon2ScheduleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ScheduleWidget.swift; sourceTree = "<group>"; };
-		E46B512A25BB30C7001F88CE /* LICENSE.SwiftyJSON.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.SwiftyJSON.md; sourceTree = "<group>"; };
-		E46B512B25BB30C7001F88CE /* LICENSE.Kingfisher.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.Kingfisher.md; sourceTree = "<group>"; };
 		E46B514B25BB46C5001F88CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E46B515225BB46C9001F88CE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E477990125B1F1F600F8AE9F /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
@@ -241,6 +236,7 @@
 		E47AC8B12B2ACE8F00B598AF /* Splatoon2ShiftDynamicWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ShiftDynamicWidget.swift; sourceTree = "<group>"; };
 		E47AC8B32B2ACFB600B598AF /* Splatoon3ScheduleDynamicWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon3ScheduleDynamicWidget.swift; sourceTree = "<group>"; };
 		E47AC8B52B2AD03200B598AF /* Splatoon3ShiftDynamicWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon3ShiftDynamicWidget.swift; sourceTree = "<group>"; };
+		E47AC8B72B2AE1D100B598AF /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		E485D9FB275342A300B82AE0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E485DA1227534D0100B82AE0 /* KFImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFImage.swift; sourceTree = "<group>"; };
 		E48ACAC62B29870200C840DD /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
@@ -338,9 +334,6 @@
 				E4405D7825AF64D2002EF1AB /* Products */,
 				E43D3F5725BBC75600D944A1 /* README.md */,
 				E43D3F5825BBC7E700D944A1 /* LICENSE */,
-				E46B512B25BB30C7001F88CE /* LICENSE.Kingfisher.md */,
-				E42AE87E27566001006F7CBD /* LICENSE.SPAlert.md */,
-				E46B512A25BB30C7001F88CE /* LICENSE.SwiftyJSON.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -404,6 +397,7 @@
 				E440CA1A2B27325F00884D57 /* ScheduleView.swift */,
 				E440CA1F2B27329900884D57 /* ShiftView.swift */,
 				E490E9962B283946002A03D2 /* CardView.swift */,
+				E47AC8B72B2AE1D100B598AF /* AboutView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -660,10 +654,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4405D8225AF64D6002EF1AB /* Preview Assets.xcassets in Resources */,
-				E42AE87F27566001006F7CBD /* LICENSE.SPAlert.md in Resources */,
 				E484FDCE25C946C9006E748F /* InfoPlist.strings in Resources */,
-				E46B512D25BB30C7001F88CE /* LICENSE.Kingfisher.md in Resources */,
-				E46B512C25BB30C7001F88CE /* LICENSE.SwiftyJSON.md in Resources */,
 				E490E9A82B289FF9002A03D2 /* Localizable.strings in Resources */,
 				E4405D7F25AF64D6002EF1AB /* Assets.xcassets in Resources */,
 				E434673D265FC51E0018F130 /* Assets.xcassets in Resources */,
@@ -734,6 +725,7 @@
 				E490E9A22B288C3C002A03D2 /* ShiftsNavigationLink.swift in Sources */,
 				E4400F3B25CD03F900BF94C6 /* API.swift in Sources */,
 				E4400F3425CD012C00BF94C6 /* Splatoon2ScheduleIntentHandler.swift in Sources */,
+				E47AC8B82B2AE1D100B598AF /* AboutView.swift in Sources */,
 				E485DA1327534D0100B82AE0 /* KFImage.swift in Sources */,
 				E461414025CA880500561D53 /* String.swift in Sources */,
 				E490E9A02B2888F8002A03D2 /* SchedulesNavigationLink.swift in Sources */,

@@ -36,6 +36,33 @@
 "clam_blitz" = "Clam Blitz";
 "tricolor_turf_war" = "Tricolor Turf War";
 
+// UI.
+"ikachan" = "Ikachan";
+"our_new_app" = "Our New App";
+"conch_bay" = "Conch Bay";
+"get" = "GET";
+"settings" = "Settings";
+"language" = "Language";
+"siri_and_shortcuts" = "Siri & Shortcuts";
+"support" = "Support";
+"reload_widgets" = "Reload Widgets";
+"widgets_reloaded" = "Widgets Reloaded";
+"clear_cache" = "Clear Cache";
+"cache_cleared" = "Cache Cleared";
+"about" = "About";
+"version" = "Version";
+"source_code_repository" = "Source Code Repository";
+"privacy_policy" = "Privacy Policy";
+"developer_sketch" = "Developer @xzh_Sketch";
+"designer_shooky" = "Designer @贝壳牌砂糖";
+"acknowledgements" = "Acknowledgements";
+"splatoon2_ink" = "Splatoon2.ink";
+"splatoon3_ink" = "Splatoon3.ink";
+"alert_kit" = "AlertKit";
+"kingfisher" = "Kingfisher";
+"swifty_json" = "SwiftyJSON";
+"disclaimer" = "This app is an unofficial app which uses the information of Splatnet 2 and Splatnet 3, and is not related to Nintendo Co., Ltd.";
+
 // Widget.
 "next" = "Next";
 "no_schedule" = "No Schedule";

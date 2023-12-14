@@ -17,6 +17,8 @@ struct ContentView: View {
     @State var splatoon3Schedules: [Splatoon3Schedule] = []
     @State var splatoon3Shifts: [Splatoon3Shift] = []
     
+    @State var isInfoPresented = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -90,10 +92,18 @@ struct ContentView: View {
                         Image(systemName: "3.circle")
                     }
                 }
+                Button {
+                    isInfoPresented.toggle()
+                } label: {
+                    Image(systemName: "info.circle")
+                }
             }
         }
         .onAppear {
             update()
+        }
+        .sheet(isPresented: $isInfoPresented) {
+            AboutView()
         }
     }
     
