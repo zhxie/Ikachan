@@ -21,6 +21,8 @@ struct Splatoon3ShiftProvider: IntentTimelineProvider {
             case .eggstraWork:
                 return shift._mode == .eggstraWork
             }
+        }.filter { schedule in
+            schedule.endTime > Date()
         }
     }
     

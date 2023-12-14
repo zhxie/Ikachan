@@ -31,6 +31,8 @@ struct Splatoon3ScheduleProvider: IntentTimelineProvider {
             case .tricolorBattle:
                 return schedule._mode == .tricolorBattle
             }
+        }.filter { schedule in
+            schedule.endTime > Date()
         }
     }
     

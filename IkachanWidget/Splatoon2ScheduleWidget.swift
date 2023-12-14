@@ -21,6 +21,8 @@ struct Splatoon2ScheduleProvider: IntentTimelineProvider {
             case .leagueBattle:
                 return schedule._mode == .leagueBattle
             }
+        }.filter { schedule in
+            schedule.endTime > Date()
         }
     }
     

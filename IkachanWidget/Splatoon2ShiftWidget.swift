@@ -11,6 +11,12 @@ import Intents
 import Kingfisher
 
 struct Splatoon2ShiftProvider: IntentTimelineProvider {
+    func filterShifts(shifts: [Splatoon2Shift]) -> [Splatoon2Shift] {
+        return shifts.filter { schedule in
+            schedule.endTime > Date()
+        }
+    }
+    
     func placeholder(in context: Context) -> Splatoon2ShiftEntry {
         Splatoon2ShiftEntry(date: Date(), configuration: Splatoon2ShiftIntent(), shift: PreviewSplatoon2Shift)
     }
@@ -23,20 +29,21 @@ struct Splatoon2ShiftProvider: IntentTimelineProvider {
                 return
             }
             
-            if !shifts.isEmpty {
-                var entry = Splatoon2ShiftEntry(date: Date(), configuration: configuration, shift: shifts.first!)
+            let filtered = filterShifts(shifts: shifts)
+            if !filtered.isEmpty {
+                var entry = Splatoon2ShiftEntry(date: Date(), configuration: configuration, shift: filtered.first!)
                 var urls: Set<URL> = []
-                if let stage = shifts.first!.stage {
+                if let stage = filtered.first!.stage {
                     urls.insert(stage.thumbnail ?? stage.image)
-                    for weapon in shifts.first!.weapons! {
+                    for weapon in filtered.first!.weapons! {
                         urls.insert(weapon.thumbnail ?? weapon.image)
                     }
                 }
-                if shifts.count > 1 {
-                    entry.nextShift = shifts.at(index: 1)!
-                    if let stage = shifts.at(index: 1)!.stage {
+                if filtered.count > 1 {
+                    entry.nextShift = filtered.at(index: 1)!
+                    if let stage = filtered.at(index: 1)!.stage {
                         urls.insert(stage.thumbnail ?? stage.image)
-                        for weapon in shifts.at(index: 1)!.weapons! {
+                        for weapon in filtered.at(index: 1)!.weapons! {
                             urls.insert(weapon.thumbnail ?? weapon.image)
                         }
                     }
@@ -64,23 +71,24 @@ struct Splatoon2ShiftProvider: IntentTimelineProvider {
             
             var entries: [Splatoon2ShiftEntry] = []
             var urls: Set<URL> = []
-            if !shifts.isEmpty {
+            let filtered = filterShifts(shifts: shifts)
+            if !filtered.isEmpty {
                 for i in 0..<MaxShiftWidgetEntryCount {
-                    if shifts.count <= i {
+                    if filtered.count <= i {
                         break
                     }
-                    var entry = Splatoon2ShiftEntry(date: i == 0 ? Date() : shifts.at(index: i)!.startTime, configuration: configuration, shift: shifts.at(index: i)!)
-                    if let stage = shifts.at(index: i)!.stage {
+                    var entry = Splatoon2ShiftEntry(date: i == 0 ? Date() : filtered.at(index: i)!.startTime, configuration: configuration, shift: filtered.at(index: i)!)
+                    if let stage = filtered.at(index: i)!.stage {
                         urls.insert(stage.thumbnail ?? stage.image)
-                        for weapon in shifts.at(index: i)!.weapons! {
+                        for weapon in filtered.at(index: i)!.weapons! {
                             urls.insert(weapon.thumbnail ?? weapon.image)
                         }
                     }
-                    if (shifts.count > i + 1) {
-                        entry.nextShift = shifts.at(index: i + 1)!
-                        if let stage = shifts.at(index: i + 1)!.stage {
+                    if (filtered.count > i + 1) {
+                        entry.nextShift = filtered.at(index: i + 1)!
+                        if let stage = filtered.at(index: i + 1)!.stage {
                             urls.insert(stage.thumbnail ?? stage.image)
-                            for weapon in shifts.at(index: i + 1)!.weapons! {
+                            for weapon in filtered.at(index: i + 1)!.weapons! {
                                 urls.insert(weapon.thumbnail ?? weapon.image)
                             }
                         }
