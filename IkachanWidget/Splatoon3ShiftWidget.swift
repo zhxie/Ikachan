@@ -134,10 +134,10 @@ struct Splatoon3ShiftWidgetEntryView : View {
         switch family {
         case .systemSmall:
             if #available(iOSApplicationExtension 17.0, *) {
-                SmallShiftView(shift: entry.shift)
+                SmallShiftView(shift: entry.shift, nextShift: entry.nextShift)
                     .containerBackground(for: .widget, content: {})
             } else {
-                SmallShiftView(shift: entry.shift)
+                SmallShiftView(shift: entry.shift, nextShift: entry.nextShift)
                     .padding()
             }
         default:

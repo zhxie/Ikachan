@@ -9,11 +9,14 @@ import SwiftUI
 import WidgetKit
 
 struct SmallShiftView: View {
+    @Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
+    
     var shift: Shift?
+    var nextShift: Shift?
     
     var body: some View {
         if let shift = shift {
-            VStack(spacing: 8) {
+            VStack(alignment: .leading, spacing: 8) {
                 HStack(alignment: .center) {
                     Image(shift.mode.image)
                         .resizedToFit()
@@ -28,15 +31,45 @@ struct SmallShiftView: View {
                 }
                 .layoutPriority(1)
                 
-                if let stage = shift.stage {
-                    StageView(stage: stage)
-                    
-                    HStack {
-                        ForEach(shift.weapons!, id: \.name) { weapon in
-                            WeaponView(weapon: weapon)
+                if showsWidgetContainerBackground {
+                    if let stage = shift.stage {
+                        StageView(stage: stage)
+                        
+                        HStack {
+                            ForEach(shift.weapons!, id: \.name) { weapon in
+                                WeaponView(weapon: weapon)
+                            }
+                        }
+                        .layoutPriority(1)
+                    }
+                } else {
+                    if let stage = shift.stage {
+                        Text(stage.name)
+                            .lineLimit(1)
+                        
+                        if let shift = nextShift {
+                            HStack(alignment: .center) {
+                                Image(shift.mode.image)
+                                    .resizedToFit()
+                                    .frame(width: 12, height: 12)
+                                    .layoutPriority(1)
+                                Text(LocalizedStringKey(shift.mode.name))
+                                    .font(.footnote)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(shift.mode.accentColor)
+                                    .lineLimit(1)
+                                
+                                Spacer()
+                            }
+                            .layoutPriority(1)
+                            
+                            if let stage = shift.stage {
+                                Text(stage.name)
+                                    .font(.footnote)
+                                    .lineLimit(1)
+                            }
                         }
                     }
-                    .layoutPriority(1)
                 }
             }
         } else {
@@ -48,7 +81,7 @@ struct SmallShiftView: View {
 @available(iOSApplicationExtension 17.0, *)
 struct SmallShift_Previews: PreviewProvider {
     static var previews: some View {
-        SmallShiftView(shift: PreviewSplatoon2Shift)
+        SmallShiftView(shift: PreviewSplatoon2Shift, nextShift: PreviewSplatoon3Shift)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }

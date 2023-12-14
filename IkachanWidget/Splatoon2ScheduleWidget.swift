@@ -122,10 +122,10 @@ struct Splatoon2ScheduleWidgetEntryView : View {
         switch family {
         case .systemSmall:
             if #available(iOSApplicationExtension 17.0, *) {
-                SmallScheduleView(schedule: entry.schedule)
+                SmallScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
                     .containerBackground(for: .widget, content: {})
             } else {
-                SmallScheduleView(schedule: entry.schedule)
+                SmallScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
                     .padding()
             }
         default:
