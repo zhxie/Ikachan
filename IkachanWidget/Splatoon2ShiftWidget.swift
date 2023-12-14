@@ -64,7 +64,7 @@ struct Splatoon2ShiftProvider: IntentTimelineProvider {
             
             var entries: [Splatoon2ShiftEntry] = []
             var urls: Set<URL> = []
-            if !shifts.isEmpty || shifts.last!.endTime <= Date() {
+            if !shifts.isEmpty {
                 for i in 0..<MaxShiftWidgetEntryCount {
                     if shifts.count <= i {
                         break

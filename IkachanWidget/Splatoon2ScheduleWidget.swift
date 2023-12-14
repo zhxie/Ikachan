@@ -73,7 +73,7 @@ struct Splatoon2ScheduleProvider: IntentTimelineProvider {
             var entries: [Splatoon2ScheduleEntry] = []
             var urls: Set<URL> = []
             let filtered = filterSchedules(schedules: schedules, mode: configuration.mode)
-            if !filtered.isEmpty || filtered.last!.endTime <= Date() {
+            if !filtered.isEmpty {
                 for i in 0..<MaxScheduleWidgetEntryCount {
                     if filtered.count <= i {
                         break

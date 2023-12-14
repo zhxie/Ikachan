@@ -282,7 +282,7 @@ private func fetchSplatoon3Shifts(locale: JSON, completion: @escaping ([Splatoon
                         let stage = Stage(name: locale["stages"][setting["coopStage"]["id"].stringValue]["name"].stringValue, image: URL(string: setting["coopStage"]["image"]["url"].stringValue)!, thumbnail: URL(string: setting["coopStage"]["thumbnailImage"]["url"].stringValue)!)
                         var weapons: [Weapon] = []
                         for weapon in setting["weapons"].arrayValue {
-                            weapons.append(Weapon(name: locale["weapons"][weapon["__splatoon3ink_id"].stringValue]["name"].stringValue, image: URL(string: weapon["image"]["url"].stringValue)!, thumbnail: URL(string: weapon["image"]["url"].stringValue.replacingOccurrences(of: "_0", with: "_1"))!))
+                            weapons.append(Weapon(name: locale["weapons"][weapon["__splatoon3ink_id"].stringValue]["name"].stringValue, image: URL(string: weapon["image"]["url"].stringValue)!, thumbnail: weapon["image"]["url"].stringValue.contains("weapon_illust") ? URL(string: weapon["image"]["url"].stringValue.replacingOccurrences(of: "_0", with: "_1"))! : nil))
                         }
                         var kingSalmonid = KingSalmonid(name: locale["bosses"][setting["boss"]["id"].stringValue]["name"].stringValue)
                         switch setting["boss"]["id"].stringValue {
@@ -304,7 +304,7 @@ private func fetchSplatoon3Shifts(locale: JSON, completion: @escaping ([Splatoon
                         let stage = Stage(name: locale["stages"][setting["coopStage"]["id"].stringValue]["name"].stringValue, image: URL(string: setting["coopStage"]["image"]["url"].stringValue)!, thumbnail: URL(string: setting["coopStage"]["thumbnailImage"]["url"].stringValue)!)
                         var weapons: [Weapon] = []
                         for weapon in setting["weapons"].arrayValue {
-                            weapons.append(Weapon(name: locale["weapons"][weapon["__splatoon3ink_id"].stringValue]["name"].stringValue, image: URL(string: weapon["image"]["url"].stringValue)!, thumbnail: URL(string: weapon["image"]["url"].stringValue.replacingOccurrences(of: "_0", with: "_1"))!))
+                            weapons.append(Weapon(name: locale["weapons"][weapon["__splatoon3ink_id"].stringValue]["name"].stringValue, image: URL(string: weapon["image"]["url"].stringValue)!, thumbnail: weapon["image"]["url"].stringValue.contains("weapon_illust") ? URL(string: weapon["image"]["url"].stringValue.replacingOccurrences(of: "_0", with: "_1"))! : nil))
                         }
                         var kingSalmonid = KingSalmonid(name: locale["bosses"][setting["boss"]["id"].stringValue]["name"].stringValue)
                         switch setting["boss"]["id"].stringValue {
@@ -326,7 +326,7 @@ private func fetchSplatoon3Shifts(locale: JSON, completion: @escaping ([Splatoon
                         let stage = Stage(name: locale["stages"][setting["coopStage"]["id"].stringValue]["name"].stringValue, image: URL(string: setting["coopStage"]["image"]["url"].stringValue)!, thumbnail: URL(string: setting["coopStage"]["thumbnailImage"]["url"].stringValue)!)
                         var weapons: [Weapon] = []
                         for weapon in setting["weapons"].arrayValue {
-                            weapons.append(Weapon(name: locale["weapons"][weapon["__splatoon3ink_id"].stringValue]["name"].stringValue, image: URL(string: weapon["image"]["url"].stringValue)!, thumbnail: URL(string: weapon["image"]["url"].stringValue.replacingOccurrences(of: "_0", with: "_1"))!))
+                            weapons.append(Weapon(name: locale["weapons"][weapon["__splatoon3ink_id"].stringValue]["name"].stringValue, image: URL(string: weapon["image"]["url"].stringValue)!, thumbnail: weapon["image"]["url"].stringValue.contains("weapon_illust") ? URL(string: weapon["image"]["url"].stringValue.replacingOccurrences(of: "_0", with: "_1"))! : nil))
                         }
                         shifts.append(Splatoon3Shift(startTime: startTime, endTime: endTime, mode: Splatoon3ShiftMode.bigRun, stage: stage, weapons: weapons))
                     }

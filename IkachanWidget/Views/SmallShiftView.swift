@@ -79,7 +79,7 @@ struct SmallShiftView: View {
 }
 
 @available(iOSApplicationExtension 17.0, *)
-struct SmallShift_Previews: PreviewProvider {
+struct SmallShiftView_Previews: PreviewProvider {
     static var previews: some View {
         SmallShiftView(shift: PreviewSplatoon2Shift, nextShift: PreviewSplatoon3Shift)
             .containerBackground(for: .widget, content: {})
