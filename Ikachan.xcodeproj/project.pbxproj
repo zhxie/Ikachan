@@ -94,6 +94,13 @@
 		E47AC8972B29C7DC00B598AF /* Splatoon2ShiftWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8962B29C7DC00B598AF /* Splatoon2ShiftWidget.swift */; };
 		E47AC8992B29D62D00B598AF /* Splatoon3ScheduleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8982B29D62D00B598AF /* Splatoon3ScheduleWidget.swift */; };
 		E47AC89B2B29D75A00B598AF /* Splatoon3ShiftWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC89A2B29D75A00B598AF /* Splatoon3ShiftWidget.swift */; };
+		E47AC8AB2B2AA0E200B598AF /* AccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8AA2B2AA0E200B598AF /* AccessoryCircularView.swift */; };
+		E47AC8AD2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8AC2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift */; };
+		E47AC8AF2B2ABAAD00B598AF /* AccessoryRectangularShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8AE2B2ABAAC00B598AF /* AccessoryRectangularShiftView.swift */; };
+		E47AC8B02B2ABFB800B598AF /* Splatoon2ScheduleDynamicWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8A82B2A9E8900B598AF /* Splatoon2ScheduleDynamicWidget.swift */; };
+		E47AC8B22B2ACE8F00B598AF /* Splatoon2ShiftDynamicWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8B12B2ACE8F00B598AF /* Splatoon2ShiftDynamicWidget.swift */; };
+		E47AC8B42B2ACFB600B598AF /* Splatoon3ScheduleDynamicWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8B32B2ACFB600B598AF /* Splatoon3ScheduleDynamicWidget.swift */; };
+		E47AC8B62B2AD03200B598AF /* Splatoon3ShiftDynamicWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8B52B2AD03200B598AF /* Splatoon3ShiftDynamicWidget.swift */; };
 		E484FDC725C94694006E748F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4444F3725BF164C0003A676 /* Assets.xcassets */; };
 		E484FDCE25C946C9006E748F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46B514C25BB46C5001F88CE /* InfoPlist.strings */; };
 		E485D9FC275342A300B82AE0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E485D9FB275342A300B82AE0 /* Image.swift */; };
@@ -227,6 +234,13 @@
 		E47AC8A32B29EE5800B598AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
 		E47AC8A52B29EE5F00B598AF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IkachanIntents.strings"; sourceTree = "<group>"; };
 		E47AC8A72B29F00500B598AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
+		E47AC8A82B2A9E8900B598AF /* Splatoon2ScheduleDynamicWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ScheduleDynamicWidget.swift; sourceTree = "<group>"; };
+		E47AC8AA2B2AA0E200B598AF /* AccessoryCircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCircularView.swift; sourceTree = "<group>"; };
+		E47AC8AC2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryRectangularScheduleView.swift; sourceTree = "<group>"; };
+		E47AC8AE2B2ABAAC00B598AF /* AccessoryRectangularShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryRectangularShiftView.swift; sourceTree = "<group>"; };
+		E47AC8B12B2ACE8F00B598AF /* Splatoon2ShiftDynamicWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ShiftDynamicWidget.swift; sourceTree = "<group>"; };
+		E47AC8B32B2ACFB600B598AF /* Splatoon3ScheduleDynamicWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon3ScheduleDynamicWidget.swift; sourceTree = "<group>"; };
+		E47AC8B52B2AD03200B598AF /* Splatoon3ShiftDynamicWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon3ShiftDynamicWidget.swift; sourceTree = "<group>"; };
 		E485D9FB275342A300B82AE0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E485DA1227534D0100B82AE0 /* KFImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFImage.swift; sourceTree = "<group>"; };
 		E48ACAC62B29870200C840DD /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
@@ -371,6 +385,10 @@
 				E47AC8962B29C7DC00B598AF /* Splatoon2ShiftWidget.swift */,
 				E47AC8982B29D62D00B598AF /* Splatoon3ScheduleWidget.swift */,
 				E47AC89A2B29D75A00B598AF /* Splatoon3ShiftWidget.swift */,
+				E47AC8A82B2A9E8900B598AF /* Splatoon2ScheduleDynamicWidget.swift */,
+				E47AC8B12B2ACE8F00B598AF /* Splatoon2ShiftDynamicWidget.swift */,
+				E47AC8B32B2ACFB600B598AF /* Splatoon3ScheduleDynamicWidget.swift */,
+				E47AC8B52B2AD03200B598AF /* Splatoon3ShiftDynamicWidget.swift */,
 				E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */,
 				E4444F3725BF164C0003A676 /* Assets.xcassets */,
 				E4444ED525BF14820003A676 /* Info.plist */,
@@ -458,6 +476,9 @@
 				E464ADCA2B29AC1C001DC83D /* MediumScheduleView.swift */,
 				E464ADCC2B29B309001DC83D /* SmallShiftView.swift */,
 				E464ADD02B29B51D001DC83D /* MediumShiftView.swift */,
+				E47AC8AA2B2AA0E200B598AF /* AccessoryCircularView.swift */,
+				E47AC8AC2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift */,
+				E47AC8AE2B2ABAAC00B598AF /* AccessoryRectangularShiftView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -746,17 +767,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				E440CA182B271F1400884D57 /* Splatoon3ShiftIntentHandler.swift in Sources */,
+				E47AC8B62B2AD03200B598AF /* Splatoon3ShiftDynamicWidget.swift in Sources */,
 				E4613FB625C9B62000561D53 /* IkachanIntents.intentdefinition in Sources */,
 				E4444EE125BF148D0003A676 /* Date.swift in Sources */,
 				E4444F1825BF14FB0003A676 /* Splatoon2ScheduleWidget.swift in Sources */,
 				E464ADCB2B29AC1C001DC83D /* MediumScheduleView.swift in Sources */,
 				E4444F0725BF14D10003A676 /* IkachanWidgetBundle.swift in Sources */,
+				E47AC8B22B2ACE8F00B598AF /* Splatoon2ShiftDynamicWidget.swift in Sources */,
 				E47AC8992B29D62D00B598AF /* Splatoon3ScheduleWidget.swift in Sources */,
+				E47AC8B02B2ABFB800B598AF /* Splatoon2ScheduleDynamicWidget.swift in Sources */,
 				E485DA1427534D0100B82AE0 /* KFImage.swift in Sources */,
 				E41763692B25A9C500B52CE9 /* Enum.swift in Sources */,
 				E4400F2825CD010A00BF94C6 /* Splatoon2ScheduleIntentHandler.swift in Sources */,
 				E47AC89B2B29D75A00B598AF /* Splatoon3ShiftWidget.swift in Sources */,
 				E47AC8972B29C7DC00B598AF /* Splatoon2ShiftWidget.swift in Sources */,
+				E47AC8B42B2ACFB600B598AF /* Splatoon3ScheduleDynamicWidget.swift in Sources */,
 				E4444EF725BF14A50003A676 /* SmallScheduleView.swift in Sources */,
 				E461414125CA880500561D53 /* String.swift in Sources */,
 				E48BECC125CD31F100B301D1 /* Collection.swift in Sources */,
@@ -764,7 +789,9 @@
 				E4400F2925CD010A00BF94C6 /* Splatoon2ShiftIntentHandler.swift in Sources */,
 				E48ACAC72B29870200C840DD /* StageView.swift in Sources */,
 				E4400F4925CD069A00BF94C6 /* API.swift in Sources */,
+				E47AC8AF2B2ABAAD00B598AF /* AccessoryRectangularShiftView.swift in Sources */,
 				E464ADCF2B29B3D3001DC83D /* WeaponView.swift in Sources */,
+				E47AC8AD2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift in Sources */,
 				E464ADD12B29B51D001DC83D /* MediumShiftView.swift in Sources */,
 				E485DA1127534A3700B82AE0 /* Image.swift in Sources */,
 				E440CA252B2738CF00884D57 /* View.swift in Sources */,
@@ -772,6 +799,7 @@
 				E4BE377128DEC02D00BDB75F /* SwiftJSON.swift in Sources */,
 				E440CA142B271E8100884D57 /* Splatoon3ScheduleIntentHandler.swift in Sources */,
 				E4400F2E25CD011500BF94C6 /* IntentHandler.swift in Sources */,
+				E47AC8AB2B2AA0E200B598AF /* AccessoryCircularView.swift in Sources */,
 				E417636F2B271CE500B52CE9 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

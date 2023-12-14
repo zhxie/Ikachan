@@ -121,20 +121,38 @@ struct Splatoon2ScheduleWidgetEntryView : View {
 
     @ViewBuilder
     var body: some View {
-        switch family {
-        case .systemSmall:
-            if #available(iOSApplicationExtension 17.0, *) {
-                SmallScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
-                    .containerBackground(for: .widget, content: {})
-            } else {
+        if #available(iOSApplicationExtension 16.0, *) {
+            switch family {
+            case .accessoryRectangular:
+                if #available(iOSApplicationExtension 17.0, *) {
+                    AccessoryRectangularScheduleView(schedule: entry.schedule)
+                        .containerBackground(for: .widget, content: {})
+                } else {
+                    AccessoryRectangularScheduleView(schedule: entry.schedule)
+                }
+            case .systemSmall:
+                if #available(iOSApplicationExtension 17.0, *) {
+                    SmallScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
+                        .containerBackground(for: .widget, content: {})
+                } else {
+                    SmallScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
+                        .padding()
+                }
+            default:
+                if #available(iOSApplicationExtension 17.0, *) {
+                    MediumScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
+                        .containerBackground(for: .widget, content: {})
+                } else {
+                    MediumScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
+                        .padding()
+                }
+            }
+        } else {
+            switch family {
+            case .systemSmall:
                 SmallScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
                     .padding()
-            }
-        default:
-            if #available(iOSApplicationExtension 17.0, *) {
-                MediumScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
-                    .containerBackground(for: .widget, content: {})
-            } else {
+            default:
                 MediumScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
                     .padding()
             }
@@ -144,6 +162,14 @@ struct Splatoon2ScheduleWidgetEntryView : View {
 
 struct Splatoon2ScheduleWidget: Widget {
     let kind = "Splatoon2ScheduleWidget"
+    
+    var supportedFamilies: [WidgetFamily] {
+        if #available(iOSApplicationExtension 16.0, *) {
+            return [.systemSmall, .systemMedium, .accessoryRectangular]
+        } else {
+            return [.systemSmall, .systemMedium]
+        }
+    }
 
     var body: some WidgetConfiguration {
         return IntentConfiguration(kind: kind, intent: Splatoon2ScheduleIntent.self, provider: Splatoon2ScheduleProvider()) { entry in
@@ -151,17 +177,13 @@ struct Splatoon2ScheduleWidget: Widget {
         }
         .configurationDisplayName("splatoon_2_schedule")
         .description("splatoon_2_schedule_widget_description")
-        .supportedFamilies([.systemSmall, .systemMedium])
+        .supportedFamilies(supportedFamilies)
     }
 }
 
 struct Splatoon2ScheduleWidgetEntryView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            Splatoon2ScheduleWidgetEntryView(entry: Splatoon2ScheduleEntry(date: Date(), configuration: Splatoon2ScheduleIntent(), schedule: PreviewSplatoon2Schedule, nextSchedule: PreviewSplatoon2Schedule))
-                .previewContext(WidgetPreviewContext(family: .systemSmall))
-            Splatoon2ScheduleWidgetEntryView(entry: Splatoon2ScheduleEntry(date: Date(), configuration: Splatoon2ScheduleIntent(), schedule: PreviewSplatoon2Schedule, nextSchedule: PreviewSplatoon2Schedule))
-                .previewContext(WidgetPreviewContext(family: .systemMedium))
-        }
+        Splatoon2ScheduleWidgetEntryView(entry: Splatoon2ScheduleEntry(date: Date(), configuration: Splatoon2ScheduleIntent(), schedule: PreviewSplatoon2Schedule, nextSchedule: PreviewSplatoon2Schedule))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

@@ -63,7 +63,7 @@ func absoluteTimeSpan(start: Date, end: Date) -> String {
     let short = DateFormatter()
     short.dateFormat = "HH:mm"
     
-    var startString = long.string(from: start)
+    let startString = long.string(from: start)
     var endString = ""
     if endComponents.month == startComponents.month && endComponents.day == startComponents.day {
         endString = short.string(from: end)
@@ -72,4 +72,15 @@ func absoluteTimeSpan(start: Date, end: Date) -> String {
     }
     
     return String(format: "%@ - %@", startString, endString)
+}
+
+func timePassingBy(current: Date, start: Date, end: Date) -> Double {
+    if current <= start {
+        return 0
+    }
+    if current >= end {
+        return 1
+    }
+    
+    return (current - start) / (end - start)
 }

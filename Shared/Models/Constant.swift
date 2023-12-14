@@ -34,3 +34,4 @@ let UserActivity = "name.sketch.Ikachan"
 // Widget.
 let MaxScheduleWidgetEntryCount = 6
 let MaxShiftWidgetEntryCount = 1
+let MaxDynamicWidgetEntryCount = 30

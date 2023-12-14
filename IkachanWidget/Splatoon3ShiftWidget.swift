@@ -133,20 +133,38 @@ struct Splatoon3ShiftWidgetEntryView : View {
 
     @ViewBuilder
     var body: some View {
-        switch family {
-        case .systemSmall:
-            if #available(iOSApplicationExtension 17.0, *) {
-                SmallShiftView(shift: entry.shift, nextShift: entry.nextShift)
-                    .containerBackground(for: .widget, content: {})
-            } else {
+        if #available(iOSApplicationExtension 16.0, *) {
+            switch family {
+            case .accessoryRectangular:
+                if #available(iOSApplicationExtension 17.0, *) {
+                    AccessoryRectangularShiftView(shift: entry.shift)
+                        .containerBackground(for: .widget, content: {})
+                } else {
+                    AccessoryRectangularShiftView(shift: entry.shift)
+                }
+            case .systemSmall:
+                if #available(iOSApplicationExtension 17.0, *) {
+                    SmallShiftView(shift: entry.shift, nextShift: entry.nextShift)
+                        .containerBackground(for: .widget, content: {})
+                } else {
+                    SmallShiftView(shift: entry.shift, nextShift: entry.nextShift)
+                        .padding()
+                }
+            default:
+                if #available(iOSApplicationExtension 17.0, *) {
+                    MediumShiftView(shift: entry.shift, nextShift: entry.nextShift)
+                        .containerBackground(for: .widget, content: {})
+                } else {
+                    MediumShiftView(shift: entry.shift, nextShift: entry.nextShift)
+                        .padding()
+                }
+            }
+        } else {
+            switch family {
+            case .systemSmall:
                 SmallShiftView(shift: entry.shift, nextShift: entry.nextShift)
                     .padding()
-            }
-        default:
-            if #available(iOSApplicationExtension 17.0, *) {
-                MediumShiftView(shift: entry.shift, nextShift: entry.nextShift)
-                    .containerBackground(for: .widget, content: {})
-            } else {
+            default:
                 MediumShiftView(shift: entry.shift, nextShift: entry.nextShift)
                     .padding()
             }
@@ -156,6 +174,14 @@ struct Splatoon3ShiftWidgetEntryView : View {
 
 struct Splatoon3ShiftWidget: Widget {
     let kind = "Splatoon3ShiftWidget"
+    
+    var supportedFamilies: [WidgetFamily] {
+        if #available(iOSApplicationExtension 16.0, *) {
+            return [.systemSmall, .systemMedium, .accessoryRectangular]
+        } else {
+            return [.systemSmall, .systemMedium]
+        }
+    }
 
     var body: some WidgetConfiguration {
         return IntentConfiguration(kind: kind, intent: Splatoon3ShiftIntent.self, provider: Splatoon3ShiftProvider()) { entry in
@@ -163,17 +189,13 @@ struct Splatoon3ShiftWidget: Widget {
         }
         .configurationDisplayName("splatoon_3_shift")
         .description("splatoon_3_shift_widget_description")
-        .supportedFamilies([.systemSmall, .systemMedium])
+        .supportedFamilies(supportedFamilies)
     }
 }
 
 struct Splatoon3ShiftWidgetEntryView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            Splatoon3ShiftWidgetEntryView(entry: Splatoon3ShiftEntry(date: Date(), configuration: Splatoon3ShiftIntent(), shift: PreviewSplatoon3Shift, nextShift: PreviewSplatoon3Shift))
-                .previewContext(WidgetPreviewContext(family: .systemSmall))
-            Splatoon3ShiftWidgetEntryView(entry: Splatoon3ShiftEntry(date: Date(), configuration: Splatoon3ShiftIntent(), shift: PreviewSplatoon3Shift, nextShift: PreviewSplatoon3Shift))
-                .previewContext(WidgetPreviewContext(family: .systemMedium))
-        }
+        Splatoon3ShiftWidgetEntryView(entry: Splatoon3ShiftEntry(date: Date(), configuration: Splatoon3ShiftIntent(), shift: PreviewSplatoon3Shift, nextShift: PreviewSplatoon3Shift))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
