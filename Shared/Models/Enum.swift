@@ -1,10 +1,3 @@
-//
-//  Enum.swift
-//  Ikachan
-//
-//  Created by Sketch on 2023/12/10.
-//
-
 import Foundation
 import SwiftUI
 

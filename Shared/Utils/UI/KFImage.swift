@@ -1,10 +1,3 @@
-//
-//  KFImage.swift
-//  Ikachan
-//
-//  Created by Sketch on 2021/11/28.
-//
-
 import SwiftUI
 import Kingfisher
 

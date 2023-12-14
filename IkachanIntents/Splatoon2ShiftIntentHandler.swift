@@ -1,10 +1,3 @@
-//
-//  ShiftIntentHandler.swift
-//  IkachanIntents
-//
-//  Created by Sketch on 2021/2/3.
-//
-
 import Intents
 
 class Splatoon2ShiftIntentHandler: IntentHandler, Splatoon2ShiftIntentHandling {

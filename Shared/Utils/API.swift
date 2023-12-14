@@ -1,10 +1,3 @@
-//
-//  Splatoon2Ink.swift
-//  Ikachan
-//
-//  Created by Sketch on 2021/2/5.
-//
-
 import UIKit
 import Intents
 import SwiftyJSON

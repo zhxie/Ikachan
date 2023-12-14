@@ -1,10 +1,3 @@
-//
-//  Splatoon2ScheduleDynamicWidget.swift
-//  IkachanWidget
-//
-//  Created by Sketch on 2023/12/14.
-//
-
 import WidgetKit
 import SwiftUI
 import Intents

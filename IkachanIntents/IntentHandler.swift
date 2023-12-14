@@ -1,10 +1,3 @@
-//
-//  IntentHandler.swift
-//  IkachanIntents
-//
-//  Created by Sketch on 2021/2/2.
-//
-
 import Intents
 
 class IntentHandler: INExtension {

@@ -1,10 +1,3 @@
-//
-//  AccessoryRectangularShiftView.swift
-//  IkachanWidget
-//
-//  Created by Sketch on 2023/12/14.
-//
-
 import SwiftUI
 import WidgetKit
 

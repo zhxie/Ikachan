@@ -1,10 +1,3 @@
-//
-//  Date.swift
-//  Ikachan
-//
-//  Created by Sketch on 2021/1/17.
-//
-
 import Foundation
 
 extension Date {

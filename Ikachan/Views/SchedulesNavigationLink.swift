@@ -1,10 +1,3 @@
-//
-//  SchedulesNavigationLink.swift
-//  Ikachan
-//
-//  Created by Sketch on 2023/12/12.
-//
-
 import SwiftUI
 
 struct SchedulesNavigationLink: View {

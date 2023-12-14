@@ -1,10 +1,3 @@
-//
-//  SwiftJSON.swift
-//  Ikachan
-//
-//  Created by Sketch on 2022/9/24.
-//
-
 import SwiftyJSON
 
 extension JSON {

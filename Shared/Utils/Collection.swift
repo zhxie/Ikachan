@@ -1,10 +1,3 @@
-//
-//  Collection.swift
-//  Ikachan
-//
-//  Created by Sketch on 2021/2/5.
-//
-
 import Foundation
 
 extension Collection {

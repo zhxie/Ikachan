@@ -1,10 +1,3 @@
-//
-//  String.swift
-//  Ikachan
-//
-//  Created by Sketch on 2021/2/3.
-//
-
 import Intents
 
 extension String {

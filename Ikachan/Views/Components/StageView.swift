@@ -1,10 +1,3 @@
-//
-//  StageView.swift
-//  Ikachan
-//
-//  Created by Sketch on 2021/11/29.
-//
-
 import SwiftUI
 import Kingfisher
 

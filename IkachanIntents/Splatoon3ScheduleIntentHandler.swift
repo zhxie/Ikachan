@@ -1,10 +1,3 @@
-//
-//  Splatoon3ScheduleIntentHandler.swift
-//  IkachanIntents
-//
-//  Created by Sketch on 2023/12/11.
-//
-
 import Intents
 
 class Splatoon3ScheduleIntentHandler: IntentHandler, Splatoon3ScheduleIntentHandling {

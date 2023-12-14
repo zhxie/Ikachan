@@ -1,10 +1,3 @@
-//
-//  Constant.swift
-//  Ikachan
-//
-//  Created by Sketch on 2023/12/11.
-//
-
 import Foundation
 
 // Models.

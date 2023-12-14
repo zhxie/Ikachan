@@ -1,10 +1,3 @@
-//
-//  IntentViewController.swift
-//  IkachanIntentsUI
-//
-//  Created by Sketch on 2021/2/2.
-//
-
 import SwiftUI
 import IntentsUI
 

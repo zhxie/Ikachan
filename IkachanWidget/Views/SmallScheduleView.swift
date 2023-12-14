@@ -1,10 +1,3 @@
-//
-//  SmallScheduleView.swift
-//  IkachanWidget
-//
-//  Created by Sketch on 2021/1/21.
-//
-
 import SwiftUI
 import WidgetKit
 
