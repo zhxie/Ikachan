@@ -73,14 +73,14 @@ enum Splatoon2ShiftMode: String, ShiftMode {
     }
 }
 enum Splatoon3ScheduleMode: String, ScheduleMode {
+    case splatfestBattleOpen = "splatfest_battle_open"
+    case splatfestBattlePro = "splatfest_battle_pro"
+    case tricolorBattle = "tricolor_battle"
     case regularBattle = "regular_battle"
     case anarchyBattleSeries = "anarchy_battle_series"
     case anarchyBattleOpen = "anarchy_battle_open"
     case xBattle = "x_battle"
     case challenges = "challenges"
-    case splatfestBattleOpen = "splatfest_battle_open"
-    case splatfestBattlePro = "splatfest_battle_pro"
-    case tricolorBattle = "tricolor_battle"
 
     var name: String {
         return rawValue

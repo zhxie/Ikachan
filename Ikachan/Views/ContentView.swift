@@ -42,16 +42,8 @@ struct ContentView: View {
                             }
                             .padding([.horizontal])
                         case .splatoon3:
-                            if !splatoon3Schedules.filter({ schedule in
-                                schedule._mode == .tricolorBattle
-                            }).isEmpty {
-                                SchedulesNavigationLink(schedules: splatoon3Schedules.filter { schedule in
-                                    schedule._mode == .tricolorBattle
-                                })
-                                .padding([.horizontal])
-                            }
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 450, maximum: 900))]) {
-                                ForEach([Splatoon3ScheduleMode.splatfestBattleOpen, Splatoon3ScheduleMode.splatfestBattlePro, Splatoon3ScheduleMode.regularBattle, Splatoon3ScheduleMode.anarchyBattleSeries, Splatoon3ScheduleMode.anarchyBattleOpen, Splatoon3ScheduleMode.xBattle, Splatoon3ScheduleMode.challenges], id: \.rawValue) { mode in
+                                ForEach(Splatoon3ScheduleMode.allCases, id: \.rawValue) { mode in
                                     if !splatoon3Schedules.filter({ schedule in
                                         schedule._mode == mode
                                     }).isEmpty {
