@@ -13,10 +13,12 @@ class Splatoon2ShiftIntentHandler: IntentHandler, Splatoon2ShiftIntentHandling {
                 return
             }
             
-            let details = shifts.filter { shift in
+            let filtered = shifts.filter { shift in
                 shift.stage != nil
+            }.filter { schedule in
+                Date() < schedule.endTime
             }
-            guard let shift = details.at(index: 0) else {
+            guard let shift = filtered.first else {
                 completion(Splatoon2ShiftIntentResponse(code: .failure, userActivity: nil))
                 
                 return
@@ -33,7 +35,10 @@ class Splatoon2ShiftIntentHandler: IntentHandler, Splatoon2ShiftIntentHandling {
             let encoder = JSONEncoder()
             let data = try! encoder.encode(shift)
             let activity = NSUserActivity(activityType: UserActivity)
-            activity.userInfo?["splatoon2Shift"] = data.base64EncodedString()
+            activity.userInfo?["current"] = data.base64EncodedString()
+            if let shift = filtered.at(index: 1) {
+                activity.userInfo?["next"] = try! encoder.encode(shift).base64EncodedString()
+            }
             let response = Splatoon2ShiftIntentResponse.success(dialog: dialog)
             response.userActivity = activity
             completion(response)

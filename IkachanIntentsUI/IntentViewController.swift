@@ -7,20 +7,51 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
     }
 
     func configureView(for parameters: Set<INParameter>, of interaction: INInteraction, interactiveBehavior: INUIInteractiveBehavior, context: INUIHostedViewContext, completion: @escaping (Bool, Set<INParameter>, CGSize) -> Void) {
-        let data = interaction.intentResponse?.userActivity?.userInfo
-        let splatoon2ScheduleData = data?["splatoon2Schedule"] as? String ?? nil
-        let splatoon2ShiftData = data?["splatoon2Shift"] as? String ?? nil
-        let splatoon3ScheduleData = data?["splatoon3Schedule"] as? String ?? nil
-        let splatoon3ShiftData = data?["splatoon3Shift"] as? String ?? nil
-        if (splatoon2ScheduleData != nil) || (splatoon3ScheduleData != nil) {
-            let decoder = JSONDecoder()
-            var schedule: Schedule
-            if let splatoon2ScheduleData = splatoon2ScheduleData {
-                schedule = try! decoder.decode(Splatoon2Schedule.self, from: Data(base64Encoded: splatoon2ScheduleData)!)
-            } else {
-                schedule = try! decoder.decode(Splatoon3Schedule.self, from: Data(base64Encoded: splatoon3ScheduleData!)!)
+        var schedule: Schedule? = nil
+        var nextSchedule: Schedule? = nil
+        var shift: Shift? = nil
+        var nextShift: Shift? = nil
+        let decoder = JSONDecoder()
+        if interaction.intent is Splatoon2ScheduleIntent {
+            let current = interaction.intentResponse?.userActivity?.userInfo?["current"] as? String ?? nil
+            if let current = current {
+                schedule = try! decoder.decode(Splatoon2Schedule.self, from: Data(base64Encoded: current)!)
+                let next = interaction.intentResponse?.userActivity?.userInfo?["next"] as? String ?? nil
+                if let next = next {
+                    nextSchedule = try! decoder.decode(Splatoon2Schedule.self, from: Data(base64Encoded: next)!)
+                }
             }
-            let controller = UIHostingController(rootView: ScheduleView(schedule: schedule, backgroundColor: Color(.systemBackground)).padding())
+        } else if interaction.intent is Splatoon2ShiftIntent {
+            let current = interaction.intentResponse?.userActivity?.userInfo?["current"] as? String ?? nil
+            if let current = current {
+                shift = try! decoder.decode(Splatoon2Shift.self, from: Data(base64Encoded: current)!)
+                let next = interaction.intentResponse?.userActivity?.userInfo?["next"] as? String ?? nil
+                if let next = next {
+                    nextShift = try! decoder.decode(Splatoon2Shift.self, from: Data(base64Encoded: next)!)
+                }
+            }
+        } else if interaction.intent is Splatoon3ScheduleIntent {
+            let current = interaction.intentResponse?.userActivity?.userInfo?["current"] as? String ?? nil
+            if let current = current {
+                schedule = try! decoder.decode(Splatoon3Schedule.self, from: Data(base64Encoded: current)!)
+                let next = interaction.intentResponse?.userActivity?.userInfo?["next"] as? String ?? nil
+                if let next = next {
+                    nextSchedule = try! decoder.decode(Splatoon3Schedule.self, from: Data(base64Encoded: next)!)
+                }
+            }
+        } else if interaction.intent is Splatoon3ShiftIntent {
+            let current = interaction.intentResponse?.userActivity?.userInfo?["current"] as? String ?? nil
+            if let current = current {
+                shift = try! decoder.decode(Splatoon3Shift.self, from: Data(base64Encoded: current)!)
+                let next = interaction.intentResponse?.userActivity?.userInfo?["next"] as? String ?? nil
+                if let next = next {
+                    nextShift = try! decoder.decode(Splatoon3Shift.self, from: Data(base64Encoded: next)!)
+                }
+            }
+        }
+        
+        if let schedule = schedule {
+            let controller = UIHostingController(rootView: ScheduleView(schedule: schedule, nextSchedule: nextSchedule, backgroundColor: Color(.systemBackground)).padding())
             addChild(controller)
             controller.view.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(controller.view)
@@ -33,15 +64,8 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
             ])
             
             completion(true, parameters, desiredSize)
-        } else if (splatoon2ShiftData != nil) || (splatoon3ShiftData != nil) {
-            let decoder = JSONDecoder()
-            var shift: Shift
-            if let splatoon2ShiftData = splatoon2ShiftData {
-                shift = try! decoder.decode(Splatoon2Shift.self, from: Data(base64Encoded: splatoon2ShiftData)!)
-            } else {
-                shift = try! decoder.decode(Splatoon3Shift.self, from: Data(base64Encoded: splatoon3ShiftData!)!)
-            }
-            let controller = UIHostingController(rootView: ShiftView(shift: shift, backgroundColor: Color(.systemBackground)).padding())
+        } else if let shift = shift {
+            let controller = UIHostingController(rootView: ShiftView(shift: shift, nextShift: nextShift, backgroundColor: Color(.systemBackground)).padding())
             addChild(controller)
             controller.view.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(controller.view)

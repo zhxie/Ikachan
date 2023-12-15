@@ -32,10 +32,10 @@ class Splatoon2ScheduleIntentHandler: IntentHandler, Splatoon2ScheduleIntentHand
             
             let filtered = schedules.filter { schedule in
                 schedule._mode == mode
+            }.filter { schedule in
+                Date() < schedule.endTime
             }
-            guard let schedule = filtered.first(where: { schedule in
-                schedule.startTime <= Date() && Date() < schedule.endTime
-            }) else {
+            guard let schedule = filtered.first else {
                 completion(Splatoon2ScheduleIntentResponse(code: .failure, userActivity: nil))
                 
                 return
@@ -46,7 +46,10 @@ class Splatoon2ScheduleIntentHandler: IntentHandler, Splatoon2ScheduleIntentHand
             let encoder = JSONEncoder()
             let data = try! encoder.encode(schedule)
             let activity = NSUserActivity(activityType: UserActivity)
-            activity.userInfo?["splatoon2Schedule"] = data.base64EncodedString()
+            activity.userInfo?["current"] = data.base64EncodedString()
+            if let schedule = filtered.at(index: 1) {
+                activity.userInfo?["next"] = try! encoder.encode(schedule).base64EncodedString()
+            }
             let response = Splatoon2ScheduleIntentResponse.success(dialog: dialog, mode: intent.mode)
             response.userActivity = activity
             completion(response)
