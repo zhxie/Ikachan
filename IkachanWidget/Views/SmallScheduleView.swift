@@ -11,7 +11,7 @@ struct SmallScheduleView: View {
         if let schedule = schedule {
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    HStack(alignment: .center) {
+                    HStack {
                         Image(schedule.mode.image)
                             .resizedToFit()
                             .frame(width: 16, height: 16)
@@ -42,7 +42,7 @@ struct SmallScheduleView: View {
                     
                     if let schedule = nextSchedule {
                         HStack {
-                            HStack(alignment: .center) {
+                            HStack {
                                 Image(schedule.mode.image)
                                     .resizedToFit()
                                     .frame(width: 12, height: 12)

@@ -8,7 +8,7 @@ struct ScheduleView: View {
     
     var body: some View {
         VStack {
-            HStack(alignment: .center) {
+            HStack {
                 Image(schedule.rule.image)
                     .resizedToFit()
                     .frame(width: 16, height: 16)
@@ -26,6 +26,7 @@ struct ScheduleView: View {
                     .lineLimit(1)
                     .layoutPriority(1)
             }
+            
             HStack {
                 if shrinkToFit {
                     Spacer()
@@ -41,15 +42,14 @@ struct ScheduleView: View {
             }
             
             if let schedule = nextSchedule {
-                HStack(alignment: .center) {
+                HStack {
                     Text(LocalizedStringKey("next"))
                         .font(.footnote)
                         .fontWeight(.bold)
                         .foregroundColor(Color(.systemBackground))
                         .padding(4)
                         .background {
-                            Rectangle()
-                                .foregroundColor(schedule.mode.accentColor)
+                            schedule.mode.accentColor
                                 .cornerRadius(4)
                         }
                         .layoutPriority(1)

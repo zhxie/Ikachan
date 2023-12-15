@@ -8,7 +8,7 @@ struct MediumScheduleView: View {
     var body: some View {
         if let schedule = schedule {
             VStack(spacing: 8) {
-                HStack(alignment: .center) {
+                HStack {
                     Image(schedule.mode.image)
                         .resizedToFit()
                         .frame(width: 20, height: 20)
@@ -36,15 +36,14 @@ struct MediumScheduleView: View {
                 }
                 
                 if let schedule = nextSchedule {
-                    HStack(alignment: .center) {
+                    HStack {
                         Text(LocalizedStringKey("next"))
                             .font(.footnote)
                             .fontWeight(.bold)
                             .foregroundColor(Color(.systemBackground))
                             .padding(4)
                             .background {
-                                Rectangle()
-                                    .foregroundColor(schedule.mode.accentColor)
+                                schedule.mode.accentColor
                                     .cornerRadius(4)
                             }
                             .layoutPriority(1)

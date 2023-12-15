@@ -11,7 +11,7 @@ struct SmallShiftView: View {
         if let shift = shift {
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    HStack(alignment: .center) {
+                    HStack {
                         Image(shift.mode.image)
                             .resizedToFit()
                             .frame(width: 16, height: 16)
@@ -42,7 +42,7 @@ struct SmallShiftView: View {
                         
                         if let shift = nextShift {
                             HStack {
-                                HStack(alignment: .center) {
+                                HStack {
                                     Image(shift.mode.image)
                                         .resizedToFit()
                                         .frame(width: 12, height: 12)

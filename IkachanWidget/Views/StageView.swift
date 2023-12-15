@@ -8,12 +8,9 @@ struct StageView: View {
     
     var body: some View {
         Rectangle()
-            .foregroundColor(.clear)
+            .fill(.clear)
             .overlay (
                 KFImage(stage.thumbnail ?? stage.image)
-                    .placeholder {
-                        Rectangle()
-                    }
                     .resizedToFill()
                     .clipped()
                     .accessibilityLabel(stage.name)
@@ -27,9 +24,8 @@ struct StageView: View {
                         .padding([.top], 4)
                         .padding([.leading], 6)
                         .background {
-                            Rectangle()
-                                // HACK: .systemBackground in widgets is not pure black which is different from the widget's background.
-                                .foregroundColor(colorScheme == .light ? Color(.systemBackground) : .black)
+                            // HACK: .systemBackground in widgets is not pure black which is different from the widget's background.
+                            Color(colorScheme == .light ? .systemBackground : .black)
                                 .cornerRadius(8, corners: .topLeft)
                         }
                         .padding([.leading], 8)

@@ -6,16 +6,16 @@ struct StageView: View {
     var backgroundColor = Color(.secondarySystemBackground)
     
     var body: some View {
-        KFImage(stage.image)
-            .placeholder {
-                Rectangle()
-                    .foregroundColor(backgroundColor)
-                    .aspectRatio(16 / 9, contentMode: .fit)
+        Rectangle()
+            .fill(.clear)
+            .aspectRatio(16 / 9, contentMode: .fit)
+            .overlay {
+                KFImage(stage.image)
+                    .fade(duration: 0.5)
+                    .resizedToFit(16 / 9)
+                    .accessibilityLabel(stage.name)
             }
-            .fade(duration: 0.5)
-            .resizedToFit(16 / 9)
             .cornerRadius(16)
-            .accessibilityLabel(stage.name)
             .overlay(alignment: .bottomTrailing) {
                 if !stage.name.isEmpty {
                     Text(stage.name)
@@ -24,8 +24,7 @@ struct StageView: View {
                         .padding([.top], 4)
                         .padding([.leading], 6)
                         .background {
-                            Rectangle()
-                                .foregroundColor(backgroundColor)
+                            backgroundColor
                                 .cornerRadius(8, corners: .topLeft)
                         }
                         .padding([.leading], 8)

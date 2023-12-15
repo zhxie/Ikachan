@@ -21,7 +21,7 @@ struct CardView<Content: View>: View {
     
     var body: some View {
         VStack {
-            HStack(alignment: .center) {
+            HStack {
                 Image(image)
                     .resizedToFit()
                     .frame(width: 24, height: 24)
@@ -34,8 +34,7 @@ struct CardView<Content: View>: View {
         }
         .padding()
         .background {
-            Rectangle()
-                .foregroundColor(Color(.secondarySystemBackground))
+            Color(.secondarySystemBackground)
                 .cornerRadius(16)
         }
     }

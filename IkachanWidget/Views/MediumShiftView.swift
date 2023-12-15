@@ -8,7 +8,7 @@ struct MediumShiftView: View {
     var body: some View {
         if let shift = shift {
             VStack(spacing: 8) {
-                HStack(alignment: .center) {
+                HStack {
                     Image(shift.mode.image)
                         .resizedToFit()
                         .frame(width: 20, height: 20)
@@ -30,7 +30,7 @@ struct MediumShiftView: View {
                 .layoutPriority(1)
                 
                 if let stage = shift.stage {
-                    HStack(alignment: .center) {
+                    HStack {
                         StageView(stage: stage)
                         
                         WeaponsView(weapons: shift.weapons!)
@@ -41,15 +41,14 @@ struct MediumShiftView: View {
                 
                 if let shift = nextShift {
                     if let stage = shift.stage {
-                        HStack(alignment: .center) {
+                        HStack {
                             Text(LocalizedStringKey("next"))
                                 .font(.footnote)
                                 .fontWeight(.bold)
                                 .foregroundColor(Color(.systemBackground))
                                 .padding(4)
                                 .background {
-                                    Rectangle()
-                                        .foregroundColor(shift.mode.accentColor)
+                                    shift.mode.accentColor
                                         .cornerRadius(4)
                                 }
                                 .layoutPriority(1)

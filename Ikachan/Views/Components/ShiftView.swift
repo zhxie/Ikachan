@@ -8,7 +8,7 @@ struct ShiftView: View {
     
     var body: some View {
         VStack {
-            HStack(alignment: .center) {
+            HStack {
                 Image(shift.mode.image)
                     .resizedToFit()
                     .frame(width: 16, height: 16)
@@ -26,6 +26,7 @@ struct ShiftView: View {
                     .lineLimit(1)
                     .layoutPriority(1)
             }
+            
             if shift.stage != nil {
                 HStack {
                     if shrinkToFit {
@@ -58,15 +59,14 @@ struct ShiftView: View {
             
             if let shift = nextShift {
                 if let stage = shift.stage {
-                    HStack(alignment: .center) {
+                    HStack {
                         Text(LocalizedStringKey("next"))
                             .font(.footnote)
                             .fontWeight(.bold)
                             .foregroundColor(Color(.systemBackground))
                             .padding(4)
                             .background {
-                                Rectangle()
-                                    .foregroundColor(shift.mode.accentColor)
+                                shift.mode.accentColor
                                     .cornerRadius(4)
                             }
                             .layoutPriority(1)
