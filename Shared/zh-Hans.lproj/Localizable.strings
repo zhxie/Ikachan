@@ -62,6 +62,12 @@
 "kingfisher" = "Kingfisher";
 "swifty_json" = "SwiftyJSON";
 "disclaimer" = "本应用是使用鱿鱼圈2和鱿鱼圈3的信息的非官方应用，与任天堂有限公司无关。";
+"splatoon_down" = "斯普拉遁的服务器目前遇到问题。请等待问题修复。";
+"splatoon_maintenance_started" = "斯普拉遁正在进行维护。请等待维护结束。";
+"splatoon_maintenance_scheduled" = "已计划对斯普拉遁进行维护。详情请查看任天堂支持。";
+"online_play_down" = "线上游戏的服务器目前遇到问题。详情请查看任天堂支持。";
+"online_play_maintenance_started" = "线上游戏正在进行维护。请等待维护结束。";
+"online_play_maintenance_scheduled" = "已计划对线上游戏进行维护。详情请查看任天堂支持。";
 
 // Widget.
 "next" = "下次";

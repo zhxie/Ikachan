@@ -9,6 +9,8 @@ struct ContentView: View {
     @State var splatoon3Error: Error? = nil
     @State var splatoon3Schedules: [Splatoon3Schedule] = []
     @State var splatoon3Shifts: [Splatoon3Shift] = []
+    @State var splatoon2Status = Status.Normal
+    @State var splatoon3Status = Status.Normal
     
     @State var isInfoPresented = false
     
@@ -26,6 +28,28 @@ struct ContentView: View {
 
                         switch game {
                         case .splatoon2:
+                            if splatoon2Status != .Normal {
+                                VStack {
+                                    Text(LocalizedStringKey(splatoon2Status.name))
+                                        .font(.subheadline)
+                                        .foregroundColor(Color(.secondaryLabel))
+                                        .padding([.horizontal, .top])
+                                    
+                                    // HACK: To occupy horizontal space.
+                                    HStack {
+                                        Spacer()
+                                    }
+                                    
+                                    SafariButton(title: LocalizedStringKey("support"), url: URL(string: String(format: "https://www.nintendo.co.jp/netinfo/%@/index.html", Locale.localizedLocale.maintenanceInformationAndOperationalStatusLanguageCode))!)
+                                        .font(.footnote)
+                                        .padding([.horizontal, .bottom])
+                                }
+                                .background {
+                                    Color(.secondarySystemBackground)
+                                }
+                                .cornerRadius(16)
+                                .padding([.horizontal])
+                            }
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 450, maximum: 900))]) {
                                 ForEach(Splatoon2ScheduleMode.allCases, id: \.rawValue) { mode in
                                     if !splatoon2Schedules.filter({ schedule in
@@ -42,6 +66,28 @@ struct ContentView: View {
                             }
                             .padding([.horizontal])
                         case .splatoon3:
+                            if splatoon3Status != .Normal {
+                                VStack {
+                                    Text(LocalizedStringKey(splatoon3Status.name))
+                                        .font(.subheadline)
+                                        .foregroundColor(Color(.secondaryLabel))
+                                        .padding([.horizontal, .top])
+                                    
+                                    // HACK: To occupy horizontal space.
+                                    HStack {
+                                        Spacer()
+                                    }
+                                    
+                                    SafariButton(title: LocalizedStringKey("support"), url: URL(string: String(format: "https://www.nintendo.co.jp/netinfo/%@/index.html", Locale.localizedLocale.maintenanceInformationAndOperationalStatusLanguageCode))!)
+                                        .font(.footnote)
+                                        .padding([.horizontal, .bottom])
+                                }
+                                .background {
+                                    Color(.secondarySystemBackground)
+                                }
+                                .cornerRadius(16)
+                                .padding([.horizontal])
+                            }
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 450, maximum: 900))]) {
                                 ForEach(Splatoon3ScheduleMode.allCases, id: \.rawValue) { mode in
                                     if !splatoon3Schedules.filter({ schedule in
@@ -125,6 +171,14 @@ struct ContentView: View {
                 }
                 if error != .NoError {
                     AlertKitAPI.present(title: error.name.localizedString, icon: .error, style: .iOS17AppleMusic, haptic: .error)
+                }
+            }
+        }
+        fetchMaintenanceInformationAndOperationalStatus { splatoon2Status, splatoon3Status, error in
+            if error == .NoError {
+                withAnimation {
+                    self.splatoon2Status = splatoon2Status
+                    self.splatoon3Status = splatoon3Status
                 }
             }
         }

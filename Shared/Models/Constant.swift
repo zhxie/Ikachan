@@ -18,6 +18,7 @@ let Splatoon3InkURL = "https://splatoon3.ink"
 let Splatoon3InkAssetsURL = Splatoon3InkURL + "/assets/splatnet/v2"
 let Splatoon3InkScheduleURL = Splatoon3InkURL + "/data/schedules.json"
 let Splatoon3InkLocaleURL = Splatoon3InkURL + "/data/locale/%@.json"
+let NintendoMaintenanceInformationAndOperationalStatusURL = "https://www.nintendo.co.jp/netinfo/en_US/status.json"
 
 let Timeout: Double = 60
 

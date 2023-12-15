@@ -62,6 +62,12 @@
 "kingfisher" = "Kingfisher";
 "swifty_json" = "SwiftyJSON";
 "disclaimer" = "This app is an unofficial app which uses the information of Splatnet 2 and Splatnet 3, and is not related to Nintendo Co., Ltd.";
+"splatoon_down" = "Servers for Splatoon are currently experiencing problems. Please wait until the issue is fixed.";
+"splatoon_maintenance_started" = "Maintenance for Splatoon is now taking place. Please wait until the maintenance is finished.";
+"splatoon_maintenance_scheduled" = "Maintenance for Splatoon has been scheduled. Please check Nintendo Support for more details.";
+"online_play_down" = "Servers for online play are currently experiencing problems. Please check Nintendo Support for more details.";
+"online_play_maintenance_started" = "Maintenance for online play is now taking place. Please check Nintendo Support for more details.";
+"online_play_maintenance_scheduled" = "Maintenance for online play has been scheduled. Please check Nintendo Support for more details.";
 
 // Widget.
 "next" = "Next";

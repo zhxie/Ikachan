@@ -22,6 +22,35 @@ enum Error {
     }
 }
 
+enum Status {
+    case Normal
+    case SplatoonDown
+    case SplatoonMaintenanceStarted
+    case SplatoonMaintenanceScheduled
+    case OnlinePlayDown
+    case OnlinePlayMaintenanceStarted
+    case OnlinePlayMaintenanceScheduled
+    
+    var name: String {
+        switch self {
+        case .Normal:
+            return "normal"
+        case .SplatoonDown:
+            return "splatoon_down"
+        case .SplatoonMaintenanceStarted:
+            return "splatoon_maintenance_started"
+        case .SplatoonMaintenanceScheduled:
+            return "splatoon_maintenance_scheduled"
+        case .OnlinePlayDown:
+            return "online_play_down"
+        case .OnlinePlayMaintenanceStarted:
+            return "online_play_maintenance_started"
+        case .OnlinePlayMaintenanceScheduled:
+            return "online_play_maintenance_scheduled"
+        }
+    }
+}
+
 private func fetchSplatoon2Schedules(locale: JSON, completion: @escaping ([Splatoon2Schedule], Error) -> Void) {
     do {
         var request = URLRequest(url: URL(string: Splatoon2InkScheduleURL)!)
@@ -371,6 +400,17 @@ enum Locale: String, CaseIterable {
         }
     }
     
+    var maintenanceInformationAndOperationalStatusLanguageCode: String {
+        switch self {
+        case .japanese:
+            return "ja_JP"
+        case .english:
+            return "en_US"
+        case .chineseSimplified:
+            return "zh_TW"
+        }
+    }
+    
     static var localizedLocale: Locale {
         let languageCode = NSLocale.preferredLanguages[0]
         return translateLanguageCode(languageCode: languageCode)
@@ -622,6 +662,89 @@ func fetchSplatoon3(locale: Locale, completion: @escaping ([Splatoon3Schedule], 
                     }
                 } else {
                     completion([], [], .ParseFailed)
+                }
+            }
+        }
+        .resume()
+    }
+}
+
+func fetchMaintenanceInformationAndOperationalStatus(completion: @escaping (Status, Status, Error) -> Void) {
+    do {
+        var request = URLRequest(url: URL(string: NintendoMaintenanceInformationAndOperationalStatusURL)!)
+        request.timeoutInterval = Timeout
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if error != nil {
+                completion(.Normal, .Normal, .RequestFailed)
+            } else {
+                let response = response as! HTTPURLResponse
+                let status = response.statusCode
+                guard (200...299).contains(status) else {
+                    completion(.Normal, .Normal, .NonSuccessfulResponse)
+                    
+                    return
+                }
+                
+                var splatoon2Status = Status.Normal
+                var splatoon3Status = Status.Normal
+                if let json = try? JSON(data: data!) {
+                    for temporaryMaintenance in json["temporary_maintenances"].arrayValue {
+                        if temporaryMaintenance["utc_del_time"].stringValue.isEmpty {
+                            if temporaryMaintenance["software_title"].stringValue.contains("Splatoon 2") {
+                                if temporaryMaintenance["event_status"].stringValue == "0" {
+                                    splatoon2Status = .SplatoonMaintenanceScheduled
+                                } else {
+                                    splatoon2Status = .SplatoonMaintenanceStarted
+                                }
+                            }
+                            if temporaryMaintenance["software_title"].stringValue.contains("Splatoon 3") {
+                                if temporaryMaintenance["event_status"].stringValue == "0" {
+                                    splatoon3Status = .SplatoonMaintenanceScheduled
+                                } else {
+                                    splatoon3Status = .SplatoonMaintenanceStarted
+                                }
+                            }
+                            if temporaryMaintenance["software_title"].stringValue.contains("Online play") {
+                                if temporaryMaintenance["event_status"].stringValue == "0" {
+                                    if splatoon2Status == .Normal {
+                                        splatoon2Status = .OnlinePlayMaintenanceScheduled
+                                    }
+                                    if splatoon3Status == .Normal {
+                                        splatoon3Status = .OnlinePlayMaintenanceScheduled
+                                    }
+                                } else {
+                                    if splatoon2Status == .Normal {
+                                        splatoon2Status = .OnlinePlayMaintenanceStarted
+                                    }
+                                    if splatoon3Status == .Normal {
+                                        splatoon3Status = .OnlinePlayMaintenanceStarted
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    for operationalStatus in json["operational_statuses"].arrayValue {
+                        if operationalStatus["utc_del_time"].stringValue.isEmpty {
+                            if operationalStatus["software_title"].stringValue.contains("Splatoon 2") {
+                                splatoon2Status = .SplatoonDown
+                            }
+                            if operationalStatus["software_title"].stringValue.contains("Splatoon 3") {
+                                splatoon3Status = .SplatoonDown
+                            }
+                            if operationalStatus["software_title"].stringValue.contains("Online play") {
+                                if splatoon2Status != .SplatoonDown {
+                                    splatoon2Status = .OnlinePlayDown
+                                }
+                                if splatoon3Status != .SplatoonDown {
+                                    splatoon3Status = .OnlinePlayDown
+                                }
+                            }
+                        }
+                    }
+                    
+                    completion(splatoon2Status, splatoon3Status, .NoError)
+                } else {
+                    completion(.Normal, .Normal, .ParseFailed)
                 }
             }
         }

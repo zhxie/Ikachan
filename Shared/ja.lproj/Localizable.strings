@@ -62,6 +62,12 @@
 "kingfisher" = "Kingfisher";
 "swifty_json" = "SwiftyJSON";
 "disclaimer" = "当アプリは、イカリング2とイカリング3の情報を利用した非公式アプリであり、任天堂株式会社とは一切関係はございません。";
+"splatoon_down" = "現在、スプラトゥーンのサーバーに障害が発生しております。問題が解決されるまでお待ちください。";
+"splatoon_maintenance_started" = "スプラトゥーンのメンテナンスを実施中です。メンテナンスが終了するまでお待ちください。";
+"splatoon_maintenance_scheduled" = "スプラトゥーンのメンテナンスが決定しました。詳しくは任天堂サポートをご確認ください。";
+"online_play_down" = "現在、オンラインプレイのサーバーに障害が発生しています。詳しくは任天堂サポートをご確認ください。";
+"online_play_maintenance_started" = "オンラインプレイのメンテナンスを実施中です。詳しくは任天堂サポートをご確認ください。";
+"online_play_maintenance_scheduled" = "オンラインプレイのメンテナンスが決定しました。詳しくは任天堂サポートをご確認ください。";
 
 // Widget.
 "next" = "つぎ";
