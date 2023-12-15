@@ -7,7 +7,7 @@ class IntentHandler: INExtension {
         } else if intent is Splatoon2ShiftIntent {
             return Splatoon2ShiftIntentHandler()
         } else if intent is Splatoon3ScheduleIntent {
-            return Splatoon3ShiftIntentHandler()
+            return Splatoon3ScheduleIntentHandler()
         } else if intent is Splatoon3ShiftIntent {
             return Splatoon3ShiftIntentHandler()
         } else {

@@ -20,7 +20,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
             } else {
                 schedule = try! decoder.decode(Splatoon3Schedule.self, from: Data(base64Encoded: splatoon3ScheduleData!)!)
             }
-            let controller = UIHostingController(rootView: ScheduleView(schedule: schedule, backgroundColor: Color(.systemBackground)).animation(.default).padding())
+            let controller = UIHostingController(rootView: ScheduleView(schedule: schedule, backgroundColor: Color(.systemBackground)).padding())
             addChild(controller)
             controller.view.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(controller.view)
@@ -41,7 +41,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
             } else {
                 shift = try! decoder.decode(Splatoon3Shift.self, from: Data(base64Encoded: splatoon3ShiftData!)!)
             }
-            let controller = UIHostingController(rootView: ShiftView(shift: shift, backgroundColor: Color(.systemBackground)).animation(.default).padding())
+            let controller = UIHostingController(rootView: ShiftView(shift: shift, backgroundColor: Color(.systemBackground)).padding())
             addChild(controller)
             controller.view.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(controller.view)
