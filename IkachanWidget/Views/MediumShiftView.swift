@@ -33,11 +33,7 @@ struct MediumShiftView: View {
                     HStack(alignment: .center) {
                         StageView(stage: stage)
                         
-                        HStack {
-                            ForEach(shift.weapons!, id: \.name) { weapon in
-                                WeaponView(weapon: weapon)
-                            }
-                        }
+                        WeaponsView(weapons: shift.weapons!)
                     }
                 } else {
                     Spacer()
@@ -63,11 +59,9 @@ struct MediumShiftView: View {
                             Text(stage.name)
                                 .font(.footnote)
                             
-                            ForEach(shift.weapons!, id: \.name) { weapon in
-                                WeaponView(weapon: weapon)
-                                    .frame(height: 20)
-                            }
-                            .layoutPriority(1)
+                            WeaponsView(weapons: shift.weapons!)
+                                .frame(height: 20)
+                                .layoutPriority(1)
                         }
                         .layoutPriority(1)
                     }

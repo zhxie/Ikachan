@@ -28,11 +28,7 @@ struct AccessoryRectangularShiftView: View {
                     }
                     
                     if let weapons = shift.weapons {
-                        HStack(spacing: 4) {
-                            ForEach(weapons, id: \.name) { weapon in
-                                WeaponView(weapon: weapon)
-                            }
-                        }
+                        WeaponsView(weapons: weapons)
                     }
                 }
                 .layoutPriority(1)

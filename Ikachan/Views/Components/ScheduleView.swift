@@ -62,6 +62,8 @@ struct ScheduleView: View {
                         .layoutPriority(1)
                     Text(schedule.stages.map({ stage in
                         stage.name
+                    }).filter({ name in
+                        !name.isEmpty
                     }).joined(separator: " & "))
                     .font(.footnote)
                 }

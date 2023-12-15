@@ -32,12 +32,8 @@ struct SmallShiftView: View {
                     if let stage = shift.stage {
                         StageView(stage: stage)
                         
-                        HStack {
-                            ForEach(shift.weapons!, id: \.name) { weapon in
-                                WeaponView(weapon: weapon)
-                            }
-                        }
-                        .layoutPriority(1)
+                        WeaponsView(weapons: shift.weapons!)
+                            .layoutPriority(1)
                     }
                 } else {
                     if let stage = shift.stage {
