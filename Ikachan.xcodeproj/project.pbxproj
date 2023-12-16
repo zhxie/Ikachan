@@ -129,6 +129,11 @@
 		E4BE377228DEC02D00BDB75F /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */; };
 		E4BE377328DEC02D00BDB75F /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */; };
 		E4BE377528DEC1F800BDB75F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4BE377428DEC1F800BDB75F /* SwiftyJSON */; };
+		E4C85A902B2DA09200D4F596 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C85A8F2B2DA09200D4F596 /* Settings.swift */; };
+		E4C85A922B2DE7C300D4F596 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C85A912B2DE7C300D4F596 /* Array.swift */; };
+		E4C85A932B2DE7C300D4F596 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C85A912B2DE7C300D4F596 /* Array.swift */; };
+		E4C85A942B2DE7C300D4F596 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C85A912B2DE7C300D4F596 /* Array.swift */; };
+		E4C85A952B2DE7C300D4F596 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C85A912B2DE7C300D4F596 /* Array.swift */; };
 		E4CB960B2B2B5E7200F322AE /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB960A2B2B5E7200F322AE /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
@@ -252,6 +257,8 @@
 		E490E9AF2B289FFC002A03D2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E4B1145325BD4CA400303542 /* IkachanWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkachanWidgetBundle.swift; sourceTree = "<group>"; };
 		E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftJSON.swift; sourceTree = "<group>"; };
+		E4C85A8F2B2DA09200D4F596 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		E4C85A912B2DE7C300D4F596 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		E4CB960A2B2B5E7200F322AE /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		E4CB960C2B2B5E9000F322AE /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -357,6 +364,7 @@
 				E43E136325C9A398008A0FE6 /* Ikachan.entitlements */,
 				E47798FD25B1EDDA00F8AE9F /* Views */,
 				E4405D7A25AF64D2002EF1AB /* IkachanApp.swift */,
+				E4C85A8F2B2DA09200D4F596 /* Settings.swift */,
 				E4405D7E25AF64D6002EF1AB /* Assets.xcassets */,
 				E4405D8325AF64D6002EF1AB /* Info.plist */,
 				E46B514C25BB46C5001F88CE /* InfoPlist.strings */,
@@ -488,6 +496,7 @@
 				E485D9FB275342A300B82AE0 /* Image.swift */,
 				E485DA1227534D0100B82AE0 /* KFImage.swift */,
 				E440CA232B2738CF00884D57 /* View.swift */,
+				E4C85A912B2DE7C300D4F596 /* Array.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -690,6 +699,7 @@
 				E48BECC225CD31F200B301D1 /* Collection.swift in Sources */,
 				E440CA132B271E7B00884D57 /* Splatoon3ScheduleIntentHandler.swift in Sources */,
 				E4613F0325C9A70C00561D53 /* Schedule.swift in Sources */,
+				E4C85A942B2DE7C300D4F596 /* Array.swift in Sources */,
 				E43E136D25C9A3BA008A0FE6 /* IntentHandler.swift in Sources */,
 				E4613F9225C9AFD100561D53 /* Splatoon2ScheduleIntentHandler.swift in Sources */,
 				E4613F9F25C9AFF700561D53 /* Splatoon2ShiftIntentHandler.swift in Sources */,
@@ -708,6 +718,7 @@
 				E440CA262B2738CF00884D57 /* View.swift in Sources */,
 				E42AE865275509DB006F7CBD /* WeaponsView.swift in Sources */,
 				E4BE377328DEC02D00BDB75F /* SwiftJSON.swift in Sources */,
+				E4C85A952B2DE7C300D4F596 /* Array.swift in Sources */,
 				E485DA0D2753444600B82AE0 /* Image.swift in Sources */,
 				E440CA1E2B27325F00884D57 /* ScheduleView.swift in Sources */,
 				E4613FB825C9B62000561D53 /* IkachanIntents.intentdefinition in Sources */,
@@ -733,6 +744,8 @@
 				E4400F3425CD012C00BF94C6 /* Splatoon2ScheduleIntentHandler.swift in Sources */,
 				E47AC8B82B2AE1D100B598AF /* AboutView.swift in Sources */,
 				E4CB960B2B2B5E7200F322AE /* SafariView.swift in Sources */,
+				E4C85A922B2DE7C300D4F596 /* Array.swift in Sources */,
+				E4C85A902B2DA09200D4F596 /* Settings.swift in Sources */,
 				E485DA1327534D0100B82AE0 /* KFImage.swift in Sources */,
 				E461414025CA880500561D53 /* String.swift in Sources */,
 				E490E9A02B2888F8002A03D2 /* SchedulesNavigationLink.swift in Sources */,
@@ -774,6 +787,7 @@
 				E4444F0725BF14D10003A676 /* IkachanWidgetBundle.swift in Sources */,
 				E47AC8B22B2ACE8F00B598AF /* Splatoon2ShiftDynamicWidget.swift in Sources */,
 				E47AC8992B29D62D00B598AF /* Splatoon3ScheduleWidget.swift in Sources */,
+				E4C85A932B2DE7C300D4F596 /* Array.swift in Sources */,
 				E47AC8B02B2ABFB800B598AF /* Splatoon2ScheduleDynamicWidget.swift in Sources */,
 				E485DA1427534D0100B82AE0 /* KFImage.swift in Sources */,
 				E41763692B25A9C500B52CE9 /* Enum.swift in Sources */,
@@ -871,7 +885,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IkachanIntentsUI/IkachanIntentsUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 62;
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
 				INFOPLIST_FILE = IkachanIntentsUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -894,7 +908,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IkachanIntentsUI/IkachanIntentsUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 62;
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
 				INFOPLIST_FILE = IkachanIntentsUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -917,7 +931,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IkachanIntents/IkachanIntents.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 62;
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
 				INFOPLIST_FILE = IkachanIntents/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -940,7 +954,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IkachanIntents/IkachanIntents.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 62;
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
 				INFOPLIST_FILE = IkachanIntents/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1086,7 +1100,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Ikachan/Ikachan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 62;
 				DEVELOPMENT_ASSET_PATHS = "\"Ikachan/Preview Content\"";
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
 				ENABLE_PREVIEWS = YES;
@@ -1112,7 +1126,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Ikachan/Ikachan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 62;
 				DEVELOPMENT_ASSET_PATHS = "\"Ikachan/Preview Content\"";
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
 				ENABLE_PREVIEWS = YES;
@@ -1136,7 +1150,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 62;
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
 				INFOPLIST_FILE = IkachanWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1160,7 +1174,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 61;
+				CURRENT_PROJECT_VERSION = 62;
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
 				INFOPLIST_FILE = IkachanWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
