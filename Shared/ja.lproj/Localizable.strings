@@ -41,6 +41,10 @@
 "our_new_app" = "私たちの新しいApp";
 "conch_bay" = "ホラガイベイ";
 "get" = "入手";
+"preferences" = "プリファレンス";
+"display_shifts_first" = "シフト表を最初に表示";
+"display_order" = "表示順序";
+"preferences_notice" = "プリファレンスを有効にするには、アプリを再起動する必要があります。";
 "settings" = "設定";
 "language" = "言語";
 "siri_and_shortcuts" = "Siriとショートカット";

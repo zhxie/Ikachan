@@ -41,6 +41,10 @@
 "our_new_app" = "Our New App";
 "conch_bay" = "Conch Bay";
 "get" = "GET";
+"preferences" = "Preferences";
+"display_shifts_first" = "Display Shifts First";
+"display_order" = "Display Order";
+"preferences_notice" = "You may need to restart the app for the preferences to take effect.";
 "settings" = "Settings";
 "language" = "Language";
 "siri_and_shortcuts" = "Siri & Shortcuts";

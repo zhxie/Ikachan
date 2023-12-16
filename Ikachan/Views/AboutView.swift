@@ -29,6 +29,49 @@ struct AboutView: View {
                         .buttonBorderShape(.capsule)
                     }
                 }
+                Section {
+                    Toggle(LocalizedStringKey("display_shifts_first"), isOn: Settings.shared.$displayShiftsFirst)
+                    NavigationLink(LocalizedStringKey("display_order")) {
+                        Form {
+                            Section(LocalizedStringKey("splatoon_3")) {
+                                List {
+                                    ForEach(Settings.shared.splatoon3ScheduleOrder, id: \.name) { mode in
+                                        Text(LocalizedStringKey(mode.name))
+                                    }
+                                    .onMove { from, to in
+                                        Settings.shared.splatoon3ScheduleOrder.move(fromOffsets: from, toOffset: to)
+                                    }
+                                }
+                            }
+                            Section {
+                                List {
+                                    ForEach(Settings.shared.splatoon3ShiftOrder, id: \.name) { mode in
+                                        Text(LocalizedStringKey(mode.name))
+                                    }
+                                    .onMove { from, to in
+                                        Settings.shared.splatoon3ShiftOrder.move(fromOffsets: from, toOffset: to)
+                                    }
+                                }
+                            }
+                            Section(LocalizedStringKey("splatoon_2")) {
+                                List {
+                                    ForEach(Settings.shared.splatoon2ScheduleOrder, id: \.name) { mode in
+                                        Text(LocalizedStringKey(mode.name))
+                                    }
+                                    .onMove { from, to in
+                                        Settings.shared.splatoon2ScheduleOrder.move(fromOffsets: from, toOffset: to)
+                                    }
+                                }
+                            }
+                        }
+                        .environment(\.editMode, .constant(.active))
+                        .navigationTitle(LocalizedStringKey("display_order"))
+                    }
+                } header: {
+                    Text(LocalizedStringKey("preferences"))
+                } footer: {
+                    Text(LocalizedStringKey("preferences_notice"))
+                }
                 Section(LocalizedStringKey("settings")) {
                     Link(LocalizedStringKey("language"), destination: URL(string: UIApplication.openSettingsURLString)!)
                     Button(LocalizedStringKey("siri_and_shortcuts")) {

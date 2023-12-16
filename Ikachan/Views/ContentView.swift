@@ -51,7 +51,10 @@ struct ContentView: View {
                                 .padding([.horizontal])
                             }
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 450, maximum: 900))]) {
-                                ForEach(Splatoon2ScheduleMode.allCases, id: \.rawValue) { mode in
+                                if Settings.shared.displayShiftsFirst && !splatoon2Shifts.isEmpty {
+                                    ShiftsNavigationLink(shifts: splatoon2Shifts)
+                                }
+                                ForEach(Settings.shared.splatoon2ScheduleOrder, id: \.rawValue) { mode in
                                     if !splatoon2Schedules.filter({ schedule in
                                         schedule._mode == mode
                                     }).isEmpty {
@@ -60,7 +63,7 @@ struct ContentView: View {
                                         })
                                     }
                                 }
-                                if !splatoon2Shifts.isEmpty {
+                                if !Settings.shared.displayShiftsFirst && !splatoon2Shifts.isEmpty {
                                     ShiftsNavigationLink(shifts: splatoon2Shifts)
                                 }
                             }
@@ -89,7 +92,18 @@ struct ContentView: View {
                                 .padding([.horizontal])
                             }
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 450, maximum: 900))]) {
-                                ForEach(Splatoon3ScheduleMode.allCases, id: \.rawValue) { mode in
+                                if Settings.shared.displayShiftsFirst {
+                                    ForEach(Settings.shared.splatoon3ShiftOrder, id: \.rawValue) { mode in
+                                        if !splatoon3Shifts.filter({ shift in
+                                            shift._mode == mode
+                                        }).isEmpty {
+                                            ShiftsNavigationLink(shifts: splatoon3Shifts.filter { shift in
+                                                shift._mode == mode
+                                            })
+                                        }
+                                    }
+                                }
+                                ForEach(Settings.shared.splatoon3ScheduleOrder, id: \.rawValue) { mode in
                                     if !splatoon3Schedules.filter({ schedule in
                                         schedule._mode == mode
                                     }).isEmpty {
@@ -98,13 +112,15 @@ struct ContentView: View {
                                         })
                                     }
                                 }
-                                ForEach(Splatoon3ShiftMode.allCases, id: \.rawValue) { mode in
-                                    if !splatoon3Shifts.filter({ shift in
-                                        shift._mode == mode
-                                    }).isEmpty {
-                                        ShiftsNavigationLink(shifts: splatoon3Shifts.filter { shift in
+                                if !Settings.shared.displayShiftsFirst {
+                                    ForEach(Settings.shared.splatoon3ShiftOrder, id: \.rawValue) { mode in
+                                        if !splatoon3Shifts.filter({ shift in
                                             shift._mode == mode
-                                        })
+                                        }).isEmpty {
+                                            ShiftsNavigationLink(shifts: splatoon3Shifts.filter { shift in
+                                                shift._mode == mode
+                                            })
+                                        }
                                     }
                                 }
                             }
