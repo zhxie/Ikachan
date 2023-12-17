@@ -54,7 +54,7 @@ struct ContentView: View {
                                 if Settings.shared.displayShiftsFirst && !splatoon2Shifts.isEmpty {
                                     ShiftsNavigationLink(shifts: splatoon2Shifts)
                                 }
-                                ForEach(Settings.shared.splatoon2ScheduleOrder, id: \.rawValue) { mode in
+                                ForEach(Settings.shared.splatoon2ScheduleOrder, id: \.self) { mode in
                                     if !splatoon2Schedules.filter({ schedule in
                                         schedule._mode == mode
                                     }).isEmpty {
@@ -93,7 +93,7 @@ struct ContentView: View {
                             }
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 450, maximum: 900))]) {
                                 if Settings.shared.displayShiftsFirst {
-                                    ForEach(Settings.shared.splatoon3ShiftOrder, id: \.rawValue) { mode in
+                                    ForEach(Settings.shared.splatoon3ShiftOrder, id: \.self) { mode in
                                         if !splatoon3Shifts.filter({ shift in
                                             shift._mode == mode
                                         }).isEmpty {
@@ -103,7 +103,7 @@ struct ContentView: View {
                                         }
                                     }
                                 }
-                                ForEach(Settings.shared.splatoon3ScheduleOrder, id: \.rawValue) { mode in
+                                ForEach(Settings.shared.splatoon3ScheduleOrder, id: \.self) { mode in
                                     if !splatoon3Schedules.filter({ schedule in
                                         schedule._mode == mode
                                     }).isEmpty {
@@ -113,7 +113,7 @@ struct ContentView: View {
                                     }
                                 }
                                 if !Settings.shared.displayShiftsFirst {
-                                    ForEach(Settings.shared.splatoon3ShiftOrder, id: \.rawValue) { mode in
+                                    ForEach(Settings.shared.splatoon3ShiftOrder, id: \.self) { mode in
                                         if !splatoon3Shifts.filter({ shift in
                                             shift._mode == mode
                                         }).isEmpty {

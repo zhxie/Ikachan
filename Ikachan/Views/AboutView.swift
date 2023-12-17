@@ -41,7 +41,7 @@ struct AboutView: View {
                         Form {
                             Section(LocalizedStringKey("splatoon_3")) {
                                 List {
-                                    ForEach(Settings.shared.splatoon3ScheduleOrder, id: \.name) { mode in
+                                    ForEach(Settings.shared.splatoon3ScheduleOrder, id: \.self) { mode in
                                         Text(LocalizedStringKey(mode.name))
                                     }
                                     .onMove { from, to in
@@ -51,7 +51,7 @@ struct AboutView: View {
                             }
                             Section {
                                 List {
-                                    ForEach(Settings.shared.splatoon3ShiftOrder, id: \.name) { mode in
+                                    ForEach(Settings.shared.splatoon3ShiftOrder, id: \.self) { mode in
                                         Text(LocalizedStringKey(mode.name))
                                     }
                                     .onMove { from, to in
@@ -61,7 +61,7 @@ struct AboutView: View {
                             }
                             Section(LocalizedStringKey("splatoon_2")) {
                                 List {
-                                    ForEach(Settings.shared.splatoon2ScheduleOrder, id: \.name) { mode in
+                                    ForEach(Settings.shared.splatoon2ScheduleOrder, id: \.self) { mode in
                                         Text(LocalizedStringKey(mode.name))
                                     }
                                     .onMove { from, to in
