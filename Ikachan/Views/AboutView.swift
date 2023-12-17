@@ -4,8 +4,11 @@ import AlertKit
 import Kingfisher
 
 struct AboutView: View {
-    // HACK: App Storage should be held in the view to update the view.
-    @AppStorage(UserDefaultsKey.displayOnStartup.rawValue) var displayOnStartup = Game.splatoon3.rawValue
+    @AppStorage(UserDefaultsKey.displayOnStartup.rawValue) var displayOnStartup = Game.splatoon3
+    @AppStorage(UserDefaultsKey.displayShiftsFirst.rawValue) var displayShiftsFirst = false
+    @AppStorage(UserDefaultsKey.splatoon2ScheduleOrder.rawValue) var splatoon2ScheduleOrder = Splatoon2ScheduleMode.allCases
+    @AppStorage(UserDefaultsKey.splatoon3ScheduleOrder.rawValue) var splatoon3ScheduleOrder = Splatoon3ScheduleMode.allCases
+    @AppStorage(UserDefaultsKey.splatoon3ShiftOrder.rawValue) var splatoon3ShiftOrder = Splatoon3ShiftMode.allCases
     
     var body: some View {
         NavigationView {
@@ -38,43 +41,43 @@ struct AboutView: View {
                         .buttonBorderShape(.capsule)
                     }
                 }
-                Section {
+                Section(LocalizedStringKey("preferences")) {
                     Picker("display_on_startup", selection: $displayOnStartup) {
                         ForEach(Game.allCases, id: \.name) { game in
                             Text(LocalizedStringKey(game.name))
-                                .tag(game.rawValue)
+                                .tag(game)
                         }
                     }
-                    Toggle(LocalizedStringKey("display_shifts_first"), isOn: Settings.shared.$displayShiftsFirst)
+                    Toggle(LocalizedStringKey("display_shifts_first"), isOn: $displayShiftsFirst)
                     NavigationLink(LocalizedStringKey("display_order")) {
                         Form {
                             Section(LocalizedStringKey("splatoon_3")) {
                                 List {
-                                    ForEach(Settings.shared.splatoon3ScheduleOrder, id: \.self) { mode in
+                                    ForEach(splatoon3ScheduleOrder, id: \.self) { mode in
                                         Text(LocalizedStringKey(mode.name))
                                     }
                                     .onMove { from, to in
-                                        Settings.shared.splatoon3ScheduleOrder.move(fromOffsets: from, toOffset: to)
+                                        splatoon3ScheduleOrder.move(fromOffsets: from, toOffset: to)
                                     }
                                 }
                             }
                             Section {
                                 List {
-                                    ForEach(Settings.shared.splatoon3ShiftOrder, id: \.self) { mode in
+                                    ForEach(splatoon3ShiftOrder, id: \.self) { mode in
                                         Text(LocalizedStringKey(mode.name))
                                     }
                                     .onMove { from, to in
-                                        Settings.shared.splatoon3ShiftOrder.move(fromOffsets: from, toOffset: to)
+                                        splatoon3ShiftOrder.move(fromOffsets: from, toOffset: to)
                                     }
                                 }
                             }
                             Section(LocalizedStringKey("splatoon_2")) {
                                 List {
-                                    ForEach(Settings.shared.splatoon2ScheduleOrder, id: \.self) { mode in
+                                    ForEach(splatoon2ScheduleOrder, id: \.self) { mode in
                                         Text(LocalizedStringKey(mode.name))
                                     }
                                     .onMove { from, to in
-                                        Settings.shared.splatoon2ScheduleOrder.move(fromOffsets: from, toOffset: to)
+                                        splatoon2ScheduleOrder.move(fromOffsets: from, toOffset: to)
                                     }
                                 }
                             }
@@ -82,11 +85,6 @@ struct AboutView: View {
                         .environment(\.editMode, .constant(.active))
                         .navigationTitle(LocalizedStringKey("display_order"))
                     }
-                } header: {
-                    Text(LocalizedStringKey("preferences"))
-                } footer: {
-                    // TODO: Hold App Storage in views.
-                    Text(LocalizedStringKey("preferences_notice"))
                 }
                 Section(LocalizedStringKey("settings")) {
                     Link(LocalizedStringKey("language"), destination: URL(string: UIApplication.openSettingsURLString)!)

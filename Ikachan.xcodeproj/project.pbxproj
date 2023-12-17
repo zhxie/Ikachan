@@ -493,10 +493,10 @@
 		E485DA182753504100B82AE0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E4C85A912B2DE7C300D4F596 /* Array.swift */,
 				E485D9FB275342A300B82AE0 /* Image.swift */,
 				E485DA1227534D0100B82AE0 /* KFImage.swift */,
 				E440CA232B2738CF00884D57 /* View.swift */,
-				E4C85A912B2DE7C300D4F596 /* Array.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";

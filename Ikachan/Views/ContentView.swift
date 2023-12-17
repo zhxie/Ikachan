@@ -2,6 +2,11 @@ import SwiftUI
 import AlertKit
 
 struct ContentView: View {
+    @AppStorage(UserDefaultsKey.displayShiftsFirst.rawValue) var displayShiftsFirst = false
+    @AppStorage(UserDefaultsKey.splatoon2ScheduleOrder.rawValue) var splatoon2ScheduleOrder = Splatoon2ScheduleMode.allCases
+    @AppStorage(UserDefaultsKey.splatoon3ScheduleOrder.rawValue) var splatoon3ScheduleOrder = Splatoon3ScheduleMode.allCases
+    @AppStorage(UserDefaultsKey.splatoon3ShiftOrder.rawValue) var splatoon3ShiftOrder = Splatoon3ShiftMode.allCases
+    
     @State var game = Settings.shared.displayOnStartup
     @State var splatoon2Error: Error? = nil
     @State var splatoon2Schedules: [Splatoon2Schedule] = []
@@ -51,10 +56,10 @@ struct ContentView: View {
                                 .padding([.horizontal])
                             }
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 450, maximum: 900))]) {
-                                if Settings.shared.displayShiftsFirst && !splatoon2Shifts.isEmpty {
+                                if displayShiftsFirst && !splatoon2Shifts.isEmpty {
                                     ShiftsNavigationLink(shifts: splatoon2Shifts)
                                 }
-                                ForEach(Settings.shared.splatoon2ScheduleOrder, id: \.self) { mode in
+                                ForEach(splatoon2ScheduleOrder, id: \.self) { mode in
                                     if !splatoon2Schedules.filter({ schedule in
                                         schedule._mode == mode
                                     }).isEmpty {
@@ -63,7 +68,7 @@ struct ContentView: View {
                                         })
                                     }
                                 }
-                                if !Settings.shared.displayShiftsFirst && !splatoon2Shifts.isEmpty {
+                                if !displayShiftsFirst && !splatoon2Shifts.isEmpty {
                                     ShiftsNavigationLink(shifts: splatoon2Shifts)
                                 }
                             }
@@ -92,8 +97,8 @@ struct ContentView: View {
                                 .padding([.horizontal])
                             }
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 450, maximum: 900))]) {
-                                if Settings.shared.displayShiftsFirst {
-                                    ForEach(Settings.shared.splatoon3ShiftOrder, id: \.self) { mode in
+                                if displayShiftsFirst {
+                                    ForEach(splatoon3ShiftOrder, id: \.self) { mode in
                                         if !splatoon3Shifts.filter({ shift in
                                             shift._mode == mode
                                         }).isEmpty {
@@ -103,7 +108,7 @@ struct ContentView: View {
                                         }
                                     }
                                 }
-                                ForEach(Settings.shared.splatoon3ScheduleOrder, id: \.self) { mode in
+                                ForEach(splatoon3ScheduleOrder, id: \.self) { mode in
                                     if !splatoon3Schedules.filter({ schedule in
                                         schedule._mode == mode
                                     }).isEmpty {
@@ -112,8 +117,8 @@ struct ContentView: View {
                                         })
                                     }
                                 }
-                                if !Settings.shared.displayShiftsFirst {
-                                    ForEach(Settings.shared.splatoon3ShiftOrder, id: \.self) { mode in
+                                if !displayShiftsFirst {
+                                    ForEach(splatoon3ShiftOrder, id: \.self) { mode in
                                         if !splatoon3Shifts.filter({ shift in
                                             shift._mode == mode
                                         }).isEmpty {
