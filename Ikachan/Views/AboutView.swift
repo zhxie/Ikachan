@@ -22,8 +22,14 @@ struct AboutView: View {
                         
                         Spacer()
                         
-                        Button(LocalizedStringKey("get")) {
+                        Button {
                             UIApplication.shared.open(URL(string: "https://apps.apple.com/app/apple-store/id1659268579?pt=122602395&ct=Ikachan&mt=8")!)
+                        } label: {
+                            Text(LocalizedStringKey("get"))
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                                .padding([.horizontal], 8)
+                                .padding([.vertical], -2)
                         }
                         .buttonStyle(.bordered)
                         .buttonBorderShape(.capsule)

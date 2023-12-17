@@ -152,7 +152,7 @@ struct ContentView: View {
                 Button {
                     isInfoPresented.toggle()
                 } label: {
-                    Image(systemName: "info.circle")
+                    Image(systemName: "gear")
                 }
             }
         }
