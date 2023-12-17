@@ -42,6 +42,7 @@
 "conch_bay" = "ホラガイベイ";
 "get" = "入手";
 "preferences" = "プリファレンス";
+"display_on_startup" = "起動時に表示";
 "display_shifts_first" = "シフト表を最初に表示";
 "display_order" = "表示順序";
 "preferences_notice" = "プリファレンスを有効にするには、アプリを再起動する必要があります。";

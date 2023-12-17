@@ -2,7 +2,7 @@ import SwiftUI
 import AlertKit
 
 struct ContentView: View {
-    @State var game = Game.splatoon3
+    @State var game = Settings.shared.displayOnStartup
     @State var splatoon2Error: Error? = nil
     @State var splatoon2Schedules: [Splatoon2Schedule] = []
     @State var splatoon2Shifts: [Splatoon2Shift] = []

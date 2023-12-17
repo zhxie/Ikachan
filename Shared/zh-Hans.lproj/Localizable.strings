@@ -42,6 +42,7 @@
 "conch_bay" = "法螺湾";
 "get" = "获取";
 "preferences" = "偏好";
+"display_on_startup" = "启动时显示";
 "display_shifts_first" = "优先显示排班表";
 "display_order" = "显示顺序";
 "preferences_notice" = "您可能需要重新启动应用才能使偏好生效。";

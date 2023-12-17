@@ -4,6 +4,9 @@ import AlertKit
 import Kingfisher
 
 struct AboutView: View {
+    // HACK: App Storage should be held in the view to update the view.
+    @AppStorage(UserDefaultsKey.displayOnStartup.rawValue) var displayOnStartup = Game.splatoon3.rawValue
+    
     var body: some View {
         NavigationView {
             Form {
@@ -36,6 +39,12 @@ struct AboutView: View {
                     }
                 }
                 Section {
+                    Picker("display_on_startup", selection: $displayOnStartup) {
+                        ForEach(Game.allCases, id: \.name) { game in
+                            Text(LocalizedStringKey(game.name))
+                                .tag(game.rawValue)
+                        }
+                    }
                     Toggle(LocalizedStringKey("display_shifts_first"), isOn: Settings.shared.$displayShiftsFirst)
                     NavigationLink(LocalizedStringKey("display_order")) {
                         Form {
@@ -76,6 +85,7 @@ struct AboutView: View {
                 } header: {
                     Text(LocalizedStringKey("preferences"))
                 } footer: {
+                    // TODO: Hold App Storage in views.
                     Text(LocalizedStringKey("preferences_notice"))
                 }
                 Section(LocalizedStringKey("settings")) {
@@ -125,8 +135,6 @@ struct AboutView: View {
                 } footer: {
                     Text(LocalizedStringKey("disclaimer"))
                 }
-
-
             }
             .navigationTitle(LocalizedStringKey("ikachan"))
         }

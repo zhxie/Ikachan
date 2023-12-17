@@ -1,6 +1,7 @@
 import SwiftUI
 
 enum UserDefaultsKey: String {
+    case displayOnStartup = "display-on-startup"
     case displayShiftsFirst = "display-shifts-first"
     case splatoon2ScheduleOrder = "splatoon-2-schedule-order"
     case splatoon3ShiftFirst = "splatoon-3-shift-first"
@@ -11,16 +12,26 @@ enum UserDefaultsKey: String {
 class Settings: ObservableObject {
     static let shared = Settings()
     
-    @AppStorage(UserDefaultsKey.displayShiftsFirst.rawValue) var displayShiftsFirst: Bool = false
-    @AppStorage(UserDefaultsKey.splatoon2ScheduleOrder.rawValue) var _splatoon2ScheduleOrder: String = Splatoon2ScheduleMode.allCases.map { mode in
-        mode.name
+    @AppStorage(UserDefaultsKey.displayOnStartup.rawValue) var _displayOnStartup = Game.splatoon3.rawValue
+    @AppStorage(UserDefaultsKey.displayShiftsFirst.rawValue) var displayShiftsFirst = false
+    @AppStorage(UserDefaultsKey.splatoon2ScheduleOrder.rawValue) var _splatoon2ScheduleOrder = Splatoon2ScheduleMode.allCases.map { mode in
+        mode.rawValue
     }.joined(separator: ",")
-    @AppStorage(UserDefaultsKey.splatoon3ScheduleOrder.rawValue) var _splatoon3ScheduleOrder: String = Splatoon3ScheduleMode.allCases.map { mode in
-        mode.name
+    @AppStorage(UserDefaultsKey.splatoon3ScheduleOrder.rawValue) var _splatoon3ScheduleOrder = Splatoon3ScheduleMode.allCases.map { mode in
+        mode.rawValue
     }.joined(separator: ",")
-    @AppStorage(UserDefaultsKey.splatoon3ShiftOrder.rawValue) var _splatoon3ShiftOrder: String = Splatoon3ShiftMode.allCases.map { mode in
-        mode.name
+    @AppStorage(UserDefaultsKey.splatoon3ShiftOrder.rawValue) var _splatoon3ShiftOrder = Splatoon3ShiftMode.allCases.map { mode in
+        mode.rawValue
     }.joined(separator: ",")
+    
+    var displayOnStartup: Game {
+        get {
+            return Game(rawValue: _displayOnStartup) ?? .splatoon3
+        }
+        set {
+            _displayOnStartup = newValue.rawValue
+        }
+    }
     
     var splatoon2ScheduleOrder: [Splatoon2ScheduleMode] {
         get {

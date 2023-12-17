@@ -42,6 +42,7 @@
 "conch_bay" = "Conch Bay";
 "get" = "GET";
 "preferences" = "Preferences";
+"display_on_startup" = "Display On Startup";
 "display_shifts_first" = "Display Shifts First";
 "display_order" = "Display Order";
 "preferences_notice" = "You may need to restart the app for the preferences to take effect.";
