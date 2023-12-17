@@ -1,0 +1,57 @@
+// INSplatoon2ScheduleMode
+"vQ9T9L" = "一般比賽";
+"Vmno8H" = "真格比賽";
+"byIF5m" = "聯盟比賽";
+
+// INSplatoon3ScheduleMode
+"eqOpuk" = "一般比賽";
+"tjpTHP" = "蠻頹比賽 (挑戰)";
+"gYyHNv" = "蠻頹比賽 (開放)";
+"a6nVRn" = "X比賽";
+"58hpF6" = "活動比賽";
+"Jr28U9" = "祭典比賽 (開放)";
+"qYkIoP" = "祭典比賽 (挑戰)";
+"yMzY4p" = "三色奪寶比賽";
+
+// INSplatoon3ShiftMode
+"cL3CLn" = "鮭魚跑";
+"tD80vo" = "大型跑";
+"koMIyP" = "團隊打工競賽";
+
+// Splatoon2Schedule
+"dCtLWO" = "斯普拉遁2時間表";
+"XALQ6Y" = "顯示斯普拉遁2某模式的時間表。";
+"2z9Dkd" = "模式";
+"pYS45i" = "斯普拉遁2${mode}的時間表";
+"U9s5b8-vQ9T9L" = "這就是斯普拉遁2一般比賽的時間表。";
+"U9s5b8-Vmno8H" = "這就是斯普拉遁2真格比賽的時間表。";
+"U9s5b8-byIF5m" = "這就是斯普拉遁2聯盟比賽的時間表。";
+
+// Splatoon2Shift
+"QjGFWc" = "斯普拉遁2排班表";
+"LTajCZ" = "顯示斯普拉遁2鮭魚跑的排班表。";
+"KM8zVO" = "斯普拉遁2鮭魚跑的排班表";
+"Pj9O6l" = "這就是斯普拉遁2鮭魚跑的排班表。";
+
+// Splatoon3Schedule
+"UW8R7R" = "斯普拉遁3時間表";
+"PBoiMS" = "顯示斯普拉遁3某模式的時間表。";
+"IH74Ip" = "模式";
+"uDQZEt" = "斯普拉遁3${mode}的時間表";
+"3ALMmc-eqOpuk" = "這就是斯普拉遁3一般比賽的時間表。";
+"3ALMmc-tjpTHP" = "這就是斯普拉遁3蠻頹比賽 (挑戰)的時間表。";
+"3ALMmc-gYyHNv" = "這就是斯普拉遁3蠻頹比賽 (開放)的時間表。";
+"3ALMmc-a6nVRn" = "這就是斯普拉遁3 X比賽的時間表。";
+"3ALMmc-58hpF6" = "這就是斯普拉遁3活動比賽的時間表。";
+"3ALMmc-Jr28U9" = "這就是斯普拉遁3祭典比賽 (開放)的時間表。";
+"3ALMmc-qYkIoP" = "這就是斯普拉遁3祭典比賽 (挑戰)的時間表。";
+"3ALMmc-yMzY4p" = "這就是斯普拉遁3三色奪寶比賽的時間表。";
+
+// Splatoon3Shift
+"1FvjRq" = "斯普拉遁3排班表";
+"GqWdsS" = "顯示斯普拉遁3某模式的排班表。";
+"RUrIxS" = "模式";
+"hwuahg" = "斯普拉遁3${mode}的排班表";
+"hyUjkm-cL3CLn" = "這就是斯普拉遁3鮭魚跑的排班表。";
+"hyUjkm-tD80vo" = "這就是斯普拉遁3大型跑的排班表。";
+"hyUjkm-koMIyP" = "這就是斯普拉遁3團隊打工競賽的排班表。";

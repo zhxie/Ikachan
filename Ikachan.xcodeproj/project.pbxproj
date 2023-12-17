@@ -261,6 +261,9 @@
 		E4C85A912B2DE7C300D4F596 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		E4CB960A2B2B5E7200F322AE /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		E4CB960C2B2B5E9000F322AE /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		E4E5E7162B2F227D00C31601 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/IkachanIntents.strings"; sourceTree = "<group>"; };
+		E4E5E7172B2F227D00C31601 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E4E5E7182B2F227D00C31601 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -625,6 +628,7 @@
 				Base,
 				ja,
 				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = E4405D6E25AF64D2002EF1AB;
 			packageReferences = (
@@ -851,8 +855,9 @@
 			children = (
 				E4613FB925C9B62000561D53 /* Base */,
 				E47AC8A32B29EE5800B598AF /* en */,
-				E47AC8A52B29EE5F00B598AF /* zh-Hans */,
 				E47AC8A72B29F00500B598AF /* ja */,
+				E47AC8A52B29EE5F00B598AF /* zh-Hans */,
+				E4E5E7162B2F227D00C31601 /* zh-Hant */,
 			);
 			name = IkachanIntents.intentdefinition;
 			sourceTree = "<group>";
@@ -863,6 +868,7 @@
 				E46B514B25BB46C5001F88CE /* en */,
 				E46B515225BB46C9001F88CE /* ja */,
 				E406EF8D25C8576300683DBD /* zh-Hans */,
+				E4E5E7182B2F227D00C31601 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -873,6 +879,7 @@
 				E490E9AC2B289FF9002A03D2 /* en */,
 				E490E9AE2B289FFB002A03D2 /* ja */,
 				E490E9AF2B289FFC002A03D2 /* zh-Hans */,
+				E4E5E7172B2F227D00C31601 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

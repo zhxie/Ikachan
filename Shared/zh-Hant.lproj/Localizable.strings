@@ -1,0 +1,95 @@
+/* 
+  Localizable.strings
+  Ikachan
+
+  Created by Sketch on 2023/12/12.
+  
+*/
+
+// Game.
+"splatoon_2" = "斯普拉遁2";
+"splatoon_3" = "斯普拉遁3";
+
+// Mode.
+"regular_battle" = "一般比賽";
+"ranked_battle" = "真格比賽";
+"league_battle" = "聯盟比賽";
+
+"salmon_run" = "鮭魚跑";
+
+"anarchy_battle_series" = "蠻頹比賽 (挑戰)";
+"anarchy_battle_open" = "蠻頹比賽 (開放)";
+"x_battle" = "X比賽";
+"challenges" = "活動比賽";
+"splatfest_battle_open" = "祭典比賽 (開放)";
+"splatfest_battle_pro" = "祭典比賽 (挑戰)";
+"tricolor_battle" = "三色奪寶比賽";
+
+"big_run" = "大型跑";
+"eggstra_work" = "團隊打工競賽";
+
+// Rule.
+"turf_war" = "占地對戰";
+"splat_zones" = "真格區域";
+"tower_control" = "真格塔樓";
+"rainmaker" = "真格魚虎對戰";
+"clam_blitz" = "真格蛤蜊";
+"tricolor_turf_war" = "三色奪寶對戰";
+
+// UI.
+"ikachan" = "魷魚醬";
+"our_new_app" = "我們的新App";
+"conch_bay" = "法螺灣";
+"get" = "取得";
+"preferences" = "偏好";
+"display_on_startup" = "啟動時顯示";
+"display_shifts_first" = "優先顯示排班表";
+"display_order" = "顯示順序";
+"preferences_notice" = "您可能需要重新啟動應用才能使偏好生效。";
+"settings" = "設定";
+"language" = "語言";
+"siri_and_shortcuts" = "Siri與捷徑";
+"support" = "支援";
+"reload_widgets" = "重新載入小工具";
+"widgets_reloaded" = "已重新載入小工具";
+"clear_cache" = "清除快取";
+"cache_cleared" = "已清除快取";
+"about" = "關於";
+"version" = "版本";
+"source_code_repository" = "原始碼倉庫";
+"privacy_policy" = "私隱政策";
+"developer_sketch" = "開發者 @xzh_Sketch";
+"designer_shooky" = "設計師 @贝壳牌砂糖";
+"acknowledgements" = "致謝";
+"splatoon2_ink" = "Splatoon2.ink";
+"splatoon3_ink" = "Splatoon3.ink";
+"alert_kit" = "AlertKit";
+"kingfisher" = "Kingfisher";
+"swifty_json" = "SwiftyJSON";
+"disclaimer" = "本應用是使用魷魚圈2和魷魚圈3的資訊的非官方應用，與任天堂有限公司無關。";
+"splatoon_down" = "斯普拉遁的伺服器目前遇到問題。請等待問題修復。";
+"splatoon_maintenance_started" = "斯普拉遁正在進行維護。請等待維護結束。";
+"splatoon_maintenance_scheduled" = "已計劃對斯普拉遁進行維護。詳情請查看任天堂支援。";
+"online_play_down" = "線上遊戲的伺服器目前遇到問題。詳情請查看任天堂支援。";
+"online_play_maintenance_started" = "線上遊戲正在進行維護。詳情請查看任天堂支援。";
+"online_play_maintenance_scheduled" = "已計劃對線上遊戲進行維護。詳情請查看任天堂支援。";
+
+// Widget.
+"next" = "下次";
+// HACK: This translation is slightly different from others.
+"no_schedule" = "無時間表";
+"no_shift" = "無排班";
+
+"splatoon_2_schedule" = "斯普拉遁2時間表";
+"splatoon_2_schedule_widget_description" = "查看斯普拉遁2的某模式目前和下次的時間表。";
+"splatoon_2_shift" = "斯普拉遁2排班表";
+"splatoon_2_shift_widget_description" = "查看斯普拉遁2的鮭魚跑目前和下次的排班表。";
+"splatoon_3_schedule" = "斯普拉遁3時間表";
+"splatoon_3_schedule_widget_description" = "查看斯普拉遁3的某模式目前和下次的時間表。";
+"splatoon_3_shift" = "斯普拉遁3排班表";
+"splatoon_3_shift_widget_description" = "查看斯普拉遁3的某模式目前和下次的排班表。";
+
+// Intents.
+"schedule_dialog" = "%1$@%2$@目前正進行於%4$@和%5$@的%3$@。";
+"shift_dialog" = "%1$@目前正開放於%3$@，配給%4$@、%5$@、%6$@和%7$@的%2$@。";
+"soon_shift_dialog" = "%1$@即將開放於%3$@，配給%4$@、%5$@、%6$@和%7$@的%2$@。";

@@ -370,6 +370,20 @@ enum Locale: String, CaseIterable {
     case japanese = "japanese"
     case english = "english"
     case chineseSimplified = "chinese_simplified"
+    case chineseTraditional = "chinese_traditional"
+    
+    var systemLanguageCode: String {
+        switch self {
+        case .japanese:
+            return "ja"
+        case .english:
+            return "en"
+        case .chineseSimplified:
+            return "zh-Hans"
+        case .chineseTraditional:
+            return "zh-Hant"
+        }
+    }
     
     var splatoon2LanguageCode: String {
         switch self {
@@ -379,13 +393,15 @@ enum Locale: String, CaseIterable {
             return "en"
         case .chineseSimplified:
             return "zh-CN"
+        case .chineseTraditional:
+            return "zh-TW"
         }
     }
     var splatoon2UseLocaleFile: Bool {
         switch self {
         case .japanese, .english:
             return false
-        case .chineseSimplified:
+        case .chineseSimplified, .chineseTraditional:
             return true
         }
     }
@@ -397,6 +413,8 @@ enum Locale: String, CaseIterable {
             return "en-US"
         case .chineseSimplified:
             return "zh-CN"
+        case .chineseTraditional:
+            return "zh-TW"
         }
     }
     
@@ -406,7 +424,7 @@ enum Locale: String, CaseIterable {
             return "ja_JP"
         case .english:
             return "en_US"
-        case .chineseSimplified:
+        case .chineseSimplified, .chineseTraditional:
             return "zh_TW"
         }
     }
@@ -426,6 +444,10 @@ private func translateLanguageCode(languageCode: String) -> Locale {
         return .english
     } else if languageCode.starts(with: "ja") {
         return .japanese
+    } else if languageCode.starts(with: "zh-Hans") {
+        return .chineseSimplified
+    } else if languageCode.starts(with: "zh-Hant") {
+        return .chineseTraditional
     } else if languageCode.starts(with: "zh") {
         return .chineseSimplified
     } else {

@@ -13,7 +13,7 @@
 // Mode.
 "regular_battle" = "一般比赛";
 "ranked_battle" = "真格比赛";
-"league_battle" = "组排比赛";
+"league_battle" = "联盟比赛";
 
 "salmon_run" = "鲑鱼跑";
 
@@ -71,7 +71,7 @@
 "splatoon_maintenance_started" = "斯普拉遁正在进行维护。请等待维护结束。";
 "splatoon_maintenance_scheduled" = "已计划对斯普拉遁进行维护。详情请查看任天堂支持。";
 "online_play_down" = "线上游戏的服务器目前遇到问题。详情请查看任天堂支持。";
-"online_play_maintenance_started" = "线上游戏正在进行维护。请等待维护结束。";
+"online_play_maintenance_started" = "线上游戏正在进行维护。详情请查看任天堂支持。";
 "online_play_maintenance_scheduled" = "已计划对线上游戏进行维护。详情请查看任天堂支持。";
 
 // Widget.

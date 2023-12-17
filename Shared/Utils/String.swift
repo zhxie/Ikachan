@@ -22,6 +22,10 @@ private func translateLanguageCode(languageCode: String) -> String {
         return "en"
     } else if languageCode.starts(with: "ja") {
         return "ja"
+    } else if languageCode.starts(with: "zh-Hans") {
+        return "zh-Hans"
+    } else if languageCode.starts(with: "zh-Hant") {
+        return "zh-Hant"
     } else if languageCode.starts(with: "zh") {
         return "zh-Hans"
     } else {
