@@ -180,7 +180,9 @@ struct ContentView: View {
                     splatoon2Shifts = shifts
                 }
                 if error != .NoError {
-                    AlertKitAPI.present(title: error.name.localizedString, icon: .error, style: .iOS17AppleMusic, haptic: .error)
+                    DispatchQueue.main.async {
+                        AlertKitAPI.present(title: error.name.localizedString, icon: .error, style: .iOS17AppleMusic, haptic: .error)
+                    }
                 }
             }
         case .splatoon3:
@@ -191,7 +193,9 @@ struct ContentView: View {
                     splatoon3Shifts = shifts
                 }
                 if error != .NoError {
-                    AlertKitAPI.present(title: error.name.localizedString, icon: .error, style: .iOS17AppleMusic, haptic: .error)
+                    DispatchQueue.main.async {
+                        AlertKitAPI.present(title: error.name.localizedString, icon: .error, style: .iOS17AppleMusic, haptic: .error)
+                    }
                 }
             }
         }
