@@ -144,7 +144,7 @@ struct ContentView: View {
                         case .splatoon3:
                             game = .splatoon2
                         }
-                        update()
+                        update() {}
                     }
                 } label: {
                     switch game {
@@ -162,15 +162,23 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(.stack)
+        .refreshable {
+            // HACK: Introduce refreshable will cause data races since we do not have any guard to avoid multiple updates.
+            await withCheckedContinuation { continuation in
+                update {
+                    continuation.resume()
+                }
+            }
+        }
         .onAppear {
-            update()
+            update() {}
         }
         .sheet(isPresented: $isInfoPresented) {
             AboutView()
         }
     }
     
-    func update() {
+    func update(completion: @escaping () -> Void) {
         switch game {
         case .splatoon2:
             fetchSplatoon2(locale: Locale.localizedLocale) { schedules, shifts, error in
@@ -184,6 +192,7 @@ struct ContentView: View {
                         AlertKitAPI.present(title: error.name.localizedString, icon: .error, style: .iOS17AppleMusic, haptic: .error)
                     }
                 }
+                completion()
             }
         case .splatoon3:
             fetchSplatoon3(locale: Locale.localizedLocale) { schedules, shifts, error in
@@ -197,8 +206,10 @@ struct ContentView: View {
                         AlertKitAPI.present(title: error.name.localizedString, icon: .error, style: .iOS17AppleMusic, haptic: .error)
                     }
                 }
+                completion()
             }
         }
+        // HACK: Completion does not wait fetching maintenance information and operational status to complete.
         fetchMaintenanceInformationAndOperationalStatus { splatoon2Status, splatoon3Status, error in
             if error == .NoError {
                 withAnimation {
