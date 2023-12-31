@@ -24,29 +24,20 @@ enum Error {
 
 enum Status {
     case Normal
-    case SplatoonDown
-    case SplatoonMaintenanceStarted
-    case SplatoonMaintenanceScheduled
-    case OnlinePlayDown
-    case OnlinePlayMaintenanceStarted
-    case OnlinePlayMaintenanceScheduled
+    case Down
+    case MaintenanceStarted
+    case MaintenanceScheduled
     
     var name: String {
         switch self {
         case .Normal:
             return "normal"
-        case .SplatoonDown:
-            return "splatoon_down"
-        case .SplatoonMaintenanceStarted:
-            return "splatoon_maintenance_started"
-        case .SplatoonMaintenanceScheduled:
-            return "splatoon_maintenance_scheduled"
-        case .OnlinePlayDown:
-            return "online_play_down"
-        case .OnlinePlayMaintenanceStarted:
-            return "online_play_maintenance_started"
-        case .OnlinePlayMaintenanceScheduled:
-            return "online_play_maintenance_scheduled"
+        case .Down:
+            return "down"
+        case .MaintenanceStarted:
+            return "maintenance_started"
+        case .MaintenanceScheduled:
+            return "maintenance_scheduled"
         }
     }
 }
@@ -714,32 +705,35 @@ func fetchMaintenanceInformationAndOperationalStatus(completion: @escaping (Stat
                         if temporaryMaintenance["utc_del_time"].stringValue.isEmpty {
                             if temporaryMaintenance["software_title"].stringValue.contains("Splatoon 2") {
                                 if temporaryMaintenance["event_status"].stringValue == "0" {
-                                    splatoon2Status = .SplatoonMaintenanceScheduled
+                                    splatoon2Status = .MaintenanceScheduled
                                 } else {
-                                    splatoon2Status = .SplatoonMaintenanceStarted
+                                    splatoon2Status = .MaintenanceStarted
                                 }
                             }
                             if temporaryMaintenance["software_title"].stringValue.contains("Splatoon 3") {
                                 if temporaryMaintenance["event_status"].stringValue == "0" {
-                                    splatoon3Status = .SplatoonMaintenanceScheduled
+                                    splatoon3Status = .MaintenanceScheduled
                                 } else {
-                                    splatoon3Status = .SplatoonMaintenanceStarted
+                                    splatoon3Status = .MaintenanceStarted
                                 }
                             }
+                            // HACK: Online Splatoon 3-affected online play maintenance will be mentioned.
                             if temporaryMaintenance["software_title"].stringValue.contains("Online play") {
-                                if temporaryMaintenance["event_status"].stringValue == "0" {
-                                    if splatoon2Status == .Normal {
-                                        splatoon2Status = .OnlinePlayMaintenanceScheduled
+                                var mentioned = false
+                                for service in temporaryMaintenance["services"].arrayValue {
+                                    if service.stringValue.contains("Splatoon") {
+                                        mentioned = true
                                     }
-                                    if splatoon3Status == .Normal {
-                                        splatoon3Status = .OnlinePlayMaintenanceScheduled
-                                    }
-                                } else {
-                                    if splatoon2Status == .Normal {
-                                        splatoon2Status = .OnlinePlayMaintenanceStarted
-                                    }
-                                    if splatoon3Status == .Normal {
-                                        splatoon3Status = .OnlinePlayMaintenanceStarted
+                                }
+                                if mentioned || temporaryMaintenance["message"].stringValue.contains("Splatoon") {
+                                    if temporaryMaintenance["event_status"].stringValue == "0" {
+                                        if splatoon3Status == .Normal {
+                                            splatoon3Status = .MaintenanceScheduled
+                                        }
+                                    } else {
+                                        if splatoon3Status == .Normal {
+                                            splatoon3Status = .MaintenanceStarted
+                                        }
                                     }
                                 }
                             }
@@ -748,17 +742,22 @@ func fetchMaintenanceInformationAndOperationalStatus(completion: @escaping (Stat
                     for operationalStatus in json["operational_statuses"].arrayValue {
                         if operationalStatus["utc_del_time"].stringValue.isEmpty {
                             if operationalStatus["software_title"].stringValue.contains("Splatoon 2") {
-                                splatoon2Status = .SplatoonDown
+                                splatoon2Status = .Down
                             }
                             if operationalStatus["software_title"].stringValue.contains("Splatoon 3") {
-                                splatoon3Status = .SplatoonDown
+                                splatoon3Status = .Down
                             }
                             if operationalStatus["software_title"].stringValue.contains("Online play") {
-                                if splatoon2Status != .SplatoonDown {
-                                    splatoon2Status = .OnlinePlayDown
+                                var mentioned = false
+                                for service in operationalStatus["services"].arrayValue {
+                                    if service.stringValue.contains("Splatoon") {
+                                        mentioned = true
+                                    }
                                 }
-                                if splatoon3Status != .SplatoonDown {
-                                    splatoon3Status = .OnlinePlayDown
+                                if mentioned || operationalStatus["message"].stringValue.contains("Splatoon") {
+                                    if splatoon3Status != .Down {
+                                        splatoon3Status = .Down
+                                    }
                                 }
                             }
                         }
