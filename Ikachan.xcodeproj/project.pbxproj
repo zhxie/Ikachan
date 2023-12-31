@@ -134,6 +134,7 @@
 		E4C85A932B2DE7C300D4F596 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C85A912B2DE7C300D4F596 /* Array.swift */; };
 		E4C85A942B2DE7C300D4F596 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C85A912B2DE7C300D4F596 /* Array.swift */; };
 		E4C85A952B2DE7C300D4F596 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C85A912B2DE7C300D4F596 /* Array.swift */; };
+		E4C9607E2B41D15F009D73AF /* SwappableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C9607D2B41D15F009D73AF /* SwappableView.swift */; };
 		E4CB960B2B2B5E7200F322AE /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB960A2B2B5E7200F322AE /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
@@ -259,6 +260,7 @@
 		E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftJSON.swift; sourceTree = "<group>"; };
 		E4C85A8F2B2DA09200D4F596 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E4C85A912B2DE7C300D4F596 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		E4C9607D2B41D15F009D73AF /* SwappableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwappableView.swift; sourceTree = "<group>"; };
 		E4CB960A2B2B5E7200F322AE /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		E4CB960C2B2B5E9000F322AE /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		E4E5E7162B2F227D00C31601 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/IkachanIntents.strings"; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 				E440CA1F2B27329900884D57 /* ShiftView.swift */,
 				E490E9962B283946002A03D2 /* CardView.swift */,
 				E4CB960A2B2B5E7200F322AE /* SafariView.swift */,
+				E4C9607D2B41D15F009D73AF /* SwappableView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -772,6 +775,7 @@
 				E417636E2B271CE500B52CE9 /* Constant.swift in Sources */,
 				E440CA152B271E8200884D57 /* Splatoon3ScheduleIntentHandler.swift in Sources */,
 				E41763682B25A9C500B52CE9 /* Enum.swift in Sources */,
+				E4C9607E2B41D15F009D73AF /* SwappableView.swift in Sources */,
 				E468B7B525B46080001254FE /* Date.swift in Sources */,
 				E490E9972B283946002A03D2 /* CardView.swift in Sources */,
 				E42AE86127550951006F7CBD /* StageView.swift in Sources */,

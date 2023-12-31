@@ -56,19 +56,17 @@ struct ContentView: View {
                                 .padding([.horizontal])
                             }
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 450, maximum: 900))]) {
-                                if displayShiftsFirst && !splatoon2Shifts.isEmpty {
-                                    ShiftsNavigationLink(shifts: splatoon2Shifts)
-                                }
-                                ForEach(splatoon2ScheduleOrder, id: \.self) { mode in
-                                    if !splatoon2Schedules.filter({ schedule in
-                                        schedule._mode == mode
-                                    }).isEmpty {
-                                        SchedulesNavigationLink(schedules: splatoon2Schedules.filter { schedule in
+                                SwappableView(isSwapped: displayShiftsFirst) {
+                                    ForEach(splatoon2ScheduleOrder, id: \.self) { mode in
+                                        if !splatoon2Schedules.filter({ schedule in
                                             schedule._mode == mode
-                                        })
+                                        }).isEmpty {
+                                            SchedulesNavigationLink(schedules: splatoon2Schedules.filter { schedule in
+                                                schedule._mode == mode
+                                            })
+                                        }
                                     }
-                                }
-                                if !displayShiftsFirst && !splatoon2Shifts.isEmpty {
+                                } content2: {
                                     ShiftsNavigationLink(shifts: splatoon2Shifts)
                                 }
                             }
@@ -97,27 +95,17 @@ struct ContentView: View {
                                 .padding([.horizontal])
                             }
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 450, maximum: 900))]) {
-                                if displayShiftsFirst {
-                                    ForEach(splatoon3ShiftOrder, id: \.self) { mode in
-                                        if !splatoon3Shifts.filter({ shift in
-                                            shift._mode == mode
+                                SwappableView(isSwapped: displayShiftsFirst) {
+                                    ForEach(splatoon3ScheduleOrder, id: \.self) { mode in
+                                        if !splatoon3Schedules.filter({ schedule in
+                                            schedule._mode == mode
                                         }).isEmpty {
-                                            ShiftsNavigationLink(shifts: splatoon3Shifts.filter { shift in
-                                                shift._mode == mode
+                                            SchedulesNavigationLink(schedules: splatoon3Schedules.filter { schedule in
+                                                schedule._mode == mode
                                             })
                                         }
                                     }
-                                }
-                                ForEach(splatoon3ScheduleOrder, id: \.self) { mode in
-                                    if !splatoon3Schedules.filter({ schedule in
-                                        schedule._mode == mode
-                                    }).isEmpty {
-                                        SchedulesNavigationLink(schedules: splatoon3Schedules.filter { schedule in
-                                            schedule._mode == mode
-                                        })
-                                    }
-                                }
-                                if !displayShiftsFirst {
+                                } content2: {
                                     ForEach(splatoon3ShiftOrder, id: \.self) { mode in
                                         if !splatoon3Shifts.filter({ shift in
                                             shift._mode == mode
