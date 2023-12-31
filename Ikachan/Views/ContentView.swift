@@ -70,7 +70,7 @@ struct ContentView: View {
                                     ShiftsNavigationLink(shifts: splatoon2Shifts)
                                 }
                             }
-                            .padding([.horizontal])
+                            .padding([.horizontal, .bottom])
                         case .splatoon3:
                             if splatoon3Status != .Normal {
                                 VStack {
@@ -117,7 +117,7 @@ struct ContentView: View {
                                     }
                                 }
                             }
-                            .padding([.horizontal])
+                            .padding([.horizontal, .bottom])
                         }
                     }
                 }
