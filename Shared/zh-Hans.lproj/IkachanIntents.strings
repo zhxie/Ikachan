@@ -14,8 +14,7 @@
 "yMzY4p" = "三色夺宝比赛";
 
 // INSplatoon3ShiftMode
-"cL3CLn" = "鲑鱼跑";
-"tD80vo" = "大型跑";
+"cL3CLn" = "鲑鱼跑与大型跑";
 "koMIyP" = "团队打工竞赛";
 
 // Splatoon2Schedule
@@ -52,6 +51,5 @@
 "GqWdsS" = "显示斯普拉遁3某模式的排班表。";
 "RUrIxS" = "模式";
 "hwuahg" = "斯普拉遁3${mode}的排班表";
-"hyUjkm-cL3CLn" = "这就是斯普拉遁3鲑鱼跑的排班表。";
-"hyUjkm-tD80vo" = "这就是斯普拉遁3大型跑的排班表。";
+"hyUjkm-cL3CLn" = "这就是斯普拉遁3鲑鱼跑与大型跑的排班表。";
 "hyUjkm-koMIyP" = "这就是斯普拉遁3团队打工竞赛的排班表。";

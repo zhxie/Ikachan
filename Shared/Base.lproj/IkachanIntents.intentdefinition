@@ -183,23 +183,13 @@
 				</dict>
 				<dict>
 					<key>INEnumValueDisplayName</key>
-					<string>salmon run</string>
+					<string>salmon run and big run</string>
 					<key>INEnumValueDisplayNameID</key>
 					<string>cL3CLn</string>
 					<key>INEnumValueIndex</key>
 					<integer>1</integer>
 					<key>INEnumValueName</key>
-					<string>salmonRun</string>
-				</dict>
-				<dict>
-					<key>INEnumValueDisplayName</key>
-					<string>big run</string>
-					<key>INEnumValueDisplayNameID</key>
-					<string>tD80vo</string>
-					<key>INEnumValueIndex</key>
-					<integer>2</integer>
-					<key>INEnumValueName</key>
-					<string>bigRun</string>
+					<string>salmonRunAndBigRun</string>
 				</dict>
 				<dict>
 					<key>INEnumValueDisplayName</key>

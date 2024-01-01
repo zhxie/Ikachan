@@ -7,15 +7,15 @@ struct Splatoon3ShiftProvider: IntentTimelineProvider {
     func filterShifts(shifts: [Splatoon3Shift], mode: INSplatoon3ShiftMode) -> [Splatoon3Shift] {
         return shifts.filter { shift in
             switch mode {
-            case .unknown, .salmonRun:
-                return shift._mode == .salmonRun
-            case .bigRun:
-                return shift._mode == .bigRun
+            case .unknown, .salmonRunAndBigRun:
+                return shift._mode == .salmonRun || shift._mode == .bigRun
             case .eggstraWork:
                 return shift._mode == .eggstraWork
             }
         }.filter { schedule in
             schedule.endTime > Date()
+        }.sorted { a, b in
+            a.startTime < b.startTime
         }
     }
     

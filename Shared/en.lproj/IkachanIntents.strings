@@ -14,8 +14,7 @@
 "yMzY4p" = "Tricolor Battle";
 
 // INSplatoon3ShiftMode
-"cL3CLn" = "Salmon Run";
-"tD80vo" = "Big Run";
+"cL3CLn" = "Salmon Run & Big Run";
 "koMIyP" = "Eggstra Work";
 
 // Splatoon2Schedule
@@ -53,6 +52,5 @@
 "GqWdsS" = "Shows shifts of a mode in Splatoon 3.";
 "RUrIxS" = "Mode";
 "hwuahg" = "Shift of ${mode} in Splatoon 3";
-"hyUjkm-cL3CLn" = "Here's the shift of Salmon Run in Splatoon 3.";
-"hyUjkm-tD80vo" = "Here's the shift of Big Run in Splatoon 3.";
+"hyUjkm-cL3CLn" = "Here's the shift of Salmon Run & Big Run in Splatoon 3.";
 "hyUjkm-koMIyP" = "Here's the shift of Eggstra Work in Splatoon 3.";

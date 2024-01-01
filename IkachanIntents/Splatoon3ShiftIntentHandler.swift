@@ -14,15 +14,6 @@ class Splatoon3ShiftIntentHandler: IntentHandler, Splatoon3ShiftIntentHandling {
     }
 
     func handle(intent: Splatoon3ShiftIntent, completion: @escaping (Splatoon3ShiftIntentResponse) -> Void) {
-        var mode: Splatoon3ShiftMode = .salmonRun
-        switch intent.mode {
-        case .unknown, .salmonRun:
-            mode = .salmonRun
-        case .bigRun:
-            mode = .bigRun
-        case .eggstraWork:
-            mode = .eggstraWork
-        }
         fetchSplatoon3Shifts(locale: Locale.localizedIntentsLocale) { shifts, error in
             guard error == .NoError else {
                 completion(Splatoon3ShiftIntentResponse(code: .failure, userActivity: nil))
@@ -31,9 +22,16 @@ class Splatoon3ShiftIntentHandler: IntentHandler, Splatoon3ShiftIntentHandling {
             }
             
             let filtered = shifts.filter { shift in
-                shift._mode == mode
+                switch intent.mode {
+                case .unknown, .salmonRunAndBigRun:
+                    return shift._mode == .salmonRun || shift._mode == .bigRun
+                case .eggstraWork:
+                    return shift._mode == .eggstraWork
+                }
             }.filter { schedule in
                 Date() < schedule.endTime
+            }.sorted { a, b in
+                a.startTime < b.startTime
             }
             guard let shift = filtered.first else {
                 completion(Splatoon3ShiftIntentResponse(code: .failure, userActivity: nil))
