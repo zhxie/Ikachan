@@ -680,7 +680,7 @@
 					<key>INIntentParameterMetadata</key>
 					<dict>
 						<key>INIntentParameterMetadataDefaultValue</key>
-						<string>salmonRun</string>
+						<string>salmonRunAndBigRun</string>
 					</dict>
 					<key>INIntentParameterName</key>
 					<string>mode</string>
