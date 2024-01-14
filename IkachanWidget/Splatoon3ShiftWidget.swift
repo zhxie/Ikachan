@@ -20,7 +20,7 @@ struct Splatoon3ShiftProvider: IntentTimelineProvider {
     }
     
     func placeholder(in context: Context) -> Splatoon3ShiftEntry {
-        Splatoon3ShiftEntry(date: Date(), configuration: Splatoon3ShiftIntent(), shift: PreviewSplatoon3Shift)
+        Splatoon3ShiftEntry(date: Date(), configuration: Splatoon3ShiftIntent(), shift: PreviewSplatoon3Shift, nextShift: PreviewSplatoon3Shift)
     }
 
     func getSnapshot(for configuration: Splatoon3ShiftIntent, in context: Context, completion: @escaping (Splatoon3ShiftEntry) -> ()) {

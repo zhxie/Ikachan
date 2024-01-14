@@ -11,7 +11,7 @@ struct Splatoon2ShiftProvider: IntentTimelineProvider {
     }
     
     func placeholder(in context: Context) -> Splatoon2ShiftEntry {
-        Splatoon2ShiftEntry(date: Date(), configuration: Splatoon2ShiftIntent(), shift: PreviewSplatoon2Shift)
+        Splatoon2ShiftEntry(date: Date(), configuration: Splatoon2ShiftIntent(), shift: PreviewSplatoon2Shift, nextShift: PreviewSplatoon2Shift)
     }
 
     func getSnapshot(for configuration: Splatoon2ShiftIntent, in context: Context, completion: @escaping (Splatoon2ShiftEntry) -> ()) {

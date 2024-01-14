@@ -30,7 +30,7 @@ struct Splatoon3ScheduleProvider: IntentTimelineProvider {
     }
     
     func placeholder(in context: Context) -> Splatoon3ScheduleEntry {
-        Splatoon3ScheduleEntry(date: Date(), configuration: Splatoon3ScheduleIntent(), schedule: PreviewSplatoon3Schedule)
+        Splatoon3ScheduleEntry(date: Date(), configuration: Splatoon3ScheduleIntent(), schedule: PreviewSplatoon3Schedule, nextSchedule: PreviewSplatoon3Schedule)
     }
 
     func getSnapshot(for configuration: Splatoon3ScheduleIntent, in context: Context, completion: @escaping (Splatoon3ScheduleEntry) -> ()) {
