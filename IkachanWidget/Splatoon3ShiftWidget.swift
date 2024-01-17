@@ -43,9 +43,8 @@ struct Splatoon3ShiftProvider: IntentTimelineProvider {
                 }
                 if filtered.count > 1 {
                     entry.nextShift = filtered.at(index: 1)!
-                    if let stage = filtered.at(index: 1)!.stage {
-                        urls.insert(stage.thumbnail ?? stage.image)
-                        for weapon in filtered.at(index: 1)!.weapons! {
+                    if let weapons = filtered.at(index: 1)!.weapons {
+                        for weapon in weapons {
                             urls.insert(weapon.thumbnail ?? weapon.image)
                         }
                     }
@@ -88,9 +87,8 @@ struct Splatoon3ShiftProvider: IntentTimelineProvider {
                     }
                     if (filtered.count > i + 1) {
                         entry.nextShift = filtered.at(index: i + 1)!
-                        if let stage = filtered.at(index: i + 1)!.stage {
-                            urls.insert(stage.thumbnail ?? stage.image)
-                            for weapon in filtered.at(index: i + 1)!.weapons! {
+                        if let weapons = filtered.at(index: i + 1)!.weapons {
+                            for weapon in weapons {
                                 urls.insert(weapon.thumbnail ?? weapon.image)
                             }
                         }

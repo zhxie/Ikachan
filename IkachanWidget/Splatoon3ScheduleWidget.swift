@@ -43,16 +43,10 @@ struct Splatoon3ScheduleProvider: IntentTimelineProvider {
             
             let filtered = filterSchedules(schedules: schedules, mode: configuration.mode)
             if !filtered.isEmpty {
-                var entry = Splatoon3ScheduleEntry(date: Date(), configuration: configuration, schedule: filtered.first!)
+                var entry = Splatoon3ScheduleEntry(date: Date(), configuration: configuration, schedule: filtered.first!, nextSchedule: filtered.at(index: 1))
                 var urls: Set<URL> = []
                 for stage in filtered.first!.stages {
                     urls.insert(stage.thumbnail ?? stage.image)
-                }
-                if filtered.count > 1 {
-                    entry.nextSchedule = filtered.at(index: 1)!
-                    for stage in filtered.at(index: 1)!.stages {
-                        urls.insert(stage.thumbnail ?? stage.image)
-                    }
                 }
                 
                 ImagePrefetcher(resources: urls.map({ url in
@@ -83,15 +77,9 @@ struct Splatoon3ScheduleProvider: IntentTimelineProvider {
                     if filtered.count <= i {
                         break
                     }
-                    var entry = Splatoon3ScheduleEntry(date: i == 0 ? Date() : filtered.at(index: i)!.startTime, configuration: configuration, schedule: filtered.at(index: i)!)
+                    var entry = Splatoon3ScheduleEntry(date: i == 0 ? Date() : filtered.at(index: i)!.startTime, configuration: configuration, schedule: filtered.at(index: i)!, nextSchedule: filtered.at(index: i + 1))
                     for stage in filtered.at(index: i)!.stages {
                         urls.insert(stage.thumbnail ?? stage.image)
-                    }
-                    if (filtered.count > i + 1) {
-                        entry.nextSchedule = filtered.at(index: i + 1)!
-                        for stage in filtered.at(index: i + 1)!.stages {
-                            urls.insert(stage.thumbnail ?? stage.image)
-                        }
                     }
                     entries.append(entry)
                 }
