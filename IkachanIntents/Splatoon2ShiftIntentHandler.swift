@@ -15,8 +15,8 @@ class Splatoon2ShiftIntentHandler: IntentHandler, Splatoon2ShiftIntentHandling {
             
             let filtered = shifts.filter { shift in
                 shift.stage != nil
-            }.filter { schedule in
-                Date() < schedule.endTime
+            }.filter { shift in
+                shift.endTime > Date()
             }
             guard let shift = filtered.first else {
                 completion(Splatoon2ShiftIntentResponse(code: .failure, userActivity: nil))

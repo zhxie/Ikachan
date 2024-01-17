@@ -28,8 +28,8 @@ class Splatoon3ShiftIntentHandler: IntentHandler, Splatoon3ShiftIntentHandling {
                 case .eggstraWork:
                     return shift._mode == .eggstraWork
                 }
-            }.filter { schedule in
-                Date() < schedule.endTime
+            }.filter { shift in
+                shift.endTime > Date()
             }.sorted { a, b in
                 a.startTime < b.startTime
             }

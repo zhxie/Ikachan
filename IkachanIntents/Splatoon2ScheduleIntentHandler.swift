@@ -33,7 +33,7 @@ class Splatoon2ScheduleIntentHandler: IntentHandler, Splatoon2ScheduleIntentHand
             let filtered = schedules.filter { schedule in
                 schedule._mode == mode
             }.filter { schedule in
-                Date() < schedule.endTime
+                schedule.endTime > Date()
             }
             guard let schedule = filtered.first else {
                 completion(Splatoon2ScheduleIntentResponse(code: .failure, userActivity: nil))

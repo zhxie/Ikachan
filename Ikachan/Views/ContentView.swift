@@ -172,8 +172,12 @@ struct ContentView: View {
             fetchSplatoon2(locale: Locale.localizedLocale) { schedules, shifts, error in
                 withAnimation {
                     splatoon2Error = error
-                    splatoon2Schedules = schedules
-                    splatoon2Shifts = shifts
+                    splatoon2Schedules = schedules.filter { schedule in
+                        schedule.endTime > Date()
+                    }
+                    splatoon2Shifts = shifts.filter { shift in
+                        shift.endTime > Date()
+                    }
                 }
                 if error != .NoError {
                     DispatchQueue.main.async {
@@ -186,8 +190,12 @@ struct ContentView: View {
             fetchSplatoon3(locale: Locale.localizedLocale) { schedules, shifts, error in
                 withAnimation {
                     splatoon3Error = error
-                    splatoon3Schedules = schedules
-                    splatoon3Shifts = shifts
+                    splatoon3Schedules = schedules.filter { schedule in
+                        schedule.endTime > Date()
+                    }
+                    splatoon3Shifts = shifts.filter { shift in
+                        shift.endTime > Date()
+                    }
                 }
                 if error != .NoError {
                     DispatchQueue.main.async {
