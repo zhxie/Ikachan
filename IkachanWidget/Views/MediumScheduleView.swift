@@ -13,7 +13,7 @@ struct MediumScheduleView: View {
                         .resizedToFit()
                         .frame(width: 20, height: 20)
                         .layoutPriority(1)
-                    Text(LocalizedStringKey(schedule.challenge ?? schedule.rule.name))
+                    Text(LocalizedStringKey(schedule.rule.name))
                         .fontWeight(.bold)
                         .foregroundColor(schedule.mode.accentColor)
                         .lineLimit(1)
