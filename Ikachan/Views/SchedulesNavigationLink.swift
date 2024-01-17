@@ -8,7 +8,9 @@ struct SchedulesNavigationLink: View {
             SchedulesView(mode: schedules.first!.mode, schedules: schedules)
         } label: {
             CardView(image: schedules.first!.mode.image, name: schedules.first!.mode.name) {
-                ScheduleView(schedule: schedules.first!, nextSchedule: schedules.at(index: 1))
+                ScheduleView(schedule: schedules.first!, nextSchedule: schedules.suffix(from: 1).first(where: { schedule in
+                    schedule.challenge == nil || schedule.challenge != schedules.first!.challenge
+                }))
             }
         }
         .buttonStyle(CardButtonStyle())
