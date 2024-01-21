@@ -70,6 +70,9 @@
 "down" = "現在、サーバーに障害が発生しております。問題が解決されるまでお待ちください。";
 "maintenance_started" = "メンテナンスを実施中です。メンテナンスが終了するまでお待ちください。";
 "maintenance_scheduled" = "メンテナンスが決定しました。詳しくは任天堂サポートをご確認ください。";
+"request_failed" = "リクエストが失敗しました";
+"error_response" = "エラーレスポンス";
+"parse_failed" = "解析が失敗しました";
 
 // Widget.
 "next" = "つぎ";

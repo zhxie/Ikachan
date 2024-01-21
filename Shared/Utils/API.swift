@@ -5,7 +5,7 @@ import SwiftyJSON
 enum APIError: Error {
     case NoError
     case RequestFailed
-    case NonSuccessfulResponse
+    case ErrorResponse
     case ParseFailed
     
     var name: String {
@@ -14,8 +14,8 @@ enum APIError: Error {
             return "no_error"
         case .RequestFailed:
             return "request_failed"
-        case .NonSuccessfulResponse:
-            return "non_successful_response"
+        case .ErrorResponse:
+            return "error_response"
         case .ParseFailed:
             return "parse_failed"
         }
@@ -53,7 +53,7 @@ private func fetchSplatoon2Schedules(locale: JSON, completion: @escaping ([Splat
                 let response = response as! HTTPURLResponse
                 let status = response.statusCode
                 guard (200...299).contains(status) else {
-                    completion([], .NonSuccessfulResponse)
+                    completion([], .ErrorResponse)
                     
                     return
                 }
@@ -100,7 +100,7 @@ private func fetchSplatoon2Shifts(locale: JSON, completion: @escaping ([Splatoon
                 let response = response as! HTTPURLResponse
                 let status = response.statusCode
                 guard (200...299).contains(status) else {
-                    completion([], .NonSuccessfulResponse)
+                    completion([], .ErrorResponse)
                     
                     return
                 }
@@ -170,7 +170,7 @@ private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splat
                 let response = response as! HTTPURLResponse
                 let status = response.statusCode
                 guard (200...299).contains(status) else {
-                    completion([], .NonSuccessfulResponse)
+                    completion([], .ErrorResponse)
                     
                     return
                 }
@@ -329,7 +329,7 @@ private func fetchSplatoon3Shifts(locale: JSON, completion: @escaping ([Splatoon
                 let response = response as! HTTPURLResponse
                 let status = response.statusCode
                 guard (200...299).contains(status) else {
-                    completion([], .NonSuccessfulResponse)
+                    completion([], .ErrorResponse)
                     
                     return
                 }
@@ -501,7 +501,7 @@ func fetchSplatoon2Schedules(locale: Locale, completion: @escaping ([Splatoon2Sc
                 let response = response as! HTTPURLResponse
                 let status = response.statusCode
                 guard (200...299).contains(status) else {
-                    completion([], .NonSuccessfulResponse)
+                    completion([], .ErrorResponse)
                     
                     return
                 }
@@ -537,7 +537,7 @@ func fetchSplatoon2Shifts(locale: Locale, completion: @escaping ([Splatoon2Shift
                 let response = response as! HTTPURLResponse
                 let status = response.statusCode
                 guard (200...299).contains(status) else {
-                    completion([], .NonSuccessfulResponse)
+                    completion([], .ErrorResponse)
                     
                     return
                 }
@@ -563,7 +563,7 @@ func fetchSplatoon3Schedules(locale: Locale, completion: @escaping ([Splatoon3Sc
                 let response = response as! HTTPURLResponse
                 let status = response.statusCode
                 guard (200...299).contains(status) else {
-                    completion([], .NonSuccessfulResponse)
+                    completion([], .ErrorResponse)
                     
                     return
                 }
@@ -589,7 +589,7 @@ func fetchSplatoon3Shifts(locale: Locale, completion: @escaping ([Splatoon3Shift
                 let response = response as! HTTPURLResponse
                 let status = response.statusCode
                 guard (200...299).contains(status) else {
-                    completion([], .NonSuccessfulResponse)
+                    completion([], .ErrorResponse)
                     
                     return
                 }
@@ -642,7 +642,7 @@ func fetchSplatoon2(locale: Locale, completion: @escaping ([Splatoon2Schedule], 
                 let response = response as! HTTPURLResponse
                 let status = response.statusCode
                 guard (200...299).contains(status) else {
-                    completion([], [], .NonSuccessfulResponse)
+                    completion([], [], .ErrorResponse)
                     
                     return
                 }
@@ -684,7 +684,7 @@ func fetchSplatoon3(locale: Locale, completion: @escaping ([Splatoon3Schedule], 
                 let response = response as! HTTPURLResponse
                 let status = response.statusCode
                 guard (200...299).contains(status) else {
-                    completion([], [], .NonSuccessfulResponse)
+                    completion([], [], .ErrorResponse)
                     
                     return
                 }
@@ -727,7 +727,7 @@ func fetchMaintenanceInformationAndOperationalStatus(completion: @escaping (Stat
                 let response = response as! HTTPURLResponse
                 let status = response.statusCode
                 guard (200...299).contains(status) else {
-                    completion(.Normal, .Normal, .NonSuccessfulResponse)
+                    completion(.Normal, .Normal, .ErrorResponse)
                     
                     return
                 }

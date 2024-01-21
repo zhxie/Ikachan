@@ -70,6 +70,9 @@
 "down" = "服务器目前遇到问题。请等待问题修复。";
 "maintenance_started" = "正在进行维护。请等待维护结束。";
 "maintenance_scheduled" = "已计划进行维护。详情请查看任天堂支持。";
+"request_failed" = "请求出错";
+"error_response" = "错误响应";
+"parse_failed" = "解析出错";
 
 // Widget.
 "next" = "下次";

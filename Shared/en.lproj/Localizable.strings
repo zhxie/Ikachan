@@ -70,6 +70,9 @@
 "down" = "Servers are currently experiencing problems. Please wait until the issue is fixed.";
 "maintenance_started" = "Maintenance is now taking place. Please wait until the maintenance is finished.";
 "maintenance_scheduled" = "Maintenance has been scheduled. Please check Nintendo Support for more details.";
+"request_failed" = "Request Failed";
+"error_response" = "Error Response";
+"parse_failed" = "Parse Failed";
 
 // Widget.
 "next" = "Next";
