@@ -67,7 +67,9 @@ struct ContentView: View {
                                         }
                                     }
                                 } content2: {
-                                    ShiftsNavigationLink(shifts: splatoon2Shifts)
+                                    if !splatoon2Shifts.isEmpty {
+                                        ShiftsNavigationLink(shifts: splatoon2Shifts)
+                                    }
                                 }
                             }
                             .padding([.horizontal, .bottom])
