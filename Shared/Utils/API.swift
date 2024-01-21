@@ -2,7 +2,7 @@ import UIKit
 import Intents
 import SwiftyJSON
 
-enum Error {
+enum APIError: Error {
     case NoError
     case RequestFailed
     case NonSuccessfulResponse
@@ -42,7 +42,7 @@ enum Status {
     }
 }
 
-private func fetchSplatoon2Schedules(locale: JSON, completion: @escaping ([Splatoon2Schedule], Error) -> Void) {
+private func fetchSplatoon2Schedules(locale: JSON, completion: @escaping ([Splatoon2Schedule], APIError) -> Void) {
     do {
         var request = URLRequest(url: URL(string: Splatoon2InkScheduleURL)!)
         request.timeoutInterval = Timeout
@@ -62,6 +62,13 @@ private func fetchSplatoon2Schedules(locale: JSON, completion: @escaping ([Splat
                     var schedules: [Splatoon2Schedule] = []
                     for (_, value) in json {
                         for schedule in value.arrayValue {
+                            // Judge if the schedule is illegal.
+                            guard schedule["start_time"].double != nil else {
+                                completion([], .ParseFailed)
+                                
+                                return
+                            }
+                            
                             let startTime = Date(timeIntervalSince1970: schedule["start_time"].doubleValue)
                             let endTime = Date(timeIntervalSince1970: schedule["end_time"].doubleValue)
                             let mode = Splatoon2ScheduleMode.allCases.first { mode in
@@ -82,7 +89,7 @@ private func fetchSplatoon2Schedules(locale: JSON, completion: @escaping ([Splat
         .resume()
     }
 }
-private func fetchSplatoon2Shifts(locale: JSON, completion: @escaping ([Splatoon2Shift], Error) -> Void) {
+private func fetchSplatoon2Shifts(locale: JSON, completion: @escaping ([Splatoon2Shift], APIError) -> Void) {
     do {
         var request = URLRequest(url: URL(string: Splatoon2InkShiftURL)!)
         request.timeoutInterval = Timeout
@@ -102,6 +109,13 @@ private func fetchSplatoon2Shifts(locale: JSON, completion: @escaping ([Splatoon
                     var previousTime = Date(timeIntervalSince1970: 0)
                     var shifts: [Splatoon2Shift] = []
                     for shift in json["details"].arrayValue {
+                        // Judge if the shift is illegal.
+                        guard shift["start_time"].double != nil else {
+                            completion([], .ParseFailed)
+                            
+                            return
+                        }
+                        
                         let startTime = Date(timeIntervalSince1970: shift["start_time"].doubleValue)
                         if startTime <= previousTime {
                             continue
@@ -120,6 +134,13 @@ private func fetchSplatoon2Shifts(locale: JSON, completion: @escaping ([Splatoon
                         previousTime = startTime
                     }
                     for shift in json["schedules"].arrayValue {
+                        // Judge if the shift is illegal.
+                        guard shift["start_time"].double != nil else {
+                            completion([], .ParseFailed)
+                            
+                            return
+                        }
+                        
                         let startTime = Date(timeIntervalSince1970: shift["start_time"].doubleValue)
                         if startTime <= previousTime {
                             continue
@@ -138,7 +159,7 @@ private func fetchSplatoon2Shifts(locale: JSON, completion: @escaping ([Splatoon
         .resume()
     }
 }
-private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splatoon3Schedule], Error) -> Void) {
+private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splatoon3Schedule], APIError) -> Void) {
     do {
         var request = URLRequest(url: URL(string: Splatoon3InkScheduleURL)!)
         request.timeoutInterval = Timeout
@@ -158,6 +179,13 @@ private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splat
                     var schedules: [Splatoon3Schedule] = []
                     let innerData = json["data"]
                     for schedule in innerData["regularSchedules"]["nodes"].arrayValue {
+                        // Judge if the schedule is illegal.
+                        guard schedule["startTime"].string != nil else {
+                            completion([], .ParseFailed)
+                            
+                            return
+                        }
+                        
                         let startTime = Date(utc: schedule["startTime"].stringValue)
                         let endTime = Date(utc: schedule["endTime"].stringValue)
                         let matchSetting = schedule["regularMatchSetting"]
@@ -174,6 +202,13 @@ private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splat
                         schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: Splatoon3ScheduleMode.regularBattle, rule: rule, stages: stages))
                     }
                     for schedule in innerData["bankaraSchedules"]["nodes"].arrayValue {
+                        // Judge if the schedule is illegal.
+                        guard schedule["startTime"].string != nil else {
+                            completion([], .ParseFailed)
+                            
+                            return
+                        }
+                        
                         let startTime = Date(utc: schedule["startTime"].stringValue)
                         let endTime = Date(utc: schedule["endTime"].stringValue)
                         for matchSetting in schedule["bankaraMatchSettings"].arrayValue {
@@ -194,6 +229,13 @@ private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splat
                         }
                     }
                     for schedule in innerData["xSchedules"]["nodes"].arrayValue {
+                        // Judge if the schedule is illegal.
+                        guard schedule["startTime"].string != nil else {
+                            completion([], .ParseFailed)
+                            
+                            return
+                        }
+                        
                         let startTime = Date(utc: schedule["startTime"].stringValue)
                         let endTime = Date(utc: schedule["endTime"].stringValue)
                         let matchSetting = schedule["xMatchSetting"]
@@ -211,7 +253,7 @@ private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splat
                     }
                     for schedule in innerData["eventSchedules"]["nodes"].arrayValue {
                         let matchSetting = schedule["leagueMatchSetting"]
-                        if matchSetting.isNull {
+                        if !matchSetting.exists() || matchSetting.isNull {
                             continue
                         }
                         let rule = Splatoon3Rule.allCases.first { rule in
@@ -229,6 +271,13 @@ private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splat
                         }
                     }
                     for schedule in innerData["festSchedules"]["nodes"].arrayValue {
+                        // Judge if the schedule is illegal.
+                        guard schedule["startTime"].string != nil else {
+                            completion([], .ParseFailed)
+                            
+                            return
+                        }
+                        
                         let startTime = Date(utc: schedule["startTime"].stringValue)
                         let endTime = Date(utc: schedule["endTime"].stringValue)
                         for matchSetting in schedule["festMatchSettings"].arrayValue {
@@ -250,7 +299,7 @@ private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splat
                     }
                     
                     let splatfest = innerData["currentFest"]
-                    if !splatfest.isNull {
+                    if splatfest.exists() && !splatfest.isNull {
                         let startTime = Date(utc: splatfest["midtermTime"].stringValue)
                         let endTime = Date(utc: splatfest["endTime"].stringValue)
                         let stage = Stage(name: locale["stages"][splatfest["tricolorStage"]["id"].stringValue]["name"].stringValue, image: URL(string: splatfest["tricolorStage"]["image"]["url"].stringValue)!)
@@ -269,7 +318,7 @@ private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splat
         .resume()
     }
 }
-private func fetchSplatoon3Shifts(locale: JSON, completion: @escaping ([Splatoon3Shift], Error) -> Void) {
+private func fetchSplatoon3Shifts(locale: JSON, completion: @escaping ([Splatoon3Shift], APIError) -> Void) {
     do {
         var request = URLRequest(url: URL(string: Splatoon3InkScheduleURL)!)
         request.timeoutInterval = Timeout
@@ -288,60 +337,45 @@ private func fetchSplatoon3Shifts(locale: JSON, completion: @escaping ([Splatoon
                 if let json = try? JSON(data: data!) {
                     var shifts: [Splatoon3Shift] = []
                     let innerData = json["data"]["coopGroupingSchedule"]
-                    for shift in innerData["regularSchedules"]["nodes"].arrayValue {
-                        let startTime = Date(utc: shift["startTime"].stringValue)
-                        let endTime = Date(utc: shift["endTime"].stringValue)
-                        let setting = shift["setting"]
-                        let stage = Stage(name: locale["stages"][setting["coopStage"]["id"].stringValue]["name"].stringValue, image: URL(string: setting["coopStage"]["image"]["url"].stringValue)!, thumbnail: URL(string: setting["coopStage"]["thumbnailImage"]["url"].stringValue)!)
-                        var weapons: [Weapon] = []
-                        for weapon in setting["weapons"].arrayValue {
-                            weapons.append(Weapon(name: locale["weapons"][weapon["__splatoon3ink_id"].stringValue]["name"].stringValue, image: URL(string: weapon["image"]["url"].stringValue)!, thumbnail: weapon["image"]["url"].stringValue.contains("weapon_illust") ? URL(string: weapon["image"]["url"].stringValue.replacingOccurrences(of: "_0", with: "_1"))! : nil))
+                    let modeMap = [
+                        "regularSchedules": Splatoon3ShiftMode.salmonRun,
+                        "bigRunSchedules": Splatoon3ShiftMode.bigRun,
+                        "teamContestSchedules": Splatoon3ShiftMode.eggstraWork
+                    ]
+                    for mode in modeMap.keys {
+                        for shift in innerData[mode]["nodes"].arrayValue {
+                            // Judge if the shift is illegal.
+                            guard shift["startTime"].string != nil else {
+                                completion([], .ParseFailed)
+                                
+                                return
+                            }
+                            
+                            let startTime = Date(utc: shift["startTime"].stringValue)
+                            let endTime = Date(utc: shift["endTime"].stringValue)
+                            let setting = shift["setting"]
+                            let stage = Stage(name: locale["stages"][setting["coopStage"]["id"].stringValue]["name"].stringValue, image: URL(string: setting["coopStage"]["image"]["url"].stringValue)!, thumbnail: URL(string: setting["coopStage"]["thumbnailImage"]["url"].stringValue)!)
+                            var weapons: [Weapon] = []
+                            for weapon in setting["weapons"].arrayValue {
+                                weapons.append(Weapon(name: locale["weapons"][weapon["__splatoon3ink_id"].stringValue]["name"].stringValue, image: URL(string: weapon["image"]["url"].stringValue)!, thumbnail: weapon["image"]["url"].stringValue.contains("weapon_illust") ? URL(string: weapon["image"]["url"].stringValue.replacingOccurrences(of: "_0", with: "_1"))! : nil))
+                            }
+                            var shift = Splatoon3Shift(startTime: startTime, endTime: endTime, mode: modeMap[mode]!, stage: stage, weapons: weapons)
+                            if setting["boss"].exists() {
+                                var kingSalmonid = KingSalmonid(name: locale["bosses"][setting["boss"]["id"].stringValue]["name"].stringValue)
+                                switch setting["boss"]["id"].stringValue {
+                                case "Q29vcEVuZW15LTIz":
+                                    kingSalmonid.image = "cohozuna_3"
+                                case "Q29vcEVuZW15LTI0":
+                                    kingSalmonid.image = "horrorboros_3"
+                                case "Q29vcEVuZW15LTI1":
+                                    kingSalmonid.image = "megalodontia_3"
+                                default:
+                                    break
+                                }
+                                shift.kingSalmonid = kingSalmonid
+                            }
+                            shifts.append(shift)
                         }
-                        var kingSalmonid = KingSalmonid(name: locale["bosses"][setting["boss"]["id"].stringValue]["name"].stringValue)
-                        switch setting["boss"]["id"].stringValue {
-                        case "Q29vcEVuZW15LTIz":
-                            kingSalmonid.image = "cohozuna_3"
-                        case "Q29vcEVuZW15LTI0":
-                            kingSalmonid.image = "horrorboros_3"
-                        case "Q29vcEVuZW15LTI1":
-                            kingSalmonid.image = "megalodontia_3"
-                        default:
-                            break
-                        }
-                        shifts.append(Splatoon3Shift(startTime: startTime, endTime: endTime, mode: Splatoon3ShiftMode.salmonRun, stage: stage, weapons: weapons, kingSalmonid: kingSalmonid))
-                    }
-                    for shift in innerData["bigRunSchedules"]["nodes"].arrayValue {
-                        let startTime = Date(utc: shift["startTime"].stringValue)
-                        let endTime = Date(utc: shift["endTime"].stringValue)
-                        let setting = shift["setting"]
-                        let stage = Stage(name: locale["stages"][setting["coopStage"]["id"].stringValue]["name"].stringValue, image: URL(string: setting["coopStage"]["image"]["url"].stringValue)!, thumbnail: URL(string: setting["coopStage"]["thumbnailImage"]["url"].stringValue)!)
-                        var weapons: [Weapon] = []
-                        for weapon in setting["weapons"].arrayValue {
-                            weapons.append(Weapon(name: locale["weapons"][weapon["__splatoon3ink_id"].stringValue]["name"].stringValue, image: URL(string: weapon["image"]["url"].stringValue)!, thumbnail: weapon["image"]["url"].stringValue.contains("weapon_illust") ? URL(string: weapon["image"]["url"].stringValue.replacingOccurrences(of: "_0", with: "_1"))! : nil))
-                        }
-                        var kingSalmonid = KingSalmonid(name: locale["bosses"][setting["boss"]["id"].stringValue]["name"].stringValue)
-                        switch setting["boss"]["id"].stringValue {
-                        case "Q29vcEVuZW15LTIz":
-                            kingSalmonid.image = "cohozuna_3"
-                        case "Q29vcEVuZW15LTI0":
-                            kingSalmonid.image = "horrorboros_3"
-                        case "Q29vcEVuZW15LTI1":
-                            kingSalmonid.image = "megalodontia_3"
-                        default:
-                            break
-                        }
-                        shifts.append(Splatoon3Shift(startTime: startTime, endTime: endTime, mode: Splatoon3ShiftMode.bigRun, stage: stage, weapons: weapons, kingSalmonid: kingSalmonid))
-                    }
-                    for shift in innerData["teamContestSchedules"]["nodes"].arrayValue {
-                        let startTime = Date(utc: shift["startTime"].stringValue)
-                        let endTime = Date(utc: shift["endTime"].stringValue)
-                        let setting = shift["setting"]
-                        let stage = Stage(name: locale["stages"][setting["coopStage"]["id"].stringValue]["name"].stringValue, image: URL(string: setting["coopStage"]["image"]["url"].stringValue)!, thumbnail: URL(string: setting["coopStage"]["thumbnailImage"]["url"].stringValue)!)
-                        var weapons: [Weapon] = []
-                        for weapon in setting["weapons"].arrayValue {
-                            weapons.append(Weapon(name: locale["weapons"][weapon["__splatoon3ink_id"].stringValue]["name"].stringValue, image: URL(string: weapon["image"]["url"].stringValue)!, thumbnail: weapon["image"]["url"].stringValue.contains("weapon_illust") ? URL(string: weapon["image"]["url"].stringValue.replacingOccurrences(of: "_0", with: "_1"))! : nil))
-                        }
-                        shifts.append(Splatoon3Shift(startTime: startTime, endTime: endTime, mode: Splatoon3ShiftMode.bigRun, stage: stage, weapons: weapons))
                     }
                     
                     shifts.sort { a, b in
@@ -446,7 +480,7 @@ private func translateLanguageCode(languageCode: String) -> Locale {
     }
 }
 
-func fetchSplatoon2Schedules(locale: Locale, completion: @escaping ([Splatoon2Schedule], Error) -> Void) {
+func fetchSplatoon2Schedules(locale: Locale, completion: @escaping ([Splatoon2Schedule], APIError) -> Void) {
     do {
         if locale.splatoon2UseLocaleFile {
             if let asset = NSDataAsset(name: String(format: "splatoon_2_locale_%@", locale.splatoon2LanguageCode), bundle: Bundle.main) {
@@ -482,7 +516,7 @@ func fetchSplatoon2Schedules(locale: Locale, completion: @escaping ([Splatoon2Sc
         .resume()
     }
 }
-func fetchSplatoon2Shifts(locale: Locale, completion: @escaping ([Splatoon2Shift], Error) -> Void) {
+func fetchSplatoon2Shifts(locale: Locale, completion: @escaping ([Splatoon2Shift], APIError) -> Void) {
     do {
         if locale.splatoon2UseLocaleFile {
             if let asset = NSDataAsset(name: String(format: "splatoon_2_locale_%@", locale.splatoon2LanguageCode), bundle: Bundle.main) {
@@ -518,7 +552,7 @@ func fetchSplatoon2Shifts(locale: Locale, completion: @escaping ([Splatoon2Shift
         .resume()
     }
 }
-func fetchSplatoon3Schedules(locale: Locale, completion: @escaping ([Splatoon3Schedule], Error) -> Void) {
+func fetchSplatoon3Schedules(locale: Locale, completion: @escaping ([Splatoon3Schedule], APIError) -> Void) {
     do {
         var request = URLRequest(url: URL(string: String(format: Splatoon3InkLocaleURL, locale.splatoon3LanguageCode))!)
         request.timeoutInterval = Timeout
@@ -544,7 +578,7 @@ func fetchSplatoon3Schedules(locale: Locale, completion: @escaping ([Splatoon3Sc
         .resume()
     }
 }
-func fetchSplatoon3Shifts(locale: Locale, completion: @escaping ([Splatoon3Shift], Error) -> Void) {
+func fetchSplatoon3Shifts(locale: Locale, completion: @escaping ([Splatoon3Shift], APIError) -> Void) {
     do {
         var request = URLRequest(url: URL(string: String(format: Splatoon3InkLocaleURL, locale.splatoon3LanguageCode))!)
         request.timeoutInterval = Timeout
@@ -571,7 +605,7 @@ func fetchSplatoon3Shifts(locale: Locale, completion: @escaping ([Splatoon3Shift
     }
 }
 
-func fetchSplatoon2(locale: Locale, completion: @escaping ([Splatoon2Schedule], [Splatoon2Shift], Error) -> Void) {
+func fetchSplatoon2(locale: Locale, completion: @escaping ([Splatoon2Schedule], [Splatoon2Shift], APIError) -> Void) {
     do {
         if locale.splatoon2UseLocaleFile {
             if let asset = NSDataAsset(name: String(format: "splatoon_2_locale_%@", locale.splatoon2LanguageCode), bundle: Bundle.main) {
@@ -639,7 +673,7 @@ func fetchSplatoon2(locale: Locale, completion: @escaping ([Splatoon2Schedule], 
         .resume()
     }
 }
-func fetchSplatoon3(locale: Locale, completion: @escaping ([Splatoon3Schedule], [Splatoon3Shift], Error) -> Void) {
+func fetchSplatoon3(locale: Locale, completion: @escaping ([Splatoon3Schedule], [Splatoon3Shift], APIError) -> Void) {
     do {
         var request = URLRequest(url: URL(string: String(format: Splatoon3InkLocaleURL, locale.splatoon3LanguageCode))!)
         request.timeoutInterval = Timeout
@@ -682,7 +716,7 @@ func fetchSplatoon3(locale: Locale, completion: @escaping ([Splatoon3Schedule], 
     }
 }
 
-func fetchMaintenanceInformationAndOperationalStatus(completion: @escaping (Status, Status, Error) -> Void) {
+func fetchMaintenanceInformationAndOperationalStatus(completion: @escaping (Status, Status, APIError) -> Void) {
     do {
         var request = URLRequest(url: URL(string: NintendoMaintenanceInformationAndOperationalStatusURL)!)
         request.timeoutInterval = Timeout
