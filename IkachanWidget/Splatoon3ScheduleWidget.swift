@@ -43,8 +43,8 @@ struct Splatoon3ScheduleProvider: IntentTimelineProvider {
             
             let filtered = filterSchedules(schedules: schedules, mode: configuration.mode)
             if !filtered.isEmpty {
-                var entry = Splatoon3ScheduleEntry(date: Date(), configuration: configuration, schedule: filtered.first!, nextSchedule: filtered.suffix(from: 1).first(where: { schedule in
-                    schedule.challenge == nil || schedule.challenge != schedules.first!.challenge
+                let entry = Splatoon3ScheduleEntry(date: Date(), configuration: configuration, schedule: filtered.first!, nextSchedule: filtered.suffix(from: 1).first(where: { schedule in
+                    schedule.challenge == nil || schedule.challenge != filtered.first!.challenge
                 }))
                 var urls: Set<URL> = []
                 for stage in filtered.first!.stages {
@@ -79,8 +79,8 @@ struct Splatoon3ScheduleProvider: IntentTimelineProvider {
                     if filtered.count <= i {
                         break
                     }
-                    var entry = Splatoon3ScheduleEntry(date: i == 0 ? Date() : filtered.at(index: i)!.startTime, configuration: configuration, schedule: filtered.at(index: i)!, nextSchedule: filtered.suffix(from: i + 1).first(where: { schedule in
-                        schedule.challenge == nil || schedule.challenge != schedules.first!.challenge
+                    let entry = Splatoon3ScheduleEntry(date: i == 0 ? Date() : filtered.at(index: i)!.startTime, configuration: configuration, schedule: filtered.at(index: i)!, nextSchedule: filtered.suffix(from: i + 1).first(where: { schedule in
+                        schedule.challenge == nil || schedule.challenge != filtered.at(index: i)!.challenge
                     }))
                     for stage in filtered.at(index: i)!.stages {
                         urls.insert(stage.thumbnail ?? stage.image)
