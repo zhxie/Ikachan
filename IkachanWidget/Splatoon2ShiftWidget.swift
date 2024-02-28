@@ -70,7 +70,7 @@ struct Splatoon2ShiftProvider: IntentTimelineProvider {
                         break
                     }
                     var entry = Splatoon2ShiftEntry(date: i == 0 ? Date() : filtered.at(index: i)!.startTime, configuration: configuration, shift: filtered.at(index: i)!)
-                    if let stage = filtered.at(index: i)!.stage {
+                    if filtered.at(index: i)!.stage != nil {
                         for weapon in filtered.at(index: i)!.weapons! {
                             urls.insert(weapon.thumbnail ?? weapon.image)
                         }

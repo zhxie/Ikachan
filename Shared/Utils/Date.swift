@@ -1,11 +1,15 @@
 import Foundation
 
 extension Date {
-    init(utc: String) {
+    init?(utc: String) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-
-        self.init(timeIntervalSince1970: formatter.date(from: utc)!.timeIntervalSince1970)
+        
+        let date = formatter.date(from: utc)
+        guard let date = date else {
+            return nil
+        }
+        self.init(timeIntervalSince1970: date.timeIntervalSince1970)
     }
     
     static func -(left: Date, right: Date) -> TimeInterval {

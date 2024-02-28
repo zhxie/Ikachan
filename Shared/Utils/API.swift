@@ -62,13 +62,6 @@ private func fetchSplatoon2Schedules(locale: JSON, completion: @escaping ([Splat
                     var schedules: [Splatoon2Schedule] = []
                     for (_, value) in json {
                         for schedule in value.arrayValue {
-                            // Judge if the schedule is illegal.
-                            guard schedule["start_time"].double != nil else {
-                                completion([], .ParseFailed)
-                                
-                                return
-                            }
-                            
                             let startTime = Date(timeIntervalSince1970: schedule["start_time"].doubleValue)
                             let endTime = Date(timeIntervalSince1970: schedule["end_time"].doubleValue)
                             let mode = Splatoon2ScheduleMode.allCases.first { mode in
@@ -109,13 +102,6 @@ private func fetchSplatoon2Shifts(locale: JSON, completion: @escaping ([Splatoon
                     var previousTime = Date(timeIntervalSince1970: 0)
                     var shifts: [Splatoon2Shift] = []
                     for shift in json["details"].arrayValue {
-                        // Judge if the shift is illegal.
-                        guard shift["start_time"].double != nil else {
-                            completion([], .ParseFailed)
-                            
-                            return
-                        }
-                        
                         let startTime = Date(timeIntervalSince1970: shift["start_time"].doubleValue)
                         if startTime <= previousTime {
                             continue
@@ -179,15 +165,13 @@ private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splat
                     var schedules: [Splatoon3Schedule] = []
                     let innerData = json["data"]
                     for schedule in innerData["regularSchedules"]["nodes"].arrayValue {
-                        // Judge if the schedule is illegal.
-                        guard schedule["startTime"].string != nil else {
+                        let startTime = Date(utc: schedule["startTime"].stringValue)
+                        let endTime = Date(utc: schedule["endTime"].stringValue)
+                        guard let startTime = startTime, let endTime = endTime else {
                             completion([], .ParseFailed)
                             
                             return
                         }
-                        
-                        let startTime = Date(utc: schedule["startTime"].stringValue)
-                        let endTime = Date(utc: schedule["endTime"].stringValue)
                         let matchSetting = schedule["regularMatchSetting"]
                         if matchSetting.isNull {
                             continue
@@ -202,15 +186,13 @@ private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splat
                         schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: Splatoon3ScheduleMode.regularBattle, rule: rule, stages: stages))
                     }
                     for schedule in innerData["bankaraSchedules"]["nodes"].arrayValue {
-                        // Judge if the schedule is illegal.
-                        guard schedule["startTime"].string != nil else {
+                        let startTime = Date(utc: schedule["startTime"].stringValue)
+                        let endTime = Date(utc: schedule["endTime"].stringValue)
+                        guard let startTime = startTime, let endTime = endTime else {
                             completion([], .ParseFailed)
                             
                             return
                         }
-                        
-                        let startTime = Date(utc: schedule["startTime"].stringValue)
-                        let endTime = Date(utc: schedule["endTime"].stringValue)
                         for matchSetting in schedule["bankaraMatchSettings"].arrayValue {
                             if matchSetting.isNull {
                                 continue
@@ -229,15 +211,13 @@ private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splat
                         }
                     }
                     for schedule in innerData["xSchedules"]["nodes"].arrayValue {
-                        // Judge if the schedule is illegal.
-                        guard schedule["startTime"].string != nil else {
+                        let startTime = Date(utc: schedule["startTime"].stringValue)
+                        let endTime = Date(utc: schedule["endTime"].stringValue)
+                        guard let startTime = startTime, let endTime = endTime else {
                             completion([], .ParseFailed)
                             
                             return
                         }
-                        
-                        let startTime = Date(utc: schedule["startTime"].stringValue)
-                        let endTime = Date(utc: schedule["endTime"].stringValue)
                         let matchSetting = schedule["xMatchSetting"]
                         if matchSetting.isNull {
                             continue
@@ -267,19 +247,22 @@ private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splat
                         for timePeriod in schedule["timePeriods"].arrayValue {
                             let startTime = Date(utc: timePeriod["startTime"].stringValue)
                             let endTime = Date(utc: timePeriod["endTime"].stringValue)
+                            guard let startTime = startTime, let endTime = endTime else {
+                                completion([], .ParseFailed)
+                                
+                                return
+                            }
                             schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: Splatoon3ScheduleMode.challenges, rule: rule, stages: stages, challenge: challenge))
                         }
                     }
                     for schedule in innerData["festSchedules"]["nodes"].arrayValue {
-                        // Judge if the schedule is illegal.
-                        guard schedule["startTime"].string != nil else {
+                        let startTime = Date(utc: schedule["startTime"].stringValue)
+                        let endTime = Date(utc: schedule["endTime"].stringValue)
+                        guard let startTime = startTime, let endTime = endTime else {
                             completion([], .ParseFailed)
                             
                             return
                         }
-                        
-                        let startTime = Date(utc: schedule["startTime"].stringValue)
-                        let endTime = Date(utc: schedule["endTime"].stringValue)
                         for matchSetting in schedule["festMatchSettings"].arrayValue {
                             if matchSetting.isNull {
                                 continue
@@ -302,6 +285,11 @@ private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splat
                     if splatfest.exists() && !splatfest.isNull {
                         let startTime = Date(utc: splatfest["midtermTime"].stringValue)
                         let endTime = Date(utc: splatfest["endTime"].stringValue)
+                        guard let startTime = startTime, let endTime = endTime else {
+                            completion([], .ParseFailed)
+                            
+                            return
+                        }
                         let stage = Stage(name: locale["stages"][splatfest["tricolorStage"]["id"].stringValue]["name"].stringValue, image: URL(string: splatfest["tricolorStage"]["image"]["url"].stringValue)!)
                         schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: Splatoon3ScheduleMode.tricolorBattle, rule: Splatoon3Rule.tricolorTurfWar, stages: [stage]))
                     }
@@ -344,15 +332,13 @@ private func fetchSplatoon3Shifts(locale: JSON, completion: @escaping ([Splatoon
                     ]
                     for mode in modeMap.keys {
                         for shift in innerData[mode]["nodes"].arrayValue {
-                            // Judge if the shift is illegal.
-                            guard shift["startTime"].string != nil else {
+                            let startTime = Date(utc: shift["startTime"].stringValue)
+                            let endTime = Date(utc: shift["endTime"].stringValue)
+                            guard let startTime = startTime, let endTime = endTime else {
                                 completion([], .ParseFailed)
                                 
                                 return
                             }
-                            
-                            let startTime = Date(utc: shift["startTime"].stringValue)
-                            let endTime = Date(utc: shift["endTime"].stringValue)
                             let setting = shift["setting"]
                             let stage = Stage(name: locale["stages"][setting["coopStage"]["id"].stringValue]["name"].stringValue, image: URL(string: setting["coopStage"]["image"]["url"].stringValue)!, thumbnail: URL(string: setting["coopStage"]["thumbnailImage"]["url"].stringValue)!)
                             var weapons: [Weapon] = []

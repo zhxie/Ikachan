@@ -33,7 +33,7 @@ struct Splatoon2ScheduleProvider: IntentTimelineProvider {
             
             let filtered = filterSchedules(schedules: schedules, mode: configuration.mode)
             if !filtered.isEmpty {
-                var entry = Splatoon2ScheduleEntry(date: Date(), configuration: configuration, schedule: filtered.first!, nextSchedule: filtered.at(index: 1))
+                let entry = Splatoon2ScheduleEntry(date: Date(), configuration: configuration, schedule: filtered.first!, nextSchedule: filtered.at(index: 1))
                 var urls: Set<URL> = []
                 for stage in filtered.first!.stages {
                     urls.insert(stage.thumbnail ?? stage.image)
@@ -67,7 +67,7 @@ struct Splatoon2ScheduleProvider: IntentTimelineProvider {
                     if filtered.count <= i {
                         break
                     }
-                    var entry = Splatoon2ScheduleEntry(date: i == 0 ? Date() : filtered.at(index: i)!.startTime, configuration: configuration, schedule: filtered.at(index: i)!, nextSchedule: filtered.at(index: i + 1))
+                    let entry = Splatoon2ScheduleEntry(date: i == 0 ? Date() : filtered.at(index: i)!.startTime, configuration: configuration, schedule: filtered.at(index: i)!, nextSchedule: filtered.at(index: i + 1))
                     for stage in filtered.at(index: i)!.stages {
                         urls.insert(stage.thumbnail ?? stage.image)
                     }
