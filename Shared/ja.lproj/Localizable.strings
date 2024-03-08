@@ -38,9 +38,9 @@
 
 // UI.
 "ikachan" = "イカチャン";
-"our_new_app" = "私たちの新しいApp";
+"try_our_new_app" = "私たちの新しいAppをお試しください";
 "conch_bay" = "ホラガイベイ";
-"get" = "入手";
+"join_testing" = "テストに参加";
 "preferences" = "プリファレンス";
 "display_on_startup" = "起動時に表示";
 "display_shifts_first" = "シフト表を最初に表示";

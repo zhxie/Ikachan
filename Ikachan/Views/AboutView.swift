@@ -13,7 +13,7 @@ struct AboutView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(LocalizedStringKey("our_new_app")) {
+                Section(LocalizedStringKey("try_our_new_app")) {
                     HStack{
                         Image("conch_bay")
                             .resizedToFit()
@@ -29,9 +29,9 @@ struct AboutView: View {
                         Spacer()
                         
                         Button {
-                            UIApplication.shared.open(URL(string: "https://apps.apple.com/app/apple-store/id1659268579?pt=122602395&ct=Ikachan&mt=8")!)
+                            UIApplication.shared.open(URL(string: "https://testflight.apple.com/join/Er8nuuIp")!)
                         } label: {
-                            Text(LocalizedStringKey("get"))
+                            Text(LocalizedStringKey("join_testing"))
                                 .font(.subheadline)
                                 .fontWeight(.bold)
                                 .padding([.horizontal], 8)

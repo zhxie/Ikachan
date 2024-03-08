@@ -38,9 +38,9 @@
 
 // UI.
 "ikachan" = "鱿鱼酱";
-"our_new_app" = "我们的新App";
+"try_our_new_app" = "试试我们的新App";
 "conch_bay" = "法螺湾";
-"get" = "获取";
+"join_testing" = "加入测试";
 "preferences" = "偏好";
 "display_on_startup" = "启动时显示";
 "display_shifts_first" = "优先显示排班表";

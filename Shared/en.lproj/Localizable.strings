@@ -38,9 +38,9 @@
 
 // UI.
 "ikachan" = "Ikachan";
-"our_new_app" = "Our New App";
+"try_our_new_app" = "Try Our New App";
 "conch_bay" = "Conch Bay";
-"get" = "GET";
+"join_testing" = "Join Testing";
 "preferences" = "Preferences";
 "display_on_startup" = "Display On Startup";
 "display_shifts_first" = "Display Shifts First";
