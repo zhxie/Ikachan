@@ -103,8 +103,10 @@ enum Splatoon3ScheduleMode: String, ScheduleMode {
         switch self {
         case .regularBattle, .xBattle, .challenges:
             return rawValue + "_3"
-        case .anarchyBattleSeries, .anarchyBattleOpen:
-            return "anarchy_battle_3"
+        case .anarchyBattleSeries:
+            return "anarchy_battle_series_3"
+        case .anarchyBattleOpen:
+            return "anarchy_battle_open_3"
         case .splatfestBattleOpen, .splatfestBattlePro, .tricolorBattle:
             return "splatfest_battle_3"
         }
