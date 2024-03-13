@@ -121,6 +121,7 @@ struct Splatoon3ShiftWidgetEntryView : View {
     var entry: Splatoon3ShiftProvider.Entry
     
     @Environment(\.widgetFamily) var family
+    @Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
 
     @ViewBuilder
     var body: some View {
@@ -134,12 +135,22 @@ struct Splatoon3ShiftWidgetEntryView : View {
                     AccessoryRectangularShiftView(shift: entry.shift)
                 }
             case .systemSmall:
-                if #available(iOSApplicationExtension 17.0, *) {
-                    SmallShiftView(shift: entry.shift, nextShift: entry.nextShift)
-                        .containerBackground(for: .widget, content: {})
+                if showsWidgetContainerBackground {
+                    if #available(iOSApplicationExtension 17.0, *) {
+                        SmallShiftView(shift: entry.shift, nextShift: entry.nextShift)
+                            .containerBackground(for: .widget, content: {})
+                    } else {
+                        SmallShiftView(shift: entry.shift, nextShift: entry.nextShift)
+                            .padding()
+                    }
                 } else {
-                    SmallShiftView(shift: entry.shift, nextShift: entry.nextShift)
-                        .padding()
+                    if #available(iOSApplicationExtension 17.0, *) {
+                        StandbyShiftView(shift: entry.shift, nextShift: entry.nextShift)
+                            .containerBackground(for: .widget, content: {})
+                    } else {
+                        StandbyShiftView(shift: entry.shift, nextShift: entry.nextShift)
+                            .padding()
+                    }
                 }
             default:
                 if #available(iOSApplicationExtension 17.0, *) {

@@ -19,6 +19,8 @@
 		E42AE86227550951006F7CBD /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE86027550951006F7CBD /* StageView.swift */; };
 		E42AE864275509DB006F7CBD /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponsView.swift */; };
 		E42AE865275509DB006F7CBD /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponsView.swift */; };
+		E4308E252BA1DA2100E6F438 /* StandbyScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4308E242BA1DA2100E6F438 /* StandbyScheduleView.swift */; };
+		E4308E272BA1DE7800E6F438 /* StandbyShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4308E262BA1DE7800E6F438 /* StandbyShiftView.swift */; };
 		E434673D265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
 		E434673E265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
 		E434673F265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
@@ -184,6 +186,8 @@
 		E417636D2B271CE500B52CE9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E42AE86027550951006F7CBD /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
 		E42AE863275509DB006F7CBD /* WeaponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsView.swift; sourceTree = "<group>"; };
+		E4308E242BA1DA2100E6F438 /* StandbyScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandbyScheduleView.swift; sourceTree = "<group>"; };
+		E4308E262BA1DE7800E6F438 /* StandbyShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandbyShiftView.swift; sourceTree = "<group>"; };
 		E434673C265FC51E0018F130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E43D3F5725BBC75600D944A1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E43D3F5825BBC7E700D944A1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -487,8 +491,10 @@
 				E464ADCE2B29B3D3001DC83D /* WeaponsView.swift */,
 				E46B506425B8959A001F88CE /* SmallScheduleView.swift */,
 				E464ADCA2B29AC1C001DC83D /* MediumScheduleView.swift */,
+				E4308E242BA1DA2100E6F438 /* StandbyScheduleView.swift */,
 				E464ADCC2B29B309001DC83D /* SmallShiftView.swift */,
 				E464ADD02B29B51D001DC83D /* MediumShiftView.swift */,
+				E4308E262BA1DE7800E6F438 /* StandbyShiftView.swift */,
 				E47AC8AA2B2AA0E200B598AF /* AccessoryCircularView.swift */,
 				E47AC8AC2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift */,
 				E47AC8AE2B2ABAAC00B598AF /* AccessoryRectangularShiftView.swift */,
@@ -787,6 +793,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E440CA182B271F1400884D57 /* Splatoon3ShiftIntentHandler.swift in Sources */,
+				E4308E272BA1DE7800E6F438 /* StandbyShiftView.swift in Sources */,
 				E47AC8B62B2AD03200B598AF /* Splatoon3ShiftDynamicWidget.swift in Sources */,
 				E4613FB625C9B62000561D53 /* IkachanIntents.intentdefinition in Sources */,
 				E4444EE125BF148D0003A676 /* Date.swift in Sources */,
@@ -814,6 +821,7 @@
 				E464ADCF2B29B3D3001DC83D /* WeaponsView.swift in Sources */,
 				E47AC8AD2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift in Sources */,
 				E464ADD12B29B51D001DC83D /* MediumShiftView.swift in Sources */,
+				E4308E252BA1DA2100E6F438 /* StandbyScheduleView.swift in Sources */,
 				E485DA1127534A3700B82AE0 /* Image.swift in Sources */,
 				E440CA252B2738CF00884D57 /* View.swift in Sources */,
 				E4444EF025BF149B0003A676 /* Schedule.swift in Sources */,

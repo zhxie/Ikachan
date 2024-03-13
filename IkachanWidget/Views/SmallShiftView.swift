@@ -2,8 +2,6 @@ import SwiftUI
 import WidgetKit
 
 struct SmallShiftView: View {
-    @Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
-    
     var shift: Shift?
     var nextShift: Shift?
     
@@ -28,45 +26,11 @@ struct SmallShiftView: View {
                 }
                 .layoutPriority(1)
                 
-                if showsWidgetContainerBackground {
-                    if let stage = shift.stage {
-                        StageView(stage: stage)
-                        
-                        WeaponsView(weapons: shift.weapons!)
-                            .layoutPriority(1)
-                    }
-                } else {
-                    if let stage = shift.stage {
-                        Text(stage.name)
-                            .lineLimit(1)
-                        
-                        if let shift = nextShift {
-                            HStack {
-                                HStack {
-                                    Image(shift.mode.image)
-                                        .resizedToFit()
-                                        .frame(width: 12, height: 12)
-                                        .layoutPriority(1)
-                                    Text(LocalizedStringKey(shift.mode.name))
-                                        .font(.footnote)
-                                        .fontWeight(.bold)
-                                        .foregroundColor(shift.mode.accentColor)
-                                        .lineLimit(1)
-                                }
-                                .layoutPriority(1)
-                                
-                                Spacer()
-                                    .frame(minWidth: 0)
-                            }
-                            .layoutPriority(1)
-                            
-                            if let stage = shift.stage {
-                                Text(stage.name)
-                                    .font(.footnote)
-                                    .lineLimit(1)
-                            }
-                        }
-                    }
+                if let stage = shift.stage {
+                    StageView(stage: stage)
+                    
+                    WeaponsView(weapons: shift.weapons!)
+                        .layoutPriority(1)
                 }
             }
         } else {

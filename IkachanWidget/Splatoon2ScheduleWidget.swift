@@ -99,6 +99,7 @@ struct Splatoon2ScheduleWidgetEntryView : View {
     var entry: Splatoon2ScheduleProvider.Entry
     
     @Environment(\.widgetFamily) var family
+    @Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
 
     @ViewBuilder
     var body: some View {
@@ -112,12 +113,22 @@ struct Splatoon2ScheduleWidgetEntryView : View {
                     AccessoryRectangularScheduleView(schedule: entry.schedule)
                 }
             case .systemSmall:
-                if #available(iOSApplicationExtension 17.0, *) {
-                    SmallScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
-                        .containerBackground(for: .widget, content: {})
+                if showsWidgetContainerBackground {
+                    if #available(iOSApplicationExtension 17.0, *) {
+                        SmallScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
+                            .containerBackground(for: .widget, content: {})
+                    } else {
+                        SmallScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
+                            .padding()
+                    }
                 } else {
-                    SmallScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
-                        .padding()
+                    if #available(iOSApplicationExtension 17.0, *) {
+                        StandbyScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
+                            .containerBackground(for: .widget, content: {})
+                    } else {
+                        StandbyScheduleView(schedule: entry.schedule, nextSchedule: entry.nextSchedule)
+                            .padding()
+                    }
                 }
             default:
                 if #available(iOSApplicationExtension 17.0, *) {

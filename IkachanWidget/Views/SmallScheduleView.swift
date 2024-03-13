@@ -2,8 +2,6 @@ import SwiftUI
 import WidgetKit
 
 struct SmallScheduleView: View {
-    @Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
-    
     var schedule: Schedule?
     var nextSchedule: Schedule?
     
@@ -28,46 +26,8 @@ struct SmallScheduleView: View {
                 }
                 .layoutPriority(1)
                 
-                if showsWidgetContainerBackground {
-                    ForEach(schedule.stages, id: \.name) { stage in
-                        StageView(stage: stage)
-                    }
-                } else {
-                    VStack(spacing: 4) {
-                        ForEach(schedule.stages, id: \.name) { stage in
-                            Text(stage.name)
-                                .lineLimit(1)
-                        }
-                    }
-                    
-                    if let schedule = nextSchedule {
-                        HStack {
-                            HStack {
-                                Image(schedule.mode.image)
-                                    .resizedToFit()
-                                    .frame(width: 12, height: 12)
-                                    .layoutPriority(1)
-                                Text(LocalizedStringKey(schedule.rule.name))
-                                    .font(.footnote)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(schedule.mode.accentColor)
-                                    .lineLimit(1)
-                            }
-                            .layoutPriority(1)
-                            
-                            Spacer()
-                                .frame(minWidth: 0)
-                        }
-                        .layoutPriority(1)
-                        
-                        VStack(spacing: 4) {
-                            ForEach(schedule.stages, id: \.name) { stage in
-                                Text(stage.name)
-                                    .font(.footnote)
-                                    .lineLimit(1)
-                            }
-                        }
-                    }
+                ForEach(schedule.stages, id: \.name) { stage in
+                    StageView(stage: stage)
                 }
             }
         } else {
