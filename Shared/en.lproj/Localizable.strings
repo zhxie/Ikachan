@@ -79,12 +79,18 @@
 "no_schedule" = "No Schedule";
 "no_shift" = "No Shift";
 
+"change_mode" = "Change Mode";
+
 "splatoon_2_schedule" = "Splatoon 2 Schedule";
 "splatoon_2_schedule_widget_description" = "See the current and future schedules of a mode in Splatoon 2.";
+"splatoon_2_schedules" = "Splatoon 2 Schedules";
+"splatoon_2_schedules_widget_description" = "See the current and future schedules in Splatoon 2.";
 "splatoon_2_shift" = "Splatoon 2 Shift";
 "splatoon_2_shift_widget_description" = "See the current and future shifts of Salmon Run in Splatoon 2.";
 "splatoon_3_schedule" = "Splatoon 3 Schedule";
 "splatoon_3_schedule_widget_description" = "See the current and future schedules of a mode in Splatoon 3.";
+"splatoon_3_schedules" = "Splatoon 3 Schedules";
+"splatoon_3_schedules_widget_description" = "See the current and future schedules in Splatoon 3.";
 "splatoon_3_shift" = "Splatoon 3 Shift";
 "splatoon_3_shift_widget_description" = "See the current and future shifts of a mode in Splatoon 3.";
 

@@ -4,15 +4,18 @@ import WidgetKit
 struct MediumScheduleView: View {
     var schedule: Schedule?
     var nextSchedule: Schedule?
+    var showsModeImage: Bool = true
 
     var body: some View {
         if let schedule = schedule {
             VStack(spacing: 8) {
                 HStack {
-                    Image(schedule.mode.image)
-                        .resizedToFit()
-                        .frame(width: 20, height: 20)
-                        .layoutPriority(1)
+                    if showsModeImage {
+                        Image(schedule.mode.image)
+                            .resizedToFit()
+                            .frame(width: 20, height: 20)
+                            .layoutPriority(1)
+                    }
                     Text(LocalizedStringKey(schedule.rule.name))
                         .fontWeight(.bold)
                         .foregroundColor(schedule.mode.accentColor)
