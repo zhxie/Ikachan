@@ -34,6 +34,7 @@ struct AboutView: View {
                             Text(LocalizedStringKey("join_testing"))
                                 .font(.subheadline)
                                 .fontWeight(.bold)
+                                .textCase(.uppercase)
                                 .padding([.horizontal], 8)
                                 .padding([.vertical], -2)
                         }
