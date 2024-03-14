@@ -26,6 +26,6 @@ let Timeout: Double = 60
 let UserActivity = "name.sketch.Ikachan"
 
 // Widget.
-let MaxScheduleWidgetEntryCount = 6
+let MaxScheduleWidgetEntryCount = 3
 let MaxShiftWidgetEntryCount = 1
 let MaxDynamicWidgetEntryCount = 30
