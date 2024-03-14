@@ -142,7 +142,7 @@ struct Splatoon3ScheduleInteractiveWidgetEntryView : View {
                     .buttonStyle(.borderless)
                     .background {
                         mode.accentColor
-                            .opacity(Splatoon3ScheduleInteractiveWidgetModelData.shared.mode == mode ? 0.5 : 0)
+                            .opacity(Splatoon3ScheduleInteractiveWidgetModelData.shared.mode == mode ? 0.25 : 0)
                             .cornerRadius(4)
                     }
                 }
