@@ -66,7 +66,7 @@
 "alert_kit" = "AlertKit";
 "kingfisher" = "Kingfisher";
 "swifty_json" = "SwiftyJSON";
-"disclaimer" = "This app is an unofficial app which uses the information of Splatnet 2 and Splatnet 3, and is not related to Nintendo Co., Ltd.";
+"disclaimer" = "This app is an unofficial app which uses the information of SplatNet 2 and SplatNet 3, and is not related to Nintendo Co., Ltd.";
 "down" = "Servers are currently experiencing problems. Please wait until the issue is fixed.";
 "maintenance_started" = "Maintenance is now taking place. Please wait until the maintenance is finished.";
 "maintenance_scheduled" = "Maintenance has been scheduled. Please check Nintendo Support for more details.";
