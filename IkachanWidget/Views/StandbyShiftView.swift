@@ -16,7 +16,6 @@ struct StandbyShiftView: View {
                         Text(LocalizedStringKey(shift.mode.name))
                             .fontWeight(.bold)
                             .foregroundColor(widgetRenderingMode == .fullColor ? shift.mode.accentColor : .white)
-                            .lineLimit(1)
                     }
                     .layoutPriority(1)
                     

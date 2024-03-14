@@ -16,7 +16,6 @@ struct StandbyScheduleView: View {
                         Text(LocalizedStringKey(schedule.mode.name))
                             .fontWeight(.bold)
                             .foregroundColor(widgetRenderingMode == .fullColor ? schedule.mode.accentColor : .white)
-                            .lineLimit(1)
                     }
                     .layoutPriority(1)
                     
@@ -32,7 +31,7 @@ struct StandbyScheduleView: View {
                             .frame(width: 16, height: 16)
                             .layoutPriority(1)
                         
-                        VStack(spacing: 2) {
+                        VStack(alignment: .leading, spacing: 2) {
                             ForEach(schedule.stages, id: \.name) { stage in
                                 Text(stage.name)
                                     .font(.footnote)
@@ -48,7 +47,7 @@ struct StandbyScheduleView: View {
                                 .frame(width: 16, height: 16)
                                 .layoutPriority(1)
                             
-                            VStack(spacing: 2) {
+                            VStack(alignment: .leading, spacing: 2) {
                                 ForEach(schedule.stages, id: \.name) { stage in
                                     Text(stage.name)
                                         .font(.footnote)
