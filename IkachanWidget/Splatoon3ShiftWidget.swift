@@ -11,6 +11,9 @@ struct Splatoon3ShiftProvider: IntentTimelineProvider {
                 return shift._mode == .salmonRun || shift._mode == .bigRun
             case .eggstraWork:
                 return shift._mode == .eggstraWork
+            @unknown default:
+                // HACK: We have dropped value 2 for Big Run in the previous change.
+                return shift._mode == .salmonRun || shift._mode == .bigRun
             }
         }.filter { schedule in
             schedule.endTime > Date()
