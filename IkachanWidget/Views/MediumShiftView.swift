@@ -31,9 +31,9 @@ struct MediumShiftView: View {
                 
                 if let stage = shift.stage {
                     HStack {
-                        StageView(stage: stage)
+                        StageView(stage: stage, style: .Widget)
                         
-                        WeaponsView(weapons: shift.weapons!)
+                        WeaponsView(weapons: shift.weapons!, style: .Widget)
                     }
                 } else {
                     Spacer()
@@ -58,7 +58,7 @@ struct MediumShiftView: View {
                             Text(stage.name)
                                 .font(.footnote)
                             
-                            WeaponsView(weapons: shift.weapons!)
+                            WeaponsView(weapons: shift.weapons!, style: .Widget)
                                 .frame(height: 20)
                                 .layoutPriority(1)
                         }

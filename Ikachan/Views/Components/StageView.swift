@@ -1,21 +1,35 @@
 import SwiftUI
 import Kingfisher
 
+enum StageViewStyle {
+    case Home
+    case List
+    case Widget
+}
+
 struct StageView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var stage: Stage
-    var backgroundColor = Color(.secondarySystemBackground)
-    var aspectRatio: CGFloat?
+    var backgroundColor: Color?
+    var style: StageViewStyle = .Home
     
     @ViewBuilder
     var image: some View {
-        if let aspectRatio = aspectRatio {
+        switch style {
+        case .Home:
             KFImage(stage.image)
                 .fade(duration: 0.5)
-                .resizedToFit(aspectRatio)
+                .resizedToFill()
+                .clipped()
                 .accessibilityLabel(stage.name)
-        } else {
+        case .List:
             KFImage(stage.image)
                 .fade(duration: 0.5)
+                .resizedToFit(16 / 9)
+                .accessibilityLabel(stage.name)
+        case .Widget:
+            KFImage(stage.thumbnail ?? stage.image)
                 .resizedToFill()
                 .clipped()
                 .accessibilityLabel(stage.name)
@@ -24,13 +38,28 @@ struct StageView: View {
     
     @ViewBuilder
     var rectangle: some View {
-        if let aspectRatio = aspectRatio {
+        switch style {
+        case .Home, .Widget:
             Rectangle()
                 .fill(.clear)
-                .aspectRatio(aspectRatio, contentMode: .fit)
+        case .List:
+            Rectangle()
+                .fill(.clear)
+                .aspectRatio(16 / 9, contentMode: .fit)
+        }
+    }
+    
+    var backgroundColorView: some View {
+        if let backgroundColor = backgroundColor {
+            backgroundColor
         } else {
-            Rectangle()
-                .fill(.clear)
+            switch style {
+            case .Home, .List:
+                Color(.secondarySystemBackground)
+            case .Widget:
+                // HACK: .systemBackground in widgets is not pure black which is different from the widget's background.
+                Color(colorScheme == .light ? .systemBackground : .black)
+            }
         }
     }
     
@@ -39,7 +68,7 @@ struct StageView: View {
             .overlay {
                 image
             }
-            .cornerRadius(16)
+            .cornerRadius(style == .Widget ? 8 : 16)
             .overlay(alignment: .bottomTrailing) {
                 if !stage.name.isEmpty {
                     Text(stage.name)
@@ -48,7 +77,7 @@ struct StageView: View {
                         .padding([.top], 4)
                         .padding([.leading], 6)
                         .background {
-                            backgroundColor
+                            backgroundColorView
                                 .cornerRadius(8, corners: .topLeft)
                         }
                         .padding([.leading], 8)

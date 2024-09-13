@@ -9,7 +9,7 @@ struct ScheduleView: View {
     var stages: some View {
         HStack {
             ForEach(schedule.stages, id: \.name) { stage in
-                StageView(stage: stage, backgroundColor: backgroundColor, aspectRatio: shrinkToFit ? 16 / 9 : nil)
+                StageView(stage: stage, backgroundColor: backgroundColor, style: shrinkToFit ? .List : .Home)
             }
         }
     }

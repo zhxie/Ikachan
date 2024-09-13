@@ -8,7 +8,7 @@ struct ShiftView: View {
     
     var stageAndWeapons: some View {
         HStack {
-            StageView(stage: shift.stage!, backgroundColor: backgroundColor, aspectRatio: shrinkToFit ? 16 / 9 : nil)
+            StageView(stage: shift.stage!, backgroundColor: backgroundColor, style: shrinkToFit ? .List : .Home)
             VStack {
                 if let kingSalmonid = shift.kingSalmonid {
                     HStack {

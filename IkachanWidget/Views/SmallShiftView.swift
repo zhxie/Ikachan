@@ -27,9 +27,9 @@ struct SmallShiftView: View {
                 .layoutPriority(1)
                 
                 if let stage = shift.stage {
-                    StageView(stage: stage)
+                    StageView(stage: stage, style: .Widget)
                     
-                    WeaponsView(weapons: shift.weapons!)
+                    WeaponsView(weapons: shift.weapons!, style: .Widget)
                         .layoutPriority(1)
                 }
             }

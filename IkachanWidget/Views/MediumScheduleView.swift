@@ -34,7 +34,7 @@ struct MediumScheduleView: View {
                 
                 HStack {
                     ForEach(schedule.stages, id: \.name) { stage in
-                        StageView(stage: stage)
+                        StageView(stage: stage, style: .Widget)
                     }
                 }
                 
