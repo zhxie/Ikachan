@@ -28,5 +28,4 @@ struct SwappableView<Content: View, Content2: View>: View {
     } content2: {
         Text("2")
     }
-
 }
