@@ -6,6 +6,14 @@ struct ScheduleView: View {
     var backgroundColor = Color(.secondarySystemBackground)
     var shrinkToFit = false
     
+    var stages: some View {
+        HStack {
+            ForEach(schedule.stages, id: \.name) { stage in
+                StageView(stage: stage, backgroundColor: backgroundColor, aspectRatio: shrinkToFit ? 16 / 9 : nil)
+            }
+        }
+    }
+    
     var body: some View {
         VStack {
             HStack {
@@ -34,10 +42,20 @@ struct ScheduleView: View {
                         .layoutPriority(1)
                     
                     Spacer()
-                }
-                
-                ForEach(schedule.stages, id: \.name) { stage in
-                    StageView(stage: stage, backgroundColor: backgroundColor)
+                    
+                    stages
+                } else {
+                    HStack {
+                        Rectangle()
+                            .fill(.clear)
+                            .aspectRatio(16 / 9, contentMode: .fit)
+                        Rectangle()
+                            .fill(.clear)
+                            .aspectRatio(16 / 9, contentMode: .fit)
+                    }
+                    .overlay {
+                        stages
+                    }
                 }
             }
             

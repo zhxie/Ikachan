@@ -4,16 +4,40 @@ import Kingfisher
 struct StageView: View {
     var stage: Stage
     var backgroundColor = Color(.secondarySystemBackground)
+    var aspectRatio: CGFloat?
+    
+    @ViewBuilder
+    var image: some View {
+        if let aspectRatio = aspectRatio {
+            KFImage(stage.image)
+                .fade(duration: 0.5)
+                .resizedToFit(aspectRatio)
+                .accessibilityLabel(stage.name)
+        } else {
+            KFImage(stage.image)
+                .fade(duration: 0.5)
+                .resizedToFill()
+                .clipped()
+                .accessibilityLabel(stage.name)
+        }
+    }
+    
+    @ViewBuilder
+    var rectangle: some View {
+        if let aspectRatio = aspectRatio {
+            Rectangle()
+                .fill(.clear)
+                .aspectRatio(aspectRatio, contentMode: .fit)
+        } else {
+            Rectangle()
+                .fill(.clear)
+        }
+    }
     
     var body: some View {
-        Rectangle()
-            .fill(.clear)
-            .aspectRatio(16 / 9, contentMode: .fit)
+        rectangle
             .overlay {
-                KFImage(stage.image)
-                    .fade(duration: 0.5)
-                    .resizedToFit(16 / 9)
-                    .accessibilityLabel(stage.name)
+                image
             }
             .cornerRadius(16)
             .overlay(alignment: .bottomTrailing) {

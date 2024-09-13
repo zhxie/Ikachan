@@ -6,6 +6,28 @@ struct ShiftView: View {
     var backgroundColor = Color(.secondarySystemBackground)
     var shrinkToFit = false
     
+    var stageAndWeapons: some View {
+        HStack {
+            StageView(stage: shift.stage!, backgroundColor: backgroundColor, aspectRatio: shrinkToFit ? 16 / 9 : nil)
+            VStack {
+                if let kingSalmonid = shift.kingSalmonid {
+                    HStack {
+                        if let image = kingSalmonid.image {
+                            Image(image)
+                                .resizedToFit()
+                                .frame(width: 20, height: 20)
+                        }
+                        Text(kingSalmonid.name)
+                            .lineLimit(1)
+                    }
+                }
+                
+                WeaponsView(weapons: shift.weapons!)
+                    .padding(8)
+            }
+        }
+    }
+    
     var body: some View {
         VStack {
             HStack {
@@ -35,24 +57,20 @@ struct ShiftView: View {
                             .layoutPriority(1)
                         
                         Spacer()
-                    }
-                    
-                    StageView(stage: shift.stage!, backgroundColor: backgroundColor)
-                    VStack {
-                        if let kingSalmonid = shift.kingSalmonid {
-                            HStack {
-                                if let image = kingSalmonid.image {
-                                    Image(image)
-                                        .resizedToFit()
-                                        .frame(width: 20, height: 20)
-                                }
-                                Text(kingSalmonid.name)
-                                    .lineLimit(1)
-                            }
-                        }
                         
-                        WeaponsView(weapons: shift.weapons!)
-                            .padding(8)
+                        stageAndWeapons
+                    } else {
+                        HStack {
+                            Rectangle()
+                                .fill(.clear)
+                                .aspectRatio(16 / 9, contentMode: .fit)
+                            Rectangle()
+                                .fill(.clear)
+                                .aspectRatio(16 / 9, contentMode: .fit)
+                        }
+                        .overlay {
+                            stageAndWeapons
+                        }
                     }
                 }
             }
