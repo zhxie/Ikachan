@@ -283,8 +283,7 @@ private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splat
                     
                     let splatfest = innerData["currentFest"]
                     if splatfest.exists() && !splatfest.isNull {
-                        var timetableEndTime = Date(timeIntervalSince1970: 0);
-                        if !splatfest["timetable"].isNull {
+                        if !splatfest["timetable"].isNull && !splatfest["timetable"].arrayValue.isEmpty {
                             for timetable in splatfest["timetable"].arrayValue {
                                 let startTime = Date(utc: timetable["startTime"].stringValue)
                                 let endTime = Date(utc: timetable["endTime"].stringValue)
@@ -298,22 +297,14 @@ private func fetchSplatoon3Schedules(locale: JSON, completion: @escaping ([Splat
                                     stages.append(Stage(name: locale["stages"][stage["id"].stringValue]["name"].stringValue, image: URL(string: stage["image"]["url"].stringValue.replacingOccurrences(of: "low_", with: "high_").replacingOccurrences(of: "_1", with: "_0"))!, thumbnail: URL(string: stage["image"]["url"].stringValue)!))
                                 }
                                 schedules.append(Splatoon3Schedule(startTime: startTime, endTime: endTime, mode: Splatoon3ScheduleMode.tricolorBattle, rule: Splatoon3Rule.tricolorTurfWar, stages: stages))
-                                if endTime > timetableEndTime {
-                                    timetableEndTime = endTime
-                                }
                             }
-                        }
-                        
-                        let startTime = Date(utc: splatfest["midtermTime"].stringValue)
-                        let endTime = Date(utc: splatfest["endTime"].stringValue)
-                        guard var startTime = startTime, let endTime = endTime else {
-                            completion([], .ParseFailed)
-                            
-                            return
-                        }
-                        if endTime > timetableEndTime {
-                            if timetableEndTime > startTime {
-                                startTime = timetableEndTime
+                        } else {
+                            let startTime = Date(utc: splatfest["midtermTime"].stringValue)
+                            let endTime = Date(utc: splatfest["endTime"].stringValue)
+                            guard let startTime = startTime, let endTime = endTime else {
+                                completion([], .ParseFailed)
+                                
+                                return
                             }
                             var stages: [Stage] = []
                             for stage in splatfest["tricolorStages"].arrayValue {
