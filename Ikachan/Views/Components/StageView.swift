@@ -2,8 +2,7 @@ import SwiftUI
 import Kingfisher
 
 enum StageViewStyle {
-    case Home
-    case List
+    case App
     case Widget
 }
 
@@ -12,18 +11,12 @@ struct StageView: View {
     
     var stage: Stage
     var backgroundColor: Color?
-    var style: StageViewStyle = .Home
+    var style: StageViewStyle = .App
     
     @ViewBuilder
     var image: some View {
         switch style {
-        case .Home:
-            KFImage(stage.image)
-                .fade(duration: 0.5)
-                .resizedToFill()
-                .clipped()
-                .accessibilityLabel(stage.name)
-        case .List:
+        case .App:
             KFImage(stage.image)
                 .fade(duration: 0.5)
                 .resizedToFit(16 / 9)
@@ -39,13 +32,13 @@ struct StageView: View {
     @ViewBuilder
     var rectangle: some View {
         switch style {
-        case .Home, .Widget:
-            Rectangle()
-                .fill(.clear)
-        case .List:
+        case .App:
             Rectangle()
                 .fill(.clear)
                 .aspectRatio(16 / 9, contentMode: .fit)
+        case .Widget:
+            Rectangle()
+                .fill(.clear)
         }
     }
     
@@ -54,7 +47,7 @@ struct StageView: View {
             backgroundColor
         } else {
             switch style {
-            case .Home, .List:
+            case .App:
                 Color(.secondarySystemBackground)
             case .Widget:
                 // HACK: .systemBackground in widgets is not pure black which is different from the widget's background.
