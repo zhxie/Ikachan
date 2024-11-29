@@ -80,7 +80,7 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCWidgetKind"
-            value = "ShiftWidget"
+            value = "Splatoon3ScheduleWidget"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable

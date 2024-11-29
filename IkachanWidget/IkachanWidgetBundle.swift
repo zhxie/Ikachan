@@ -8,13 +8,13 @@ struct IkachanWidgetBundle: WidgetBundle {
         Splatoon3ShiftWidget()
         Splatoon2ScheduleWidget()
         Splatoon2ShiftWidget()
-        if #available(iOSApplicationExtension 16.0, *) {
+        if #available(iOS 16.1, *) {
             Splatoon3ScheduleDynamicWidget()
             Splatoon3ShiftDynamicWidget()
             Splatoon2ScheduleDynamicWidget()
             Splatoon2ShiftDynamicWidget()
         }
-//        if #available(iOSApplicationExtension 17.0, *) {
+//        if #available(iOS 17.0, *) {
 //            Splatoon3ScheduleInteractiveWidget()
 //            Splatoon2ScheduleInteractiveWidget()
 //        }
