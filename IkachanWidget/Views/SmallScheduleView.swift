@@ -2,36 +2,37 @@ import SwiftUI
 import WidgetKit
 
 struct SmallScheduleView: View {
+    var mode: any ScheduleMode
     var schedule: Schedule?
     var nextSchedule: Schedule?
     
     var body: some View {
-        if let schedule = schedule {
-            VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
                 HStack {
-                    HStack {
-                        Image(schedule.mode.image)
-                            .resizedToFit()
-                            .frame(width: 16, height: 16)
-                            .layoutPriority(1)
-                        Text(LocalizedStringKey(schedule.rule.name))
-                            .fontWeight(.bold)
-                            .foregroundColor(schedule.mode.accentColor)
-                            .lineLimit(1)
-                    }
-                    .layoutPriority(1)
-                    
-                    Spacer()
-                        .frame(minWidth: 0)
+                    Image(mode.image)
+                        .resizedToFit()
+                        .frame(width: 16, height: 16)
+                        .layoutPriority(1)
+                    Text(LocalizedStringKey(schedule?.rule.name ?? mode.name))
+                        .fontWeight(.bold)
+                        .foregroundColor(mode.accentColor)
+                        .lineLimit(1)
                 }
                 .layoutPriority(1)
                 
+                Spacer()
+                    .frame(minWidth: 0)
+            }
+            .layoutPriority(1)
+            
+            if let schedule = schedule {
                 ForEach(schedule.stages, id: \.name) { stage in
                     StageView(stage: stage, style: .Widget)
                 }
+            } else {
+                NoScheduleView()
             }
-        } else {
-            Text(LocalizedStringKey("no_schedule"))
         }
     }
 }
@@ -39,7 +40,7 @@ struct SmallScheduleView: View {
 @available(iOSApplicationExtension 17.0, *)
 struct SmallScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        SmallScheduleView(schedule: PreviewSplatoon2Schedule, nextSchedule: PreviewSplatoon3Schedule)
+        SmallScheduleView(mode: Splatoon3ScheduleMode.regularBattle, schedule: PreviewSplatoon2Schedule, nextSchedule: PreviewSplatoon3Schedule)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }

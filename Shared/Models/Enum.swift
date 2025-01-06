@@ -27,6 +27,17 @@ enum Splatoon2ScheduleMode: String, ScheduleMode {
     case regularBattle = "regular_battle"
     case rankedBattle = "ranked_battle"
     case leagueBattle = "league_battle"
+    
+    init(from mode: INSplatoon2ScheduleMode) {
+        switch mode {
+        case .unknown, .regularBattle:
+            self = .regularBattle
+        case .rankedBattle:
+            self = .rankedBattle
+        case .leagueBattle:
+            self = .leagueBattle
+        }
+    }
 
     var name: String {
         return rawValue
@@ -81,6 +92,27 @@ enum Splatoon3ScheduleMode: String, ScheduleMode {
     case anarchyBattleOpen = "anarchy_battle_open"
     case xBattle = "x_battle"
     case challenges = "challenges"
+    
+    init(from mode: INSplatoon3ScheduleMode) {
+        switch mode {
+        case .unknown, .regularBattle:
+            self = .regularBattle
+        case .anarchyBattleSeries:
+            self = .anarchyBattleSeries
+        case .anarchyBattleOpen:
+            self = .anarchyBattleOpen
+        case .xBattle:
+            self = .xBattle
+        case .challenges:
+            self = .challenges
+        case .splatfestBattleOpen:
+            self = .splatfestBattleOpen
+        case .splatfestBattlePro:
+            self = .splatfestBattlePro
+        case .tricolorBattle:
+            self = .tricolorBattle
+        }
+    }
 
     var name: String {
         return rawValue
@@ -95,7 +127,7 @@ enum Splatoon3ScheduleMode: String, ScheduleMode {
             return Color(red: 101 / 255, green: 216 / 255, blue: 160 / 255)
         case .challenges:
             return Color(red: 240 / 255, green: 45 / 255, blue: 125 / 255)
-        case .splatfestBattlePro, .splatfestBattleOpen, .tricolorBattle:
+        case .splatfestBattleOpen, .splatfestBattlePro, .tricolorBattle:
             return Color(red: 165 / 255, green: 28 / 255, blue: 222 / 255)
         }
     }
@@ -139,6 +171,15 @@ enum Splatoon3ShiftMode: String, ShiftMode {
     case salmonRun = "salmon_run"
     case bigRun = "big_run"
     case eggstraWork = "eggstra_work"
+    
+    init(from mode: INSplatoon3ShiftMode) {
+        switch mode {
+        case .unknown, .salmonRunAndBigRun:
+            self = .salmonRun
+        case .eggstraWork:
+            self = .eggstraWork
+        }
+    }
     
     var name: String {
         return rawValue

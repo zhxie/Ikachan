@@ -3,35 +3,36 @@ import WidgetKit
 
 @available(iOSApplicationExtension 16.0, *)
 struct AccessoryRectangularScheduleView: View {
+    var mode: any ScheduleMode
     var schedule: Schedule?
     
     var body: some View {
-        if let schedule = schedule {
-            HStack(alignment: .top) {
-                VStack(alignment: .leading) {
-                    HStack(spacing: 4) {
-                        Image(schedule.mode.image)
-                            .resizedToFit()
-                            .frame(width: 16, height: 16)
-                        
-                        Text(LocalizedStringKey(schedule.rule.name))
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .lineLimit(1)
-                    }
+        HStack(alignment: .top) {
+            VStack(alignment: .leading) {
+                HStack(spacing: 4) {
+                    Image(mode.image)
+                        .resizedToFit()
+                        .frame(width: 16, height: 16)
                     
+                    Text(LocalizedStringKey(schedule?.rule.name ?? mode.name))
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .lineLimit(1)
+                }
+                
+                if let schedule = schedule {
                     ForEach(schedule.stages, id: \.name) { stage in
                         Text(stage.name)
                             .lineLimit(1)
                     }
+                } else {
+                    NoScheduleView()
                 }
-                .layoutPriority(1)
-                
-                Spacer()
-                    .frame(minWidth: 0)
             }
-        } else {
-            Text(LocalizedStringKey("no_schedule"))
+            .layoutPriority(1)
+            
+            Spacer()
+                .frame(minWidth: 0)
         }
     }
 }
@@ -39,7 +40,7 @@ struct AccessoryRectangularScheduleView: View {
 @available(iOSApplicationExtension 17.0, *)
 struct AccessoryRectangularScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        AccessoryRectangularScheduleView(schedule: PreviewSplatoon3Schedule)
+        AccessoryRectangularScheduleView(mode: Splatoon3ScheduleMode.regularBattle, schedule: PreviewSplatoon3Schedule)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
     }

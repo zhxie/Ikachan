@@ -145,7 +145,7 @@ struct Splatoon2ScheduleInteractiveWidgetEntryView : View {
                     }
                 }
             }
-            MediumScheduleView(schedule: entry.schedules[index], nextSchedule: entry.nextSchedules[index], showsModeImage: false)
+            MediumScheduleView(mode: Splatoon2ScheduleInteractiveWidgetModelData.shared.mode, schedule: entry.schedules[index], nextSchedule: entry.nextSchedules[index], showsModeImage: false)
                 .containerBackground(for: .widget, content: {})
         }
     }

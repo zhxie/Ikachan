@@ -5,25 +5,26 @@ import WidgetKit
 struct StandbyShiftView: View {
     @Environment(\.widgetRenderingMode) var widgetRenderingMode
     
+    var mode: any ShiftMode
     var shift: Shift?
     var nextShift: Shift?
     
     var body: some View {
-        if let shift = shift {
-            VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
                 HStack {
-                    HStack {
-                        Text(LocalizedStringKey(shift.mode.name))
-                            .fontWeight(.bold)
-                            .foregroundColor(widgetRenderingMode == .fullColor ? shift.mode.accentColor : .white)
-                    }
-                    .layoutPriority(1)
-                    
-                    Spacer()
-                        .frame(minWidth: 0)
+                    Text(LocalizedStringKey(mode.name))
+                        .fontWeight(.bold)
+                        .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .white)
                 }
                 .layoutPriority(1)
                 
+                Spacer()
+                    .frame(minWidth: 0)
+            }
+            .layoutPriority(1)
+            
+            if let shift = shift {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(alignment: .top) {
                         Image(shift.mode.image)
@@ -65,9 +66,12 @@ struct StandbyShiftView: View {
                         }
                     }
                 }
+            } else {
+                Text(LocalizedStringKey("no_shift"))
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
             }
-        } else {
-            Text(LocalizedStringKey("no_shift"))
         }
     }
 }
@@ -75,7 +79,7 @@ struct StandbyShiftView: View {
 @available(iOSApplicationExtension 17.0, *)
 struct StandbyShiftView_Previews: PreviewProvider {
     static var previews: some View {
-        StandbyShiftView(shift: PreviewSplatoon2Shift, nextShift: PreviewSplatoon3Shift)
+        StandbyShiftView(mode: Splatoon3ShiftMode.salmonRun, shift: PreviewSplatoon2Shift, nextShift: PreviewSplatoon3Shift)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }

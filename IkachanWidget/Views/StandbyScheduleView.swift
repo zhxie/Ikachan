@@ -5,25 +5,26 @@ import WidgetKit
 struct StandbyScheduleView: View {
     @Environment(\.widgetRenderingMode) var widgetRenderingMode
     
+    var mode: any ScheduleMode
     var schedule: Schedule?
     var nextSchedule: Schedule?
     
     var body: some View {
-        if let schedule = schedule {
-            VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
                 HStack {
-                    HStack {
-                        Text(LocalizedStringKey(schedule.mode.name))
-                            .fontWeight(.bold)
-                            .foregroundColor(widgetRenderingMode == .fullColor ? schedule.mode.accentColor : .white)
-                    }
-                    .layoutPriority(1)
-                    
-                    Spacer()
-                        .frame(minWidth: 0)
+                    Text(LocalizedStringKey(mode.name))
+                        .fontWeight(.bold)
+                        .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .white)
                 }
                 .layoutPriority(1)
                 
+                Spacer()
+                    .frame(minWidth: 0)
+            }
+            .layoutPriority(1)
+            
+            if let schedule = schedule {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(alignment: .top) {
                         Image(schedule.rule.image)
@@ -57,9 +58,12 @@ struct StandbyScheduleView: View {
                         }
                     }
                 }
+            } else {
+                Text(LocalizedStringKey("no_schedule"))
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
             }
-        } else {
-            Text(LocalizedStringKey("no_schedule"))
         }
     }
 }
@@ -67,7 +71,7 @@ struct StandbyScheduleView: View {
 @available(iOSApplicationExtension 17.0, *)
 struct StandbyScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        StandbyScheduleView(schedule: PreviewSplatoon2Schedule, nextSchedule: PreviewSplatoon3Schedule)
+        StandbyScheduleView(mode: Splatoon3ScheduleMode.regularBattle, schedule: nil, nextSchedule: PreviewSplatoon3Schedule)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }

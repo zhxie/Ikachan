@@ -2,27 +2,28 @@ import SwiftUI
 import WidgetKit
 
 struct MediumScheduleView: View {
+    var mode: any ScheduleMode
     var schedule: Schedule?
     var nextSchedule: Schedule?
     var showsModeImage: Bool = true
 
     var body: some View {
-        if let schedule = schedule {
-            VStack(spacing: 8) {
-                HStack {
-                    if showsModeImage {
-                        Image(schedule.mode.image)
-                            .resizedToFit()
-                            .frame(width: 20, height: 20)
-                            .layoutPriority(1)
-                    }
-                    Text(LocalizedStringKey(schedule.rule.name))
-                        .fontWeight(.bold)
-                        .foregroundColor(schedule.mode.accentColor)
-                        .lineLimit(1)
-                    
-                    Spacer()
-                    
+        VStack(spacing: 8) {
+            HStack {
+                if showsModeImage {
+                    Image(mode.image)
+                        .resizedToFit()
+                        .frame(width: 20, height: 20)
+                        .layoutPriority(1)
+                }
+                Text(LocalizedStringKey(schedule?.rule.name ?? mode.name))
+                    .fontWeight(.bold)
+                    .foregroundColor(mode.accentColor)
+                    .lineLimit(1)
+                
+                Spacer()
+                
+                if let schedule = schedule {
                     Text(absoluteTimeSpan(start: schedule.startTime, end: schedule.endTime))
                         .monospacedDigit()
                         .font(.footnote)
@@ -30,8 +31,10 @@ struct MediumScheduleView: View {
                         .lineLimit(1)
                         .layoutPriority(1)
                 }
-                .layoutPriority(1)
-                
+            }
+            .layoutPriority(1)
+            
+            if let schedule = schedule {
                 HStack {
                     ForEach(schedule.stages, id: \.name) { stage in
                         StageView(stage: stage, style: .Widget)
@@ -66,9 +69,9 @@ struct MediumScheduleView: View {
                     }
                     .layoutPriority(1)
                 }
+            } else {
+                NoScheduleView()
             }
-        } else {
-            Text(LocalizedStringKey("no_schedule"))
         }
     }
 }
@@ -76,7 +79,7 @@ struct MediumScheduleView: View {
 @available(iOSApplicationExtension 17.0, *)
 struct MediumScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        MediumScheduleView(schedule: PreviewSplatoon2Schedule, nextSchedule: PreviewSplatoon3Schedule)
+        MediumScheduleView(mode: Splatoon3ScheduleMode.regularBattle, schedule: PreviewSplatoon2Schedule, nextSchedule: PreviewSplatoon3Schedule)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }

@@ -2,24 +2,25 @@ import SwiftUI
 import WidgetKit
 
 struct MediumShiftView: View {
+    var mode: any ShiftMode
     var shift: Shift?
     var nextShift: Shift?
 
     var body: some View {
-        if let shift = shift {
-            VStack(spacing: 8) {
-                HStack {
-                    Image(shift.mode.image)
-                        .resizedToFit()
-                        .frame(width: 20, height: 20)
-                        .layoutPriority(1)
-                    Text(LocalizedStringKey(shift.mode.name))
-                        .fontWeight(.bold)
-                        .foregroundColor(shift.mode.accentColor)
-                        .lineLimit(1)
-                    
-                    Spacer()
-                    
+        VStack(spacing: 8) {
+            HStack {
+                Image(mode.image)
+                    .resizedToFit()
+                    .frame(width: 20, height: 20)
+                    .layoutPriority(1)
+                Text(LocalizedStringKey(mode.name))
+                    .fontWeight(.bold)
+                    .foregroundColor(mode.accentColor)
+                    .lineLimit(1)
+                
+                Spacer()
+                
+                if let shift = shift {
                     Text(absoluteTimeSpan(start: shift.startTime, end: shift.endTime))
                         .monospacedDigit()
                         .font(.footnote)
@@ -27,8 +28,10 @@ struct MediumShiftView: View {
                         .lineLimit(1)
                         .layoutPriority(1)
                 }
-                .layoutPriority(1)
-                
+            }
+            .layoutPriority(1)
+            
+            if let shift = shift {
                 if let stage = shift.stage {
                     HStack {
                         StageView(stage: stage, style: .Widget)
@@ -65,9 +68,9 @@ struct MediumShiftView: View {
                         .layoutPriority(1)
                     }
                 }
+            } else {
+                NoShiftView()
             }
-        } else {
-            Text(LocalizedStringKey("no_shift"))
         }
     }
 }
@@ -75,7 +78,7 @@ struct MediumShiftView: View {
 @available(iOSApplicationExtension 17.0, *)
 struct MediumShiftView_Previews: PreviewProvider {
     static var previews: some View {
-        MediumShiftView(shift: PreviewSplatoon2Shift, nextShift: PreviewSplatoon3Shift)
+        MediumShiftView(mode: Splatoon3ShiftMode.salmonRun, shift: PreviewSplatoon2Shift, nextShift: PreviewSplatoon3Shift)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
