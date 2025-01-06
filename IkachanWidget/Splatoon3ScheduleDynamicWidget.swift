@@ -93,12 +93,8 @@ struct Splatoon3ScheduleDynamicWidgetEntryView : View {
 
     @ViewBuilder
     var body: some View {
-        if #available(iOSApplicationExtension 17.0, *) {
-            AccessoryCircularView(progress: timePassingBy(current: entry.date, start: entry.schedule?.startTime ?? entry.date, end: entry.schedule?.endTime ?? entry.date), mode: entry.schedule?.mode.image ?? nil, rule: entry.schedule?.rule.image ?? nil)
-                .containerBackground(for: .widget, content: {})
-        } else {
-            AccessoryCircularView(progress: timePassingBy(current: entry.date, start: entry.schedule?.startTime ?? entry.date, end: entry.schedule?.endTime ?? entry.date), mode: entry.schedule?.mode.image ?? nil, rule: entry.schedule?.rule.image ?? nil)
-        }
+        AccessoryCircularView(progress: timePassingBy(current: entry.date, start: entry.schedule?.startTime ?? entry.date, end: entry.schedule?.endTime ?? entry.date), mode: entry.schedule?.mode.image ?? nil, rule: entry.schedule?.rule.image ?? nil)
+            .widgetContainerBackground(padding: false)
     }
 }
 

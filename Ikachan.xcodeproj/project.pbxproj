@@ -168,6 +168,8 @@
 		E4F235102D2C1A4900BC8635 /* ShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2350F2D2C1A4800BC8635 /* ShiftView.swift */; };
 		E4F235112D2C1B8A00BC8635 /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponsView.swift */; };
 		E4F235132D2C2F6400BC8635 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235122D2C2F6400BC8635 /* ErrorView.swift */; };
+		E4F235192D2C33FC00BC8635 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235182D2C33FA00BC8635 /* WatchView.swift */; };
+		E4F2351D2D2C363300BC8635 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2351C2D2C363100BC8635 /* WidgetView.swift */; };
 		E4F9DC702C949842001E2B90 /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponsView.swift */; };
 		E4F9DC712C949A6D001E2B90 /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE86027550951006F7CBD /* StageView.swift */; };
 /* End PBXBuildFile section */
@@ -331,6 +333,8 @@
 		E4F2350D2D2C1A1000BC8635 /* ShiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsView.swift; sourceTree = "<group>"; };
 		E4F2350F2D2C1A4800BC8635 /* ShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftView.swift; sourceTree = "<group>"; };
 		E4F235122D2C2F6400BC8635 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		E4F235182D2C33FA00BC8635 /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
+		E4F2351C2D2C363100BC8635 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				E42309D62D2C0D4E00B4898F /* IkachanWatch.entitlements */,
+				E4F235172D2C33F200BC8635 /* Utils */,
 				E42309CE2D2C0B3000B4898F /* Views */,
 				E42309B02D2BD9EF00B4898F /* IkachanWatchApp.swift */,
 				E42309CA2D2BDE0500B4898F /* Assets.xcassets */,
@@ -505,6 +510,7 @@
 		E4444ECF25BF147F0003A676 /* IkachanWidget */ = {
 			isa = PBXGroup;
 			children = (
+				E4F2351A2D2C362100BC8635 /* Utils */,
 				E484FDBD25C9460C006E748F /* Views */,
 				E46B507525B9C2AC001F88CE /* Splatoon2ScheduleWidget.swift */,
 				E47AC8962B29C7DC00B598AF /* Splatoon2ShiftWidget.swift */,
@@ -622,6 +628,38 @@
 				E485D9FB275342A300B82AE0 /* Image.swift */,
 				E485DA1227534D0100B82AE0 /* KFImage.swift */,
 				E440CA232B2738CF00884D57 /* View.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E4F235162D2C33F200BC8635 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E4F235182D2C33FA00BC8635 /* WatchView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E4F235172D2C33F200BC8635 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E4F235162D2C33F200BC8635 /* UI */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E4F2351A2D2C362100BC8635 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E4F2351B2D2C362900BC8635 /* UI */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E4F2351B2D2C362900BC8635 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E4F2351C2D2C363100BC8635 /* WidgetView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -865,6 +903,7 @@
 				E42309B92D2BDA1000B4898F /* KFImage.swift in Sources */,
 				E42309D52D2C0B7100B4898F /* SchedulesView.swift in Sources */,
 				E42309BA2D2BDA1000B4898F /* View.swift in Sources */,
+				E4F235192D2C33FC00BC8635 /* WatchView.swift in Sources */,
 				E4F235132D2C2F6400BC8635 /* ErrorView.swift in Sources */,
 				E42309D82D2C0F5200B4898F /* SwappableView.swift in Sources */,
 				E4F235102D2C1A4900BC8635 /* ShiftView.swift in Sources */,
@@ -1001,6 +1040,7 @@
 				E4400F4925CD069A00BF94C6 /* API.swift in Sources */,
 				E4CB978D2D2BCFBF00EB2A6C /* NoScheduleView.swift in Sources */,
 				E47AC8AF2B2ABAAD00B598AF /* AccessoryRectangularShiftView.swift in Sources */,
+				E4F2351D2D2C363300BC8635 /* WidgetView.swift in Sources */,
 				E47AC8AD2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift in Sources */,
 				E4F9DC712C949A6D001E2B90 /* StageView.swift in Sources */,
 				E464ADD12B29B51D001DC83D /* MediumShiftView.swift in Sources */,

@@ -106,38 +106,19 @@ struct Splatoon2ScheduleWidgetEntryView : View {
         if #available(iOSApplicationExtension 16.0, *) {
             switch family {
             case .accessoryRectangular:
-                if #available(iOSApplicationExtension 17.0, *) {
-                    AccessoryRectangularScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule)
-                        .containerBackground(for: .widget, content: {})
-                } else {
-                    AccessoryRectangularScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule)
-                }
+                AccessoryRectangularScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule)
+                    .widgetContainerBackground(padding: false)
             case .systemSmall:
                 if showsWidgetContainerBackground {
-                    if #available(iOSApplicationExtension 17.0, *) {
-                        SmallScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule, nextSchedule: entry.nextSchedule)
-                            .containerBackground(for: .widget, content: {})
-                    } else {
-                        SmallScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule, nextSchedule: entry.nextSchedule)
-                            .padding()
-                    }
+                    SmallScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule, nextSchedule: entry.nextSchedule)
+                        .widgetContainerBackground()
                 } else {
-                    if #available(iOSApplicationExtension 17.0, *) {
-                        StandbyScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule, nextSchedule: entry.nextSchedule)
-                            .containerBackground(for: .widget, content: {})
-                    } else {
-                        StandbyScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule, nextSchedule: entry.nextSchedule)
-                            .padding()
-                    }
+                    StandbyScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule, nextSchedule: entry.nextSchedule)
+                        .widgetContainerBackground()
                 }
             default:
-                if #available(iOSApplicationExtension 17.0, *) {
-                    MediumScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule, nextSchedule: entry.nextSchedule)
-                        .containerBackground(for: .widget, content: {})
-                } else {
-                    MediumScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule, nextSchedule: entry.nextSchedule)
-                        .padding()
-                }
+                MediumScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule, nextSchedule: entry.nextSchedule)
+                    .widgetContainerBackground()
             }
         } else {
             switch family {

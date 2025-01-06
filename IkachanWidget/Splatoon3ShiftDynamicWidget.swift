@@ -83,12 +83,8 @@ struct Splatoon3ShiftDynamicWidgetEntryView : View {
 
     @ViewBuilder
     var body: some View {
-        if #available(iOSApplicationExtension 17.0, *) {
-            AccessoryCircularView(progress: timePassingBy(current: entry.date, start: entry.shift?.startTime ?? entry.date, end: entry.shift?.endTime ?? entry.date), mode: nil, rule: entry.shift?.mode.image ?? nil)
-                .containerBackground(for: .widget, content: {})
-        } else {
-            AccessoryCircularView(progress: timePassingBy(current: entry.date, start: entry.shift?.startTime ?? entry.date, end: entry.shift?.endTime ?? entry.date), mode: nil, rule: entry.shift?.mode.image ?? nil)
-        }
+        AccessoryCircularView(progress: timePassingBy(current: entry.date, start: entry.shift?.startTime ?? entry.date, end: entry.shift?.endTime ?? entry.date), mode: nil, rule: entry.shift?.mode.image ?? nil)
+            .widgetContainerBackground(padding: false)
     }
 }
 

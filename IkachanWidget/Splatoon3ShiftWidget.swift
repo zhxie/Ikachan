@@ -131,38 +131,19 @@ struct Splatoon3ShiftWidgetEntryView : View {
         if #available(iOSApplicationExtension 16.0, *) {
             switch family {
             case .accessoryRectangular:
-                if #available(iOSApplicationExtension 17.0, *) {
-                    AccessoryRectangularShiftView(mode: Splatoon3ShiftMode(from: entry.configuration.mode), shift: entry.shift)
-                        .containerBackground(for: .widget, content: {})
-                } else {
-                    AccessoryRectangularShiftView(mode: Splatoon3ShiftMode(from: entry.configuration.mode), shift: entry.shift)
-                }
+                AccessoryRectangularShiftView(mode: Splatoon3ShiftMode(from: entry.configuration.mode), shift: entry.shift)
+                    .widgetContainerBackground(padding: false)
             case .systemSmall:
                 if showsWidgetContainerBackground {
-                    if #available(iOSApplicationExtension 17.0, *) {
-                        SmallShiftView(mode: Splatoon3ShiftMode(from: entry.configuration.mode), shift: entry.shift, nextShift: entry.nextShift)
-                            .containerBackground(for: .widget, content: {})
-                    } else {
-                        SmallShiftView(mode: Splatoon3ShiftMode(from: entry.configuration.mode), shift: entry.shift, nextShift: entry.nextShift)
-                            .padding()
-                    }
+                    SmallShiftView(mode: Splatoon3ShiftMode(from: entry.configuration.mode), shift: entry.shift, nextShift: entry.nextShift)
+                        .widgetContainerBackground()
                 } else {
-                    if #available(iOSApplicationExtension 17.0, *) {
-                        StandbyShiftView(mode: Splatoon3ShiftMode(from: entry.configuration.mode), shift: entry.shift, nextShift: entry.nextShift)
-                            .containerBackground(for: .widget, content: {})
-                    } else {
-                        StandbyShiftView(mode: Splatoon3ShiftMode(from: entry.configuration.mode), shift: entry.shift, nextShift: entry.nextShift)
-                            .padding()
-                    }
+                    StandbyShiftView(mode: Splatoon3ShiftMode(from: entry.configuration.mode), shift: entry.shift, nextShift: entry.nextShift)
+                        .widgetContainerBackground()
                 }
             default:
-                if #available(iOSApplicationExtension 17.0, *) {
-                    MediumShiftView(mode: Splatoon3ShiftMode(from: entry.configuration.mode), shift: entry.shift, nextShift: entry.nextShift)
-                        .containerBackground(for: .widget, content: {})
-                } else {
-                    MediumShiftView(mode: Splatoon3ShiftMode(from: entry.configuration.mode), shift: entry.shift, nextShift: entry.nextShift)
-                        .padding()
-                }
+                MediumShiftView(mode: Splatoon3ShiftMode(from: entry.configuration.mode), shift: entry.shift, nextShift: entry.nextShift)
+                    .widgetContainerBackground()
             }
         } else {
             switch family {

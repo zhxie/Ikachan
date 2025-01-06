@@ -42,7 +42,7 @@ struct ContentView: View {
                                     }
                                 }
                             }
-                            .tabViewStyle(.carousel)
+                            .verticalPageTabViewStyle()
                         } else {
                             ErrorView(error: splatoon2Error!)
                         }
@@ -73,7 +73,7 @@ struct ContentView: View {
                                     }
                                 }
                             }
-                            .tabViewStyle(.carousel)
+                            .verticalPageTabViewStyle()
                         } else {
                             ErrorView(error: splatoon3Error!)
                         }
