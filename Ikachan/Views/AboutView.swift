@@ -4,11 +4,11 @@ import AlertKit
 import Kingfisher
 
 struct AboutView: View {
-    @AppStorage(UserDefaultsKey.displayOnStartup.rawValue) var displayOnStartup = Game.splatoon3
-    @AppStorage(UserDefaultsKey.displayShiftsFirst.rawValue) var displayShiftsFirst = false
-    @AppStorage(UserDefaultsKey.splatoon2ScheduleOrder.rawValue) var splatoon2ScheduleOrder = Splatoon2ScheduleMode.allCases
-    @AppStorage(UserDefaultsKey.splatoon3ScheduleOrder.rawValue) var splatoon3ScheduleOrder = Splatoon3ScheduleMode.allCases
-    @AppStorage(UserDefaultsKey.splatoon3ShiftOrder.rawValue) var splatoon3ShiftOrder = Splatoon3ShiftMode.allCases
+    @AppStorage(UserDefaultsKey.displayOnStartup.rawValue, store: store) var displayOnStartup = Game.splatoon3
+    @AppStorage(UserDefaultsKey.displayShiftsFirst.rawValue, store: store) var displayShiftsFirst = false
+    @AppStorage(UserDefaultsKey.splatoon2ScheduleOrder.rawValue, store: store) var splatoon2ScheduleOrder = Splatoon2ScheduleMode.allCases
+    @AppStorage(UserDefaultsKey.splatoon3ScheduleOrder.rawValue, store: store) var splatoon3ScheduleOrder = Splatoon3ScheduleMode.allCases
+    @AppStorage(UserDefaultsKey.splatoon3ShiftOrder.rawValue, store: store) var splatoon3ShiftOrder = Splatoon3ShiftMode.allCases
     
     var body: some View {
         NavigationView {

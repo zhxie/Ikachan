@@ -2,16 +2,16 @@ import SwiftUI
 import AlertKit
 
 struct ContentView: View {
-    @AppStorage(UserDefaultsKey.displayShiftsFirst.rawValue) var displayShiftsFirst = false
-    @AppStorage(UserDefaultsKey.splatoon2ScheduleOrder.rawValue) var splatoon2ScheduleOrder = Splatoon2ScheduleMode.allCases
-    @AppStorage(UserDefaultsKey.splatoon3ScheduleOrder.rawValue) var splatoon3ScheduleOrder = Splatoon3ScheduleMode.allCases
-    @AppStorage(UserDefaultsKey.splatoon3ShiftOrder.rawValue) var splatoon3ShiftOrder = Splatoon3ShiftMode.allCases
+    @AppStorage(UserDefaultsKey.displayShiftsFirst.rawValue, store: store) var displayShiftsFirst = false
+    @AppStorage(UserDefaultsKey.splatoon2ScheduleOrder.rawValue, store: store) var splatoon2ScheduleOrder = Splatoon2ScheduleMode.allCases
+    @AppStorage(UserDefaultsKey.splatoon3ScheduleOrder.rawValue, store: store) var splatoon3ScheduleOrder = Splatoon3ScheduleMode.allCases
+    @AppStorage(UserDefaultsKey.splatoon3ShiftOrder.rawValue, store: store) var splatoon3ShiftOrder = Splatoon3ShiftMode.allCases
     
     @State var game = Settings.shared.displayOnStartup
-    @State var splatoon2Error: Error? = nil
+    @State var splatoon2Error: APIError? = nil
     @State var splatoon2Schedules: [Splatoon2Schedule] = []
     @State var splatoon2Shifts: [Splatoon2Shift] = []
-    @State var splatoon3Error: Error? = nil
+    @State var splatoon3Error: APIError? = nil
     @State var splatoon3Schedules: [Splatoon3Schedule] = []
     @State var splatoon3Shifts: [Splatoon3Shift] = []
     @State var splatoon2Status = Status.Normal

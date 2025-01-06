@@ -15,6 +15,32 @@
 		E417636F2B271CE500B52CE9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E417636D2B271CE500B52CE9 /* Constant.swift */; };
 		E41763702B271CE500B52CE9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E417636D2B271CE500B52CE9 /* Constant.swift */; };
 		E41763712B271CE500B52CE9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E417636D2B271CE500B52CE9 /* Constant.swift */; };
+		E42309A12D2BD97000B4898F /* IkachanWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E42309942D2BD96F00B4898F /* IkachanWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E42309A92D2BD9E700B4898F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E42309A82D2BD9E700B4898F /* SwiftyJSON */; };
+		E42309AB2D2BD9EA00B4898F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E42309AA2D2BD9EA00B4898F /* Kingfisher */; };
+		E42309B22D2BD9EF00B4898F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42309AF2D2BD9EF00B4898F /* ContentView.swift */; };
+		E42309B32D2BD9EF00B4898F /* IkachanWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42309B02D2BD9EF00B4898F /* IkachanWatchApp.swift */; };
+		E42309B42D2BD9EF00B4898F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E42309AC2D2BD9EF00B4898F /* Preview Assets.xcassets */; };
+		E42309B62D2BDA1000B4898F /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
+		E42309B72D2BDA1000B4898F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
+		E42309B82D2BDA1000B4898F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4400F3A25CD03F900BF94C6 /* API.swift */; };
+		E42309B92D2BDA1000B4898F /* KFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E485DA1227534D0100B82AE0 /* KFImage.swift */; };
+		E42309BA2D2BDA1000B4898F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E440CA232B2738CF00884D57 /* View.swift */; };
+		E42309BB2D2BDA1000B4898F /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C85A912B2DE7C300D4F596 /* Array.swift */; };
+		E42309BC2D2BDA1000B4898F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E485D9FB275342A300B82AE0 /* Image.swift */; };
+		E42309BD2D2BDA1000B4898F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461413F25CA880500561D53 /* String.swift */; };
+		E42309BE2D2BDA1000B4898F /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */; };
+		E42309BF2D2BDA1700B4898F /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41763672B25A9C500B52CE9 /* Enum.swift */; };
+		E42309C02D2BDA1700B4898F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
+		E42309C12D2BDA1700B4898F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E417636D2B271CE500B52CE9 /* Constant.swift */; };
+		E42309C32D2BDA2100B4898F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E490E9AD2B289FF9002A03D2 /* Localizable.strings */; };
+		E42309C42D2BDA2600B4898F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
+		E42309C92D2BDDD300B4898F /* IkachanIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E4613FBA25C9B62000561D53 /* IkachanIntents.intentdefinition */; };
+		E42309CB2D2BDE0500B4898F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E42309CA2D2BDE0500B4898F /* Assets.xcassets */; };
+		E42309D52D2C0B7100B4898F /* SchedulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42309D42D2C0B6F00B4898F /* SchedulesView.swift */; };
+		E42309D72D2C0DC800B4898F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C85A8F2B2DA09200D4F596 /* Settings.swift */; };
+		E42309D82D2C0F5200B4898F /* SwappableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C9607D2B41D15F009D73AF /* SwappableView.swift */; };
+		E42309DA2D2C13C000B4898F /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42309D92D2C13C000B4898F /* ScheduleView.swift */; };
 		E42AE86127550951006F7CBD /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE86027550951006F7CBD /* StageView.swift */; };
 		E42AE86227550951006F7CBD /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE86027550951006F7CBD /* StageView.swift */; };
 		E42AE864275509DB006F7CBD /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponsView.swift */; };
@@ -138,11 +164,22 @@
 		E4CB960B2B2B5E7200F322AE /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB960A2B2B5E7200F322AE /* SafariView.swift */; };
 		E4CB978D2D2BCFBF00EB2A6C /* NoScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB978C2D2BCFBF00EB2A6C /* NoScheduleView.swift */; };
 		E4CB978F2D2BD33F00EB2A6C /* NoShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB978E2D2BD33F00EB2A6C /* NoShiftView.swift */; };
+		E4F2350E2D2C1A1000BC8635 /* ShiftsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2350D2D2C1A1000BC8635 /* ShiftsView.swift */; };
+		E4F235102D2C1A4900BC8635 /* ShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2350F2D2C1A4800BC8635 /* ShiftView.swift */; };
+		E4F235112D2C1B8A00BC8635 /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponsView.swift */; };
+		E4F235132D2C2F6400BC8635 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235122D2C2F6400BC8635 /* ErrorView.swift */; };
 		E4F9DC702C949842001E2B90 /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponsView.swift */; };
 		E4F9DC712C949A6D001E2B90 /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE86027550951006F7CBD /* StageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E423099F2D2BD97000B4898F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4405D6F25AF64D2002EF1AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E42309932D2BD96F00B4898F;
+			remoteInfo = "IkachanWatch Watch App";
+		};
 		E43E137D25C9A3BA008A0FE6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E4405D6F25AF64D2002EF1AB /* Project object */;
@@ -167,6 +204,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		E42309A22D2BD97000B4898F /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				E42309A12D2BD97000B4898F /* IkachanWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E46B508325B9C2B1001F88CE /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -186,6 +234,14 @@
 		E406EF8D25C8576300683DBD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E41763672B25A9C500B52CE9 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		E417636D2B271CE500B52CE9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		E42309942D2BD96F00B4898F /* IkachanWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IkachanWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E42309AC2D2BD9EF00B4898F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E42309AF2D2BD9EF00B4898F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E42309B02D2BD9EF00B4898F /* IkachanWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkachanWatchApp.swift; sourceTree = "<group>"; };
+		E42309CA2D2BDE0500B4898F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E42309D42D2C0B6F00B4898F /* SchedulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesView.swift; sourceTree = "<group>"; };
+		E42309D62D2C0D4E00B4898F /* IkachanWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IkachanWatch.entitlements; sourceTree = "<group>"; };
+		E42309D92D2C13C000B4898F /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		E42AE86027550951006F7CBD /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
 		E42AE863275509DB006F7CBD /* WeaponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsView.swift; sourceTree = "<group>"; };
 		E4308E242BA1DA2100E6F438 /* StandbyScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandbyScheduleView.swift; sourceTree = "<group>"; };
@@ -272,9 +328,21 @@
 		E4E5E7162B2F227D00C31601 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/IkachanIntents.strings"; sourceTree = "<group>"; };
 		E4E5E7172B2F227D00C31601 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E4E5E7182B2F227D00C31601 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E4F2350D2D2C1A1000BC8635 /* ShiftsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsView.swift; sourceTree = "<group>"; };
+		E4F2350F2D2C1A4800BC8635 /* ShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftView.swift; sourceTree = "<group>"; };
+		E4F235122D2C2F6400BC8635 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E42309912D2BD96F00B4898F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E42309AB2D2BD9EA00B4898F /* Kingfisher in Frameworks */,
+				E42309A92D2BD9E700B4898F /* SwiftyJSON in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E43E136525C9A3BA008A0FE6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +386,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E42309AD2D2BD9EF00B4898F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E42309AC2D2BD9EF00B4898F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E42309B12D2BD9EF00B4898F /* IkachanWatch */ = {
+			isa = PBXGroup;
+			children = (
+				E42309D62D2C0D4E00B4898F /* IkachanWatch.entitlements */,
+				E42309CE2D2C0B3000B4898F /* Views */,
+				E42309B02D2BD9EF00B4898F /* IkachanWatchApp.swift */,
+				E42309CA2D2BDE0500B4898F /* Assets.xcassets */,
+				E42309AD2D2BD9EF00B4898F /* Preview Content */,
+			);
+			path = IkachanWatch;
+			sourceTree = "<group>";
+		};
+		E42309CE2D2C0B3000B4898F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E42309D22D2C0B5D00B4898F /* Components */,
+				E42309D42D2C0B6F00B4898F /* SchedulesView.swift */,
+				E4F2350D2D2C1A1000BC8635 /* ShiftsView.swift */,
+				E42309AF2D2BD9EF00B4898F /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E42309D22D2C0B5D00B4898F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E42309D92D2C13C000B4898F /* ScheduleView.swift */,
+				E4F2350F2D2C1A4800BC8635 /* ShiftView.swift */,
+				E4F235122D2C2F6400BC8635 /* ErrorView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		E43E136B25C9A3BA008A0FE6 /* IkachanIntents */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +460,7 @@
 				E4444ECF25BF147F0003A676 /* IkachanWidget */,
 				E43E136B25C9A3BA008A0FE6 /* IkachanIntents */,
 				E43E137625C9A3BA008A0FE6 /* IkachanIntentsUI */,
+				E42309B12D2BD9EF00B4898F /* IkachanWatch */,
 				E46B506F25B9C2AC001F88CE /* Frameworks */,
 				E4405D7825AF64D2002EF1AB /* Products */,
 				E43D3F5725BBC75600D944A1 /* README.md */,
@@ -365,6 +475,7 @@
 				E4444ECC25BF147F0003A676 /* IkachanWidget.appex */,
 				E43E136825C9A3BA008A0FE6 /* IkachanIntents.appex */,
 				E43E137325C9A3BA008A0FE6 /* IkachanIntentsUI.appex */,
+				E42309942D2BD96F00B4898F /* IkachanWatch.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -375,7 +486,6 @@
 				E43E136325C9A398008A0FE6 /* Ikachan.entitlements */,
 				E47798FD25B1EDDA00F8AE9F /* Views */,
 				E4405D7A25AF64D2002EF1AB /* IkachanApp.swift */,
-				E4C85A8F2B2DA09200D4F596 /* Settings.swift */,
 				E4405D7E25AF64D6002EF1AB /* Assets.xcassets */,
 				E4405D8325AF64D6002EF1AB /* Info.plist */,
 				E46B514C25BB46C5001F88CE /* InfoPlist.strings */,
@@ -466,6 +576,7 @@
 			children = (
 				E484FDB725C945B5006E748F /* Utils */,
 				E477990025B1F1E600F8AE9F /* Models */,
+				E4C85A8F2B2DA09200D4F596 /* Settings.swift */,
 				E4613FBA25C9B62000561D53 /* IkachanIntents.intentdefinition */,
 				E490E9AD2B289FF9002A03D2 /* Localizable.strings */,
 				E434673C265FC51E0018F130 /* Assets.xcassets */,
@@ -518,6 +629,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E42309932D2BD96F00B4898F /* IkachanWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E42309A52D2BD97000B4898F /* Build configuration list for PBXNativeTarget "IkachanWatch" */;
+			buildPhases = (
+				E42309902D2BD96F00B4898F /* Sources */,
+				E42309912D2BD96F00B4898F /* Frameworks */,
+				E42309922D2BD96F00B4898F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IkachanWatch;
+			packageProductDependencies = (
+				E42309A82D2BD9E700B4898F /* SwiftyJSON */,
+				E42309AA2D2BD9EA00B4898F /* Kingfisher */,
+			);
+			productName = "IkachanWatch Watch App";
+			productReference = E42309942D2BD96F00B4898F /* IkachanWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
 		E43E136725C9A3BA008A0FE6 /* IkachanIntents */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E43E138625C9A3BA008A0FE6 /* Build configuration list for PBXNativeTarget "IkachanIntents" */;
@@ -567,6 +699,7 @@
 				E4405D7425AF64D2002EF1AB /* Frameworks */,
 				E4405D7525AF64D2002EF1AB /* Resources */,
 				E46B508325B9C2B1001F88CE /* Embed Foundation Extensions */,
+				E42309A22D2BD97000B4898F /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -574,6 +707,7 @@
 				E43E137E25C9A3BA008A0FE6 /* PBXTargetDependency */,
 				E43E138125C9A3BA008A0FE6 /* PBXTargetDependency */,
 				E48ACAC12B29816C00C840DD /* PBXTargetDependency */,
+				E42309A02D2BD97000B4898F /* PBXTargetDependency */,
 			);
 			name = Ikachan;
 			packageProductDependencies = (
@@ -613,9 +747,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1230;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					E42309932D2BD96F00B4898F = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					E43E136725C9A3BA008A0FE6 = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -655,11 +792,23 @@
 				E4444ECB25BF147F0003A676 /* IkachanWidget */,
 				E43E136725C9A3BA008A0FE6 /* IkachanIntents */,
 				E43E137225C9A3BA008A0FE6 /* IkachanIntentsUI */,
+				E42309932D2BD96F00B4898F /* IkachanWatch */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E42309922D2BD96F00B4898F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E42309C32D2BDA2100B4898F /* Localizable.strings in Resources */,
+				E42309C42D2BDA2600B4898F /* Assets.xcassets in Resources */,
+				E42309CB2D2BDE0500B4898F /* Assets.xcassets in Resources */,
+				E42309B42D2BD9EF00B4898F /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E43E136625C9A3BA008A0FE6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -704,6 +853,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E42309902D2BD96F00B4898F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E42309C92D2BDDD300B4898F /* IkachanIntents.intentdefinition in Sources */,
+				E42309B62D2BDA1000B4898F /* Collection.swift in Sources */,
+				E42309B72D2BDA1000B4898F /* Date.swift in Sources */,
+				E42309D72D2C0DC800B4898F /* Settings.swift in Sources */,
+				E42309B82D2BDA1000B4898F /* API.swift in Sources */,
+				E42309B92D2BDA1000B4898F /* KFImage.swift in Sources */,
+				E42309D52D2C0B7100B4898F /* SchedulesView.swift in Sources */,
+				E42309BA2D2BDA1000B4898F /* View.swift in Sources */,
+				E4F235132D2C2F6400BC8635 /* ErrorView.swift in Sources */,
+				E42309D82D2C0F5200B4898F /* SwappableView.swift in Sources */,
+				E4F235102D2C1A4900BC8635 /* ShiftView.swift in Sources */,
+				E42309BB2D2BDA1000B4898F /* Array.swift in Sources */,
+				E42309BC2D2BDA1000B4898F /* Image.swift in Sources */,
+				E4F2350E2D2C1A1000BC8635 /* ShiftsView.swift in Sources */,
+				E42309BF2D2BDA1700B4898F /* Enum.swift in Sources */,
+				E4F235112D2C1B8A00BC8635 /* WeaponsView.swift in Sources */,
+				E42309C02D2BDA1700B4898F /* Schedule.swift in Sources */,
+				E42309C12D2BDA1700B4898F /* Constant.swift in Sources */,
+				E42309BD2D2BDA1000B4898F /* String.swift in Sources */,
+				E42309BE2D2BDA1000B4898F /* SwiftJSON.swift in Sources */,
+				E42309B22D2BD9EF00B4898F /* ContentView.swift in Sources */,
+				E42309B32D2BD9EF00B4898F /* IkachanWatchApp.swift in Sources */,
+				E42309DA2D2C13C000B4898F /* ScheduleView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E43E136425C9A3BA008A0FE6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -840,6 +1019,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E42309A02D2BD97000B4898F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E42309932D2BD96F00B4898F /* IkachanWatch */;
+			targetProxy = E423099F2D2BD97000B4898F /* PBXContainerItemProxy */;
+		};
 		E43E137E25C9A3BA008A0FE6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E43E137225C9A3BA008A0FE6 /* IkachanIntentsUI */;
@@ -903,6 +1087,77 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E42309A32D2BD97000B4898F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = IkachanWatch/IkachanWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 77;
+				DEVELOPMENT_ASSET_PATHS = "\"IkachanWatch/Preview Content\"";
+				DEVELOPMENT_TEAM = PSXQUH2HR6;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = IkachanWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = name.sketch.Ikachan;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 2.0.7;
+				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.Ikachan.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		E42309A42D2BD97000B4898F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = IkachanWatch/IkachanWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 77;
+				DEVELOPMENT_ASSET_PATHS = "\"IkachanWatch/Preview Content\"";
+				DEVELOPMENT_TEAM = PSXQUH2HR6;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = IkachanWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = name.sketch.Ikachan;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 2.0.7;
+				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.Ikachan.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
 		E43E138425C9A3BA008A0FE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1120,7 +1375,6 @@
 		E4405D8725AF64D6002EF1AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Ikachan/Ikachan.entitlements;
@@ -1146,7 +1400,6 @@
 		E4405D8825AF64D6002EF1AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Ikachan/Ikachan.entitlements;
@@ -1220,6 +1473,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E42309A52D2BD97000B4898F /* Build configuration list for PBXNativeTarget "IkachanWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E42309A32D2BD97000B4898F /* Debug */,
+				E42309A42D2BD97000B4898F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E43E138325C9A3BA008A0FE6 /* Build configuration list for PBXNativeTarget "IkachanIntentsUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1295,6 +1557,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E42309A82D2BD9E700B4898F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E477990525B1F62500F8AE9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		E42309AA2D2BD9EA00B4898F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E43CCBB525B0338C001A0FF5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		E43CCBB625B0338C001A0FF5 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E43CCBB525B0338C001A0FF5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
