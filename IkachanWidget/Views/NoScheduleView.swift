@@ -5,16 +5,11 @@ struct NoScheduleView: View {
     var body: some View {
         Spacer()
         
-        HStack {
-            Spacer()
-            
-            Text(LocalizedStringKey("no_schedule"))
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-                .multilineTextAlignment(.center)
-            
-            Spacer()
-        }
+        Text(LocalizedStringKey("no_schedule"))
+            .font(.subheadline)
+            .foregroundColor(.secondary)
+            .multilineTextAlignment(.center)
+            .frame(maxWidth: .infinity, alignment: .center)
         
         Spacer()
     }
