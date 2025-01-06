@@ -14,9 +14,5 @@ struct IkachanWidgetBundle: WidgetBundle {
             Splatoon2ScheduleDynamicWidget()
             Splatoon2ShiftDynamicWidget()
         }
-//        if #available(iOS 17.0, *) {
-//            Splatoon3ScheduleInteractiveWidget()
-//            Splatoon2ScheduleInteractiveWidget()
-//        }
     }
 }
