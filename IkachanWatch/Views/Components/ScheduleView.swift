@@ -9,7 +9,6 @@ struct ScheduleView: View {
                 Image(schedule.rule.image)
                     .resizedToFit()
                     .frame(width: 24, height: 24)
-                    .layoutPriority(1)
                 Text(LocalizedStringKey(schedule.challenge ?? schedule.rule.name))
                     .font(.title3)
                     .fontWeight(.bold)
@@ -17,10 +16,10 @@ struct ScheduleView: View {
             }
             
             Text(timeSpan(start: schedule.startTime, end: schedule.endTime))
+                .font(.caption2)
                 .monospacedDigit()
                 .foregroundColor(.secondary)
                 .lineLimit(1)
-                .layoutPriority(1)
             
             VStack {
                 ForEach(schedule.stages, id: \.name) { stage in

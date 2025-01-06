@@ -10,10 +10,10 @@ struct SchedulesView: View {
                 .ignoresSafeArea()
             
             List {
-                ForEach(schedules, id: \.startTime) { schedule in
+                ForEach(schedules.prefix(2), id: \.startTime) { schedule in
                     HStack {
                         ScheduleView(schedule: schedule)
-                            .padding()
+                            .padding(.vertical)
                             .frame(maxWidth: .infinity, alignment: .center)
                     }
                 }

@@ -10,10 +10,10 @@ struct ShiftsView: View {
                 .ignoresSafeArea()
             
             List {
-                ForEach(shifts, id: \.startTime) { shift in
+                ForEach(shifts.prefix(2), id: \.startTime) { shift in
                     HStack {
                         ShiftView(shift: shift)
-                            .padding()
+                            .padding(.vertical)
                             .frame(maxWidth: .infinity, alignment: .center)
                     }
                 }

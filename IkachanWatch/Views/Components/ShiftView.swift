@@ -9,7 +9,6 @@ struct ShiftView: View {
                 Image(shift.mode.image)
                     .resizedToFit()
                     .frame(width: 24, height: 24)
-                    .layoutPriority(1)
                 Text(LocalizedStringKey(shift.mode.name))
                     .font(.title3)
                     .fontWeight(.bold)
@@ -17,18 +16,17 @@ struct ShiftView: View {
             }
             
             Text(timeSpan(start: shift.startTime, end: shift.endTime))
+                .font(.caption2)
                 .monospacedDigit()
                 .foregroundColor(.secondary)
                 .lineLimit(1)
-                .layoutPriority(1)
             
             if let stage = shift.stage {
                 Text(stage.name)
                     .lineLimit(1)
                 
                 WeaponsView(weapons: shift.weapons!)
-                    .frame(height: 20)
-                    .layoutPriority(1)
+                    .frame(height: 24)
             }
         }
     }
