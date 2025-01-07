@@ -35,7 +35,7 @@ struct Splatoon3ScheduleProvider: IntentTimelineProvider {
         }
     }
     
-    @available(iOSApplicationExtension 17.0, watchOSApplicationExtension 9.0, *)
+    @available(iOSApplicationExtension 17.0, *)
     func recommendations() -> [IntentRecommendation<Splatoon3ScheduleIntent>] {
         return [INSplatoon3ScheduleMode.regularBattle, INSplatoon3ScheduleMode.anarchyBattleSeries, INSplatoon3ScheduleMode.anarchyBattleOpen, INSplatoon3ScheduleMode.xBattle, INSplatoon3ScheduleMode.challenges, INSplatoon3ScheduleMode.splatfestBattleOpen, INSplatoon3ScheduleMode.splatfestBattlePro, INSplatoon3ScheduleMode.tricolorBattle].map { mode in
             let intent = Splatoon3ScheduleIntent()
@@ -142,7 +142,7 @@ struct Splatoon3ScheduleProgressProvider: IntentTimelineProvider {
         }
     }
     
-    @available(iOSApplicationExtension 17.0, watchOSApplicationExtension 9.0, *)
+    @available(iOSApplicationExtension 17.0, *)
     func recommendations() -> [IntentRecommendation<Splatoon3ScheduleIntent>] {
         return [INSplatoon3ScheduleMode.regularBattle, INSplatoon3ScheduleMode.anarchyBattleSeries, INSplatoon3ScheduleMode.anarchyBattleOpen, INSplatoon3ScheduleMode.xBattle, INSplatoon3ScheduleMode.challenges, INSplatoon3ScheduleMode.splatfestBattleOpen, INSplatoon3ScheduleMode.splatfestBattlePro, INSplatoon3ScheduleMode.tricolorBattle].map { mode in
             let intent = Splatoon3ScheduleIntent()

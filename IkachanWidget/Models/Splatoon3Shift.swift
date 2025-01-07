@@ -28,7 +28,7 @@ struct Splatoon3ShiftProvider: IntentTimelineProvider {
         }
     }
     
-    @available(iOSApplicationExtension 17.0, watchOSApplicationExtension 9.0, *)
+    @available(iOSApplicationExtension 17.0, *)
     func recommendations() -> [IntentRecommendation<Splatoon3ShiftIntent>] {
         return [INSplatoon3ShiftMode.salmonRunAndBigRun, INSplatoon3ShiftMode.eggstraWork].map { mode in
             let intent = Splatoon3ShiftIntent()
@@ -143,7 +143,7 @@ struct Splatoon3ShiftProgressProvider: IntentTimelineProvider {
         }
     }
     
-    @available(iOSApplicationExtension 17.0, watchOSApplicationExtension 9.0, *)
+    @available(iOSApplicationExtension 17.0, *)
     func recommendations() -> [IntentRecommendation<Splatoon3ShiftIntent>] {
         return [INSplatoon3ShiftMode.salmonRunAndBigRun, INSplatoon3ShiftMode.eggstraWork].map { mode in
             let intent = Splatoon3ShiftIntent()

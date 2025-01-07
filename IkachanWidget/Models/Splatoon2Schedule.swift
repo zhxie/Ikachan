@@ -25,7 +25,7 @@ struct Splatoon2ScheduleProvider: IntentTimelineProvider {
         }
     }
     
-    @available(iOSApplicationExtension 17.0, watchOSApplicationExtension 9.0, *)
+    @available(iOSApplicationExtension 17.0, *)
     func recommendations() -> [IntentRecommendation<Splatoon2ScheduleIntent>] {
         return [INSplatoon2ScheduleMode.regularBattle, INSplatoon2ScheduleMode.rankedBattle, INSplatoon2ScheduleMode.leagueBattle].map { mode in
             let intent = Splatoon2ScheduleIntent()
@@ -118,7 +118,7 @@ struct Splatoon2ScheduleProgressProvider: IntentTimelineProvider {
         }
     }
     
-    @available(iOSApplicationExtension 17.0, watchOSApplicationExtension 9.0, *)
+    @available(iOSApplicationExtension 17.0, *)
     func recommendations() -> [IntentRecommendation<Splatoon2ScheduleIntent>] {
         return [INSplatoon2ScheduleMode.regularBattle, INSplatoon2ScheduleMode.rankedBattle, INSplatoon2ScheduleMode.leagueBattle].map { mode in
             let intent = Splatoon2ScheduleIntent()
