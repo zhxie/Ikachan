@@ -81,6 +81,7 @@
 "splatoon_3_schedule_widget_description" = "スプラトゥーン3のそのモードのスケジュールを表示できます。";
 "splatoon_3_shift" = "スプラトゥーン3シフト表";
 "splatoon_3_shift_widget_description" = "スプラトゥーン3のそのモードのシフト表を表示できます。";
+"widget_recommendation_description" = "%1$@%2$@";
 
 // Intents.
 "schedule_dialog" = "%1$@%2$@は%4$@と%5$@の%3$@があります。";

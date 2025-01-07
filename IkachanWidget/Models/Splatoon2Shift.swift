@@ -18,7 +18,7 @@ struct Splatoon2ShiftProvider: IntentTimelineProvider {
     
     @available(iOSApplicationExtension 17.0, watchOSApplicationExtension 9.0, *)
     func recommendations() -> [IntentRecommendation<Splatoon2ShiftIntent>] {
-        return [IntentRecommendation(intent: Splatoon2ShiftIntent(), description: "splatoon_2_shift_widget_description")]
+        return [IntentRecommendation(intent: Splatoon2ShiftIntent(), description: String(format: String(localized: "widget_recommendation_description"), Game.splatoon2.name.localizedString, Splatoon2ShiftMode.salmonRun.name.localizedString))]
     }
     
     func placeholder(in context: Context) -> Splatoon2ShiftEntry {
@@ -119,7 +119,7 @@ struct Splatoon2ShiftProgressProvider: IntentTimelineProvider {
     
     @available(iOSApplicationExtension 17.0, watchOSApplicationExtension 9.0, *)
     func recommendations() -> [IntentRecommendation<Splatoon2ShiftIntent>] {
-        return [IntentRecommendation(intent: Splatoon2ShiftIntent(), description: "splatoon_2_shift_widget_description")]
+        return [IntentRecommendation(intent: Splatoon2ShiftIntent(), description: String(format: String(localized: "widget_recommendation_description"), Game.splatoon2.name.localizedString, Splatoon2ShiftMode.salmonRun.name.localizedString))]
     }
     
     func placeholder(in context: Context) -> Splatoon2ShiftEntry {

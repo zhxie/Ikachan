@@ -82,6 +82,7 @@
 "splatoon_3_schedule_widget_description" = "查看斯普拉遁3的某模式的時間表。";
 "splatoon_3_shift" = "斯普拉遁3排班表";
 "splatoon_3_shift_widget_description" = "查看斯普拉遁3的某模式的排班表。";
+"widget_recommendation_description" = "%1$@%2$@";
 
 // Intents.
 "schedule_dialog" = "%1$@%2$@目前正進行於%4$@和%5$@的%3$@。";

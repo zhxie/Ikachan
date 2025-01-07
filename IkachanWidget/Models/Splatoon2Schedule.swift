@@ -30,7 +30,7 @@ struct Splatoon2ScheduleProvider: IntentTimelineProvider {
         return [INSplatoon2ScheduleMode.regularBattle, INSplatoon2ScheduleMode.rankedBattle, INSplatoon2ScheduleMode.leagueBattle].map { mode in
             let intent = Splatoon2ScheduleIntent()
             intent.mode = mode
-            return IntentRecommendation(intent: intent, description: "splatoon_2_schedule_widget_description")
+            return IntentRecommendation(intent: intent, description: String(format: String(localized: "widget_recommendation_description"), Game.splatoon2.name.localizedString, Splatoon2ScheduleMode(from: mode).name.localizedString))
         }
     }
     
@@ -123,7 +123,7 @@ struct Splatoon2ScheduleProgressProvider: IntentTimelineProvider {
         return [INSplatoon2ScheduleMode.regularBattle, INSplatoon2ScheduleMode.rankedBattle, INSplatoon2ScheduleMode.leagueBattle].map { mode in
             let intent = Splatoon2ScheduleIntent()
             intent.mode = mode
-            return IntentRecommendation(intent: intent, description: "splatoon_2_schedule_widget_description")
+            return IntentRecommendation(intent: intent, description: String(format: String(localized: "widget_recommendation_description"), Game.splatoon2.name.localizedString, Splatoon2ScheduleMode(from: mode).name.localizedString))
         }
     }
     

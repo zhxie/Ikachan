@@ -40,7 +40,7 @@ struct Splatoon3ScheduleProvider: IntentTimelineProvider {
         return [INSplatoon3ScheduleMode.regularBattle, INSplatoon3ScheduleMode.anarchyBattleSeries, INSplatoon3ScheduleMode.anarchyBattleOpen, INSplatoon3ScheduleMode.xBattle, INSplatoon3ScheduleMode.challenges, INSplatoon3ScheduleMode.splatfestBattleOpen, INSplatoon3ScheduleMode.splatfestBattlePro, INSplatoon3ScheduleMode.tricolorBattle].map { mode in
             let intent = Splatoon3ScheduleIntent()
             intent.mode = mode
-            return IntentRecommendation(intent: intent, description: "splatoon_3_schedule_widget_description")
+            return IntentRecommendation(intent: intent, description: String(format: String(localized: "widget_recommendation_description"), Game.splatoon3.name.localizedString, Splatoon3ScheduleMode(from: mode).name.localizedString))
         }
     }
     
@@ -147,7 +147,7 @@ struct Splatoon3ScheduleProgressProvider: IntentTimelineProvider {
         return [INSplatoon3ScheduleMode.regularBattle, INSplatoon3ScheduleMode.anarchyBattleSeries, INSplatoon3ScheduleMode.anarchyBattleOpen, INSplatoon3ScheduleMode.xBattle, INSplatoon3ScheduleMode.challenges, INSplatoon3ScheduleMode.splatfestBattleOpen, INSplatoon3ScheduleMode.splatfestBattlePro, INSplatoon3ScheduleMode.tricolorBattle].map { mode in
             let intent = Splatoon3ScheduleIntent()
             intent.mode = mode
-            return IntentRecommendation(intent: intent, description: "splatoon_3_schedule_widget_description")
+            return IntentRecommendation(intent: intent, description: String(format: String(localized: "widget_recommendation_description"), Game.splatoon3.name.localizedString, Splatoon3ScheduleMode(from: mode).name.localizedString))
         }
     }
     

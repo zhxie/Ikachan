@@ -33,7 +33,7 @@ struct Splatoon3ShiftProvider: IntentTimelineProvider {
         return [INSplatoon3ShiftMode.salmonRunAndBigRun, INSplatoon3ShiftMode.eggstraWork].map { mode in
             let intent = Splatoon3ShiftIntent()
             intent.mode = mode
-            return IntentRecommendation(intent: intent, description: "splatoon_3_shift_widget_description")
+            return IntentRecommendation(intent: intent, description: String(format: String(localized: "widget_recommendation_description"), Game.splatoon3.name.localizedString, Splatoon3ShiftMode(from: mode).name.localizedString))
         }
     }
     
@@ -148,7 +148,7 @@ struct Splatoon3ShiftProgressProvider: IntentTimelineProvider {
         return [INSplatoon3ShiftMode.salmonRunAndBigRun, INSplatoon3ShiftMode.eggstraWork].map { mode in
             let intent = Splatoon3ShiftIntent()
             intent.mode = mode
-            return IntentRecommendation(intent: intent, description: "splatoon_3_shift_widget_description")
+            return IntentRecommendation(intent: intent, description: String(format: String(localized: "widget_recommendation_description"), Game.splatoon3.name.localizedString, Splatoon3ShiftMode(from: mode).name.localizedString))
         }
     }
     

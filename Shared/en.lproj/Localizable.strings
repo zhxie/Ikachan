@@ -81,6 +81,7 @@
 "splatoon_3_schedule_widget_description" = "See schedules of a mode in Splatoon 3.";
 "splatoon_3_shift" = "Splatoon 3 Shift";
 "splatoon_3_shift_widget_description" = "See shifts of a mode in Splatoon 3.";
+"widget_recommendation_description" = "%1$@ %2$@";
 
 // Intents.
 "schedule_dialog" = "%3$@ in %4$@ and %5$@ of %1$@ %2$@ is undergoing.";
