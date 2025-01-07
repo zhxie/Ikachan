@@ -2,12 +2,12 @@ import SwiftUI
 import WidgetKit
 
 @available(iOSApplicationExtension 16.0, *)
-struct StandbyScheduleView: View {
+struct StandbyShiftView: View {
     @Environment(\.widgetRenderingMode) var widgetRenderingMode
     
-    var mode: any ScheduleMode
-    var schedule: Schedule?
-    var nextSchedule: Schedule?
+    var mode: any ShiftMode
+    var shift: Shift?
+    var nextShift: Shift?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -24,42 +24,50 @@ struct StandbyScheduleView: View {
             }
             .layoutPriority(1)
             
-            if let schedule = schedule {
+            if let shift = shift {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(alignment: .top) {
-                        Image(schedule.rule.image)
+                        Image(shift.mode.image)
                             .resizedToFit()
                             .frame(width: 16, height: 16)
                             .layoutPriority(1)
                         
                         VStack(alignment: .leading, spacing: 2) {
-                            ForEach(schedule.stages, id: \.name) { stage in
+                            if let stage = shift.stage {
+                                Text(stage.name)
+                                    .font(.footnote)
+                                    .lineLimit(1)
+                            }
+                            
+                            VStack(alignment: .leading, spacing: 1) {
+                                if let weapons = shift.weapons {
+                                    ForEach(weapons, id: \.name) { weapon in
+                                        Text(weapon.name)
+                                            .font(.caption2)
+                                            .lineLimit(1)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    if let shift = nextShift {
+                        HStack(alignment: .top) {
+                            Image(shift.mode.image)
+                                .resizedToFit()
+                                .frame(width: 16, height: 16)
+                                .layoutPriority(1)
+                            
+                            if let stage = shift.stage {
                                 Text(stage.name)
                                     .font(.footnote)
                                     .lineLimit(1)
                             }
                         }
                     }
-                    
-                    if let schedule = nextSchedule {
-                        HStack(alignment: .top) {
-                            Image(schedule.rule.image)
-                                .resizedToFit()
-                                .frame(width: 16, height: 16)
-                                .layoutPriority(1)
-                            
-                            VStack(alignment: .leading, spacing: 2) {
-                                ForEach(schedule.stages, id: \.name) { stage in
-                                    Text(stage.name)
-                                        .font(.footnote)
-                                        .lineLimit(1)
-                                }
-                            }
-                        }
-                    }
                 }
             } else {
-                Text(LocalizedStringKey("no_schedule"))
+                Text(LocalizedStringKey("no_shifts"))
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -69,9 +77,9 @@ struct StandbyScheduleView: View {
 }
 
 @available(iOSApplicationExtension 17.0, *)
-struct StandbyScheduleView_Previews: PreviewProvider {
+struct StandbyShiftView_Previews: PreviewProvider {
     static var previews: some View {
-        StandbyScheduleView(mode: Splatoon3ScheduleMode.regularBattle, schedule: nil, nextSchedule: PreviewSplatoon3Schedule)
+        StandbyShiftView(mode: Splatoon3ShiftMode.salmonRun, shift: PreviewSplatoon2Shift, nextShift: PreviewSplatoon3Shift)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }

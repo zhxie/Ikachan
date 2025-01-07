@@ -68,8 +68,8 @@
 
 // Widget.
 "next" = "下次";
-"no_schedule" = "无日程";
-"no_shift" = "无排班";
+"no_schedules" = "无日程";
+"no_shifts" = "无排班";
 
 "change_mode" = "变更模式";
 

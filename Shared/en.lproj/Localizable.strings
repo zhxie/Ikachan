@@ -68,8 +68,8 @@
 
 // Widget.
 "next" = "Next";
-"no_schedule" = "No schedules";
-"no_shift" = "No shifts";
+"no_schedules" = "No schedules";
+"no_shifts" = "No shifts";
 
 "change_mode" = "Change Mode";
 

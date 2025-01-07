@@ -14,25 +14,7 @@ class Splatoon3ScheduleIntentHandler: IntentHandler, Splatoon3ScheduleIntentHand
     }
 
     func handle(intent: Splatoon3ScheduleIntent, completion: @escaping (Splatoon3ScheduleIntentResponse) -> Void) {
-        var mode: Splatoon3ScheduleMode = .regularBattle
-        switch intent.mode {
-        case .unknown, .regularBattle:
-            mode = .regularBattle
-        case .anarchyBattleSeries:
-            mode = .anarchyBattleSeries
-        case .anarchyBattleOpen:
-            mode = .anarchyBattleOpen
-        case .xBattle:
-            mode = .xBattle
-        case .challenges:
-            mode = .challenges
-        case .splatfestBattleOpen:
-            mode = .splatfestBattleOpen
-        case .splatfestBattlePro:
-            mode = .splatfestBattlePro
-        case .tricolorBattle:
-            mode = .tricolorBattle
-        }
+        let mode = Splatoon3ScheduleMode(from: intent.mode)
         fetchSplatoon3Schedules(locale: Locale.localizedIntentsLocale) { schedules, error in
             guard error == .NoError else {
                 completion(Splatoon3ScheduleIntentResponse(code: .failure, userActivity: nil))

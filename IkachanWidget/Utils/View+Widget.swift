@@ -13,7 +13,7 @@ struct PaddingModifier: ViewModifier {
     }
 }
 
-@available(iOSApplicationExtension 17.0, *)
+@available(iOSApplicationExtension 17.0, watchOSApplicationExtension 10.0, *)
 struct ContainerBackgroundModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -29,7 +29,7 @@ extension View {
     
     @ViewBuilder
     func widgetContainerBackground(padding: Bool) -> some View {
-        if #available(iOSApplicationExtension 17.0, *) {
+        if #available(iOSApplicationExtension 17.0, watchOSApplicationExtension 10.0, *) {
             self.modifier(ContainerBackgroundModifier())
         } else {
             self.modifier(PaddingModifier(padding: padding))

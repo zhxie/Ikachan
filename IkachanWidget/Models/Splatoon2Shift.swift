@@ -1,13 +1,24 @@
 import WidgetKit
-import SwiftUI
-import Intents
 import Kingfisher
+
+struct Splatoon2ShiftEntry: TimelineEntry {
+    var date: Date
+    var configuration: Splatoon2ShiftIntent
+
+    var shift: Splatoon2Shift?
+    var nextShift: Splatoon2Shift?
+}
 
 struct Splatoon2ShiftProvider: IntentTimelineProvider {
     func filterShifts(shifts: [Splatoon2Shift]) -> [Splatoon2Shift] {
         return shifts.filter { schedule in
             schedule.endTime > Date()
         }
+    }
+    
+    @available(iOSApplicationExtension 17.0, watchOSApplicationExtension 9.0, *)
+    func recommendations() -> [IntentRecommendation<Splatoon2ShiftIntent>] {
+        return [IntentRecommendation(intent: Splatoon2ShiftIntent(), description: "splatoon_2_shift_widget_description")]
     }
     
     func placeholder(in context: Context) -> Splatoon2ShiftEntry {
@@ -99,76 +110,64 @@ struct Splatoon2ShiftProvider: IntentTimelineProvider {
     }
 }
 
-struct Splatoon2ShiftEntry: TimelineEntry {
-    var date: Date
-    var configuration: Splatoon2ShiftIntent
-
-    var shift: Splatoon2Shift?
-    var nextShift: Splatoon2Shift?
-}
-
-struct Splatoon2ShiftWidgetEntryView : View {
-    var entry: Splatoon2ShiftProvider.Entry
+struct Splatoon2ShiftProgressProvider: IntentTimelineProvider {
+    func filterShifts(shifts: [Splatoon2Shift]) -> [Splatoon2Shift] {
+        return shifts.filter { shift in
+            shift.endTime > Date()
+        }
+    }
     
-    @Environment(\.widgetFamily) var family
-    @Environment(\.showsWidgetContainerBackground) var showsWidgetContainerBackground
+    @available(iOSApplicationExtension 17.0, watchOSApplicationExtension 9.0, *)
+    func recommendations() -> [IntentRecommendation<Splatoon2ShiftIntent>] {
+        return [IntentRecommendation(intent: Splatoon2ShiftIntent(), description: "splatoon_2_shift_widget_description")]
+    }
+    
+    func placeholder(in context: Context) -> Splatoon2ShiftEntry {
+        Splatoon2ShiftEntry(date: Date(), configuration: Splatoon2ShiftIntent(), shift: PreviewSplatoon2Shift)
+    }
 
-    @ViewBuilder
-    var body: some View {
-        if #available(iOSApplicationExtension 16.0, *) {
-            switch family {
-            case .accessoryRectangular:
-                AccessoryRectangularShiftView(mode: Splatoon2ShiftMode.salmonRun, shift: entry.shift)
-                    .widgetContainerBackground(padding: false)
-            case .systemSmall:
-                if showsWidgetContainerBackground {
-                    SmallShiftView(mode: Splatoon2ShiftMode.salmonRun, shift: entry.shift, nextShift: entry.nextShift)
-                        .widgetContainerBackground()
-                } else {
-                    StandbyShiftView(mode: Splatoon2ShiftMode.salmonRun, shift: entry.shift, nextShift: entry.nextShift)
-                        .widgetContainerBackground()
+    func getSnapshot(for configuration: Splatoon2ShiftIntent, in context: Context, completion: @escaping (Splatoon2ShiftEntry) -> ()) {
+        fetchSplatoon2Shifts(locale: Locale.localizedLocale) { shifts, error in
+            guard error == .NoError else {
+                completion(Splatoon2ShiftEntry(date: Date(), configuration: configuration, shift: nil))
+                
+                return
+            }
+            
+            let filtered = filterShifts(shifts: shifts)
+            if !filtered.isEmpty {
+                completion(Splatoon2ShiftEntry(date: Date(), configuration: configuration, shift: filtered.first!))
+            } else {
+                completion(Splatoon2ShiftEntry(date: Date(), configuration: configuration, shift: nil))
+            }
+        }
+    }
+
+    func getTimeline(for configuration: Splatoon2ShiftIntent, in context: Context, completion: @escaping (Timeline<Splatoon2ShiftEntry>) -> ()) {
+        fetchSplatoon2Shifts(locale: Locale.localizedLocale) { shifts, error in
+            guard error == .NoError else {
+                completion(Timeline(entries: [Splatoon2ShiftEntry(date: Date(), configuration: configuration, shift: nil)], policy: .after(Date().addingTimeInterval(300))))
+                
+                return
+            }
+            
+            var entries: [Splatoon2ShiftEntry] = []
+            let filtered = filterShifts(shifts: shifts)
+            if !filtered.isEmpty {
+                var current = Date().floorToMin()
+                for shift in filtered {
+                    while current < shift.endTime && entries.count < MaxDynamicWidgetEntryCount {
+                        let entry = Splatoon2ShiftEntry(date: current, configuration: configuration, shift: shift)
+                        entries.append(entry)
+                        
+                        current = current.addingTimeInterval(60)
+                    }
                 }
-            default:
-                MediumShiftView(mode: Splatoon2ShiftMode.salmonRun, shift: entry.shift, nextShift: entry.nextShift)
-                    .widgetContainerBackground()
-            }
-        } else {
-            switch family {
-            case .systemSmall:
-                SmallShiftView(mode: Splatoon2ShiftMode.salmonRun, shift: entry.shift, nextShift: entry.nextShift)
-                    .padding()
-            default:
-                MediumShiftView(mode: Splatoon2ShiftMode.salmonRun, shift: entry.shift, nextShift: entry.nextShift)
-                    .padding()
+                
+                completion(Timeline(entries: entries, policy: .atEnd))
+            } else {
+                completion(Timeline(entries: [Splatoon2ShiftEntry(date: Date(), configuration: configuration, shift: nil)], policy: .after(Date().addingTimeInterval(300))))
             }
         }
-    }
-}
-
-struct Splatoon2ShiftWidget: Widget {
-    let kind = "Splatoon2ShiftWidget"
-    
-    var supportedFamilies: [WidgetFamily] {
-        if #available(iOSApplicationExtension 16.0, *) {
-            return [.systemSmall, .systemMedium, .accessoryRectangular]
-        } else {
-            return [.systemSmall, .systemMedium]
-        }
-    }
-
-    var body: some WidgetConfiguration {
-        return IntentConfiguration(kind: kind, intent: Splatoon2ShiftIntent.self, provider: Splatoon2ShiftProvider()) { entry in
-            Splatoon2ShiftWidgetEntryView(entry: entry)
-        }
-        .configurationDisplayName("splatoon_2_shift")
-        .description("splatoon_2_shift_widget_description")
-        .supportedFamilies(supportedFamilies)
-    }
-}
-
-struct Splatoon2ShiftWidgetEntryView_Previews: PreviewProvider {
-    static var previews: some View {
-        Splatoon2ShiftWidgetEntryView(entry: Splatoon2ShiftEntry(date: Date(), configuration: Splatoon2ShiftIntent(), shift: PreviewSplatoon2Shift, nextShift: PreviewSplatoon2Shift))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

@@ -31,7 +31,7 @@ struct AccessoryCircularView: View {
     }
 }
 
-@available(iOSApplicationExtension 17.0, *)
+@available(iOSApplicationExtension 17.0, watchOSApplicationExtension 10.0, *)
 struct AccessoryCircularView_Previews: PreviewProvider {
     static var previews: some View {
         AccessoryCircularView(progress: 0.5, mode: PreviewSplatoon3Schedule.mode.image, rule: PreviewSplatoon3Schedule.rule.image)

@@ -69,8 +69,8 @@
 // Widget.
 "next" = "下次";
 // HACK: This translation is slightly different from others.
-"no_schedule" = "没有時間表";
-"no_shift" = "没有排班";
+"no_schedules" = "没有時間表";
+"no_shifts" = "没有排班";
 
 "change_mode" = "變更模式";
 

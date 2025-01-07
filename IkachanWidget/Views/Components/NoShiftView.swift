@@ -5,7 +5,7 @@ struct NoShiftView: View {
     var body: some View {
         Spacer()
         
-        Text(LocalizedStringKey("no_shift"))
+        Text(LocalizedStringKey("no_shifts"))
             .font(.subheadline)
             .foregroundColor(.secondary)
             .multilineTextAlignment(.center)
@@ -15,11 +15,10 @@ struct NoShiftView: View {
     }
 }
 
-@available(iOSApplicationExtension 17.0, *)
+@available(iOSApplicationExtension 17.0, watchOSApplicationExtension 10.0, *)
 struct NoShiftView_Previews: PreviewProvider {
     static var previews: some View {
         NoShiftView()
             .containerBackground(for: .widget, content: {})
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

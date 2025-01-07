@@ -37,7 +37,7 @@ struct AccessoryRectangularScheduleView: View {
     }
 }
 
-@available(iOSApplicationExtension 17.0, *)
+@available(iOSApplicationExtension 17.0, watchOSApplicationExtension 10.0, *)
 struct AccessoryRectangularScheduleView_Previews: PreviewProvider {
     static var previews: some View {
         AccessoryRectangularScheduleView(mode: Splatoon3ScheduleMode.regularBattle, schedule: PreviewSplatoon3Schedule)

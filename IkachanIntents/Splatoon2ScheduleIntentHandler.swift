@@ -14,15 +14,7 @@ class Splatoon2ScheduleIntentHandler: IntentHandler, Splatoon2ScheduleIntentHand
     }
 
     func handle(intent: Splatoon2ScheduleIntent, completion: @escaping (Splatoon2ScheduleIntentResponse) -> Void) {
-        var mode: Splatoon2ScheduleMode = .regularBattle
-        switch intent.mode {
-        case .unknown, .regularBattle:
-            mode = .regularBattle
-        case .rankedBattle:
-            mode = .rankedBattle
-        case .leagueBattle:
-            mode = .leagueBattle
-        }
+        let mode = Splatoon2ScheduleMode(from: intent.mode)
         fetchSplatoon2Schedules(locale: Locale.localizedIntentsLocale) { schedules, error in
             guard error == .NoError else {
                 completion(Splatoon2ScheduleIntentResponse(code: .failure, userActivity: nil))

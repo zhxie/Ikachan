@@ -2,12 +2,12 @@ import SwiftUI
 import WidgetKit
 
 @available(iOSApplicationExtension 16.0, *)
-struct StandbyShiftView: View {
+struct StandbyScheduleView: View {
     @Environment(\.widgetRenderingMode) var widgetRenderingMode
     
-    var mode: any ShiftMode
-    var shift: Shift?
-    var nextShift: Shift?
+    var mode: any ScheduleMode
+    var schedule: Schedule?
+    var nextSchedule: Schedule?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -24,50 +24,42 @@ struct StandbyShiftView: View {
             }
             .layoutPriority(1)
             
-            if let shift = shift {
+            if let schedule = schedule {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(alignment: .top) {
-                        Image(shift.mode.image)
+                        Image(schedule.rule.image)
                             .resizedToFit()
                             .frame(width: 16, height: 16)
                             .layoutPriority(1)
                         
                         VStack(alignment: .leading, spacing: 2) {
-                            if let stage = shift.stage {
+                            ForEach(schedule.stages, id: \.name) { stage in
                                 Text(stage.name)
                                     .font(.footnote)
                                     .lineLimit(1)
-                            }
-                            
-                            VStack(alignment: .leading, spacing: 1) {
-                                if let weapons = shift.weapons {
-                                    ForEach(weapons, id: \.name) { weapon in
-                                        Text(weapon.name)
-                                            .font(.caption2)
-                                            .lineLimit(1)
-                                    }
-                                }
                             }
                         }
                     }
                     
-                    if let shift = nextShift {
+                    if let schedule = nextSchedule {
                         HStack(alignment: .top) {
-                            Image(shift.mode.image)
+                            Image(schedule.rule.image)
                                 .resizedToFit()
                                 .frame(width: 16, height: 16)
                                 .layoutPriority(1)
                             
-                            if let stage = shift.stage {
-                                Text(stage.name)
-                                    .font(.footnote)
-                                    .lineLimit(1)
+                            VStack(alignment: .leading, spacing: 2) {
+                                ForEach(schedule.stages, id: \.name) { stage in
+                                    Text(stage.name)
+                                        .font(.footnote)
+                                        .lineLimit(1)
+                                }
                             }
                         }
                     }
                 }
             } else {
-                Text(LocalizedStringKey("no_shift"))
+                Text(LocalizedStringKey("no_schedules"))
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -77,9 +69,9 @@ struct StandbyShiftView: View {
 }
 
 @available(iOSApplicationExtension 17.0, *)
-struct StandbyShiftView_Previews: PreviewProvider {
+struct StandbyScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        StandbyShiftView(mode: Splatoon3ShiftMode.salmonRun, shift: PreviewSplatoon2Shift, nextShift: PreviewSplatoon3Shift)
+        StandbyScheduleView(mode: Splatoon3ScheduleMode.regularBattle, schedule: nil, nextSchedule: PreviewSplatoon3Schedule)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }

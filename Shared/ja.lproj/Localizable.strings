@@ -68,8 +68,8 @@
 
 // Widget.
 "next" = "つぎ";
-"no_schedule" = "スケジュールなし";
-"no_shift" = "シフトなし";
+"no_schedules" = "スケジュールなし";
+"no_shifts" = "シフトなし";
 
 "change_mode" = "モード変更";
 

@@ -43,7 +43,7 @@ struct AccessoryRectangularShiftView: View {
     }
 }
 
-@available(iOSApplicationExtension 17.0, *)
+@available(iOSApplicationExtension 17.0, watchOSApplicationExtension 10.0, *)
 struct AccessoryRectangularShiftView_Previews: PreviewProvider {
     static var previews: some View {
         AccessoryRectangularShiftView(mode: Splatoon3ShiftMode.salmonRun, shift: PreviewSplatoon3Shift)
