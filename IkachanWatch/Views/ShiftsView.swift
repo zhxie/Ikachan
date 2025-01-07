@@ -15,22 +15,7 @@ struct ShiftsView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                 
                 if shifts.count > 1 {
-                    HStack {
-                        Rectangle()
-                            .fill(.secondary)
-                            .frame(height: 2)
-                            .ignoresSafeArea()
-                        
-                        Text(LocalizedStringKey("next"))
-                            .font(.footnote)
-                            .fontWeight(.bold)
-                            .foregroundColor(.secondary)
-                        
-                        Rectangle()
-                            .fill(.secondary)
-                            .frame(height: 2)
-                            .ignoresSafeArea()
-                    }
+                    Separator()
                     
                     ShiftView(shift: shifts.at(index: 1)!)
                         .padding(.vertical)

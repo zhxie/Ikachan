@@ -15,22 +15,7 @@ struct SchedulesView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                 
                 if schedules.count > 1 {
-                    HStack {
-                        Rectangle()
-                            .fill(.secondary)
-                            .frame(height: 2)
-                            .ignoresSafeArea()
-                        
-                        Text(LocalizedStringKey("next"))
-                            .font(.footnote)
-                            .fontWeight(.bold)
-                            .foregroundColor(.secondary)
-                        
-                        Rectangle()
-                            .fill(.secondary)
-                            .frame(height: 2)
-                            .ignoresSafeArea()
-                    }
+                    Separator()
                     
                     ScheduleView(schedule: schedules.at(index: 1)!)
                         .padding(.vertical)
