@@ -98,12 +98,12 @@ struct AboutView: View {
                 Section(LocalizedStringKey("support")) {
                     Button(LocalizedStringKey("reload_widgets")) {
                         WidgetCenter.shared.reloadAllTimelines()
-                        AlertKitAPI.present(title: "widgets_reloaded".localizedString, icon: .done, style: .iOS17AppleMusic, haptic: .success)
+                        AlertKitAPI.present(title: String(localized: "widgets_reloaded"), icon: .done, style: .iOS17AppleMusic, haptic: .success)
                     }
                     Button(LocalizedStringKey("clear_cache")) {
                         KingfisherManager.shared.cache.clearMemoryCache()
                         KingfisherManager.shared.cache.clearDiskCache()
-                        AlertKitAPI.present(title: "cache_cleared".localizedString, icon: .done, style: .iOS17AppleMusic, haptic: .success)
+                        AlertKitAPI.present(title: String(localized: "cache_cleared"), icon: .done, style: .iOS17AppleMusic, haptic: .success)
                     }
                 }
                 Section(LocalizedStringKey("about")) {
