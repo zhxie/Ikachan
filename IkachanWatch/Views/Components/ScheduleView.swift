@@ -5,11 +5,17 @@ struct ScheduleView: View {
     
     var body: some View {
         VStack(spacing: 8) {
+            if let challenge = schedule.challenge {
+                Text(challenge)
+                    .font(.caption2)
+                    .lineLimit(1)
+            }
+            
             HStack(alignment: .center) {
                 Image(schedule.rule.image)
                     .resizedToFit()
                     .frame(width: 24, height: 24)
-                Text(LocalizedStringKey(schedule.challenge ?? schedule.rule.name))
+                Text(LocalizedStringKey(schedule.rule.name))
                     .font(.title3)
                     .fontWeight(.bold)
                     .lineLimit(1)
@@ -32,5 +38,5 @@ struct ScheduleView: View {
 }
 
 #Preview {
-    ScheduleView(schedule: PreviewSplatoon2Schedule)
+    ScheduleView(schedule: PreviewSplatoon3Schedule)
 }

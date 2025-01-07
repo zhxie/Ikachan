@@ -6,16 +6,35 @@ struct ShiftsView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [mode.accentColor, .black.opacity(0)]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [mode.accentColor, mode.accentColor.opacity(0)]), startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
-            List {
-                ForEach(shifts.prefix(2), id: \.startTime) { shift in
+            ScrollView {
+                ShiftView(shift: shifts.first!)
+                    .padding(.vertical)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                
+                if shifts.count > 1 {
                     HStack {
-                        ShiftView(shift: shift)
-                            .padding(.vertical)
-                            .frame(maxWidth: .infinity, alignment: .center)
+                        Rectangle()
+                            .fill(.secondary)
+                            .frame(height: 2)
+                            .ignoresSafeArea()
+                        
+                        Text(LocalizedStringKey("next"))
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                            .foregroundColor(.secondary)
+                        
+                        Rectangle()
+                            .fill(.secondary)
+                            .frame(height: 2)
+                            .ignoresSafeArea()
                     }
+                    
+                    ShiftView(shift: shifts.at(index: 1)!)
+                        .padding(.vertical)
+                        .frame(maxWidth: .infinity, alignment: .center)
                 }
             }
         }

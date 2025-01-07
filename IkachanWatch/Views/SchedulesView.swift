@@ -6,16 +6,35 @@ struct SchedulesView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [mode.accentColor, .black.opacity(0)]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [mode.accentColor, mode.accentColor.opacity(0)]), startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
-            List {
-                ForEach(schedules.prefix(2), id: \.startTime) { schedule in
+            ScrollView {
+                ScheduleView(schedule: schedules.first!)
+                    .padding(.vertical)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                
+                if schedules.count > 1 {
                     HStack {
-                        ScheduleView(schedule: schedule)
-                            .padding(.vertical)
-                            .frame(maxWidth: .infinity, alignment: .center)
+                        Rectangle()
+                            .fill(.secondary)
+                            .frame(height: 2)
+                            .ignoresSafeArea()
+                        
+                        Text(LocalizedStringKey("next"))
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                            .foregroundColor(.secondary)
+                        
+                        Rectangle()
+                            .fill(.secondary)
+                            .frame(height: 2)
+                            .ignoresSafeArea()
                     }
+                    
+                    ScheduleView(schedule: schedules.at(index: 1)!)
+                        .padding(.vertical)
+                        .frame(maxWidth: .infinity, alignment: .center)
                 }
             }
         }
