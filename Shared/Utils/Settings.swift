@@ -13,13 +13,9 @@ let store = UserDefaults(suiteName: "group.name.sketch.Ikachan")
 class Settings: ObservableObject {
     static let shared = Settings()
     
-    @AppStorage(UserDefaultsKey.displayOnStartup.rawValue, store: store) private var _displayOnStartup = Game.splatoon3
-    @AppStorage(UserDefaultsKey.displayShiftsFirst.rawValue, store: store) private var _displayShiftsFirst = false
-    @AppStorage(UserDefaultsKey.splatoon2ScheduleOrder.rawValue, store: store) private var _splatoon2ScheduleOrder = Splatoon2ScheduleMode.allCases
-    @AppStorage(UserDefaultsKey.splatoon3ScheduleOrder.rawValue, store: store) private var _splatoon3ScheduleOrder = Splatoon3ScheduleMode.allCases
-    @AppStorage(UserDefaultsKey.splatoon3ShiftOrder.rawValue, store: store) private var _splatoon3ShiftOrder = Splatoon3ShiftMode.allCases
-    
-    var displayOnStartup: Game {
-        return _displayOnStartup
-    }
+    @AppStorage(UserDefaultsKey.displayOnStartup.rawValue, store: store) var displayOnStartup = Game.splatoon3
+    @AppStorage(UserDefaultsKey.displayShiftsFirst.rawValue, store: store) var displayShiftsFirst = false
+    @AppStorage(UserDefaultsKey.splatoon2ScheduleOrder.rawValue, store: store) var splatoon2ScheduleOrder = Splatoon2ScheduleMode.allCases
+    @AppStorage(UserDefaultsKey.splatoon3ScheduleOrder.rawValue, store: store) var splatoon3ScheduleOrder = Splatoon3ScheduleMode.allCases
+    @AppStorage(UserDefaultsKey.splatoon3ShiftOrder.rawValue, store: store) var splatoon3ShiftOrder = Splatoon3ShiftMode.allCases
 }

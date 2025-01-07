@@ -2,10 +2,7 @@ import SwiftUI
 import AlertKit
 
 struct ContentView: View {
-    @AppStorage(UserDefaultsKey.displayShiftsFirst.rawValue, store: store) var displayShiftsFirst = false
-    @AppStorage(UserDefaultsKey.splatoon2ScheduleOrder.rawValue, store: store) var splatoon2ScheduleOrder = Splatoon2ScheduleMode.allCases
-    @AppStorage(UserDefaultsKey.splatoon3ScheduleOrder.rawValue, store: store) var splatoon3ScheduleOrder = Splatoon3ScheduleMode.allCases
-    @AppStorage(UserDefaultsKey.splatoon3ShiftOrder.rawValue, store: store) var splatoon3ShiftOrder = Splatoon3ShiftMode.allCases
+    @ObservedObject var settings = Settings.shared
     
     @State var game = Settings.shared.displayOnStartup
     @State var splatoon2Error: APIError? = nil
@@ -56,8 +53,8 @@ struct ContentView: View {
                                 .padding([.horizontal])
                             }
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 450, maximum: 900))]) {
-                                SwappableView(isSwapped: displayShiftsFirst) {
-                                    ForEach(splatoon2ScheduleOrder, id: \.self) { mode in
+                                SwappableView(isSwapped: settings.displayShiftsFirst) {
+                                    ForEach(settings.splatoon2ScheduleOrder, id: \.self) { mode in
                                         if !splatoon2Schedules.filter({ schedule in
                                             schedule._mode == mode
                                         }).isEmpty {
@@ -97,8 +94,8 @@ struct ContentView: View {
                                 .padding([.horizontal])
                             }
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 450, maximum: 900))]) {
-                                SwappableView(isSwapped: displayShiftsFirst) {
-                                    ForEach(splatoon3ScheduleOrder, id: \.self) { mode in
+                                SwappableView(isSwapped: settings.displayShiftsFirst) {
+                                    ForEach(settings.splatoon3ScheduleOrder, id: \.self) { mode in
                                         if !splatoon3Schedules.filter({ schedule in
                                             schedule._mode == mode
                                         }).isEmpty {
@@ -108,7 +105,7 @@ struct ContentView: View {
                                         }
                                     }
                                 } content2: {
-                                    ForEach(splatoon3ShiftOrder, id: \.self) { mode in
+                                    ForEach(settings.splatoon3ShiftOrder, id: \.self) { mode in
                                         if !splatoon3Shifts.filter({ shift in
                                             shift._mode == mode
                                         }).isEmpty {
