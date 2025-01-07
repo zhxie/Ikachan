@@ -2,7 +2,7 @@
 
 **Ikachan** is a schedule client of Splatoon 2/3 for iOS.
 
-[<img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1639612800?h=343f8bc5c66e739c3d85b2f75bd5ab72" alt="Download on the App Store">](https://apps.apple.com/us/app/ikachan/id1550410600)
+[<img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1639612800" alt="Download on the App Store" style="width: 246px; height: 82px; vertical-align: middle; object-fit: contain;" />]([https://apps.apple.com/us/app/ikachan/id1550410600](https://apps.apple.com/us/app/ikachan/id1550410600?itscg=30200&itsct=apps_box_badge&mttnsubad=1550410600))
 
 ## License
 
