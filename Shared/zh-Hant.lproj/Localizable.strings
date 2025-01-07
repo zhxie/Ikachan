@@ -75,17 +75,13 @@
 "change_mode" = "變更模式";
 
 "splatoon_2_schedule" = "斯普拉遁2時間表";
-"splatoon_2_schedule_widget_description" = "查看斯普拉遁2的某模式目前和下次的時間表。";
-"splatoon_2_schedules" = "斯普拉遁2時間表";
-"splatoon_2_schedules_widget_description" = "查看斯普拉遁2目前和下次的時間表。";
+"splatoon_2_schedule_widget_description" = "查看斯普拉遁2的某模式的時間表。";
 "splatoon_2_shift" = "斯普拉遁2排班表";
-"splatoon_2_shift_widget_description" = "查看斯普拉遁2的鮭魚跑目前和下次的排班表。";
+"splatoon_2_shift_widget_description" = "查看斯普拉遁2的鮭魚跑的排班表。";
 "splatoon_3_schedule" = "斯普拉遁3時間表";
-"splatoon_3_schedule_widget_description" = "查看斯普拉遁3的某模式目前和下次的時間表。";
-"splatoon_3_schedules" = "斯普拉遁3時間表";
-"splatoon_3_schedules_widget_description" = "查看斯普拉遁3目前和下次的時間表。";
+"splatoon_3_schedule_widget_description" = "查看斯普拉遁3的某模式的時間表。";
 "splatoon_3_shift" = "斯普拉遁3排班表";
-"splatoon_3_shift_widget_description" = "查看斯普拉遁3的某模式目前和下次的排班表。";
+"splatoon_3_shift_widget_description" = "查看斯普拉遁3的某模式的排班表。";
 
 // Intents.
 "schedule_dialog" = "%1$@%2$@目前正進行於%4$@和%5$@的%3$@。";

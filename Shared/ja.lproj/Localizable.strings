@@ -74,17 +74,13 @@
 "change_mode" = "モード変更";
 
 "splatoon_2_schedule" = "スプラトゥーン2スケジュール";
-"splatoon_2_schedule_widget_description" = "スプラトゥーン2のそのモードのいまとつぎのスケジュールを表示できます。";
-"splatoon_2_schedules" = "スプラトゥーン2スケジュール";
-"splatoon_2_schedules_widget_description" = "スプラトゥーン2のいまとつぎのスケジュールを表示できます。";
+"splatoon_2_schedule_widget_description" = "スプラトゥーン2のそのモードのスケジュールを表示できます。";
 "splatoon_2_shift" = "スプラトゥーン2シフト表";
-"splatoon_2_shift_widget_description" = "スプラトゥーン2のサーモンランのいまとつぎのシフト表を表示できます。";
+"splatoon_2_shift_widget_description" = "スプラトゥーン2のサーモンランのシフト表を表示できます。";
 "splatoon_3_schedule" = "スプラトゥーン3スケジュール";
-"splatoon_3_schedule_widget_description" = "スプラトゥーン3のそのモードのいまとつぎのスケジュールを表示できます。";
-"splatoon_3_schedules" = "スプラトゥーン3スケジュール";
-"splatoon_3_schedules_widget_description" = "スプラトゥーン3のいまとつぎのスケジュールを表示できます。";
+"splatoon_3_schedule_widget_description" = "スプラトゥーン3のそのモードのスケジュールを表示できます。";
 "splatoon_3_shift" = "スプラトゥーン3シフト表";
-"splatoon_3_shift_widget_description" = "スプラトゥーン3のそのモードのいまとつぎのシフト表を表示できます。";
+"splatoon_3_shift_widget_description" = "スプラトゥーン3のそのモードのシフト表を表示できます。";
 
 // Intents.
 "schedule_dialog" = "%1$@%2$@は%4$@と%5$@の%3$@があります。";
