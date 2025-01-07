@@ -175,6 +175,49 @@
 		E4F2356C2D2CF46B00BC8635 /* Splatoon2ShiftProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2356B2D2CF46600BC8635 /* Splatoon2ShiftProgressView.swift */; };
 		E4F2356E2D2CF57000BC8635 /* Splatoon3ShiftProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2356D2D2CF56B00BC8635 /* Splatoon3ShiftProgressView.swift */; };
 		E4F235702D2CF57700BC8635 /* Splatoon3ScheduleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2356F2D2CF57300BC8635 /* Splatoon3ScheduleProgressView.swift */; };
+		E4F235762D2CF89400BC8635 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46B507025B9C2AC001F88CE /* WidgetKit.framework */; };
+		E4F235772D2CF89400BC8635 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46B507225B9C2AC001F88CE /* SwiftUI.framework */; };
+		E4F235802D2CF89700BC8635 /* IkachanWatchWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E4F235752D2CF89400BC8635 /* IkachanWatchWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4F235892D2CF89E00BC8635 /* IkachanWatchWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235862D2CF89E00BC8635 /* IkachanWatchWidgetBundle.swift */; };
+		E4F2358A2D2CF89E00BC8635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F235852D2CF89E00BC8635 /* Assets.xcassets */; };
+		E4F2358D2D2CF8BC00BC8635 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4F2358C2D2CF8BC00BC8635 /* Kingfisher */; };
+		E4F2358F2D2CF8C000BC8635 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4F2358E2D2CF8C000BC8635 /* SwiftyJSON */; };
+		E4F235902D2CF8D900BC8635 /* KFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E485DA1227534D0100B82AE0 /* KFImage.swift */; };
+		E4F235912D2CF8D900BC8635 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BECBF25CD31F100B301D1 /* Collection.swift */; };
+		E4F235922D2CF8D900BC8635 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
+		E4F235932D2CF8D900BC8635 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E485D9FB275342A300B82AE0 /* Image.swift */; };
+		E4F235942D2CF8D900BC8635 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C85A912B2DE7C300D4F596 /* Array.swift */; };
+		E4F235952D2CF8D900BC8635 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4400F3A25CD03F900BF94C6 /* API.swift */; };
+		E4F235962D2CF8DF00BC8635 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461413F25CA880500561D53 /* String.swift */; };
+		E4F235972D2CF8DF00BC8635 /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE376F28DEC02D00BDB75F /* SwiftJSON.swift */; };
+		E4F235982D2CF8DF00BC8635 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E440CA232B2738CF00884D57 /* View.swift */; };
+		E4F235992D2CF8E800BC8635 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E417636D2B271CE500B52CE9 /* Constant.swift */; };
+		E4F2359A2D2CF8E800BC8635 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41763672B25A9C500B52CE9 /* Enum.swift */; };
+		E4F2359B2D2CF8E800BC8635 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
+		E4F2359C2D2CF8F600BC8635 /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponsView.swift */; };
+		E4F2359D2D2CF90200BC8635 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E490E9AD2B289FF9002A03D2 /* Localizable.strings */; };
+		E4F2359E2D2CF90500BC8635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
+		E4F2359F2D2CF92000BC8635 /* IkachanIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E4613FBA25C9B62000561D53 /* IkachanIntents.intentdefinition */; };
+		E4F235A12D2CF96F00BC8635 /* IkachanWatchWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235A02D2CF96900BC8635 /* IkachanWatchWidget.swift */; };
+		E4F235A22D2CF9CA00BC8635 /* Splatoon2Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2355D2D2CF27200BC8635 /* Splatoon2Shift.swift */; };
+		E4F235A32D2CF9CA00BC8635 /* Splatoon2Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2355B2D2CF1B000BC8635 /* Splatoon2Schedule.swift */; };
+		E4F235A42D2CF9CA00BC8635 /* Splatoon3Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235612D2CF2F600BC8635 /* Splatoon3Schedule.swift */; };
+		E4F235A52D2CF9CA00BC8635 /* Splatoon3Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235632D2CF2FD00BC8635 /* Splatoon3Shift.swift */; };
+		E4F235A62D2CF9F300BC8635 /* View+Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2351C2D2C363100BC8635 /* View+Widget.swift */; };
+		E4F235A92D2CFA2700BC8635 /* Splatoon2ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235A82D2CFA2300BC8635 /* Splatoon2ScheduleView.swift */; };
+		E4F235AA2D2CFA4B00BC8635 /* AccessoryRectangularShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8AE2B2ABAAC00B598AF /* AccessoryRectangularShiftView.swift */; };
+		E4F235AB2D2CFA4B00BC8635 /* AccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8AA2B2AA0E200B598AF /* AccessoryCircularView.swift */; };
+		E4F235AC2D2CFA4B00BC8635 /* NoShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB978E2D2BD33F00EB2A6C /* NoShiftView.swift */; };
+		E4F235AD2D2CFA4B00BC8635 /* NoScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB978C2D2BCFBF00EB2A6C /* NoScheduleView.swift */; };
+		E4F235AE2D2CFA4B00BC8635 /* AccessoryRectangularScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8AC2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift */; };
+		E4F235B02D2D008D00BC8635 /* Splatoon3ScheduleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235AF2D2D008600BC8635 /* Splatoon3ScheduleProgressView.swift */; };
+		E4F235B22D2D009400BC8635 /* Splatoon3ShiftProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235B12D2D008F00BC8635 /* Splatoon3ShiftProgressView.swift */; };
+		E4F235B42D2D00B300BC8635 /* Splatoon2ShiftProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235B32D2D00AF00BC8635 /* Splatoon2ShiftProgressView.swift */; };
+		E4F235B62D2D00BC00BC8635 /* Splatoon2ScheduleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235B52D2D00B600BC8635 /* Splatoon2ScheduleProgressView.swift */; };
+		E4F235B82D2D00D200BC8635 /* Splatoon3ShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235B72D2D00CF00BC8635 /* Splatoon3ShiftView.swift */; };
+		E4F235BA2D2D00D800BC8635 /* Splatoon3ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235B92D2D00D400BC8635 /* Splatoon3ScheduleView.swift */; };
+		E4F235BC2D2D00EA00BC8635 /* Splatoon2ShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235BB2D2D00E000BC8635 /* Splatoon2ShiftView.swift */; };
+		E4F235C32D2D028700BC8635 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4F235C12D2D028700BC8635 /* InfoPlist.strings */; };
 		E4F9DC702C949842001E2B90 /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponsView.swift */; };
 		E4F9DC712C949A6D001E2B90 /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE86027550951006F7CBD /* StageView.swift */; };
 /* End PBXBuildFile section */
@@ -207,6 +250,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = E4444ECB25BF147F0003A676;
 			remoteInfo = IkachanWidget;
+		};
+		E4F2357E2D2CF89700BC8635 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4405D6F25AF64D2002EF1AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4F235742D2CF89400BC8635;
+			remoteInfo = IkachanWatchWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -241,6 +291,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				E4F235802D2CF89700BC8635 /* IkachanWatchWidget.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +406,23 @@
 		E4F2356B2D2CF46600BC8635 /* Splatoon2ShiftProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ShiftProgressView.swift; sourceTree = "<group>"; };
 		E4F2356D2D2CF56B00BC8635 /* Splatoon3ShiftProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon3ShiftProgressView.swift; sourceTree = "<group>"; };
 		E4F2356F2D2CF57300BC8635 /* Splatoon3ScheduleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon3ScheduleProgressView.swift; sourceTree = "<group>"; };
+		E4F235752D2CF89400BC8635 /* IkachanWatchWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IkachanWatchWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4F235852D2CF89E00BC8635 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4F235862D2CF89E00BC8635 /* IkachanWatchWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkachanWatchWidgetBundle.swift; sourceTree = "<group>"; };
+		E4F235872D2CF89E00BC8635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4F235A02D2CF96900BC8635 /* IkachanWatchWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkachanWatchWidget.swift; sourceTree = "<group>"; };
+		E4F235A82D2CFA2300BC8635 /* Splatoon2ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ScheduleView.swift; sourceTree = "<group>"; };
+		E4F235AF2D2D008600BC8635 /* Splatoon3ScheduleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon3ScheduleProgressView.swift; sourceTree = "<group>"; };
+		E4F235B12D2D008F00BC8635 /* Splatoon3ShiftProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon3ShiftProgressView.swift; sourceTree = "<group>"; };
+		E4F235B32D2D00AF00BC8635 /* Splatoon2ShiftProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ShiftProgressView.swift; sourceTree = "<group>"; };
+		E4F235B52D2D00B600BC8635 /* Splatoon2ScheduleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ScheduleProgressView.swift; sourceTree = "<group>"; };
+		E4F235B72D2D00CF00BC8635 /* Splatoon3ShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon3ShiftView.swift; sourceTree = "<group>"; };
+		E4F235B92D2D00D400BC8635 /* Splatoon3ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon3ScheduleView.swift; sourceTree = "<group>"; };
+		E4F235BB2D2D00E000BC8635 /* Splatoon2ShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ShiftView.swift; sourceTree = "<group>"; };
+		E4F235C22D2D028700BC8635 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E4F235C62D2D029F00BC8635 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E4F235C72D2D02BE00BC8635 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E4F235C82D2D02BF00BC8635 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +475,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E4F235722D2CF89400BC8635 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4F2358D2D2CF8BC00BC8635 /* Kingfisher in Frameworks */,
+				E4F235772D2CF89400BC8635 /* SwiftUI.framework in Frameworks */,
+				E4F2358F2D2CF8C000BC8635 /* SwiftyJSON in Frameworks */,
+				E4F235762D2CF89400BC8635 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -426,6 +505,7 @@
 				E42309CE2D2C0B3000B4898F /* Views */,
 				E42309B02D2BD9EF00B4898F /* IkachanWatchApp.swift */,
 				E42309CA2D2BDE0500B4898F /* Assets.xcassets */,
+				E4F235C12D2D028700BC8635 /* InfoPlist.strings */,
 				E42309AD2D2BD9EF00B4898F /* Preview Content */,
 			);
 			path = IkachanWatch;
@@ -486,6 +566,7 @@
 				E43E136B25C9A3BA008A0FE6 /* IkachanIntents */,
 				E43E137625C9A3BA008A0FE6 /* IkachanIntentsUI */,
 				E42309B12D2BD9EF00B4898F /* IkachanWatch */,
+				E4F235882D2CF89E00BC8635 /* IkachanWatchWidget */,
 				E46B506F25B9C2AC001F88CE /* Frameworks */,
 				E4405D7825AF64D2002EF1AB /* Products */,
 				E43D3F5725BBC75600D944A1 /* README.md */,
@@ -501,6 +582,7 @@
 				E43E136825C9A3BA008A0FE6 /* IkachanIntents.appex */,
 				E43E137325C9A3BA008A0FE6 /* IkachanIntentsUI.appex */,
 				E42309942D2BD96F00B4898F /* IkachanWatch.app */,
+				E4F235752D2CF89400BC8635 /* IkachanWatchWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -626,8 +708,8 @@
 				E4F235672D2CF32F00BC8635 /* Splatoon3ShiftView.swift */,
 				E4F235692D2CF45B00BC8635 /* Splatoon2ScheduleProgressView.swift */,
 				E4F2356B2D2CF46600BC8635 /* Splatoon2ShiftProgressView.swift */,
-				E4F2356D2D2CF56B00BC8635 /* Splatoon3ShiftProgressView.swift */,
 				E4F2356F2D2CF57300BC8635 /* Splatoon3ScheduleProgressView.swift */,
+				E4F2356D2D2CF56B00BC8635 /* Splatoon3ShiftProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -689,6 +771,33 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E4F235882D2CF89E00BC8635 /* IkachanWatchWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E4F235A72D2CFA1700BC8635 /* Views */,
+				E4F235A02D2CF96900BC8635 /* IkachanWatchWidget.swift */,
+				E4F235862D2CF89E00BC8635 /* IkachanWatchWidgetBundle.swift */,
+				E4F235852D2CF89E00BC8635 /* Assets.xcassets */,
+				E4F235872D2CF89E00BC8635 /* Info.plist */,
+			);
+			path = IkachanWatchWidget;
+			sourceTree = "<group>";
+		};
+		E4F235A72D2CFA1700BC8635 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E4F235A82D2CFA2300BC8635 /* Splatoon2ScheduleView.swift */,
+				E4F235BB2D2D00E000BC8635 /* Splatoon2ShiftView.swift */,
+				E4F235B92D2D00D400BC8635 /* Splatoon3ScheduleView.swift */,
+				E4F235B72D2D00CF00BC8635 /* Splatoon3ShiftView.swift */,
+				E4F235B52D2D00B600BC8635 /* Splatoon2ScheduleProgressView.swift */,
+				E4F235B32D2D00AF00BC8635 /* Splatoon2ShiftProgressView.swift */,
+				E4F235AF2D2D008600BC8635 /* Splatoon3ScheduleProgressView.swift */,
+				E4F235B12D2D008F00BC8635 /* Splatoon3ShiftProgressView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -704,6 +813,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E4F2357F2D2CF89700BC8635 /* PBXTargetDependency */,
 			);
 			name = IkachanWatch;
 			packageProductDependencies = (
@@ -804,6 +914,27 @@
 			productReference = E4444ECC25BF147F0003A676 /* IkachanWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		E4F235742D2CF89400BC8635 /* IkachanWatchWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4F235822D2CF89700BC8635 /* Build configuration list for PBXNativeTarget "IkachanWatchWidget" */;
+			buildPhases = (
+				E4F235712D2CF89400BC8635 /* Sources */,
+				E4F235722D2CF89400BC8635 /* Frameworks */,
+				E4F235732D2CF89400BC8635 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IkachanWatchWidget;
+			packageProductDependencies = (
+				E4F2358C2D2CF8BC00BC8635 /* Kingfisher */,
+				E4F2358E2D2CF8C000BC8635 /* SwiftyJSON */,
+			);
+			productName = IkachanWatchWidgetExtension;
+			productReference = E4F235752D2CF89400BC8635 /* IkachanWatchWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -828,6 +959,9 @@
 					};
 					E4444ECB25BF147F0003A676 = {
 						CreatedOnToolsVersion = 12.3;
+					};
+					E4F235742D2CF89400BC8635 = {
+						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
@@ -857,6 +991,7 @@
 				E43E136725C9A3BA008A0FE6 /* IkachanIntents */,
 				E43E137225C9A3BA008A0FE6 /* IkachanIntentsUI */,
 				E42309932D2BD96F00B4898F /* IkachanWatch */,
+				E4F235742D2CF89400BC8635 /* IkachanWatchWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -870,6 +1005,7 @@
 				E42309C42D2BDA2600B4898F /* Assets.xcassets in Resources */,
 				E42309CB2D2BDE0500B4898F /* Assets.xcassets in Resources */,
 				E42309B42D2BD9EF00B4898F /* Preview Assets.xcassets in Resources */,
+				E4F235C32D2D028700BC8635 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -911,6 +1047,16 @@
 				E484FDC725C94694006E748F /* Assets.xcassets in Resources */,
 				E490E9A92B289FF9002A03D2 /* Localizable.strings in Resources */,
 				E434673E265FC51E0018F130 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4F235732D2CF89400BC8635 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4F2358A2D2CF89E00BC8635 /* Assets.xcassets in Resources */,
+				E4F2359E2D2CF90500BC8635 /* Assets.xcassets in Resources */,
+				E4F2359D2D2CF90200BC8635 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1087,6 +1233,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E4F235712D2CF89400BC8635 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4F235A62D2CF9F300BC8635 /* View+Widget.swift in Sources */,
+				E4F2359F2D2CF92000BC8635 /* IkachanIntents.intentdefinition in Sources */,
+				E4F235902D2CF8D900BC8635 /* KFImage.swift in Sources */,
+				E4F235AA2D2CFA4B00BC8635 /* AccessoryRectangularShiftView.swift in Sources */,
+				E4F235AB2D2CFA4B00BC8635 /* AccessoryCircularView.swift in Sources */,
+				E4F235AC2D2CFA4B00BC8635 /* NoShiftView.swift in Sources */,
+				E4F235AD2D2CFA4B00BC8635 /* NoScheduleView.swift in Sources */,
+				E4F235AE2D2CFA4B00BC8635 /* AccessoryRectangularScheduleView.swift in Sources */,
+				E4F235912D2CF8D900BC8635 /* Collection.swift in Sources */,
+				E4F235992D2CF8E800BC8635 /* Constant.swift in Sources */,
+				E4F235B22D2D009400BC8635 /* Splatoon3ShiftProgressView.swift in Sources */,
+				E4F2359A2D2CF8E800BC8635 /* Enum.swift in Sources */,
+				E4F2359B2D2CF8E800BC8635 /* Schedule.swift in Sources */,
+				E4F235BA2D2D00D800BC8635 /* Splatoon3ScheduleView.swift in Sources */,
+				E4F235BC2D2D00EA00BC8635 /* Splatoon2ShiftView.swift in Sources */,
+				E4F235922D2CF8D900BC8635 /* Date.swift in Sources */,
+				E4F2359C2D2CF8F600BC8635 /* WeaponsView.swift in Sources */,
+				E4F235B82D2D00D200BC8635 /* Splatoon3ShiftView.swift in Sources */,
+				E4F235932D2CF8D900BC8635 /* Image.swift in Sources */,
+				E4F235942D2CF8D900BC8635 /* Array.swift in Sources */,
+				E4F235952D2CF8D900BC8635 /* API.swift in Sources */,
+				E4F235892D2CF89E00BC8635 /* IkachanWatchWidgetBundle.swift in Sources */,
+				E4F235962D2CF8DF00BC8635 /* String.swift in Sources */,
+				E4F235B42D2D00B300BC8635 /* Splatoon2ShiftProgressView.swift in Sources */,
+				E4F235A12D2CF96F00BC8635 /* IkachanWatchWidget.swift in Sources */,
+				E4F235972D2CF8DF00BC8635 /* SwiftJSON.swift in Sources */,
+				E4F235A22D2CF9CA00BC8635 /* Splatoon2Shift.swift in Sources */,
+				E4F235B62D2D00BC00BC8635 /* Splatoon2ScheduleProgressView.swift in Sources */,
+				E4F235A32D2CF9CA00BC8635 /* Splatoon2Schedule.swift in Sources */,
+				E4F235A92D2CFA2700BC8635 /* Splatoon2ScheduleView.swift in Sources */,
+				E4F235A42D2CF9CA00BC8635 /* Splatoon3Schedule.swift in Sources */,
+				E4F235A52D2CF9CA00BC8635 /* Splatoon3Shift.swift in Sources */,
+				E4F235B02D2D008D00BC8635 /* Splatoon3ScheduleProgressView.swift in Sources */,
+				E4F235982D2CF8DF00BC8635 /* View.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1109,6 +1296,11 @@
 			isa = PBXTargetDependency;
 			target = E4444ECB25BF147F0003A676 /* IkachanWidget */;
 			targetProxy = E48ACAC02B29816C00C840DD /* PBXContainerItemProxy */;
+		};
+		E4F2357F2D2CF89700BC8635 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4F235742D2CF89400BC8635 /* IkachanWatchWidget */;
+			targetProxy = E4F2357E2D2CF89700BC8635 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1155,6 +1347,17 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		E4F235C12D2D028700BC8635 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4F235C22D2D028700BC8635 /* en */,
+				E4F235C62D2D029F00BC8635 /* ja */,
+				E4F235C72D2D02BE00BC8635 /* zh-Hans */,
+				E4F235C82D2D02BF00BC8635 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1172,7 +1375,6 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = IkachanWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = name.sketch.Ikachan;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -1208,7 +1410,6 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = IkachanWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = name.sketch.Ikachan;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -1541,6 +1742,71 @@
 			};
 			name = Release;
 		};
+		E4F235832D2CF89700BC8635 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 77;
+				DEVELOPMENT_TEAM = PSXQUH2HR6;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IkachanWatchWidget/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 2.0.7;
+				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.Ikachan.IkachanWatch.IkachanWatchWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		E4F235842D2CF89700BC8635 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 77;
+				DEVELOPMENT_TEAM = PSXQUH2HR6;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IkachanWatchWidget/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 2.0.7;
+				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.Ikachan.IkachanWatch.IkachanWatchWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1594,6 +1860,15 @@
 			buildConfigurations = (
 				E4444EDB25BF14820003A676 /* Debug */,
 				E4444EDC25BF14820003A676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4F235822D2CF89700BC8635 /* Build configuration list for PBXNativeTarget "IkachanWatchWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F235832D2CF89700BC8635 /* Debug */,
+				E4F235842D2CF89700BC8635 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1674,6 +1949,16 @@
 			productName = AlertKit;
 		};
 		E4BE377428DEC1F800BDB75F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E477990525B1F62500F8AE9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		E4F2358C2D2CF8BC00BC8635 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E43CCBB525B0338C001A0FF5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		E4F2358E2D2CF8C000BC8635 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E477990525B1F62500F8AE9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
