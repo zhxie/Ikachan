@@ -42,7 +42,7 @@ struct ContentView: View {
                                         Spacer()
                                     }
                                     
-                                    SafariButton(title: LocalizedStringKey("support"), url: URL(string: String(format: "https://www.nintendo.co.jp/netinfo/%@/index.html", Locale.localizedLocale.maintenanceInformationAndOperationalStatusLanguageCode))!)
+                                    SafariButton(title: String(localized: "support"), url: URL(string: String(format: "https://www.nintendo.co.jp/netinfo/%@/index.html", Locale.localizedLocale.maintenanceInformationAndOperationalStatusLanguageCode))!)
                                         .font(.footnote)
                                         .padding([.horizontal, .bottom])
                                 }
@@ -83,7 +83,7 @@ struct ContentView: View {
                                         Spacer()
                                     }
                                     
-                                    SafariButton(title: LocalizedStringKey("support"), url: URL(string: String(format: "https://www.nintendo.co.jp/netinfo/%@/index.html", Locale.localizedLocale.maintenanceInformationAndOperationalStatusLanguageCode))!)
+                                    SafariButton(title: String(localized: "support"), url: URL(string: String(format: "https://www.nintendo.co.jp/netinfo/%@/index.html", Locale.localizedLocale.maintenanceInformationAndOperationalStatusLanguageCode))!)
                                         .font(.footnote)
                                         .padding([.horizontal, .bottom])
                                 }

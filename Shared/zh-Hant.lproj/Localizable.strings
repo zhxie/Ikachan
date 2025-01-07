@@ -56,14 +56,9 @@
 "version" = "版本";
 "source_code_repository" = "原始碼倉庫";
 "privacy_policy" = "私隱政策";
-"developer_sketch" = "開發者 @xzh_Sketch";
-"designer_shooky" = "設計師 @贝壳牌砂糖";
+"developer" = "開發者";
+"designer" = "設計師";
 "acknowledgements" = "致謝";
-"splatoon2_ink" = "Splatoon2.ink";
-"splatoon3_ink" = "Splatoon3.ink";
-"alert_kit" = "AlertKit";
-"kingfisher" = "Kingfisher";
-"swifty_json" = "SwiftyJSON";
 "disclaimer" = "本應用是使用魷魚圈2和魷魚圈3的資訊的非官方應用，與任天堂有限公司無關。";
 "down" = "伺服器目前遇到問題。請等待問題修復。";
 "maintenance_started" = "正在進行維護。請等待維護結束。";

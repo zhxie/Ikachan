@@ -15,7 +15,7 @@ struct SafariView: UIViewControllerRepresentable {
 struct SafariButton: View {
     @State var showSafari = false
     
-    var title: LocalizedStringKey
+    var title: String
     var url: URL
     
     var body: some View {

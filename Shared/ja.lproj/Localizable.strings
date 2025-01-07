@@ -56,14 +56,9 @@
 "version" = "バージョン";
 "source_code_repository" = "ソースコードリポジトリ";
 "privacy_policy" = "プライバシーポリシー";
-"developer_sketch" = "開発者 @xzh_Sketch";
-"designer_shooky" = "デザイナー @贝壳牌砂糖";
+"developer" = "開発者";
+"designer" = "デザイナー";
 "acknowledgements" = "謝辞";
-"splatoon2_ink" = "Splatoon2.ink";
-"splatoon3_ink" = "Splatoon3.ink";
-"alert_kit" = "AlertKit";
-"kingfisher" = "Kingfisher";
-"swifty_json" = "SwiftyJSON";
 "disclaimer" = "当アプリは、イカリング2とイカリング3の情報を利用した非公式アプリであり、任天堂株式会社とは一切関係はございません。";
 "down" = "現在、サーバーに障害が発生しております。問題が解決されるまでお待ちください。";
 "maintenance_started" = "メンテナンスを実施中です。メンテナンスが終了するまでお待ちください。";

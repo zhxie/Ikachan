@@ -114,17 +114,19 @@ struct AboutView: View {
                         
                         Text(version)
                     }
-                    SafariButton(title: LocalizedStringKey("source_code_repository"), url: URL(string: "https://github.com/zhxie/Ikachan")!)
-                    SafariButton(title: LocalizedStringKey("privacy_policy"), url: URL(string: "https://github.com/zhxie/Ikachan/wiki/Privacy-Policy")!)
-                    SafariButton(title: LocalizedStringKey("developer_sketch"), url: URL(string: "https://weibo.com/u/2269567390")!)
-                    SafariButton(title: LocalizedStringKey("designer_shooky"), url: URL(string: "https://weibo.com/u/6622470330")!)
+                    SafariButton(title: String(localized: "source_code_repository"), url: URL(string: "https://github.com/zhxie/Ikachan")!)
+                    SafariButton(title: String(localized: "privacy_policy"), url: URL(string: "https://github.com/zhxie/Ikachan/wiki/Privacy-Policy")!)
+                    SafariButton(title: String(format: "%@ %@", String(localized: "developer"), "@xzh_Sketch"), url: URL(string: "https://weibo.com/u/2269567390")!)
+                    SafariButton(title: String(format: "%@ %@", String(localized: "designer"), "@贝壳牌砂糖"), url: URL(string: "https://weibo.com/u/6622470330")!)
                 }
                 Section {
-                    SafariButton(title: LocalizedStringKey("splatoon2_ink"), url: URL(string: "https://splatoon2.ink/")!)
-                    SafariButton(title: LocalizedStringKey("splatoon3_ink"), url: URL(string: "https://splatoon3.ink/")!)
-                    SafariButton(title: LocalizedStringKey("alert_kit"), url: URL(string: "https://github.com/sparrowcode/AlertKit/blob/v5/LICENSE")!)
-                    SafariButton(title: LocalizedStringKey("kingfisher"), url: URL(string: "https://github.com/onevcat/Kingfisher/blob/master/LICENSE")!)
-                    SafariButton(title: LocalizedStringKey("swifty_json"), url: URL(string: "https://github.com/SwiftyJSON/SwiftyJSON/blob/master/LICENSE")!)
+                    SafariButton(title: "@瑞恩呗", url: URL(string: "https://weibo.com/u/1731761185")!)
+                    SafariButton(title: "@thepantalion", url: URL(string: "https://x.com/thepantalion")!)
+                    SafariButton(title: "Splatoon2.ink", url: URL(string: "https://splatoon2.ink/")!)
+                    SafariButton(title: "Splatoon3.ink", url: URL(string: "https://splatoon3.ink/")!)
+                    SafariButton(title: "AlertKit", url: URL(string: "https://github.com/sparrowcode/AlertKit/blob/v5/LICENSE")!)
+                    SafariButton(title: "Kingfisher", url: URL(string: "https://github.com/onevcat/Kingfisher/blob/master/LICENSE")!)
+                    SafariButton(title: "SwiftyJSON", url: URL(string: "https://github.com/SwiftyJSON/SwiftyJSON/blob/master/LICENSE")!)
                 } header: {
                     Text(LocalizedStringKey("acknowledgements"))
                 } footer: {

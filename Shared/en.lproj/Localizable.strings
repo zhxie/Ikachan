@@ -55,14 +55,9 @@
 "version" = "Version";
 "source_code_repository" = "Source Code Repository";
 "privacy_policy" = "Privacy Policy";
-"developer_sketch" = "Developer @xzh_Sketch";
-"designer_shooky" = "Designer @贝壳牌砂糖";
+"developer" = "Developer";
+"designer" = "Designer";
 "acknowledgements" = "Acknowledgements";
-"splatoon2_ink" = "Splatoon2.ink";
-"splatoon3_ink" = "Splatoon3.ink";
-"alert_kit" = "AlertKit";
-"kingfisher" = "Kingfisher";
-"swifty_json" = "SwiftyJSON";
 "disclaimer" = "This app is an unofficial app which uses the information of SplatNet 2 and SplatNet 3, and is not related to Nintendo Co., Ltd.";
 "down" = "Servers are currently experiencing problems. Please wait until the issue is fixed.";
 "maintenance_started" = "Maintenance is now taking place. Please wait until the maintenance is finished.";
