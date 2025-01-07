@@ -29,13 +29,13 @@ struct ContentView: View {
                                             SchedulesView(mode: mode, schedules: splatoon2Schedules.filter { schedule in
                                                 schedule._mode == mode
                                             })
-                                            .navigationTitle(LocalizedStringKey(mode.name))
+                                            .navigationTitle(LocalizedStringKey(mode.shortName))
                                         }
                                     }
                                 } content2: {
                                     if !splatoon2Shifts.isEmpty {
                                         ShiftsView(mode: Splatoon2ShiftMode.salmonRun, shifts: splatoon2Shifts)
-                                            .navigationTitle(LocalizedStringKey(Splatoon2ShiftMode.salmonRun.name))
+                                            .navigationTitle(LocalizedStringKey(Splatoon2ShiftMode.salmonRun.shortName))
                                     }
                                 }
                             }
@@ -54,7 +54,7 @@ struct ContentView: View {
                                             SchedulesView(mode: mode, schedules: splatoon3Schedules.filter { schedule in
                                                 schedule._mode == mode
                                             })
-                                            .navigationTitle(LocalizedStringKey(mode.name))
+                                            .navigationTitle(LocalizedStringKey(mode.shortName))
                                         }
                                     }
                                 } content2: {
@@ -65,7 +65,7 @@ struct ContentView: View {
                                             ShiftsView(mode: mode, shifts: splatoon3Shifts.filter { shift in
                                                 shift._mode == mode
                                             })
-                                            .navigationTitle(LocalizedStringKey(mode.name))
+                                            .navigationTitle(LocalizedStringKey(mode.shortName))
                                         }
                                     }
                                 }

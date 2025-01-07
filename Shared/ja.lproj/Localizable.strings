@@ -17,6 +17,12 @@
 "splatfest_battle_pro" = "フェスマッチ (チャレンジ)";
 "tricolor_battle" = "トリカラマッチ";
 
+// Even if we have short names, they are still too long in Japanese.
+"anarchy_series" = "バンカラチャレンジ";
+"anarchy_open" = "バンカラオープン";
+"splatfest_open" = "フェスオープン";
+"splatfest_pro" = "フェスチャレンジ";
+
 "big_run" = "ビッグラン";
 "eggstra_work" = "バイトチームコンテスト";
 

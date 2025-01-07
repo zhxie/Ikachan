@@ -17,6 +17,12 @@
 "splatfest_battle_pro" = "祭典比賽 (挑戰)";
 "tricolor_battle" = "三色奪寶比賽";
 
+// We do not need to use short names for Chinese since full names are enough short.
+"anarchy_series" = "蠻頹比賽 (挑戰)";
+"anarchy_open" = "蠻頹比賽 (開放)";
+"splatfest_open" = "祭典比賽 (開放)";
+"splatfest_pro" = "祭典比賽 (挑戰)";
+
 "big_run" = "大型跑";
 "eggstra_work" = "團隊打工競賽";
 

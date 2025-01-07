@@ -17,6 +17,7 @@ enum Game: String, CaseIterable, Codable {
 
 protocol Mode: CaseIterable, Codable {
     var name: String { get }
+    var shortName: String { get }
     var accentColor: Color { get }
     var image: String { get }
 }
@@ -41,6 +42,9 @@ enum Splatoon2ScheduleMode: String, ScheduleMode {
 
     var name: String {
         return rawValue
+    }
+    var shortName: String {
+        return name
     }
     var accentColor: Color {
         switch self {
@@ -72,6 +76,9 @@ enum Splatoon2ShiftMode: String, ShiftMode {
     
     var name: String {
         return rawValue
+    }
+    var shortName: String {
+        return name
     }
     var accentColor: Color {
         switch self {
@@ -116,6 +123,20 @@ enum Splatoon3ScheduleMode: String, ScheduleMode {
 
     var name: String {
         return rawValue
+    }
+    var shortName: String {
+        switch self {
+        case .regularBattle, .xBattle, .challenges, .tricolorBattle:
+            return name
+        case .anarchyBattleSeries:
+            return "anarchy_series"
+        case .anarchyBattleOpen:
+            return "anarchy_open"
+        case .splatfestBattleOpen:
+            return "splatfest_open"
+        case .splatfestBattlePro:
+            return "splatfest_pro"
+        }
     }
     var accentColor: Color {
         switch self {
@@ -183,6 +204,9 @@ enum Splatoon3ShiftMode: String, ShiftMode {
     
     var name: String {
         return rawValue
+    }
+    var shortName: String {
+        return name
     }
     var accentColor: Color {
         switch self {
