@@ -218,6 +218,7 @@
 		E4F235BA2D2D00D800BC8635 /* Splatoon3ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235B92D2D00D400BC8635 /* Splatoon3ScheduleView.swift */; };
 		E4F235BC2D2D00EA00BC8635 /* Splatoon2ShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235BB2D2D00E000BC8635 /* Splatoon2ShiftView.swift */; };
 		E4F235C32D2D028700BC8635 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4F235C12D2D028700BC8635 /* InfoPlist.strings */; };
+		E4F235CB2D2D054B00BC8635 /* AccessoryCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235CA2D2D054700BC8635 /* AccessoryCornerView.swift */; };
 		E4F9DC702C949842001E2B90 /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponsView.swift */; };
 		E4F9DC712C949A6D001E2B90 /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE86027550951006F7CBD /* StageView.swift */; };
 /* End PBXBuildFile section */
@@ -423,6 +424,7 @@
 		E4F235C62D2D029F00BC8635 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4F235C72D2D02BE00BC8635 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E4F235C82D2D02BF00BC8635 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E4F235CA2D2D054700BC8635 /* AccessoryCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCornerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -786,6 +788,7 @@
 		E4F235A72D2CFA1700BC8635 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E4F235C92D2D053D00BC8635 /* Components */,
 				E4F235A82D2CFA2300BC8635 /* Splatoon2ScheduleView.swift */,
 				E4F235BB2D2D00E000BC8635 /* Splatoon2ShiftView.swift */,
 				E4F235B92D2D00D400BC8635 /* Splatoon3ScheduleView.swift */,
@@ -796,6 +799,14 @@
 				E4F235B12D2D008F00BC8635 /* Splatoon3ShiftProgressView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E4F235C92D2D053D00BC8635 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E4F235CA2D2D054700BC8635 /* AccessoryCornerView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1252,6 +1263,7 @@
 				E4F2359B2D2CF8E800BC8635 /* Schedule.swift in Sources */,
 				E4F235BA2D2D00D800BC8635 /* Splatoon3ScheduleView.swift in Sources */,
 				E4F235BC2D2D00EA00BC8635 /* Splatoon2ShiftView.swift in Sources */,
+				E4F235CB2D2D054B00BC8635 /* AccessoryCornerView.swift in Sources */,
 				E4F235922D2CF8D900BC8635 /* Date.swift in Sources */,
 				E4F2359C2D2CF8F600BC8635 /* WeaponsView.swift in Sources */,
 				E4F235B82D2D00D200BC8635 /* Splatoon3ShiftView.swift in Sources */,

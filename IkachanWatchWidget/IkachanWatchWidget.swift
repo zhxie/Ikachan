@@ -78,7 +78,7 @@ struct Splatoon2ScheduleProgressWidget: Widget {
         }
         .configurationDisplayName("splatoon_2_schedule")
         .description("splatoon_2_schedule_widget_description")
-        .supportedFamilies([.accessoryCircular])
+        .supportedFamilies([.accessoryCircular, .accessoryCorner])
     }
 }
 
@@ -91,7 +91,7 @@ struct Splatoon2ShiftProgressWidget: Widget {
         }
         .configurationDisplayName("splatoon_2_shift")
         .description("splatoon_2_shift_widget_description")
-        .supportedFamilies([.accessoryCircular])
+        .supportedFamilies([.accessoryCircular, .accessoryCorner])
     }
 }
 
@@ -104,7 +104,7 @@ struct Splatoon3ScheduleProgressWidget: Widget {
         }
         .configurationDisplayName("splatoon_3_schedule")
         .description("splatoon_3_schedule_widget_description")
-        .supportedFamilies([.accessoryCircular])
+        .supportedFamilies([.accessoryCircular, .accessoryCorner])
     }
 }
 
@@ -117,6 +117,6 @@ struct Splatoon3ShiftProgressWidget: Widget {
         }
         .configurationDisplayName("splatoon_3_shift")
         .description("splatoon_3_shift_widget_description")
-        .supportedFamilies([.accessoryCircular])
+        .supportedFamilies([.accessoryCircular, .accessoryCorner])
     }
 }

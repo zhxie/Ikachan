@@ -4,10 +4,18 @@ import SwiftUI
 struct Splatoon3ScheduleProgressView : View {
     var entry: Splatoon3ScheduleProgressProvider.Entry
     
+    @Environment(\.widgetFamily) var family
+    
     @ViewBuilder
     var body: some View {
-        AccessoryCircularView(progress: timePassingBy(current: entry.date, start: entry.schedule?.startTime ?? entry.date, end: entry.schedule?.endTime ?? entry.date), mode: entry.schedule?.mode.image ?? nil, rule: entry.schedule?.rule.image ?? nil)
-            .widgetContainerBackground(padding: false)
+        switch family {
+        case .accessoryCircular:
+            AccessoryCircularView(progress: timePassingBy(current: entry.date, start: entry.schedule?.startTime ?? entry.date, end: entry.schedule?.endTime ?? entry.date), mode: entry.schedule?.mode.image ?? nil, rule: entry.schedule?.rule.image ?? nil)
+                .widgetContainerBackground(padding: false)
+        default:
+            AccessoryCornerView(progress: timePassingBy(current: entry.date, start: entry.schedule?.startTime ?? entry.date, end: entry.schedule?.endTime ?? entry.date), mode: entry.schedule?.mode.accentColor ?? Splatoon3ScheduleMode(from: entry.configuration.mode).accentColor, rule: entry.schedule?.rule.image ?? nil)
+                .widgetContainerBackground(padding: false)
+        }
     }
 }
 
