@@ -6,6 +6,6 @@
 
 ## License
 
-Ikachan is licensed under [the MIT License](/LICENSE).
+Ikachan is licensed under [the GPLv3 License](/LICENSE).
 
 Ikachan uses API provided by [Splatoon2.ink](https://splatoon2.ink/) and [Splatoon3.ink](https://splatoon3.ink/) for schedules and shifts information.
