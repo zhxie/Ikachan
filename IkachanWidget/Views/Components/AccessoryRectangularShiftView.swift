@@ -11,8 +11,8 @@ struct AccessoryRectangularShiftView: View {
             VStack(alignment: .leading) {
                 HStack(spacing: 4) {
                     Image(mode.image)
-                        .resizedToFit()
-                        .frame(width: 16, height: 16)
+                        .symbolRenderingMode(.multicolor)
+                        .font(.headline)
                     
                     if let stage = shift?.stage {
                         Text(stage.name)

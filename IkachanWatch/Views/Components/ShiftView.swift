@@ -7,8 +7,8 @@ struct ShiftView: View {
         VStack(spacing: 8) {
             HStack(alignment: .center) {
                 Image(shift.mode.image)
-                    .resizedToFit()
-                    .frame(width: 24, height: 24)
+                    .symbolRenderingMode(.multicolor)
+                    .font(.title2)
                 Text(LocalizedStringKey(shift.mode.name))
                     .font(.title3)
                     .fontWeight(.bold)

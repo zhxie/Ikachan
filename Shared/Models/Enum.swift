@@ -57,7 +57,14 @@ enum Splatoon2ScheduleMode: String, ScheduleMode {
         }
     }
     var image: String {
-        return rawValue + "_2"
+        switch self {
+        case .regularBattle:
+            return "turfwar.2"
+        case .rankedBattle:
+            return "battle.ranked"
+        case .leagueBattle:
+            return "battle.league"
+        }
     }
     
     var key: String {
@@ -87,7 +94,10 @@ enum Splatoon2ShiftMode: String, ShiftMode {
         }
     }
     var image: String {
-        return rawValue + "_2"
+        switch self {
+        case .salmonRun:
+            return "salmonrun.2"
+        }
     }
 }
 enum Splatoon3ScheduleMode: String, ScheduleMode {
@@ -154,14 +164,18 @@ enum Splatoon3ScheduleMode: String, ScheduleMode {
     }
     var image: String {
         switch self {
-        case .regularBattle, .xBattle, .challenges:
-            return rawValue + "_3"
+        case .regularBattle:
+            return "turfwar.3"
         case .anarchyBattleSeries:
-            return "anarchy_battle_series_3"
+            return "battle.ranked"
         case .anarchyBattleOpen:
-            return "anarchy_battle_open_3"
+            return "battle.anarchy.open"
+        case .xBattle:
+            return "battle.x"
+        case .challenges:
+            return "battle.challenges"
         case .splatfestBattleOpen, .splatfestBattlePro, .tricolorBattle:
-            return "splatfest_battle_3"
+            return "battle.splatfest"
         }
     }
     
@@ -211,15 +225,22 @@ enum Splatoon3ShiftMode: String, ShiftMode {
     var accentColor: Color {
         switch self {
         case .salmonRun:
-            return Color(red: 252 / 255, green: 86 / 255, blue: 32 / 255)
+            return Color(red: 255 / 255, green: 80 / 255, blue: 51 / 255)
         case .bigRun:
-            return Color(red: 164 / 255, green: 49 / 255, blue: 246 / 255)
+            return Color(red: 179 / 255, green: 34 / 255, blue: 255 / 255)
         case .eggstraWork:
-            return Color(red: 190 / 255, green: 136 / 255, blue: 0 / 255)
+            return Color(red: 253 / 255, green: 212 / 255, blue: 0 / 255)
         }
     }
     var image: String {
-        return rawValue + "_3"
+        switch self {
+        case .salmonRun:
+            return "salmonrun.3"
+        case .bigRun:
+            return "salmonrun.bigrun"
+        case .eggstraWork:
+            return "salmonrun.eggstrawork"
+        }
     }
 }
 
@@ -239,7 +260,18 @@ enum Splatoon2Rule: String, Rule {
         return rawValue
     }
     var image: String {
-        return rawValue + "_2"
+        switch self {
+        case .turfWar:
+            return "turfwar.2"
+        case .splatZones:
+            return "splatzones"
+        case .towerControl:
+            return "towercontrol"
+        case .rainmaker:
+            return "rainmaker"
+        case .clamBlitz:
+            return "clamblitz"
+        }
     }
 }
 enum Splatoon3Rule: String, Rule {
@@ -254,7 +286,20 @@ enum Splatoon3Rule: String, Rule {
         return rawValue
     }
     var image: String {
-        return rawValue + "_3"
+        switch self {
+        case .turfWar:
+            return "turfwar.3"
+        case .splatZones:
+            return "splatzones"
+        case .towerControl:
+            return "towercontrol"
+        case .rainmaker:
+            return "rainmaker"
+        case .clamBlitz:
+            return "clamblitz"
+        case .tricolorTurfWar:
+            return "turfwar.tricolor"
+        }
     }
     
     var key: String {

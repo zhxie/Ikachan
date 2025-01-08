@@ -11,8 +11,9 @@ struct AccessoryRectangularScheduleView: View {
             VStack(alignment: .leading) {
                 HStack(spacing: 4) {
                     Image(mode.image)
-                        .resizedToFit()
-                        .frame(width: 16, height: 16)
+                        .symbolRenderingMode(.multicolor)
+                        .foregroundColor(mode.accentColor)
+                        .font(.headline)
                     
                     Text(LocalizedStringKey(schedule?.rule.name ?? mode.name))
                         .font(.headline)

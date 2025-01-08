@@ -28,8 +28,8 @@ struct StandbyScheduleView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(alignment: .top) {
                         Image(schedule.rule.image)
-                            .resizedToFit()
-                            .frame(width: 16, height: 16)
+                            .symbolRenderingMode(.multicolor)
+                            .font(.footnote)
                             .layoutPriority(1)
                         
                         VStack(alignment: .leading, spacing: 2) {
@@ -44,8 +44,8 @@ struct StandbyScheduleView: View {
                     if let schedule = nextSchedule {
                         HStack(alignment: .top) {
                             Image(schedule.rule.image)
-                                .resizedToFit()
-                                .frame(width: 16, height: 16)
+                                .symbolRenderingMode(.multicolor)
+                                .font(.footnote)
                                 .layoutPriority(1)
                             
                             VStack(alignment: .leading, spacing: 2) {

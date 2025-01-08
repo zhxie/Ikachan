@@ -10,10 +10,10 @@ struct Splatoon3ScheduleProgressView : View {
     var body: some View {
         switch family {
         case .accessoryCircular:
-            AccessoryCircularView(progress: timePassingBy(current: entry.date, start: entry.schedule?.startTime ?? entry.date, end: entry.schedule?.endTime ?? entry.date), mode: entry.schedule?.mode.image ?? nil, rule: entry.schedule?.rule.image ?? nil)
+            AccessoryCircularView(progress: timePassingBy(current: entry.date, start: entry.schedule?.startTime ?? entry.date, end: entry.schedule?.endTime ?? entry.date), mode: entry.schedule?.mode.image ?? nil, accentColor: entry.schedule?.mode.accentColor ?? nil, rule: entry.schedule?.rule.image ?? nil)
                 .widgetContainerBackground(padding: false)
         default:
-            AccessoryCornerView(progress: timePassingBy(current: entry.date, start: entry.schedule?.startTime ?? entry.date, end: entry.schedule?.endTime ?? entry.date), mode: entry.schedule?.mode.accentColor ?? Splatoon3ScheduleMode(from: entry.configuration.mode).accentColor, rule: entry.schedule?.rule.image ?? nil)
+            AccessoryCornerView(progress: timePassingBy(current: entry.date, start: entry.schedule?.startTime ?? entry.date, end: entry.schedule?.endTime ?? entry.date), accentColor: entry.schedule?.mode.accentColor ?? Splatoon3ScheduleMode(from: entry.configuration.mode).accentColor, rule: entry.schedule?.rule.image ?? nil)
                 .widgetContainerBackground(padding: false)
         }
     }

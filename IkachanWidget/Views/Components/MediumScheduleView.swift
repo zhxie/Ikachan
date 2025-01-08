@@ -12,8 +12,8 @@ struct MediumScheduleView: View {
             HStack {
                 if showsModeImage {
                     Image(mode.image)
-                        .resizedToFit()
-                        .frame(width: 20, height: 20)
+                        .symbolRenderingMode(.multicolor)
+                        .foregroundColor(mode.accentColor)
                         .layoutPriority(1)
                 }
                 Text(LocalizedStringKey(schedule?.rule.name ?? mode.name))
@@ -57,8 +57,7 @@ struct MediumScheduleView: View {
                         Spacer()
                         
                         Image(schedule.rule.image)
-                            .resizedToFit()
-                            .frame(width: 20, height: 20)
+                            .symbolRenderingMode(.multicolor)
                             .layoutPriority(1)
                         Text(schedule.stages.map({ stage in
                             stage.name

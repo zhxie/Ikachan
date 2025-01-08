@@ -10,8 +10,7 @@ struct ScheduleView: View {
         VStack {
             HStack {
                 Image(schedule.rule.image)
-                    .resizedToFit()
-                    .frame(width: 16, height: 16)
+                    .symbolRenderingMode(.multicolor)
                     .layoutPriority(1)
                 Text(LocalizedStringKey(schedule.challenge ?? schedule.rule.name))
                     .fontWeight(.bold)
@@ -57,8 +56,8 @@ struct ScheduleView: View {
                     Spacer()
                     
                     Image(schedule.rule.image)
-                        .resizedToFit()
-                        .frame(width: 20, height: 20)
+                        .symbolRenderingMode(.multicolor)
+                        .font(.headline)
                         .layoutPriority(1)
                     Text(schedule.stages.map({ stage in
                         stage.name

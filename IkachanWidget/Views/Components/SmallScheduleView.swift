@@ -11,8 +11,8 @@ struct SmallScheduleView: View {
             HStack {
                 HStack {
                     Image(mode.image)
-                        .resizedToFit()
-                        .frame(width: 16, height: 16)
+                        .symbolRenderingMode(.multicolor)
+                        .foregroundColor(mode.accentColor)
                         .layoutPriority(1)
                     Text(LocalizedStringKey(schedule?.rule.name ?? mode.name))
                         .fontWeight(.bold)

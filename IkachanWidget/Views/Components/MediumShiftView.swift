@@ -10,8 +10,7 @@ struct MediumShiftView: View {
         VStack(spacing: 8) {
             HStack {
                 Image(shift?.mode.image ?? mode.image)
-                    .resizedToFit()
-                    .frame(width: 20, height: 20)
+                    .symbolRenderingMode(.multicolor)
                     .layoutPriority(1)
                 Text(LocalizedStringKey(shift?.mode.name ?? mode.name))
                     .fontWeight(.bold)

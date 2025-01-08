@@ -11,8 +11,7 @@ struct SmallShiftView: View {
             HStack {
                 HStack {
                     Image(shift?.mode.image ?? mode.image)
-                        .resizedToFit()
-                        .frame(width: 16, height: 16)
+                        .symbolRenderingMode(.multicolor)
                         .layoutPriority(1)
                     Text(LocalizedStringKey(shift?.mode.name ?? mode.name))
                         .fontWeight(.bold)

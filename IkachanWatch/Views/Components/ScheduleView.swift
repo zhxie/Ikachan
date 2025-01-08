@@ -13,8 +13,8 @@ struct ScheduleView: View {
             
             HStack(alignment: .center) {
                 Image(schedule.rule.image)
-                    .resizedToFit()
-                    .frame(width: 24, height: 24)
+                    .symbolRenderingMode(.multicolor)
+                    .font(.title2)
                 Text(LocalizedStringKey(schedule.rule.name))
                     .font(.title3)
                     .fontWeight(.bold)

@@ -124,6 +124,7 @@ struct AboutView: View {
                     SafariButton(title: "@thepantalion", url: URL(string: "https://x.com/thepantalion")!)
                     SafariButton(title: "Splatoon2.ink", url: URL(string: "https://splatoon2.ink/")!)
                     SafariButton(title: "Splatoon3.ink", url: URL(string: "https://splatoon3.ink/")!)
+                    SafariButton(title: "imink", url: URL(string: "https://github.com/JoneWang/imink")!)
                     SafariButton(title: "AlertKit", url: URL(string: "https://github.com/sparrowcode/AlertKit/blob/v5/LICENSE")!)
                     SafariButton(title: "Kingfisher", url: URL(string: "https://github.com/onevcat/Kingfisher/blob/master/LICENSE")!)
                     SafariButton(title: "SwiftyJSON", url: URL(string: "https://github.com/SwiftyJSON/SwiftyJSON/blob/master/LICENSE")!)

@@ -28,8 +28,8 @@ struct StandbyShiftView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(alignment: .top) {
                         Image(shift.mode.image)
-                            .resizedToFit()
-                            .frame(width: 16, height: 16)
+                            .symbolRenderingMode(.multicolor)
+                            .font(.footnote)
                             .layoutPriority(1)
                         
                         VStack(alignment: .leading, spacing: 2) {
@@ -54,8 +54,8 @@ struct StandbyShiftView: View {
                     if let shift = nextShift {
                         HStack(alignment: .top) {
                             Image(shift.mode.image)
-                                .resizedToFit()
-                                .frame(width: 16, height: 16)
+                                .symbolRenderingMode(.multicolor)
+                                .font(.footnote)
                                 .layoutPriority(1)
                             
                             if let stage = shift.stage {

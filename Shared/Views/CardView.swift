@@ -10,21 +10,24 @@ struct CardButtonStyle: ButtonStyle {
 
 struct CardView<Content: View>: View {
     var image: String
+    var accentColor: Color
     var name: String
     var content: () -> Content
     
-    init(image: String, name: String, @ViewBuilder content: @escaping () -> Content) {
+    init(image: String, accentColor: Color, name: String, @ViewBuilder content: @escaping () -> Content) {
         self.image = image
+        self.accentColor = accentColor
         self.name = name
         self.content = content
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 8) {
             HStack {
                 Image(image)
-                    .resizedToFit()
-                    .frame(width: 24, height: 24)
+                    .symbolRenderingMode(.multicolor)
+                    .font(.title2)
+                    .foregroundColor(accentColor)
                 Text(LocalizedStringKey(name))
                     .font(.title3)
                     .fontWeight(.bold)
@@ -44,7 +47,7 @@ struct CardView<Content: View>: View {
 }
 
 #Preview {
-    CardView(image: PreviewSplatoon2Schedule.mode.image, name: PreviewSplatoon2Schedule.mode.name) {
+    CardView(image: PreviewSplatoon2Schedule.mode.image, accentColor: PreviewSplatoon2Schedule.mode.accentColor, name: PreviewSplatoon2Schedule.mode.name) {
         ScheduleView(schedule: PreviewSplatoon2Schedule)
     }
 }

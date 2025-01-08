@@ -7,7 +7,7 @@ struct ShiftsNavigationLink: View {
         NavigationLink {
             ShiftsView(mode: shifts.first!.mode, shifts: shifts)
         } label: {
-            CardView(image: shifts.first!.mode.image, name: shifts.first!.mode.name) {
+            CardView(image: shifts.first!.mode.image, accentColor: shifts.first!.mode.accentColor, name: shifts.first!.mode.name) {
                 ShiftView(shift: shifts.first!, nextShift: shifts.at(index: 1))
             }
         }

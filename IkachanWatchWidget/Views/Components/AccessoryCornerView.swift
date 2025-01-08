@@ -3,26 +3,25 @@ import WidgetKit
 
 struct AccessoryCornerView: View {
     var progress: Double
-    var mode: Color
+    var accentColor: Color
     var rule: String?
     
     var body: some View {
-        VStack {
+        ZStack {
+            AccessoryWidgetBackground()
             if let rule = rule {
                 Image(rule)
-                    .resizedToFit()
-                    .padding(4)
+                    .symbolRenderingMode(.multicolor)
+                    .font(.title)
             } else {
                 Image(systemName: "xmark")
-                    .resizedToFit()
+                    .font(.title)
                     .fontWeight(.bold)
-                    .padding(6)
             }
         }
         .widgetLabel {
             Gauge(value: progress) {}
-                .tint(mode)
-                .gaugeStyle(.linearCapacity)
+                .tint(accentColor)
         }
     }
 }
@@ -30,7 +29,7 @@ struct AccessoryCornerView: View {
 @available(watchOSApplicationExtension 10.0, *)
 struct AccessoryCornerView_Previews: PreviewProvider {
     static var previews: some View {
-        AccessoryCornerView(progress: 0.5, mode: PreviewSplatoon3Schedule.mode.accentColor, rule: PreviewSplatoon3Schedule.rule.image)
+        AccessoryCornerView(progress: 0.5, accentColor: PreviewSplatoon3Schedule.mode.accentColor, rule: PreviewSplatoon3Schedule.rule.image)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .accessoryCorner))
     }
