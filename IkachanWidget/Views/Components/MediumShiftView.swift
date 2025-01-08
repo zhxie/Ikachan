@@ -9,11 +9,11 @@ struct MediumShiftView: View {
     var body: some View {
         VStack(spacing: 8) {
             HStack {
-                Image(mode.image)
+                Image(shift?.mode.image ?? mode.image)
                     .resizedToFit()
                     .frame(width: 20, height: 20)
                     .layoutPriority(1)
-                Text(LocalizedStringKey(mode.name))
+                Text(LocalizedStringKey(shift?.mode.name ?? mode.name))
                     .fontWeight(.bold)
                     .foregroundColor(mode.accentColor)
                     .lineLimit(1)

@@ -10,11 +10,11 @@ struct SmallShiftView: View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
                 HStack {
-                    Image(mode.image)
+                    Image(shift?.mode.image ?? mode.image)
                         .resizedToFit()
                         .frame(width: 16, height: 16)
                         .layoutPriority(1)
-                    Text(LocalizedStringKey(mode.name))
+                    Text(LocalizedStringKey(shift?.mode.name ?? mode.name))
                         .fontWeight(.bold)
                         .foregroundColor(mode.accentColor)
                         .lineLimit(1)
