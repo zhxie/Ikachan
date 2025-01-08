@@ -370,11 +370,11 @@ private func fetchSplatoon3Shifts(locale: JSON, completion: @escaping ([Splatoon
                                 var kingSalmonid = KingSalmonid(name: locale["bosses"][setting["boss"]["id"].stringValue]["name"].stringValue)
                                 switch setting["boss"]["id"].stringValue {
                                 case "Q29vcEVuZW15LTIz":
-                                    kingSalmonid.image = "cohozuna_3"
+                                    kingSalmonid.image = "cohozuna"
                                 case "Q29vcEVuZW15LTI0":
-                                    kingSalmonid.image = "horrorboros_3"
+                                    kingSalmonid.image = "horrorboros"
                                 case "Q29vcEVuZW15LTI1":
-                                    kingSalmonid.image = "megalodontia_3"
+                                    kingSalmonid.image = "megalodontia"
                                 default:
                                     break
                                 }

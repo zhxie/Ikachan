@@ -6,7 +6,7 @@ let PreviewWeapon = Weapon(name: "Random", image: URL(string: "https://app.splat
 let PreviewSplatoon2Schedule = Splatoon2Schedule(startTime: Date(), endTime: Calendar.current.date(byAdding: .day, value: 1, to: Date())!, mode: .regularBattle, rule: .turfWar, stages: [PreviewStage, PreviewStage])
 let PreviewSplatoon2Shift = Splatoon2Shift(startTime: Date(), endTime: Calendar.current.date(byAdding: .day, value: 1, to: Date())!, stage: PreviewStage, weapons: [PreviewWeapon, PreviewWeapon, PreviewWeapon, PreviewWeapon])
 let PreviewSplatoon3Schedule = Splatoon3Schedule(startTime: Date(), endTime: Calendar.current.date(byAdding: .day, value: 1, to: Date())!, mode: .regularBattle, rule: .turfWar, stages: [PreviewStage, PreviewStage], challenge: "New Season Challenge")
-let PreviewSplatoon3Shift = Splatoon3Shift(startTime: Date(), endTime: Calendar.current.date(byAdding: .day, value: 1, to: Date())!, mode: .salmonRun, stage: PreviewStage, weapons: [PreviewWeapon, PreviewWeapon, PreviewWeapon, PreviewWeapon], kingSalmonid: KingSalmonid(name: "Cohozuna", image: "cohozuna_3"))
+let PreviewSplatoon3Shift = Splatoon3Shift(startTime: Date(), endTime: Calendar.current.date(byAdding: .day, value: 1, to: Date())!, mode: .salmonRun, stage: PreviewStage, weapons: [PreviewWeapon, PreviewWeapon, PreviewWeapon, PreviewWeapon], kingSalmonid: KingSalmonid(name: "Cohozuna", image: "cohozuna"))
 
 // API.
 let Splatnet2URL = "https://app.splatoon2.nintendo.net"
