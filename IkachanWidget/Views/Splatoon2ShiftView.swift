@@ -21,7 +21,7 @@ struct Splatoon2ShiftView : View {
                         SmallShiftView(mode: Splatoon2ShiftMode.salmonRun, shift: entry.shift, nextShift: entry.nextShift)
                             .widgetContainerBackground()
                     } else {
-                        StandbyShiftView(mode: Splatoon2ShiftMode.salmonRun, shift: entry.shift, nextShift: entry.nextShift)
+                        StandbyShiftView(mode: Splatoon2ShiftMode.salmonRun, shift: entry.shift)
                             .widgetContainerBackground()
                     }
                 } else {

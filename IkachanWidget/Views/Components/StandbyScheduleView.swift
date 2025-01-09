@@ -1,72 +1,60 @@
 import SwiftUI
 import WidgetKit
+import Kingfisher
 
 @available(iOSApplicationExtension 17.0, *)
 struct StandbyScheduleView: View {
     @Environment(\.widgetRenderingMode) var widgetRenderingMode
+    @Environment(\.widgetContentMargins) var widgetContentMargins
     
     var mode: any ScheduleMode
     var schedule: Schedule?
-    var nextSchedule: Schedule?
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading) {
+            // HACK: To occupy horizontal space in advance.
             HStack {
-                HStack {
-                    Text(LocalizedStringKey(mode.name))
-                        .fontWeight(.bold)
-                        .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
-                }
-                .layoutPriority(1)
-                
                 Spacer()
-                    .frame(minWidth: 0)
             }
-            .layoutPriority(1)
             
-            if let schedule = schedule {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Image(schedule.rule.image)
-                            .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
-                            .monospacedSymbol(.footnote)
-                            .layoutPriority(1)
-                        
-                        VStack(alignment: .leading, spacing: 2) {
-                            ForEach(schedule.stages, id: \.name) { stage in
-                                Text(stage.name)
-                                    .font(.footnote)
-                                    .lineLimit(1)
-                            }
-                        }
-                    }
+            Spacer()
+            
+            VStack(alignment: .leading, spacing: 4) {
+                HStack(spacing: 4) {
+                    Image(schedule?.rule.image ?? mode.image)
+                        .symbolRenderingMode(.hierarchical)
+                        .monospacedSymbol(.footnote)
                     
-                    if let schedule = nextSchedule {
-                        Separator(accentColor: widgetRenderingMode == .fullColor ? .secondary : .primary)
-                            .font(.caption2)
-                            .opacity(widgetRenderingMode == .fullColor ? 0.5 : 1)
-                        
-                        HStack {
-                            Image(schedule.rule.image)
-                                .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
-                                .monospacedSymbol(.footnote)
-                                .layoutPriority(1)
-                            
-                            VStack(alignment: .leading, spacing: 2) {
-                                ForEach(schedule.stages, id: \.name) { stage in
-                                    Text(stage.name)
-                                        .font(.footnote)
-                                        .lineLimit(1)
-                                }
-                            }
+                    Text(LocalizedStringKey(schedule?.rule.name ?? mode.shortName))
+                        .font(.footnote)
+                        .fontWeight(.bold)
+                        .lineLimit(1)
+                }
+                
+                if let schedule = schedule {
+                    VStack(alignment: .leading) {
+                        ForEach(schedule.stages, id: \.name) { stage in
+                            Text(stage.name)
+                                .font(.caption2)
                         }
                     }
+                } else {
+                    Text(LocalizedStringKey("no_schedules"))
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
                 }
-            } else {
-                Text(LocalizedStringKey("no_schedules"))
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
+            }
+            .padding([.leading, .bottom], 8)
+        }
+        .background {
+            if let stage = schedule?.stages.first {
+                KFImage(stage.thumbnail ?? stage.image)
+                    .resizedToFill()
+                    .clipped()
+                    .brightness(widgetRenderingMode == .fullColor ? -0.25 : -0.75)
+                    .accessibilityLabel(stage.name)
+                    .padding(-widgetContentMargins)
             }
         }
     }
@@ -75,7 +63,7 @@ struct StandbyScheduleView: View {
 @available(iOSApplicationExtension 17.0, *)
 struct StandbyScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        StandbyScheduleView(mode: Splatoon3ScheduleMode.regularBattle, schedule: PreviewSplatoon2Schedule, nextSchedule: PreviewSplatoon3Schedule)
+        StandbyScheduleView(mode: Splatoon3ScheduleMode.regularBattle, schedule: PreviewSplatoon2Schedule)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }

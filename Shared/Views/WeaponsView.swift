@@ -4,6 +4,7 @@ import Kingfisher
 enum WeaponsViewStyle {
     case App
     case Widget
+    case StandbyWidget
 }
 
 struct WeaponView: View {
@@ -27,6 +28,12 @@ struct WeaponView: View {
                     .clipped()
                     .accessibilityLabel(weapon.name)
                     .colorInvert()
+            case .StandbyWidget:
+                KFImage(weapon.thumbnail ?? weapon.image)
+                    .blackWhite()
+                    .resizedToFill()
+                    .clipped()
+                    .accessibilityLabel(weapon.name)
             }
         } else {
             switch style {
@@ -37,6 +44,12 @@ struct WeaponView: View {
                     .accessibilityLabel(weapon.name)
             case .Widget:
                 KFImage(weapon.thumbnail ?? weapon.image)
+                    .resizedToFill()
+                    .clipped()
+                    .accessibilityLabel(weapon.name)
+            case .StandbyWidget:
+                KFImage(weapon.thumbnail ?? weapon.image)
+                    .blackWhite()
                     .resizedToFill()
                     .clipped()
                     .accessibilityLabel(weapon.name)

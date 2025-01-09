@@ -21,7 +21,7 @@ struct Splatoon2ScheduleView : View {
                         SmallScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule, nextSchedule: entry.nextSchedule)
                             .widgetContainerBackground()
                     } else {
-                        StandbyScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule, nextSchedule: entry.nextSchedule)
+                        StandbyScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule)
                             .widgetContainerBackground()
                     }
                 } else {

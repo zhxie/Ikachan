@@ -1,80 +1,58 @@
 import SwiftUI
 import WidgetKit
+import Kingfisher
 
 @available(iOSApplicationExtension 17.0, *)
 struct StandbyShiftView: View {
     @Environment(\.widgetRenderingMode) var widgetRenderingMode
+    @Environment(\.widgetContentMargins) var widgetContentMargins
     
     var mode: any ShiftMode
     var shift: Shift?
-    var nextShift: Shift?
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading) {
+            // HACK: To occupy horizontal space in advance.
             HStack {
-                HStack {
-                    Text(LocalizedStringKey(mode.name))
-                        .fontWeight(.bold)
-                        .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
-                }
-                .layoutPriority(1)
-                
                 Spacer()
-                    .frame(minWidth: 0)
             }
-            .layoutPriority(1)
             
-            if let shift = shift {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Image(shift.mode.image)
-                            .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
-                            .monospacedSymbol(.footnote)
-                            .layoutPriority(1)
-                        
-                        VStack(alignment: .leading, spacing: 2) {
-                            if let stage = shift.stage {
-                                Text(stage.name)
-                                    .font(.footnote)
-                                    .lineLimit(1)
-                            }
-                            
-                            VStack(alignment: .leading, spacing: 1) {
-                                if let weapons = shift.weapons {
-                                    ForEach(weapons, id: \.name) { weapon in
-                                        Text(weapon.name)
-                                            .font(.caption2)
-                                            .lineLimit(1)
-                                    }
-                                }
-                            }
-                        }
-                    }
+            Spacer()
+            
+            VStack(alignment: .leading, spacing: 4) {
+                HStack(spacing: 4) {
+                    Image(shift?.mode.image ?? mode.image)
+                        .symbolRenderingMode(.hierarchical)
+                        .monospacedSymbol(.footnote)
                     
-                    if let shift = nextShift {
-                        Separator(accentColor: widgetRenderingMode == .fullColor ? .secondary : .primary)
-                            .font(.caption2)
-                            .opacity(widgetRenderingMode == .fullColor ? 0.5 : 1)
-                        
-                        HStack {
-                            Image(shift.mode.image)
-                                .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
-                                .monospacedSymbol(.footnote)
-                                .layoutPriority(1)
-                            
-                            if let stage = shift.stage {
-                                Text(stage.name)
-                                    .font(.footnote)
-                                    .lineLimit(1)
-                            }
-                        }
-                    }
+                    Text(LocalizedStringKey(shift?.stage?.name ?? mode.shortName))
+                        .font(.footnote)
+                        .fontWeight(.bold)
+                        .lineLimit(1)
                 }
-            } else {
-                Text(LocalizedStringKey("no_shifts"))
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
+                
+                if let shift = shift {
+                    if let weapons = shift.weapons {
+                        WeaponsView(weapons: weapons, style: .StandbyWidget)
+                            .frame(height: 24)
+                    }
+                } else {
+                    Text(LocalizedStringKey("no_schedules"))
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+            }
+            .padding([.leading, .bottom], 8)
+        }
+        .background {
+            if let stage = shift?.stage {
+                KFImage(stage.thumbnail ?? stage.image)
+                    .resizedToFill()
+                    .clipped()
+                    .brightness(widgetRenderingMode == .fullColor ? -0.25 : -0.75)
+                    .accessibilityLabel(stage.name)
+                    .padding(-widgetContentMargins)
             }
         }
     }
@@ -83,7 +61,7 @@ struct StandbyShiftView: View {
 @available(iOSApplicationExtension 17.0, *)
 struct StandbyShiftView_Previews: PreviewProvider {
     static var previews: some View {
-        StandbyShiftView(mode: Splatoon3ShiftMode.salmonRun, shift: PreviewSplatoon2Shift, nextShift: PreviewSplatoon3Shift)
+        StandbyShiftView(mode: Splatoon3ShiftMode.salmonRun, shift: PreviewSplatoon2Shift)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
