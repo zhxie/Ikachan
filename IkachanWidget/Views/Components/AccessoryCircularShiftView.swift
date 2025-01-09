@@ -3,6 +3,8 @@ import WidgetKit
 
 @available(iOSApplicationExtension 16.0, *)
 struct AccessoryCircularShiftView: View {
+    @Environment(\.widgetRenderingMode) var widgetRenderingMode
+    
     var progress: Double
     var mode: any ShiftMode
     var shift: Shift?
@@ -11,7 +13,8 @@ struct AccessoryCircularShiftView: View {
         Gauge(value: progress) {} currentValueLabel: {
             if let shift = shift {
                 Image(shift.mode.image)
-                    .symbolRenderingMode(.multicolor)
+                    .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
+                    .widgetAccentable()
                     .padding(10)
             } else {
                 Image(systemName: "xmark")
@@ -21,7 +24,7 @@ struct AccessoryCircularShiftView: View {
                     .padding(10)
             }
         }
-        .tint(shift?.mode.accentColor ?? mode.accentColor)
+        .tint(widgetRenderingMode == .fullColor ? shift?.mode.accentColor ?? mode.accentColor : .primary)
         .gaugeStyle(.accessoryCircular)
     }
 }

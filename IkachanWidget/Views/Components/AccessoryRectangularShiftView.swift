@@ -3,6 +3,8 @@ import WidgetKit
 
 @available(iOSApplicationExtension 16.0, *)
 struct AccessoryRectangularShiftView: View {
+    @Environment(\.widgetRenderingMode) var widgetRenderingMode
+    
     var mode: any ShiftMode
     var shift: Shift?
     
@@ -11,18 +13,23 @@ struct AccessoryRectangularShiftView: View {
             VStack(alignment: .leading) {
                 HStack(spacing: 4) {
                     Image(shift?.mode.image ?? mode.image)
-                        .symbolRenderingMode(.multicolor)
+                        .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
                         .monospacedSymbol(.headline)
+                        .widgetAccentable()
                     
                     if let stage = shift?.stage {
                         Text(stage.name)
                             .font(.headline)
                             .fontWeight(.bold)
+                            .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
+                            .widgetAccentable()
                             .lineLimit(1)
                     } else {
                         Text(LocalizedStringKey(shift?.mode.name ?? mode.name))
                             .font(.headline)
                             .fontWeight(.bold)
+                            .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
+                            .widgetAccentable()
                             .lineLimit(1)
                     }
                 }

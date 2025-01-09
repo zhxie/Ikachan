@@ -3,6 +3,8 @@ import WidgetKit
 
 @available(iOSApplicationExtension 16.0, *)
 struct AccessoryCircularScheduleView: View {
+    @Environment(\.widgetRenderingMode) var widgetRenderingMode
+    
     var progress: Double
     var mode: any ScheduleMode
     var schedule: Schedule?
@@ -10,12 +12,14 @@ struct AccessoryCircularScheduleView: View {
     var body: some View {
         Gauge(value: progress) {
             Image(mode.image)
-                .symbolRenderingMode(.multicolor)
-                .accentColor(mode.accentColor)
+                .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
+                .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
+                .widgetAccentable()
         } currentValueLabel: {
             if let schedule = schedule {
                 Image(schedule.rule.image)
-                    .symbolRenderingMode(.multicolor)
+                    .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
+                    .widgetAccentable()
                     .padding(10)
             } else {
                 Image(systemName: "xmark")
@@ -25,7 +29,7 @@ struct AccessoryCircularScheduleView: View {
                     .padding(10)
             }
         }
-        .tint(mode.accentColor)
+        .tint(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
         .gaugeStyle(.accessoryCircular)
     }
 }

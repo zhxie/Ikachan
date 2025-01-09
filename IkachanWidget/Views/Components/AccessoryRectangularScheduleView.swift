@@ -3,6 +3,8 @@ import WidgetKit
 
 @available(iOSApplicationExtension 16.0, *)
 struct AccessoryRectangularScheduleView: View {
+    @Environment(\.widgetRenderingMode) var widgetRenderingMode
+    
     var mode: any ScheduleMode
     var schedule: Schedule?
     
@@ -11,13 +13,16 @@ struct AccessoryRectangularScheduleView: View {
             VStack(alignment: .leading) {
                 HStack(spacing: 4) {
                     Image(mode.image)
-                        .symbolRenderingMode(.multicolor)
+                        .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
                         .monospacedSymbol(.headline)
-                        .foregroundColor(mode.accentColor)
+                        .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
+                        .widgetAccentable()
                     
                     Text(LocalizedStringKey(schedule?.rule.name ?? mode.name))
                         .font(.headline)
                         .fontWeight(.bold)
+                        .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
+                        .widgetAccentable()
                         .lineLimit(1)
                 }
                 

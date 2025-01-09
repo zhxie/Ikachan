@@ -15,7 +15,7 @@ struct StandbyScheduleView: View {
                 HStack {
                     Text(LocalizedStringKey(mode.name))
                         .fontWeight(.bold)
-                        .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .white)
+                        .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
                 }
                 .layoutPriority(1)
                 
@@ -28,7 +28,7 @@ struct StandbyScheduleView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(alignment: .top) {
                         Image(schedule.rule.image)
-                            .symbolRenderingMode(.multicolor)
+                            .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
                             .monospacedSymbol(.footnote)
                             .layoutPriority(1)
                         
@@ -42,9 +42,13 @@ struct StandbyScheduleView: View {
                     }
                     
                     if let schedule = nextSchedule {
+                        Rectangle()
+                            .fill(.secondary.opacity(widgetRenderingMode == .fullColor ? 0.5 : 1))
+                            .frame(height: 1)
+                        
                         HStack(alignment: .top) {
                             Image(schedule.rule.image)
-                                .symbolRenderingMode(.multicolor)
+                                .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
                                 .monospacedSymbol(.footnote)
                                 .layoutPriority(1)
                             
