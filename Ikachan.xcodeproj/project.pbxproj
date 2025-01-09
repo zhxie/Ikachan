@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E409F40C2D2FA04000AF4B26 /* AccessoryCircularShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E409F40B2D2FA04000AF4B26 /* AccessoryCircularShiftView.swift */; };
+		E409F40D2D2FA04A00AF4B26 /* AccessoryCircularShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E409F40B2D2FA04000AF4B26 /* AccessoryCircularShiftView.swift */; };
 		E41763682B25A9C500B52CE9 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41763672B25A9C500B52CE9 /* Enum.swift */; };
 		E41763692B25A9C500B52CE9 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41763672B25A9C500B52CE9 /* Enum.swift */; };
 		E417636A2B25A9C500B52CE9 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41763672B25A9C500B52CE9 /* Enum.swift */; };
@@ -115,7 +117,7 @@
 		E468B7B525B46080001254FE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468B7B425B46080001254FE /* Date.swift */; };
 		E477990225B1F1F600F8AE9F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E477990725B1F62500F8AE9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E477990625B1F62500F8AE9F /* SwiftyJSON */; };
-		E47AC8AB2B2AA0E200B598AF /* AccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8AA2B2AA0E200B598AF /* AccessoryCircularView.swift */; };
+		E47AC8AB2B2AA0E200B598AF /* AccessoryCircularScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8AA2B2AA0E200B598AF /* AccessoryCircularScheduleView.swift */; };
 		E47AC8AD2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8AC2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift */; };
 		E47AC8AF2B2ABAAD00B598AF /* AccessoryRectangularShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8AE2B2ABAAC00B598AF /* AccessoryRectangularShiftView.swift */; };
 		E47AC8B82B2AE1D100B598AF /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8B72B2AE1D100B598AF /* AboutView.swift */; };
@@ -206,7 +208,7 @@
 		E4F235A62D2CF9F300BC8635 /* View+Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F2351C2D2C363100BC8635 /* View+Widget.swift */; };
 		E4F235A92D2CFA2700BC8635 /* Splatoon2ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235A82D2CFA2300BC8635 /* Splatoon2ScheduleView.swift */; };
 		E4F235AA2D2CFA4B00BC8635 /* AccessoryRectangularShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8AE2B2ABAAC00B598AF /* AccessoryRectangularShiftView.swift */; };
-		E4F235AB2D2CFA4B00BC8635 /* AccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8AA2B2AA0E200B598AF /* AccessoryCircularView.swift */; };
+		E4F235AB2D2CFA4B00BC8635 /* AccessoryCircularScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8AA2B2AA0E200B598AF /* AccessoryCircularScheduleView.swift */; };
 		E4F235AC2D2CFA4B00BC8635 /* NoShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB978E2D2BD33F00EB2A6C /* NoShiftView.swift */; };
 		E4F235AD2D2CFA4B00BC8635 /* NoScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB978C2D2BCFBF00EB2A6C /* NoScheduleView.swift */; };
 		E4F235AE2D2CFA4B00BC8635 /* AccessoryRectangularScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AC8AC2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift */; };
@@ -302,6 +304,7 @@
 
 /* Begin PBXFileReference section */
 		E406EF8D25C8576300683DBD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E409F40B2D2FA04000AF4B26 /* AccessoryCircularShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCircularShiftView.swift; sourceTree = "<group>"; };
 		E41763672B25A9C500B52CE9 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		E417636D2B271CE500B52CE9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E42309942D2BD96F00B4898F /* IkachanWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IkachanWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -364,7 +367,7 @@
 		E47AC8A32B29EE5800B598AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
 		E47AC8A52B29EE5F00B598AF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/IkachanIntents.strings"; sourceTree = "<group>"; };
 		E47AC8A72B29F00500B598AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/IkachanIntents.strings; sourceTree = "<group>"; };
-		E47AC8AA2B2AA0E200B598AF /* AccessoryCircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCircularView.swift; sourceTree = "<group>"; };
+		E47AC8AA2B2AA0E200B598AF /* AccessoryCircularScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCircularScheduleView.swift; sourceTree = "<group>"; };
 		E47AC8AC2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryRectangularScheduleView.swift; sourceTree = "<group>"; };
 		E47AC8AE2B2ABAAC00B598AF /* AccessoryRectangularShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryRectangularShiftView.swift; sourceTree = "<group>"; };
 		E47AC8B72B2AE1D100B598AF /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -758,7 +761,8 @@
 				E464ADCC2B29B309001DC83D /* SmallShiftView.swift */,
 				E464ADD02B29B51D001DC83D /* MediumShiftView.swift */,
 				E4308E262BA1DE7800E6F438 /* StandbyShiftView.swift */,
-				E47AC8AA2B2AA0E200B598AF /* AccessoryCircularView.swift */,
+				E47AC8AA2B2AA0E200B598AF /* AccessoryCircularScheduleView.swift */,
+				E409F40B2D2FA04000AF4B26 /* AccessoryCircularShiftView.swift */,
 				E47AC8AC2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift */,
 				E47AC8AE2B2ABAAC00B598AF /* AccessoryRectangularShiftView.swift */,
 			);
@@ -1218,6 +1222,7 @@
 				E4F235592D2CF11500BC8635 /* Splatoon2ScheduleView.swift in Sources */,
 				E4400F2825CD010A00BF94C6 /* Splatoon2ScheduleIntentHandler.swift in Sources */,
 				E4444EF725BF14A50003A676 /* SmallScheduleView.swift in Sources */,
+				E409F40C2D2FA04000AF4B26 /* AccessoryCircularShiftView.swift in Sources */,
 				E461414125CA880500561D53 /* String.swift in Sources */,
 				E48BECC125CD31F100B301D1 /* Collection.swift in Sources */,
 				E464ADCD2B29B309001DC83D /* SmallShiftView.swift in Sources */,
@@ -1243,7 +1248,7 @@
 				E4BE377128DEC02D00BDB75F /* SwiftJSON.swift in Sources */,
 				E440CA142B271E8100884D57 /* Splatoon3ScheduleIntentHandler.swift in Sources */,
 				E4400F2E25CD011500BF94C6 /* IntentHandler.swift in Sources */,
-				E47AC8AB2B2AA0E200B598AF /* AccessoryCircularView.swift in Sources */,
+				E47AC8AB2B2AA0E200B598AF /* AccessoryCircularScheduleView.swift in Sources */,
 				E417636F2B271CE500B52CE9 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1254,9 +1259,10 @@
 			files = (
 				E4F235A62D2CF9F300BC8635 /* View+Widget.swift in Sources */,
 				E4F2359F2D2CF92000BC8635 /* IkachanIntents.intentdefinition in Sources */,
+				E409F40D2D2FA04A00AF4B26 /* AccessoryCircularShiftView.swift in Sources */,
 				E4F235902D2CF8D900BC8635 /* KFImage.swift in Sources */,
 				E4F235AA2D2CFA4B00BC8635 /* AccessoryRectangularShiftView.swift in Sources */,
-				E4F235AB2D2CFA4B00BC8635 /* AccessoryCircularView.swift in Sources */,
+				E4F235AB2D2CFA4B00BC8635 /* AccessoryCircularScheduleView.swift in Sources */,
 				E4F235AC2D2CFA4B00BC8635 /* NoShiftView.swift in Sources */,
 				E4F235AD2D2CFA4B00BC8635 /* NoScheduleView.swift in Sources */,
 				E4F235AE2D2CFA4B00BC8635 /* AccessoryRectangularScheduleView.swift in Sources */,

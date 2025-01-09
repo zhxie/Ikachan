@@ -10,7 +10,7 @@ struct AccessoryRectangularShiftView: View {
         HStack(alignment: .top) {
             VStack(alignment: .leading) {
                 HStack(spacing: 4) {
-                    Image(mode.image)
+                    Image(shift?.mode.image ?? mode.image)
                         .symbolRenderingMode(.multicolor)
                         .monospacedSymbol(.headline)
                     
@@ -20,7 +20,7 @@ struct AccessoryRectangularShiftView: View {
                             .fontWeight(.bold)
                             .lineLimit(1)
                     } else {
-                        Text(LocalizedStringKey(mode.name))
+                        Text(LocalizedStringKey(shift?.mode.name ?? mode.name))
                             .font(.headline)
                             .fontWeight(.bold)
                             .lineLimit(1)

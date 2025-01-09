@@ -9,7 +9,7 @@ struct Splatoon3ShiftProgressView : View {
 
     @ViewBuilder
     var body: some View {
-        AccessoryCircularView(progress: timePassingBy(current: entry.date, start: entry.shift?.startTime ?? entry.date, end: entry.shift?.endTime ?? entry.date), mode: nil, accentColor: nil, rule: entry.shift?.mode.image ?? nil)
+        AccessoryCircularShiftView(progress: timePassingBy(current: entry.date, start: entry.shift?.startTime ?? entry.date, end: entry.shift?.endTime ?? entry.date), mode: Splatoon3ShiftMode(from: entry.configuration.mode), shift: entry.shift)
             .widgetContainerBackground(padding: false)
     }
 }

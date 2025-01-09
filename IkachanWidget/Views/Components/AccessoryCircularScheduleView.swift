@@ -2,39 +2,38 @@ import SwiftUI
 import WidgetKit
 
 @available(iOSApplicationExtension 16.0, *)
-struct AccessoryCircularView: View {
+struct AccessoryCircularScheduleView: View {
     var progress: Double
-    var mode: String?
-    var accentColor: Color?
-    var rule: String?
+    var mode: any ScheduleMode
+    var schedule: Schedule?
     
     var body: some View {
         Gauge(value: progress) {
-            if let mode = mode {
-                Image(mode)
-                    .symbolRenderingMode(.multicolor)
-                    .accentColor(accentColor)
-            }
+            Image(mode.image)
+                .symbolRenderingMode(.multicolor)
+                .accentColor(mode.accentColor)
         } currentValueLabel: {
-            if let rule = rule {
-                Image(rule)
+            if let schedule = schedule {
+                Image(schedule.rule.image)
                     .symbolRenderingMode(.multicolor)
                     .padding(10)
             } else {
                 Image(systemName: "xmark")
                     .resizedToFit()
                     .fontWeight(.bold)
+                    .foregroundColor(.secondary)
                     .padding(10)
             }
         }
+        .tint(mode.accentColor)
         .gaugeStyle(.accessoryCircular)
     }
 }
 
 @available(iOSApplicationExtension 17.0, watchOSApplicationExtension 10.0, *)
-struct AccessoryCircularView_Previews: PreviewProvider {
+struct AccessoryCircularScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        AccessoryCircularView(progress: 0.5, mode: PreviewSplatoon3Schedule.mode.image, accentColor: PreviewSplatoon3Schedule.mode.accentColor, rule: PreviewSplatoon3Schedule.rule.image)
+        AccessoryCircularScheduleView(progress: 0.5, mode: PreviewSplatoon3Schedule.mode, schedule: PreviewSplatoon3Schedule)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .accessoryCircular))
     }

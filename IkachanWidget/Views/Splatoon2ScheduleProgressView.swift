@@ -9,7 +9,7 @@ struct Splatoon2ScheduleProgressView : View {
 
     @ViewBuilder
     var body: some View {
-        AccessoryCircularView(progress: timePassingBy(current: entry.date, start: entry.schedule?.startTime ?? entry.date, end: entry.schedule?.endTime ?? entry.date), mode: entry.schedule?.mode.image ?? nil, accentColor: entry.schedule?.mode.accentColor ?? nil, rule: entry.schedule?.rule.image ?? nil)
+        AccessoryCircularScheduleView(progress: timePassingBy(current: entry.date, start: entry.schedule?.startTime ?? entry.date, end: entry.schedule?.endTime ?? entry.date), mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule)
             .widgetContainerBackground(padding: false)
     }
 }

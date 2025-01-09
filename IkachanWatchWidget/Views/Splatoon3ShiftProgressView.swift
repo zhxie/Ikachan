@@ -10,10 +10,10 @@ struct Splatoon3ShiftProgressView : View {
     var body: some View {
         switch family {
         case .accessoryCircular:
-            AccessoryCircularView(progress: timePassingBy(current: entry.date, start: entry.shift?.startTime ?? entry.date, end: entry.shift?.endTime ?? entry.date), mode: nil, accentColor: nil, rule: entry.shift?.mode.image ?? nil)
+            AccessoryCircularShiftView(progress: timePassingBy(current: entry.date, start: entry.shift?.startTime ?? entry.date, end: entry.shift?.endTime ?? entry.date), mode: Splatoon3ShiftMode(from: entry.configuration.mode), shift: entry.shift)
                 .widgetContainerBackground(padding: false)
         default:
-            AccessoryCornerView(progress: timePassingBy(current: entry.date, start: entry.shift?.startTime ?? entry.date, end: entry.shift?.endTime ?? entry.date), accentColor: entry.shift?.mode.accentColor ?? Splatoon3ShiftMode(from: entry.configuration.mode).accentColor, rule: entry.shift?.mode.image ?? nil)
+            AccessoryCornerView(progress: timePassingBy(current: entry.date, start: entry.shift?.startTime ?? entry.date, end: entry.shift?.endTime ?? entry.date), accentColor: entry.shift?.mode.accentColor ?? Splatoon3ShiftMode(from: entry.configuration.mode).accentColor, icon: entry.shift?.mode.image ?? nil)
                 .widgetContainerBackground(padding: false)
         }
     }
