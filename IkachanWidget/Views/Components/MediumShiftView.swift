@@ -11,6 +11,7 @@ struct MediumShiftView: View {
             HStack {
                 Image(shift?.mode.image ?? mode.image)
                     .symbolRenderingMode(.multicolor)
+                    .monospacedSymbol()
                     .layoutPriority(1)
                 Text(LocalizedStringKey(shift?.mode.name ?? mode.name))
                     .fontWeight(.bold)

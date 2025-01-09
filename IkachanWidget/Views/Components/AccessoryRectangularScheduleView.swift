@@ -12,8 +12,8 @@ struct AccessoryRectangularScheduleView: View {
                 HStack(spacing: 4) {
                     Image(mode.image)
                         .symbolRenderingMode(.multicolor)
+                        .monospacedSymbol(.headline)
                         .foregroundColor(mode.accentColor)
-                        .font(.headline)
                     
                     Text(LocalizedStringKey(schedule?.rule.name ?? mode.name))
                         .font(.headline)

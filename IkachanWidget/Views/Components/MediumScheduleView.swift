@@ -13,6 +13,7 @@ struct MediumScheduleView: View {
                 if showsModeImage {
                     Image(mode.image)
                         .symbolRenderingMode(.multicolor)
+                        .monospacedSymbol()
                         .foregroundColor(mode.accentColor)
                         .layoutPriority(1)
                 }

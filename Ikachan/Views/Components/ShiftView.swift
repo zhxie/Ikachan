@@ -33,6 +33,7 @@ struct ShiftView: View {
             HStack {
                 Image(shift.mode.image)
                     .symbolRenderingMode(.multicolor)
+                    .monospacedSymbol()
                     .layoutPriority(1)
                 Text(LocalizedStringKey(shift.mode.name))
                     .fontWeight(.bold)

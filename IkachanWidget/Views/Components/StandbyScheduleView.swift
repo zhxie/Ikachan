@@ -29,7 +29,7 @@ struct StandbyScheduleView: View {
                     HStack(alignment: .top) {
                         Image(schedule.rule.image)
                             .symbolRenderingMode(.multicolor)
-                            .font(.footnote)
+                            .monospacedSymbol(.footnote)
                             .layoutPriority(1)
                         
                         VStack(alignment: .leading, spacing: 2) {
@@ -45,7 +45,7 @@ struct StandbyScheduleView: View {
                         HStack(alignment: .top) {
                             Image(schedule.rule.image)
                                 .symbolRenderingMode(.multicolor)
-                                .font(.footnote)
+                                .monospacedSymbol(.footnote)
                                 .layoutPriority(1)
                             
                             VStack(alignment: .leading, spacing: 2) {
@@ -71,7 +71,7 @@ struct StandbyScheduleView: View {
 @available(iOSApplicationExtension 17.0, *)
 struct StandbyScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        StandbyScheduleView(mode: Splatoon3ScheduleMode.regularBattle, schedule: nil, nextSchedule: PreviewSplatoon3Schedule)
+        StandbyScheduleView(mode: Splatoon3ScheduleMode.regularBattle, schedule: PreviewSplatoon2Schedule, nextSchedule: PreviewSplatoon3Schedule)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }

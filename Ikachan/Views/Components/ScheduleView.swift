@@ -11,6 +11,7 @@ struct ScheduleView: View {
             HStack {
                 Image(schedule.rule.image)
                     .symbolRenderingMode(.multicolor)
+                    .monospacedSymbol()
                     .layoutPriority(1)
                 Text(LocalizedStringKey(schedule.challenge ?? schedule.rule.name))
                     .fontWeight(.bold)

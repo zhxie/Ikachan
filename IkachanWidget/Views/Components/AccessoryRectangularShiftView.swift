@@ -12,7 +12,7 @@ struct AccessoryRectangularShiftView: View {
                 HStack(spacing: 4) {
                     Image(mode.image)
                         .symbolRenderingMode(.multicolor)
-                        .font(.headline)
+                        .monospacedSymbol(.headline)
                     
                     if let stage = shift?.stage {
                         Text(stage.name)
