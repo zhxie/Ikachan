@@ -1,7 +1,7 @@
 import SwiftUI
 import WidgetKit
 
-@available(iOSApplicationExtension 16.0, *)
+@available(iOSApplicationExtension 17.0, *)
 struct StandbyShiftView: View {
     @Environment(\.widgetRenderingMode) var widgetRenderingMode
     
