@@ -15,7 +15,9 @@ struct ShiftsView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                 
                 if shifts.count > 1 {
-                    Separator()
+                    Separator(accentColor: .secondary)
+                        .font(.footnote)
+                        .opacity(0.5)
                     
                     ShiftView(shift: shifts.at(index: 1)!)
                         .padding(.vertical)

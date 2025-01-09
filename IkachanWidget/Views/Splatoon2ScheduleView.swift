@@ -15,6 +15,7 @@ struct Splatoon2ScheduleView : View {
                 AccessoryRectangularScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule)
                     .widgetContainerBackground(padding: false)
             case .systemSmall:
+                // Standby widgets are only available for iOS StandBy mode and iPadOS lockscreen widget in landscape mode.
                 if showsWidgetContainerBackground {
                     SmallScheduleView(mode: Splatoon2ScheduleMode(from: entry.configuration.mode), schedule: entry.schedule, nextSchedule: entry.nextSchedule)
                         .widgetContainerBackground()

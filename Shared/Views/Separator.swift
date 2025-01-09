@@ -1,25 +1,24 @@
 import SwiftUI
 
 struct Separator: View {
+    var accentColor: Color
+    
     var body: some View {
         HStack {
             Rectangle()
-                .fill(.secondary.opacity(0.5))
+                .fill(accentColor)
                 .frame(height: 1)
-                .ignoresSafeArea()
             
             Text(LocalizedStringKey("next"))
-                .font(.footnote)
-                .foregroundColor(.secondary.opacity(0.5))
+                .foregroundColor(accentColor)
             
             Rectangle()
-                .fill(.secondary.opacity(0.5))
+                .fill(accentColor)
                 .frame(height: 1)
-                .ignoresSafeArea()
         }
     }
 }
 
 #Preview {
-    Separator()
+    Separator(accentColor: .primary)
 }

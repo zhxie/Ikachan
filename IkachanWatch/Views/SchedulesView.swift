@@ -15,7 +15,9 @@ struct SchedulesView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                 
                 if schedules.count > 1 {
-                    Separator()
+                    Separator(accentColor: .secondary)
+                        .font(.footnote)
+                        .opacity(0.5)
                     
                     ScheduleView(schedule: schedules.at(index: 1)!)
                         .padding(.vertical)

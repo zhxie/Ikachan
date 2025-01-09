@@ -25,8 +25,8 @@ struct StandbyShiftView: View {
             .layoutPriority(1)
             
             if let shift = shift {
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack(alignment: .top) {
+                VStack(alignment: .leading) {
+                    HStack {
                         Image(shift.mode.image)
                             .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
                             .monospacedSymbol(.footnote)
@@ -52,11 +52,11 @@ struct StandbyShiftView: View {
                     }
                     
                     if let shift = nextShift {
-                        Rectangle()
-                            .fill(.secondary.opacity(widgetRenderingMode == .fullColor ? 0.5 : 1))
-                            .frame(height: 1)
+                        Separator(accentColor: widgetRenderingMode == .fullColor ? .secondary : .primary)
+                            .font(.caption2)
+                            .opacity(widgetRenderingMode == .fullColor ? 0.5 : 1)
                         
-                        HStack(alignment: .top) {
+                        HStack {
                             Image(shift.mode.image)
                                 .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
                                 .monospacedSymbol(.footnote)

@@ -15,6 +15,7 @@ struct Splatoon2ShiftView : View {
                 AccessoryRectangularShiftView(mode: Splatoon2ShiftMode.salmonRun, shift: entry.shift)
                     .widgetContainerBackground(padding: false)
             case .systemSmall:
+                // Standby widgets are only available for iOS StandBy mode and iPadOS lockscreen widget in landscape mode.
                 if showsWidgetContainerBackground {
                     SmallShiftView(mode: Splatoon2ShiftMode.salmonRun, shift: entry.shift, nextShift: entry.nextShift)
                         .widgetContainerBackground()

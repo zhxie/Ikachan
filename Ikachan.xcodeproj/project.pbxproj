@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E409F40C2D2FA04000AF4B26 /* AccessoryCircularShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E409F40B2D2FA04000AF4B26 /* AccessoryCircularShiftView.swift */; };
 		E409F40D2D2FA04A00AF4B26 /* AccessoryCircularShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E409F40B2D2FA04000AF4B26 /* AccessoryCircularShiftView.swift */; };
+		E409F40F2D2FC71500AF4B26 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E409F40E2D2FC71300AF4B26 /* Separator.swift */; };
+		E409F4102D2FC76D00AF4B26 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E409F40E2D2FC71300AF4B26 /* Separator.swift */; };
+		E409F4112D2FC85400AF4B26 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E409F40E2D2FC71300AF4B26 /* Separator.swift */; };
 		E41763682B25A9C500B52CE9 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41763672B25A9C500B52CE9 /* Enum.swift */; };
 		E41763692B25A9C500B52CE9 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41763672B25A9C500B52CE9 /* Enum.swift */; };
 		E417636A2B25A9C500B52CE9 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41763672B25A9C500B52CE9 /* Enum.swift */; };
@@ -221,7 +224,6 @@
 		E4F235BC2D2D00EA00BC8635 /* Splatoon2ShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235BB2D2D00E000BC8635 /* Splatoon2ShiftView.swift */; };
 		E4F235C32D2D028700BC8635 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4F235C12D2D028700BC8635 /* InfoPlist.strings */; };
 		E4F235CB2D2D054B00BC8635 /* AccessoryCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235CA2D2D054700BC8635 /* AccessoryCornerView.swift */; };
-		E4F235D52D2D594100BC8635 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F235D42D2D594100BC8635 /* Separator.swift */; };
 		E4F9DC702C949842001E2B90 /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponsView.swift */; };
 		E4F9DC712C949A6D001E2B90 /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE86027550951006F7CBD /* StageView.swift */; };
 /* End PBXBuildFile section */
@@ -305,6 +307,7 @@
 /* Begin PBXFileReference section */
 		E406EF8D25C8576300683DBD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E409F40B2D2FA04000AF4B26 /* AccessoryCircularShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCircularShiftView.swift; sourceTree = "<group>"; };
+		E409F40E2D2FC71300AF4B26 /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
 		E41763672B25A9C500B52CE9 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		E417636D2B271CE500B52CE9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E42309942D2BD96F00B4898F /* IkachanWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IkachanWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -429,7 +432,6 @@
 		E4F235C72D2D02BE00BC8635 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E4F235C82D2D02BF00BC8635 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E4F235CA2D2D054700BC8635 /* AccessoryCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCornerView.swift; sourceTree = "<group>"; };
-		E4F235D42D2D594100BC8635 /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -535,7 +537,6 @@
 				E42309D92D2C13C000B4898F /* ScheduleView.swift */,
 				E4F2350F2D2C1A4800BC8635 /* ShiftView.swift */,
 				E4F235122D2C2F6400BC8635 /* ErrorView.swift */,
-				E4F235D42D2D594100BC8635 /* Separator.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -743,6 +744,7 @@
 			children = (
 				E490E9962B283946002A03D2 /* CardView.swift */,
 				E4CB960A2B2B5E7200F322AE /* SafariView.swift */,
+				E409F40E2D2FC71300AF4B26 /* Separator.swift */,
 				E42AE86027550951006F7CBD /* StageView.swift */,
 				E4C9607D2B41D15F009D73AF /* SwappableView.swift */,
 				E42AE863275509DB006F7CBD /* WeaponsView.swift */,
@@ -1107,7 +1109,7 @@
 				E42309BD2D2BDA1000B4898F /* String.swift in Sources */,
 				E42309BE2D2BDA1000B4898F /* SwiftJSON.swift in Sources */,
 				E42309B22D2BD9EF00B4898F /* ContentView.swift in Sources */,
-				E4F235D52D2D594100BC8635 /* Separator.swift in Sources */,
+				E409F4112D2FC85400AF4B26 /* Separator.swift in Sources */,
 				E42309B32D2BD9EF00B4898F /* IkachanWatchApp.swift in Sources */,
 				E42309DA2D2C13C000B4898F /* ScheduleView.swift in Sources */,
 			);
@@ -1188,6 +1190,7 @@
 				E490E9992B2879F7002A03D2 /* SchedulesView.swift in Sources */,
 				E4613FB525C9B62000561D53 /* IkachanIntents.intentdefinition in Sources */,
 				E48BECC025CD31F100B301D1 /* Collection.swift in Sources */,
+				E409F40F2D2FC71500AF4B26 /* Separator.swift in Sources */,
 				E490E99B2B288478002A03D2 /* ShiftsView.swift in Sources */,
 				E417636E2B271CE500B52CE9 /* Constant.swift in Sources */,
 				E440CA152B271E8200884D57 /* Splatoon3ScheduleIntentHandler.swift in Sources */,
@@ -1214,6 +1217,7 @@
 				E4CB978F2D2BD33F00EB2A6C /* NoShiftView.swift in Sources */,
 				E4444F0725BF14D10003A676 /* IkachanWidgetBundle.swift in Sources */,
 				E4F235642D2CF2FF00BC8635 /* Splatoon3Shift.swift in Sources */,
+				E409F4102D2FC76D00AF4B26 /* Separator.swift in Sources */,
 				E4C85A932B2DE7C300D4F596 /* Array.swift in Sources */,
 				E4F235602D2CF29B00BC8635 /* Splatoon2ShiftView.swift in Sources */,
 				E485DA1427534D0100B82AE0 /* KFImage.swift in Sources */,
