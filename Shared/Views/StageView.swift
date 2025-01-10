@@ -48,9 +48,9 @@ struct StageView: View {
             }
             // TODO: Clean masks.
             .mask {
-                Color.primary
+                Rectangle()
                     .mask {
-                        Color.primary
+                        Rectangle()
                             .overlay(alignment: .bottomTrailing) {
                                 if !stage.name.isEmpty {
                                     Text(stage.name)
@@ -59,7 +59,7 @@ struct StageView: View {
                                         .padding([.top], 4)
                                         .padding([.leading], 6)
                                         .background {
-                                            Color.primary
+                                            Rectangle()
                                                 .cornerRadius(8, corners: .topLeft)
                                         }
                                         .padding([.leading], 8)
