@@ -1,7 +1,22 @@
 import SwiftUI
 import WidgetKit
 
+// HACK: Wrap WidgetEnvironmentReader on use for environments backporting.
 struct SmallShiftView: View {
+    var mode: any ShiftMode
+    var shift: Shift?
+    var nextShift: Shift?
+    
+    var body: some View {
+        WidgetEnvironmentReader {
+            SmallShiftView_Inner(mode: mode, shift: shift, nextShift: nextShift)
+        }
+    }
+}
+
+struct SmallShiftView_Inner: View {
+    @Environment(\.widgetRenderingMode_Backport) var widgetRenderingMode
+    
     var mode: any ShiftMode
     var shift: Shift?
     var nextShift: Shift?
@@ -11,12 +26,13 @@ struct SmallShiftView: View {
             HStack {
                 HStack {
                     Image(shift?.mode.image ?? mode.image)
-                        .symbolRenderingMode(.multicolor)
+                        .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
                         .monospacedSymbol()
-                        .layoutPriority(1)
+                        .widgetAccentable_Backport()
                     Text(LocalizedStringKey(shift?.mode.name ?? mode.name))
                         .fontWeight(.bold)
-                        .foregroundColor(mode.accentColor)
+                        .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
+                        .widgetAccentable_Backport()
                         .lineLimit(1)
                 }
                 .layoutPriority(1)

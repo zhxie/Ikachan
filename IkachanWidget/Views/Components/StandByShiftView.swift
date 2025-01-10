@@ -18,6 +18,7 @@ struct StandByShiftView: View {
             }
             
             Spacer()
+                .frame(minHeight: 0)
             
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 4) {

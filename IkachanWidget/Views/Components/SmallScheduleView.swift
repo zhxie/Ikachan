@@ -1,7 +1,22 @@
 import SwiftUI
 import WidgetKit
 
+// HACK: Wrap WidgetEnvironmentReader on use for environments backporting.
 struct SmallScheduleView: View {
+    var mode: any ScheduleMode
+    var schedule: Schedule?
+    var nextSchedule: Schedule?
+    
+    var body: some View {
+        WidgetEnvironmentReader {
+            SmallScheduleView_Inner(mode: mode, schedule: schedule, nextSchedule: nextSchedule)
+        }
+    }
+}
+
+struct SmallScheduleView_Inner: View {
+    @Environment(\.widgetRenderingMode_Backport) var widgetRenderingMode
+    
     var mode: any ScheduleMode
     var schedule: Schedule?
     var nextSchedule: Schedule?
@@ -11,13 +26,14 @@ struct SmallScheduleView: View {
             HStack {
                 HStack {
                     Image(mode.image)
-                        .symbolRenderingMode(.multicolor)
+                        .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
                         .monospacedSymbol()
-                        .foregroundColor(mode.accentColor)
-                        .layoutPriority(1)
+                        .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
+                        .widgetAccentable_Backport()
                     Text(LocalizedStringKey(schedule?.rule.name ?? mode.name))
                         .fontWeight(.bold)
-                        .foregroundColor(mode.accentColor)
+                        .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
+                        .widgetAccentable_Backport()
                         .lineLimit(1)
                 }
                 .layoutPriority(1)

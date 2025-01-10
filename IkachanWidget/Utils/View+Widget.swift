@@ -36,3 +36,22 @@ extension View {
         }
     }
 }
+
+@available(iOSApplicationExtension 16.0, *)
+struct WidgetAccentableModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .widgetAccentable()
+    }
+}
+
+extension View {
+    @ViewBuilder
+    func widgetAccentable_Backport() -> some View {
+        if #available(iOSApplicationExtension 16.0, *) {
+            self.modifier(WidgetAccentableModifier())
+        } else {
+            self
+        }
+    }
+}

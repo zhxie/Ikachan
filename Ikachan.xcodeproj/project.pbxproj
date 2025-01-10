@@ -99,8 +99,8 @@
 		E4444F1825BF14FB0003A676 /* IkachanWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B507525B9C2AC001F88CE /* IkachanWidget.swift */; };
 		E4444F3225BF155B0003A676 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4444F3125BF155B0003A676 /* Kingfisher */; };
 		E4444F3425BF155B0003A676 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4444F3325BF155B0003A676 /* SwiftyJSON */; };
-		E452E0932D30C7700031CE0F /* StandBySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452E0922D30C7700031CE0F /* StandBySelectorView.swift */; };
 		E452E0942D30C7700031CE0F /* StandBySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452E0922D30C7700031CE0F /* StandBySelectorView.swift */; };
+		E452E0992D30D9580031CE0F /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452E0982D30D9520031CE0F /* EnvironmentValues.swift */; };
 		E4613F0325C9A70C00561D53 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E4613F0925C9A70D00561D53 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E4613F3F25C9AC5500561D53 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4613F3E25C9AC5500561D53 /* SwiftyJSON */; };
@@ -354,6 +354,7 @@
 		E4444ED525BF14820003A676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4444F3725BF164C0003A676 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E452E0922D30C7700031CE0F /* StandBySelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandBySelectorView.swift; sourceTree = "<group>"; };
+		E452E0982D30D9520031CE0F /* EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
 		E4613F8F25C9AFD100561D53 /* Splatoon2ScheduleIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ScheduleIntentHandler.swift; sourceTree = "<group>"; };
 		E4613F9C25C9AFF700561D53 /* Splatoon2ShiftIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ShiftIntentHandler.swift; sourceTree = "<group>"; };
 		E4613FB925C9B62000561D53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/IkachanIntents.intentdefinition; sourceTree = "<group>"; };
@@ -737,6 +738,7 @@
 		E4F2351A2D2C362100BC8635 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E452E0982D30D9520031CE0F /* EnvironmentValues.swift */,
 				E4F2351C2D2C363100BC8635 /* View+Widget.swift */,
 			);
 			path = Utils;
@@ -1245,6 +1247,7 @@
 				E47AC8AD2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift in Sources */,
 				E452E0942D30C7700031CE0F /* StandBySelectorView.swift in Sources */,
 				E4F2355C2D2CF1B500BC8635 /* Splatoon2Schedule.swift in Sources */,
+				E452E0992D30D9580031CE0F /* EnvironmentValues.swift in Sources */,
 				E4F2356C2D2CF46B00BC8635 /* Splatoon2ShiftProgressView.swift in Sources */,
 				E4F9DC712C949A6D001E2B90 /* StageView.swift in Sources */,
 				E464ADD12B29B51D001DC83D /* MediumShiftView.swift in Sources */,
@@ -1296,7 +1299,6 @@
 				E4F235972D2CF8DF00BC8635 /* SwiftJSON.swift in Sources */,
 				E4F235A22D2CF9CA00BC8635 /* Splatoon2Shift.swift in Sources */,
 				E4F235B62D2D00BC00BC8635 /* Splatoon2ScheduleProgressView.swift in Sources */,
-				E452E0932D30C7700031CE0F /* StandBySelectorView.swift in Sources */,
 				E4F235A32D2CF9CA00BC8635 /* Splatoon2Schedule.swift in Sources */,
 				E4F235A92D2CFA2700BC8635 /* Splatoon2ScheduleView.swift in Sources */,
 				E4F235A42D2CF9CA00BC8635 /* Splatoon3Schedule.swift in Sources */,

@@ -3,7 +3,7 @@ import WidgetKit
 
 @available(iOSApplicationExtension 17.0, *)
 struct StandBySelectorView<Small: View, StandBy: View>: View {
-    // HACK: Referenced from https://forums.developer.apple.com/forums/thread/735473?answerId=766406022#766406022.
+    // HACK: Referenced from https://forums.developer.apple.com/forums/thread/735473?answerId=766406022.
     @Environment(\.isActivityFullscreen) var isActivityFullscreen
     
     var small: () -> Small

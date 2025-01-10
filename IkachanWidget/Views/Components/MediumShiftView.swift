@@ -1,7 +1,22 @@
 import SwiftUI
 import WidgetKit
 
+// HACK: Wrap WidgetEnvironmentReader on use for environments backporting.
 struct MediumShiftView: View {
+    var mode: any ShiftMode
+    var shift: Shift?
+    var nextShift: Shift?
+    
+    var body: some View {
+        WidgetEnvironmentReader {
+            MediumShiftView_Inner(mode: mode, shift: shift, nextShift: nextShift)
+        }
+    }
+}
+
+struct MediumShiftView_Inner: View {
+    @Environment(\.widgetRenderingMode_Backport) var widgetRenderingMode
+    
     var mode: any ShiftMode
     var shift: Shift?
     var nextShift: Shift?
@@ -10,12 +25,14 @@ struct MediumShiftView: View {
         VStack(spacing: 8) {
             HStack {
                 Image(shift?.mode.image ?? mode.image)
-                    .symbolRenderingMode(.multicolor)
+                    .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
                     .monospacedSymbol()
+                    .widgetAccentable_Backport()
                     .layoutPriority(1)
                 Text(LocalizedStringKey(shift?.mode.name ?? mode.name))
                     .fontWeight(.bold)
-                    .foregroundColor(mode.accentColor)
+                    .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
+                    .widgetAccentable_Backport()
                     .lineLimit(1)
                 
                 Spacer()
@@ -51,7 +68,8 @@ struct MediumShiftView: View {
                                 .foregroundColor(Color(.systemBackground))
                                 .padding(4)
                                 .background {
-                                    shift.mode.accentColor
+                                    Rectangle()
+                                        .fill(widgetRenderingMode == .fullColor ? shift.mode.accentColor : .primary)
                                         .cornerRadius(4)
                                 }
                                 .layoutPriority(1)

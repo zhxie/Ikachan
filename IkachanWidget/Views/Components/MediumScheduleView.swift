@@ -1,25 +1,39 @@
 import SwiftUI
 import WidgetKit
 
+// HACK: Wrap WidgetEnvironmentReader on use for environments backporting.
 struct MediumScheduleView: View {
     var mode: any ScheduleMode
     var schedule: Schedule?
     var nextSchedule: Schedule?
-    var showsModeImage: Bool = true
+    
+    var body: some View {
+        WidgetEnvironmentReader {
+            MediumScheduleView_Inner(mode: mode, schedule: schedule, nextSchedule: nextSchedule)
+        }
+    }
+}
+
+struct MediumScheduleView_Inner: View {
+    @Environment(\.widgetRenderingMode_Backport) var widgetRenderingMode
+    
+    var mode: any ScheduleMode
+    var schedule: Schedule?
+    var nextSchedule: Schedule?
 
     var body: some View {
         VStack(spacing: 8) {
             HStack {
-                if showsModeImage {
-                    Image(mode.image)
-                        .symbolRenderingMode(.multicolor)
-                        .monospacedSymbol()
-                        .foregroundColor(mode.accentColor)
-                        .layoutPriority(1)
-                }
+                Image(mode.image)
+                    .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
+                    .monospacedSymbol()
+                    .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
+                    .widgetAccentable_Backport()
+                    .layoutPriority(1)
                 Text(LocalizedStringKey(schedule?.rule.name ?? mode.name))
                     .fontWeight(.bold)
-                    .foregroundColor(mode.accentColor)
+                    .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
+                    .widgetAccentable_Backport()
                     .lineLimit(1)
                 
                 Spacer()
@@ -50,7 +64,8 @@ struct MediumScheduleView: View {
                             .foregroundColor(Color(.systemBackground))
                             .padding(4)
                             .background {
-                                schedule.mode.accentColor
+                                Rectangle()
+                                    .fill(widgetRenderingMode == .fullColor ? schedule.mode.accentColor : .primary)
                                     .cornerRadius(4)
                             }
                             .layoutPriority(1)
@@ -58,7 +73,7 @@ struct MediumScheduleView: View {
                         Spacer()
                         
                         Image(schedule.rule.image)
-                            .symbolRenderingMode(.multicolor)
+                            .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
                             .layoutPriority(1)
                         Text(schedule.stages.map({ stage in
                             stage.name
