@@ -22,7 +22,7 @@ struct StandByScheduleView: View {
             
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 4) {
-                    Image(schedule?.rule.image ?? mode.image)
+                    Image(mode.image)
                         .symbolRenderingMode(.hierarchical)
                         .monospacedSymbol(.footnote)
                     
