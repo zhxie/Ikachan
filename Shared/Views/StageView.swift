@@ -10,7 +10,6 @@ struct StageView: View {
     @Environment(\.colorScheme) var colorScheme
     
     var stage: Stage
-    var backgroundColor: Color?
     var style: StageViewStyle = .App
     
     @ViewBuilder
@@ -42,24 +41,32 @@ struct StageView: View {
         }
     }
     
-    var backgroundColorView: some View {
-        if let backgroundColor = backgroundColor {
-            backgroundColor
-        } else {
-            switch style {
-            case .App:
-                Color(.secondarySystemBackground)
-            case .Widget:
-                // HACK: .systemBackground in widgets is not pure black which is different from the widget's background.
-                Color(colorScheme == .light ? .systemBackground : .black)
-            }
-        }
-    }
-    
     var body: some View {
         rectangle
             .overlay {
                 image
+            }
+            // TODO: Clean masks.
+            .mask {
+                Color.primary
+                    .mask {
+                        Color.primary
+                            .overlay(alignment: .bottomTrailing) {
+                                if !stage.name.isEmpty {
+                                    Text(stage.name)
+                                        .font(.footnote)
+                                        .lineLimit(1)
+                                        .padding([.top], 4)
+                                        .padding([.leading], 6)
+                                        .background {
+                                            Color.primary
+                                                .cornerRadius(8, corners: .topLeft)
+                                        }
+                                        .padding([.leading], 8)
+                                        .blendMode(.destinationOut)
+                                }
+                            }
+                    }
             }
             .cornerRadius(style == .Widget ? 8 : 16)
             .overlay(alignment: .bottomTrailing) {
@@ -68,12 +75,7 @@ struct StageView: View {
                         .font(.footnote)
                         .lineLimit(1)
                         .padding([.top], 4)
-                        .padding([.leading], 6)
-                        .background {
-                            backgroundColorView
-                                .cornerRadius(8, corners: .topLeft)
-                        }
-                        .padding([.leading], 8)
+                        .padding([.leading], 14)
                         // HACK: There may be edge overflow on scale effect.
                         .offset(x: 1, y: 1)
                 }

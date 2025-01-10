@@ -3,7 +3,6 @@ import SwiftUI
 struct ScheduleView: View {
     var schedule: Schedule
     var nextSchedule: Schedule? = nil
-    var backgroundColor = Color(.secondarySystemBackground)
     var shrinkToFit = false
     
     var body: some View {
@@ -37,7 +36,7 @@ struct ScheduleView: View {
                 }
                 
                 ForEach(schedule.stages, id: \.name) { stage in
-                    StageView(stage: stage, backgroundColor: backgroundColor)
+                    StageView(stage: stage)
                 }
             }
             

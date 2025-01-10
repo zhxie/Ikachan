@@ -7,7 +7,7 @@ struct ShiftsView: View {
     var body: some View {
         List {
             ForEach(shifts, id: \.startTime) { shift in
-                ShiftView(shift: shift, backgroundColor: Color(.secondarySystemGroupedBackground), shrinkToFit: true)
+                ShiftView(shift: shift, shrinkToFit: true)
             }
         }
         .navigationTitle(LocalizedStringKey(mode.name))

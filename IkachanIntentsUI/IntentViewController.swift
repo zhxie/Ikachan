@@ -51,7 +51,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
         }
         
         if let schedule = schedule {
-            let controller = UIHostingController(rootView: ScheduleView(schedule: schedule, nextSchedule: nextSchedule, backgroundColor: Color(.systemBackground)).padding())
+            let controller = UIHostingController(rootView: ScheduleView(schedule: schedule, nextSchedule: nextSchedule).padding())
             addChild(controller)
             controller.view.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(controller.view)
@@ -65,7 +65,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
             
             completion(true, parameters, desiredSize)
         } else if let shift = shift {
-            let controller = UIHostingController(rootView: ShiftView(shift: shift, nextShift: nextShift, backgroundColor: Color(.systemBackground)).padding())
+            let controller = UIHostingController(rootView: ShiftView(shift: shift, nextShift: nextShift).padding())
             addChild(controller)
             controller.view.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(controller.view)

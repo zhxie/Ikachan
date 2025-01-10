@@ -3,12 +3,11 @@ import SwiftUI
 struct ShiftView: View {
     var shift: Shift
     var nextShift: Shift? = nil
-    var backgroundColor = Color(.secondarySystemBackground)
     var shrinkToFit = false
     
     var stageAndWeapons: some View {
         HStack {
-            StageView(stage: shift.stage!, backgroundColor: backgroundColor)
+            StageView(stage: shift.stage!)
             VStack {
                 if let kingSalmonid = shift.kingSalmonid {
                     HStack {

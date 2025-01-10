@@ -7,7 +7,7 @@ struct SchedulesView: View {
     var body: some View {
         List {
             ForEach(schedules, id: \.startTime) { schedule in
-                ScheduleView(schedule: schedule, backgroundColor: Color(.secondarySystemGroupedBackground), shrinkToFit: true)
+                ScheduleView(schedule: schedule, shrinkToFit: true)
             }
         }
         .navigationTitle(LocalizedStringKey(mode.name))
