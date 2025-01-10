@@ -3,7 +3,7 @@ import WidgetKit
 import Kingfisher
 
 @available(iOSApplicationExtension 17.0, *)
-struct StandbyScheduleView: View {
+struct StandByScheduleView: View {
     @Environment(\.widgetRenderingMode) var widgetRenderingMode
     @Environment(\.widgetContentMargins) var widgetContentMargins
     
@@ -61,9 +61,9 @@ struct StandbyScheduleView: View {
 }
 
 @available(iOSApplicationExtension 17.0, *)
-struct StandbyScheduleView_Previews: PreviewProvider {
+struct StandByScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        StandbyScheduleView(mode: Splatoon3ScheduleMode.regularBattle, schedule: PreviewSplatoon2Schedule)
+        StandByScheduleView(mode: Splatoon3ScheduleMode.regularBattle, schedule: PreviewSplatoon2Schedule)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }

@@ -3,7 +3,7 @@ import WidgetKit
 import Kingfisher
 
 @available(iOSApplicationExtension 17.0, *)
-struct StandbyShiftView: View {
+struct StandByShiftView: View {
     @Environment(\.widgetRenderingMode) var widgetRenderingMode
     @Environment(\.widgetContentMargins) var widgetContentMargins
     
@@ -59,9 +59,9 @@ struct StandbyShiftView: View {
 }
 
 @available(iOSApplicationExtension 17.0, *)
-struct StandbyShiftView_Previews: PreviewProvider {
+struct StandByShiftView_Previews: PreviewProvider {
     static var previews: some View {
-        StandbyShiftView(mode: Splatoon3ShiftMode.salmonRun, shift: PreviewSplatoon2Shift)
+        StandByShiftView(mode: Splatoon3ShiftMode.salmonRun, shift: PreviewSplatoon2Shift)
             .containerBackground(for: .widget, content: {})
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }

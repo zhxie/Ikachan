@@ -50,8 +50,8 @@
 		E42AE86227550951006F7CBD /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE86027550951006F7CBD /* StageView.swift */; };
 		E42AE864275509DB006F7CBD /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponsView.swift */; };
 		E42AE865275509DB006F7CBD /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AE863275509DB006F7CBD /* WeaponsView.swift */; };
-		E4308E252BA1DA2100E6F438 /* StandbyScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4308E242BA1DA2100E6F438 /* StandbyScheduleView.swift */; };
-		E4308E272BA1DE7800E6F438 /* StandbyShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4308E262BA1DE7800E6F438 /* StandbyShiftView.swift */; };
+		E4308E252BA1DA2100E6F438 /* StandByScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4308E242BA1DA2100E6F438 /* StandByScheduleView.swift */; };
+		E4308E272BA1DE7800E6F438 /* StandByShiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4308E262BA1DE7800E6F438 /* StandByShiftView.swift */; };
 		E434673D265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
 		E434673E265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
 		E434673F265FC51E0018F130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E434673C265FC51E0018F130 /* Assets.xcassets */; };
@@ -99,6 +99,8 @@
 		E4444F1825BF14FB0003A676 /* IkachanWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B507525B9C2AC001F88CE /* IkachanWidget.swift */; };
 		E4444F3225BF155B0003A676 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4444F3125BF155B0003A676 /* Kingfisher */; };
 		E4444F3425BF155B0003A676 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4444F3325BF155B0003A676 /* SwiftyJSON */; };
+		E452E0932D30C7700031CE0F /* StandBySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452E0922D30C7700031CE0F /* StandBySelectorView.swift */; };
+		E452E0942D30C7700031CE0F /* StandBySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452E0922D30C7700031CE0F /* StandBySelectorView.swift */; };
 		E4613F0325C9A70C00561D53 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E4613F0925C9A70D00561D53 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E4613F3F25C9AC5500561D53 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4613F3E25C9AC5500561D53 /* SwiftyJSON */; };
@@ -320,8 +322,8 @@
 		E42309D92D2C13C000B4898F /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		E42AE86027550951006F7CBD /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
 		E42AE863275509DB006F7CBD /* WeaponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsView.swift; sourceTree = "<group>"; };
-		E4308E242BA1DA2100E6F438 /* StandbyScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandbyScheduleView.swift; sourceTree = "<group>"; };
-		E4308E262BA1DE7800E6F438 /* StandbyShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandbyShiftView.swift; sourceTree = "<group>"; };
+		E4308E242BA1DA2100E6F438 /* StandByScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandByScheduleView.swift; sourceTree = "<group>"; };
+		E4308E262BA1DE7800E6F438 /* StandByShiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandByShiftView.swift; sourceTree = "<group>"; };
 		E434673C265FC51E0018F130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E43D3F5725BBC75600D944A1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E43D3F5825BBC7E700D944A1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 		E4444ECC25BF147F0003A676 /* IkachanWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IkachanWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4444ED525BF14820003A676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4444F3725BF164C0003A676 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E452E0922D30C7700031CE0F /* StandBySelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandBySelectorView.swift; sourceTree = "<group>"; };
 		E4613F8F25C9AFD100561D53 /* Splatoon2ScheduleIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ScheduleIntentHandler.swift; sourceTree = "<group>"; };
 		E4613F9C25C9AFF700561D53 /* Splatoon2ShiftIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ShiftIntentHandler.swift; sourceTree = "<group>"; };
 		E4613FB925C9B62000561D53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/IkachanIntents.intentdefinition; sourceTree = "<group>"; };
@@ -757,12 +760,13 @@
 			children = (
 				E4CB978C2D2BCFBF00EB2A6C /* NoScheduleView.swift */,
 				E4CB978E2D2BD33F00EB2A6C /* NoShiftView.swift */,
+				E452E0922D30C7700031CE0F /* StandBySelectorView.swift */,
 				E46B506425B8959A001F88CE /* SmallScheduleView.swift */,
 				E464ADCA2B29AC1C001DC83D /* MediumScheduleView.swift */,
-				E4308E242BA1DA2100E6F438 /* StandbyScheduleView.swift */,
+				E4308E242BA1DA2100E6F438 /* StandByScheduleView.swift */,
 				E464ADCC2B29B309001DC83D /* SmallShiftView.swift */,
 				E464ADD02B29B51D001DC83D /* MediumShiftView.swift */,
-				E4308E262BA1DE7800E6F438 /* StandbyShiftView.swift */,
+				E4308E262BA1DE7800E6F438 /* StandByShiftView.swift */,
 				E47AC8AA2B2AA0E200B598AF /* AccessoryCircularScheduleView.swift */,
 				E409F40B2D2FA04000AF4B26 /* AccessoryCircularShiftView.swift */,
 				E47AC8AC2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift */,
@@ -1208,7 +1212,7 @@
 			files = (
 				E440CA182B271F1400884D57 /* Splatoon3ShiftIntentHandler.swift in Sources */,
 				E4F235662D2CF32C00BC8635 /* Splatoon3ScheduleView.swift in Sources */,
-				E4308E272BA1DE7800E6F438 /* StandbyShiftView.swift in Sources */,
+				E4308E272BA1DE7800E6F438 /* StandByShiftView.swift in Sources */,
 				E4613FB625C9B62000561D53 /* IkachanIntents.intentdefinition in Sources */,
 				E4444EE125BF148D0003A676 /* Date.swift in Sources */,
 				E4444F1825BF14FB0003A676 /* IkachanWidget.swift in Sources */,
@@ -1239,11 +1243,12 @@
 				E4F2351D2D2C363300BC8635 /* View+Widget.swift in Sources */,
 				E4F235702D2CF57700BC8635 /* Splatoon3ScheduleProgressView.swift in Sources */,
 				E47AC8AD2B2AB81100B598AF /* AccessoryRectangularScheduleView.swift in Sources */,
+				E452E0942D30C7700031CE0F /* StandBySelectorView.swift in Sources */,
 				E4F2355C2D2CF1B500BC8635 /* Splatoon2Schedule.swift in Sources */,
 				E4F2356C2D2CF46B00BC8635 /* Splatoon2ShiftProgressView.swift in Sources */,
 				E4F9DC712C949A6D001E2B90 /* StageView.swift in Sources */,
 				E464ADD12B29B51D001DC83D /* MediumShiftView.swift in Sources */,
-				E4308E252BA1DA2100E6F438 /* StandbyScheduleView.swift in Sources */,
+				E4308E252BA1DA2100E6F438 /* StandByScheduleView.swift in Sources */,
 				E485DA1127534A3700B82AE0 /* Image.swift in Sources */,
 				E4F2356E2D2CF57000BC8635 /* Splatoon3ShiftProgressView.swift in Sources */,
 				E4F2356A2D2CF46400BC8635 /* Splatoon2ScheduleProgressView.swift in Sources */,
@@ -1291,6 +1296,7 @@
 				E4F235972D2CF8DF00BC8635 /* SwiftJSON.swift in Sources */,
 				E4F235A22D2CF9CA00BC8635 /* Splatoon2Shift.swift in Sources */,
 				E4F235B62D2D00BC00BC8635 /* Splatoon2ScheduleProgressView.swift in Sources */,
+				E452E0932D30C7700031CE0F /* StandBySelectorView.swift in Sources */,
 				E4F235A32D2CF9CA00BC8635 /* Splatoon2Schedule.swift in Sources */,
 				E4F235A92D2CFA2700BC8635 /* Splatoon2ScheduleView.swift in Sources */,
 				E4F235A42D2CF9CA00BC8635 /* Splatoon3Schedule.swift in Sources */,
