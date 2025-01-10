@@ -3,8 +3,11 @@ import WidgetKit
 
 @available(iOSApplicationExtension 17.0, *)
 struct StandBySelectorView<Small: View, StandBy: View>: View {
-    // HACK: Referenced from https://forums.developer.apple.com/forums/thread/735473?answerId=766406022.
-    @Environment(\.isActivityFullscreen) var isActivityFullscreen
+    // HACK: Referenced from https://mastodon.social/@joehribar/110896570436983675.
+    @Environment(\.widgetContentMargins) var widgetContentMargins
+    var isStandBy: Bool {
+        widgetContentMargins.top > 0 && widgetContentMargins.top < 10
+    }
     
     var small: () -> Small
     var standBy: () -> StandBy
@@ -15,7 +18,7 @@ struct StandBySelectorView<Small: View, StandBy: View>: View {
     }
     
     var body: some View {
-        if isActivityFullscreen {
+        if isStandBy {
             standBy()
         } else {
             small()

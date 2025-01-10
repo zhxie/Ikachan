@@ -33,7 +33,7 @@ struct StandByScheduleView: View {
                 }
                 
                 if let schedule = schedule {
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 2) {
                         ForEach(schedule.stages, id: \.name) { stage in
                             Text(stage.name)
                                 .font(.caption2)
