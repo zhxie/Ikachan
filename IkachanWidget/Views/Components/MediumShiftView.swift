@@ -15,6 +15,7 @@ struct MediumShiftView: View {
 }
 
 struct MediumShiftView_Inner: View {
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.widgetRenderingMode_Backport) var widgetRenderingMode
     
     var mode: any ShiftMode
@@ -65,7 +66,7 @@ struct MediumShiftView_Inner: View {
                             Text(LocalizedStringKey("next"))
                                 .font(.footnote)
                                 .fontWeight(.bold)
-                                .foregroundColor(Color(.systemBackground))
+                                .foregroundColor(Color(colorScheme == .light ? .systemBackground : .black))
                                 .padding(4)
                                 .background {
                                     Rectangle()
