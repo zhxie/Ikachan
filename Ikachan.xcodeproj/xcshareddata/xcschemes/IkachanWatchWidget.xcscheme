@@ -75,16 +75,25 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E4F235742D2CF89400BC8635"
+            BuildableName = "IkachanWatchWidget.appex"
+            BlueprintName = "IkachanWatchWidget"
+            ReferencedContainer = "container:Ikachan.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
             BlueprintIdentifier = "E42309932D2BD96F00B4898F"
             BuildableName = "IkachanWatch.app"
             BlueprintName = "IkachanWatch"
             ReferencedContainer = "container:Ikachan.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCWidgetKind"
-            value = ""
+            value = "Splatoon3ShiftWidget"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
@@ -94,7 +103,7 @@
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "_XCWidgetFamily"
-            value = "systemMedium"
+            value = "accessoryRectangular"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

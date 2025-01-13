@@ -16,12 +16,22 @@ struct WeaponView: View {
                 .colorInvert()
                 .accessibilityLabel(weapon.name)
         } else {
+#if os(watchOS)
+            // HACK: We cannot use the following easier method to load an cached image on watchOS. It may be a bug of watchOS.
+            Image(uiImage: UIImage(data: Data(referencing: NSData(contentsOfFile: ImageCache.default.cachePath(forKey: (weapon.thumbnail ?? weapon.image).cacheKey)) ?? NSData())) ?? UIImage())
+                .resizable()
+                .widgetAccentedRenderingMode_Backport(.accentedDesaturated)
+                .aspectRatio(contentMode: .fill)
+                .clipped()
+                .accessibilityLabel(weapon.name)
+#else
             Image(uiImage: UIImage(contentsOfFile: ImageCache.default.cachePath(forKey: (weapon.thumbnail ?? weapon.image).cacheKey)) ?? UIImage())
                 .resizable()
                 .widgetAccentedRenderingMode_Backport(.accentedDesaturated)
                 .aspectRatio(contentMode: .fill)
                 .clipped()
                 .accessibilityLabel(weapon.name)
+#endif
         }
     }
 }
