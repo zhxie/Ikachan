@@ -72,6 +72,7 @@ struct MediumShiftView_Inner: View {
                                     Rectangle()
                                         .fill(widgetRenderingMode == .fullColor ? shift.mode.accentColor : .primary)
                                         .cornerRadius(4)
+                                        .widgetAccentable_Backport()
                                 }
                                 .layoutPriority(1)
                             

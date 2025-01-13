@@ -68,6 +68,7 @@ struct MediumScheduleView_Inner: View {
                                 Rectangle()
                                     .fill(widgetRenderingMode == .fullColor ? schedule.mode.accentColor : .primary)
                                     .cornerRadius(4)
+                                    .widgetAccentable_Backport()
                             }
                             .layoutPriority(1)
                         
@@ -75,6 +76,7 @@ struct MediumScheduleView_Inner: View {
                         
                         Image(schedule.rule.image)
                             .symbolRenderingMode(widgetRenderingMode == .fullColor ? .multicolor : .hierarchical)
+                            .widgetAccentable_Backport()
                             .layoutPriority(1)
                         Text(schedule.stages.map({ stage in
                             stage.name
