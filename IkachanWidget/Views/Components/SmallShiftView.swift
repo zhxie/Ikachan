@@ -44,9 +44,9 @@ struct SmallShiftView_Inner: View {
             
             if let shift = shift {
                 if let stage = shift.stage {
-                    StageView(stage: stage, style: .Widget)
+                    StageView(stage: stage)
                     
-                    WeaponsView(weapons: shift.weapons!, style: .Widget)
+                    WeaponsView(weapons: shift.weapons!, accented: widgetRenderingMode != .fullColor)
                         .layoutPriority(1)
                 }
             } else {

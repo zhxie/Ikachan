@@ -45,7 +45,7 @@ struct SmallScheduleView_Inner: View {
             
             if let schedule = schedule {
                 ForEach(schedule.stages, id: \.name) { stage in
-                    StageView(stage: stage, style: .Widget)
+                    StageView(stage: stage)
                 }
             } else {
                 NoScheduleView()

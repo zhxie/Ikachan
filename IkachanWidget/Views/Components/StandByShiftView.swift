@@ -34,7 +34,7 @@ struct StandByShiftView: View {
                 
                 if let shift = shift {
                     if let weapons = shift.weapons {
-                        WeaponsView(weapons: weapons, style: .StandbyWidget)
+                        WeaponsView(weapons: weapons, accented: true)
                             .frame(height: 24)
                     }
                 } else {

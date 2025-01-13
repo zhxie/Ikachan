@@ -53,7 +53,7 @@ struct MediumScheduleView_Inner: View {
             if let schedule = schedule {
                 HStack {
                     ForEach(schedule.stages, id: \.name) { stage in
-                        StageView(stage: stage, style: .Widget)
+                        StageView(stage: stage)
                     }
                 }
                 

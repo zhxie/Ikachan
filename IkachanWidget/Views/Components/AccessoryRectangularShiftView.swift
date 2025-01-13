@@ -36,7 +36,7 @@ struct AccessoryRectangularShiftView: View {
                 
                 if let shift = shift {
                     if let weapons = shift.weapons {
-                        WeaponsView(weapons: weapons, style: .Widget)
+                        WeaponsView(weapons: weapons, accented: true)
                     }
                 } else {
                     NoShiftView()

@@ -52,9 +52,9 @@ struct MediumShiftView_Inner: View {
             if let shift = shift {
                 if let stage = shift.stage {
                     HStack {
-                        StageView(stage: stage, style: .Widget)
+                        StageView(stage: stage)
                         
-                        WeaponsView(weapons: shift.weapons!, style: .Widget)
+                        WeaponsView(weapons: shift.weapons!, accented: widgetRenderingMode != .fullColor)
                     }
                 } else {
                     Spacer()
@@ -81,7 +81,7 @@ struct MediumShiftView_Inner: View {
                             Text(stage.name)
                                 .font(.footnote)
                             
-                            WeaponsView(weapons: shift.weapons!, style: .Widget)
+                            WeaponsView(weapons: shift.weapons!, accented: widgetRenderingMode != .fullColor)
                                 .frame(height: 20)
                                 .layoutPriority(1)
                         }
