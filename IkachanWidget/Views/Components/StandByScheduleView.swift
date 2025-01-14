@@ -49,7 +49,8 @@ struct StandByScheduleView: View {
             .padding([.leading, .bottom], 8)
         }
         .background {
-            if let stage = schedule?.stages.first {
+            // The widget view updates in each rotation. Randomly choose one stage to show as the background.
+            if let stage = schedule?.stages.randomElement() {
                 KFImage(stage.thumbnail ?? stage.image)
                     .resizedToFill()
                     .clipped()
