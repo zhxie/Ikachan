@@ -31,7 +31,7 @@ struct SmallShiftView_Inner: View {
                         .widgetAccentable_Backport()
                     Text(LocalizedStringKey(shift?.mode.name ?? mode.name))
                         .fontWeight(.bold)
-                        .foregroundColor(widgetRenderingMode == .fullColor ? mode.accentColor : .primary)
+                        .foregroundColor(widgetRenderingMode == .fullColor ? (shift?.mode.accentColor ?? mode.accentColor) : .primary)
                         .widgetAccentable_Backport()
                         .lineLimit(1)
                 }
