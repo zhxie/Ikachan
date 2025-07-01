@@ -758,7 +758,7 @@ func fetchMaintenanceInformationAndOperationalStatus(completion: @escaping (Stat
                                 }
                             }
                             // HACK: Online Splatoon 3-affected online play maintenance will be mentioned.
-                            if temporaryMaintenance["software_title"].stringValue.contains("Online play") {
+                            if temporaryMaintenance["software_title"].stringValue.lowercased().contains("online play") {
                                 var mentioned = false
                                 for service in temporaryMaintenance["services"].arrayValue {
                                     if service.stringValue.contains("Splatoon") {
@@ -787,7 +787,7 @@ func fetchMaintenanceInformationAndOperationalStatus(completion: @escaping (Stat
                             if operationalStatus["software_title"].stringValue.contains("Splatoon 3") {
                                 splatoon3Status = .Down
                             }
-                            if operationalStatus["software_title"].stringValue.contains("Online play") {
+                            if operationalStatus["software_title"].stringValue.lowercased().contains("online play") {
                                 var mentioned = false
                                 for service in operationalStatus["services"].arrayValue {
                                     if service.stringValue.contains("Splatoon") {
