@@ -123,28 +123,33 @@ struct ContentView: View {
             }
             .navigationTitle(LocalizedStringKey(game.name))
             .toolbar {
-                Button {
-                    withAnimation {
+                ToolbarItem {
+                    Button {
+                        withAnimation {
+                            switch game {
+                            case .splatoon2:
+                                game = .splatoon3
+                            case .splatoon3:
+                                game = .splatoon2
+                            }
+                            update() {}
+                        }
+                    } label: {
                         switch game {
                         case .splatoon2:
-                            game = .splatoon3
+                            Image(systemName: "2.circle")
                         case .splatoon3:
-                            game = .splatoon2
+                            Image(systemName: "3.circle")
                         }
-                        update() {}
-                    }
-                } label: {
-                    switch game {
-                    case .splatoon2:
-                        Image(systemName: "2.circle")
-                    case .splatoon3:
-                        Image(systemName: "3.circle")
                     }
                 }
-                Button {
-                    isInfoPresented.toggle()
-                } label: {
-                    Image(systemName: "gear")
+                toolbarSpacer()
+                ToolbarItem {
+                    Button {
+                        isInfoPresented.toggle()
+                    } label: {
+                        Image(systemName: "gear")
+                    }
                 }
             }
         }
@@ -162,6 +167,15 @@ struct ContentView: View {
         }
         .sheet(isPresented: $isInfoPresented) {
             AboutView()
+        }
+    }
+    
+    private func toolbarSpacer() -> some ToolbarContent {
+        if #available(iOS 26, *) {
+            return ToolbarSpacer()
+        } else {
+            return ToolbarItem {
+            }
         }
     }
     

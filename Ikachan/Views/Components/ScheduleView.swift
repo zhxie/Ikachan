@@ -42,16 +42,28 @@ struct ScheduleView: View {
             
             if let schedule = nextSchedule {
                 HStack {
-                    Text(LocalizedStringKey("next"))
-                        .font(.footnote)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(.systemBackground))
-                        .padding(4)
-                        .background {
-                            schedule.mode.accentColor
-                                .cornerRadius(4)
+                    if #available(iOS 26.0, *) {
+                        GlassEffectContainer {
+                            Text(LocalizedStringKey("next"))
+                                .font(.footnote)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemBackground))
+                                .padding(4)
+                                .glassEffect(.regular.tint(schedule.mode.accentColor).interactive(), in: .rect(cornerRadius: 4))
                         }
                         .layoutPriority(1)
+                    } else {
+                        Text(LocalizedStringKey("next"))
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(.systemBackground))
+                            .padding(4)
+                            .background {
+                                schedule.mode.accentColor
+                                    .cornerRadius(4)
+                            }
+                            .layoutPriority(1)
+                    }
                     
                     Spacer()
                     

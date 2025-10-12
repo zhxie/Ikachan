@@ -77,16 +77,26 @@ struct ShiftView: View {
             if let shift = nextShift {
                 if let stage = shift.stage {
                     HStack {
-                        Text(LocalizedStringKey("next"))
-                            .font(.footnote)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color(.systemBackground))
-                            .padding(4)
-                            .background {
-                                shift.mode.accentColor
-                                    .cornerRadius(4)
-                            }
-                            .layoutPriority(1)
+                        if #available(iOS 26.0, *) {
+                            Text(LocalizedStringKey("next"))
+                                .font(.footnote)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemBackground))
+                                .padding(4)
+                                .glassEffect(.regular.tint(shift.mode.accentColor).interactive(), in: .rect(cornerRadius: 4))
+                                .layoutPriority(1)
+                        } else {
+                            Text(LocalizedStringKey("next"))
+                                .font(.footnote)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemBackground))
+                                .padding(4)
+                                .background {
+                                    shift.mode.accentColor
+                                        .cornerRadius(4)
+                                }
+                                .layoutPriority(1)
+                        }
                         
                         Spacer()
                         

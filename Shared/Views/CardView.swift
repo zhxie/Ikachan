@@ -22,26 +22,49 @@ struct CardView<Content: View>: View {
     }
     
     var body: some View {
-        VStack(spacing: 8) {
-            HStack {
-                Image(image)
-                    .symbolRenderingMode(.multicolor)
-                    .font(.title2)
-                    .foregroundColor(accentColor)
-                Text(LocalizedStringKey(name))
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .lineLimit(1)
-                Image(systemName: "chevron.forward")
-                    .font(.subheadline)
-                    .foregroundColor(Color(.secondaryLabel))
+        if #available(iOS 26.0, *) {
+            GlassEffectContainer {
+                VStack(spacing: 8) {
+                    HStack {
+                        Image(image)
+                            .symbolRenderingMode(.multicolor)
+                            .font(.title2)
+                            .foregroundColor(accentColor)
+                        Text(LocalizedStringKey(name))
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .lineLimit(1)
+                        Image(systemName: "chevron.forward")
+                            .font(.subheadline)
+                            .foregroundColor(Color(.secondaryLabel))
+                    }
+                    content()
+                }
+                .padding()
+                .glassEffect(in: .rect(cornerRadius: 16.0))
             }
-            content()
-        }
-        .padding()
-        .background {
-            Color(.secondarySystemBackground)
-                .cornerRadius(16)
+        } else {
+            VStack(spacing: 8) {
+                HStack {
+                    Image(image)
+                        .symbolRenderingMode(.multicolor)
+                        .font(.title2)
+                        .foregroundColor(accentColor)
+                    Text(LocalizedStringKey(name))
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .lineLimit(1)
+                    Image(systemName: "chevron.forward")
+                        .font(.subheadline)
+                        .foregroundColor(Color(.secondaryLabel))
+                }
+                content()
+            }
+            .padding()
+            .background {
+                Color(.secondarySystemBackground)
+                    .cornerRadius(16)
+            }
         }
     }
 }

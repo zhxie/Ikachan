@@ -78,6 +78,16 @@ struct AboutView: View {
                                     }
                                 }
                             }
+                            Section {
+                                List {
+                                    ForEach([Splatoon2ShiftMode.salmonRun], id: \.self) { mode in
+                                        Text(LocalizedStringKey(mode.name))
+                                    }
+                                    .onMove { from, to in
+                                        
+                                    }
+                                }
+                            }
                         }
                         .environment(\.editMode, .constant(.active))
                         .navigationTitle(LocalizedStringKey("display_order"))
