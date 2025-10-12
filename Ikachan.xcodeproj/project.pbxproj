@@ -101,6 +101,8 @@
 		E4444F3425BF155B0003A676 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4444F3325BF155B0003A676 /* SwiftyJSON */; };
 		E452E0942D30C7700031CE0F /* StandBySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452E0922D30C7700031CE0F /* StandBySelectorView.swift */; };
 		E452E0992D30D9580031CE0F /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452E0982D30D9520031CE0F /* EnvironmentValues.swift */; };
+		E45F31DA2E9BF82B0085DC76 /* Icon.icon in Resources */ = {isa = PBXBuildFile; fileRef = E45F31D82E9BF7F60085DC76 /* Icon.icon */; };
+		E45F31DB2E9BF82B0085DC76 /* Icon.icon in Resources */ = {isa = PBXBuildFile; fileRef = E45F31D82E9BF7F60085DC76 /* Icon.icon */; };
 		E4613F0325C9A70C00561D53 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E4613F0925C9A70D00561D53 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477990125B1F1F600F8AE9F /* Schedule.swift */; };
 		E4613F3F25C9AC5500561D53 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4613F3E25C9AC5500561D53 /* SwiftyJSON */; };
@@ -355,6 +357,7 @@
 		E4444F3725BF164C0003A676 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E452E0922D30C7700031CE0F /* StandBySelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandBySelectorView.swift; sourceTree = "<group>"; };
 		E452E0982D30D9520031CE0F /* EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
+		E45F31D82E9BF7F60085DC76 /* Icon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Icon.icon; sourceTree = "<group>"; };
 		E4613F8F25C9AFD100561D53 /* Splatoon2ScheduleIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ScheduleIntentHandler.swift; sourceTree = "<group>"; };
 		E4613F9C25C9AFF700561D53 /* Splatoon2ShiftIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splatoon2ShiftIntentHandler.swift; sourceTree = "<group>"; };
 		E4613FB925C9B62000561D53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/IkachanIntents.intentdefinition; sourceTree = "<group>"; };
@@ -694,6 +697,7 @@
 				E4613FBA25C9B62000561D53 /* IkachanIntents.intentdefinition */,
 				E490E9AD2B289FF9002A03D2 /* Localizable.strings */,
 				E434673C265FC51E0018F130 /* Assets.xcassets */,
+				E45F31D82E9BF7F60085DC76 /* Icon.icon */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -1034,6 +1038,7 @@
 				E42309C32D2BDA2100B4898F /* Localizable.strings in Resources */,
 				E42309C42D2BDA2600B4898F /* Assets.xcassets in Resources */,
 				E42309CB2D2BDE0500B4898F /* Assets.xcassets in Resources */,
+				E45F31DB2E9BF82B0085DC76 /* Icon.icon in Resources */,
 				E42309B42D2BD9EF00B4898F /* Preview Assets.xcassets in Resources */,
 				E4F235C32D2D028700BC8635 /* InfoPlist.strings in Resources */,
 			);
@@ -1065,6 +1070,7 @@
 				E4405D8225AF64D6002EF1AB /* Preview Assets.xcassets in Resources */,
 				E484FDCE25C946C9006E748F /* InfoPlist.strings in Resources */,
 				E490E9A82B289FF9002A03D2 /* Localizable.strings in Resources */,
+				E45F31DA2E9BF82B0085DC76 /* Icon.icon in Resources */,
 				E4405D7F25AF64D6002EF1AB /* Assets.xcassets in Resources */,
 				E434673D265FC51E0018F130 /* Assets.xcassets in Resources */,
 			);
@@ -1402,7 +1408,7 @@
 		E42309A32D2BD97000B4898F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Icon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = IkachanWatch/IkachanWatch.entitlements;
@@ -1437,7 +1443,7 @@
 		E42309A42D2BD97000B4898F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Icon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = IkachanWatch/IkachanWatch.entitlements;
@@ -1685,8 +1691,9 @@
 		E4405D8725AF64D6002EF1AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Icon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = Ikachan/Ikachan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 88;
@@ -1711,8 +1718,9 @@
 		E4405D8825AF64D6002EF1AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Icon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = Ikachan/Ikachan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 88;
