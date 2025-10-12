@@ -41,7 +41,7 @@ struct CardView<Content: View>: View {
                     content()
                 }
                 .padding()
-                .glassEffect(in: .rect(cornerRadius: 16.0))
+                .glassEffect(in: .rect(cornerRadius: 24))
             }
         } else {
             VStack(spacing: 8) {
