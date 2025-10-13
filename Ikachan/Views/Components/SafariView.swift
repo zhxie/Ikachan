@@ -22,7 +22,7 @@ struct SafariButton: View {
         Button(title) {
             showSafari = true
         }
-        .popover(isPresented: $showSafari) {
+        .sheet(isPresented: $showSafari) {
             SafariView(url: url)
                 .ignoresSafeArea(.all)
         }

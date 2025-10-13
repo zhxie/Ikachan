@@ -648,6 +648,8 @@
 				E42AE863275509DB006F7CBD /* WeaponsView.swift */,
 				E440CA1A2B27325F00884D57 /* ScheduleView.swift */,
 				E440CA1F2B27329900884D57 /* ShiftView.swift */,
+				E490E9962B283946002A03D2 /* CardView.swift */,
+				E4CB960A2B2B5E7200F322AE /* SafariView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -755,8 +757,6 @@
 		E4F235562D2CF03500BC8635 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E490E9962B283946002A03D2 /* CardView.swift */,
-				E4CB960A2B2B5E7200F322AE /* SafariView.swift */,
 				E409F40E2D2FC71300AF4B26 /* Separator.swift */,
 				E4C9607D2B41D15F009D73AF /* SwappableView.swift */,
 			);
