@@ -34,9 +34,6 @@ struct CardView<Content: View>: View {
                             .font(.title3)
                             .fontWeight(.bold)
                             .lineLimit(1)
-                        Image(systemName: "chevron.forward")
-                            .font(.subheadline)
-                            .foregroundColor(Color(.secondaryLabel))
                     }
                     content()
                 }
@@ -54,9 +51,6 @@ struct CardView<Content: View>: View {
                         .font(.title3)
                         .fontWeight(.bold)
                         .lineLimit(1)
-                    Image(systemName: "chevron.forward")
-                        .font(.subheadline)
-                        .foregroundColor(Color(.secondaryLabel))
                 }
                 content()
             }

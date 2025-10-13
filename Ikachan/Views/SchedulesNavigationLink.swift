@@ -3,9 +3,11 @@ import SwiftUI
 struct SchedulesNavigationLink: View {
     var schedules: [Schedule]
     
+    @State var showSheet = false
+    
     var body: some View {
-        NavigationLink {
-            SchedulesView(mode: schedules.first!.mode, schedules: schedules)
+        Button {
+            showSheet = true
         } label: {
             CardView(image: schedules.first!.mode.image, accentColor: schedules.first!.mode.accentColor, name: schedules.first!.mode.name) {
                 ScheduleView(schedule: schedules.first!, nextSchedule: schedules.suffix(from: 1).first(where: { schedule in
@@ -14,6 +16,11 @@ struct SchedulesNavigationLink: View {
             }
         }
         .buttonStyle(CardButtonStyle())
+        .sheet(isPresented: $showSheet) {
+            NavigationView {
+                SchedulesView(mode: schedules.first!.mode, schedules: schedules)
+            }
+        }
     }
 }
 
