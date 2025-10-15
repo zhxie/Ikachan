@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ShiftsView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     var mode: any ShiftMode
     var shifts: [Shift]
     
@@ -11,6 +13,19 @@ struct ShiftsView: View {
             }
         }
         .navigationTitle(LocalizedStringKey(mode.name))
+        .toolbar {
+            ToolbarItem {
+                Button {
+                    dismiss()
+                } label: {
+                    if #available(iOS 26.0, *) {
+                        Image(systemName: "xmark")
+                    } else {
+                        Text(LocalizedStringKey("close"))
+                    }
+                }
+            }
+        }
     }
 }
 

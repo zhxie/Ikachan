@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct SchedulesView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     var mode: any ScheduleMode
     var schedules: [Schedule]
     
@@ -11,6 +13,19 @@ struct SchedulesView: View {
             }
         }
         .navigationTitle(LocalizedStringKey(mode.name))
+        .toolbar {
+            ToolbarItem {
+                Button {
+                    dismiss()
+                } label: {
+                    if #available(iOS 26.0, *) {
+                        Image(systemName: "xmark")
+                    } else {
+                        Text(LocalizedStringKey("close"))
+                    }
+                }
+            }
+        }
     }
 }
 

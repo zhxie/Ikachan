@@ -4,6 +4,8 @@ import AlertKit
 import Kingfisher
 
 struct AboutView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     @ObservedObject var settings = Settings.shared
     
     var body: some View {
@@ -145,6 +147,19 @@ struct AboutView: View {
                 }
             }
             .navigationTitle(LocalizedStringKey("ikachan"))
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        dismiss()
+                    } label: {
+                        if #available(iOS 26.0, *) {
+                            Image(systemName: "xmark")
+                        } else {
+                            Text(LocalizedStringKey("close"))
+                        }
+                    }
+                }
+            }
         }
     }
 
