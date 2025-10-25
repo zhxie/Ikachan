@@ -2,3 +2,4 @@
 .vscode/
 Ikachan.xcodeproj/project.xcworkspace/xcuserdata/
 assets/
+!Shared/Icon.icon/Assets/
